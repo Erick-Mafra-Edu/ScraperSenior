@@ -1,67 +1,104 @@
 # Senior Documentation Scraper
 
-Scraper automatizado de documentaÃ§Ã£o tÃ©cnica Senior Sistemas.
+Scraper automatizado de documentação técnica Senior Sistemas com MCP Server para busca.
 
 ## Quickstart
 
-```bash
+``````bash
 # Setup
 pip install -r requirements.txt
 playwright install chromium
 
-# Executar
+# Executar scraper
 python src/scraper_unificado.py
-```
+
+# MCP Server (busca)
+python src/mcp_server.py
+
+# Testes
+python src/test_mcp_server.py
+``````
 
 **Output**:
-- `docs_estruturado/` - DocumentaÃ§Ã£o estruturada por mÃ³dulo
-- `docs_indexacao.jsonl` - Ãndice para busca
+- `docs_estruturado/` - Documentação estruturada por módulo
+- `docs_indexacao_detailed.jsonl` - Índice de busca (933 documentos)
 - `docs_metadata.json` - Metadados
 
 ## Estrutura do Projeto
 
-```
+``````
 src/
-â”œâ”€â”€ scraper_unificado.py  # Scraper principal (MadCap + Astro)
-â”œâ”€â”€ scrapers/             # MÃ³dulos de scraping
-â”œâ”€â”€ indexers/             # IndexaÃ§Ã£o de docs
-â”œâ”€â”€ pipelines/            # Pipelines de processamento
-â””â”€â”€ utils/                # UtilitÃ¡rios comuns
+ scraper_unificado.py   # Scraper principal (MadCap + Astro)
+ mcp_server.py          # MCP Server para busca
+ test_mcp_server.py     # Testes MCP
+ scrapers/              # Módulos de scraping
+ indexers/              # Indexação
+    index_local.py     # Indexador JSONL
+    index_meilisearch.py # Indexador Meilisearch
+ pipelines/             # Pipelines de processamento
+ utils/                 # Utilitários comuns
 
-docs_estruturado/        # DocumentaÃ§Ã£o extraÃ­da (16 mÃ³dulos)
-docker-compose.yml       # Docker com Meilisearch
-requirements.txt         # DependÃªncias
-```
+docs_estruturado/              # Documentação extraída
+docs_indexacao_detailed.jsonl  # Índice para busca
+docker-compose.yml             # Docker com Meilisearch
+MCP_SERVER.md                  # Documentação MCP
+``````
 
 ## Formatos Suportados
 
-- **MadCap Flare** (15 mÃ³dulos) - ExtraÃ§Ã£o hierÃ¡rquica com expansÃ£o de menu
-- **Astro** (1 mÃ³dulo) - NavegaÃ§Ã£o direta via sidebar
+- **MadCap Flare** (15 módulos) - Extração hierárquica com expansão de menu
+- **Astro** (1 módulo) - Navegação direta via sidebar
+
+## MCP Server (NEW)
+
+Servidor Model Context Protocol para busca em documentação com 4 ferramentas:
+
+1. **search_docs** - Busca full-text com filtro por módulo
+2. **list_modules** - Lista módulos disponíveis
+3. **get_module_docs** - Documentos de um módulo
+4. **get_stats** - Estatísticas do índice
+
+### Uso
+
+``````bash
+# Iniciar servidor
+python src/mcp_server.py
+
+# Usar (Python)
+from src.mcp_server import MCPServer
+server = MCPServer()
+result = server.handle_tool_call("search_docs", {"query": "CRM"})
+``````
+
+Ver [MCP_SERVER.md](MCP_SERVER.md) para documentação completa.
 
 ## Melhorias Implementadas
 
-- âœ… DetecÃ§Ã£o automÃ¡tica de formato
-- âœ… ExpansÃ£o agressiva de menus (atÃ© 5 rounds)
-- âœ… Retry com backoff exponencial
-- âœ… CSS seletores mÃºltiplos
-- âœ… ValidaÃ§Ã£o de conteÃºdo
-- âœ… OrganizaÃ§Ã£o hierÃ¡rquica com breadcrumb
+-  Detecção automática de formato
+-  Expansão agressiva de menus (até 5 rounds)
+-  Retry com backoff exponencial
+-  CSS seletores múltiplos
+-  Validação de conteúdo
+-  Organização hierárquica com breadcrumb
+-  **Opção --save-html para preservar HTML original**
+-  **Indexação local (JSONL) sem dependência de servidor**
+-  **Meilisearch integration para produção**
+-  **MCP Server para AI integration**
 
 ## Docker (Meilisearch)
 
-```bash
+``````bash
 # Iniciar Meilisearch
 docker-compose up -d meilisearch
 
 # Indexar documentos
-curl -X POST 'http://localhost:7700/indexes/senior_docs/documents' \
-  --data-binary @docs_indexacao.jsonl
-```
+python src/indexers/index_meilisearch.py
+``````
 
-## ConfiguraÃ§Ã£o
+## Configuração
 
-Copiar `.env.example` para `.env` se necessÃ¡rio.
+Copiar `.env.example` para `.env` se necessário.
 
 ---
 
-Ver [CHANGELOG.md](CHANGELOG.md) para histÃ³rico.
+Ver [CHANGELOG.md](CHANGELOG.md) para histórico e [MCP_SERVER.md](MCP_SERVER.md) para guia completo do MCP Server.
