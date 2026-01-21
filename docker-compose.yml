@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # Meilisearch - Search engine para documentação
   meilisearch:
     image: getmeili/meilisearch:v1.11.0
     container_name: senior-docs-meilisearch
@@ -20,11 +19,6 @@ services:
     networks:
       - senior-docs
     restart: unless-stopped
-    labels:
-      - "app=senior-docs"
-      - "version=1.0"
-    networks:
-      - senior-docs
 
 networks:
   senior-docs:

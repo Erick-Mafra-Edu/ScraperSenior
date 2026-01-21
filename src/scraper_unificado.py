@@ -33,12 +33,14 @@ from typing import Dict, List, Optional, Tuple
 class SeniorDocScraper:
     """Scraper unificado para documentação Senior"""
     
-    def __init__(self):
+    def __init__(self, save_html: bool = False):
         self.output_dir = Path("docs_estruturado")
         self.output_dir.mkdir(exist_ok=True)
+        self.save_html = save_html
         self.documents = []
         self.metadata = {
             'timestamp': datetime.now().isoformat(),
+            'save_html': save_html,
             'statistics': {
                 'total_pages': 0,
                 'total_chars': 0,
@@ -380,6 +382,17 @@ class SeniorDocScraper:
                 f.write("---\n\n")
                 f.write(doc['text_content'][:10000])  # Primeiros 10k chars
             
+            # Salvar HTML original se solicitado
+            if self.save_html and doc.get('html_content'):
+                html_file = folder / 'page.html'
+                with open(html_file, 'w', encoding='utf-8') as f:
+                    f.write(f"<!--\n")
+                    f.write(f"Title: {doc['title']}\n")
+                    f.write(f"URL: {doc['url']}\n")
+                    f.write(f"Scraped: {datetime.now().isoformat()}\n")
+                    f.write(f"-->\n\n")
+                    f.write(doc['html_content'])
+            
             # Salvar metadata
             meta_file = folder / 'metadata.json'
             metadata = {
@@ -391,6 +404,7 @@ class SeniorDocScraper:
                 'paragraphs_count': len(doc['paragraphs']),
                 'lists_count': len(doc['lists']),
                 'links_count': len(doc['links']),
+                'has_html': self.save_html and bool(doc.get('html_content')),
                 'scraped_at': datetime.now().isoformat()
             }
             
@@ -580,7 +594,9 @@ class SeniorDocScraper:
 
 
 async def main():
-    scraper = SeniorDocScraper()
+    import sys
+    save_html = "--save-html" in sys.argv or "--save_html" in sys.argv
+    scraper = SeniorDocScraper(save_html=save_html)
     
     # Tentar carregar módulos descobertos
     modulos_file = Path("modulos_descobertos.json")
