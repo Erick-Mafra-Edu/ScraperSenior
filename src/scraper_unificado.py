@@ -1,0 +1,610 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+SCRAPER UNIFICADO - Senior Documentation
+=========================================
+
+Sistema completo de scraping para documentação Senior em:
+- MadCap Flare (iframe#topic + hash navigation)
+- Astro moderno (aside#sidebar + hierarquia de menu)
+
+Features:
+- Detecção automática de tipo
+- Extração hierárquica de conteúdo
+- Organização em estrutura de pastas
+- Geração de JSONL para indexação (Meilisearch)
+- Metadados completos para busca
+
+Output:
+- docs_estruturado/: Documentação organizada em pastas
+- docs_indexacao.jsonl: Arquivo JSONL para indexadores
+- docs_metadata.json: Metadados e análise completa
+"""
+
+import asyncio
+import json
+from pathlib import Path
+from datetime import datetime
+from urllib.parse import urljoin, urlparse
+import re
+from typing import Dict, List, Optional, Tuple
+
+
+class SeniorDocScraper:
+    """Scraper unificado para documentação Senior"""
+    
+    def __init__(self):
+        self.output_dir = Path("docs_estruturado")
+        self.output_dir.mkdir(exist_ok=True)
+        self.documents = []
+        self.metadata = {
+            'timestamp': datetime.now().isoformat(),
+            'statistics': {
+                'total_pages': 0,
+                'total_chars': 0,
+                'by_module': {},
+                'by_type': {'madcap': 0, 'astro': 0, 'unknown': 0},
+                'navigation_stats': {
+                    'successful': 0,
+                    'failed': 0,
+                    'skipped': 0
+                }
+            }
+        }
+    
+    def build_absolute_url(self, base_url: str, link_url: str) -> Optional[str]:
+        """Constrói URL absoluta a partir de base + link. Trata URLs MadCap com hash."""
+        if not link_url:
+            return None
+        
+        if link_url.startswith('http'):
+            return link_url
+        
+        if link_url.startswith('#'):
+            parsed = urlparse(base_url)
+            base_path = parsed.scheme + '://' + parsed.netloc + parsed.path
+            hash_part = link_url[1:]
+            
+            if '?' in hash_part or '%3F' in hash_part:
+                return base_path + '#' + hash_part
+            else:
+                return base_url + link_url
+        
+        return urljoin(base_url, link_url)
+    
+    async def detect_doc_type(self, page) -> str:
+        """Detecta tipo de documentação"""
+        is_astro = await page.evaluate("() => !!document.getElementById('new-toc')")
+        is_madcap = await page.evaluate("() => !!document.getElementById('topic')")
+        
+        return 'astro' if is_astro else 'madcap' if is_madcap else 'unknown'
+    
+    async def extract_astro_menu(self, page) -> List[Dict]:
+        """Extrai hierarquia do menu Astro"""
+        menu_data = await page.evaluate("""
+            () => {
+                const result = [];
+                const sidebar = document.getElementById('sidebar-menu');
+                
+                if (!sidebar) return result;
+                
+                function extractMenuItems(container, level = 0) {
+                    const items = [];
+                    
+                    container.querySelectorAll(':scope > .menu-item').forEach(menuItem => {
+                        const header = menuItem.querySelector('.item-header');
+                        const link = header?.querySelector('a, span');
+                        const href = link?.href || null;
+                        const text = link?.textContent?.trim() || '';
+                        
+                        const submenu = menuItem.querySelector(':scope > .submenu');
+                        
+                        const item = {
+                            text,
+                            href,
+                            level,
+                            children: []
+                        };
+                        
+                        if (submenu) {
+                            item.children = extractMenuItems(submenu, level + 1);
+                        }
+                        
+                        items.push(item);
+                    });
+                    
+                    return items;
+                }
+                
+                return extractMenuItems(sidebar);
+            }
+        """)
+        
+        return menu_data
+    
+    async def extract_madcap_seções(self, page) -> List[Dict]:
+        """Extrai seções do MadCap Flare com expansão agressiva de menus collapsed"""
+        import asyncio
+        
+        # Expandir TODOS os menus collapsed iterativamente
+        # Pode ser necessário múltiplas rodadas em menus aninhados
+        for round_num in range(5):  # Até 5 rodadas para cobrir aninhamento profundo
+            collapsed_count = await page.evaluate("""
+                () => {
+                    const toc = document.getElementById('toc');
+                    if (!toc) return 0;
+                    
+                    const collapsedItems = toc.querySelectorAll('li.tree-node-collapsed');
+                    let clickedCount = 0;
+                    
+                    collapsedItems.forEach(item => {
+                        const link = item.querySelector('a');
+                        if (link) {
+                            const href = link.getAttribute('href');
+                            // Clicar em links que são menus de navegação ou estão collapsed
+                            if (!href || href.startsWith('javascript:') || !href.startsWith('#')) {
+                                link.click();
+                                clickedCount++;
+                            }
+                        }
+                    });
+                    
+                    return clickedCount;
+                }
+            """)
+            
+            if collapsed_count == 0:
+                # Nenhum item collapsed encontrado, parar
+                break
+            
+            # Aguardar abertura
+            await asyncio.sleep(0.5)
+        
+        # Aguardar fim de todas as expansões
+        await asyncio.sleep(1)
+        
+        # Extrair TODOS os links após expansão completa
+        seções = await page.evaluate("""
+            () => {
+                const result = [];
+                const links = document.querySelectorAll('a[href*="#"]');
+                const seen = new Set();
+                
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    const text = link.textContent?.trim();
+                    
+                    // Filtrar: apenas links com href # e text não vazio
+                    if (href && text && text.length > 0 && href.includes('#') && !seen.has(href)) {
+                        result.push({
+                            text: text,
+                            href: href,
+                            children: []
+                        });
+                        seen.add(href);
+                    }
+                });
+                
+                return result;
+            }
+        """)
+        
+        return seções
+    
+    async def scrape_page(self, page, url: str, base_url: str = None) -> Optional[Dict]:
+        """Scrapa conteúdo de uma página com tratamento de erro para URLs inválidas"""
+        try:
+            # Primeira tentativa com timeout estendido para iframes MadCap
+            try:
+                await page.goto(url, wait_until="networkidle", timeout=20000)
+            except Exception as timeout_err:
+                # Se timeout, tenta com wait_until="domcontentloaded" (mais rápido)
+                if "timeout" in str(timeout_err).lower():
+                    await page.goto(url, wait_until="domcontentloaded", timeout=15000)
+                else:
+                    raise
+            await asyncio.sleep(1)  # Aumentado para dar mais tempo ao iframe carregar
+        except Exception as e:
+            error_msg = str(e).lower()
+            
+            # Se é erro de URL inválida e temos base_url, tenta voltar para base
+            if ('invalid url' in error_msg or 'cannot navigate' in error_msg) and base_url:
+                try:
+                    await page.goto(base_url, wait_until="networkidle", timeout=15000)
+                    await asyncio.sleep(0.5)
+                except:
+                    return None
+            else:
+                return None
+        
+        content = await page.evaluate("""
+            () => {
+                const result = {
+                    title: document.querySelector('h1')?.textContent?.trim() || '',
+                    url: window.location.href,
+                    text_content: '',
+                    html_content: '',
+                    headers: [],
+                    paragraphs: [],
+                    lists: [],
+                    links: [],
+                    total_chars: 0
+                };
+                
+                let main = document.querySelector('iframe#topic')?.contentDocument?.body;
+                
+                if (!main) {
+                    main = document.querySelector('main') || 
+                           document.querySelector('[data-role="main"]') ||
+                           document.querySelector('[role="main"]') ||
+                           document.querySelector('article') ||
+                           document.querySelector('.page-content') ||
+                           document.querySelector('.document-content') ||
+                           document.querySelector('[class*="content"]');
+                }
+                
+                if (!main) {
+                    result.text_content = document.body.textContent;
+                    result.total_chars = result.text_content.length;
+                    return result;
+                }
+                
+                result.text_content = main.textContent;
+                result.html_content = main.innerHTML;
+                result.total_chars = result.text_content.length;
+                
+                main.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(h => {
+                    const text = h.textContent.trim();
+                    if (text.length > 0) result.headers.push(text);
+                });
+                
+                main.querySelectorAll('p').forEach(p => {
+                    const text = p.textContent.trim();
+                    if (text.length > 20) result.paragraphs.push(text);
+                });
+                
+                main.querySelectorAll('ul, ol').forEach(list => {
+                    const items = [];
+                    list.querySelectorAll(':scope > li').forEach(li => {
+                        const text = li.textContent.trim();
+                        if (text.length > 0) items.push(text);
+                    });
+                    if (items.length > 0) result.lists.push(items);
+                });
+                
+                main.querySelectorAll('a[href]').forEach(a => {
+                    const href = a.getAttribute('href');
+                    if (href && !href.startsWith('#')) {
+                        result.links.push({
+                            text: a.textContent.trim(),
+                            href: href
+                        });
+                    }
+                });
+                
+                return result;
+            }
+        """)
+        
+        return content
+    
+    async def scrape_page_with_retry(self, page, url: str, base_url: str = None, max_retries: int = 2) -> Optional[Dict]:
+        """Scrapa página com retry se conteúdo for pequeno demais"""
+        for attempt in range(max_retries):
+            content = await self.scrape_page(page, url, base_url)
+            
+            if not content:
+                continue
+            
+            # Se conteúdo é suficiente, retorna
+            if content['total_chars'] >= 100:
+                return content
+            
+            # Se não é suficiente e ainda temos tentativas, aguarda e tenta novamente
+            if attempt < max_retries - 1:
+                wait_time = 2 ** attempt  # Backoff exponencial: 1s, 2s, 4s
+                print(f"    [AVISO] Conteúdo pequeno ({content['total_chars']} chars), aguardando {wait_time}s e retentando...")
+                await asyncio.sleep(wait_time)
+        
+        # Retorna última tentativa mesmo que pequena
+        return content
+    
+    def sanitize_path(self, text: str) -> str:
+        """Sanitiza texto para usar em caminho"""
+        if not text:
+            return "unnamed"
+        
+        # Converter para string
+        text = str(text).strip()
+        
+        # Remover caracteres especiais (manter apenas alphanumério, espaço, hífen)
+        text = re.sub(r'[^\w\s\-]', '', text, flags=re.UNICODE)
+        
+        # Substituir espaços por underscore
+        text = re.sub(r'\s+', '_', text)
+        
+        # Limitar tamanho e remover underscores duplicados
+        text = re.sub(r'_+', '_', text)
+        text = text.strip('_')[:50]
+        
+        # Garantir que não fica vazio
+        return text if text else "unnamed"
+    
+    async def flatten_menu(self, menu_items: List[Dict], breadcrumb: List[str] = None) -> List[Dict]:
+        """Flatteia hierarquia em lista de URLs com breadcrumb"""
+        if breadcrumb is None:
+            breadcrumb = []
+        
+        all_links = []
+        
+        for item in menu_items:
+            current_breadcrumb = breadcrumb + [item['text']]
+            
+            if item.get('href'):
+                all_links.append({
+                    'text': item['text'],
+                    'url': item['href'],
+                    'breadcrumb': current_breadcrumb,
+                    'level': len(current_breadcrumb) - 1,
+                    'folder_path': '/'.join([self.sanitize_path(b) for b in current_breadcrumb[:-1]])
+                })
+            
+            # Processar filhos se existirem (pode ser 'children', 'items', etc)
+            children = item.get('children') or item.get('items') or item.get('submenu') or []
+            if children:
+                children_links = await self.flatten_menu(children, current_breadcrumb)
+                all_links.extend(children_links)
+        
+        return all_links
+    
+    async def save_document(self, doc: Dict, breadcrumb: List[str]):
+        """Salva documento em hierarquia de pastas"""
+        # Criar pasta com sanitização
+        if not breadcrumb or len(breadcrumb) == 0:
+            return None
+            
+        folder = self.output_dir
+        for part in breadcrumb:
+            sanitized = self.sanitize_path(part)
+            if sanitized:  # Garantir que não é vazio
+                folder = folder / sanitized
+        
+        folder.mkdir(parents=True, exist_ok=True)
+        
+        # Salvar conteúdo
+        try:
+            content_file = folder / 'content.txt'
+            with open(content_file, 'w', encoding='utf-8') as f:
+                f.write(f"# {doc['title']}\n\n")
+                f.write(f"URL: {doc['url']}\n\n")
+                f.write("---\n\n")
+                f.write(doc['text_content'][:10000])  # Primeiros 10k chars
+            
+            # Salvar metadata
+            meta_file = folder / 'metadata.json'
+            metadata = {
+                'title': doc['title'],
+                'url': doc['url'],
+                'breadcrumb': breadcrumb,
+                'total_chars': doc['total_chars'],
+                'headers_count': len(doc['headers']),
+                'paragraphs_count': len(doc['paragraphs']),
+                'lists_count': len(doc['lists']),
+                'links_count': len(doc['links']),
+                'scraped_at': datetime.now().isoformat()
+            }
+            
+            with open(meta_file, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f, ensure_ascii=False, indent=2)
+            
+            return {
+                'folder': str(folder),
+                'metadata': metadata
+            }
+        except Exception as e:
+            print(f"    [AVISO] Erro ao salvar {doc['title']}: {e}")
+            return None
+    
+    def generate_jsonl(self):
+        """Gera arquivo JSONL para indexação"""
+        jsonl_file = Path("docs_indexacao.jsonl")
+        
+        with open(jsonl_file, 'w', encoding='utf-8') as f:
+            for doc in self.documents:
+                # Documento para Meilisearch
+                index_doc = {
+                    'id': doc['url'],  # URL como ID único
+                    'title': doc['title'],
+                    'url': doc['url'],
+                    'module': doc['breadcrumb'][0] if doc['breadcrumb'] else 'unknown',
+                    'category': doc['breadcrumb'][1] if len(doc['breadcrumb']) > 1 else '',
+                    'subcategory': doc['breadcrumb'][2] if len(doc['breadcrumb']) > 2 else '',
+                    'breadcrumb': ' > '.join(doc['breadcrumb']),
+                    'content': doc['text_content'][:5000],  # Primeiros 5k chars
+                    'content_length': doc['total_chars'],
+                    'headers': doc['headers'][:5],  # Primeiros 5 headers
+                    'tags': doc['breadcrumb'][1:],  # Tags são as categorias
+                    'language': 'pt-BR',
+                    'indexed_at': datetime.now().isoformat()
+                }
+                
+                f.write(json.dumps(index_doc, ensure_ascii=False) + '\n')
+        
+        return jsonl_file
+    
+    async def scrape_module(self, module_name: str, base_url: str, page):
+        """Scrapa um módulo completo"""
+        print(f"\n{'='*90}")
+        print(f"[MÓDULO] {module_name}")
+        print(f"{'='*90}\n")
+        
+        # Detectar tipo
+        await page.goto(base_url, wait_until="networkidle", timeout=30000)
+        await asyncio.sleep(2)
+        
+        doc_type = await self.detect_doc_type(page)
+        print(f"[1] Tipo de documentação: {doc_type.upper()}\n")
+        
+        self.metadata['statistics']['by_type'][doc_type] += 1
+        self.metadata['statistics']['by_module'][module_name] = {
+            'type': doc_type,
+            'pages': 0,
+            'total_chars': 0
+        }
+        
+        # Extrair hierarquia
+        print(f"[2] Extraindo hierarquia...")
+        
+        if doc_type == 'astro':
+            menu = await self.extract_astro_menu(page)
+        else:
+            menu = await self.extract_madcap_seções(page)
+        
+        all_links = await self.flatten_menu(menu)
+        print(f"    [OK] {len(all_links)} paginas encontradas\n")
+        
+        # Scraping
+        print(f"[3] Scrapando paginas...")
+        
+        for i, link in enumerate(all_links, 1):
+            if (i - 1) % 10 == 0:
+                print(f"    [{i}/{len(all_links)}] {link['text'][:40]}")
+            
+            # Construir URL absoluta
+            absolute_url = self.build_absolute_url(base_url, link['url'])
+            
+            if not absolute_url:
+                self.metadata['statistics']['navigation_stats']['skipped'] += 1
+                continue
+            
+            # Scraping com retry para iframes MadCap que demoram a carregar
+            # Usar o doc_type da tentativa anterior (armazenado no metadata)
+            doc_type = self.metadata['statistics']['by_module'][module_name]['type']
+            max_retries = 3 if doc_type == 'madcap' else 1  # MadCap pode precisar de mais tentativas
+            content = await self.scrape_page_with_retry(page, absolute_url, base_url, max_retries)
+            
+            # Validação melhorada: conteúdo mínimo de 100 caracteres
+            # (aumentado de 50 para evitar conteúdo lixo ou placeholders)
+            if content and content['total_chars'] >= 100:
+                breadcrumb = [module_name] + link['breadcrumb']
+                
+                # Salvar documento
+                save_result = await self.save_document(content, breadcrumb)
+                
+                # Adicionar aos documentos para JSONL
+                if save_result:
+                    self.documents.append({
+                        'title': content['title'],
+                        'url': absolute_url,
+                        'breadcrumb': breadcrumb,
+                        'text_content': content['text_content'],
+                        'total_chars': content['total_chars'],
+                        'headers': content['headers'],
+                        'paragraphs': content['paragraphs'],
+                        'lists': content['lists'],
+                        'links': content['links']
+                    })
+                    
+                    # Atualizar stats
+                    self.metadata['statistics']['by_module'][module_name]['pages'] += 1
+                    self.metadata['statistics']['by_module'][module_name]['total_chars'] += content['total_chars']
+                    self.metadata['statistics']['navigation_stats']['successful'] += 1
+            else:
+                self.metadata['statistics']['navigation_stats']['failed'] += 1
+        
+        print(f"    [OK] Completo\n")
+    
+    async def run(self, modules: Optional[List[Tuple[str, str]]] = None):
+        """Executa scraping para múltiplos módulos ou descobre automaticamente"""
+        try:
+            from playwright.async_api import async_playwright
+        except ImportError:
+            import subprocess, sys
+            subprocess.run([sys.executable, "-m", "pip", "install", "-q", "playwright"], check=True)
+            from playwright.async_api import async_playwright
+        
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=True)
+            page = await browser.new_page(viewport={"width": 1920, "height": 1080})
+            
+            print("\n" + "="*90)
+            print("[SCRAPER UNIFICADO] Senior Documentation")
+            print("="*90)
+            
+            for module_name, base_url in modules:
+                if not base_url or base_url.strip() == '':
+                    print(f"\n[AVISO] URL vazia para {module_name}, pulando...")
+                    continue
+                    
+                await self.scrape_module(module_name, base_url, page)
+            
+            await browser.close()
+        
+        # Gerar JSONL
+        print(f"\n[4] Gerando arquivo JSONL para indexação...")
+        jsonl_file = self.generate_jsonl()
+        print(f"    [OK] {jsonl_file}")
+        print(f"    [OK] {len(self.documents)} documentos\n")
+        
+        # Atualizar stats
+        self.metadata['statistics']['total_pages'] = len(self.documents)
+        self.metadata['statistics']['total_chars'] = sum(d['total_chars'] for d in self.documents)
+        self.metadata['output_jsonl'] = str(jsonl_file)
+        
+        # Salvar metadata
+        meta_file = Path("docs_metadata.json")
+        with open(meta_file, 'w', encoding='utf-8') as f:
+            json.dump(self.metadata, f, ensure_ascii=False, indent=2)
+        
+        # Resumo final
+        print("="*90)
+        print("[RESULTADO FINAL]")
+        print("="*90)
+        print(f"\n[INFO] Documentos salvos em: {self.output_dir}/")
+        print(f"[INFO] Total de paginas: {self.metadata['statistics']['total_pages']}")
+        print(f"[INFO] Total de conteudo: {self.metadata['statistics']['total_chars']:,} caracteres")
+        print(f"[INFO] Arquivo JSONL: {jsonl_file}")
+        print(f"[INFO] Metadados: {meta_file}\n")
+        
+        print("[NAVEGACAO]")
+        nav_stats = self.metadata['statistics']['navigation_stats']
+        print(f"  Bem-sucedidas: {nav_stats['successful']}")
+        print(f"  Falhadas: {nav_stats['failed']}")
+        print(f"  Puladas: {nav_stats['skipped']}\n")
+        
+        print("[MODULOS PROCESSADOS]")
+        for mod_name, stats in self.metadata['statistics']['by_module'].items():
+            print(f"  - {mod_name}: {stats['pages']} paginas | {stats['total_chars']:,} chars ({stats['type']})")
+        
+        print("\n" + "="*90 + "\n")
+
+
+async def main():
+    scraper = SeniorDocScraper()
+    
+    # Tentar carregar módulos descobertos
+    modulos_file = Path("modulos_descobertos.json")
+    if modulos_file.exists():
+        with open(modulos_file, 'r', encoding='utf-8') as f:
+            modulos_dict = json.load(f)
+            modules = [(name, info['url']) for name, info in modulos_dict.items()]
+    else:
+        # Fallback se arquivo não existe
+        modules = [
+            ("Gestão de Relacionamento CRM", "https://documentacao.senior.com.br/gestao-de-relacionamento-crm/6.2.4/"),
+            ("Tecnologia", "https://documentacao.senior.com.br/tecnologia/5.10.4/"),
+        ]
+    
+    # Executar com os módulos carregados
+    await scraper.run(modules=modules)
+
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n\n[AVISO] Interrompido")
+    except Exception as e:
+        print(f"\n[ERRO] {e}")
+        import traceback
+        traceback.print_exc()

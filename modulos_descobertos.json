@@ -1,0 +1,82 @@
+{
+  "GESTAOEMPRESARIALERP": {
+    "url": "https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/",
+    "version": "5.10.4",
+    "slug": "gestaoempresarialerp"
+  },
+  "GOUP": {
+    "url": "https://documentacao.senior.com.br/goup/5.10.4/",
+    "version": "5.10.4",
+    "slug": "goup"
+  },
+  "GESTAODELOJAS": {
+    "url": "https://documentacao.senior.com.br/gestaodelojas/6.2.20/",
+    "version": "6.2.20",
+    "slug": "gestaodelojas"
+  },
+  "GESTAO DE PESSOAS HCM": {
+    "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/",
+    "version": "6.10.4",
+    "slug": "gestao-de-pessoas-hcm"
+  },
+  "DOCUMENTOSELETRONICOS": {
+    "url": "https://documentacao.senior.com.br/documentoseletronicos/5.8.16/",
+    "version": "5.8.16",
+    "slug": "documentoseletronicos"
+  },
+  "RONDA SENIOR": {
+    "url": "https://documentacao.senior.com.br/ronda-senior/6.10.4/",
+    "version": "6.10.4",
+    "slug": "ronda-senior"
+  },
+  "PORTAL": {
+    "url": "https://documentacao.senior.com.br/portal/6.10.1/",
+    "version": "6.10.1",
+    "slug": "portal"
+  },
+  "BI": {
+    "url": "https://documentacao.senior.com.br/bi/5.8.12/",
+    "version": "5.8.12",
+    "slug": "bi"
+  },
+  "WORKFLOW": {
+    "url": "https://documentacao.senior.com.br/workflow/6.10.1/",
+    "version": "6.10.1",
+    "slug": "workflow"
+  },
+  "GESTAO DE RELACIONAMENTO CRM": {
+    "url": "https://documentacao.senior.com.br/gestao-de-relacionamento-crm/6.2.4/",
+    "version": "6.2.4",
+    "slug": "gestao-de-relacionamento-crm"
+  },
+  "ROTEIRIZACAOEMONITORAMENTO": {
+    "url": "https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/",
+    "version": "7.0.0",
+    "slug": "roteirizacaoemonitoramento"
+  },
+  "SENIOR AI LOGISTICS": {
+    "url": "https://documentacao.senior.com.br/senior-ai-logistics/1.0.0/",
+    "version": "1.0.0",
+    "slug": "senior-ai-logistics"
+  },
+  "GESTAODETRANSPORTESTMS": {
+    "url": "https://documentacao.senior.com.br/gestaodetransportestms/7.0.0/",
+    "version": "7.0.0",
+    "slug": "gestaodetransportestms"
+  },
+  "GESTAODEFRETESFIS": {
+    "url": "https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/",
+    "version": "7.0.0",
+    "slug": "gestaodefretesfis"
+  },
+  "TECNOLOGIA": {
+    "url": "https://documentacao.senior.com.br/tecnologia/5.10.4/",
+    "version": "5.10.4",
+    "slug": "tecnologia"
+  },
+  "BPM": {
+    "url": "https://documentacao.senior.com.br/bpm/7.0.0/",
+    "version": "7.0.0",
+    "slug": "bpm"
+  }
+}

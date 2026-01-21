@@ -1,0 +1,7 @@
+Flask==3.1.2
+Flask-CORS==5.0.1
+psycopg2-binary==2.9.11
+requests==2.32.5
+scrapy==2.11.2
+Scrapy-Playwright==0.0.35
+playwright==1.57.0

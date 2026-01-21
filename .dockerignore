@@ -1,0 +1,23 @@
+# Docker ignore file
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+.DS_Store
+*.log
+.git/
+.gitignore
+.env
+.vscode/
+.idea/
+spider_*.log
+*.db
+docs/
+AI/
+.git
