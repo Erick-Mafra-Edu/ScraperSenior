@@ -26,35 +26,102 @@ import asyncio
 from pathlib import Path
 from typing import Any, Dict, List
 import sys
+import os
+
+# Forçar UTF-8 para evitar problemas de encoding no Windows
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
 
 try:
     import meilisearch
     MEILISEARCH_AVAILABLE = True
 except ImportError:
     MEILISEARCH_AVAILABLE = False
-    print("[!] Meilisearch client não disponível. Usando modo local.")
+    # Comentado para não interferir com protocolo MCP quando rodando em VS Code
+    # print("[!] Meilisearch client não disponível. Usando modo local.")
+
+
+def load_config(config_path: str = None) -> Dict[str, Any]:
+    """
+    Carrega a configuração do arquivo mcp_config.json
+    
+    Args:
+        config_path: Caminho para o arquivo de configuração (opcional)
+    
+    Returns:
+        Dicionário com as configurações
+    """
+    if config_path is None:
+        # Tentar encontrar mcp_config.json no diretório raiz do projeto
+        script_dir = Path(__file__).parent.parent  # Sobe um nível de src/
+        config_path = script_dir / "mcp_config.json"
+    else:
+        config_path = Path(config_path)
+    
+    # Configurações padrão
+    default_config = {
+        "meilisearch": {
+            "url": "http://localhost:7700",
+            "apiKey": "meilisearch_master_key"
+        },
+        "settings": {
+            "indexName": "senior_docs",
+            "maxResults": 10,
+            "timeout": 5000
+        }
+    }
+    
+    # Tentar carregar o arquivo de configuração
+    if config_path.exists():
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config = json.load(f)
+                # Comentado para não interferir com protocolo MCP
+                # print(f"✓ Configuração carregada de: {config_path}")
+                # Mesclar com padrões se algo estiver faltando
+                default_config.update(config)
+                return default_config
+        except Exception as e:
+            # Comentado para não interferir com protocolo MCP
+            # print(f"[!] Erro ao carregar configuração: {e}")
+            # print(f"[!] Usando configurações padrão")
+            return default_config
+    else:
+        # Comentado para não interferir com protocolo MCP
+        # print(f"[!] Arquivo de configuração não encontrado: {config_path}")
+        # print(f"[!] Usando configurações padrão")
+        return default_config
 
 
 class SeniorDocumentationMCP:
     """MCP Server para documentação Senior"""
     
-    def __init__(self, meilisearch_url: str = "http://localhost:7700", api_key: str = "meilisearch_master_key"):
-        self.meilisearch_url = meilisearch_url
-        self.api_key = api_key
-        self.index_name = "senior_docs"
+    def __init__(self, meilisearch_url: str = None, api_key: str = None, config_path: str = None):
+        # Carregar configuração
+        self.config = load_config(config_path)
+        
+        # Usar valores fornecidos ou da configuração
+        self.meilisearch_url = meilisearch_url or self.config["meilisearch"]["url"]
+        self.api_key = api_key or self.config["meilisearch"]["apiKey"]
+        self.index_name = self.config["settings"].get("indexName", "senior_docs")
+        self.max_results = self.config["settings"].get("maxResults", 10)
+        
         self.client = None
         self.local_documents = []
         self.use_local = not MEILISEARCH_AVAILABLE
         
         if MEILISEARCH_AVAILABLE:
             try:
-                self.client = meilisearch.Client(meilisearch_url, api_key)
+                self.client = meilisearch.Client(self.meilisearch_url, self.api_key)
                 # Testar conexão
                 self.client.health()
-                print(f"[✓] Conectado ao Meilisearch: {meilisearch_url}")
+                # Comentado para não interferir com protocolo MCP
+                # print(f"[✓] Conectado ao Meilisearch: {self.meilisearch_url}")
                 self.use_local = False
             except:
-                print("[!] Não conseguiu conectar ao Meilisearch. Usando modo local.")
+                # Comentado para não interferir com protocolo MCP
+                # print("[!] Não conseguiu conectar ao Meilisearch. Usando modo local.")
                 self.use_local = True
                 self._load_local_documents()
         else:
@@ -64,7 +131,8 @@ class SeniorDocumentationMCP:
         """Carrega documentos do arquivo JSONL local"""
         index_file = Path("docs_indexacao_detailed.jsonl")
         if not index_file.exists():
-            print(f"[!] Arquivo não encontrado: {index_file}")
+            # Comentado para não interferir com protocolo MCP
+            # print(f"[!] Arquivo não encontrado: {index_file}")
             return
         
         try:
@@ -72,9 +140,12 @@ class SeniorDocumentationMCP:
                 for line in f:
                     if line.strip():
                         self.local_documents.append(json.loads(line))
-            print(f"[✓] Carregados {len(self.local_documents)} documentos localmente")
+            # Comentado para não interferir com protocolo MCP
+            # print(f"[✓] Carregados {len(self.local_documents)} documentos localmente")
         except Exception as e:
-            print(f"[✗] Erro ao carregar documentos: {e}")
+            # Comentado para não interferir com protocolo MCP
+            # print(f"[✗] Erro ao carregar documentos: {e}")
+            pass
     
     def search(self, query: str, module: str = None, limit: int = 5) -> List[Dict]:
         """
@@ -111,7 +182,7 @@ class SeniorDocumentationMCP:
             results = index.search(query, search_params)
             return results.get("hits", [])
         except Exception as e:
-            print(f"[✗] Erro ao buscar: {e}")
+            # Silenciar para não interferir no protocolo MCP stdio
             return []
     
     def _search_local(self, query: str, module: str = None, limit: int = 5) -> List[Dict]:
@@ -171,7 +242,7 @@ class SeniorDocumentationMCP:
             )
             return results.get("hits", [])
         except Exception as e:
-            print(f"[✗] Erro ao buscar módulo: {e}")
+            # Silenciar para não interferir no protocolo MCP stdio
             return []
     
     def get_modules(self) -> List[str]:
@@ -192,7 +263,7 @@ class SeniorDocumentationMCP:
             modules = facets.get("module", {})
             return sorted(list(modules.keys()))
         except Exception as e:
-            print(f"[✗] Erro ao listar módulos: {e}")
+            # Silenciar para não interferir no protocolo MCP stdio
             return []
     
     def get_stats(self) -> Dict[str, Any]:
@@ -215,7 +286,7 @@ class SeniorDocumentationMCP:
             stats['source'] = 'meilisearch'
             return stats
         except Exception as e:
-            print(f"[✗] Erro ao obter stats: {e}")
+            # Silenciar para não interferir no protocolo MCP stdio
             return {}
 
 
@@ -227,6 +298,24 @@ class MCPServer:
         self.tools = {
             "search_docs": {
                 "description": "Busca documentos por palavras-chave",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "query": {
+                            "type": "string",
+                            "description": "Palavras-chave para busca (obrigatório)"
+                        },
+                        "module": {
+                            "type": "string",
+                            "description": "Módulo específico para filtrar (opcional)"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "description": "Número máximo de resultados (padrão: 5)"
+                        }
+                    },
+                    "required": ["query"]
+                },
                 "parameters": {
                     "query": {"type": "string", "description": "Palavras-chave para busca"},
                     "module": {"type": "string", "description": "Módulo específico (opcional)"},
@@ -234,18 +323,42 @@ class MCPServer:
                 }
             },
             "list_modules": {
-                "description": "Lista todos os módulos disponíveis",
+                "description": "Lista todos os módulos disponíveis com contagem de documentos",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                },
                 "parameters": {}
             },
             "get_module_docs": {
-                "description": "Retorna documentos de um módulo",
+                "description": "Retorna todos os documentos de um módulo específico",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "module": {
+                            "type": "string",
+                            "description": "Nome do módulo (obrigatório)"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "description": "Número máximo de resultados (padrão: 20)"
+                        }
+                    },
+                    "required": ["module"]
+                },
                 "parameters": {
                     "module": {"type": "string", "description": "Nome do módulo"},
                     "limit": {"type": "number", "description": "Número de resultados (padrão: 20)"}
                 }
             },
             "get_stats": {
-                "description": "Retorna estatísticas do índice",
+                "description": "Retorna estatísticas da base de documentação",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                },
                 "parameters": {}
             }
         }
@@ -302,42 +415,44 @@ class MCPServer:
 
 
 def main():
-    print("\n" + "="*80)
-    print("[MCP SERVER] Senior Documentation Search")
-    print("="*80 + "\n")
+    # Comentado para não interferir com protocolo MCP
+    # Os prints são enviados via stderr, mas interferem no parsing do protocolo
+    # print("\n" + "="*80)
+    # print("[MCP SERVER] Senior Documentation Search")
+    # print("="*80 + "\n")
     
     server = MCPServer()
     
     # Exibir ferramentas disponíveis
-    print("[FERRAMENTAS DISPONÍVEIS]\n")
-    for tool_name, tool_info in server.tools.items():
-        print(f"  • {tool_name}")
-        print(f"    {tool_info['description']}")
+    # print("[FERRAMENTAS DISPONÍVEIS]\n")
+    # for tool_name, tool_info in server.tools.items():
+    #     print(f"  • {tool_name}")
+    #     print(f"    {tool_info['description']}")
     
     # Exibir módulos
-    print("\n[MÓDULOS DISPONÍVEIS]\n")
-    modules = server.doc_search.get_modules()
-    for i, module in enumerate(modules, 1):
-        print(f"  {i}. {module}")
+    # print("\n[MÓDULOS DISPONÍVEIS]\n")
+    # modules = server.doc_search.get_modules()
+    # for i, module in enumerate(modules, 1):
+    #     print(f"  {i}. {module}")
     
     # Exibir estatísticas
-    print("\n[ESTATÍSTICAS]\n")
-    stats = server.doc_search.get_stats()
-    print(f"  Total de documentos: {stats.get('total_documents', 'N/A')}")
-    print(f"  Módulos: {stats.get('modules', 'N/A')}")
-    print(f"  Fonte: {stats.get('source', 'N/A')}")
+    # print("\n[ESTATÍSTICAS]\n")
+    # stats = server.doc_search.get_stats()
+    # print(f"  Total de documentos: {stats.get('total_documents', 'N/A')}")
+    # print(f"  Módulos: {stats.get('modules', 'N/A')}")
+    # print(f"  Fonte: {stats.get('source', 'N/A')}")
     
     # Demo
-    print("\n[DEMO - Busca por 'CRM']\n")
-    result = server.handle_tool_call("search_docs", {"query": "CRM", "limit": 3})
-    result_obj = json.loads(result)
-    for doc in result_obj.get("results", [])[:3]:
-        print(f"  • {doc['title']}")
-        print(f"    Módulo: {doc['module']} | URL: {doc['url'][:80]}...")
+    # print("\n[DEMO - Busca por 'CRM']\n")
+    # result = server.handle_tool_call("search_docs", {"query": "CRM", "limit": 3})
+    # result_obj = json.loads(result)
+    # for doc in result_obj.get("results", [])[:3]:
+    #     print(f"  • {doc['title']}")
+    #     print(f"    Módulo: {doc['module']} | URL: {doc['url'][:80]}...")
     
-    print("\n" + "="*80 + "\n")
-    print("[✓] MCP Server pronto para integração!")
-    print("Ferramentas podem ser chamadas via MCP protocol.\n")
+    # print("\n" + "="*80 + "\n")
+    # print("[✓] MCP Server pronto para integração!")
+    # print("Ferramentas podem ser chamadas via MCP protocol.\n")
 
 
 if __name__ == "__main__":

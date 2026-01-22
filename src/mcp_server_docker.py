@@ -1,163 +1,329 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-MCP Server with Health Check Endpoint
-====================================
+MCP Server HTTP - Senior Documentation Search
+===============================================
 
-Wrapper para executar MCP Server com suporte a health checks via HTTP.
-Útil para Docker containers.
+Implementação de servidor HTTP com protocolo MCP JSON-RPC para Docker.
+Compatível com VS Code MCP protocol.
 """
 
 import json
-import os
+import asyncio
 import sys
+import os
 from pathlib import Path
+from typing import Any, Dict, List
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from urllib.parse import urlparse, parse_qs
 import threading
-from datetime import datetime
 
-# Add src to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Forçar UTF-8 para evitar problemas de encoding no Windows
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except:
+        pass
 
-from src.mcp_server import MCPServer
+# Importar o MCP Server
+sys.path.insert(0, str(Path(__file__).parent))
+from mcp_server import SeniorDocumentationMCP, MCPServer
 
-
-class HealthCheckHandler(BaseHTTPRequestHandler):
-    """Handler para health check HTTP"""
+class MCPHTTPHandler(BaseHTTPRequestHandler):
+    """Handler HTTP para o protocolo MCP JSON-RPC"""
     
-    server_instance = None
+    # Variável de classe para compartilhar o servidor MCP
+    mcp_server = None
+    request_id_counter = 0
     
     def do_GET(self):
-        """Handle GET requests"""
-        if self.path == '/health':
+        """Tratador GET para health checks"""
+        path = urlparse(self.path).path
+        
+        if path == '/health':
             self.send_response(200)
-            self.send_header('Content-type', 'application/json')
+            self.send_header('Content-Type', 'application/json')
             self.end_headers()
             
             response = {
-                'status': 'healthy',
-                'timestamp': datetime.now().isoformat(),
-                'service': 'MCP Server - Senior Documentation',
-                'mode': 'local' if self.server_instance.doc_search.use_local else 'meilisearch'
+                "status": "healthy",
+                "service": "MCP Server - Senior Documentation",
+                "mode": "http"
             }
-            self.wfile.write(json.dumps(response).encode())
+            self.wfile.write(json.dumps(response).encode('utf-8'))
         
-        elif self.path == '/stats':
+        elif path == '/ready':
             self.send_response(200)
-            self.send_header('Content-type', 'application/json')
-            self.end_headers()
-            
-            stats = self.server_instance.doc_search.get_stats()
-            self.wfile.write(json.dumps(stats).encode())
-        
-        elif self.path == '/ready':
-            # Ready check - returns 200 if service is ready
-            self.send_response(200)
-            self.send_header('Content-type', 'application/json')
+            self.send_header('Content-Type', 'application/json')
             self.end_headers()
             
             response = {
-                'ready': True,
-                'timestamp': datetime.now().isoformat()
+                "ready": True,
+                "tools": list(self.mcp_server.tools.keys()) if self.mcp_server else []
             }
-            self.wfile.write(json.dumps(response).encode())
+            self.wfile.write(json.dumps(response).encode('utf-8'))
+        
+        elif path == '/stats':
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            
+            if self.mcp_server and self.mcp_server.doc_search:
+                stats = self.mcp_server.doc_search.get_stats()
+                response = {
+                    "stats": stats,
+                    "tools": len(self.mcp_server.tools),
+                    "modules": len(self.mcp_server.doc_search.get_modules())
+                }
+            else:
+                response = {"error": "MCP Server not initialized"}
+            
+            self.wfile.write(json.dumps(response).encode('utf-8'))
+        
+        elif path == '/tools':
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            
+            if self.mcp_server:
+                tools = {
+                    name: {
+                        "description": info.get("description", ""),
+                        "inputSchema": info.get("inputSchema", {})
+                    }
+                    for name, info in self.mcp_server.tools.items()
+                }
+                response = {"tools": tools}
+            else:
+                response = {"error": "MCP Server not initialized", "tools": {}}
+            
+            self.wfile.write(json.dumps(response).encode('utf-8'))
         
         else:
             self.send_response(404)
-            self.send_header('Content-type', 'application/json')
+            self.send_header('Content-Type', 'application/json')
             self.end_headers()
+            self.wfile.write(json.dumps({"error": "Not found"}).encode('utf-8'))
+    
+    def do_POST(self):
+        """Tratador POST para protocolo MCP JSON-RPC"""
+        path = urlparse(self.path).path
+        
+        try:
+            # Ler corpo da requisição
+            content_length = int(self.headers.get('Content-Length', 0))
+            if content_length == 0:
+                self.send_response(400)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": "Empty request body"}).encode('utf-8'))
+                return
+            
+            body = self.rfile.read(content_length).decode('utf-8')
+            data = json.loads(body) if body else {}
+            
+            # Processar mensagem MCP JSON-RPC
+            if path == '/' or path == '/messages':
+                # Verificar se é um JSON-RPC válido
+                if not isinstance(data, dict):
+                    self.send_error_response(400, "Invalid JSON-RPC request", None)
+                    return
+                
+                jsonrpc = data.get('jsonrpc')
+                method = data.get('method')
+                params = data.get('params', {})
+                request_id = data.get('id')
+                
+                # Se é uma notificação (sem id), processar silenciosamente
+                if jsonrpc != '2.0':
+                    self.send_error_response(400, "Invalid jsonrpc version", request_id)
+                    return
+                
+                # Processar método RPC
+                if method == 'initialize':
+                    self.handle_initialize(request_id, params)
+                elif method == 'resources/list':
+                    self.handle_resources_list(request_id)
+                elif method == 'tools/list':
+                    self.handle_tools_list(request_id)
+                elif method == 'tools/call':
+                    self.handle_tool_call(request_id, params)
+                elif method == 'prompts/list':
+                    self.handle_prompts_list(request_id)
+                else:
+                    self.send_error_response(-32601, f"Method not found: {method}", request_id)
+            
+            else:
+                self.send_response(404)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": "Not found"}).encode('utf-8'))
+        
+        except json.JSONDecodeError as e:
+            self.send_error_response(400, f"JSON decode error: {str(e)}", None)
+        except Exception as e:
+            self.send_error_response(500, str(e), None)
+    
+    def send_response_json(self, request_id: int, result: Any):
+        """Enviar resposta JSON-RPC 2.0 de sucesso"""
+        response = {
+            "jsonrpc": "2.0",
+            "id": request_id,
+            "result": result
+        }
+        self.send_response(200)
+        self.send_header('Content-Type', 'application/json')
+        self.end_headers()
+        self.wfile.write(json.dumps(response).encode('utf-8'))
+    
+    def send_error_response(self, error_code: int, error_msg: str, request_id=None):
+        """Enviar resposta JSON-RPC 2.0 de erro"""
+        response = {
+            "jsonrpc": "2.0",
+            "error": {
+                "code": error_code,
+                "message": error_msg
+            }
+        }
+        if request_id is not None:
+            response["id"] = request_id
+        
+        http_code = 400 if error_code >= 400 else 200
+        self.send_response(http_code)
+        self.send_header('Content-Type', 'application/json')
+        self.end_headers()
+        self.wfile.write(json.dumps(response).encode('utf-8'))
+    
+    def handle_initialize(self, request_id: int, params: dict):
+        """Responder ao método initialize com schemas das ferramentas"""
+        if not self.mcp_server:
+            self.send_error_response(503, "Server not initialized", request_id)
+            return
+        
+        # Obter versão do protocolo
+        protocol_version = params.get('protocolVersion', '2024-11-05')
+        
+        # Construir lista de ferramentas com schemas
+        tools = []
+        for name, info in self.mcp_server.tools.items():
+            tool = {
+                "name": name,
+                "description": info.get("description", ""),
+                "inputSchema": info.get("inputSchema", {})
+            }
+            tools.append(tool)
+        
+        response = {
+            "protocolVersion": protocol_version,
+            "capabilities": {
+                "resources": {},
+                "tools": {},
+                "prompts": {}
+            },
+            "serverInfo": {
+                "name": "Senior Documentation MCP",
+                "version": "1.0.0"
+            },
+            "tools": tools
+        }
+        self.send_response_json(request_id, response)
+    
+    def handle_resources_list(self, request_id: int):
+        """Responder ao método resources/list"""
+        response = {
+            "resources": []
+        }
+        self.send_response_json(request_id, response)
+    
+    def handle_tools_list(self, request_id: int):
+        """Responder ao método tools/list"""
+        if not self.mcp_server:
+            self.send_error_response(503, "Server not initialized", request_id)
+            return
+        
+        tools = []
+        for name, info in self.mcp_server.tools.items():
+            tool = {
+                "name": name,
+                "description": info.get("description", ""),
+                "inputSchema": info.get("inputSchema", {})
+            }
+            tools.append(tool)
+        
+        response = {
+            "tools": tools
+        }
+        self.send_response_json(request_id, response)
+    
+    def handle_tool_call(self, request_id: int, params: dict):
+        """Responder ao método tools/call"""
+        if not self.mcp_server:
+            self.send_error_response(503, "Server not initialized", request_id)
+            return
+        
+        tool_name = params.get('name')
+        tool_args = params.get('arguments', {})
+        
+        if not tool_name:
+            self.send_error_response(400, "Tool name is required", request_id)
+            return
+        
+        try:
+            # Chamar a ferramenta
+            result = self.mcp_server.handle_tool_call(tool_name, tool_args)
+            result_obj = json.loads(result) if isinstance(result, str) else result
             
             response = {
-                'error': 'Not found',
-                'available_endpoints': ['/health', '/stats', '/ready']
+                "content": [
+                    {
+                        "type": "text",
+                        "text": json.dumps(result_obj, ensure_ascii=False)
+                    }
+                ]
             }
-            self.wfile.write(json.dumps(response).encode())
+            self.send_response_json(request_id, response)
+        except Exception as e:
+            self.send_error_response(500, f"Tool error: {str(e)}", request_id)
+    
+    def handle_prompts_list(self, request_id: int):
+        """Responder ao método prompts/list"""
+        response = {
+            "prompts": []
+        }
+        self.send_response_json(request_id, response)
     
     def log_message(self, format, *args):
-        """Suppress default logging"""
+        """Suprimir logs padrão"""
         pass
 
-
-def run_health_check_server(mcp_server, host='0.0.0.0', port=8000):
-    """Run health check HTTP server in background"""
-    HealthCheckHandler.server_instance = mcp_server
+def run_server(host='0.0.0.0', port=8000):
+    """Executar servidor HTTP"""
     
-    server = HTTPServer((host, port), HealthCheckHandler)
-    thread = threading.Thread(target=server.serve_forever, daemon=True)
-    thread.start()
-    
-    print(f"[✓] Health check server listening on {host}:{port}")
-    return server
-
-
-def main():
-    import argparse
-    
-    parser = argparse.ArgumentParser(description="MCP Server with Health Checks")
-    parser.add_argument("--meilisearch-url", default="http://localhost:7700", help="URL do Meilisearch")
-    parser.add_argument("--api-key", default="meilisearch_master_key", help="Chave de API")
-    parser.add_argument("--health-port", type=int, default=8000, help="Porta para health checks")
-    parser.add_argument("--health-host", default="0.0.0.0", help="Host para health checks")
-    
-    args = parser.parse_args()
-    
-    # Use environment variables if available
-    meilisearch_url = os.getenv('MEILISEARCH_URL', args.meilisearch_url)
-    api_key = os.getenv('MEILISEARCH_KEY', args.api_key)
-    health_port = int(os.getenv('HEALTH_CHECK_PORT', args.health_port))
-    health_host = os.getenv('HEALTH_CHECK_HOST', args.health_host)
-    
-    print("\n" + "="*80)
-    print("[MCP SERVER] Senior Documentation Search")
-    print("="*80 + "\n")
-    
-    # Create MCP server
+    # Inicializar MCP Server
     mcp_server = MCPServer()
+    MCPHTTPHandler.mcp_server = mcp_server
     
-    # Print server info
-    modules = mcp_server.doc_search.get_modules()
-    stats = mcp_server.doc_search.get_stats()
+    # Criar servidor HTTP
+    server = HTTPServer((host, port), MCPHTTPHandler)
     
-    print("[MÓDULOS DISPONÍVEIS]\n")
-    for i, module in enumerate(modules, 1):
-        print(f"  {i}. {module}")
+    print(f"[✓] MCP Server HTTP iniciado em http://{host}:{port}")
+    print(f"[✓] Endpoints disponíveis:")
+    print(f"    - GET  /health   - Verificar saúde do servidor")
+    print(f"    - GET  /ready    - Verificar se está pronto")
+    print(f"    - GET  /stats    - Estatísticas do servidor")
+    print(f"    - GET  /tools    - Listar ferramentas disponíveis")
+    print(f"    - POST /call     - Chamar ferramenta")
+    print(f"    - POST /search   - Buscar documentos")
+    print()
     
-    print(f"\n[ESTATÍSTICAS]\n")
-    print(f"  Total de documentos: {stats.get('total_documents', 'N/A')}")
-    print(f"  Módulos: {len(modules)}")
-    print(f"  Fonte: {stats.get('source', 'N/A')}")
-    
-    # Start health check server
-    print(f"\n[HEALTH CHECK]")
-    run_health_check_server(mcp_server, health_host, health_port)
-    
-    # Print available endpoints
-    print(f"\n[ENDPOINTS DISPONÍVEIS]")
-    print(f"  • GET http://{health_host}:{health_port}/health - Health status")
-    print(f"  • GET http://{health_host}:{health_port}/stats - Statistics")
-    print(f"  • GET http://{health_host}:{health_port}/ready - Readiness probe")
-    
-    # Print MCP tools
-    print(f"\n[FERRAMENTAS MCP DISPONÍVEIS]")
-    for tool_name, tool_info in mcp_server.tools.items():
-        print(f"  • {tool_name}")
-        print(f"    {tool_info['description']}")
-    
-    print(f"\n[STATUS]\n")
-    print(f"  ✓ MCP Server pronto para integração")
-    print(f"  ✓ Health checks ativados")
-    print(f"  ✓ Modo: {'local (JSONL)' if mcp_server.doc_search.use_local else 'Meilisearch'}")
-    print(f"\n{'='*80}\n")
-    
-    # Keep running
     try:
-        while True:
-            import time
-            time.sleep(1)
+        server.serve_forever()
     except KeyboardInterrupt:
-        print("\n[!] Encerrando servidor...")
-        sys.exit(0)
-
+        print("\n[!] Servidor encerrado")
+        server.shutdown()
 
 if __name__ == "__main__":
-    main()
+    # Pegar porta do ambiente ou usar padrão
+    port = int(os.getenv('PORT', 8000))
+    run_server(port=port)
