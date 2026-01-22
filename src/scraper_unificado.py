@@ -307,8 +307,34 @@ class SeniorDocScraper:
         
         content = await page.evaluate("""
             () => {
+                // Função auxiliar para extrair título
+                const extractTitle = () => {
+                    // Primeiro, tentar encontrar h1 dentro do iframe#topic
+                    try {
+                        const iframeTitle = document.querySelector('iframe#topic')?.contentDocument
+                            ?.querySelector('h1')?.textContent?.trim();
+                        if (iframeTitle) return iframeTitle;
+                    } catch (e) {
+                        // CORS ou iframe não acessível
+                    }
+                    
+                    // Se não encontrou no iframe, tentar h1 no document raiz
+                    const h1 = document.querySelector('h1')?.textContent?.trim();
+                    if (h1) return h1;
+                    
+                    // Fallback para document.title
+                    const docTitle = document.title?.trim();
+                    if (docTitle && docTitle.length > 0) return docTitle;
+                    
+                    // Último recurso: tentar qualquer h2 se não houver h1
+                    const h2 = document.querySelector('h2')?.textContent?.trim();
+                    if (h2) return h2;
+                    
+                    return '';
+                };
+                
                 const result = {
-                    title: document.querySelector('h1')?.textContent?.trim() || '',
+                    title: extractTitle(),
                     url: window.location.href,
                     text_content: '',
                     html_content: '',
