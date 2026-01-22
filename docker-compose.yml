@@ -1,4 +1,9 @@
-version: '3.8'
+# Docker Compose file compatible with both docker-compose and podman-compose
+# Works with Docker Compose v2+ and Podman Compose
+#
+# Usage:
+#   docker-compose up -d
+#   podman-compose up -d
 
 services:
   meilisearch:
@@ -7,6 +12,7 @@ services:
     environment:
       MEILI_ENV: production
       MEILI_MASTER_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+      MEILI_LOG_LEVEL: ${MEILI_LOG_LEVEL:-info}
     ports:
       - "7700:7700"
     volumes:
@@ -16,19 +22,23 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 5s
     networks:
       - senior-docs
     restart: unless-stopped
+    user: "${CONTAINER_USER:-1000:1000}"
 
   mcp-server:
     build:
       context: .
       dockerfile: Dockerfile.mcp
+    image: senior-docs-mcp:latest
     container_name: senior-docs-mcp-server
     environment:
       MEILISEARCH_URL: http://meilisearch:7700
       MEILISEARCH_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
       PYTHONUNBUFFERED: 1
+      LOG_LEVEL: ${LOG_LEVEL:-info}
     ports:
       - "8000:8000"
     depends_on:
@@ -39,10 +49,20 @@ services:
     restart: unless-stopped
     volumes:
       - ./docs_indexacao_detailed.jsonl:/app/docs_indexacao_detailed.jsonl:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    user: "${CONTAINER_USER:-1000:1000}"
 
 networks:
   senior-docs:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.9.0/24
 
 volumes:
   meilisearch_data:

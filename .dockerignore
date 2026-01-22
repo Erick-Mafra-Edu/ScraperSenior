@@ -1,4 +1,6 @@
-# Docker ignore file
+# Docker ignore file - optimized for both Docker and Podman
+
+# Python
 venv/
 __pycache__/
 *.pyc
@@ -9,15 +11,69 @@ __pycache__/
 htmlcov/
 dist/
 build/
-.DS_Store
-*.log
+pip-log.txt
+*.egg
+.Python
+env/
+ENV/
+
+# Version control
 .git/
 .gitignore
-.env
+.gitattributes
+
+# IDE & Editors
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs & Temp
 spider_*.log
+*.log
+logs/
 *.db
+tmp/
+temp/
+
+# Documentation (reduce image size)
 docs/
+docs_estruturado/
+*.md
+README.md
+
+# Tests
+tests/
+test_*.py
+*_test.py
+
+# Unnecessary
 AI/
-.git
+search_engine/
+RESUMO_ALTERACOES.py
+DOCKER_MCP_SETUP.py
+setup_claude_desktop.py
+MCP_AI_GUIDE.md
+QUICK_START.md
+STATUS_FINAL.md
+DIAGNOSTIC*.md
+*.json.bak
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# OS
+Thumbs.db
+.DS_Store
+
