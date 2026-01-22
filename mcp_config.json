@@ -1,0 +1,18 @@
+{
+    "mcpServers": {
+        "senior-docs": {
+            "command": "python",
+            "args": ["src/mcp_server.py"],
+            "cwd": "c:/Users/Digisys/scrapyTest"
+        }
+    },
+    "meilisearch": {
+        "url": "http://localhost:7700",
+        "apiKey": "meilisearch_master_key"
+    },
+    "settings": {
+        "indexName": "senior_docs",
+        "maxResults": 10,
+        "timeout": 5000
+    }
+}

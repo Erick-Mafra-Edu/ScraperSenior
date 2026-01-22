@@ -1,0 +1,418 @@
+{
+  "GESTAOEMPRESARIALERP": [
+    {
+      "url": "https://documentacao.senior.com.br/gestaoempresarialerp/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaoempresarialerp/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaoempresarialerp/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaoempresarialerp/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaoempresarialerp/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaoempresarialerp/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "GOUP": [
+    {
+      "url": "https://documentacao.senior.com.br/goup/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/goup/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/goup/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/goup/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/goup/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/goup/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "GESTAODELOJAS": [
+    {
+      "url": "https://documentacao.senior.com.br/gestaodelojas/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodelojas/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodelojas/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodelojas/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodelojas/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodelojas/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "GESTAO DE PESSOAS HCM": [
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "DOCUMENTOSELETRONICOS": [
+    {
+      "url": "https://documentacao.senior.com.br/documentoseletronicos/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/documentoseletronicos/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/documentoseletronicos/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/documentoseletronicos/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/documentoseletronicos/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/documentoseletronicos/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "RONDA SENIOR": [
+    {
+      "url": "https://documentacao.senior.com.br/ronda-senior/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/ronda-senior/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/ronda-senior/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/ronda-senior/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/ronda-senior/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/ronda-senior/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "PORTAL": [
+    {
+      "url": "https://documentacao.senior.com.br/portal/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/portal/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/portal/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/portal/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/portal/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/portal/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "BI": [
+    {
+      "url": "https://documentacao.senior.com.br/bi/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bi/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bi/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bi/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bi/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bi/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "WORKFLOW": [
+    {
+      "url": "https://documentacao.senior.com.br/workflow/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/workflow/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/workflow/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/workflow/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/workflow/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/workflow/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "GESTAO DE RELACIONAMENTO CRM": [
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-relacionamento-crm/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-relacionamento-crm/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-relacionamento-crm/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-relacionamento-crm/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-relacionamento-crm/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-relacionamento-crm/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "ROTEIRIZACAOEMONITORAMENTO": [
+    {
+      "url": "https://documentacao.senior.com.br/roteirizacaoemonitoramento/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/roteirizacaoemonitoramento/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/roteirizacaoemonitoramento/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/roteirizacaoemonitoramento/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/roteirizacaoemonitoramento/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/roteirizacaoemonitoramento/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "SENIOR AI LOGISTICS": [
+    {
+      "url": "https://documentacao.senior.com.br/senior-ai-logistics/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/senior-ai-logistics/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/senior-ai-logistics/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/senior-ai-logistics/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/senior-ai-logistics/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/senior-ai-logistics/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "GESTAODETRANSPORTESTMS": [
+    {
+      "url": "https://documentacao.senior.com.br/gestaodetransportestms/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodetransportestms/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodetransportestms/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodetransportestms/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodetransportestms/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodetransportestms/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "GESTAODEFRETESFIS": [
+    {
+      "url": "https://documentacao.senior.com.br/gestaodefretesfis/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodefretesfis/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodefretesfis/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodefretesfis/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodefretesfis/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestaodefretesfis/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "TECNOLOGIA": [
+    {
+      "url": "https://documentacao.senior.com.br/tecnologia/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/tecnologia/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/tecnologia/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/tecnologia/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/tecnologia/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/tecnologia/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ],
+  "BPM": [
+    {
+      "url": "https://documentacao.senior.com.br/bpm/notas-da-versao/",
+      "pattern": "notas-da-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bpm/release-notes/",
+      "pattern": "release-notes/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bpm/notas-de-versao/",
+      "pattern": "notas-de-versao/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bpm/changelog/",
+      "pattern": "changelog/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bpm/version-history/",
+      "pattern": "version-history/"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/bpm/historico-de-versoes/",
+      "pattern": "historico-de-versoes/"
+    }
+  ]
+}

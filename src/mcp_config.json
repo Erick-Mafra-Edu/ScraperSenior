@@ -1,0 +1,9 @@
+{
+    "mcpServers": {
+        "senior-docs": {
+            "command": "python",
+            "args": ["src/mcp_server.py"],
+            "cwd": "c:/Users/Digisys/scrapyTest"
+        }
+    }
+}

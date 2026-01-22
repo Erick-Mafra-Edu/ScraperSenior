@@ -55,7 +55,7 @@ class SeniorDocScraper:
         }
     
     def build_absolute_url(self, base_url: str, link_url: str) -> Optional[str]:
-        """Constrói URL absoluta a partir de base + link. Trata URLs MadCap com hash."""
+        """Constrói URL absoluta a partir de base + link. Trata URLs MadCap com hash e notas de versão."""
         if not link_url:
             return None
         
@@ -74,12 +74,76 @@ class SeniorDocScraper:
         
         return urljoin(base_url, link_url)
     
+    def normalize_anchor_url(self, url: str) -> str:
+        """Normaliza URLs com âncoras para extração de conteúdo (notas de versão, etc)."""
+        if '#' not in url:
+            return url
+        
+        # Para URLs de notas de versão com âncoras como #6-10-4.htm
+        # Converte para um anchor válido removendo .htm e ajustando formato
+        base, anchor = url.rsplit('#', 1)
+        
+        # Remove .htm/.html do final da âncora
+        anchor = anchor.replace('.htm', '').replace('.html', '')
+        
+        # Padroniza formato de versão (6-10-4 → 6-10-4)
+        return base + '#' + anchor
+    
     async def detect_doc_type(self, page) -> str:
         """Detecta tipo de documentação"""
         is_astro = await page.evaluate("() => !!document.getElementById('new-toc')")
         is_madcap = await page.evaluate("() => !!document.getElementById('topic')")
         
         return 'astro' if is_astro else 'madcap' if is_madcap else 'unknown'
+    
+    async def extract_release_notes_anchors(self, page) -> List[Dict]:
+        """Extrai âncoras de notas de versão (ex: #6-10-4.htm) como seções."""
+        anchors = await page.evaluate("""
+            () => {
+                const result = [];
+                const seen = new Set();
+                
+                // Estratégia 1: Procurar por links com âncoras de versão (padrão: #X-X-X.htm)
+                const versionLinks = document.querySelectorAll('a[href*="#"]');
+                versionLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    // Padrão: seções/versões como #6-10-4.htm
+                    if (href && /^#[\\d\\-]+\\.htm/.test(href)) {
+                        const text = link.textContent?.trim() || href.replace('#', '').replace('.htm', '');
+                        if (!seen.has(href)) {
+                            result.push({
+                                text: text,
+                                href: href,
+                                children: [],
+                                type: 'version'
+                            });
+                            seen.add(href);
+                        }
+                    }
+                });
+                
+                // Estratégia 2: Procurar por headings que parecem versões
+                const headings = document.querySelectorAll('h1, h2, h3, h4');
+                headings.forEach(h => {
+                    const text = h.textContent?.trim();
+                    if (text && /^\\d+\\.\\d+\\.\\d+/.test(text)) {
+                        if (!seen.has(text)) {
+                            result.push({
+                                text: text,
+                                href: '#' + text.replace(/\\./g, '-') + '.htm',
+                                children: [],
+                                type: 'heading'
+                            });
+                            seen.add(text);
+                        }
+                    }
+                });
+                
+                return result;
+            }
+        """)
+        
+        return anchors
     
     async def extract_astro_menu(self, page) -> List[Dict]:
         """Extrai hierarquia do menu Astro"""
@@ -125,8 +189,27 @@ class SeniorDocScraper:
         return menu_data
     
     async def extract_madcap_seções(self, page) -> List[Dict]:
-        """Extrai seções do MadCap Flare com expansão agressiva de menus collapsed"""
+        """Extrai seções do MadCap Flare com expansão agressiva de menus collapsed e suporte a notas de versão"""
         import asyncio
+        
+        # Primeiro, detectar se é página de notas de versão
+        is_release_notes_page = await page.evaluate("""
+            () => {
+                const title = document.title.toLowerCase();
+                const url = window.location.href.toLowerCase();
+                const bodyText = document.body.textContent.toLowerCase();
+                return (title.includes('versão') || title.includes('release') || title.includes('nota') ||
+                        url.includes('notas-da-versao') || url.includes('notas-de-versao') || url.includes('release') ||
+                        bodyText.includes('notas da versão'));
+            }
+        """)
+        
+        # Se for página de notas de versão, extrair âncoras de versão primeiro
+        if is_release_notes_page:
+            release_anchors = await self.extract_release_notes_anchors(page)
+            if release_anchors and len(release_anchors) > 0:
+                print(f"    [NOTAS DE VERSÃO] Encontradas {len(release_anchors)} versões como âncoras")
+                return release_anchors
         
         # Expandir TODOS os menus collapsed iterativamente
         # Pode ser necessário múltiplas rodadas em menus aninhados
@@ -194,7 +277,10 @@ class SeniorDocScraper:
         return seções
     
     async def scrape_page(self, page, url: str, base_url: str = None) -> Optional[Dict]:
-        """Scrapa conteúdo de uma página com tratamento de erro para URLs inválidas"""
+        """Scrapa conteúdo de uma página com tratamento de erro para URLs inválidas e âncoras"""
+        # Normalizar URL se contiver âncoras (notas de versão)
+        url = self.normalize_anchor_url(url)
+        
         try:
             # Primeira tentativa com timeout estendido para iframes MadCap
             try:

@@ -1,62 +1,87 @@
 # Senior Documentation Scraper
 
-Scraper automatizado de documentação técnica Senior Sistemas com MCP Server para busca.
+Scraper automatizado de documentaÃ§Ã£o tÃ©cnica Senior Sistemas com MCP Server para busca e suporte a notas de versÃ£o.
 
 ## Quickstart
 
-``````bash
+```bash
 # Setup
 pip install -r requirements.txt
 playwright install chromium
 
-# Executar scraper
+# Executar scraper (inclui documentaÃ§Ã£o e notas de versÃ£o)
 python src/scraper_unificado.py
+
+# Descobrir notas de versÃ£o por mÃ³dulo
+python src/adicionar_notas_versao.py
 
 # MCP Server (busca)
 python src/mcp_server.py
 
 # Testes
 python src/test_mcp_server.py
-``````
+```
 
 **Output**:
-- `docs_estruturado/` - Documentação estruturada por módulo
-- `docs_indexacao_detailed.jsonl` - Índice de busca (933 documentos)
+- `docs_estruturado/` - DocumentaÃ§Ã£o estruturada por mÃ³dulo (inclui notas de versÃ£o)
+- `docs_indexacao_detailed.jsonl` - Ãndice de busca (933+ documentos)
 - `docs_metadata.json` - Metadados
+- `release_notes_config.json` - ConfiguraÃ§Ã£o de notas de versÃ£o
 
 ## Estrutura do Projeto
 
-``````
+```
 src/
- scraper_unificado.py   # Scraper principal (MadCap + Astro)
- mcp_server.py          # MCP Server para busca
- test_mcp_server.py     # Testes MCP
- scrapers/              # Módulos de scraping
- indexers/              # Indexação
-    index_local.py     # Indexador JSONL
-    index_meilisearch.py # Indexador Meilisearch
- pipelines/             # Pipelines de processamento
- utils/                 # Utilitários comuns
+ scraper_unificado.py      # Scraper principal (MadCap + Astro + Release Notes)
+ adicionar_notas_versao.py # Descobridor de URLs de notas de versÃ£o
+ mcp_server.py             # MCP Server para busca
+ test_mcp_server.py        # Testes MCP
+ indexers/                 # IndexaÃ§Ã£o
+    index_local.py        # Indexador JSONL
+    index_meilisearch.py  # Indexador Meilisearch
 
-docs_estruturado/              # Documentação extraída
-docs_indexacao_detailed.jsonl  # Índice para busca
-docker-compose.yml             # Docker com Meilisearch
-MCP_SERVER.md                  # Documentação MCP
-``````
+docs_estruturado/              # DocumentaÃ§Ã£o estruturada por mÃ³dulo
+docs_indexacao_detailed.jsonl  # Ãndice para busca
+release_notes_config.json      # ConfiguraÃ§Ã£o de notas de versÃ£o
+MCP_SERVER.md                  # DocumentaÃ§Ã£o MCP
+RELEASE_NOTES_GUIDE.md         # Guia de scraping de notas de versÃ£o
+```
 
 ## Formatos Suportados
 
-- **MadCap Flare** (15 módulos) - Extração hierárquica com expansão de menu
-- **Astro** (1 módulo) - Navegação direta via sidebar
+- **MadCap Flare** (15 mÃ³dulos) - ExtraÃ§Ã£o hierÃ¡rquica com expansÃ£o de menu
+- **Astro** (1 mÃ³dulo) - NavegaÃ§Ã£o direta via sidebar
+- **Release Notes** (MÃºltiplos mÃ³dulos) - Notas de versÃ£o com Ã¢ncoras (#versÃ£o.htm)
+
+## âœ¨ Novo: Notas de VersÃ£o
+
+Agora suporta scraping automÃ¡tico de notas de versÃ£o do Senior ERP X:
+
+```bash
+# Descobrir URLs de notas de versÃ£o
+python src/adicionar_notas_versao.py
+
+# Scraping (inclui documentaÃ§Ã£o + notas de versÃ£o)
+python src/scraper_unificado.py
+```
+
+Veja [RELEASE_NOTES_GUIDE.md](RELEASE_NOTES_GUIDE.md) para detalhes completos.
+
+Exemplo de URL:
+```
+https://documentacao.senior.com.br/gestao-de-pessoas-hcm/notas-da-versao/#6-10-4.htm
+```
+
+O scraper detecta automaticamente pÃ¡ginas de notas de versÃ£o e extrai cada versÃ£o (Ã¢ncora) como documento separado.
 
 ## MCP Server (NEW)
 
-Servidor Model Context Protocol para busca em documentação com 4 ferramentas:
+Servidor Model Context Protocol para busca em documentaï¿½ï¿½o com 4 ferramentas:
 
-1. **search_docs** - Busca full-text com filtro por módulo
-2. **list_modules** - Lista módulos disponíveis
-3. **get_module_docs** - Documentos de um módulo
-4. **get_stats** - Estatísticas do índice
+1. **search_docs** - Busca full-text com filtro por mï¿½dulo
+2. **list_modules** - Lista mï¿½dulos disponï¿½veis
+3. **get_module_docs** - Documentos de um mï¿½dulo
+4. **get_stats** - Estatï¿½sticas do ï¿½ndice
 
 ### Uso
 
@@ -70,19 +95,19 @@ server = MCPServer()
 result = server.handle_tool_call("search_docs", {"query": "CRM"})
 ``````
 
-Ver [MCP_SERVER.md](MCP_SERVER.md) para documentação completa.
+Ver [MCP_SERVER.md](MCP_SERVER.md) para documentaï¿½ï¿½o completa.
 
 ## Melhorias Implementadas
 
--  Detecção automática de formato
--  Expansão agressiva de menus (até 5 rounds)
+-  Detecï¿½ï¿½o automï¿½tica de formato
+-  Expansï¿½o agressiva de menus (atï¿½ 5 rounds)
 -  Retry com backoff exponencial
--  CSS seletores múltiplos
--  Validação de conteúdo
--  Organização hierárquica com breadcrumb
--  **Opção --save-html para preservar HTML original**
--  **Indexação local (JSONL) sem dependência de servidor**
--  **Meilisearch integration para produção**
+-  CSS seletores mï¿½ltiplos
+-  Validaï¿½ï¿½o de conteï¿½do
+-  Organizaï¿½ï¿½o hierï¿½rquica com breadcrumb
+-  **Opï¿½ï¿½o --save-html para preservar HTML original**
+-  **Indexaï¿½ï¿½o local (JSONL) sem dependï¿½ncia de servidor**
+-  **Meilisearch integration para produï¿½ï¿½o**
 -  **MCP Server para AI integration**
 
 ## Docker (Meilisearch)
@@ -95,10 +120,10 @@ docker-compose up -d meilisearch
 python src/indexers/index_meilisearch.py
 ``````
 
-## Configuração
+## Configuraï¿½ï¿½o
 
-Copiar `.env.example` para `.env` se necessário.
+Copiar `.env.example` para `.env` se necessï¿½rio.
 
 ---
 
-Ver [CHANGELOG.md](CHANGELOG.md) para histórico e [MCP_SERVER.md](MCP_SERVER.md) para guia completo do MCP Server.
+Ver [CHANGELOG.md](CHANGELOG.md) para histï¿½rico e [MCP_SERVER.md](MCP_SERVER.md) para guia completo do MCP Server.

@@ -1,0 +1,568 @@
+{
+  "test_suite": {
+    "name": "Senior Documentation MCP Test Suite",
+    "version": "1.0.0",
+    "description": "Comprehensive test suite for MCP Server validation",
+    "server_url": "http://localhost:8000/",
+    "protocol_version": "2024-11-05",
+    "total_tests": 10,
+    "tests": [
+      {
+        "id": 1,
+        "name": "Initialize - Handshake Protocol MCP",
+        "category": "protocol",
+        "priority": "critical",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2024-11-05"
+          }
+        },
+        "expected_response": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "result": {
+            "protocolVersion": "2024-11-05",
+            "serverInfo": {
+              "name": "Senior Documentation MCP",
+              "version": "1.0.0"
+            },
+            "capabilities": {
+              "tools": {}
+            }
+          }
+        },
+        "validations": [
+          {
+            "check": "jsonrpc_version",
+            "expected": "2.0",
+            "path": "$.jsonrpc"
+          },
+          {
+            "check": "response_id",
+            "expected": 1,
+            "path": "$.id"
+          },
+          {
+            "check": "server_name",
+            "expected": "Senior Documentation MCP",
+            "path": "$.result.serverInfo.name"
+          },
+          {
+            "check": "has_capabilities",
+            "type": "exists",
+            "path": "$.result.capabilities"
+          }
+        ],
+        "pass_criteria": "All validations must pass",
+        "notes": "First method called for handshake"
+      },
+      {
+        "id": 2,
+        "name": "Tools List - List Available Tools",
+        "category": "tools",
+        "priority": "critical",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "tools/list",
+          "params": {}
+        },
+        "expected_response": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "result": {
+            "tools": [
+              {
+                "name": "search_docs",
+                "description": "Search documentation by keywords",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "query": {
+                      "type": "string",
+                      "description": "Search keywords (required)"
+                    },
+                    "module": {
+                      "type": "string",
+                      "description": "Specific module to filter (optional)"
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "description": "Maximum number of results (default: 5)"
+                    }
+                  },
+                  "required": ["query"]
+                }
+              },
+              {
+                "name": "list_modules",
+                "description": "List all available modules"
+              },
+              {
+                "name": "get_module_docs",
+                "description": "Get documentation for a specific module"
+              },
+              {
+                "name": "get_stats",
+                "description": "Get index statistics"
+              }
+            ]
+          }
+        },
+        "validations": [
+          {
+            "check": "tools_count",
+            "expected": 4,
+            "path": "$.result.tools.length",
+            "comparison": "eq"
+          },
+          {
+            "check": "search_docs_present",
+            "type": "array_contains",
+            "path": "$.result.tools[*].name",
+            "value": "search_docs"
+          },
+          {
+            "check": "search_docs_required",
+            "type": "array_contains",
+            "path": "$.result.tools[0].inputSchema.required",
+            "value": "query"
+          },
+          {
+            "check": "get_module_docs_present",
+            "type": "array_contains",
+            "path": "$.result.tools[*].name",
+            "value": "get_module_docs"
+          }
+        ],
+        "pass_criteria": "All 4 tools present with valid inputSchema",
+        "notes": "Check that inputSchema is complete JSON Schema"
+      },
+      {
+        "id": 3,
+        "name": "Search Docs - Generic Query 'BPM'",
+        "category": "search",
+        "priority": "high",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "tools/call",
+          "params": {
+            "name": "search_docs",
+            "arguments": {
+              "query": "BPM",
+              "limit": 5
+            }
+          }
+        },
+        "expected_response_structure": {
+          "type": "object",
+          "properties": {
+            "jsonrpc": "string",
+            "id": "number",
+            "result": {
+              "type": "object",
+              "properties": {
+                "content": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": "string",
+                      "text": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "validations": [
+          {
+            "check": "http_status",
+            "expected": 200
+          },
+          {
+            "check": "has_results",
+            "type": "exists",
+            "path": "$.result.content[0].text"
+          },
+          {
+            "check": "query_matches",
+            "expected": "BPM",
+            "path": "$.result.content[0].text.query"
+          },
+          {
+            "check": "has_count",
+            "type": "number",
+            "path": "$.result.content[0].text.count",
+            "comparison": "gt",
+            "value": 0
+          },
+          {
+            "check": "has_results_array",
+            "type": "exists",
+            "path": "$.result.content[0].text.results"
+          }
+        ],
+        "pass_criteria": "Count > 0 and results array present",
+        "sample_data": {
+          "query": "BPM",
+          "count": 5,
+          "results": [
+            {
+              "id": "BPM_Abas_Customizadas",
+              "title": "Abas Customizadas",
+              "module": "BPM",
+              "url": "https://docs.example.com/bpm/..."
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "name": "Search Docs - Query 'folha'",
+        "category": "search",
+        "priority": "high",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "method": "tools/call",
+          "params": {
+            "name": "search_docs",
+            "arguments": {
+              "query": "folha",
+              "limit": 3
+            }
+          }
+        },
+        "expected_response_structure": {
+          "has_content": true,
+          "content_type": "text"
+        },
+        "validations": [
+          {
+            "check": "query_preserved",
+            "expected": "folha"
+          },
+          {
+            "check": "results_exist",
+            "type": "count",
+            "comparison": "gte",
+            "value": 1
+          }
+        ],
+        "pass_criteria": "Any results for 'folha'",
+        "notes": "Broad search term, should find various modules"
+      },
+      {
+        "id": 5,
+        "name": "Search Docs - Filtered by Module (HCM)",
+        "category": "search",
+        "priority": "high",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 5,
+          "method": "tools/call",
+          "params": {
+            "name": "search_docs",
+            "arguments": {
+              "query": "folha",
+              "module": "GESTAO_DE_PESSOAS_HCM",
+              "limit": 3
+            }
+          }
+        },
+        "expected_response_structure": {
+          "must_have": ["query", "module_filter", "count", "results"]
+        },
+        "validations": [
+          {
+            "check": "query_matches",
+            "expected": "folha"
+          },
+          {
+            "check": "module_filter_matches",
+            "expected": "GESTAO_DE_PESSOAS_HCM"
+          },
+          {
+            "check": "all_results_in_module",
+            "type": "array_all",
+            "path": "$.result.content[0].text.results[*].module",
+            "value": "GESTAO_DE_PESSOAS_HCM"
+          }
+        ],
+        "pass_criteria": "All results belong to specified module",
+        "notes": "Tests module filter functionality"
+      },
+      {
+        "id": 6,
+        "name": "List Modules - 17 Modules",
+        "category": "modules",
+        "priority": "high",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 6,
+          "method": "tools/call",
+          "params": {
+            "name": "list_modules",
+            "arguments": {}
+          }
+        },
+        "expected_modules": [
+          "BPM",
+          "BI",
+          "DOCUMENTOSELETRONICOS",
+          "GESTAO_DE_PESSOAS_HCM",
+          "GESTAO_DE_RELACIONAMENTO_CRM",
+          "GESTAODEFRETESFIS",
+          "GESTAODELOJAS",
+          "GESTAODETRANSPORTESTMS",
+          "GESTAOEMPRESARIALERP",
+          "GOUP",
+          "PORTAL",
+          "RONDA_SENIOR",
+          "ROTEIRIZACAOEMONITORAMENTO",
+          "SENIOR_AI_LOGISTICS",
+          "TECNOLOGIA",
+          "WORKFLOW",
+          "s"
+        ],
+        "expected_count": 17,
+        "validations": [
+          {
+            "check": "total_modules_count",
+            "expected": 17,
+            "comparison": "eq"
+          },
+          {
+            "check": "modules_array_length",
+            "expected": 17,
+            "comparison": "eq"
+          },
+          {
+            "check": "contains_BPM",
+            "type": "array_contains",
+            "value": "BPM"
+          },
+          {
+            "check": "contains_HCM",
+            "type": "array_contains",
+            "value": "GESTAO_DE_PESSOAS_HCM"
+          },
+          {
+            "check": "contains_CRM",
+            "type": "array_contains",
+            "value": "GESTAO_DE_RELACIONAMENTO_CRM"
+          }
+        ],
+        "pass_criteria": "Exactly 17 modules, including BPM, HCM, CRM"
+      },
+      {
+        "id": 7,
+        "name": "Get Module Docs - BPM Documents",
+        "category": "modules",
+        "priority": "high",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 7,
+          "method": "tools/call",
+          "params": {
+            "name": "get_module_docs",
+            "arguments": {
+              "module": "BPM",
+              "limit": 2
+            }
+          }
+        },
+        "expected_response_structure": {
+          "has_module": "BPM",
+          "has_results_array": true,
+          "max_count": 2
+        },
+        "validations": [
+          {
+            "check": "module_matches",
+            "expected": "BPM"
+          },
+          {
+            "check": "count_greater_than_zero",
+            "comparison": "gt",
+            "value": 0
+          },
+          {
+            "check": "respects_limit",
+            "comparison": "lte",
+            "value": 2
+          },
+          {
+            "check": "all_docs_from_module",
+            "type": "array_all",
+            "path": "results[*].module",
+            "value": "BPM"
+          }
+        ],
+        "pass_criteria": "1-2 documents from BPM module",
+        "notes": "Each document must have module='BPM'"
+      },
+      {
+        "id": 8,
+        "name": "Get Stats - Index Statistics",
+        "category": "statistics",
+        "priority": "medium",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 8,
+          "method": "tools/call",
+          "params": {
+            "name": "get_stats",
+            "arguments": {}
+          }
+        },
+        "expected_values": {
+          "total_documents": 933,
+          "total_modules": 17
+        },
+        "validations": [
+          {
+            "check": "has_total_documents",
+            "type": "exists"
+          },
+          {
+            "check": "total_documents_minimum",
+            "comparison": "gte",
+            "value": 933
+          },
+          {
+            "check": "total_modules_exact",
+            "expected": 17,
+            "comparison": "eq"
+          },
+          {
+            "check": "has_timestamp",
+            "type": "exists"
+          }
+        ],
+        "pass_criteria": "933+ documents, 17 modules",
+        "notes": "Validates data load in Meilisearch"
+      },
+      {
+        "id": 9,
+        "name": "Error Handling - Empty Query",
+        "category": "error_handling",
+        "priority": "medium",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 9,
+          "method": "tools/call",
+          "params": {
+            "name": "search_docs",
+            "arguments": {
+              "query": ""
+            }
+          }
+        },
+        "expected_behavior": "Reject empty query or return zero results",
+        "validations": [
+          {
+            "check": "either_error_or_empty",
+            "type": "or",
+            "conditions": [
+              {
+                "path": "$.error",
+                "type": "exists"
+              },
+              {
+                "path": "$.result.content[0].text.count",
+                "expected": 0
+              }
+            ]
+          }
+        ],
+        "pass_criteria": "Error response OR count=0",
+        "notes": "Empty queries should not return results"
+      },
+      {
+        "id": 10,
+        "name": "Error Handling - Non-existent Module",
+        "category": "error_handling",
+        "priority": "medium",
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 10,
+          "method": "tools/call",
+          "params": {
+            "name": "get_module_docs",
+            "arguments": {
+              "module": "NONEXISTENT_MODULE"
+            }
+          }
+        },
+        "expected_behavior": "Return empty results, no error",
+        "validations": [
+          {
+            "check": "count_is_zero",
+            "expected": 0,
+            "path": "$.result.content[0].text.count"
+          },
+          {
+            "check": "results_empty_array",
+            "expected": [],
+            "path": "$.result.content[0].text.results"
+          },
+          {
+            "check": "no_json_rpc_error",
+            "type": "not_exists",
+            "path": "$.error"
+          }
+        ],
+        "pass_criteria": "count=0, results=[], no error",
+        "notes": "Invalid module returns graceful empty response"
+      }
+    ],
+    "test_execution_guidelines": {
+      "setup": [
+        "Ensure Docker containers are running: docker-compose ps",
+        "Wait for containers to be healthy (usually 10-15 seconds)",
+        "Verify connectivity: curl http://localhost:8000/"
+      ],
+      "execution": [
+        "Execute tests in sequential order (1-10)",
+        "Each test should complete in <5 seconds",
+        "Total suite should complete in <60 seconds"
+      ],
+      "validation": [
+        "Compare actual response against expected_response structure",
+        "Apply all validations in sequence",
+        "Mark test as PASS only if all validations succeed",
+        "Record failure reason for debugging"
+      ],
+      "teardown": [
+        "Log summary of results",
+        "Calculate success percentage",
+        "Exit with code 0 (pass) or 1 (fail)"
+      ]
+    },
+    "success_criteria": {
+      "individual_test": "All validations must pass",
+      "suite": "Minimum 8/10 tests pass (80%)",
+      "critical_tests": [1, 2, 3, 5, 6],
+      "critical_threshold": "100% of critical tests must pass"
+    },
+    "integration_points": {
+      "meilisearch": "http://localhost:7700",
+      "mcp_server": "http://localhost:8000/",
+      "config_file": "mcp_config.json"
+    },
+    "metadata": {
+      "created": "2025-01-22",
+      "last_updated": "2025-01-22",
+      "mcp_version": "2024-11-05",
+      "python_version": "3.11+",
+      "tested_on": "Windows 11, Docker Desktop"
+    }
+  }
+}
