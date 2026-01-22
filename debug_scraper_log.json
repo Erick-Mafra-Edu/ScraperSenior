@@ -1,0 +1,673 @@
+[
+  {
+    "timestamp": "14:35:14.541",
+    "level": "INFO",
+    "message": "Iniciando scraping do módulo",
+    "data": {
+      "módulo": "GESTAO DE PESSOAS HCM",
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/"
+    }
+  },
+  {
+    "timestamp": "14:35:24.396",
+    "level": "INFO",
+    "message": "Navegando para página inicial",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:29.721",
+    "level": "INFO",
+    "message": "Iniciando expansão de menus",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:29.985",
+    "level": "DEBUG",
+    "message": "Rodada 1",
+    "data": {
+      "itens clicados": 1,
+      "total clicks": 1
+    }
+  },
+  {
+    "timestamp": "14:35:30.521",
+    "level": "DEBUG",
+    "message": "Rodada 2",
+    "data": {
+      "itens clicados": 1,
+      "total clicks": 2
+    }
+  },
+  {
+    "timestamp": "14:35:31.026",
+    "level": "SUCCESS",
+    "message": "Menus totalmente expandidos após 3 rodadas",
+    "data": {
+      "total clicks": 2
+    }
+  },
+  {
+    "timestamp": "14:35:32.027",
+    "level": "INFO",
+    "message": "Extraindo links de navegação",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:32.039",
+    "level": "SUCCESS",
+    "message": "Links extraídos: 23",
+    "data": {
+      "links visíveis": 0,
+      "links ocultos": 23,
+      "primeiro link": "Gestão de Pessoas - Manual do Usuário"
+    }
+  },
+  {
+    "timestamp": "14:35:32.041",
+    "level": "INFO",
+    "message": "Total de itens para processar: 23",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:32.042",
+    "level": "DEBUG",
+    "message": "Processando 1/10",
+    "data": {
+      "texto": "Gestão de Pessoas - Manual do Usuário",
+      "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520P",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:32.042",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:32.115",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:33.230",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 8317,
+      "headers": 2,
+      "links": 25,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:33.240",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 25,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:33.242",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:33.747",
+    "level": "DEBUG",
+    "message": "Processando 2/10",
+    "data": {
+      "texto": "XTended",
+      "href": "#xtended.htm%3FTocPath%3DGest%25C3%25A3o%2520de%25",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:33.829",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#xtended.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CXTended%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:33.849",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:34.878",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 13473,
+      "headers": 5,
+      "links": 32,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:34.881",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 32,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:34.881",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:35.384",
+    "level": "DEBUG",
+    "message": "Processando 3/10",
+    "data": {
+      "texto": "GO UP",
+      "href": "#hcm-go-up.htm%3FTocPath%3DGest%25C3%25A3o%2520de%",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:35.384",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#hcm-go-up.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CGO%2520UP%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:35.410",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:36.563",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 4176,
+      "headers": 2,
+      "links": 34,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:36.563",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 34,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:36.564",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:37.065",
+    "level": "DEBUG",
+    "message": "Processando 4/10",
+    "data": {
+      "texto": "Manual por processos",
+      "href": "#manual-processos/gestao-de-pessoas.htm%3FTocPath%",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:37.066",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#manual-processos/gestao-de-pessoas.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CManual%2520por%2520processos%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:37.074",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:38.160",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 9875,
+      "headers": 3,
+      "links": 40,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:38.160",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 40,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:38.160",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:38.661",
+    "level": "DEBUG",
+    "message": "Processando 5/10",
+    "data": {
+      "texto": "Ajuda por telas",
+      "href": "#ajuda-telas.htm%3FTocPath%3DGest%25C3%25A3o%2520d",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:38.662",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#ajuda-telas.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520telas%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:38.694",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:39.753",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 5717,
+      "headers": 1,
+      "links": 54,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:39.754",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 54,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:39.755",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:40.256",
+    "level": "DEBUG",
+    "message": "Processando 6/10",
+    "data": {
+      "texto": "Customizações",
+      "href": "#customizacoes/customizacoes.htm%3FTocPath%3DGest%",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:40.256",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#customizacoes/customizacoes.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CCustomiza%25C3%25A7%25C3%25B5es%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:40.261",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:41.365",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 5048,
+      "headers": 1,
+      "links": 61,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:41.366",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 61,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:41.368",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:41.869",
+    "level": "DEBUG",
+    "message": "Processando 7/10",
+    "data": {
+      "texto": "Aplicativo Biosalc",
+      "href": "#integracoes/integracao-biosalc.htm%3FTocPath%3DGe",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:41.872",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#integracoes/integracao-biosalc.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%2520com%2520outros%2520sistemas%7C_____1"
+    }
+  },
+  {
+    "timestamp": "14:35:41.887",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:42.995",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 30986,
+      "headers": 18,
+      "links": 61,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:42.999",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 61,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:43.002",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:43.505",
+    "level": "DEBUG",
+    "message": "Processando 8/10",
+    "data": {
+      "texto": "Integração com coletores Henry Card IV",
+      "href": "#integracoes/henry-card/henry-card-iv.htm%3FTocPat",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:43.509",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#integracoes/henry-card/henry-card-iv.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%2520com%2520outros%2520sistemas%7CColetores%2520Henry%2520Card%7CIntegra%25C3%25A7%25C3%25A3o%2520com%2520coletores%2520Henry%2520Card%2520IV%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:43.555",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:44.586",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 13619,
+      "headers": 5,
+      "links": 62,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:44.587",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 62,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:44.587",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:45.089",
+    "level": "DEBUG",
+    "message": "Processando 9/10",
+    "data": {
+      "texto": "Integração com coletores Henry Card V",
+      "href": "#integracoes/henry-card/henry-card-v.htm%3FTocPath",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:45.092",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#integracoes/henry-card/henry-card-v.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%2520com%2520outros%2520sistemas%7CColetores%2520Henry%2520Card%7CIntegra%25C3%25A7%25C3%25A3o%2520com%2520coletores%2520Henry%2520Card%2520V%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:45.127",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:46.244",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 13171,
+      "headers": 5,
+      "links": 63,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:46.248",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 63,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:46.251",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:46.752",
+    "level": "DEBUG",
+    "message": "Processando 10/10",
+    "data": {
+      "texto": "Gestão Empresarial | ERP",
+      "href": "#integracoes/gestao-empresarial-erp/integracao-erp",
+      "visível": false
+    }
+  },
+  {
+    "timestamp": "14:35:46.753",
+    "level": "DEBUG",
+    "message": "Navegando para página",
+    "data": {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/#integracoes/gestao-empresarial-erp/integracao-erp.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%2520com%2520outros%2520sistemas%7CGest%25C3%25A3o%2520Empresarial%2520%257C%2520ERP%7C_____0"
+    }
+  },
+  {
+    "timestamp": "14:35:46.820",
+    "level": "SUCCESS",
+    "message": "Página carregada com sucesso",
+    "data": null
+  },
+  {
+    "timestamp": "14:35:47.829",
+    "level": "SUCCESS",
+    "message": "Conteúdo extraído",
+    "data": {
+      "título": "Sem título",
+      "caracteres": 4852,
+      "headers": 1,
+      "links": 66,
+      "botões": 2,
+      "formulários": 1,
+      "menus": 0
+    }
+  },
+  {
+    "timestamp": "14:35:47.830",
+    "level": "DEBUG",
+    "message": "Links encontrados (primeiros 5):",
+    "data": {
+      "total": 66,
+      "primeiro": {
+        "text": "Gestão de Pessoas - Manual do Usuário",
+        "href": "#home.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Pessoas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0",
+        "type": "anchor"
+      }
+    }
+  },
+  {
+    "timestamp": "14:35:47.831",
+    "level": "DEBUG",
+    "message": "Botões encontrados: 2",
+    "data": {
+      "botões": "Submit, Cancel"
+    }
+  },
+  {
+    "timestamp": "14:35:48.487",
+    "level": "INFO",
+    "message": "Resumo do módulo",
+    "data": {
+      "processado": 10,
+      "pulado": 0,
+      "erros": 0,
+      "total links": 23,
+      "total clicks": 2
+    }
+  }
+]

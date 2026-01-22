@@ -368,7 +368,17 @@ class MCPServer:
         try:
             if tool_name == "search_docs":
                 query = params.get("query", "")
+                # Validação: garantir que query é string
+                if isinstance(query, list):
+                    query = query[0] if query else ""
+                query = str(query).strip()
+                
                 module = params.get("module")
+                if isinstance(module, list):
+                    module = module[0] if module else None
+                if module:
+                    module = str(module).strip()
+                
                 limit = int(params.get("limit", 5))
                 
                 if not query:
@@ -391,6 +401,12 @@ class MCPServer:
             
             elif tool_name == "get_module_docs":
                 module = params.get("module")
+                # Validação: garantir que module é string
+                if isinstance(module, list):
+                    module = module[0] if module else None
+                if module:
+                    module = str(module).strip()
+                
                 limit = int(params.get("limit", 20))
                 
                 if not module:

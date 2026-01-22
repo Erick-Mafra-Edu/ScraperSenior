@@ -107,7 +107,7 @@ class MCPHTTPHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps({"error": "Not found"}).encode('utf-8'))
     
     def do_POST(self):
-        """Tratador POST para protocolo MCP JSON-RPC"""
+        """Tratador POST para protocolo MCP JSON-RPC e REST endpoints"""
         path = urlparse(self.path).path
         
         try:
@@ -123,7 +123,18 @@ class MCPHTTPHandler(BaseHTTPRequestHandler):
             body = self.rfile.read(content_length).decode('utf-8')
             data = json.loads(body) if body else {}
             
-            # Processar mensagem MCP JSON-RPC
+            # ========== REST ENDPOINTS ==========
+            if path == '/search':
+                # Endpoint REST: POST /search
+                self.handle_rest_search(data)
+                return
+            
+            elif path == '/call':
+                # Endpoint REST: POST /call
+                self.handle_rest_call(data)
+                return
+            
+            # ========== JSON-RPC ENDPOINTS ==========
             if path == '/' or path == '/messages':
                 # Verificar se é um JSON-RPC válido
                 if not isinstance(data, dict):
@@ -292,6 +303,79 @@ class MCPHTTPHandler(BaseHTTPRequestHandler):
             "prompts": []
         }
         self.send_response_json(request_id, response)
+    
+    def handle_rest_search(self, data: dict):
+        """Handler REST para POST /search - Busca simples"""
+        if not self.mcp_server:
+            self.send_response(503)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps({"error": "Server not initialized"}).encode('utf-8'))
+            return
+        
+        query = data.get('query', '')
+        module = data.get('module')
+        limit = int(data.get('limit', 5))
+        
+        if not query:
+            self.send_response(400)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps({"error": "query is required"}).encode('utf-8'))
+            return
+        
+        try:
+            results = self.mcp_server.doc_search.search(query, module, limit)
+            
+            response = {
+                "query": query,
+                "module_filter": module,
+                "count": len(results),
+                "results": results
+            }
+            
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps(response, ensure_ascii=False).encode('utf-8'))
+        except Exception as e:
+            self.send_response(500)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+    
+    def handle_rest_call(self, data: dict):
+        """Handler REST para POST /call - Chamar ferramenta"""
+        if not self.mcp_server:
+            self.send_response(503)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps({"error": "Server not initialized"}).encode('utf-8'))
+            return
+        
+        tool_name = data.get('tool')
+        tool_args = data.get('args', {})
+        
+        if not tool_name:
+            self.send_response(400)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps({"error": "tool name is required"}).encode('utf-8'))
+            return
+        
+        try:
+            result = self.mcp_server.handle_tool_call(tool_name, tool_args)
+            result_obj = json.loads(result) if isinstance(result, str) else result
+            
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps(result_obj, ensure_ascii=False).encode('utf-8'))
+        except Exception as e:
+            self.send_response(500)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
     
     def log_message(self, format, *args):
         """Suprimir logs padrão"""

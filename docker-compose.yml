@@ -26,7 +26,8 @@ services:
     networks:
       - senior-docs
     restart: unless-stopped
-    user: "${CONTAINER_USER:-1000:1000}"
+    # Comentado para compatibilidade com Windows/Docker Desktop
+    # user: "${CONTAINER_USER:-1000:1000}"
 
   mcp-server:
     build:
@@ -55,7 +56,8 @@ services:
       timeout: 10s
       retries: 3
       start_period: 5s
-    user: "${CONTAINER_USER:-1000:1000}"
+    # Comentado para compatibilidade com Windows/Docker Desktop
+    # user: "${CONTAINER_USER:-1000:1000}"
 
 networks:
   senior-docs:
