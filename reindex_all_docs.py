@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 """Reindexar documentação completa do Senior"""
 import os
+import sys
 import json
 from pathlib import Path
+
+# Forçar UTF-8
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
 
 docs_dir = Path('docs_estruturado')
 output_file = 'docs_indexacao_detailed.jsonl'
@@ -45,7 +51,10 @@ for module_dir in sorted(docs_dir.iterdir()):
                 'id': f'{module_name}_{doc_id}',
                 'title': title,
                 'module': module_name,
+                'breadcrumb': f"{module_name} > {title}",
                 'content': content[:1000],  # Primeiros 1000 chars
+                'text_content': content[:2000],  # Para busca
+                'headers': [title],  # Array de headers
                 'file': content_file.name,
                 'url': f'/{module_name}/{title_from_dir}/'
             }
