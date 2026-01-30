@@ -131,6 +131,9 @@ class MCPHTTPHandler(BaseHTTPRequestHandler):
             
             elif path == '/call':
                 # Endpoint REST: POST /call
+                # DEBUG
+                import sys
+                print(f"[DEBUG do_POST] Chamando handle_rest_call com data={data}", file=sys.stderr, flush=True)
                 self.handle_rest_call(data)
                 return
             
@@ -354,7 +357,20 @@ class MCPHTTPHandler(BaseHTTPRequestHandler):
             return
         
         tool_name = data.get('tool')
-        tool_args = data.get('args', {})
+        tool_args = data.get('params', {})
+        
+        # NOVO: Retornar info do que recebeu
+        return_debug = {
+            "RECEBEU_tool": tool_name,
+            "RECEBEU_params": tool_args,
+            "TIPO_params": str(type(tool_args))
+        }
+        
+        self.send_response(200)
+        self.send_header('Content-Type', 'application/json')
+        self.end_headers()
+        self.wfile.write(json.dumps(return_debug, ensure_ascii=False).encode('utf-8'))
+        return
         
         if not tool_name:
             self.send_response(400)
@@ -364,8 +380,17 @@ class MCPHTTPHandler(BaseHTTPRequestHandler):
             return
         
         try:
+            # DEBUG: Return the args to see what's happening
             result = self.mcp_server.handle_tool_call(tool_name, tool_args)
             result_obj = json.loads(result) if isinstance(result, str) else result
+            
+            # Add debug info to response
+            if isinstance(result_obj, dict):
+                result_obj["_debug"] = {
+                    "tool_name": tool_name,
+                    "tool_args_received": tool_args,
+                    "tool_args_keys": list(tool_args.keys()) if isinstance(tool_args, dict) else "NOT A DICT"
+                }
             
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')

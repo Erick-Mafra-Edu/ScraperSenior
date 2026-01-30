@@ -27,6 +27,7 @@ RUN pip install --upgrade pip setuptools wheel && \
 
 # Copy application code (minimal and efficient)
 COPY --chown=1000:1000 src/ ./src/
+COPY --chown=1000:1000 mcp_config.json .
 COPY --chown=1000:1000 docs_indexacao_detailed.jsonl .
 COPY --chown=1000:1000 .env.example .env
 

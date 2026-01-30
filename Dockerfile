@@ -11,6 +11,8 @@ ENV PYTHONUNBUFFERED=1 \
 # Install system dependencies (minimal)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
+    gcc \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements
@@ -23,6 +25,7 @@ RUN pip install --upgrade pip && \
 
 # Copy application code
 COPY src/ /app/src/
+COPY scraper_config.json /app/
 COPY docs_indexacao.jsonl /app/
 COPY docs_metadata.json /app/
 
@@ -37,7 +40,12 @@ EXPOSE 5000
 
 # Healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-    CMD curl -f http://localhost:7700/health || exit 1
+    CMD curl -f http://meilisearch:7700/health || exit 1
 
-# Default: Python shell (pode ser sobrescrito)
-CMD ["python", "-i", "-c", "print('\\n📚 Senior Docs Scraper - Shell\\nUse: from src.scraper_unificado import SeniorDocScraper\\n')"]
+# Copy scraper scripts
+COPY scrape_and_index_all.py /app/
+COPY docker_entrypoint.py /app/
+COPY post_scraping_indexation.py /app/
+
+# Entrypoint: Orquestra tudo
+CMD ["python", "docker_entrypoint.py"]

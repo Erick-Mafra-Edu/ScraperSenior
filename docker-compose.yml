@@ -11,7 +11,7 @@ services:
     container_name: senior-docs-meilisearch
     environment:
       MEILI_ENV: production
-      MEILI_MASTER_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+      MEILI_MASTER_KEY: meilisearch_master_key_change_me
       MEILI_LOG_LEVEL: ${MEILI_LOG_LEVEL:-info}
     ports:
       - "7700:7700"
@@ -49,6 +49,7 @@ services:
       - senior-docs
     restart: unless-stopped
     volumes:
+      - ./docs_unified:/app/docs_unified:ro
       - ./docs_indexacao_detailed.jsonl:/app/docs_indexacao_detailed.jsonl:ro
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
@@ -56,6 +57,28 @@ services:
       timeout: 10s
       retries: 3
       start_period: 5s
+    # Comentado para compatibilidade com Windows/Docker Desktop
+    # user: "${CONTAINER_USER:-1000:1000}"
+
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: senior-docs-scraper:latest
+    container_name: senior-docs-scraper
+    environment:
+      PYTHONUNBUFFERED: 1
+      MEILISEARCH_URL: http://meilisearch:7700
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+    depends_on:
+      meilisearch:
+        condition: service_healthy
+    networks:
+      - senior-docs
+    restart: on-failure
+    volumes:
+      - ./docs_estruturado:/app/docs_estruturado:ro
+      - ./docs_unified:/app/docs_unified
     # Comentado para compatibilidade com Windows/Docker Desktop
     # user: "${CONTAINER_USER:-1000:1000}"
 

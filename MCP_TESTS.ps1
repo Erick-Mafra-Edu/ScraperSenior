@@ -46,7 +46,7 @@ function Test-MCP {
         [scriptblock]$Validation
     )
     
-    global:$totalTests++
+    $script:totalTests++
     Write-TestHeader -Number $TestNumber -Name $TestName
     
     try {
@@ -63,7 +63,7 @@ function Test-MCP {
         
         if ($response.StatusCode -ne 200) {
             Write-Result $false "HTTP Status: $($response.StatusCode)"
-            global:$failedTests++
+            $script:failedTests++
             return
         }
         
@@ -76,17 +76,17 @@ function Test-MCP {
         $validationResult = & $Validation -Result $result
         
         if ($validationResult.Success) {
-            global:$passedTests++
+            $script:passedTests++
             Write-Result $true $validationResult.Message
             Write-Host "Validações: $($validationResult.Details)" -ForegroundColor $Green
         } else {
-            global:$failedTests++
+            $script:failedTests++
             Write-Result $false $validationResult.Message
             Write-Host "Detalhes: $($validationResult.Details)" -ForegroundColor $Red
         }
         
     } catch {
-        global:$failedTests++
+        $script:failedTests++
         Write-Result $false "Exceção: $($_.Exception.Message)"
     }
 }

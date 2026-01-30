@@ -119,9 +119,10 @@ class SeniorDocumentationMCP:
                 # Comentado para não interferir com protocolo MCP
                 # print(f"[✓] Conectado ao Meilisearch: {self.meilisearch_url}")
                 self.use_local = False
-            except:
-                # Comentado para não interferir com protocolo MCP
-                # print("[!] Não conseguiu conectar ao Meilisearch. Usando modo local.")
+            except Exception as e:
+                # Log do erro para debug
+                import sys
+                print(f"[!] Erro ao conectar Meilisearch: {e}", file=sys.stderr)
                 self.use_local = True
                 self._load_local_documents()
         else:
@@ -129,7 +130,11 @@ class SeniorDocumentationMCP:
     
     def _load_local_documents(self):
         """Carrega documentos do arquivo JSONL local"""
-        index_file = Path("docs_indexacao_detailed.jsonl")
+        # Tenta primeiro o arquivo unificado novo
+        index_file = Path("docs_unified/unified_documentation.jsonl")
+        if not index_file.exists():
+            # Fallback para arquivo antigo
+            index_file = Path("docs_indexacao_detailed.jsonl")
         if not index_file.exists():
             # Comentado para não interferir com protocolo MCP
             # print(f"[!] Arquivo não encontrado: {index_file}")
@@ -282,8 +287,13 @@ class SeniorDocumentationMCP:
                 return {}
             
             index = self.client.index(self.index_name)
-            stats = index.get_stats()
-            stats['source'] = 'meilisearch'
+            stats_obj = index.get_stats()
+            stats = {
+                'total_documents': stats_obj.number_of_documents,
+                'modules': len(self.list_modules()),  # Contar módulos únicos
+                'has_html': 0,  # Não aplicável em Meilisearch
+                'source': 'meilisearch'
+            }
             return stats
         except Exception as e:
             # Silenciar para não interferir no protocolo MCP stdio
@@ -367,11 +377,22 @@ class MCPServer:
         """Processa chamada de ferramenta"""
         try:
             if tool_name == "search_docs":
+                # Debug
+                debug_info = {
+                    "TOOL_CALL_DEBUG": True,
+                    "tool_name": tool_name,
+                    "params_received": params,
+                    "params_type": str(type(params))
+                }
+                
                 query = params.get("query", "")
                 # Validação: garantir que query é string
                 if isinstance(query, list):
                     query = query[0] if query else ""
                 query = str(query).strip()
+                
+                debug_info["query_extracted"] = query
+                debug_info["query_type"] = str(type(query))
                 
                 module = params.get("module")
                 if isinstance(module, list):
@@ -382,7 +403,10 @@ class MCPServer:
                 limit = int(params.get("limit", 5))
                 
                 if not query:
-                    return json.dumps({"error": "query é obrigatório"})
+                    debug_info["error"] = "query é obrigatório"
+                    debug_info["query_value"] = repr(query)
+                    debug_info["query_bool"] = bool(query)
+                    return json.dumps(debug_info, ensure_ascii=False)
                 
                 results = self.doc_search.search(query, module, limit)
                 return json.dumps({

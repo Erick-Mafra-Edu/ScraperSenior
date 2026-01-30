@@ -7,11 +7,11 @@
         }
     },
     "meilisearch": {
-        "url": "http://localhost:7700",
-        "apiKey": "meilisearch_master_key"
+        "url": "http://meilisearch:7700",
+        "apiKey": "meilisearch_master_key_change_me"
     },
     "settings": {
-        "indexName": "senior_docs",
+        "indexName": "documentation",
         "maxResults": 10,
         "timeout": 5000
     }
