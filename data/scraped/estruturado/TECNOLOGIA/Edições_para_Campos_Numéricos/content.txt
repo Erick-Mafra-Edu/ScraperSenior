@@ -1,0 +1,257 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/importacao-exportacao/informacoes-complementares/edcamnum.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520Importa%25C3%25A7%25C3%25A3o%252FExporta%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520Complementares%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador Importação/Exportação > Informações Complementares > Edições para Campos Numéricos
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Edições para Campos Numéricos
+                A edição dos campos numéricos permite os caracteres: Z, 9, h, m, além dos caracteres especiais:  ponto, vírgula, barra, dois pontos, parênteses, colchetes e sinal de menos.
+                As edições numéricas são utilizadas também em campos do tipo data, hora e quantidade de horas. 
+                Nota
+                    Quando for um campo do tipo hora, a edição já faz a consistência, impedindo que seja informado uma hora superior à 23:59.
+                
+                
+                    Exemplos de edições em Campos
+                        
+                            
+                                
+                                    Numérico Inteiro
+                                    Observação
+                                
+                                
+                                    (z99)999-99999
+                                     
+                                
+                                
+                                    #-<b#9999999
+                                    Permite valor negativo. Caso o valor seja zero, nada será exibido.
+                                
+                                
+                                    zzz.zzz.zz9
+                                     
+                                
+                            
+                             
+                            
+                                
+                                    Numérico Decimal
+                                    Observação
+                                
+                                
+                                    #-#ZZZ.ZZZ.ZZ9,99
+                                    Permite valor negativo.
+                                
+                                
+                                    n99999.9999,99
+                                     
+                                
+                                
+                                    99999999
+                                    A edição se processará como em um tipo numérico inteiro, excluindo os dígitos após a vírgula.
+                                
+                            
+                             
+                            
+                                
+                                    Numérico Data
+                                    Observação
+                                
+                                
+                                    DD/MM/YY
+                                    Data simples.
+                                
+                                
+                                    DD-MM-YYYY 
+                                    Data com ano completo.
+                                
+                                
+                                    DD
+                                    Dia.
+                                
+                                
+                                    MM
+                                    Mês.
+                                
+                                
+                                    YY
+                                    Ano.
+                                
+                                
+                                    MM/YY 
+                                    Para competência simples.
+                                
+                                
+                                    MM/YYYY
+                                    Para competência com o ano completo.
+                                
+                                
+                                    #b#DD/MM/YY
+                                    Caso o valor seja zero, nada será exibido.
+                                
+                                
+                                    #n#DD/MM/YY
+                                    Caso o valor seja zero, será exibido " /  /  " .
+                                
+                            
+                             
+                            
+                                
+                                    Numérico Hora
+                                    Observação
+                                
+                                
+                                    hh:mm
+                                     
+                                
+                            
+                             
+                            
+                                
+                                    Numérico Quantidade de Horas
+                                    Observação
+                                
+                                
+                                    hhh:mm
+                                     
+                                
+                                
+                                    hhhhh:mm
+                                     
+                                
+                            
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

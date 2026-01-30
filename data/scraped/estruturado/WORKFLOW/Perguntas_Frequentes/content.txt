@@ -1,0 +1,163 @@
+# 
+
+URL: https://documentacao.senior.com.br/workflow/6.10.1/#perguntas-frequentes.htm%3FTocPath%3DWorkflow%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____9
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOWorkflow - versão 6.10.1
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Workflow - Manual do Usuário > Perguntas Frequentes
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Perguntas Frequentes
+            Onde são modelados os processos de negócio?
+                
+                    Os processos de negócio são desenvolvidos no Senior Developer.
+                
+            
+            Quais telas é possível abrir através dos processos de negócio?
+                
+                    É possível abrir os seguintes tipos de tela: 
+                    
+                        Perspectivas SeniorTools
+                        Telas SGI-Web
+                        Telas BrowserAccess
+                    
+                
+            
+            É possível chamar um serviço do Middleware da Senior?
+                
+                    Sim, um serviço do Middleware  Senior poderá ser chamado a qualquer momento em uma tarefa de serviço, basta definir nas propriedades da tarefa o serviço a ser chamado além das demais configurações. Para mais informação e como chamar um serviço acesse Atividades e Funções JavaScript.
+                
+            
+            É possível chamar um serviço de terceiro?
+                
+                    Sim, um serviço de terceiro poderá ser chamado a qualquer momento em uma tarefa de serviço, basta definir nas propriedades da tarefa o serviço a ser chamado além das demais configurações. . 
+                    
+                        Importante
+                        
+                        Existem algumas limitações para a chamada desse tipo de serviço.
+                    
+                    Para mais informação e como chamar um serviço acesse Atividades e Funções JavaScript.
+                
+            
+            Onde são criadas as telas que podem ser utilizar no processo?
+                
+                    São 3 tipos de telas que poderão ser chamadas em processos:
+                    
+                        Perspectivas SeniorTools: Estas telas são criadas no Senior Developer.
+                        Telas SGI-Web: Estas telas são criadas no Gerador de Telas do sistema correspondente a tela que será chamada.
+                        Telas BrowserAccess: Estas telas são criadas no Gerador de Telas do sistema correspondente a tela que será chamada.
+                    
+                
+            
+            A construção de telas é obrigatória para os processos do sistema ou pode-se utilizar telas existentes no sistema?
+                
+                    É recomendado que sejam construídas perspectivas do SeniorTools específicas para a necessidade de cada processo do Workflow, para o qual são oferecidos recursos mais otimizados e previsão de evolução, No entanto, é possível utilizar as telas do sistema, desde que estas sejam utilizadas via BrowserAccess. Os seguintes pontos devem ser avaliados nas telas que deseja-se utilizar:
+                    
+                        Se as telas em questão possuem ponto de regra para que, ao concluir a realização da tarefa, seja possível responder para o Workflow através da chamada da função LSP SendWFResponse, para saber mais sobre as funções de LSP disponíveis consulte a documentação em Ferramentas Administrativas>Informações técnicas>Workflow>Funções LSP do Workflow.
+                        Se o BrowserAccess atende os recursos que o cliente utiliza (esta forma de acesso tem algumas limitações com relação ao ambiente cliente-servidor).
+                        Se as telas em questão serão utilizadas exclusivamente via Workflow. Se for gerada uma pendência via Workflow e o usuário acessar a tela diretamente via executável do sistema (cliente-servidor), a função SendWFResponse não funcionará. Isso vai fazer com que o processo fique parado esperando a resposta da tela em questão, gerando a impressão de que está travado.
+                    
+                
+            
+            Em que momento os dados do processo são efetivados no banco de dados?
+                
+                    Os dados podem ser efetivados em alguns pontos, isso vai depender da implementação de cada processo. Normalmente, os dados trafegam no processo durante toda a execução do processo para somente no final (última tarefa do processo) são efetivado no banco de dados. 
+                    Quando  utilizadas telas nativas do sistema, é necessário fazer controles de compensação no modelo do processo para que as informações gravadas pelas telas sejam revertidas caso a instância do processo seja cancelada ou termine com erro, caso contrário as informações na base de dados ficarão inconsistentes, pois alguns passos do processo podem não ser realizados.
+                    
+                         Nota
+                        A efetivação dos dados do processo para o banco pode ser feita através de Web services (Tarefa de serviço no processo, chamando um serviço).
+                    
+                
+            
+            Como funciona a conversação com o banco de dados?
+                
+                    A conversação ocorre através de telas e serviços (mais usualmente serviços) que são chamados em cada processo. Não existe nenhuma conversão nativa direta com o banco de dados.
+                    Os dados que trafegam durante o processo são dados que retornaram de telas e serviços chamados e são utilizados por telas e serviços que serão chamados na sequência do processo.
+                
+            
+            É possível enviar alertas ou avisos para os usuários sobre tarefas à tratas, tratadas ou vencidas?
+                
+                    Sim, estes alertas podem ser definidos. Podem ser configurados alertas mais genéricos sem a necessidade de programação, ou alertas mais customizados (tanto em texto quanto em situação). Mais informações sobre automatização podem ser vistas em Editor de JavaScript, Funções JavaScript e      propriedades das tarefas.
+                
+            
+            É possível definir consistências, validações e regras no processo? Se sim, como são realizadas?
+                
+                    Sim, elas podem ser realizadas através de validações nas próprias telas que serão utilizadas no processo, através de programação na tela ou através da chamada de serviços. Também é possível fazer isso através da chamada de serviços específicos (que já existem ou que serão construídos para isso) na própria modelagem do processo, após obter o resultado do serviço são tomadas decisões no processo definindo a direção que será tomada.
+                
+            
+            É possível definir prazo para que determinadas tarefas sejam tratadas?
+                
+                    Sim, é possível definir uma data de expiração para cada tarefa que necessite ser tratada por um usuário. Essa definição pode ser realizada através das propriedades de cada tarefa ou através dos scripts de cada tarefa .
+                
+            
+            Quando o prazo definido para uma tarefa ser tratada expirar, o que é possível modelar no processo?
+                
+                    É possível modelar o seguinte no processo:
+                    
+                        Continuar com responsável;
+                        Notificar via e-mail;
+                        Escalonar para chefe (considerando hierarquia, chefias ou posto);
+                        Cancelar processo;
+                        Entre outras ações.
+                    
+                
+            
+            É possível importar modelos de processo desenhados em outra ferramentas?
+                
+                    Não, só é possível importar processos que foram modelados no Senior Developer.
+                
+            
+            É possível customizar a paleta de componentes do modelador de processos?
+                
+                    Sim, é possível. Para mais informações consulte o tópico Paleta de edição.
+                
+            
+            Qual a especificação de modelagem de processos utilizada no modelador do Workflow?
+                
+                    É utilizada a especificação da BPMN, versão 2.0. Mais detalhes sobre essa especificação acesse http://www.omg.org/bpmn/.
+                
+            
+            Como verificar se o processo de negócio possui erros?
+                
+                    O Senior Developer faz uma validação do processo modelado verificando se este está de acordo com as regras da BPMN,  Essa opção chama-se Construir automaticamente e pode ser ligada e desligada. Os problema encontrados na validação são exibidos na aba Problemas. 
+                
+            
+            É possível modelar a comunicação entre processos no modelador do Workflow?
+                
+                    Por enquanto não. Somente é possível modelar a comunicação interna ao processo.
+                
+            
+            Como a execução de um processo pode ser iniciada?
+                
+                    A execução pode ser iniciada por:
+                    
+                        Serviço do Workflow: Serviço de Iniciar processo (Ex.: outro sistema chamando, algum sistema da Senior chamando, rotina agendada chamando, entre outras);
+                        Cockpit: Quem inicia é algum usuário, que tem permissão para iniciar o processo.
+                    
+                
+            
+            Por que o tratamento de pendência não continua a execução daquele caminho?
+                
+                    Quando utilizado o banco de dados Microsoft SQL Server pode ocorrer que ao responder alguma pendência, o caminho onde ela está, não continua sua execução normalmente, este fica parado aguardando. Esse problema pode ocorrer por conta 

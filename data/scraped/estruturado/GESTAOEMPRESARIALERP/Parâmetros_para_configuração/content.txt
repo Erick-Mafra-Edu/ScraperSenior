@@ -1,0 +1,247 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#integracoes/nfcom/parametros-para-configuracao-nfcom.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7CNFCom%2520(Nota%2520Fiscal%2520Fatura%2520de%2520Servi%25C3%25A7o%2520de%2520Comunica%25C3%25A7%25C3%25A3o%2520Eletr%25C3%25B4nica)%7C_____2
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > NFCom (Nota Fiscal Fatura de Serviço de Comunicação Eletrônica) > Parâmetros para configuração
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Nota Fiscal Fatura de Serviço de Comunicação Eletrônica - Parâmetros para configuração
+            Realize os ajustes necessários no sistema para emissão da Nota Fiscal Fatura de Serviço de Comunicação Eletrônica (NFCom).
+            O processo de geração da nota de NFCom deve ser feito pelas telas Geração de Notas Fiscais de Saída via Contratos (F161GPD) e Notas Fiscais de Saída (F140GNF). Também é possível gerar a nota utilizando o web service com.senior.g5.co.mcm.ven.notafiscal, porta GravarNotasFiscaisSaida. Outras telas não estão homologadas para geração de NFCom.
+            O que você precisa fazer?
+            Parametrizações da Filial
+                
+                    
+                        Acesse a tela Parâmetros da Filial para Vendas (F070FVE) > guia Documentos Eletrônicos;
+                         Parametrize a forma de integração da filial para notas fiscais eletrônicas , selecione o emissor utilizado no campo Software Emissor NF-e. Caso não exista o emissor desejado, selecione a opção "99 - Outro emissor";ObservaçãoSe o Software Emissor for eDocs, a NFCom somente trabalha com o "02 - eDocs - Envio e Retorno via Web Service eDocs".
+                        Defina no campo Ambiente NFCom, qual ambiente ficará registrada a NFCom, sendo:"1 - Produção";"0 - Homologação".
+                        Nesta tela também podem ser definidos os seguintes parâmetros:Tipo de emissão da NFCom que indica o tipo padrão para emissão da NFCom;Tipo de faturamento da NFCom que indica a finalidade padrão para emissão da NFCom.
+                    
+                
+            
+            Séries das notas fiscais
+                
+                    Na tela Séries de Notas Fiscais (F020SNF), a série da NFCom deve ser identificada como eletrônica. Para isso:
+                    
+                        Informe a série das notas fiscais no campo Série NF, sendo a faixa "1 – 899" para as emissões normais e "900 – 999" para emissões no ambiente SCAN;
+                        No campo Espécie Documento Informe a opção "62";
+                        Defina no campo Dispositivo Autorizado a opção "12 – Nota Fiscal Fatura de Serviço de Comunicação Eletrônica".
+                    
+                
+            
+            Parâmetros obrigatórios
+                
+                    
+                        Nas telas Cadastro de produtos (F075PRO) e Cadastro de serviços (F080SER) configure o % FUST e % FUNTTEL, assim como o código cClass. Para maiores informações sobre a tabela de cClass clique aqui;
+                        Na tela Cadastro de Clientes (F085CAD), preencha endereço completo (endereço, número, bairro, CEP, telefone e e-mail) e o Tipo de Assinante, dentre as opções abaixo:"1 - Comercial";"2 - Industrial";"3 - Residencial/Pessoa Física";"4 - Produtor Rural";"5 - Órgão da administração pública estadual direta e suas fundações e autarquias, quando mantidas pelo poder público estadual e regidas por normas de direito público, nos termos do Convênio ICMS 107/95";"6 - Prestador de serviço de telecomunicação responsável pelo recolhimento do imposto incidente sobre a cessão dos meios de rede do prestador do serviço ao usuário final, nos termos do Convênio ICMS 17/13";"7 - Missões Diplomáticas, Repartições Consulares e Organismos Internacionais, nos termos do Convênio ICMS 158/94";"8 - Igrejas e Templos de qualquer natureza";"99 - Outros não especificados anteriormente".
+                        No Cadastro de Cidades (F008RAI) informe o Código Cidade (Rais) informado;
+                        Por fim, configure a situação tributária de todos os impostos e demais dados fiscais. Para mais detalhes, consulte o Detalhamento dos Impostos.
+                    
+                    Veja também as Regras e sugestão de valores para acessar as regras seguidas pelo Gestão Empresarial para a sugestão automática de informações importantes relacionadas à geração de documentos fiscais.
+                
+            
+            Identificadores de regras
+                
+                    Abaixo, listamos os identificadores de regra disponibilizados para utilização na emissão de NFCom.
+                    
+                        
+                        
+                        
+                            
+                                Identificador
+                                Descrição
+                            
+                            
+                                VEN-140NFCOM01
+                                
+                                Permite gerar o grupo gProcRef na emissão do XML da NFCom.
+                            
+                            
+                                VEN-140NECER01
+                                
+                                Desligar a assinatura digital do arquivo eletrônico.
+                            
+                            
+                                VEN-140NECER02
+                                
+                                Solicitar o certificado digital a cada nota emitida.
+                            
+                        
+                    
+                
+            
+            
+                
+                    
+                    
+                    
+                        
+                            
+                                
+                            
+                            Veja também:
+                        
+                    
+                
+                
+                    Introdução à Nota Fiscal Fatura de Serviço de Comunicação Eletrônica (NFCom)
+                    
+                    Notas Técnicas
+                    
+                    Leiaute
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

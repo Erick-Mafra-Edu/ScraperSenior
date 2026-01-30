@@ -1,0 +1,220 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/editor/ftabledef.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CEditor%7C_____20
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Editor > Tabelas e Campos
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Tabelas e Campos
+            A tela de Tabelas e Campos permite atribuir 
+ um campo da tabela no banco de dados a umas variável 
+ de entrada específica, fazendo com que o seu conteúdo sempre seja 
+ atualizado conforme os dados são manuseados na base do sistema.
+            Tabelas
+            Nesta guia são apresentadas as tabelas 
+ disponíveis no sistema. As primeiras informações que aparecem são o nome 
+ e a descrição da tabela, sendo que a lista é apresentada por ordem alfabética.
+            Juntamente com as tabelas, são exibidos 
+ os campos disponíveis e suas informações.
+            
+                
+            
+            Campos
+            A guia Campos 
+ apresenta uma lista de todos os campos de todas as tabelas do sistema. 
+ A lista é exibida em ordem alfabética por nome do campo. As informações 
+ básicas incluem, além do nome, a sua descrição.
+            
+                
+            
+            Botões
+            Selecionar
+                Ao marcar uma tabela ou campo e clicar 
+ sobre o botão Selecionar, esse 
+ componente será atribuído à variável de entrada que está sendo editada.
+            Procurar
+                Nesta tela podemos localizar uma tabela pelo seu nome ou descrição.
+            
+                
+            
+            Para fazer 
+ a pesquisa, é preciso informar o nome da tabela ou parte dele no campo 
+ 'Procurar' e em seguida teclar 
+ Enter. Os resultados são apresentados 
+ em lista, e na barra de status da tela, a quantidade de registros.
+            LegendaA legenda 
+ é utilizada para demonstrar o que cada ícone / ítem das tabelas ou campos 
+ representa.
+            
+            
+            
+                 Tabela: indica que o item apresentada é um tabela 
+	 física do sistema, que pode receber comandos de seleção e de manipulação 
+	 de dados;
+                 View: indica uma view que pode apenas receber 
+	 comandos de seleção;
+                 Campo 
+	 chave da tabela: o elemento é uma 
+	 campo chave que determina a identificação do registro de uma tabela;
+                 Campo 
+	 chave da tabela  com relacionamento: 
+	 é um campo chave que está relacionado com uma outra tabela do sistema;
+                 Campo 
+	 da tabela: é um campo normal da 
+	 tabela (não é chave e não tem relacionamento);
+                 Campo 
+	 da tabela com relacionamento: é 
+	 um campo de uma tabela que possui relacionamento com outra tabela 
+	 do sistema;
+                 Campo 
+	 da tabela com lista: campo onde 
+	 o domínio é uma lista pré-definida no sistema;
+                 Campo 
+	 da view: campo de uma view do banco 
+	 de dados;
+                 Campo 
+	 da view com relacionamento: indica 
+	 um campo de uma view que possui relacionamento com uma tabela do sistema;
+                 Campo 
+	 da view com lista: campo de uma 
+	 view cujo domínio é uma lista pré-definida pelo sistema;
+                 Propriedades: indica informações sobre as propriedades 
+	 do campo ou tabela selecionada; 
+                 Itens 
+	 do campo lista: indica os itens 
+	 que compõem um campo do tipo lista;
+                 Informações 
+	 sobre o campo: indica que mais 
+	 informações podem ser obtidas sobre o item selecionado.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

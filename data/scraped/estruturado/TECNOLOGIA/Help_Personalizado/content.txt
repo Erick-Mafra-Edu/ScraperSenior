@@ -1,0 +1,216 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/helpper.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7C_____17
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Help Personalizado
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Help Personalizado
+            A documentação personalizada
+é a documentação de uso do sistema,
+elaborada pela própria empresa, ou pelos consultores durante
+o processo de implantação, como complemento
+à documentação fornecida com o
+Software pela Senior, e para documentação das
+definições e decisões de
+implantação.
+            Fica associada ao sistema para uso
+pelo usuário final, como um Manual especial de
+domínio da empresa. É útil como
+ferramenta no processo de implantação, indicada
+na metodologia Senior na implantação de sistemas,
+e como recurso documental permanente.
+            A documentação personalizada deve ser
+centralizada, uma só para toda a empresa do cliente, e
+não é uma documentação
+pessoal de cada usuário. Portanto esses documentos devem
+permanecer centralizados na rede e de lá serem acessados
+pelas estações. A documentação personalizada divide-se em duas partes, a documentação de processos e a de telas. 
+            
+                Importante
+                
+                A segurança dos dados dos arquivos de help deverá ser feita pelo administrador da rede na empresa. Como boa prática, é recomendável que poucos usuários tenham
+					permissão para alteração dos arquivos,
+					e que para todos os usuários seja liberado o
+				diretório apenas para leitura.
+            
+            Documentação
+de Processos
+            Documentação personalizada dos processos
+e procedimentos do cliente, referentes a qualquer assunto com respeito
+ao uso do sistema. Os processos podem ser os mesmos propostos como
+padrão pelo sistema, ou processos especiais da empresa. Pode
+ser usada também como documentação das
+definições e decisões de
+implantação.
+            Como padrão de documentação
+sugerimos uma documentação de fluxo de processo, que contém a sequência
+de procedimentos do processo e a descrição de
+cada procedimento. Pode conter  hyperlinks para o
+mesmo ou para outro documento, fluxo gráfico do processo,
+figuras, e numa espécie de hyperlink
+chamadas de tela do próprio sistema. Na metodologia Senior de implantação de
+sistemas, há uma sugestão de
+documentação de processo simplificado, via o
+documento padrão DFP, e também uma
+sugestão de padrão para fluxo gráfico
+de processo.
+            Documentação
+de Telas
+            Documentação personalizada de qualquer
+tela, seja cadastral ou de movimento. O objetivo básico
+é documentar como foram definidos no cliente o uso de telas
+e seus campos, quando fugir do convencional apresentado na
+documentação padrão do sistema. Como padrão sugerimos o uso do modelo DTC, conforme
+indica a metodologia de implantação.
+            Documentação Personalizada no Sistema
+            A empresa poderá optar pela
+utilização da documentação
+personalizada. Os procedimentos para implantação
+são:
+            
+                Incluir o diretório Processo
+com dois subdiretórios, num servidor de acesso comum a todos
+os usuários:
+            
+            
+                
+                    DFP (Documentação de Fluxo de Processos): Neste
+diretório incluir o arquivo Vazio.Hsp.(Help
+Senior de Processos);
+                    DTC (Documentação de Telas e Cadastros): Neste
+diretório incluir o arquivo Vazio.Hst.
+(Help Senior de Telas).
+                
+            
+            
+                Nota
+                
+                Estes arquivos podem ser em qualquer formato (TXT, RTF, DOC,
+HTML, entre outros).
+            
+            O arquivo Vazio.HST e o arquivo Vazio.HSP estarão
+vazios. Estes arquivos vazios serão usados para criar novos
+arquivos para Help, mas poderão estar formatados conforme a
+padronização adotada pela empresa. 
+            Inicialmente
+os arquivos HST e HSP não estarão registrados
+no Windows de cada estação, por isso na primeira
+vez que a rotina para mostrar o help de usuário for
+executada, será perguntado para o usuário qual o
+tipo do arquivo de Help que estará sendo usado.
+            Aparecerá uma tela com a lista de todos os tipos de arquivo
+que estão registrados no Windows para qual o
+usuário escolha. Neste caso todos usuários
+deverão utilizar o mesmo editor de textos determinado pela
+empresa. O usuário que for fazer o vínculo deverá ser o administrador da máquina. Portanto, ao acessar o sistema, clique com o botão direito do mouse e selecione a opção Executar como administrador e assim, ter acesso aos arquivos.
+            
+                Atenção
+                
+                Caso o sistema esteja em ambiente cloud, para que não seja perdido este vínculo, solicite para equipe IT Services fazer a associação dos tipos de arquivos, .HSP e .HST, conforme padronização adotada.
+            
+            Ajuda de Telas
+            Nas telas do sistema, ao clicar o botão Ajuda
+(help) de tela da forma Shift + click do botão esquerdo do
+mouse, será executado uma rotina que abrirá um
+editor de textos com a documentação
+personalizada, passando como parâmetro o nome do arquivo
+(correspondente à tela).
+            Na primeira vez em que o processo é efetuado o
+sistema exibirá uma mensagem solicitando que seja associado algum aplicativo para edição do arquivo do help personalizado, em seguida serão exibidas opções de aplicativos para associar. Após selecionar o editor de texto, o sistema
+exibirá uma mensagem informando que o arquivo de help personalizado não existe e questionando se deve ser criado.
+            Se o arquivo correspondente à tela já
+existir, o mesmo será aberto. Se não existir o
+sistema sempre exibirá essa mensagem. Ao optar por Sim, o sistema abrirá um
+arquivo texto com o nome da tela, junto com a extensão HST.
+Se optar por Não, a operação
+será cancelada.
+            
+                Crie um diretório fixo no Windows Explorer dentro da própria máquina ou na rede, acessível aos  usuários  necessários  e  que  permita  gravações, com o nome  Processos. Por exemplo, C:\Senior\Vetorh\Processos;
+                Dentro  do diretório  criado,   insira   uma pasta  com a seguinte denominação exata: DTC. Por exemplo, C:\Senior\Vetorh\Processos\DTC;
+                Acesse,  no   Windows  Explorer,  o  menu  Ferramentas  >  Opções  de  Pasta  >  Modos  de Exibição,  e desmarque a opção Ocultar  extensões  de  tipos  de  arquivos  conhecidos;
+                Dentro  da  pasta  DTC,  clique  com  o  botão  direito  e  selecione  a  opção  Novo > Documento de Texto e renomeie para vazio.hst. Por exemplo, C:\Senior\Vetorh\Processos\DTC\Vazio.hst;
+                Acesse a Central de Configurações Senior e na tela Configurações, correspondente ao sistema utilizado (Gestão de Pessoas | HCM, Gestão Empresarial e/ou Ronda Senior), no campo Local dos arquivos de ajuda, informe o diretório de armazenamento dos arquivos de ajuda por telas. Por exemplo, C:\Senior\Vetorh\Processos\DTC.
+            
+            Ajuda de Processos
+            Em Ajuda > Documentação de
+Processos, está disponível a opção
+para documentação dos processos. O nome do arquivo que conterá o help dos processos
+será Hrdocpro.hsp. O sistema irá
+criá-lo no primeiro acesso através desta
+opção, exibindo a seguinte mensagem, para a escolha do editor de texto e em seguida será mostrada essa mensagem para
+criação do arquivo, confirme ambas as mensagens.
+            Para  utilizar  o  recurso  torna-se  necessário  criar  as  chaves  AjudaTelas  e AjudaProcessos  encontradas no arquivo .CFG. A seqüência de procedimentos para criação deste help será:
+            
+                Crie um diretório fixo no Windows Explorer dentro da própria máquina ou na rede, acessível aos  usuários  necessários  e  que  permita  gravações, com o nome  Processos (Exemplo:"c:\Senior\Vetorh\Processos");
+                Dentro  do diretório  criado,   insira   uma pasta  com a seguinte denominação exata: DFP. Por exemplo, C:\Senior\Vetorh\Processos\DFP;
+                Acesse,  no   Windows  Explorer,  o  menu  Ferramentas  >  Opções  de  Pasta  >  Modos  de Exibição,  e desmarque a opção Ocultar  extensões  de  tipos  de  arquivos  conhecidos;
+                Dentro  da  pasta  DFP,  clique  com  o  botão  direito  e  selecione  a  opção  Novo > Documento de Texto e renomeie para vazio.hsp. Por exemplo, C:\Senior\Vetorh\Processos\DFP\Vazio.hsp;
+                Acesse a Central de Configurações Senior e na tela Configurações, correspondente ao sistema utilizado (Gestão de Pessoas | HCM, Gestão Empresarial e/ou Ronda Senior), no campo Local dos arquivos de processos, informe o diretório de armazenamento dos arquivos de ajuda de processos. Por exemplo, C:\Senior\Vetorh\Processos\DFP.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta pág

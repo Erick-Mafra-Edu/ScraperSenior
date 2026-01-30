@@ -1,0 +1,191 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#editor-de-web-services/fmceditor.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CEditor%2520de%2520web%2520services%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Editor de web services
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Editor de web services
+            O editor de web services é um recurso que permite integrar diversos serviços em diferentes servidores, ou até mesmo criar novos serviços implementados utilizando regras LSP, tornando-os flexíveis e abrangentes. 
+            Antes de iniciar a utilização deste recurso, é importante que as configurações estejam em ordem.
+            Para acessar essas opções, primeiramente acesse Recursos > Implementações > web services. Verifique as opções de quatro maneiras diferentes: 
+            
+                Arquivo > Provedor;
+                 Opções do menu 
+ do botão Provedores;
+                 Duplo clique sobre 
+ Adicionar provedor na lista de provedores;
+                 Painel de navegação dos Provedores de serviços.
+            
+            As opções Adicionar e Editar abrem a tela de configurações de provedor de serviços.
+            Edição de provedores
+            Adicionar
+                Inclui um novo provedor que estará disponível 
+ para todos os sistemas que utilizam a mesma base que o sistema onde ele foi 
+ cadastrado;
+            Atualizar
+                Esta opção está disponível apenas para provedores Senior, de mesma base 
+ ou não. Permite atualizar as definições de serviços disponíveis 
+ em um sistema Senior.Ao selecioná-la, todos os serviços dos provedor em questão serão importados 
+ novamente, mantendo o ambiente consistente. Isto é útil após uma atualização 
+ de versão ou após criar um novo serviço no sistema provedor que precise 
+ ser usado  dentro do sistema em execução.Ao fazer alterações (adicionar, alterar, excluir) nos web services de 
+ um sistema Senior, estas alterações serão vistas automaticamente 
+ pelos sistemas que usem a  mesma base e que o tenham como provedor, 
+ sem a necessidade de usar a opção Atualizar nesses sistemas, bastando 
+ reiniciá-los;
+            Editar
+                Permite alterar os dados do provedor desejado;
+            Publicar
+                Permite publicar as customizações sem a necessidade de atualizar os web services;
+            Excluir
+                Remove o provedor selecionado;
+            Log: Não gravar: não efetua novas gravações de log, mas manterá o que já tinha gravado;
+Conforme provedor: mantém os registros de logs conforme definido no provedor interno. Ou seja, a configuração feita no provedor será respeitada por esse serviço;Exemplo: caso existam vários serviços em um provedor, a opção fará com que todos tomem o comportamento do provedor interno como padrão. Manter 1 dia: mantém os registros de logs durante 1 dia;Manter 7 dias: mantém os registros de logs durante 7 dias;Manter 30 dias: mantém os registros de logs durante 30 dias;
+Manter 90 dias: mantém os registros de logs durante 90 dias;
+Sempre gravar: mantém sempre os registros de log na base.Utilize a opção Sempre gravar com precaução, e evitando o uso excessivo de recursos com a geração das informações e capacidade de armazenamento. O uso desta configuração em ambientes com alto volume de integrações, como alterações cadastrais, compromete a performance do sistema e gera alto volume de dados em banco de dados. Portanto, salvo em situações de investigação, homologação ou diagnóstico, não é recomendável o uso desta opção.Para cenários com necessidade de auditoria, observar com cautela o funcionamento da rotina e a utilidade da informação gerada antes de fixar a parametrização em base de produção.
+            
+                Importante
+                
+                
+                    Ao salvar uma nova configuração, o editor fará a chamada da Stored Procedure SP_CLEAR_WS_LOG, responsável pela limpeza do log. Esse processo poderá demorar, por isso recomendamos usar comandos nativos do banco de dados ou configurar limites escalonados e por serviços, para que assim as linhas excedentes possam ser apagadas em faixas;
+                    A execução da rotina de limpeza de logs de web services será executada somente uma vez ao dia e iniciada a partir do primeiro web service executado do dia.
+                
+            
+            Veja também:
+            
+                Serviços;
+                Portas de serviço;
+                Parâmetros.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

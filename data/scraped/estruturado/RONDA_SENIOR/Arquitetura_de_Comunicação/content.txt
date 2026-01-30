@@ -1,0 +1,182 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#integracoes-com-dispositivos/telematica/arquitetura-de-comunicacao.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%2520com%2520Dispositivos%7CArquitetura%2520de%2520Comunica%25C3%25A7%25C3%25A3o%2520e%2520Integra%25C3%25A7%25C3%25A3o%7CTelem%25C3%25A1tica%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Integrações com Dispositivos > Arquitetura de Comunicação e Integração > Telemática > Arquitetura de Comunicação
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Arquitetura de Comunicação
+            Arquitetura de Comunicação
+                
+                A comunicação on-line da aplicação Ronda Senior 
+ com os dispositivos controladores de acesso da Telemática pode ser realizada 
+ de três maneiras:
+            
+                
+                    Arquitetura 
+	 ARL baseada no RS 485 /232, que faz o uso de uma centralizadora 
+	 que pode concentrar até 12 Codins. A centralizadora é uma placa que 
+	 deve estar instalada em um computador na rede, e neste computador 
+	 deverá rodar um programa chamado Arlon.
+                
+                
+                    Arquitetura 
+	 TCP/IP que faz o uso deste protocolo. Não existe um hardware 
+	 de controle. Deverá apenas  rodar um programa chamado Conex 
+	 em uma máquina da rede. Cada Conex pode gerenciar até 120 Codins TCP/IP.
+                
+                
+                    A arquitetura 
+	 híbrida é a junção de 2 arquiteturas Telemática em um mesmo 
+	 ambiente. Isto acontece nos casos em que existem dispositivos com 
+	 arquiteturas diferentes, em uma base centralizada. Neste tipo de arquitetura 
+	 o cliente poderá fazer uso de Centralizadoras (ARL) e Conex (TCP/IP) 
+	 simultaneamente.
+                
+            
+            Abaixo segue ilustração das arquiteturas.
+            
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

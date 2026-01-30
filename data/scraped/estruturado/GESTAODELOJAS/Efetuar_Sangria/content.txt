@@ -1,0 +1,204 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/efetuar-sangria.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____9
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Efetuar Sangria
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Efetuar Sangria
+                Conceito   
+                O termo sangria refere-se a qualquer tipo de retirada que será efetuada do caixa. 
+                Utilização   
+                É utilizada para não acumular  valores altos durante o expediente de um operador e também para retirar valores do caixa sem a necessidade de efetuar o fechamento.
+                Processo   
+                A sangria deve ser efetuada sempre com a conferência do valor existente do respectivo caixa.  Para isto,  deve-se primeiramente gerar o relatório gerencial, descrito no fechamento de caixa. 
+                O relatório gerencial exibe as movimentações do caixa do dia, portanto, deve ser conferir o valor das formas de pagamento "Dinheiro" e "Cheque" para efetuar a sangria.
+                
+                    Selecione a opção Outras na tela inicial do PDV;
+                    Selecione a opção Sangria; 
+                    Selecione a forma de recebimento em que deseja efetuar sangria: Dinheiro ou Cheque;
+                    Conforme opção escolhida no passo anterior, o sistema exibe o valor do saldo em caixa; 
+                
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Informe o valor total ou parcial correspondente para efetuar a sangria;
+                
+                Exemplo
+                    
+                        Na simulação, foi informado o valor de R$ 6.000,00 (seis mil reais) para sangrar. O sistema faz o registro dessa movimentação e emite o comprovante e o detalhamento não fiscal no ECF.
+                        
+                            
+                        
+                        Detalhamento da sangria:
+                        
+                            
+                        
+                    
+                
+                
+                    Notas 
+                    
+                        O valor da sangria sempre terá que ser digitado pelo usuário.
+                        É possível informar um motivo ao realizar sangria conforme Cadastros de Motivos no sistema ERP e configuração no PDV. Quando selecionada a opção Tipo da Operação 1 - Retirada, serão apresentados para seleção os motivos de Tipo aplicação Sangria. Quando selecionada a opção 2 - Pagamento, serão apresentados para seleção os motivos de Tipo aplicação Controle de Verba.
+                        Existe a possibilidade de a sangria (em dinheiro) feita no PDV vá direto para uma conta bancária. Para isso, é necessário que o parâmetro dinâmico SANGRIA.TRANSFERENCIAAUTOMATICABANCO da filial no Gestão Empresarial | ERP esteja definido como "1". Nesse caso, é preciso selecionar a conta para a qual a transferência será realizada, podendo ser uma conta bancária ou conta interna.
+                        Outra possibilidade é a de que seja realizada uma entrada de valores, oriundos do PDV, de forma automática na conta da loja no Retaguarda. Para isso, é necessário que o parâmetro dinâmico SUPRIMENTO.ENTRADAAUTOMATICASOBRACAIXA esteja definido como "1" no cadastro do motivo utilizado no suprimento no PDV. O motivo deve ser de Aplicação 39 - Ocorrências para Suprimento no PDV e seu cadastro deve ser feito no Gestão Empresarial | ERP. Ao realizar um suprimento habilitado para "EntradaAutomáticaSobraCaixa" o sistema vai realizar uma entrada na conta central da loja antes de realizar a transferência da conta central para a conta do PDV (processo de suprimento). Dessa forma o saldo será mantido na conta central da loja.
+                    
+                
+                
+                    Caso seja informado para sangrar o valor total do saldo em caixa e nesse valor estiver o fundo de troco informado na abertura do caixa, o sistema apresentará uma mensagem de aviso.
+                
+                Exemplo
+                    
+                        Na abertura do caixa foi informado o valor de R$ 100,00 (cem reais) para fundo de troco. Esse valor estará compondo o saldo do caixa ao efetuar a sangria.
+                        
+                            
+                        
+                    
+                
+                
+                    Escolha uma das opções para prosseguir com a sangria:
+                
+                
+                    Sim: Ao selecionar esta opção, será sangrado todo o saldo do caixa, inclusive o valor do fundo de caixa. 
+                
+                
+                    Não: Ao selecionar esta opção, o sistema retorna para a tela de sangria, para que o usuário informe o valor desejado a sangrar.
+                
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    O comprovante da sangria e seu detalhamento serão impressos no ECF.
+                
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Nota 
+                    O sistema de ponto de venda possui configuração para indicar o valor máximo que poderá ser acumulado no caixa durante o dia. Caso seja informado um valor limite na configuração do PDV, será informado para que seja feita a sangria  quando o saldo do caixa atingir este valor.
+                
+                Sangria de Cheques 
+                Ao selecionar a opção de Sangria de cheques, serão exibidos dados os cheques que estão no caixa, com informações de: Banco, Agência, Conta, Número, Valor e Vencimento.
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                 Além disso, é possível  filtrar os cheques pelo código do banco, marcar todos os cheques com o mesmo número, marcar cheques informando o CMC7, abrir a gaveta, entre outros. 
+                Processo 
+                Ao selecionar um cheque para efetuar a sangria, deve-se:
+                
+                    Selecionar um Portador. 
+                
+                
+                    Nota
+                    
+                    Esta informação apenas será exigida caso o parâmetro Informar portador para a sangria de chequesestiver configurado na tela de Parâmetros do Varejo do Gestão Empresarial | ERP (F000PPD).
+                
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Informar o número do envelope 
+                
+                
+                    Nota
+                    
+                    O número do envelope poderá ser informado somente para sangrias manuais (aquelas que não são geradas automaticamente, como no caso do fundo de troco ou fechamento, por exemplo) e se o motivo estiver habilitado para exigir envelope. (Conforme configurado na tela F021MOT do Gestão Empresarial | ERP.
+                
+                 
+                
+                    Informar a data de vencimento
+                
+                
+                    Nota
+                    
+                    A data de vencimento será apresentada conforme última alteração realizada no sistema de Retaguarda, caso a conexão entre PDV e Retaguarda esteja online. Caso contrário,  o vencimento será exibido conforme gravado na base de dados do PDV.
+                
+                 
+                
+                    Efetuar a sangria
+                
+                
+                    Notas 
+                    
+                        Não será possível fazer sangria de cheques quando existir cheques com vencimentos diferentes selecionados na mesma sangria. 
+                        Caso haja cheques de bancos diferentes selecionados na mesma sangria, uma mensagem de confirmação será exibida. 
+                        No momento do fechamento, será verificado se existe saldo diferente de zero para cheques. Caso sim, a mensagem: "Atenção, existem cheques no caixa. Faça sangria de todos os cheques antes do fechamento" será exibida. 
+                    
+                
+                 
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo re

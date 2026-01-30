@@ -1,0 +1,113 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/controles-entrega.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7C_____6
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Controles de Entrega
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Controles de Entrega
+            Permite realizar a consulta de entregas agendadas pelo pedido de venda e, em alguns casos, alterar a situação, conforme o andamento do processo, através do caminho Mercado > Gestão de faturamento > Controles de entrega e apresenta a lista de todos as entregas agendadas. Para realizar uma busca mais detalhada e ágil, utilize os filtros disponíveis na pesquisa.
+            Na tela Controles de entrega é possível visualizar uma linha para cada controle de entrega, cujo pedido já tenha sido faturado. Se um pedido possui três controles, por exemplo, cada um possui uma linha. Ao clicar sobre sua linha, são exibidos seus detalhes na parte inferior da tela, mostrando os itens do controle.
+            Exemplo:
+                
+                    
+                        
+                    
+                
+            
+            Cada linha possui uma cor, representando sua situação, conforme legenda. As linhas que estão em branco (Sem responsabilidade) representam entrega por outra filial, sobre as quais não é possível efetuar nenhuma ação, exceto alterar a previsão de entrega. Pelo filtro padrão da tela, não são mostradas entregas nas situações entregues ou canceladas. Caso sejam filtradas, ficam em cinza e desabilitadas. 
+            Ao marcar a caixa de seleção de uma entrega, todos os seus itens, na grade inferior, são também marcados. Ao marcar uma entrega que tenha um item controlado por série, o sistema solicita ao usuário definir a série. Se algum item do controle de entrega está desmarcado na parte inferior, a caixa de seleção desse controle fica escurecida. Isso também acontece na grade dos itens da entrega, quando a quantidade a entregar do item é parcial.
+            Ao clicar sobre algum controle de entrega, na grade inferior é exibido o detalhamento dos itens:
+            
+                Qtd. faturada: quantidade total do item vendido.
+                Qtd. pendente: que não foi entregue nem cancelado.
+                Qtd. estoque: mostra o estoque da filial logada, desde que responsável pelo produto, em todos os seus depósitos. A coluna fica zerada caso a filial não seja responsável pela entrega do produto.
+                Qtd. Saiu p/ entrega: produto cuja remessa ou transferência já foi gerada, mas que ainda não tem confirmação de entrega.
+                Qtd. entregue: quantidade cuja entrega ao cliente já foi confirmada.
+                Qtd. cancelada: que não saiu para entrega e nem foi entregue.
+            
+            
+                Importante
+                
+                Para produtos controlados por série é possível utilizar os processos de entrega futura. No entanto, é necessário atender os seguintes pré-requisitos:
+                
+                    A proprietária do Gestão Empresarial | ERP não deverá possuir liberação para processos específicos de Agronegócio (por exemplo: módulos ECCC - Específico - Cerealista - Controle do Cooperado e SRPR - Suprimentos - Gestão de Recebimento - Controle de Produtor). Caso seja utilizada Proprietária com liberação por área (Backoffice, por exemplo), os parâmetros globais UtiCtrCoo e UtiCtrPrd (tela F000PGS do ERP) deverão estar desabilitados;
+                    O identificador de regras CPR-440DISSE01 deverá estar cadastrado e ativo nas empresas que utilizarão o processo de entrega. Não há necessidade deste identificador estar vinculada a uma regra. Ele tem o objetivo de ativar a busca das séries da NF de Saída para geração da NF de Entrada gerada via Transferência entre Filiais.
+                
+            
+            Botões
+            Solicitar remessa
+                Somente fica ativo se o parâmetro dinâmico ENTREGA.PERMITEGERARREMESSA (do cadastro de filial do Gestão Empresarial | ERP) está definido como "Sim". Este botão deve ser utilizado pela filial do produto quando ela não faz o transporte. Ao clicar no botão, é solicitado ao ERP que gere a nota de remessa depois que a transferência é emitida. 
+            Ao clicar neste botão, a Situação da entrega muda para "Saiu para entrega".
+            Reenviar controle
+                Serve para reenviar o controle de entrega, caso tenha ocorrido algum erro de integração e o processo esteja parado, somente para casos em que a filial de entrega não é a filial em que o usuário está logado e a filial de venda é igual à filial em que o usuário está logado.
+            Devolver controle
+                Utilizado pela filial do produto para devolver o controle de entrega para a filial de venda. Nesse caso, o sistema altera a filial de entrega para a filial de venda, cancela a reserva e gera uma pendência de integração para a filial de venda.
+            A ação executada pelo botão Devolver controle limpa os dados do lote/série e do depósito, pois a entrega será enviada de volta à filial de venda do produto.
+            Alterar item
+                Se o item é controlado por lote/série, é possível definir qual lote ou série será remetida. O campo permite ainda alterar a quantidade de itens a entregar, para efetuar uma entrega parcial.
+            Ao selecionar o controle de entrega, caso não tenha sido informado o lote do item no pedido, é apresentada uma tela para que o lote/série seja informado. Essa tela é aberta automaticamente ao selecionar um item do controle de entrega que não possui lote/série.
+            Da mesma forma que no pedido, é possível digitar o lote manualmente, onde este deve possuir estoque no depósito padrão da filial, ou, clicar no botão de Pesquisa, da tela Alteração do Item, para escolher um lote ou uma série entre todos os depósitos da filial.
+            Caso o controle já contenha lote/série informado e seja necessário efetuar alteração de quantidade e lote ou série, o acesso é realizado também por este botão.
+            
+                Importante
+                
+                Para que a geração de notas fiscais neste processo ocorra com sucesso, o identificador de regras CPR-440DISLO01 deve estar cadastrado e ativo.
+            
+            Alterar (F3)
+                Realiza alterações no controle de entrega selecionado na tela quando a situação é "Aberto".
+            O respectivo controle de entrega selecionado é mostrado e permite efetuar as alterações necessárias, tais como mudanças nas informações de transportadora, data para entrega e período. Além disso, podem ser informadas e gravadas ocorrências e outras informações adicionais. Após efetuar as alterações, utilize o botão Gravar. 
+            
+                Importante
+                
+                
+                    As datas das entregas já existentes no sistema não serão validadas caso a data da entrega seja alterada.
+                    Ao tentar alterar a Data prevista para entrega, o sistema valida para que seja anterior à data de montagem, caso haja montagem para o item. 
+                    A filial de entrega pode alterar somente o endereço (no mesmo estado, por questões fiscais), o transportador, a data de previsão de entrega, o período, a data e hora que a entrega foi realizada, adicionar ocorrências, lançamentos financeiros, informações do veículo e informações adicionais.
+                
+            
+            Visualizar (Ctrl + W)
+                Permite apenas consultar os detalhes o controle de entrega selecionado, não sendo possível efetuar nenhum tipo de alteração ou inclusão de informações.
+            Cancelar entrega (F9)
+                Pode ser usado quando nenhum item "saiu para entrega". Somente a filial do produto pode cancelar e, ao fazê-lo, cancela também a reserva de estoque.
+            Se a filial entrega é igual à filial de venda e é nela que o usuário está logado, o sistema cancela todos os produtos não entregues do controle de frete. Se a filial de venda é diferente da filial de entrega e o usuário está logado na filial de entrega, o sistema cancela todos os produtos com situação "Aberto" e suas reservas.
+            Se todos os produtos do controle de frete estão cancelados, o sistema cancela o controle de frete.
+            
+                Observação
+                
+                Para que este botão esteja disponível na tela, é necessário configurar o parâmetro dinâmico Entrega.PermiteCancelarControle, indicando "S" em seu valor.
+            
+            Coletar
+                Esta botão é utilizado quando o CD busca o produto na loja e não entrega para o cliente. Ele gera uma nota de transferência e muda a Situação da entrega para "Coletado".
+            Entregar (F11)
+                Este botão só pode ser usado pela filial do produto e permite entregar itens que ainda não foram entregues. Ao selecionar a entrega e pressionar o botão, o sistema valida se há produto em estoque. Havendo, tem as seguintes possibilidades, de acordo com o tipo de entrega:
+            Entrega futura pela loja:
+            
+                Quando a filial da venda é a mesma que a filial do produto, caso haja estoque, é gerada uma nota de remessa automaticamente e a Situação é alterada para "Saiu para entrega", conforme tabela de Situação da entrega.
+                Quando a filial da venda é diferente da filial do produto, é gerada uma transferência. Se a filial do produto também vai transportar, pode ser solicitada a geração da remessa para o ERP, através do botão Solicitar remessa. Nesse caso, a Situação é alterada para "Saiu para entrega", conforme tabela de Situação da entrega.
+            
+ 

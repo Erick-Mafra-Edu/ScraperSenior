@@ -1,0 +1,181 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#configuracoes-do-pdv/configuracao-pdv-nfc-e.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CConfigura%25C3%25A7%25C3%25B5es%2520do%2520PDV%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Configurações do PDV > Configuração do PDV NFC-e
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+             Configuração do PDV NFC-e
+            Sistema de ponto de venda com emissão de Nota Fiscal para Consumidor - Eletrônica (NFC-e).
+            Pré-requisitos 
+            Para configuração correta do NFC-e:
+            
+                Execute o  PDVConf.exe. Esse aplicativo está dentro da raiz da instalação do PDV;
+                Informe o usuário e senha do sistema de PDV que possua permissão para configurar NFC-e.  Esse usuário é cadastrado no Gestão Empresarial | ERP ou no Retaguarda;
+                Informe o usuário e senha do sistema de PDV que possua permissão para configurar NFC-e.  Esse usuário é cadastrado no ERP ou no Retaguarda;
+            
+            Configurar PDV NFC-e
+            PDV
+            Aparência
+            Configure a aparência da tela do PDV e determine a imagem de fundo, logotipo, resolução de tela e outros ajustes técnicos.
+            Para inserir a imagem de fundo na tela do PDV, o arquivo deve estar salvo dentro da pasta de instalação. Por exemplo, C:\Senior\Gestão de Loja\Pdv. No PDVConf.exe  informe o nome do arquivo no campo Imagem de Fundo e grave. O nome do arquivo da imagem deve ser informada com a mesma extensão e possuir a saída de cor em RGB.
+            
+                Nota 
+                O tamanho da imagem de fundo  dependerá do tamanho e resolução do monitor a ser utilizado.
+            
+            Para inserir o logotipo na tela do PDV, informe no campo Arquivo logotipo o caminho  da imagem + o nome do arquivo com extensão. Por exemplo, C:\Imagens\Logo_Senior.png
+            Selecione a opção Redimencionar a imagem para ajustar a imagem conforme tamanho da tela. Caso não selecione, a imagem ficará em seu tamanho original.
+            Avançado  
+            Configure o IP e porta do servidor RMI e alimenta as informações de identificação do PDV. Se a impressão estiver configurada no Gestão Empresarial | ERP, esta irá sobrescrever as configurações do PDVConf. 
+            Impressão
+            Informe a impressora e o papel que será utilizado.
+            Funções auxiliares
+            Permite importar um pedido vinculado a uma ficha no Retaguarda, através do prefixo de "Ficha" (parâmetro dinâmico de filial "Venda.PrefixoFicha").
+            Para importar o pedido, primeiramente é necessário que o parâmetro Venda.Ficha esteja habilitado no PDVConf, acesse a guia Funções auxiliares e selecione a caixa de seleção Ativar Importação por Ficha.
+            Gaveta
+            Para que a gaveta seja aberta corretamente, é necessário configurar as informações da porta serial no Configurador do PDV(PDVConf.exe).
+            
+                Observação
+                
+                Essa funcionalidade está disponível para a impressora Bematech 4200 TH.
+            
+            Os campos Baudrate, Databits, NomePorta, Parity e Stopbits devem ser preenchidos com as informações da impressora instalada.
+            Como descobrir as configurações da porta serial do computador:
+            
+                Em Dispositivos e Impressoras, presente nas configurações do Windows, localize a impressora instalada e acesse as Propriedades da Impressora;
+                Na janela de Propriedades, acesse a guia Portas e clicar no botão Configurar Porta.... Com isso, uma janela com as propriedades que deverão ser usadas para configurar a Gaveta no Configurador do PDV (PDVConf.exe) será aberta.
+            
+            
+                Importante
+                
+                Normalmente, os campos Baudrate, Databits, Parity e Stopbits virão configurados com o valor padrão da maioria das instalações de impressora, sendo necessário apenas configurar o nome da porta (geralmente, COM1, COM2, ..., COM<N>).
+            
+            Mesmo com a gaveta configurada corretamente, nem sempre ela será aberta ao clicar sobre o botão Gaveta. Isso pode ocorrer, pois o spool de impressão do sistema operacional "compete" com a mesma porta. Com isso, se o mesmo estiver executando alguma impressão, pode ser que, ao clicar no botão, não abra a gaveta. Para isso, deve-se aguardar alguns segundos e clicar no botão novamente. Este botão será exibido somente se o nome da porta estiver configurado.
+            As configurações criadas são as seguintes:
+            
+                "Gaveta.Porta" default ""
+                "Gaveta.Baudrate" default "115200"
+                "Gaveta.Databits" default "8"
+                "Gaveta.Stopbits" default "1"
+                "Gaveta.Parity" default "0"
+            
+            
+                Importante
+                
+                Essas configurações podem ser alteradas manualmente diretamente na tabela de configurações do PDV (configuracaopdv) ou através da nova guia Gaveta, do Configurador do PDV (PDVConf.exe).
+            
+            TEF
+            Configure o corte e o papel da impressora. No campo Picote determine:
+            
+                "Avança o papel": configura o papel da impressora para avançar a cada impressão.
+                "Corta o papel": configura o corte do papel a cada término de impressão.
+            
+             Configuração de parâmetros para venda à Pessoa Jurídica no PDV NFC-e
+            Este tópico mostra como configurar os parâmetros de venda para Pessoa Jurídica no PDV NFC-e, além da obrigatoriedade dos parâmetros NFCE.PERMITEGERARNFE e OPERACAONOTAFISCAL.VENDAPDV a fim de gerar uma NFe para um CNPJ.
+             Pré-requisitos
+            
+                Ter um código de operação cadastrado na tela Operações de nota fiscal (F070ONF)
+                Cadastrar os seguintes parâmetros dinâmicos na tela Cadastro de Filiais (F070FCA), botão Par. Dinâmicos:OPERACAONOTAFISCAL.VENDAPDV. Seu valor será o código da operação cadastrado na tela F070ONFNFCE.PERMITEGERARNFE = "1"
+                Validar a integração nas bases do Gestão de Lojas
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

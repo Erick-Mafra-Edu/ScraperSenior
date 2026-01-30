@@ -1,0 +1,279 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/gerais.html%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7CFun%25C3%25A7%25C3%25B5es%2520Gerais%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Funções Gerais
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Funções Gerais
+            
+                
+                    
+                        Nome
+                        Descrição 
+                    
+                    
+                        AlfaParaInt
+                        
+                        Converte um número armazenado como Alfa e o retorna como um tipo Número.
+                    
+                    
+                        ArqExiste
+                        
+                        Verifica se um arquivo físico existe no local especificado.
+                    
+                    
+                        AtualizaBarraProgresso
+                        
+                        Atualiza as mensagens apresentadas na tela da  barra de progresso.
+                    
+                    
+                        CaracterParaAlfa
+                        
+                        Converte um caracter (que fica armazenado pelo código ASCII) para o valor Alfanumérico correspondente.
+                    
+                    
+                        CodData
+                        
+                        Possibilita a composição de uma data, montando-a através de dia, mês e ano.
+                    
+                    
+                        ConverteCodificacaoString
+                        
+                        Esta função converte a codificação de um texto para o formato definido pelo usuário.
+                    
+                    
+                        ConverteMascara 
+                        
+                        Esta função converte um valor de entrada (numérico, data, hora ou cadeia de caracteres), para o tipo de dado cadeia de caracteres.
+                    
+                    
+                        ConverteParaMaiusculo 
+                        
+                        Converte o conteúdo de uma variável do tipo Alfa para maiúsculo.
+                    
+                    
+                        ConverteParaMinusculo
+                        
+                        Converte o conteúdo de uma variável do tipo Alfa para minúsculo.
+                    
+                    
+                        ConverteTexto
+                        
+                        Substitui os caracteres especiais informados no texto de acordo com a codificação do padrão informada, retorna em uma nova variável o texto convertido
+                    
+                    
+                        CopiarAlfa 
+                        
+                        Esta função copia parte do conteúdo de uma variável/campo alfanumérico para a variável alfanumérica Retorno.
+                    
+                    
+                        CriarArquivoTemporario
+                        
+                        Cria um arquivo temporário de nome aleatório e único prefixado com o valor do parâmetro prefixo.
+                    
+                    
+                        DataHoje
+                        
+                        Retorna a data atual do sistema operacional.
+                    
+                    
+                        DataHora
+                        
+                        Retorna data e hora atual.
+                    
+                    
+                        DecodData
+                        
+                        Permite a separação de uma data em dia, mês e ano para que os dados possam ser usados separadamente.
+                    
+                    
+                        DeletarAlfa
+                        
+                        Esta função apaga uma determinada quantidade de caracteres de uma variável/campo a partir da posição informada.
+                    
+                    
+                        Desencriptar
+                        
+                        Função para descriptografar uma cadeia de caracteres.
+                    
+                    
+                        Dividir
+                        
+                        Função disponível para dividir um valor por outro.
+                    
+                    
+                        Encriptar
+                        
+                        Criptografa a cadeia de caracteres.
+                    
+                    
+                        ExcluirArquivoTemporario
+                        
+                        Exclui um arquivo criado pela função CriarArquivoTemporario.
+                    
+                    
+                        ExecProg
+                        
+                        Permite a execução de aplicativos durante a execução de regras.
+                    
+                    
+                        FinalizaBarraProgresso
+                        
+                        Finaliza a tela de barra de progresso.
+                    
+                    
+                        FormatarData
+                        
+                        Formata a data.
+                    
+                    
+                        GeraHash 
+                        
+                        Retorna um Hash do texto informado.
+                    
+                    
+                        GerarNonce
+                        
+                        Gera o valor do campo Nonce, um número aleatório.
+                    
+                    
+                        GerarPwdDigest
+                        
+                        Gera o Digest da senha, a partir do Nonce, Data e senha, em formato base64.
+                    
+                    
+                        GeraSenha
+                        
+                        Retorna uma sequência de caracteres alfanuméricos aleatoriamente.
+                    
+                    
+                        GeraToken
+                        
+                        Retorna um token criptografado.
+                    
+                    
+                        HoraParaMinuto
+                        
+                        Converte em minutos os valores que representam hora e minuto.
+                    
+                    
+                        IniciaBarraProgresso
+                        
+                        Inicia a barra de progresso utilizada para mostrar ao usuário o andamento de um processo mais extenso.
+                    
+                    
+                        IntParaAlfa 
+                        
+                        Converte um número para formato alfanumérico, desprezando as casas decimais.
+                    
+                    
+                        LerPosicaoAlfa 
+                        
+                        Identifica qual caracter está em determinada posição do campo/variável de origem.
+                    
+                    
+                        LinhasArquivo
+                        
+                        Leitura da quantidade de linhas existentes em um determinado arquivo.
+                    
+                    
+                        ListaItem 
+                        
+                        Retorna o valor de um item de uma lista de valores concatenados por um caracter separador.
+                    
+                    
+                        ListaQuantidade 
+                        
+                        Retorna a quantidade de itens de uma lista de valores concatenados por um caracter separador em um texto.
+                    
+                    
+                        Mensagem
+                        
+                        Apresenta a mensagem em tela de acordo com a parametrização do tipo de retorno e da mensagem que será visualizada.
+                    
+                    
+                        ObtemIdiomaAtivo
+                        
+                        Retorna o código do idioma  utilizado pelo usuário.
+                    
+                    
+                        ObterVersaoSistema
+                        
+                        Esta função retorna a versão do sistema.
+                    
+                    
+                        OcultaBarraProgressoRelatorio
+                        
+                        Oculta a barra de progresso padrão durante a execução de relatórios.
+                    
+                    
+                        PosicaoAlfa
+                        
+                        Procura por uma parte de texto dentro de um campo/variável do tipo Alfa, retornando a posição em que o texto inicia.
+                    
+                    
+                        RemoveExpressoesProibidas
+                        
+                        Não permite que campos de relatórios/regras aceitem algum tipo de script.
+                    
+                    
+                        RestoDivisao
+                        
+                        Retorna o resto da divisão de um número por outro.
+                    
+                    
+                        RetornaValorCFG
+                        
+                        Responsável por retornar para a regra o valor de uma

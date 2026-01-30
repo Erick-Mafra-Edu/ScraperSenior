@@ -1,0 +1,155 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#instalador/instproductsform.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CRepara%25C3%25A7%25C3%25A3o%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Atualização > Seleção de produto e forma de acesso
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Seleção de produtos
+            Instalação
+            Nesta tela serão apresentados todos os produtos, ferramentas e as formas de acesso disponíveis na mídia de instalação. Os produtos apresentados podem variar, pois as mídias de instalação são personalizadas para as necessidades de cada cliente, de acordo com a chave proprietária.
+            
+                Particularidade por produto
+                
+                BI
+                    
+                        Os módulos web do MicroStrategy só devem ser marcados caso o módulo Intelligence Server esteja marcado ou se já houver o MicroStrategy instalado na máquina, na mesma versão e utilizando os caminhos padrões da instalação, tais como:
+                        
+                            MicroStrategy Web - C:\Program Files (x86)\MicroStrategy\Web JSP" e "C:\Program Files (x86)\MicroStrategy\Portlets\;
+                            MicroStrategy Web Services - C:\Program Files (x86)\MicroStrategy\Web Services J2EE;
+                            MicroStrategy Mobile - C:\Program Files (x86)\MicroStrategy\Mobile Server JSP;
+                            MicroStrategy Operation Manager - C:\Program Files (x86)\MicroStrategy\Operations Manager JSP.
+                        
+                        Para instalar o ETL e o MicroStrategy em servidores diferentes, nesta etapa não selecione o MicroStrategy. Após instalação normal do BI, faça as configurações necessárias para o MicroStrategy já instalado em um servidor separado.
+                        Quando não houver integração com a Senior X, não selecione o item Tomcat autenticando em G7. Caso seja selecionado, não será possível o acesso ao MicroStrategy.
+                        Selecione o Tomcat com servidor web do MicroStrategy. A opção MicroStrategy – On cloud não deve ser selecionada caso a instalação do MicroStrategy seja on-premises.
+                    
+                
+            
+            Os produtos e seus 
+ módulos são apresentados em forma hierárquica, destacando os níveis e 
+ subníveis que os compõem. As dependências são tratadas automaticamente, 
+ assim, quando um módulo depender de outro para funcionar,  
+ serão exibidas notificações de que outras opções serão adicionadas na instalação, em 
+ decorrência dessa dependência.
+            
+                Observação
+                
+                Quando for selecionado um produto que necessita fazer deploy de web services, a mensagem "Existem produtos que dependem da forma de acesso 'web services' para serem instalados" irá aparecer entre as mensagens da tela. Ao clicar sobre esta mensagem uma tela com o mesmo texto irá aparecer, mas ao contrário das mensagens para outros itens, ao clicar em OK os web services não serão assinalados automaticamente. Este comportamento é para que seja necessário assinalar a forma de acesso "Web Services", para reforçar ao usuário que ele está executando o deploy de web services.
+            
+            Ferramentas
+            Algumas ferramentas são indispensáveis para a utilização das soluções Senior e são instaladas automaticamente, no entanto também são disponibilizadas ferramentas opcionais:
+            
+                Central de Monitoramento Senior: Coleta e trata informações que são apresentadas de maneira clara e simples para os administradores de ambientes que possuem sistemas Senior baseados no Middleware ou cliente-servidor. Com esta ferramenta é possível, não apenas consultar dados sobre a execução e funcionamento de aplicativos, mas também interagir com essas informações, encerrando aplicativos em uso.
+                Integrador G7: Essa ferramenta permite realizar a integraçao de usuários já cadastrados no produtos G5 ou G6, que serão acessados a partir da Senior X. Nesta etapa devem ser selecionados os itens que serão configurados/instalados na máquina onde o SeniorInstaller.exe está sendo executado. Por exemplo, se o RabbitMQ está instalado na máquina atual, a opção RabbitMQ deve ser marcada, ou se o integrador deve ser instalado na máquina atual, a opção Integrador deve ser marcada. Para mais informações, confira o guia de instalação do Integrador, no manual do Senior X.
+            
+            Formas de acesso
+            A configuração 
+ das formas de acesso aos sistemas define se o ambiente que será instalado 
+ será baseado na solução Senior Middleware ou não.
+            Caso nenhuma forma de acesso seja selecionada, apenas o acesso cliente-servidor estará disponível, nessa forma de acesso a instalação do sistema é feita completamente na estação, que se comunica diretamente com o banco de dados e não utiliza o  Senior Middleware.
+            Além do acesso cliente-servidor, são disponibilizadas as seguintes formas de acesso:
+            
+                BrowserAccess: Totalmente 
+	 em HTML/JavaScript, o acesso aos aplicativos Senior é feito através de navegadores web, a partir de qualquer local que tenha uma conexão disponível com o servidor, onde é executado todo o processamento;
+                WindowsAccess: É um aplicativo 
+	 para Windows que permite o acesso remoto de usuários que estejam dentro ou fora da rede local, como por exemplo em filiais, acessando as aplicações Senior em interface desktop Windows. Todo o processamento é executado no servidor;
+                Web services: Possibilita a integração e a comunicação entre sistemas diferentes, além de permitir que rotinas simples ou complexas sejam invocadas por sistemas externos e pelo próprio sistema que disponibiliza o recurso;
+                Web 5.0: É uma interface 
+	 web que permite a personalização dos HTMLs, todo o processamento é executado 
+	 no servidor. Esta forma de acesso permite que as estações de trabalho utilizem diversos sistemas operacionais (Linux, Macintosh ou Windows).
+            
+            
+                Particularidades por produto 
+                
+                    Ronda Senior XT
+                        
+                            
+                                É preciso instalar o aplicativo SRVTCP no servidor caso deseje instalá-lo posteriormente em estações. O SRVTCP deve ser instalado somente como estação. Não deve ser instalado isoladamente em um ambiente, pois dessa forma não garantimos seu funcionamento correto.
+                                Não é possível instalar a Ferramenta de Diagnóstico em estações (máquina cliente), somente no Servidor.
+                            
+                        
+                    
+                    Workflow
+                        
+                            Sempre que selecionado o produto Workflow, deve-se também instalar o produto WorkflowContainer.
+                        
+                    
+                
+            
+            Atualização
+             Selecione os produtos, existentes no ambiente selecionado, que devem ser atualizados. Caso uma das opções não seja marcada, ela será ignorada pelo Atualizador, o que poderá gerar conflitos de compatibilidade entre versões. 
+            Exemplo: 
+                
+                    Caso desejar atualizar somente o Gestão de Pessoas | HCM, deverá marcar somente ele e os seus módulos correspondentes.
+                
+            
+            Caso um produto selecionado possua dependência de outro produto não selecionado para atualização, ao prosseguir será exibida uma mensagem sobre a respectiva dependência. Confirmando a mensagem, o produto necessário para atender a dependência identificada será selecionado automaticamente.
+            É recomendável para estar sempre na versão mais recente, independentemente do produto, nesta etapa selecionar para atualização o item Ferramentas/Central de Monitoramento Senior.
+            
+                Particularidades por produto 
+                Ronda Senior XT
+                    
+                        Ao atualizar o produto Ronda Senior XT, a tela Concentradora será apresentada. Basta confirmar o endereço IP informado no campo e continuar com o processo de atualização.
+                    
+                
+                Gestão do ponto
+                    
+                        Caso esteja sendo atualizado apenas o Gestão do ponto, é necessário que os demais módulos do Gestão de Pessoas | HCM já estejam atualizados. E ao pressionar Avançar, quando questionado se deseja-se atualizar os demais módulos para a mesma versão instalada, pressione Não.
+                    
+                
+                Workflow
+                    
+                        Caso desejar atualizar o Workflow da versão 6.2.31 para a 6.2.32, é imprescindível que a atualização  do produto seja realizada antes da atualização do Gestão de Pessoas | HCM. Além disso, é obrigatório realizar um backup do Gestão de Pessoas | HCM antes da atualização do Workflow.
+                        Se algum dos produtos selecionados possuem processo embarcado, ca

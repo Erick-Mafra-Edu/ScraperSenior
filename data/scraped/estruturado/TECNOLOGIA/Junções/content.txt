@@ -1,0 +1,265 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/juncoes.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____7
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > Junções
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Junções
+                Tipos de JOIN
+                Importante
+                    O nome da junção KEY JOIN foi alterado para KEYED JOIN. A junção FULL OUTER JOIN não existe mais.
+                
+                
+                    CROSS JOIN (Produto Cartesiano);
+                    INNER JOIN (Junção);
+                    LEFT OUTER JOIN (Junção Externa a Direita);
+                    RIGHT OUTER JOIN (Junção Externa a Esquerda);
+                    NATURAL JOIN (Junção Natural);
+                    KEYED JOIN (Junção por Chave);
+                    Combinações de JOINS.
+                
+                Nota
+                    Os bancos, suportados pela SQL Senior 2, que utilizam JOINS com uma sintaxe semelhante são Microsoft SQL Server 7.0 ou superior, Sybase AnyWHERE 5.0 ou superior. 
+                
+                CROSS JOIN (Produto Cartesiano)
+                Retorna o produto cartesiano entre as tabelas.
+                
+                    Exemplo
+                        
+                            Fazendo o produto das duas tabelas, a seleção conterá todos os benefícios que todos os funcionários tem. 
+                            
+                                SELECT B.NOMFUN, C.NOMBEN FROM (funcionario B CROSS JOIN beneficio C)
+                            
+                            Equivalência do Exemplo:
+                            
+                                SELECT B.NOMFUN, C.NOMBEN FROM funcionario B, beneficio C
+                            
+                            Resultado do Exemplo:
+                            
+                                
+                                
+                                
+                                    NOMFUN (nome do funcionário)
+                                    NOMBEN (nome do benefício)
+                                
+                                
+                                    Fun1 da emp1
+                                    vale_refeição
+                                
+                                
+                                    Fun2 da emp1
+                                    vale_refeição
+                                
+                                
+                                    Fun3 da emp1
+                                    vale_refeição
+                                
+                                
+                                    Fun1 da emp2
+                                    vale_refeição
+                                
+                                
+                                    Fun2 da emp2
+                                    vale_refeição
+                                
+                                
+                                    Fun3 da emp2
+                                    vale_refeição
+                                
+                                
+                                    Fun1 da emp3
+                                    vale_refeição
+                                
+                                
+                                    Fun1 da emp1 
+                                    vale_transporte
+                                
+                                
+                                    Fun2 da emp1
+                                    vale_transporte
+                                
+                                
+                                    Fun3 da emp1 
+                                    vale_transporte
+                                
+                                
+                                    Fun1 da emp2
+                                    vale_transporte
+                                
+                                
+                                    Fun2 da emp2 
+                                    vale_transporte
+                                
+                                
+                                    Fun3 da emp2 
+                                    vale_transporte
+                                
+                                
+                                    Fun1 da emp3 
+                                    vale_transporte
+                                
+                                
+                                    Fun1 da emp1 
+                                    plano de saúde
+                                
+                                
+                                    Fun2 da emp1 
+                                    plano de saúde
+                                
+                                
+                                    Fun3 da emp1
+                                    plano de saúde
+                                
+                                
+                                    Fun1 da emp2
+                                    plano de saúde
+                                
+                                
+                                    Fun2 da emp2
+                                    plano de saúde
+                                
+                                
+                                    Fun3 da emp2 
+                                    plano de saúde
+                                
+                                
+                                    Fun1 da emp3 
+                                    plano de saúde
+                                
+                                
+                                    Fun1 da emp1
+                                    plano odontológico
+                                
+                                
+                                    Fun2 da emp1 
+                                    plano odontológico
+                                
+                                
+                                    Fun3 da emp1
+                                    plano odontológico
+                                
+                                
+                                    Fun1 da emp2 
+                                    plano odontológico
+                                
+                                
+                                    Fun2 da emp2
+                                    plano odontológico
+                                
+                                
+                                    Fun3 da emp2 
+                                    plano odontológico
+                                
+                                
+                                    Fun1da emp3
+                                    plano odontológico
+                                
+                                
+                                    Fun1 da emp1 
+                                    auxílio educação
+                                
+                                
+                                    Fun2 da emp1 
+                                    auxílio educação
+                                
+                                
+                                    Fun3 da emp1
+                                    auxílio educação
+                                
+                                
+                                    Fun1 da emp2
+                                    auxílio educação
+                                
+                                
+                                    Fun2 da emp2
+                                    auxílio educação
+                                
+                                
+                                    Fun3 da emp2 
+                                    auxílio educação
+                                
+                                
+                                    Fun1 da emp3 
+                                    auxílio educação
+                                
+                                
+                                    Fun1 da emp1
+                                    auxílio moradia
+                                
+                                
+                                    Fun2 da emp1 
+                                    auxílio moradia
+                                
+                                
+                                    Fun3 da emp1
+                                    auxílio moradia
+                                
+                                
+                                    Fun1 da emp2 
+                                    auxílio moradia
+                                
+                                
+                                    Fun2 da emp2
+                                    auxílio moradia
+                                
+                                
+                                    Fun3 da emp2 
+                                    auxílio moradia
+                                
+                                
+                                    Fun1 da emp3 
+                                    auxílio moradia
+        

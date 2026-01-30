@@ -1,0 +1,213 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/fechamento-de-caixa.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____40
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Fechamento do caixa
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Fechamento de caixa 
+                Conceito    
+                Este processo visa retirar todos os valores registrados no caixa do dia, efetuar seu fechamento e emitir a Redução Z para que seja possível operar com o caixa sem movimentações para o dia seguinte.
+                Utilização    
+                É utilizado para conferência, checagem e fechamento dos valores que estão no caixa com o saldo dos registros de entradas e saídas. O fechamento do caixa deve ser exato em seus saldos e movimentações de caixa.
+                Processo
+                A rotina que leva ao fechamento de caixa tem início com a abertura de caixa e termina com a entrega dos valores, considerando todas as operações realizadas naquele período.
+                
+                    Importante: 
+                    O valor da abertura do caixa não pode ser confundido e contabilizado como venda do dia. Tenha atenção na contagem das cédulas e separe o valor das vendas do fundo de caixa.
+                
+                
+                    Observação: 
+                    O caixa pode ser fechado várias vezes ao dia ou ficar vários dias aberto, desde que não seja feita impressão da Redução Z.
+                
+                Para o fechamento de caixa, é necessária primeiramente uma conferência. Essa conferência inicia-se pela impressão de uma Leitura X.
+                Emitir Leitura X 
+                Os passos para emissão da leitura X são:
+                
+                    Selecione a opção Outras na tela inicial do PDV;
+                    Selecione a opção ECF;
+                    Selecione a opção Leitura X. O sistema irá exibir uma mensagem para confirmação da impressão, basta escolher a opção "Sim".
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                Com a leitura X impressa, o operador de caixa deverá também fazer a impressão do relatório gerencial de vendas, para conferi-lo com a leitura X.
+                Emitir relatório gerencial 
+                Os passos para emissão do relatório gerencial são:
+                
+                    Selecione a opção Outras na tela inicial do PDV;
+                    Selecione a opção Fecha/Saldo caixa;
+                
+                O sistema exibirá na tela as movimentações do dia.
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                     Selecione a opção Imprimir; 
+                
+                 O operador de caixa deverá fazer a conferência e checar com seus valores em gaveta.
+                 Efetuar Sangria 
+                A sangria pode ser realizada após a conferência dos passos anterior e seguindo o processo de Efetuar Sangria. 
+                Por padrão do sistema, ao utilizar o botão de "Fechamento do Caixa", todo o valor acumulado em dinheiro e cheque são sangrados automaticamente deixando o saldo de caixa "Zerado", não sendo necessário efetuar o processo de sangria separado e antes de utilizar o botão "Fecha/Saldo caixa".
+                Porém, é possível configurar um valor  para permanecer no saldo como fundo de troco após a sangria.  Esse valor ficará no saldo do caixa e será mantido para a próxima abertura. 
+                Fechar o caixa 
+                Os passos para o fechamento do caixa são:
+                
+                    Selecione a opção Outras na tela inicial do PDV;
+                    Selecione a opção Fecha/Saldo caixa;
+                    Selecione a opção Fechar Caixa;
+                
+                O sistema exibe uma mensagem de confirmação do fechamento do caixa.
+                Exemplo:
+                    
+                        
+                            
+                        
+                        Selecione a opção "Sim" e o caixa ficará bloqueado.
+                    
+                
+                
+                    Nota: 
+                    O sistema não perguntará se o operador deseja sangrar todo o valor acumulado em caixa antes de fechá-lo, a menos que esteja configurado para manter saldo de fundo de troco.
+                
+                Emitir Redução Z
+                O usuário deve logar o sistema de caixa novamente e fazer impressão da Redução Z.
+                
+                    Ao logar-se novamente no sistema de PDV, selecione a opção Redução Z.
+                    Confirme a mensagem para impressão da Redução Z;
+                    A Redução Z será impressa no ECF e o caixa ficará "Indisponível". Não será possível realizar nenhum tipo de operação no mesmo dia. Apenas é possível efetuar consultas.
+                    Selecione a opção Sair. 
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Nota: 
+                    Caso não seja utilizado o comando para impressão da Redução Z ao fim do fechamento de caixa, ela ficará pendente. No dia seguinte, ao logar o caixa, a Redução Z do dia anterior será impressa automaticamente pelo ECF. Em seguida, o sistema fará a abertura do dia liberando o terminal para movimentações. 
+                    Exemplo:
+                        
+                            
+                                
+                            
+                            
+                                
+                            
+                        
+                    
+                
+                Após todo o processo do fechamento do caixa, utilize também o Fechamento do Caixa no sistema de Retaguarda, para emissão do resumo de caixa por PDV. 
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

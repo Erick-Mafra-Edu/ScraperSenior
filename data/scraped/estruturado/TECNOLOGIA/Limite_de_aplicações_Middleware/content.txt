@@ -1,0 +1,196 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/limite-de-aplicacoes-middleware.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CRecursos%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Recursos > Limite de aplicações Middleware
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Limite de aplicações Middleware
+            O Sistema operacional Windows tem um comportamento particular que limita 
+ a quantidade de aplicações que podem executar simultaneamente. Esta limitação 
+ está diretamente ligada à quantidade de aplicações que podem executar 
+ em um servidor de aplicações do Middleware 
+ Senior.
+            Funcionamento
+            Para cada sessão de usuário, o Windows reserva uma pequena área de memória 
+ para alocar informações sobre determinados objetos. Quando esta área de 
+ memória é preenchida por completo, mesmo que a máquina ainda tenha recursos 
+ sobrando, não é possível alocar novas aplicações. Esta área de memória 
+ é comumente chamada de memória heap, memória de desktop ou memória de 
+ sessão.Detalhes mais técnicos sobre este funcionamento podem ser obtidos neste 
+ artigo: http://blogs.msdn.com/ntdebugging/archive/2007/01/04/desktop-heap-overview.aspx 
+ (texto em Inglês).
+            Impacto no Gerenciador de Aplicativos rodando como serviço
+            Uma observação importante, é que o Windows tem uma sessão de serviços (onde executam os serviços, como Gerenciador de Aplicativos) e, por padrão, para esta sessão é alocada uma área de memória menor, tornando esta sessão mais limitada do que as sessões interativas.
+            Uma alternativa para aumentar o tamanho de memória alocada para cada sessão é alterar alguns parâmetros no registro do Windows em “HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems\Windows”. Nesta chave existe um identificador chamado SharedSection que aponta a quantidade de memória reservada para cada tipo de sessão.
+            A explicação mais técnica sobre estes parâmetros, pode ser obtidas nos seguintes links:
+            
+                http://support.microsoft.com/default.aspx?scid=kb%3ben-us%3b126962
+                
+                http://support.microsoft.com/default.aspx?scid=kb%3ben-us%3b184802
+                
+            
+            Importante 
+                As definições do sistema operacional Windows apontados nesta documentação devem ser avaliados por um especialista de Windows.
+            
+            Otimizando o uso da máquina
+            Para otimizar o uso dos recursos do servidor, recomenda-se abrir mais de uma sessão do Windows e executar o Gerenciador de Aplicativos nestas sessões. Desta forma, cada sessão comporta uma certa quantidade de aplicações Senior, multiplicando a capacidade de cada sessão pela quantidade de sessões abertas.
+            Para esta solução, as sessões do Windows precisam ficar abertas. Então é importante que não exista nenhuma rotina que feche estas sessões por timeout.
+            Para que não seja necessário abrir estas sessões manualmente, existe um recurso no Gerenciador de Middleware que abre as sessões. 
+            Quantidade máxima de aplicações por servidor
+            A seguir estão listadas as quantidades máximas de aplicações que podem 
+ executar em um servidor de aplicações do Middleware com sistema operacional 
+ Windows 2008 Server R2. Estes limites referem-se a memória heap, e devem 
+ ser avaliados de acordo com a capacidade de processador, memória e rede 
+ para atender a esta quantidade de aplicações.
+            Senior Gerenciador de Aplicações como aplicativo, usando 3 sessões:
+            
+                Gestão de Pessoas | HCMe Controle de Ponto e Refeitório - 120 instâncias 
+	 simultâneas;
+                Gestão Empresarial | ERP e Regente - 60 instâncias simultâneas.
+            
+            Gerenciador de Aplicativos como serviço:
+            
+                Gestão de Pessoas | HCM e Controle de Ponto e Refeitório - 60 instâncias 
+	 simultâneas;
+                Gestão Empresarial | ERP e Regente - 20 instâncias simultâneas.
+            
+            O uso do Senior Middleware como Gerenciador de Aplicações como serviço está homologado apenas quando o servidor é 
+ exclusivo (dedicado) para ele. 
+            
+                Importante
+                
+                Os valores apresentados nesta página são testados e homologados pela Senior para pleno funcionamento do Middleware. Dependendo do cenário de utilização, valores maiores podem funcionar, mas fora da garantia dada pela Senior.
+            
+            Retornar      Avançar
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

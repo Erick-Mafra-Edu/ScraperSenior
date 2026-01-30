@@ -1,0 +1,145 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#geral/impostos_retencao.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CReten%25C3%25A7%25C3%25A3o%2520%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Retenção  > Parametrização para gerar impostos retidos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Retenção
+            Parametrização para gerar impostos retidos – PIS/COFINS/CSLL/ISS e Outras Retenções
+            Definir o tipo de retenção. Este parâmetro influencia na apresentação das guias nas telas de cadastro de transação(F001TCP e F001TVE) e dos campos da telas de cadastro de clientes/fornecedor(F085CAD/F095CAD) referentes os impostos retidos. Dependendo da configuração deste campo, as guias da tela “F001TCP” e os campos das telas “F085CAD/F095CAD” não são apresentados.
+            Cadastros Necessários
+            
+            
+                FiliaisCadastros > Filiais > Parâmetros por Gestão > Compras e Recebimento (F070FCP).Cadastros > Filiais > Parâmetros por Gestão > Vendas e Faturamento (F070FVE).
+                TributosCadastros > Controladoria > Tributos > Cadastro (F051IMP).Ligar os impostos à filial.Cadastros > Controladoria > Tributos > Base imposto (Liga Filial) (F055PPF).
+                ServiçosCadastros > Produtos e Serviços > Serviços > Individual - Informar os percentuais de retenção (F080SER).
+            
+            Como calcular impostos retidos para produtos
+            Configurar a empresa para calcular impostos retidos nos itens de produtos. Preencher o campo Retenção pro Produto com "S".
+            
+                Cadastros > Empresas > Cadastro (F070EMP).
+            
+            Configurar o fornecedor para calcular impostos retidos nos itens de produtos. Preencher o campo Retenção pro Produto com "S".
+            
+                Cadastros > Clientes e Fornecedores > Fornecedores > Cadastro (F095CAD).
+            
+            Atribuir no cadastro do produto a alíquota de cada imposto.
+            
+                Cadastros > Produtos e Serviços > Produtos > Individual (F075PRO).
+            
+            Como parametrizar o limite de retenção
+            Informar no cadastro do fornecedor se Utiliza Limite Retenção.
+            
+                Cadastros > Clientes e Fornecedores > Fornecedores > Cadastro (F095CAD).
+            
+            Definir o limite de retenção na aba Impostos 2. O limite de retenção é a base para cálculo do imposto.
+            
+                Cadastros > Filiais > Parâmetros por Gestão > Tributos (F070FEF).
+            
+            Quando o valor do DARF for igual ou inferior a R$ 10,00 (dez reais), está dispensada a retenção das contribuições sociais (PIS, COFINS, CSLL e ISS), exceto na hipótese de Documento de Arrecadação de Receitas Federais - DARF eletrônico efetuado por meio do SIAFI, eliminando a cumulatividade mensal. Para realizar o controle de retenções por documento e cumulativo, o limite (R$10,00) deve ser informado no campo Valor mínimo p/ retenção das contrib. Sociais, que estará disponível para edição quando o parâmetro Controle diário de retenções das contribuições sociais estiver igual a "S - Sim". Estes campos estão disponíveis na guia Impostos 2 da tela de Parâmetros da Filial para Tributos (F070FEF). Com essa configuração, o limite de retenção é verificado através da soma dos valores das contribuições sociais retidas das notas fiscais de entrada ou saída dentro do respectivo dia, que devem resultar em valor superior ao limite informado no parâmetro da filial.
+            Definir onde deve ser feito o controle do valor mínimo de retenção, se no COMPRAS(ao fechar a nota) ou no CONTAS A PAGAR(ao baixar o título).
+            Se este campo estiver parametrizado como “CPA”, o cálculo é feito na nota. Porém, ao fechá-la não é observado o limite de retenção. Se este campo estiver igual a “CPR”, ao fechar a nota, se o limite ainda não foi atingido, o sistema zera a base e o valor dos impostos retidos mantendo somente a alíquota. Zerando estes impostos, este valor é acumulado na tabela “E019RET”.
+            
+                Observação
+                
+                
+                    Nas rotinas de Compras, Vendas, Contas a Pagar e Contas a Receber, o sistema permite realizar o controle diário de retenção considerando os impostos PIS, COFINS, CSLL, ISS e OUTRAS RETENÇÕES individualmente. Ou seja, o imposto será retido somente se o valor acumulado no dia para o tipo de imposto for superior ao valor mínimo informado no campo Valor mínimo p/ retenção das contrib. sociais;  
+                    Caso o campo Controle individual na retenção das contrib. sociais esteja parametrizado como "N - Não", o controle dos impostos retidos será feito de forma agrupada, considerando a soma de todos os impostos (com exceção do imposto OUTRAS RETENÇÕES, que no Contas a Pagar e no Contas a Receber sempre é feito individualmente);
+                    Se os campos referentes ao valor mínimo para retenção estiverem informados no cadastro da transação (F001TVE), o sistema irá verificar o valor destes campos para efetuar a retenção ou não do imposto por documento. Ou seja, caso o valor retido do imposto calculado na nota seja menor que o valor definido nestes campos, no fechamento da nota fiscal o imposto será zerado e não haverá acúmulo  na tabela de Controle de Retenção de Impostos (E019RET) para considerar nas próximas notas.
+                
+            
+            
+                Cadastros > Filiais > Parâmetros por Gestão > Compras e Recebimento (F070FCP).
+            
+            Exemplo:
+                
+                    Limite de Retenção = R$ 10,00
+                    Uma nota fiscal de R$ 200,00 foi gerada com os impostos COFINS 3%, PIS 0,65% e CSLL 1%;Os valores dos impostos serão: COFINS R$ 6,00,  PIS R$ 1,30 e CSLL R$ 2,00; O valor total dos impostos será R$ 9,30 e não ultrapassa o valor diário de R$ 10,00; Os títulos de impostos não foram gerados até esse momento. 
+                    Uma nova nota fiscal de R$ 100,00 foi gerada com os impostos COFINS 3%, PIS 0,65% e CSLL 1%;Os valores dos impostos serão: COFINS R$ 3,00, PIS R$ 0,65 e CSLL R$ 1,00; Somando os valores dos impostos desta nota (R$ 4,65 ) com os valores retidos anteriormente (R$ 9,30), o valor chega a R$ 13,95 e ultrapassa o valor mínimo de R$ 10,00; Com isto serão gerados os impostos: COFINS R$ 9,00, CSLL R$ 3,00 e PIS R$ 1,95. <br>Com isto serão gerados os impostos: COFINS R$ 9,00 - CSLL R$ 3,00 - PIS R$ 1,95. 
+                    Em uma nova nota fiscal, serão gerados os títulos de impostos calculados pela nota.
+                
+            
+            Onde consultar a tabela de retenções
+            A tabela “E019RET”(Tabela de retenções) pode ser consultada pela tela “F019RET”.
+            
+                Finanças > Gestão de Contas a Pagar > Contas a Pagar > Consultas > Controle de Retenção de Impostos (F019RET).
+                Finanças > Gestão de Contas a Receber > Contas a Receber > Consultas >Controle de Retenção de Impostos(F019RET).
+                Mercado > Gestão de Faturamento e Outras Saídas > Notas Fiscais de Saída > Consultas >Controle de Retenção de Impostos(F019RET).
+                Suprimentos > Gestão de Recebimento > Notas Fiscais de Entrada > Consultas >Controle de Retenção de Impostos(F019RET).
+            
+            Como controlar o limite de retenção por raiz do CNPJ
+            No cadastro da empresa, alterar o campo Retenção por CNPJ. Desta forma o controle será feito pela raiz do CNPJ e não mais pelo código do cliente/fornecedor.
+            
+                Cadastros > Empresas > Cadastro (F070EMP).
+            
+            Como subtrair o valor dos impostos da nota fiscal
+            
+                Cadastros > Transações > Parâmetros por Gestão > Compras > Ordem Compra > NF Entrada > Fatura (F001TCP). Nas guias de PIS (6), COFINS (7), CSLL e ISS (8), os campos PIS na NF Entrada, COFINS na NF Entrada, CSLL na NF Entrada e ISS na NF Entrada devem ser preenchidos com símbolo de subtração para diminuir o valor dos impostos do valor total da nota.
+                Cadastros > Transações > Parâmetros por Gestão > Vendas (F001TVE). Na guia ISS (6), o campo ISS na NF Saída deve ser preenchido com símbolo de subtração para diminuir o valor do imposto do valor total da nota e assim efetuar o acúmulo dos impostos retidos.
+            
+            Quais identificadores podem ser utilizados para manipular os impostos retidos
+            
+                COM-000ALPIT01 - PIS Retido
+                COM-000ALCRT01 - COFINS Retido
+                COM-000ALCSL01 - CSLL Retido
+                COM-000ALOUR01 - Outras Retenções
+                COM-000VLRET01 -   Considera o valor das retenções apenas no valor financeiro das notas fiscais de entrada e saída, de acordo com a parametrização de cada imposto no cadastro da transação.
+                VEN- 140ZERVL01 - Específico par

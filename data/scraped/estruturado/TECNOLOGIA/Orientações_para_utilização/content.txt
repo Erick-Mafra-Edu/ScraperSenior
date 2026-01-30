@@ -1,0 +1,177 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#web-services/orientacoes-para-utilizacao.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CRecursos%7CIntegra%25C3%25A7%25C3%25A3o%7CWeb%2520services%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Recursos > Integração > Web services > Orientações para utilização
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Orientações para utilização dos web services
+            Para evitar problemas no processamento dos web services dos sistemas Senior, é obrigatório cumprir as seguintes orientações:
+            Chamada de web em processos executados via Middleware
+            
+            Um web service do sistema Senior poderá ser executado através de um outro tipo de processo que por sua vez é executado no Senior Middleware. Por exemplo:
+            
+                 Uma regra customizada é executada via Processo Agendado (que são executados via Senior Middleware). Esta regra faz a chamada de um web service padrão de um sistema Senior;
+                Um web service customizado é executado em modo síncrono (via Senior Middleware). Este web service faz a chamada de um web service padrão de um sistema Senior.
+            
+            Nestes cenários, o web service do sistema Senior deverá ser executado também através do Senior Middleware. Ou seja, o acionamento do web service não poderá ser realizado através do modo de execução Local.
+            Exemplo:
+                
+                    Cenário incorreto:
+                    
+                        Criação de um web service customizado no sistema Gestão Empresarial | ERP;
+                        O web service customizado faz a chamada de um web service padrão do sistema Gestão Empresarial | ERP;
+                        Na regra  é definido como “ModoExecucao” do web service padrão, o valor “1 - Modo Local”;
+                        O web service customizado é acionado através de um sistema de terceiros através do Senior Middleware indicando processamento síncrono.
+                    
+                    Cenário correto:
+                    
+                        Criação de um web service customizado no sistema Gestão Empresarial | ERP;
+                        O web service customizado faz a chamada de um web service padrão do sistema Gestão Empresarial | ERP;
+                        Na regra  é definido como “ModoExecucao” do web service padrão, o valor “2 - Modo Síncrono”;
+                        O web service customizado é acionado através de um sistema de terceiros através do Senior Middleware indicando processamento síncrono.
+                    
+                
+            
+            
+                Importante
+                
+                Caso a orientação indicada acima não seja seguida, poderão ocorrer diversos problemas no processamento da rotina, como o retorno de "Access Violation".
+                A utilização dos web service de maneira incorreta, conforme cenários descritos, não é homologada pela Senior. Portanto, caso identifique a utilização de algum cenário não homologado, é pré-requisito que seja efetuado ajuste no processo conforme estas orientações.
+                A mudança para a chamada em modo síncrono também possibilitará verificar através da consulta de requisições dos web services os parâmetros de entrada e a saída da execução de cada web service do sistema Senior, facilitando análises que envolvem chamada de web services padrões dentro de web services customizados.
+            
+            Configuração do tipo de autenticação de um web service customizado que faz a chamada de um web service padrão
+            
+            Ao realizar a chamada de um web service padrão do sistema Senior a partir de um web service customizado, é importante verificar o parâmetro Autenticação da tela de cadastro da porta do serviço. Caso seja utilizada a autenticação Anônimo no web service customizado, a eventual chamada de um web service padrão na regra do customizado poderá retornar uma mensagem de erro de credenciais inválidas, como se o login no sistema não tivesse sido executado adequadamente.
+            Isso ocorre, pois dependendo do web service padrão que for chamado na regra do web service customizado é obrigatória a autenticação de um usuário previamente cadastrado no sistema. A autenticação é realizada através do web service customizado e é mantida no momento da chamada ao web service padrão.
+            Caso ocorra esta situação, é necessário garantir que o web service customizado esteja parametrizado para o tipo de autenticação Fazer logon.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

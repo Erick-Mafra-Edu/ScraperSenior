@@ -1,0 +1,116 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/notas-fiscais/notas-fiscais-de-entrada/notas-fiscais-entrada.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CNotas%2520Fiscais%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Notas Fiscais > Notas Fiscais de Entrada
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Notas Fiscais de Entrada
+            Conceito 
+            As notas fiscais de entrada, basicamente, são emitidas para efetuar entrada de produtos e serviços através dos processos de Devolução e Troca. Existem diversos processos em que é necessário emitir  nota fiscal de entrada. Uma delas e a mais comum é a venda de mercadorias.
+            No sistema de Retaguarda é possível emitir nota fiscal de entrada para os  processos a seguir.
+            Os números da nota fiscal e chave da NFe devem ser informadas pelo usuário, exceto nos casos em que a nota for de emissão própria, pois o sistema irá bloquear os campos e definir seus valores.
+            
+                Nota
+                
+                As emissões de notas podem ser controladas por usuário. Caso seguintes parâmetros dinâmicos por perfil de usuário estejam configurados no Gestão Empresarial | ERP, acontece conforme explicação:
+                
+                    NOTAFISCAL.OBRIGAOPERACAO - caso seja informada uma operação que não esteja listada para o perfil do usuário, o sistema mostra uma mensagem indicando que o perfil daquele usuário não possui acesso a determinada operação.
+                    NOTAFISCAL.OPERACOESPERMITIDAS - se as operações foram definidas no perfil do usuário, é mostrada uma mensagem informando a obrigatoriedade de inserção da operação.
+                
+            
+            Nota Fiscal com operação/série própria
+            No sistema de Retaguarda existe a possibilidade de emitir notas fiscais de entrada com formulário próprio. Esse processo é utilizado em casos de troca de mercadoria onde não se sabe  a nota da venda de origem. Nesse caso deve-se registrar a entrada de mercadoria com uma nota da própria empresa e efetuar a venda de um novo produto. Para isso, deve-se cadastrar uma série de nota fiscal na tela F020SNF do Gestão Empresarial | ERP e parametrizar o campo Exclusivo Varejo para "S - Sim"
+            Quando  utilizar uma série de nota fiscal configurada como sendo de emissão própria, isto é, com o campo Exclusivo varejo igual à "S - Sim", o sistema bloqueará os campos Número e Chave Nfe. Com isso, o número da nota fiscal será obtido pelo próprio sistema ao finalizar a nota fiscal.
+            
+                Nota
+                
+                Para as demais notas fiscais de entrada, o sistema irá conferir se o número da nota fiscal foi informado ao finalizá-la.
+            
+             Nota Fiscal de Devolução. 
+            Geradas pelo Retaguarda no processo de Devolução/Troca.
+            Nota Fiscal de Troca
+            Gerada pelo Retaguarda no processo de Devolução/Troca.
+            Nota Fiscal Importada do ERP
+            Nota que foi emitida no ERP e importada para a loja efetuar conferência de entrada de mercadoria em estoque.
+            Nota Fiscal Manual Digitada
+            Nota digitada/incluída manualmente pelo usuário no Retaguarda. As notas Avulsas podem ser de Entrada ou de Saída.Não fazem parte de nenhum processo específico, a nota é incluída e finalizada no Retaguarda pelos caminhos Mercado > Gestão de faturamento > Notas fiscais de saída e Suprimentos > Gestão de recebimento > Notas fiscais de entrada.
+            Reabilitação e exclusão de Nota Fiscal
+            Reabilitação de NF de entrada
+            A reabilitação deve ser realizada no sistema onde a NF foi gerada primeiramente. Exemplo: se a NF foi gerada no Retaguarda, a reabilitação da NF só poderá ser solicitada através do Retaguarda.
+            Para solicitar a reabilitação da NF no Retaguarda:
+            
+                Acesse a NF em Suprimentos > Gestão de Recebimentos > Notas fiscais de entrada e clique no botão Reabilitar. Nesse momento o Retaguarda envia uma solicitação de reabilitação da NF para o ERP, e no Retaguarda a NF é reabilitada imediatamente.
+            
+            Se a NF de entrada foi gerada no ERP:
+            
+                Selecione a NF na tela Nota Fiscal de Entrada Agrupada (F440GNE); 
+                 Selecione a opção Reabilitar Nota e em seguida clicar no botão Processar. Ao processar a reabilitação, o ERP exibe a mensagem Esta nota fiscal já foi integrada com a loja. Deseja enviar à loja uma solicitação para reabilitá-la?.
+                Ao confirmar a solicitação de reabilitação, o ERP exibe a mensagem Aguardando a solicitação de reabilitação no canto inferior da tela e exibe o botão Atualizar;
+                Clique no botão Atualizar, nesse o momento o ERP atualiza a situação da reabilitação. 
+                Quando a reabilitação for concluída, clique no botão Atualizar. O ERP exibe a mensagem A nota fiscal de compra foi reabilitada com sucesso, confirmando que a NF foi reabilitada.
+            
+            
+                Importante
+                
+                A NF gerada no Retaguarda que foi reabilitada, fica com a situação Em digitação no Retaguarda e no ERP;
+                A NF gerada no ERP que foi reabilitada, fica com a situação Digitada no ERP e é excluída do Retaguarda automaticamente pela rotina de reabilitação (quando todos os processos tiverem sido executados com sucesso, inclusive a integração dos feedbacks do processo de reabilitação);
+                No ERP, após ter sido solicitada a reabilitação, a NF estará disponível para alteração quando o processo de reabilitação tenha sido concluído, ou seja, enquanto as integrações de reabilitação e feedback de reabilitação não tiverem sido concluídas, ao ser acessado o registro da NF no ERP, o aviso Aguardando a solicitação de reabilitação continua ser exibido.
+            
+            Reabilitação e cancelamento de NF de entrada gerada pelo ERP quando ocorrerem erros de integração
+            Quando o Retaguarda rejeita o recebimento de uma nota fiscal de entrada gerada no ERP, é necessário reabilitar essa nota fiscal para fazer os ajustes necessários. Para que a solicitação de reabilitação não seja rejeitada porque a nota fiscal de entrada não existe no sistema Retaguarda, o Retaguarda envia um retorno ao ERP indicando que nota fiscal não foi integrada.
+            Quando o web service com.senior.g5.co.int.geral.exportacao@ConfirmarSequencia recebe do Retaguarda o indicativo de confirmação do registro com o valor 0 - Não Confirmar, altera a situação da pendência (tabela E000CIX - Controle de registros integrados) para E - Erro no processamento, quando se tratar de uma pendência do tipo de informação 99 - Nota fiscal de entrada, permitindo desta forma a reabilitação da nota fiscal para realizar os ajustes necessários e exportar novamente.
+            Ao processar uma reabilitação ou cancelamento de nota fiscal de entrada, que possuí pendência de integração com o Retaguarda com situação Erro de processamento, o ERP apenas informa sobre a existência de uma integração pendente e procede com o processo de reabilitação ou cancelamento. Em seguida, não é enviada uma solicitação de reabilitação ou cancelamento. No caso do cancelamento a pendência é excluída, e no caso da reabilitação, ao fechar a nota fiscal de entrada novamente a pendência é atualizada para situação P - Pendente.
+            O processo automático Tornar pendentes as exportações não confirmadas, que altera para pendente os registros com situação Pendente de confirmação e Erro no processamento, não faz a alteração da situação das pendências que possuem o campo Tipo de Informação diferente de 99 - Nota fiscal de entrada.
+            A tela Nota Fiscal de Entrada Agrupada (F440GNE), quando houver integração com o Retaguarda, se a pendência apresente no campo Situação do processamento da pendência de integração a situação E - Erro no processamento, exibe uma mensagem informando a existência da pendência e, caso opte-se por Sim, o cancelamento ou reabilitação é realizada. Assim, o processo de reabilitação ou cancelamento não envia para o Retaguarda uma nova pendência e os processos são permitidos diretamente do ERP.
+            
+                Importante
+                
+                Quando a NF é reabilitada/excluída no ERP, a pendência de integração presente no IntegradorMonitorWS não é excluída automaticamente, devendo o usuário efetuar esta exclusão manualmente.
+            
+            Exclusão de NF de entrada
+            No ERP, não é possível excluir uma nota fiscal integrada com o Retaguarda, após a reabilitação.
+            Se a NF de entrada foi gerada no ERP:
+            
+                Selecione a NF-e na tela Nota Fiscal de Entrada Agrupada (F440GNE); 
+            
+            
+                 Selecione a opção Cancelar Nota e em seguida clicar no botão Processar. Ao ser processada a solicitação de cancelamento, o ERP exibe a mensagem Esta nota fiscal já foi integrada com a loja. Deseja enviar à loja uma solicitação para cancelá-la?.
+            
+            
+                Ao confirmar a solicitação de cancelamento, o ERP exibe a mensagem Aguardando a solicitação de cancelamento no canto inferior da tela e exibe o botão Atualizar;
+            
+            
+                Clique no botão Atualizar, nesse o momento o ERP atualiza a situação do cancelamento. 
+            
+            
+                Quando o cancelamento for concluído, clique no botão Atualizar. O ERP exibe a mensagem A nota fiscal de compra foi cancelada com sucesso, confirmando que a NF foi cancelada.
+            
+            
+                Importante
+                
+                A NF-e gerada no ERP que foi 

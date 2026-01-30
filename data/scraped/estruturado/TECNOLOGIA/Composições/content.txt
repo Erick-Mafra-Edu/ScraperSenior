@@ -1,0 +1,199 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/sqlsenior2_chavecomposta.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > Composições
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Composições
+                O SQL Senior 2 possui o recurso de
+composição. Uma composição
+é um agrupamento de
+valores que forma um único valor.
+                
+                    Exemplo
+                        
+                            As expressões (NUMEMP,TIPCOL,NUMCAD) e (1,2,3)
+são composições.
+                            
+                                SELECT 1 FROM R034FUN WHERE (NUMEMP,TIPCOL,NUMCAD)=(1,2,3)
+                            
+                            Comando nativo para Anywhere.
+                            
+                                SELECT 1 FROM R034FUN A WHERE A.NUMEMP=1 AND A.TIPCOL=2 AND A.NUMCAD=3
+                            
+                        
+                    
+                
+                Nota
+                    Não é
+possível selecionar  uma composição, comandos SELECT em composições resultarão em erro.
+                    
+                        SELECT (NUMEMP,TIPCOL),NOMFUN FROM R034FUN
+                    
+                
+                Join
+                É possível fazer Joins com
+composições.
+                
+                    Exemplo
+                        
+                            
+                                SELECT 1 FROM R034FUN A, R036DEP B, WHERE (A.NUMEMP,A.TIPCOL,A.NUMCAD)=(B.NUMEMP,B.TIPCOL,B.NUMCAD)
+                            
+                            Em composições, os primeiros elementos
+são mais relevantes do que os últimos.
+                            
+                                SELECT 1 FROM R034FUN WHERE (NUMEMP,TIPCOL,NUMCAD)>(1,2,3)
+                            
+                            Comando no Anywhere.
+                            
+                                SELECT 1 FROM R034FUN A WHERE A.NUMEMP>1 OR A.NUMEMP=1 AND (A.TIPCOL>2 OR A.TIPCOL=2 AND A.NUMCAD>3)
+                            
+                        
+                    
+                
+                Operadores permitidos em composições
+                
+                    =;
+                    <>;
+                    >;
+                    <;
+                    >=;
+                    <=;
+                    BETWEEN;
+                    NOT BETWEEN.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

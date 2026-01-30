@@ -1,0 +1,283 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/manipulacao-de-usuarios-e-grupos.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7CFun%25C3%25A7%25C3%25B5es%2520de%2520Manipula%25C3%25A7%25C3%25A3o%2520de%2520Usu%25C3%25A1rios%2520e%2520Grupos%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Funções de Manipulação de Usuários e Grupos
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Funções de Manipulação de Usuários e Grupos
+            
+                
+                    
+                        Nome
+                        Descrição 
+                    
+                    
+                        PegaCodigoPolitica
+                        
+                        Esta função retorna o código da política 
+ de usuário, pela descrição da política.
+                    
+                    
+                        SegEntAdicGrp
+                        
+                        Esta função adiciona uma permissão de acesso ao grupo para o usuário e o retorna com a nova permissão.
+                    
+                    
+                        SegEntAdministrador
+                        
+                        Esta função permite identificar se um usuário ou grupo de usuários tem 
+ permissão de administrar plenamente o sistema.
+                    
+                    
+                        SegEntCodigo
+                        
+                        Esta função retorna o código do usuário/grupo.
+                    
+                    
+                        SegEntDatCri
+                        
+                        Esta função retorna a data de criação do usuário/grupo.
+                    
+                    
+                        SegEntDesc
+                        
+                        Esta função retorna a descrição do usuário/grupo.
+                    
+                    
+                        SegEntEhGrupo
+                        
+                        Esta função indica se o usuário/grupo é um 
+ grupo. 
+                    
+                    
+                        SegEntEhMembro
+                        
+                        Esta função indica se o usuário/grupo é membro 
+ de um determinado grupo.
+                    
+                    
+                        SegEntEhUsuario
+                        
+                        Esta função indica se o usuário/grupo é um 
+ usuário.
+                    
+                    
+                        SegEntExistePorCodigo
+                        
+                        Essa função verifica pelo código se o usuário/grupo existe.
+                    
+                    
+                        SegEntExistePorNome
+                        
+                        Essa função verifica pelo nome se o usuário/grupo existe.
+                    
+                    
+                        SegEntGrava
+                        
+                        Após todas as funções de criação e manipulação de opções de usuários/grupos esta função deve ser chamada para efetivar a criação do usuário/grupo.
+                    
+                    
+                        SegEntGrp
+                        
+                        Esta função retorna o código do grupo do usuário/grupo.
+                    
+                    
+                        SegEntLe
+                        
+                        Lê uma entidade (ou seja, um usuário ou grupo) a partir de seu código.
+                    
+                    
+                        SegEntLeCodigo
+                        
+                        Retorna o código de uma entidade a partir de seu nome. 
+                    
+                    
+                        SegEntLePorNome
+                        
+                        Lê uma entidade (ou seja, um usuário ou grupo) a partir de seu nome.
+                    
+                    
+                        SegEntNome
+                        
+                        Esta função retorna o nome do usuário/grupo.
+                    
+                    
+                        SegEntPermAdmModulos
+                        
+                        Esta função retorna a permissão que o usuário ou grupo informado tem 
+ para alterar permissões de acesso a módulos.
+                    
+                    
+                        SegEntPermAdmRotinas
+                        
+                        Esta função retorna a permissão que o usuário ou grupo informado 
+ tem para alterar permissões de acesso a rotinas.
+                    
+                    
+                        SegEntPermField
+                        
+                        Esta função retorna a permissão que o usuário ou grupo informado tem 
+ para acessar o campo informado.
+                    
+                    
+                        SegEntPermGeradores
+                        
+                        Esta função retorna a permissão que o usuário ou grupo informado tem, 
+ para executar determinada ação sobre um Modelo de Relatório, Importação e Exportação, Consultas, 
+ Cubos e Regras.
+                    
+                    
+                        SegEntPermModulo
+                        
+                        Esta função retorna a permissão que o usuário ou grupo informado tem 
+ para acessar o módulo informado.
+                    
+                    
+                        SegEntPermRotina
+                        
+                        Esta função retorna a permissão que o usuário ou grupo informado tem 
+ para acessar a rotina informada.
+                    
+                    
+                        SegEntPermTable
+                        
+                        Esta função retorna a permissão que o usuário ou grupo informado 
+ tem para acessar a tabela informada.
+                    
+                    
+                        SegEntPermTela
+                        
+                        Esta função retorna a permissão que o usuário ou grupo informado tem 
+ para executar determinada ação  sobre um menu do sistema. 
+                    
+                    
+                        SegEntQtdGrp
+                        
+                        Esta função retorna a quantidade de grupos 
+ do usuário/grupo.
+                    
+                    
+                        SegEntRemovePermTela
+                        
+                        Remove o registro de permissão de tela.
+                    
+                    
+                        SegEntRemvGrp
+                        
+                        Esta função remove um grupo do usuário/grupo e o retorna sem o grupo.
+                    
+                    
+                        SegEntSetaDesc
+                        
+                        Esta função seta a descrição do usuário/grupo e o retorna com a descrição definida.
+                    
+                    
+                        SegEntSetaNome
+                        
+                        Após criar o usuário/grupo, esta função seta o nome deste usuário/grupo e o retorna com o nome definido.
+                    
+                    
+                        SegEntSetaPermAdmModulos
+                        
+                        Esta função altera a permissão que o usuário ou grupo informado 
+ tem para alterar permissões de acesso a módulos.
+                    
+                    
+                        SegEntSetaPermAdmRotinas
+                        
+                        Esta função altera a permissão que o usuário ou grupo informado tem 
+ para alterar permissões de acesso a rotinas.
+                    
+                    
+                        SegEntSetaPermField
+                        
+                        Esta função altera a permissão que o usuário ou grupo informado 
+ tem para acessar o campo informado.
+                    
+                    
+                        SegEntSetaPermGeradores
+                        
+                        Esta função altera a permissão que o usuário ou grupo informado tem, 
+ para executar determinada ação  sobre um Modelo de Relatório, Importação e Exportação, Consultas, 
+ Cubos e Regras.
+                    
+                    
+                        SegEntSetaPermModulo
+                        
+                        Esta função altera a permissão que o usuário ou grupo informado 
+ tem para acessar o módulo informado.
+                    
+                    
+                        SegEntSetaPermRotina
+                        
+                        Esta função altera a permissão que o usuário ou grupo informado 
+ tem para acessar a rotina informada.
+                    
+                    
+                        SegEntSetaPermTable
+                        
+                        Esta função altera a permissão que o usuário ou grupo informado tem 
+ sobre a tabela informada.
+                    
+                    
+                        SegEntSetaPermTela
+                        
+                        Esta função altera a permissão que o usuário ou grupo informado tem 
+ para executar determinada ação  sobre um menu do sistema. 
+                    
+                    
+                        SegGrpAdicMem
+                        
+                        Esta função adiciona um usu

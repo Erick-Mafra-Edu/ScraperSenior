@@ -1,0 +1,242 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/sql.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____10
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > SQL (Structure Query Language) Senior 2
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                SQL (Structure Query Language) Senior 2
+                Histórico
+                Desenvolvida pela IBM em meados dos anos 70, a SQL (Structured Query Language), é uma linguagem de manipulação de dados (DML - Data Manipulation Language), para suas primeiras tentativas de desenvolvimento de bancos de dados relacionais. A grande vantagem da SQL sobre modelos de dados anteriores, é que as operações realizadas sobre os dados são especificadas numa linguagem não procedural e conjuntos de dados são manipulados com um único comando.
+                Isto faz com que os programadores não tenham de navegar por uma estrutura complexa de banco de dados, reduzindo a quantidade de código necessário para acessar os dados. Após 1986, quando o American National Standards Institute (ANSI), a organização responsável pelos padrões industriais nos Estados Unidos, definiu a SQL como a linguagem padrão para os bancos de dados relacionais. Desde então, a SQL já sofreu duas atualizações oficiais, uma em 1989, e outra em 1992.
+                DDL - Data Definition Language
+                Toda parte de DDL é executada por aplicativos de alto nível (CBDS, Conversor).
+                Create Table Statement
+                
+                    Define nome de tabelas, nome de colunas, datatypes, constraints;
+                    Nome de colunas deve ser único em uma tabela;
+                    Cada coluna deve ter um datatype.
+                
+                
+                    Exemplo
+                        
+                            ORACLE
+                            
+                                CREATE TABLE E007UFS(SIGUFS VARCHAR2(2) NOT NULL, NOMUFS VARCHAR2(20) NULL, CODPAI VARCHAR2(4) NULL, CONSTRAINT PK_E007UFS PRIMARY KEY (SIGUFS))TABLESPACE USER_DATA STORAGE (INITIAL 10K NEXT 10K)
+                            
+                            MS-SQLServer
+                            
+                                CREATE TABLE E007UFS(SIGUFS VARCHAR(2) NOT NULL, NOMUFS VARCHAR(20) NULL, CODPAI VARCHAR(4) NULL, CONSTRAINT PK_E007UFS PRIMARY KEY (SIGUFS))
+                            
+                            SYBASE SQLAnywhere
+                            
+                                CREATE TABLE E007UFS(SIGUFS VARCHAR(2) NOT NULL, NOMUFS VARCHAR(20), CODPAI VARCHAR (4), PRIMARY KEY (SIGUFS))
+                            
+                        
+                    
+                
+                ALTER TABLE Statement
+                
+                    Modifica uma coluna;
+                    Adiciona uma coluna;
+                    Adiciona uma Constraint.
+                
+                
+                    Exemplo
+                        
+                            ORACLE
+                            
+                                ALTER TABLE E085CLI ADD CONSTRAINT FK_SIGUFS_E007UFS FOREIGN KEY (SIGUFS) REFERENCES E007UFS (SIGUFS)
+                            
+                            MS-SQLServer
+                            
+                                ALTER TABLE E085CLI ADD CONSTRAINT FK_SIGUFS_E007UFS FOREIGN KEY (SIGUFS) REFERENCES E007UFS (SIGUFS)
+                            
+                            SYBASE SQLAnywhere
+                            
+                                ALTER TABLE E085CLI ADD FOREIGN KEY FK_SIGUFS_E007UFS (SIGUFS) REFERENCES E007UFS (SIGUFS) ON UPDATE RESTRICT ON DELETE RESTRICT
+                            
+                        
+                    
+                
+                DROP TABLE Statement
+                
+                    Deleta a tabela.
+                
+                
+                    Exemplo
+                        
+                            ORACLE
+                            
+                                DROP TABLE E085CLI CASCADE CONSTRAINTS
+                            
+                            MS-SQLServer
+                            
+                                DROP TABLE E085CLI
+                            
+                            SYBASE SQLAnywhere
+                            
+                                DROP TABLE E085CLI
+                            
+                        
+                    
+                
+                CREATE INDEX Statement
+                
+                    Cria um índice para a tabela.
+                
+                
+                    Exemplo
+                        
+                            ORACLE
+                            
+                                CREATE INDEX E120PED_INDICE1 ON E120PED (CODCLI, NUMPED)
+                            
+                            MS-SQLServer
+                            
+                                CREATE INDEX E120PED_INDICE1 ON E120PED (CODCLI, NUMPED)
+                            
+                            SYBASE SQLAnywhere
+                            
+                                CREATE INDEX E120PED_INDICE1 ON E120PED (CODCLI asc, NUMPED asc)
+                            
+                        
+                    
+                
+                DROP INDEX Statement
+                
+                    Deleta um índice.
+                
+                
+                    Exemplo
+                        
+                            ORACLE
+                            
+                                DROP INDEX PK_EO75DER
+                            
+                            MS-SQLServer
+                            
+                                DROP INDEX PK_EO75DER
+                            
+                            SYBASE SQLAnywhere
+                            
+                                DROP INDEX EO75DERINDICE2
+                            
+                        
+                    
+                
+                DML (Data Manipulation Language) Senior 1
+                Adicionando linhas - INSERT
+                
+                    É usado para inserir linhas em uma tabela;
+                    É composto por duas cláusulas principais:INSERT: A cláusula INSERT é usada para especificar a tabela e colunas que serão incluídas;VALUES: A cláusula VALUES é usada para especificar os valores que serão inseridos na tabela.
+                
+                Sintaxe
+                
+                    INSERT INTO {nome_tabela | nome_view} [(colunas)] {VALUES | valores | select-statement}  
+                
+                
+                    Exemplo
+                        
+                            
+                                INSERT INTO E007UFS (SIGUFS,NOMUFS) VALUES (‘SC’,’SANTA CATARINA’)  
+                            
+                        
+                    
+                
+                Alterando dados - UPDATE
+                
+                    É usado para modificar valores de uma ou mais colunas de uma tabela;
+                    É composto por três cláusulas principais:UPDATE: A cláusula UPDATE é usada para especificar a tabela;SET: A cláusula SET é usada para especificar o atributo e o novo valor;WHERE: A cláusula WHERE é usada para especificar quais as linhas a serem alteradas.
+                
+                Sintaxe
+                
+                    UPDATE {nome_tabela | nome_view} [(colunas)] SET colunas = expressão WHERE clausula
+                
+                
+                    Exemplo
+                        
+                            
+                                UPDATE E007UFS SET NOMUFS = ‘Santa Catarina’ WHERE SIGUFS = ‘SC’
+                            
+                        
+                    
+                
+                Removendo dados - DELETE
+                
+                    É usado para remover uma ou mais linhas de uma tabela;
+                    É composto por duas cláusulas principais:DELETE: A cláusula DELETE é usada para especificar a tabela;WHERE: A cláusula WHERE  é usada para especificar quais as linhas a serem removidas.
+                
+                Sintaxe
+                
+                    DELETE nome_tabela WHERE cláusula 
+                
+                
+                    Exemplo
+                        
+                            
+                                DELETE E007UFS WHERE SIGUFS = ‘SC’
+                            
+                        
+                    
+                
+                Selecionando dados - SELECT
+                
+                    É usado para selecionar dados de uma tabela;
+                    É composto por quatro cláusulas principais:SELECT: A cláusula SELECT é usada para especificar as colunas;FROM: A cláusula FROM é usada para especificar as tabelas;WHERE: A cláusula WHERE é usada para especificar quais as linhas a serem removidas;UNION: A cláusula UNION é usada para especificar a união entre um ou mais comandos SELECT.
+                
+                Sintaxe
+                
+                    SELECT [DISTINCT] nome_cam

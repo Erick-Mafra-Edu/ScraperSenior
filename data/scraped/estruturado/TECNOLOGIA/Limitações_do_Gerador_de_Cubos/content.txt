@@ -1,0 +1,200 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/cubos/limitacao-do-gerador-de-cubos.html%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Cubos%7CInforma%25C3%25A7%25C3%25B5es%2520Complementares%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Cubos > Informações Complementares > Limitações do Gerador de Cubos
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Limitações do Gerador de Cubos
+            Barra de Rolagem Horizontal              
+                
+                    A Barra de Rolagem Horizontal do Gerador de Cubos realiza a rolagem das colunas
+        individualmente, mas se aplica somente aos resumos. Caso o primeiro resumo não esteja
+        visível na tela a barra de rolagem não surtirá efeito algum, pois ele não descola
+        as quebras para tornar visível os resumos e sim vai rolando os resumos e mantendo
+        as colunas de quebra imóveis.
+                
+            
+            Envio de E-mail
+                
+                
+                    O envio de e-mail do saga utiliza somente MAPI.
+                
+            
+            Redimensionamento da Coluna Sequência
+                
+                
+                          Na extração do cubo, quando habilitado a opção de Numerar Linhas, esta coluna na
+        visão não é possível redimensioná-la.
+                
+            
+            Quantidade de Linhas x Colunas
+                
+                
+                    Existe uma limitação entre o tamanho de linhas x colunas x dados. Esta limitação
+        é variável, e não é possível definir um valor exato de quantidade máxima linhas
+        ou colunas de uma visão. O que ocorre é que com uma massa de dados muito grande
+        e diversificada, sem filtro, o Gerador de Cubos não consegue indexar todos os valores
+        em memória, o que causa perda de dados em alguns casos. Isto pode ser observado
+        em células que possuem o valor #VALOR!.
+    
+                
+            
+            Erro #VALOR!      Este valor aparece quando o Cubo não consegue recuperar o valor da célula.     
+                
+                    Como resolver?
+                               Pode-se aplicar uma abrangência menor na tela de entrada ou alterar as linhas/colunas
+        exibidas na dimensão.
+    
+                
+            
+            "A massa de dados gerada pela visão é muito grande e algumas
+            linhas/colunas não foram carregadas corretamente. Verifique o filtro aplicado na
+            visão."      Esta situação ocorre quando o Cubo não consegue indexar todos os valores da Visão.
+        Mesmo assim é possível visualizar a Visão, porém não existe garantia de que todos
+        os dados estão consistentes.       
+                
+                    Como resolver?
+                              Pode-se aplicar uma abrangência menor na tela de entrada ou alterar as linhas/colunas
+        exibidas na dimensão.
+
+                
+            
+            Ao executar o gerador de Cubo para grande quantidade de informações, pode ocorrer a mensagem: "O cubo não pode ser visualizado pois seu tamanho ultrapassa os limites de recursos disponíveis".
+                
+                    Como resolver?
+                        Este tipo de mensagem é apresentada quando o limite de objetos utilizados do sistema operacional Windows for alcançado. Não é um limite da aplicação Senior, trata-se de uma limitação de aplicações 32 bits no próprio sistema operacional.
+                    Como a área de memória reservada para alocação destes objetos é estática e limitada, dependendo da quantidade de aplicações abertas no computador, ocorre erro de falta de recursos, quando a aplicação tenta alocar um novo objeto e a área de memória em questão já está cheia.
+                    A alternativa de contorno é gerar este cubo com menos dados, e juntá-los manualmente depois de exportados.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

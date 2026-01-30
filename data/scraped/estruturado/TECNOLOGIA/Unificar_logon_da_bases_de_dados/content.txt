@@ -1,0 +1,158 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/outras-configuracoes/unificar-logon-de-bases-de-dados.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7COutras%2520configura%25C3%25A7%25C3%25B5es%7C_____8
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Outras configurações > Unificar logon da bases de dados
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Unificar logon de bases de dados
+            A unificação de logon de bases de dados é utilizada para que qualquer logon dos sistemas G5, de uma instalação, seja concentrado em uma única base de dados. Configurações relacionadas a permissões ainda são realizadas individualmente em cada base de dados. 
+            Para que o recurso seja totalmente utilizado é preciso configurar alguns recursos na Central de Configurações Senior e, assim, garantir a existência do usuário nas duas bases de dados:
+            
+                Acesse Central de Configurações Senior > Opções de segurança > Logon via base de autenticação Senior;
+                Marque as opções Permitir logon via base de autenticação Senior e Permitir logon proprietário Senior caso falhar via base de autenticação, para que assim, caso um logon na base falhe, seja realizada uma segunda tentativa no sistema proprietário utilizando as mesmas credenciais informadas;
+                Selecione a Base de dados para autenticação;
+                Marque a opção Sincronizar informações do usuário ao autenticar para garantir que bases de dados mantenham as informações integradas, como, por exemplo, senhas e e-mail;
+                Em seguida, acesse a tela Formas de logon por tipo de acesso e configure as diferentes formas de acesso para cada para cada tipo 
+ de solução disponível instalados atualmente, que estejam utilizando o logon da base Senior;
+                 Após configurar as formas de login, acesse a tela Importação de usuário para obter os usuários da base do sistema secundário, por exemplo,  obter o do Gestão Empresarial | ERP para importá-los para a base de autenticação do Gestão de Pessoas | HCM. Na tela, marque somente o sistema que terá que enviar os usuários;Exemplo:
+                Para garantir que alterações de usuários realizadas no SGU dos sistemas sejam atualizadas nos demais sistemas presentes na instalação, é necessário, na tela Replicação de usuários, habilitar as bases que fazer e aceitam replicação;ImportanteNessa configuração, o sistema selecionado para exportar e replicar os usuários  deve possuir os web services publicados e funcionando corretamente, pois o Senior Gerenciador de Usuários utiliza os web services deste sistema para obter os usuários.
+                Em seguida, acesse a tela Autenticação de usuários e certifique que os usuários novos existam nas bases do sistema, através da seleção da opção Permitir adicionar novo usuários a um grupo automaticamente. Se desejar, habilite a configuração para gerar esses novos usuários em uma base secundária em seu primeiro logon através da adição destes usuários em um grupo pré-existente na nessa base secundária através do campo Adicionar novos usuários ao seguinte grupo automaticamente;
+                Por fim, após essas parametrizações na Central de Configurações Senior, acesse o Senior Gerenciador de Usuários, em Arquivo > Importar Usuários... e importe os usuários da base secundária para a base principal. Clique em Importar de base Senior via web service para visualizar os usuários a serem importados e os que já existem e serão atualizados. Nesse caso, importe somente os novos usuários, que contam com +, pois caso os demais sejam atualizados, esses usuários perderão as permissões e grupos da base corrente.
+            
+            
+                Importante
+                
+                Caso entre as bases existam objetos com o mesmo nome (seja usuário ou grupo), por exemplo,  importar um usuário com nome Senior em uma base com um grupo de nome Senior pré existente, a importação do usuário não irá ocorrer até que este conflito esteja resolvido alterando o nome do objeto da base destino ou base origem e assim, removendo o conflito. 
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

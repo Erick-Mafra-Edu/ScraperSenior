@@ -1,0 +1,138 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/retencoes-irpjcsll.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CReten%25C3%25A7%25C3%25A3o%2520%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Retenção  > Retenções IRPJ/CSLL
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Retenções IRPJ/CSLL
+            A retenção é uma antecipação do recolhimento do imposto e cabe a quem efetua a compra gerar este recolhimento. Ou seja, não é responsabilidade de quem vende o serviço ou outros. A retenção deverá ser realizada mediante emissão do documento fiscal ou recebimento do título e não através de uma apuração de forma totalitária.
+            
+                 Quer aumentar sua produtividade na hora de apurar o IRPJ e CSLL? Então confira esta Talk de Produto onde dois de nossos especialistas apresentam casos práticos e dicas sobre a apuração  no sistema!
+            
+            Processo
+            A retenção pode ser calculada diretamente na nota fiscal de venda ou através da baixa do título do contas a receber:
+            Nota fiscal de venda
+                
+                    Para que a retenção do IRPJ/CSLL seja feita diretamente na nota fiscal, o cliente deverá possuir uma transação de venda (ex CFOP 5949) indicando que a retenção deverá ser calculada. Neste caso, na tela Transações de Vendas (F001TVE), os parâmetros IRRF na Nota Fiscal Saída  e CSLL na Nota Fiscal Saída deverão estar igual a "- Subtrair".
+                
+            
+            Baixa do título no Contas a Receber
+                
+                    Para que a retenção ocorra na Gestão de Finanças, o cliente deverá possuir uma transação de baixa (ex 90350) com os campos relativos ao IRPJ e CSLL devidamente parametrizados. Neste caso na tela Transações de Contas a Receber (F001TRE), deverá ser informado que para a baixa do título terá de ser calculada a retenção do IRPJ/CSLL (informar que retém e a alíquota);
+                    Quando na tela Parâmetros da Filial para Tributos (F070FEF), para a filial matriz o parâmetro Calcular Pis/Cofins/IRPJ/CSLL Financeiro estiver com a opção "3 – Regime Caixa" selecionada, a apuração da retenção deverá ser feita mediante recebimento do título na Gestão de Tributos. Ou seja, a nota fiscal ou outros documentos deverão ser integrados para tributos e posteriormente, deverão ser integrados os títulos (F660TIT) com os seus respectivos recebimentos. Somente após esse passo é que será possível identificar as retenções na apuração do IRPJ/CSLL seja Lucro Real ou Presumido;
+                    Quando na tela Parâmetros da Filial para Tributos (F070FEF), para a filial matriz o parâmetro Calcular Pis/Cofins/IRPJ/CSLL Financeiro estiver com a opção "2 – Regime de Competência SPED" selecionada, a apuração das retenções será feita mediante IRPJ/CSLL escriturado nas notas fiscais ou outros documentos e os valores em questão estarão disponíveis para abater do saldo do imposto a pagar na apuração do IRPJ/CSLL Lucro Real ou Presumido.
+                    Esta solução irá atender as retenções de IRPJ/CSLL utilizando como referência a natureza de retenção de PIS/COFINS. Ou seja, será interpretada a natureza da retenção de PIS/COFINS para sugerir o tipo da retenção do IRPJ/CSLL, conforme abaixo:
+                    
+                        IRPJ:
+                            
+                                Natureza retenção igual a 3, 4, 5, 99 ou 53, 54, 55, 59: "1 – Retido Fonte"
+                                Natureza retenção igual a 1 ou 51: "2 - Retido na Fonte por Órgãos, Autarquias e Fundações Federais (Lei nº 9.430/1996, art. 64)"
+                                Natureza retenção igual a 2 ou 52: "3 - Retido na Fonte pelas Demais Entidades da Administração Pública Federal (Lei n° 10.833/2003, art. 34)"
+                            
+                        
+                    
+                    
+                        CSLL:
+                            
+                                Natureza retenção igual a 1 ou 51: "2 - Retido na Fonte por Órgãos, Autarquias e Fundações Federais (Lei nº 9.430/1996, art. 64)"
+                                Natureza retenção igual a 2 ou 52: "3 - Retido na Fonte pelas Demais Entidades da Administração Pública Federal (Lei n° 10.833/2003, art. 34)"
+                                Natureza retenção igual a 3 ou 4 ou 5 ou 53 ou 54 ou 55: "4 - Retido na Fonte por Pessoas Jurídicas de Direito Privado (Lei n° 10.833/2003, art. 30)"
+                                Natureza retenção igual 99 ou 59: "5 - Retido na Fonte por Órgãos, Autarquias e Fundações dos Estados, Distrito Federal e Municípios (Lei n° 10.833/2003, art. 33)"
+                            
+                        
+                    
+                
+            
+            
+                Observação
+                
+                 As fórmulas associadas as linhas da apuração deverão utilizar como referência os Tipos de Retenções definidos anteriormente, ou seja, em determinada linha que exija a retenção do tipo "Retido na fonte" deverá ser especificado para a fórmula que o tipo a ser procurado é o "1".
+            
+            Parametrizações complementares
+            F070FEF
+                
+                    Parâmetros da Filial para Tributos:
+                    
+                     Necessário ter o campo Utiliza Retenção Período devidamente parametrizado. Ao definir igual a: "S - Sim": todas as retenções identificadas no período do cálculo serão utilizadas preferencialmente para abater o total do imposto a pagar"N - Não": a rotina dará preferência pelas retenções mais antigas. Somente após o esgotamento dessas retenções é que serão consideradas as retenções do período do cálculo
+                    Ter o campo Retenção Data Baixa Título devidamente parametrizado. Ao indicar igual a:"S - Sim": as retenções serão listadas mediante proporção do recebimento do título em relação ao total do título na Gestão de Finanças, isso quando o regime de apuração for por competência. Quando for por caixa, a proporção será calculada mediante título/baixas lançada na Gestão de Tributos (F660TIT)"N - Não": o valor da retenção a ser listado, será o informado na nota fiscal ou outros documentos
+                
+            
+            F661RET
+                
+                    Controle Retenções IRPJ/CSLL
+                    
+                    Possibilita lançar retenções a serem utilizadas na apuração do imposto, independentemente de nota fiscal ou outros documentos. Nessa tela também é possível efetuar o resgate ou compensação das retenções (Per/Dcomp).
+                
+            
+            F661UCR
+                
+                    Método de Utilização das Retenções/Créditos
+                    
+                    Há a possibilidade de cadastrar como as retenções serão reconhecidas na apuração do imposto e até na geração do registro Y570. Ou seja, caso seja uma realidade reconhecer as retenções do IRPJ pela competência (data de emissão das notas fiscais) e a CSLL pelo caixa (baixa dos títulos da nota fiscal), essa configuração deverá ser realizada por essa tela.Os cadastros realizados  serão utilizados como base para identificar as retenções a partir de determinado período, sendo que:Caso na tela F070FEF, o regime anterior no campo Calcular Pis/Cofins/IRPJ/CSLL Financeiro esteja igual a "Regime de Caixa" e nesta tela o atual esteja igual a "Regime de Competência":O sistema irá lançar de forma integral, a partir da primeira apuração do respectivo imposto o saldo da retenção (diferença entre títulos em aberto e fechado) da nota fiscalAs retenções serão reconhecidas de forma integral a partir da data de emissão da nota fiscalCaso na tela F070FEF, o regime anterior no campo Calcular Pis/Cofins/IRPJ/CSLL Financeiro esteja igual a "Regime de Competência" e nesta tela o atual esteja igual a "Regime de Caixa":As retenções serão reconhecidas de forma proporcional as baixas dos títulos vinculados as notas fiscais
+                
+            
+            Retenções na apuração do IRPJ/CSLL
+            Para os casos em que de fato houve retenção no documento fiscal ou recebimento do título no Gestão de Finanças, pode-se, na apuração do IRPJ/CSLL, deduzir do imposto a pagar o total das retenções do período, inclusive de períodos anteriores quando existir saldo.
+            Para os registros em que a retenção é lançada, também existem deduções, desta forma serão utilizadas preferencialmente as deduções, porém se mesmo assim existir saldo de imposto a pagar, deve-se utilizar as retenções disponíveis. Uma retenção não utilizada no período do cálculo poderá ser adotada em períodos futuros desde que exista imposto a pagar.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        			

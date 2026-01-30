@@ -1,0 +1,189 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/tela-de-pesquisa/fadvflt.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CTela%2520de%2520Pesquisa%7CFiltro%2520Avan%25C3%25A7ado%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Tela de Pesquisa > Filtro Avançado > Configuração Filtro Avançado
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Configuração de Filtro Avançado
+                A tela Filtro avançado é aberta através do botão Alterar Filtro e permite a configuração de filtro avançado de maneira similar ao filtro simples. Nessa tela existe um campo onde sempre será exibida a condição para filtro, que depois será utilizada como filtro na tela de pesquisa, nesse campo, assim como o campo na tela de pesquisa, permite que o próprio usuário digite a condição a ser utilizada.
+                 
+                Opções de regra
+                
+                    E: Adiciona a expressão AND na condição do filtro;
+                
+                
+                    Exemplo
+                        
+                            
+                                (NOMFUN LIKE '%João%') AND (NUMEMP = 1);
+                            
+                        
+                    
+                
+                
+                    OU: Adiciona a expressão OR na condição do filtro;
+                
+                
+                    Exemplo
+                        
+                            
+                                NOMFUN LIKE '%João%' OR NOMFUN LIKE '%Maria%';
+                            
+                        
+                    
+                
+                
+                    Concatenar nome da tabela ao nome dos campos: Caso esta opção esteja marcada, ao adicionar algum campo na tela, o nome da tabela da qual o campo pertence será concatenado na frente do nome do campo. Isto é necessário em pesquisas que utilizam duas ou mais tabelas que tenham campos com o mesmo nome. Esta opção só está disponível em pesquisas em que é possível identificar o nome da tabela à qual o campo pertence.
+                
+                 
+                Guia Campo
+                Nesta guia estão listados todos os campos da tabela, o nome exibido é o nome do campo na tabela juntamente com a descrição. Com um duplo clique em qualquer valor exibido nesta lista, o mesmo será adicionado nas condições (será adicionado apenas o campo, sem condição nem valor) para que o usuário digite a condição e valor para filtro.
+                 
+                Guia Campo + Valor
+                Nesta guia são montadas as expressões.
+                Campo
+                    Exibe a lista dos campos com a respectiva descrição.
+			
+                Operador
+                    Condição que será utilizada para filtro. Para mais informações, consulte Filtro Simples.
+			
+                Valor
+                    Contém o valor que será utilizado para efetuar o filtro.
+			
+                Adicionar
+                    Monta a expressão que será efetivamente utilizada como filtro.
+			
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,169 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/pedido-de-venda-calcadista.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____9
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Pedido de Venda Calçadista
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Pedido de Venda Calçadista
+            Conceito
+            O pedido de venda calçadista, é um documento que pode ser utilizado no processo de venda específico do setor de calçados e tem a função de registrar os itens que serão vendidos e as negociações realizadas entre o vendedor e o consumidor.
+            Além disso, é um documento que não possui valor fiscal e permite viabilizar todas as etapas de um processo de venda que não se caracterize apenas em registrar os produtos.
+            
+                Importante
+                
+                Como o pedido de venda calçadista é um tipo de exibição dos pedidos de venda, para fazer uso desta opção é preciso verificar as seguintes parametrizações:
+                
+                    Definir no cadastro de filial do ERP o parâmetro dinâmico PEDIDO.LAYOUT com a opção 3 - Calçadista.
+                    Configurar na filial a Forma de Entrega Padrão para Imediata.
+                    Não configurar Garantias Estendidas, Seguro Furto/Roubo e Seguro Parcela Protegida para nenhum produto.
+                    Não configurar os produtos para exigir Frete nem Montagem.
+                
+            
+             Incluir pedido
+            Para incluir um novo pedido, acione o botão Incluir(F2);
+            
+                Dicas
+                A tela de pedidos permite a digitação e a navegação de forma rápida, utilizando atalhos disponíveis no teclado, além disso, utiliza a mesma interface para todas as funções, evitando que seja necessário alternar entre telas, tornando o atendimento mais rápido.
+                Ao pressionar a tecla ENTER, setas ↓ e ↑ no teclado, é possível navegar entre os campos com mais agilidade.
+            
+            
+                
+            
+            Campos do Cabeçalho
+            Pedido (Ctrl + F1)
+                Neste campo é gerado um número sequencial automaticamente pelo sistema, após a inclusão de um item/produto. Esse é o número do pedido.
+            
+                Nota
+                
+                O campo Pedido permite ainda que seja utilizado o botão de pesquisa, se houver a necessidade de abrir uma pré-venda existente para efetuar alterações.
+            
+            Cliente (Ctrl + F2)
+                Para identificar o cliente, basta digitar o código do cliente, CPF ou o nome parcial e pressionar ENTER. Se o cliente já possuir cadastro no sistema, é apresentado e selecionado automaticamente.Se optar pelo botão de pesquisa,  a tela de busca de cliente é exibida para inserção dos dados.
+            
+                Notas
+                
+                    Todo pedido exige a identificação do cliente.
+                    Se caso o cliente informado estiver bloqueado, o sistema apresentará uma mensagem avisando que o cliente está bloqueado informando o motivo e a observação do bloqueio. É solicitado ao usuário se deseja continuar ou não. Ao escolher "Sim", a digitação do pedido continuará normalmente, porém o recebimento do pedido é somente à vista ou em formas que não exijam cliente cadastrado. Caso não, o cliente é removido do pedido. 
+                
+            
+            Vendedor (Ctrl + F6)
+                
+                Para identificar o vendedor no pedido, basta digitar o login ou o nome completo do vendedor, conforme cadastrado em cadastro de usuários. Os vendedores também poderão ser pesquisados através do botão de pesquisa.
+            
+                Nota
+                
+                Por padrão, o sistema sempre exibe neste campo o usuário logado no terminal de venda, que pode ser alterado a cada inclusão de pedido e a cada item que for incluído no mesmo. O vendedor que estiver informado na tela do pedido no momento em que um item for adicionado, é o vendedor daquele item.
+            
+            Emissão
+                A data de emissão é sempre a data em que o pedido  foi iniciado. É gerada automaticamente pelo sistema, e não pode ser alterada.
+            Situação
+                
+                Exibe a situação do pedido, que é atualizada automaticamente pelo sistema e não pode ser alterada. As situações possíveis são:
+            
+                Aberto – Situação do pedido após ser iniciado ou reaberto;
+                Bloqueado – Situação do pedido caso tenha bloqueios;
+                Finalizado – Situação do pedido após ser finalizado;
+                Faturado – Situação do pedido após seu pagamento no PDV;
+                Expirado – Situação do pedido após ser expirado, tanto de forma manual quanto de forma automática;
+                Bloqueado Análise de Crédito – Situação do pedido caso tenha uma forma de pagamento que exija análise;
+                Faturado por Nota Fiscal – Situação do pedido após a geração da nota de simples faturamento.
+            
+            Emitir Nota Fiscal
+                Ao selecionar a "Emissão de Nota Fiscal" é possível que o pedido, após faturado, emita uma nota fiscal para fins de  garantia ou outro motivo. 
+            O comportamento desta opção varia de acordo com o valor informado para o parâmetro dinâmico VENDA.EMISSAONOTAFISCAL, do cadastro da filial no Gestão Empresarial | ERP:
+            
+                
+                
+                
+                
+                
+                    
+                        
+                            Valor do parâmetro dinâmico VENDA.EMISSAONOTAFISCAL
+                        
+                        
+                            Comportamento da opção Emitir nota fiscal
+                        
+                    
+                    
+                        1 - Permite a emissão automática de Nota Fiscal
+                        
+                            Se a operação é futura (tem itens de entrega futura):
+A opção de emitir nota fica desabilitada, desmarcada e não pode ser marcada automaticamente.
+
+                            Se a operação é imediata (somente itens de entrega imediata):
+                            
+                                A opção de emitir nota fica habilitada para que possa ser marcada manualmente pelo usuário ou automaticamente pelo sistema.
+                                A opção de emitir nota é marcada automaticamente ao:
+Adicionar um item que exige emissão de Nota Fiscal.
+Informar um cliente de um estado diferente da filial.
+                            
+                        
+                    
+                    
+                        2 - Permite a emissão manual com escolha do usuário
+                        
+                            Se a operação é futura (tem itens de entrega futura):
+A opção de emitir nota fica desabilitada, desmarcada e não pode ser marcada automaticamente.
+
+                            Se a operação é imediata (somente itens de entrega imediata):
+
+                            
+                                A opção de emitir nota fica habilitada para que possa ser marcada manualmente pelo usuário. Caso seja marcada é questionado ao usuário: "A filial está configurada para não emitir nota fiscal, deseja prosseguir?". Caso escolhida a opção "Sim" a opção de emitir nota é marcada, caso escolhido "Não" a opção de emitir nota não é marcada.
+                                
+A opção de emitir nota não é mais marcada automaticamente.
+                            
+                        
+                    
+                    
+                        3 - Não permite emissão de Nota Fiscal
+                        A opção de emitir nota fica desabilitada, desmarcada e não pode ser marcada automaticamente.
+                    
+                
+            
+            
+                Notas
+                
+                
+                    Quando essa opção estiver marcada na inclusão do pedido de venda, após a emissão do cupom fiscal o sistema se comunica com um servidor e imprime uma NF-e com os dados do cupom. Essa impressão é feita em uma impressora configurada da rede.
+                    Se a filial estiver sem comunicação com o servidor de NF-e ou com a SEFAZ ao tentar emitir uma nota fiscal, ela ficará pendente para impressão até que o servidor se estabilize novamente.
+                
+            
+            Inclusão Rápida 
+                Selecione Inclusão rápida, para leitura do código de barras do produto, sendo que a cada leitura é adicionado o item lido no pedido com quantidade 1 (um), na unidade de medida padrão do produto e utilizando a tabela de preços conforme sugestão do sistema. 
+            A inclusão rápida também ocorre quando a opção estiver selecionada e o usuário digitar o código exato de um item e pressionar Enter.
+            
+                Observação
+                
+                Quando o campo estiver sinalizado, ao emitir o primeiro pedido o sistema sugere automaticamente a última opção utilizada (ativa ou inativa).
+            
+             Grade Venda de Itens
+            Incluir itens 
+            Para incluir um item no pedido é necessário identificar o Produto, informar a quantidade e o preço.
+            Produto/Serviço (F2)
+                Para incluir um produto, é necessário que o cursor esteja dentro do campo Produto/Serviço (F2). A inclusão pode ser feita através da leitura do código de barras do produto, digitando o código do produto, informando  descrição do produto ou utilizando o botão de pesquisa para consultar os itens cadastrados. Se a Inclusão rápida estiver selecionada, a cada leitura de código de ba

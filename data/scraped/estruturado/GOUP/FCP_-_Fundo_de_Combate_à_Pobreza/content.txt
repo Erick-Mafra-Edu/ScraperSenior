@@ -1,0 +1,188 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#manuais_processos/mercado/nf-e/fcp.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____12
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > FCP - Fundo de Combate à Pobreza
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Fundo de Combate à Pobreza (FCP)
+            O FCP é um Fundo de Combate à Pobreza criado com o objetivo de minimizar o impacto de desigualdades sociais entre os estados brasileiros. É uma alíquota calculada juntamente com o ICMS nas operações internas ou operações interestaduais com Substituição Tributária.
+            O percentual de alíquota do FCP e os produtos em que são aplicados variam de acordo com a legislação de cada estado.
+            Com relação aos novos tratamentos de FCP na NF 4.0, nada muda em relação a tributação do ICMS interestadual, ou seja, as alíquotas previstas continuam sendo de 4%, 7% ou 12%, conforme regra federal (para mais detalhes consultar NT 2017.002).
+            É importante observar que, em se tratando de operações internas envolvendo as situações tributárias "ICMS10", "ICMS70" ou "ICMS90", é possível termos o "FCP para operações internas" e o "FCP Retido por Substituição Tributária" calculados no mesmo item. Nos casos de operações interestaduais, nada muda em relação ao ICMS da operação, sendo que o FCP incidirá apenas no cálculo do ICMS Substituído (ST), conforme Convênio ICMS 93/2015 cláusula décima § 2º.
+            O ERP (Gestão Empresarial | ERP) atende as quatro modalidades do FCP previstas no Manual do contribuinte, são elas:
+            1. FCP para operações internas
+            Consiste no cálculo do Fundo de Combate à Pobreza em operações dentro do mesmo estado.
+            Este cálculo considera a alíquota de % FCP parametrizada na tela Parâmetros Fiscais de produtos e serviços por filial e estado (F070PSE) e é realizado juntamente com o cálculo de ICMS em uma operação interna, ou seja, quando o estado do cliente ou do fornecedor é igual ao da filial. O cálculo dessa modalidade do FCP é aplicado em pedidos de venda, notas fiscais de saída, ordens de compra e notas fiscais de entrada.
+            A critério de cada estado, a tributação do FCP em operações internas deve ser aplicada somente quando a operação for destinada a consumidor final. As filiais localizadas nesses estados devem configurar o parâmetro global FcpConFin  como S - Sim.
+            Para notas fiscais de entrada de operações internas, quando o parâmetro FcpConFin estiver como S - Sim somente para os tipos "2 - Devolução (NF do Cliente)" e "3 - Devolução (NF de Saída)" será verificado se trata-se de operação com consumidor final. Para o outros tipos, o FCP não será calculado.
+            A base de cálculo utilizada para o FCP em operações internas é a mesma base de cálculo do ICMS.
+            O FCP para operações internas será apresentado nos seguintes grupos de tributação:
+            
+                
+                
+                
+                    
+                        Grupo de Tributação de ICMS
+                        Descrição
+                    
+                    
+                        ICMS00
+                        Tributada integralmente
+                    
+                    
+                        ICMS10
+                        Tributada e com cobrança do ICMS por substituição
+tributária
+                    
+                    
+                        ICMS20
+                         Tributação com redução de base de cálculo
+                    
+                    
+                        ICMS51
+                        Tributação com Diferimento
+                    
+                    
+                        ICMS70
+                        Tributação ICMS com redução de base de cálculo e
+cobrança do ICMS por substituição tributária
+                    
+                    
+                        ICMS90
+                        Tributação ICMS: Outros
+                    
+                
+            
+            2. FCP Retido por Substituição Tributária
+            Refere-se ao cálculo do Fundo de Combate à Pobreza para ICMS retido por substituição tributária em operações interestaduais ou internas.
+            Para cálculo é considerada a alíquota de %FCP parametrizada na tela Parâmetros Fiscais de produtos e serviços por filial e estado (F070PSE), quando há incidência de ICMS retido por Substituição Tributária na operação.
+            Nas operações com Substituição Tributária poderão ser calculados o FCP para ICMS e o FCP ST para ICMS ST. Caso o parâmetro Tipo Desconto ICMS da tela Tipos Substituições Impostos / Modalidade Base Cálculo / Antecipação - Por Estado (F019TIS) estiver definido como 2 - Descontar ICMS Normal e Zona Franca, o valor do FCP será descontado do FCP ST.
+            Ao gerar títulos de ICMS ST, caso o parâmetro Gera guia FCP ICMS ST estiver definido como S - Sim, será gerada uma guia com o valor de ICMS ST, e para gerar uma guia com o valor de FCP ST será necessário parametrizar os dados de geração dos títulos de FCP ST na tela Configuração de Impostos para a Filial (F055PPF), para cada estado vinculado ao imposto.
+
+
+            Se o parâmetro estiver configurado como N - Não, o valor do FCP ST será somado ao valor de ICMS ST, gerando apenas uma guia de pagamento. Porém é necessário retirar a configuração de geração de título da tela F055PPF.
+            O FCP para operações com ICMS retido por Substituição Tributária será apresentado nos seguintes grupos de tributação:
+            
+                
+                
+                
+                    
+                        Grupo de Tributação de ICMS
+                        Descrição
+                    
+                    
+                        ICMS10
+                        Tributada e com cobrança do ICMS por substituição
+tributária
+                    
+                    
+                        ICMS30
+                         Tributação Isenta ou não tributada e com cobrança do ICMS por substituição tributária
+                    
+                    
+                        ICMS70
+                        Tributação ICMS com redução de base de cálculo e
+cobrança do ICMS por substituição tributária
+                    
+                    
+                        ICMS90
+                        Tributação ICMS: Outros
+                    
+                    
+                        ICMSSN201
+                        Tributação pelo Simples Nacional com permissão de crédito e com cobrança do ICMS por Substituição Tributária (v2.0)
+                    
+                    
+                        ICMSSN202
+                        Tributação pelo Simples Nacional sem permissão de crédito e com cobrança do ICMS por Substituição Tributária
+                    
+                    
+                        ICMSSN900
+                        Tributação ICMS pelo Simples Nacional: Outros
+                    
+                
+            
+            Vale lembrar que, se tratando de operações no mesmo estado envolvendo as situações tributárias ICMS10, ICMS70 ou ICMS90, é possível ter o FCP para operações internas e o FCP Retido por Substituição Tributária calculado no mesmo item. Nos casos de operações interestaduais, nada muda em relação ao ICMS da operação, sendo que o FCP incidirá apenas no cálculo do ICMS Substituído (ST), conforme Convênio ICMS 93/2015 cláusula décima § 2º.
+            Veja os exemplos:
+            Operação dentro do estado (interna)
+                
+                    Cálculo aplicado até a versão 3.10 da NF-e (com FCP embutido)
+                    
+                        Operação interna em SP com CST "010 - Tributada e com cobrança do ICMS por substituição tributária";
+                        Alíquota interna de ICMS: 20% (18% ICMS + 2% FCP);
+                        Valor do Produto:  R$1.000,00;
+                        Margem: 50%;
+                        Base ICMS ST: R$1.500,00;
+                        Alíquota ICMS ST: 20%;
+                        Valor do ICMS: R$200,00;
+                        Valor do ICMS ST: R$100,00 (R$300,00 - R$200,00).
+                    
+                     
+                    Cálculo aplicado na versão 4.00 da NF-e (FCP separado)
+                    
+                        Operação interna em SP com CST "010 - Tributada e com cobrança do ICMS por substituição tributária"
+                        Alíquota interna de ICMS: 18%;
+                        Alíquota de FCP: 2%;
+                        Valor do Produto: R$1.000,00;
+                        Margem: 50%;
+                        Base ICMS ST: R$1.500,00;
+                        Alíquota ICMS ST: 18%;
+                        Alíquota FCP ST: 2%;
+                        Valor do ICMS: R$180,00;
+                        Valor do FCP: R$20,00;
+             

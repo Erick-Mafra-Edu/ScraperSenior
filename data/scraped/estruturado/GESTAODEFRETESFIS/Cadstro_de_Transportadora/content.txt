@@ -1,0 +1,323 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/transportadora.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Cadstro de Transportadora
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Transportadora
+            
+                
+                
+                
+                    
+                        Descrição
+                        
+                         
+                    
+                    
+                        Url do Serviço
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/Transportadora
+
+                    
+                    
+                        Tabela
+                        TI_S_FRETE_SERVICO_PRAZO_TROCA
+
+                    
+                    
+                        Tipo de Envio
+                        POST
+
+                    
+                    
+                        Tipo de Envio
+                        Quando ocorre troca de transportadora
+
+                    
+                    
+                        Array
+                        Sim - poderão ser enviados vários pedidos a cancelar na mesma chamada
+                    
+                
+            
+            Detalhamentos dos atributos de JSON entrada
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Nome do Atributo
+                        Tipo de Dado
+                        Default
+                        Obrigatório
+                        Descrição
+                    
+                    
+                        transportadoras
+                        Array
+                         
+                        S
+                        Recebe um array de objetos
+                    
+                    
+                        cnpj_empresa
+                        String
+                         
+                        S
+                        Código transportadora
+                    
+                    
+                        cd_transportadora
+                        Integer
+                         
+                        S
+                        Código transportadora
+                    
+                    
+                        ds_transportadora
+                        String
+                         
+                        S
+                        Nome transportadora
+                    
+                    
+                        ds_nome_fantasia
+                        String
+                         
+                        N
+                        Nome fantasia transportadora
+                    
+                    
+                        nu_cgc
+                        String
+                         
+                        S
+                        Cnpj transportadora
+                    
+                    
+                        nu_ie
+                        String
+                         
+                        S
+                        Inscrição estadual
+                    
+                    
+                        cd_cep
+                        String
+                         
+                        N
+                        Cep
+                    
+                    
+                        ds_endereco
+                        String
+                         
+                        S
+                        Endereço
+                    
+                    
+                        numero
+                        String
+                         
+                        S
+                        Número
+                    
+                    
+                        complemento
+                        String
+                         
+                        N
+                        Complemento
+                    
+                    
+                        ds_bairro
+                        String
+                         
+                        S
+                        Bairro
+                    
+                    
+                        ds_cidade
+                        String
+                         
+                        S
+                        Cidade
+                    
+                    
+                        cd_municipio
+                        String
+                         
+                        N
+                        Código IBGE
+                    
+                    
+                        sg_uf
+                        String
+                         
+                        S
+                        Estado
+                    
+                    
+                        nu_telefone_1
+                        String
+                         
+                        N
+                        Número de telefone
+                    
+                    
+                        nu_telefone_2
+                        String
+                         
+                        N
+                        Número de telefone
+                    
+                    
+                        nm_contato
+                        String
+                         
+                        N
+                        Nome do contato da transportadora
+                    
+                
+            
+            
+                
+                
+                    
+                        Exemplo do layout de entrada em JSON:
+                        
+                    
+                    
+                        
+                            {
+                            "transportadoras": [
+                            {
+                            "cnpj_empresa": "20121850000155",
+                            "cd_transportadora": "111222",
+                            "ds_transportadora": "Transportadora Teste",
+                            "ds_nome_fantasia": "J Teste",
+                            "nu_cgc": "00122233777756",
+                            "nu_ie": "00128884567756",
+                            "ds_endereco": "Endereco Teste J",
+                            "numero": "1010",
+                            "complemento": null,
+                            "ds_bairro": "Bairro Teste j",
+                            "ds_cidade": "Cidade Teste j",
+                            "cd_municipio": "MU",
+                            "sg_uf": "SP",
+                            "nu_telefone_1": null,
+                            "nu_telefone_2": null,
+                            "nm_contato": "Nome"
+                            }
+                            ]
+                            }
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

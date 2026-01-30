@@ -1,0 +1,298 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#menu_controladoria/previa-impostos.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7C_____2
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Geração de prévias dos impostos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Geração de prévias dos impostos
+            É possível registrar os dados da apuração dos impostos no formato de prévia por meio do botão Gravar Prévia e depois consultá-los através do botão Consultar Prévia. Ambos estão presentes nas telas de apuração F661I12 (impostos 41, 42, 43, 44, 47 e 48), F661I15 (impostos 55 e 56) e F661I19 (imposto 65) e F661I19 (impostos 73 e 74). A consulta, por sua vez, é feita por meio da tela F661PRE, que também pode ser acessada  pelo botão Consulta da tela F661PAI.
+            Dados que serão gravados:
+            PASEP e COFINS não cumulativo e cumulativo
+                
+                    Resumo da apuração:
+                    
+                    
+                        Total Contribuição
+                        Créditos Descontados
+                        Créditos períodos anteriores
+                        Valor retido
+                        Valor dedução
+                        Valor contribuição a recolher
+                    
+                    Detalhamento da contribuição:
+                    
+                    
+                        Tipo de contribuição
+                        Alíquota
+                        Valor da base de cálculo
+                        Valor da contribuição (total da contribuição do resumo)
+                    
+                    Origens das contribuições:
+                    
+                    
+                        Dados de identificação do documento
+                        Produto ou serviço
+                        CST do imposto
+                        Base de cálculo
+                        Alíquota
+                        Valor
+                    
+                    Detalhamento do crédito:
+                    
+                    
+                        Tipo do crédito
+                        Alíquota
+                        Valor da base de cálculo
+                        Total do crédito
+                        Créditos descontados (total crédito - crédito para períodos futuros)
+                        Crédito para períodos futuros
+                    
+                    Origens dos créditos:
+                    
+                    
+                        Dados de identificação do documento
+                        Produto ou serviço ou bem
+                        CST do imposto
+                        Base de cálculo
+                        Alíquota
+                        Valor
+                    
+                
+            
+            IRPJ e CSLL (lucro real)
+                
+                    Resumo da apuração:
+                    
+                    
+                        Imposto apurado
+                        Imposto acumulado
+                        Imposto a recolher
+                    
+                    Cálculo impostos:
+                    
+                    
+                        Linha
+                        Descrição da linha
+                        Valor
+                    
+                    Base Cálculo:
+                    
+                    
+                        Linha
+                        Descrição da linha
+                        Valor
+                    
+                    LACS:
+                    
+                    
+                        Linha
+                        Descrição da linha
+                        Valor
+                    
+                    LALUR:
+                    
+                    
+                        Linha
+                        Descrição da linha
+                        Valor
+                    
+                    Demonstrativo do resultado líquido:
+                    
+                    
+                        Linha
+                        Descrição da linha
+                        Valor
+                    
+                
+            
+            ISS de terceiro (retido)
+                
+                    Resumo da apuração:
+                    
+                    
+                        Cidade
+                        Valor do ISS serviço tomado
+                        Outros débitos
+                        Total do débito
+                        Estorno de débito
+                        Outros créditos
+                        Total crédito
+                        Imposto a recolher
+                    
+                    Origem dos débitos:
+                    
+                    
+                        Cidade
+                        Dados de identificação da nota fiscal
+                        Serviço
+                        Base de cálculo do ISS retido
+                        Percentual do imposto
+                        Valor do ISS retido
+                    
+                    Origem dos créditos:
+                    
+                    
+                        Cidade
+                        Dados de identificação da nota fiscal
+                        Serviço
+                        Base de cálculo do ISS retido
+                        Percentual do imposto
+                        Valor do ISS retido
+                    
+                
+            
+            ISS (LC 175/2020)
+                
+                    Resumo da apuração:
+                    
+                    
+                        Cidade
+                        Valor do ISS serviço tomado
+                        Outros débitos
+                        Total do débito
+                        Estorno de débito
+                        Outros créditos
+                        Total crédito
+                        Imposto a recolher tomador
+                        Imposto a recolher prestador
+                    
+                    Origem dos débitos:
+                    
+                    
+                        Cidade
+                        Dados de identificação da nota fiscal
+                        Serviço
+                        Base de cálculo do ISS 
+                        Percentual do imposto
+                        Valor do ISS 
+                    
+                
+            
+            ISS Retido (LC 175/2020)
+                
+                    Resumo da apuração:
+                    
+                    
+                        Cidade
+                        Valor do ISS serviço tomado
+                        Outros débitos
+                        Total do débito
+                        Estorno de débito
+                        Outros créditos
+                        Total crédito
+                        Imposto a recolher tomador
+                        Imposto a recolher prestador
+                    
+                    Origem dos débitos:
+                    
+                    
+                        Cidade
+                        Dados de identificação da nota fiscal
+                        Serviço
+                        Base de cálculo do ISS retido
+                        Percentual do imposto
+                        Valor do ISS retido
+                    
+                    Origem dos créditos:
+                    
+                    
+                        Cidade
+                        Dados de identificação da nota fiscal
+                        Serviço
+                        Base de cálculo do ISS retido
+                        Percentual do imposto
+                        Valor do ISS retido
+                    
+                
+            
+            
+                Observação
+                
+                As  notas fiscais/outros documentos/bens/atividade imobiliária/títulos da última prévia oficial gravada serão listadas no relatório Apuração de PIS/COFINS - Regime Cumulativo (CIOO079). Para isso, o campo Indicativo se deve gravar origens na apuração do imposto (GorPco) da tela F070FEF deve estar igual a S-Sim.
+            
+            As prévias de cálculos anteriores (desde que não seja uma prévia do cálculo processado, ou seja, campo ApuPro = N-Não) serão excluídas  quando a apuração do mês subsequente for processada, com exceção do imposto 66. Exemplo:
+            
+                Prévia de um período anterior:
+                
+            
+            
+                
+                    
+                        Apuração
+                        Prévia
+                        Apuração Processada
+                        Pode ser excluída?
+                    
+                    
+                        01/04/20XX
+                        1
+                        N
+                        S
+                    
+                    
+                        01/04/20XX
+                        2
+                        N
+                        S
+                    
+                    
+                        01/04/20XX
+   

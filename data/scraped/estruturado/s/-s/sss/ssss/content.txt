@@ -1,0 +1,37 @@
+# Gestão de resultados e atividades
+
+URL: https://documentacao.senior.com.br/gestao-de-relacionamento-crm/6.2.4/manual-processos/marketing/gestao-resultados/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM - versão 6.2.4                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     CRM - Manual do Usuário
+                 > Manual por processos
+                 > Marketing
+                 > Gestão de resultados e atividades                         Gestão de resultados e atividades
+A gestão dos resultados pode ser feita a qualquer momento de forma a entender e perceber os resultados relatados por cada operador da campanha. É possível ter uma visão macro dos resultados obtidos bem como ter uma visão analítica de tudo que foi relatado. Desta forma é possível tomar ações de mudanças na execução, estratégias de abordagem e forma de segmentação das contas nas campanhas.       
+Este artigo ajudou você?
+   Sim
+  Não
+    
+Gostaria de deixar uma sugestão para melhorar esta página?
+ 
+Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+ 
+Nome/E-mail (Opcional):   
+Deixe seu comentário:      Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+     Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.     SUPORTE SENIOR SUPORTE MEGA     
+Agradecemos pelo seu feedback!
+Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+  const o=document.getElementById("question"),n=document.getElementById("formcomentario"),i=document.getElementById("feedback-positivo");i?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Sim"}),o.remove(),n.style.display="block"});const r=document.getElementById("feedback-negativo");r?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Não"}),o.remove(),n.style.display="block"});const d=document.getElementById("comentario"),m=document.getElementById("charNum");d.addEventListener("keyup",e=>{let t=100-e.target.value.length;m.innerHTML=`Caracteres restantes: ${t}`});n.addEventListener("submit",e=>{e.preventDefault(),grecaptcha.ready(function(){grecaptcha.execute("6Lf3rgoaAAAAAAx7d9UyE9vFrMv5p1AZdXFyUMif",{action:"submit"}).then(function(a){var t=$("#email").val(),c=$("#comentario").val();gtag("event","feedback-descritivo",{contato:t,comentario:c,aceite:"Com aceite"}),$("#formcomentario").hide(),$("#thanks").show()})})});  var r=document.location.href,n=r.split("/")[3],e=document.getElementById("frame-mkt");e&&(e.innerHTML='<iframe frameborder="0" class="framebanner" scrolling="no" src="https://ads.senior.com.br/ads/#/view-banner/'+n+"?url="+encodeURIComponent(r)+'"></iframe>');    Base de Conhecimento   Portal de Exigências Legais  Documentação em outros idiomas:   English    Español     Senior Store   Universidade Corporativa   Fórum de Produtos   Trabalhe conosco   Blog              Todos os direitos de cópias reservadas para Senior Sistemas S.A. 
+A reprodução não autorizada desta publicação, no todo ou em parte,
+            constitui violação dos direitos autorais (Lei 9.610/98).
+         document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#main"),o=document.querySelector(".new-scroll-to-top"),t=200;e?.addEventListener("scroll",()=>{e.scrollTop>t?o?.classList.add("visible"):o?.classList.remove("visible")}),document.getElementById("newScrollTop")?.addEventListener("click",()=>{e?.scrollTo({top:0,behavior:"smooth"})})});  

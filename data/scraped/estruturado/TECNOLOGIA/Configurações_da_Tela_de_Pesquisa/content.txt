@@ -1,0 +1,178 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/tela-de-pesquisa/fpsqcfg.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CTela%2520de%2520Pesquisa%7C_____8
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Tela de Pesquisa > Configurações da Tela de Pesquisa
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Configurações da Tela de Pesquisa
+                A tela Configuração da pesquisa pode ser chamada a partir do botão Configurar em qualquer tela de pesquisa e permite selecionar os campos que serão exibidos, a ordenação, além de opções de como a tela de pesquisa será aberta.
+                Configurações
+                Carregar registros ao mostrar a tela
+                    Por padrão esta opção vem assinalada, mas caso seja desmarcada esta opção, quando a tela de pesquisa for aberta não exibirá resultados, os dados só serão buscados no banco, quando for realizada uma pesquisa ou aplicado um filtro. 
+                Localizar registro automaticamente ao mostrar a tela
+                    Caso assinalada, esta opção grava a última pesquisa realizada e assim que a tela de pesquisa for reaberta, a última pesquisa será carregada em tela.
+			
+                Aplicar filtro automaticamente ao mostrar tela
+                    Caso assinalada, esta opção faz com que o último filtro aplicado será novamente aplicado quando a tela de pesquisa for reaberta, é necessário informar se o filtro a ser aplicado será um Filtro Simples ou um Filtro Avançado. Se não houver um filtro configurado ou um valor para filtro informado, o filtro será aplicado da mesma maneira, com a condição padrão e o valor vazio.
+			
+                Campos Disponíveis
+                    Neste campo, são listados todos os campos existentes na tabela (e/ou campos resultantes), que não estão sendo exibidos na tela de pesquisa.
+			
+                
+                    Ordenação
+                        Define se a ordem em que os campos disponíveis são listados é padrão (ordem dos campos na tabela) ou alfabética;
+				
+                
+                Campos Selecionados
+                    Neste campo, são listados todos os campos existentes na tabela (e/ou campos resultantes), que estão sendo exibidos na tela de pesquisa. Os campos que estão sendo utilizado para ordenação aparecem entre chaves.
+				
+                
+                    Ordenar pelo Padrão
+                        Ordena os campos selecionados pela ordem dos campos na tabela.
+				
+                    Ordenar Alfabeticamente
+                        Ordena os campos selecionados alfabeticamente.
+				
+                
+                Campos Ordenados
+                    Neste campo, são listados todos os campos  que estão ordenados na tela de pesquisa, diferente da tela de pesquisa, aqui podem ser ordenados mais de um campo, e cada campo pode ser ordenado de maneira ascendente ou descendente, porém limitado ao máximo de 30 campos.
+				
+                
+                    Ordenação
+                        Define como os campos ordenados, serão de fato ordenados, de maneira ascendente ou descendente.
+				
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

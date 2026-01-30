@@ -1,0 +1,139 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/itens-de-notas-fiscais.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7C_____5
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Itens de notas fiscais
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Itens de notas fiscais
+            Conceito
+            Permitir filtrar notas fiscais por cliente ou descrição do produto.
+            Utilização
+            Utilizada para efetua consulta de notas através do nome de cliente, descrição do produto e várias outras informações. É possível localizar uma venda de forma rápida para verificar se o produto vendido ainda está na garantia, por exemplo. Também utilizada na localização de vendas para efetuar o processo de Devolução/Troca quando o cliente não possuir o documento fiscal.
+            Processo
+            A tela é acessada através do menu Mercado > Gestão de faturamento > Itens de notas fiscais. Ela apresenta a lista de todos os itens de notas fiscais com as seguintes informações:
+            
+                Número da nota fiscal;
+                Série da nota fiscal;
+                Data de emissão da nota fiscal;
+                Processo da nota fiscal;
+                CFOP do item;
+                Código do produto/serviço;
+                Nome do produto/serviço;
+                Código do cliente/fornecedor;
+                Nome do cliente/fornecedor;
+                Quantidade faturada do item;
+                Valor líquido do item;
+                Quantidade devolvida do item;
+                Quantidade remetida do item (somente para itens de notas de simples faturamento).
+            
+            
+                Notas:
+                
+                É possível filtrar por qualquer uma das informações apresentadas.
+                Estando um item selecionado, é possível visualizar a nota fiscal a partir do botão Nota fiscal, através do duplo click na linha da grade, ou ainda através do atalho Ctrl + w.
+            
+             
+             
+             
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

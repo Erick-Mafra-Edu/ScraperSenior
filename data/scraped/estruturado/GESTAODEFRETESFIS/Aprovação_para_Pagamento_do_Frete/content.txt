@@ -1,0 +1,252 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/aprovacao-pagamento-frete.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Aprovação para Pagamento do Frete
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Aprovação para Pagamento do Frete
+            
+                
+                
+                
+                    
+                        Descrição
+                         
+                    
+                    
+                        Url do Serviço
+                        Pagamento_Frete
+                    
+                    
+                        Tabela
+                        TI_WS_S_FATURAMENTO
+                    
+                    
+                        Tipo de envio
+                        GET (RabbitMQ)
+                    
+                    
+                        Momento
+                        Conciliação dos CTE.
+                    
+                    
+                        Array
+                        Sim – Será retornada todas informações pendentes de envio na mesma chamada.
+                    
+                
+            
+            Detalhamento dos atributos de Json entrada 
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Nome do Atributo
+                        Tipo de Dado
+                        Default
+                        Obrigatório
+                        Descrição
+                    
+                    
+                        cnpj_empresa          
+                        Varchar2(14)
+                         
+                        S
+                        CNPJ da empresa
+                    
+                    
+                        cd_cnpj_transp
+                        Varchar2 (14)
+                         
+                        S
+                        CNPJ da transportadora
+                    
+                    
+                        tp_entrada
+                        Varchar2(10)
+                         
+                        S
+                        Identificação do registro (parametrizável)
+                    
+                    
+                        ped_nu_nf
+                        Number(12)
+                         
+                        S
+                        Número da nota fiscal
+                    
+                    
+                        Ped_nu_serie_nf          
+                        Varchar2(3) 
+                         
+                        S
+                        Série da Nota Fiscal
+                    
+                    
+                        nu_cte
+                        Number(12)
+                         
+                        S
+                        Número do conhecimento de transporte
+                    
+                    
+                        nu_cte_serie
+                        Varchar2 (3)
+                         
+                        S
+                        Número da série do conhecimento de transporte
+                    
+                    
+                        dt_emissão_cte
+                        Varchar2(19)
+                        (DD/MM/YYYY HH24:MI:SS)
+                        S
+                        Data de emissão do CTE
+                    
+                    
+                        cte_chave_acesso
+                        Varchar2(44)
+                         
+                        C
+                        Chave de acesso do CTE
+                    
+                    
+                        cte_protocolo_autorizado
+                        Varchar2(15)
+                         
+                        C
+                        É o número de autorização de emissão do CTE
+                    
+                
+            
+            
+                
+                
+                    
+                        Exemplo do layout de entrada em JSON 
+                    
+                    
+                        
+                            [
+                            {
+                            "ped_cnpj_empresa":"20121850000155",
+                            "ped_cd_cliente":"1",
+                            "ped_nu_pedido_origem":"112233",
+                            "ped_nu_nf":"333",
+                            "ped_nu_serie_nf":"02",
+                            "ped_dt_emissao_nf":"19/09/2015 00:00:00",
+                            "ped_chave_acesso":"ABC123",
+                            "ped_qt_volume":"12",
+                            "ped_cfop":"AA11"
+                            }
+                            ]
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

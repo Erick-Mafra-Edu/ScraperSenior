@@ -1,0 +1,251 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/certificados-digitais.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7C_____10
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Certificados digitais (Site seguro/HTTPS/SSL)
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Certificados digitais (Site seguro/HTTPS/SSL)
+            Configurar o servidor utilizando certificado digital significa 
+ que todo o conteúdo que trafega entre o navegador do usuário cliente e o servidor é criptografado, trazendo mais segurança e confidencialidade 
+ das informações.
+            O processo de instalação de um certificado consiste em configurar o 
+ servidor web do servidor de aplicação para que use um determinado certificado. 
+ Um certificado digital deve ser obtido de uma Entidade Certificadora (CA). 
+ Alternativamente, para fins de teste, pode-se gerar um certificado "não 
+ assinado", que fará com que todos os dados trafegados sejam criptografados, 
+ lembrando que neste caso o navegador cliente vai acusar o certificado como 
+ "Inválido".
+            
+                Particularidades por produto
+                
+                Portal
+                    
+                        Observe que no ambiente Portal podem existir outros servidores web envolvidos, 
+ tais como servidor HTTP da versão Web 5.0 e do BrowserAccess. É importante 
+ que o certificado também seja instalado nesses servidores.
+                    
+                
+            
+            Gerando um certificado não assinado
+            
+            O Java 1.7 possui uma ferramenta chamada KeyTool que gera certificados. 
+ A geração de um certificado pode ser feita com base no comando: <jdk1.7.0_XX\bin\> keytool -genkey -alias nome_certificado -keyalg 
+ RSA -keystore mykeystore.keystore
+            Substitua nome_certificado por um nome relativo ao servidor, que pode 
+ ser endereço do servidor ou o nome do servidor (localhost.seudominio.com.br).
+            Em seguida, converta este certificado para p12 através do comando: keytool -v -importkeystore -srckeystore mykeystore.keystore -srcalias nome_certificado -destkeystore myp12file.p12 -deststoretype PKCS12.
+            Substitua o myp12file por localhost.seudominio.com.br.
+            Gestão do Ponto
+            Passo a passo para utilização do certificado digital em uma instalação da nova interface do Gestão do Ponto, de acordo com o servidor:
+            Servidor Node
+                
+                    
+                        Acesse a pasta gestao-ponto-frontend-server em seu diretório local, previamente extraída durante a instalação do Front-end;
+                        Edite o arquivo config.js para utilizar o certificado digital:	
+				//config.httpPort='3000'; //Sem certificadoconfig.httpsPort='443';Quando comentada, a porta 3000 não será utilizada. Desta maneira, a porta 443, com certificado digital, será utilizada para acessar a nova interface do Gestão do Ponto.
+                        Ainda no arquivo config.js, informe nas chaves file e passprashe o diretório em que ficará armazenado o certificado digital e a sua senha (String): 
+				Exemplo:config.certificateConfig = {// Caminho do p12 ou pfxfile: 'C:\\exemploCert\\cert\\exemplo.com.br.p12',// Senhapassphrase: '123'};
+                        Após estas configurações, retorne ao passo a passo da instalação do Front-end e finalize esta etapa.
+                    
+                
+            
+            Servidor Nginx
+                
+                    
+                        Acesse a pasta conf dentro da pasta de instalação do sistema;
+                        Edite o arquivo nginx.conf para utilizar o certificado digital. No server, altere as propriedades:listen       443 ssl;server_name  servidor.interno.senior.com.br;Adicione as novas propriedades:ssl_certificate      certificado.crt;ssl_certificate_key  key.rsa;
+                        Copie para dentro da pasta conf o certificado e a chave (certificado.crt e key.rsa);
+                        Após estas configurações, retorne ao passo a passo da instalação do Front-end e finalize esta etapa.
+                    
+                
+            
+            Portal Corporativo
+            Caso seja necessário redirecionar todas as chamadas para os conteúdos 
+ do Portal, é necessário que o administrador da rede configure o redirecionamento 
+ de portas nas regras de roteamento da rede, garantindo que todas as solicitações 
+ feitas diretamente às portas sem SSL sejam redirecionadas para as portas 
+ SSL. 
+            Exemplo:
+                
+                    Em um cenário onde existe Web 5.0, BrowserAccess e Portal em portas diferentes, redirecione da seguinte maneira:
+                    
+                        
+                        
+                        
+                        
+                            Serviço
+                            Caminho sem SSL
+                            Caminho com SSL
+                        
+                        
+                            Web 5.0
+                            
+                            http://servidor
+                            https://servidor
+                        
+                        
+                            BrowserAccess
+                            
+                            http://servidor:9090
+                            https://servidor:443
+                        
+                        
+                            Portal
+                            http://servidor:8080
+                            https://servidor:8443
+                        
+                    
+                
+            
+            Caso o redirecionamento de Portal seja 
+ indesejado ou não seja viável, é possível bloquear as portas não 
+ seguras, deixando disponível apenas as portas configuradas com SSL disponíveis 
+ e configurando todos os links de acesso a BrowserAccess e Web 5.0apontando 
+ para as portas SSL.
+            Exemplo:
+                
+                    Um link para BrowserAccess que sem SSL 
+ era configurado da seguinte maneira:
+                    
+                        /SLoginPortlet/BAConnector?url=http://servidor/ba&app=Rubi&xmlCmd=<?xml 
+ version='1.0' encoding='UTF-8'?><command> <handler type='system'><entrypoint>showform</entrypoint> 
+ </handler><inputs><formname>FrFicFin</formname> 
+ </inputs></command>
+                    
+                    Passa a ser configurado como:
+                    
+                        /SLoginPortlet/BAConnector?url=https://servidor/ba&app=Rubi&xmlCmd=<?xml 
+ version='1.0' encoding='UTF-8'?><command> <handler type='system'><entrypoint>showform</entrypoint> 
+ </handler><inputs><formname>FrFicFin</formname> 
+ </inputs></command>
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(

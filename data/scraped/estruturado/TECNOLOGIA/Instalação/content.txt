@@ -1,0 +1,251 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#checklists/bi/etl-x-microstrategy/instalacao.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CChecklists%7CPerformance%2520Corporativa%7CBI%7CETL%2520X%2520%252B%2520MicroStrategy%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Checklists > Performance Corporativa > BI > ETL X + MicroStrategy > Instalação
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Checklist de Instalação
+            Para que a instalação do sistema ETL X on-premises (ETL X + MicroStrategy)   ocorra corretamente, sugerimos verificar alguns itens antes de iniciar este processo. 
+            Para facilitar, imprima esse documento em formato PDF, no leiaute "Paisagem", a partir do ícone de impressão visível no início desta página.
+            
+                Importante
+                
+                Antes de iniciar este processo, verifique se os requisitos de infraestrutura para utilização do ETL X estão sendo atendidos.
+            
+            Instruções
+            Descrição dos itens
+            
+            
+                Requisito: itens necessários para ocorrer instalação do ETL X;
+                Necessidade: requisito obrigatório ou opcional para realizar instalação;
+                Evidência: evidências que comprovam que o requisito está sendo atendido para que a instalação ocorra corretamente;
+                Responsável: preenchimento com o nome do responsável por verificar se o requisito está sendo atendido;
+                Data: preenchimento com a data em que o requisito foi avaliado.
+            
+            Pré-requisitos
+            
+                
+                
+                
+                
+                
+                
+                
+                    
+                        Item
+                        Requisito
+                        Necessidade
+                        Evidência
+                        Responsável
+                        dd/mm/aaaa
+                    
+                    
+                        Máquina
+                        16GB de memória, conforme requisitos de infraestrutura
+                        Todos os itens obrigatórios
+                        Captura da tela de Informações básicas do sistema (Botão do Windows + Pause)
+                         
+                         
+                    
+                    
+                        Mínimo de 64GB de espaço livre em HD, conforme requisitos de infraestrutura
+                        Captura de tela das propriedades do disco (C:)
+                         
+                         
+                    
+                    
+                        Processador de quatro núcleos, conforme requisitos de infraestrutura
+                        Captura de tela do item CPU da guia Desempenho no Gerenciador de tarefas (Ctrl + Alt + Del)
+                         
+                         
+                    
+                    
+                        Uso exclusivo da máquina para o BI
+                        Captura de tela do conteúdo de cada disco
+                         
+                         
+                    
+                    
+                        Rede
+                        Servidor e estações com acesso liberado aos endereços *arcgisonline.com e *arcgis.com
+                        Apenas é obrigatório se desejar utilizar os mapas geográficos para análise por regiões 
+                        Captura de tela da página no navegador de preferência, no servidor e na estação
+                         
+                         
+                    
+                    
+                        Sistema Operacional
+                        Windows Server X64 2012 ou 2016
+                        Obrigatório
+                        Captura da tela de informações básicas do sistema (Botão do Windows + Pause)
+                         
+                         
+                    
+                    
+                        Banco de Dados
+                        Usuário com permissões de leitura/escrita no ETL
+                        Obrigatório
+                        Captura da tela do teste de conexão através de: %windir%\SysWOW64\odbcad32.exe ou TNSPing, para cada requisito
+                         
+                         
+                    
+                    
+                        Usuário com permissões de leitura/escrita no MicroStrategy
+                        Captura da tela do teste de conexão através de: %windir%\SysWOW64\odbcad32.exe ou TNSPing, para cada requisito
+                         
+                         
+                    
+                    
+                        Usuário com permissões de leitura no sistema Ronda Senior
+                        Obrigatório se possuir o sistema e desejar fazer uso de seus Data Marts
+                        Captura da tela do teste de conexão através de: %windir%\SysWOW64\odbcad32.exe ou TNSPing, para cada requisito
+                         
+                         
+                    
+                    
+                        Usuário com permissões de leitura no sistemaGestão Empresarial | ERP
+                        Captura da tela do teste de conexão através de: %windir%\SysWOW64\odbcad32.exe ou TNSPing, para cada requisito
+                         
+                         
+                    
+                    
+                        Usuário com permissões de leitura no sistema Gestão de Pessoas | HCM
+                        Captura da tela do teste de conexão através de: %windir%\SysWOW64\odbcad32.exe ou TNSPing, para cada requisito
+                         
+                         
+                    
+                    
+                        Uso exclusivo da máquina para o BI
+                        Obrigatório
+                        Captura de tela do conteúdo de cada disco e das configurações do banco de dados
+                         
+                         
+                    
+                    
+                        Ativar a conexão TCP/IP, caso o banco de dados utilizado for o SQL Server
+                        Captura de tela da configuração do SQL Server
+                         
+                         
+                    
+                    
+                        Proprietária
+                        
+                        Proprietária dos sistemas de origem que contemplem os módulos necessários para o funcionamento do Data Mart. O arquivo de Proprietária deve ser o mesmo, propagado entre as máquinas. Requisito necessário para integrações funcionarem corretamente
+                        Obrigatório
+                        Captura de tela do módulo em funcionamento e com apresentação de dados
+                         
+                         
+                    
+                    
+                        Web services
+                        Os web services do sistema Gestão Empresarial | ERP requerem que na sua Proprietária tenha esta liberação, com os dois itens: CCVC (Controladora – Gestão de Contabilidade – Visões Contábeis) e IPSI (Integrações (com sistemas externos) - Integrações Proprietárias – Integração proprietária com Web Services e SapiensSID)
+                        Obrigatório se possuir o Gestão Empresarial | ERP e desejar fazer uso do Data Mart de Visões Contábeis
+                        Captura de tela do contrato do web service através do console web do GlassFish
+                         
+                         
+                    
+                    
+                        Licenças
+                        Senior
+                        Obrigatório
+                        E-mail enviado pela Senior
+                         
+                         
+                    
+                    
+                        MicroStrategy OEM 2019 e MicroStrategy OEM 2019 Update 2
+                        E-mail enviado pela MicroStrategy (sem intermediários)
+                         
+                         
+                    
+                    
+                        Chave ESRI
+                        
+                      Apenas é obrigatório se desejar utilizar os mapas geográficos para análise por regiões. Caso não desejar, não há necessidade da chave ESRI.
+                    
+                        E-mail enviado pela Senior
+                         
+                         
+                    
+                    
+                        senior X Platform
+                        Tenant criado e configurado
+                        Obrigatório
+                        Print dos dados do admin@<tenant> da tela da plataforma
+                         
+                         
+                    
+                    
+                        Estar em conformidade com os pré-requisitos de instalação do ambiente híbrido
+                        Obrigatório
+                        Captura de tela da regra do Firewall
+                        
+                         
+                         
+                    
+                
+            
+            Pré-instalação
+            
+                
+                
+                
+                
+                
+                
+                
+                    
+                        Item
+                        Requisito

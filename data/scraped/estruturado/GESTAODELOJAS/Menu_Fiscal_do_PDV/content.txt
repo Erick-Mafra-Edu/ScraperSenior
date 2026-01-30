@@ -1,0 +1,176 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/documentos-fiscais/menu-fiscal-do-pdv.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CDocumentos%2520Fiscais%7C_____3
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Documentos Fiscais > Menu Fiscal do PDV
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Menu Fiscal do PDV
+                O PDV possui dois menus fiscais que ficarão disponíveis conforme o tipo de PAF utilizado. Para acessar, abra a tela inicial do PDV e clique em Menu Fiscal (ALT + M).
+                Menu Fiscal   PAF ECF
+                    
+                        Utilização
+                        O menu fiscal fica disponível na tela inicial do PDV ECF.
+                        
+                            
+                        
+                        Funções disponíveis
+                        LX Esta função comanda a impressão da Leitura X pelo ECF conectado ao PDV.
+                        LMF Esta função comanda a impressão da leitura da memória fiscal pelo ECF conectado ao PDV.O sistema  possibilita emitir a LMF conforme:
+                        
+                            Tipo de leitura: completa ou simplificada;
+                            Seleção: Data ou Redução Z;
+                            Data Inicial e final:  Informe a data inicial e final, que podem ser iguais;
+                            Redução Z inicial e final: Informe o número de redução inicial e final, que pode ser o mesmo número.
+                        
+                        Arq. MF Esta função comanda a geração de arquivo eletrônico no formato binário com dados extraídos da MF (Memória Fiscal) do ECF conectado ao PDV.Ao gerar o arquivo, o sistema exibe o nome de gravação do arquivo como: ArqMF. O arquivo será salvo na mesma máquina  que está instalado o PDV, no subdiretório Pafecf. Após a geração do arquivo, o sistema exibe o caminho e nome do arquivo.O arquivo será gerado com o nome ArqMF.bin enquanto a assinatura digital do arquivo será gravada no arquivo ArqMFD.txt.
+                        Arq. MFD Esta função comanda a geração de arquivo eletrônico no formato binário com dados extraídos da MFD (Memória Fita Detalhe) do ECF conectado ao PDV.Ao gerar o arquivo, o sistema exibe o nome para gravação do arquivo: ArqMFD. O arquivo será salvo na mesma máquina que está instalado o PDV, conforme exemplo anterior.
+                        Identificação do PAF-ECF Esta função comanda a impressão de um relatório gerencial no ECF conectado ao PDV, com as informações do sistema e da software house.
+                        Tab. Índice Técnico Produção Ao clicar na opção é exibida a mensagem: "Este PAF-ECF não executa funções de baixa de estoque com base em índices técnicos de produção, não podendo ser utilizado por estabelecimento que necessite deste recurso". Pois o sistema de PDV não está apto à executar rotinas de controle de produção.
+                        Parâmetros de Configuração Esta função comanda a impressão de um relatório gerencial no ECF conectado ao PDV, com as informações do perfil operacional do PAF-ECF.
+                        Registros do PAF-ECF O sistema de PDV deve gerar arquivo contendo os registros do PAF-ECF. Esse arquivo é gerado de duas maneiras:
+                        
+                             Através do menu fiscal:O sistema exibe o nome do arquivo que será gerado: REGISTROS_DO_PAF_ECF_MENU_FISCAL;O arquivo  será gravado no mesmo diretório onde está instalado o sistema de PDV, no subdiretório Pafecf;O sistema  informa o local da gravação e o nome do arquivo;O sistema permite filtrar os produtos que serão listados nos registros de estoque.
+                            Após a emissão da redução Z:O arquivo será gerado automaticamente após a redução Z, gravado no mesmo diretório onde está instalado o sistema de PDV, no subdiretório Pafecf;O sistema exibe o local e o nome de gravação do arquivo;O sistema  gera o arquivo baseado na movimentação do dia.
+                        
+                        
+                            Importante:
+                            
+                            A cada arquivo gerado pelo menu fiscal, é apresentado um aviso indicando o diretório onde o arquivo foi salvo.
+                            Exemplo:
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                        
+                    
+                
+            
+            Menu Fiscal PAF NFC-e
+                
+                    Utilização
+                    O menu fiscal PAF NFC-e está disponível para os usuários de Santa Catarina.
+                    Funções disponíveis
+                    Identificação do PAF NFC-e
+                        Comanda a impressão de um relatório gerencial no NFC-e conectado ao PDV, com as informações do sistema e da software house.
+                    Registros do PAF NFC-e
+                        Esta opção gera arquivo contendo os registros do PAF NFC-e. Ela abrirá a tela Registros PAF-ECF. Para utilizar, faça a seguinte configuração:
+                    
+                        Utilize o campo Estoque para selecionar uma das opções Total ou Parcial.Ao selecionar a opção Total, o sistema gerará registros relativos a todas as mercadorias cadastradas na Tabela de Mercadorias e Serviços. Quando escolhido Parcial, gerará registros relativos somente a uma ou mais mercadorias informadas pelo códigos ou pela descrição, considerando a quantidade de mercadorias em estoque atualizada até a abertura do dia. Considera-se a abertura do dia como o momento no qual o primeiro documento fiscal é gerado pelo estabelecimento.
+                         Informe no campo Data Inicial a data de início;
+                         Defina a data final no campo Data Final;
+                        Caso selecionada a opção Parcial no campo Estoque, informe o código do produto ou descrição no campo Produto;
+                        Clique em Adiciona para realizar a busca;
+                        Clique em Ok. O sistema gerará o arquivo REGISTROS_DO_PAF_ECF_MENU_FISCAL e salvará no mesmo diretório que está instalado o PDV, no subdiretório Pafecf.
+                    
+                    No arquivo de controle do fisco gerado por esta tela, estarão as seguintes informações:
+                    
+                        
+                        
+                        
+                            
+                                Código
+                                Descrição
+                            
+                            
+                                U1
+                                 Identificação do Estabelecimento Usuário do PAF NFC-e
+                            
+                            
+                                A2
+                                Total Diário de Meios de Pagamento
+                            
+                            
+                                P2
+                                Relação das Mercadorias e Serviços Código da Mercadoria ou Serviço
+                            
+                            
+                                E2
+                                Relação das Mercadorias em Estoque
+                            
+                            
+                                D2
+                                Relação dos DAV Emitidos
+                            
+                            
+                                D3
+                                Detalhe do DAV
+                            
+                            
+                                D4
+                                Log de Alteração de Itens do DAV
+                            
+                            
+                                S2
+                                Mesa/Conta de Cliente
+                            
+                            
+                                S3
+                                 Itens da mesa/Conta de Cliente
+                            
+                            
+                                J1
+                                NFC-e emitida pelo PAF NFC-e
+                            
+                            
+                                J2
+                                Detalhe da NFC-e emitida em contingência pelo PAF NFC-e
+                            
+                            
+                                EAD
+                                
+                                    Assinatura Digital Último registro (único)
+                                
+                            
+                        
+                    
+                    Vendas Identificadas pelo CPF/CNPJ
+                        A tela gera um arquivo de controle do fisco. Para gerar, siga as instruções na tela Vendas por CPF/CNPJ:
+                    
+                        Insira o mês no campo Mês;
+                        Defina o ano no campo Ano;
+                        Selecione uma das opções em Filtrar para realizar o filtro das informações;
+                        Caso selecionado a opção Por CPF/CNPJ, preencha o campo CPF/CNPJ;
+                        Clique em Gerar.
+                    
+                    O arquivo terá as seguintes informações, caso existam:
+                    
+                        
+                        
+                        
+                            
+                                Código
+                                Descrição
+                            
+                            
+                                Z1
+                                Identificação do usuário do PAF NFC-e
+                            
+                  

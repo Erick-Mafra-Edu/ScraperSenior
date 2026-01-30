@@ -1,0 +1,272 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/sintaxe-de-comandos-e-operadores.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Sintaxe de comandos e operadores
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Sintaxe de comandos e operadores
+            Operadores Lógicos
+                    
+                
+                    
+                        
+                        
+                        
+                            Sinal
+                            Descrição
+                        
+                        
+                            =
+                            
+                            Sinal Igual: 
+		 Utilizado em comparações/operações aritméticas.
+                        
+                        
+                            >
+                            Maior que.
+                            
+                        
+                        
+                            <
+                            Menor que.
+                            
+                        
+                        
+                            <>
+                            Diferente de.
+                            
+                        
+                        
+                            >=
+                            Maior ou igual 
+		 a.
+                            
+                        
+                        
+                            <=
+                            Menor ou igual 
+		 a.
+                            
+                        
+                        
+                            e
+                            E. Utilizado 
+		 com o comando "Se" para ligar várias condições, em que 
+		 todas devem ser verdadeiras para que o resultado da comparação 
+		 seja verdadeira.
+                        
+                        
+                            ou
+                            OU. Utilizado 
+		 com o comando "Se" para ligar várias condições, devendo 
+		 apenas uma condição ser verdadeira para que o resultado da comparação 
+		 seja verdadeiro.
+                        
+                    
+                     
+                
+            
+            Operadores Aritméticos
+                
+                    
+                        
+                        
+                        
+                            Sinal
+                            Descrição
+                        
+                        
+                            =
+                            Sinal igual: 
+		 Utilizado em comparações/operações aritméticas
+                        
+                        
+                            +
+                            Sinal de adição: 
+		 Utilizado nas operações aritméticas de somar
+                        
+                        
+                            -
+                            Sinal de Subtrair: 
+		 Utilizado operações aritméticas de subtrair
+                        
+                        
+                            /
+                            Sinal dividir: 
+		 Utilizado nas operações aritméticas de divisão.
+                        
+                        
+                            *
+                            
+                            Asterisco: 
+		 Utilizado nas operações aritméticas de multiplicação.
+                        
+                        
+                            ++
+                            
+                            Incremento de 
+		 +1: Utilizado para aumentar o valor de uma variável, de um 
+		 em um.
+                        
+                        
+                            --
+                            
+                            Decremento de 
+		 -1: Utilizado para diminuir o valor de uma variável, de um 
+		 em um.
+                        
+                    
+                     
+                
+            
+            Operadores Extras
+                
+                    
+                        
+                        
+                        
+                            Sinal
+                            
+                            Descrição
+                            
+                        
+                        
+                            /*
+                            Inicio de comentário
+                            
+                        
+                        
+                            */
+                            Final de Comentário
+                            
+                        
+                        
+                            @
+                            Comentário de uma linha
+                            
+                        
+                    
+                
+            
+            Definição de variáveis
+            O nome das variáveis declaradas na LSP devem ter no máximo 100 caracteres,este nomes podem ser separados por _ (sublinhado). Não é permitido usar acentuação no nome das variáveis.
+            Como melhor prática para que as variáveis sejam inicializadas, se atribui o valor no evento Inicialização, que é o primeiro a ser chamado.
+            Definição de funções - Funcao (Function)
+            A Funcao (Function), trata-se de um conjunto de comandos, que 
+ tem como objetivo calcular um ou mais valores e retorná-los para uso na 
+ regra. Havendo uma operação que se repita, pode-se criar a função e chamá-la em cada regra, sem 
+ precisar reimplementá-la. 
+            
+                Nota
+                
+                Como boa prática, é recomendável que se reserve a regra 
+ 001 apenas para implementar funções.
+                
+            
+            Uma função pode receber parâmetros e 
+ retornar valores. 
+            Importante
+                Valores alterados 
+ dentro da função, também serão alterados fora dela.
+            
+            Os parâmetros definidos 
+ para as funções devem obrigatoriamente ser Numéricos. Parâmetros do tipo 
+ Alfanuméricos ainda não são suportados por funções definidas das regras.
+            
+            
+                Exemplo 1
+                    
+                        /* Definição/declaração da função criada pelo usuário */Definir Funcao Somar(Numero pNum1, Numero pNum2, Numero end pResultado);
+                        Definir numero vNum1;Definir numero vNum2;Definir numero vResultado;Definir alfa vResultadoMensagem;
+                        vNum1 = 50;vNum2 = 100;Somar(vNum1, vNum2, vResultado);
+                        IntParaAlfa(vResultado, vResultadoMensagem);vResultadoMensagem = "O resultado da soma é " + vResultadoMensagem;
+                        Mensagem(Retorna, vResultadoMensagem);
+                        /* ******* IMPLEMENTAÇÃO DAS FUNÇÕES CRIADAS PELO USUÁRIO ******* */
+                        /* Função criada pelo usuário para realizar a soma de dois números *//* Parâmetros da função: *//* Numero pNum1 - Numero que será utilizado na soma *//* Numero pNum2 - Numero que será utilizado na soma *//* Numero end pResultado - Parâmetro que representa o retorno desta função (o resultado da soma) */Funcao Somar(Numero pNum1, Numero pNum2, Numero end pResultado);IniciopResultado = pNum1 + pNum2;Fim;
+                    
+                
+                Exemplo 2
+                    
+                        Funcao AltSituacao (Numero SitOri, Numero SitDes);InicioHorSit[SitDes] = HorSit[SitOri];HorSit[SitOri] = 0;Fim;
+                        /*Forma de acesso à função */Definir Funcao AltSituacao (Numero SitOri, Numero 
+ SitDes);
+                    
+                
+            
+            Nota
+                Para usar a função na regra, deve-se declará-la 
+ no início da mesma.
+            
+             
+            Caracteres com Comportamento Especial
+            Existem determinados caracteres que, quando inseridos eu uma expressão literal nas regras, devem ser precedidos do caractere \ (barra) para indicar que estes caracteres serão usados literalmente e não como caracteres especiais. Estes caracteres são: "" (aspas) e \ (barra).
+            Exemplo
+                
+                    
+                        EnviaEMail("Joao","joao@senior.com.br", "", "", "Teste","\"\\\\Servidor\\teste.txt\"", "");
+                    
+                    
+			Como pode ser visto no exemplo acima, está sendo passado um endereço de um arquivo que normalmente seria: \\Servidor\teste.txt. 
+ 			Entretanto ao passar literalmente nas regras é necessário colocar uma \ (barra) antes das "" (aspas) e da \ (barra) para que estes caracteres não funcionem como caracteres especiais.
+		
+                    Se a barra não fosse adicionada antes destes caracteres, eles funcionariam de forma especial, ou seja, a \ (barra) é usada para quebra de linha quando o texto é muito extenso para ser visualizado em tela e as "" (aspas) são usadas para passar (entre as mesmas) expressões literais.
+                
+            
+            Palavras Reservadas
+            A LSP não faz distinção de letras maiúsculas e minúsculas. Portanto 
+ A LSP possui 51 (cinquenta e uma) palavras reservadas que não poderão 
+ ser usadas pelo programador para outros fins.
+            Nota
+                A LSP tem seus comandos em por

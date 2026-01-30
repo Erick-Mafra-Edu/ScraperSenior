@@ -1,0 +1,139 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#menu_controladoria/issqn-if.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7C_____4
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Apuração do ISSQN para instituições financeiras
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Apuração do ISS para instituições financeiras
+            Sobre o que você precisa saber?
+            1. Receitas de instituições financeiras;
+            2. Apuração do ISS;
+            2.1. Conceito;
+            2.2. Pré-requisitos;
+            2.3. Parametrização.
+            3. Complemento ou crédito de ISS;
+            3.1. Processo.
+            1. Receitas de instituições financeiras
+            As receitas de instituições financeiras não são geradas com base nos documentos fiscais, mas sim  nas tarifas e serviços cobrados dos clientes.
+            2. Apuração do ISS
+            A apuração do ISS de instituições financeiras é composta pela formação da base de cálculo, dos valores a recolher (coluna de débitos) e valores que permitem dedução (coluna de créditos). Assim, a partir das movimentações de instituições financeiras a apuração do ISS possui as seguintes regras:
+            
+                base de cálculo:
+                    
+                        (A) soma o valor das receitas tributadas das movimentações;
+                        (B) soma o valor das deduções da receita declarada das movimentações;
+                        (C) possibilitar informar manualmente deduções de receitas na apuração;
+                        base de cálculo = A - B - C.
+                    
+                
+                imposto:
+                    
+                        aplica a alíquota do imposto sobre a base de cálculo para gerar o valor na coluna de débitos do imposto;
+                        soma o valor do imposto de todas as movimentações que são retidas e inclui na coluna de créditos do imposto, observando a alíquota da apuração;
+                        soma o valor do incentivo fiscal de todas as movimentações que não são retidas e inclui na coluna de créditos do imposto, observando a alíquota da apuração.
+                    
+                
+            
+            Ambas as colunas permitem ajustes de apuração de forma manual, com a possibilidade de associar um dispositivo fiscal e/ou forma de busca de dados para automatizar o preenchimento dos ajustes manuais.  Além disso, a apuração grava os documentos de origem, facilitando a conferência da apuração. É possível também realizar prévias da apuração e conferir prévias anteriores. Quando processada em definitivo, a apuração gera a guia de recolhimento e o título a pagar.
+            2.1. Conceito
+            As apurações de ISS seguem as regras de cada município do país, que podem solicitar apurações agrupadas de formas distintas:
+            
+                Instituição e alíquota;
+                Instituição, alíquota e código de tributação DES-IF;
+                Dependência e alíquota;
+                Dependência, alíquota e código de tributação DES-IF.
+            
+            Ao utilizar a opção 1, a apuração do ISS devido pelas instituições financeiras ocorre exclusivamente para o município onde está situado o contribuinte, com a apuração centralizada por 1 estabelecimento por cidade. Dessa forma, se na cidade de São Paulo, por exemplo, houver 50 filiais que são instituições financeiras, é possível selecionar 1 filial na cidade de São Paulo para centralizar a apuração, realizar o recolhimento do imposto devido e apresentar a  declaração municipal, totalizando e demonstrando os documentos de todas as filiais juntamente com a movimentação do estabelecimento centralizador..Ao utilizar a opção 2, além de centralizar em uma única instituição (Filial), a apuração agrupará os valores respeitando a quebra por filial, alíquota e código de tributação.Ao utilizar as opções 3 ou 4, será feita a apuração sem centralização por filial, ou seja, cada filial fará sua própria apuração do ISS, porém respeitando o agrupamento por ISS e/ou código de tributação.
+            Outra regra que deve ser respeitada conforme as orientações dos municípios é a do tipo de arredondamento aplicado nos cálculos, tanto nas movimentações como na apuração do ISS. Cada filial/município pode definir a forma de arredondamento conforme abaixo:
+            
+                Arredondado;
+                Truncado.
+            
+            2.2. Pré-requisitos
+            Pré-requisitos para a apuração do imposto tipo 72 – ISS Próprio de Instituições Financeiras:
+            
+                Desdobramento das contas mistas (F050DCM): esta tela permite a inclusão dos desdobramentos das contas mistas utilizadas na geração das  declarações;
+                Códigos de Tributação da DES-IF (F050CTD): por meio desta tela é possível cadastrar os Códigos de Tributação da DES-IF para apuração do imposto 72, permitindo o agrupamento por esses códigos na apuração;
+                Ligação Plano Empresa X Município X Código Tributação DES-IF: através desta tela é feito o relacionamento entre o plano contábil da empresa, o código de tributação da DES-IF que será atribuído à conta e o código do evento que consta no Anexo 1 para os leiaute que seguem o padrão ABRASF. A tabela de eventos é fornecida por cada município, portanto a ligação é feita para cada cidade.
+            
+            2.3. Parametrização
+            
+                cadastre o imposto 72 na tela F051IMP;
+                vincule o imposto às filiais e configure os campos Método Apuração e Tipo de Cálculo juntamente com a grade Cidade ISS Instituições Financeiras (se o Método Apuração for 1 ou 2) na tela F055PPF.lembrando que, quando o Método Apuração for 1 ou 2, não é necessário vincular o imposto a todas as filiais, e sim apenas à filial centralizadora. Quando for 3 ou 4, a apuração ocorre por filial e de forma individualizada, mesmo que haja mais de uma filial situada no município. Assim, cada uma dessas filiais deve ter o imposto parametrizado. Para mais informações, veja o tópico 2.1;é possível utilizar a duplicação de parâmetros do imposto 72 para outras filiais por meio do botão Duplicar.
+                cadastre os Códigos de Tributação da DES-IF na tela F050CTD, permitindo o agrupamento por esses códigos;
+                os lançamentos de receitas podem ser detalhados por fornecedor/cliente ou por período na tela F660DAR, porém esse detalhamento serve apenas para  atender as declarações municipais, não impactando no cálculo do ISS;
+                apure o imposto 72 na tela F661PAI. Se as configurações da RAIS estiverem corretas, não houver títulos da apuração contabilizados e tratar-se da primeira apuração do imposto ou de uma reapuração, o sistema abrirá a tela ISS próprio das instituições financeiras (F661I22);
+                calcule o imposto por meio da tela F661I22. Nela é possível alterar via regra os dados a serem adicionados na grade Apuração. Possui também o botão Ajustes, onde são cadastrados ajustes do tipo Deduções, Incentivo Fiscal, Imposto Recolhido Antecipadamente e Saldo Credor Anterior para detalhamento da apuração de ISS por meio da tela F661AIF.
+            
+            
+                Observação
+                
+                
+                    é possível  fazer a apuração por lote na tela F661APL;
+                    a exclusão do imposto é feita nas telas F661EXL ou F661EXC e a geração/exclusão de um título relacionado à apuração do imposto na tela F661ICP, guia Impostos por Cidade;
+                    a geração da prévia do imposto se dá por meio da tela F661PRE e o relatório CIOO087 pode ser utilizado para consulta das prévias geradas. As prévias não-oficiais (não originadas de uma apuração processada) serão excluídas automaticamente ao processar a apuração da competência subsequente. Ex.: ao processar a apuração de 04/X1 serão excluídas as prévias não oficiais de 03/X1. Lembrando que as prévias oficiais nunca são excluídas;
+                    o processo automático 136 permite executar a apuração em lote do imposto 72 de forma automatizada;
+                    não é possível consultar o imposto 72 na tela F662CIM.
+                
+            
+            3. Complemento ou crédito de ISS
+            O controle de apuração complementar do ISS é aplicado à apuração do ISS próprio (imposto 72), de terceiros (imposto 65) e  ISS Retido (imposto 74).
+            Na apuração do ISS nas instituições financeiras é comum a entidade, ao chegar na data do vencimento do imposto, realizar a apuração do ISS nessa data mesmo não tendo feito o fechamento contábil, as integrações ou a conferência para o período em questão. Assim,  a apuração do ISS próprio sai com valores incompletos, ocasionando uma apuração complementar ao ISS já apurado para o mesmo período.Quando ocorre a apuração do ISS de instituições financeiras pela primeira vez, 

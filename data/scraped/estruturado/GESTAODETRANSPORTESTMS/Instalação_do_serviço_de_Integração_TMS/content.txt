@@ -1,0 +1,172 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodetransportestms/7.0.0/#detalhamento-tecnico/instalacao-servico-integracao-tms.htm%3FTocPath%3D_____10
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão de Transportes | TMS - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Instalação do serviço de Integração TMS
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Instalação do serviço de Integração TMS 
+            Primeiro passo é realizar o passo a passo do Guia de Implantação. Após realize a instalação e configuração do serviço de Integração de Ocorrências.
+            No TMS, para os módulos:
+            CFG
+                
+                    Como configurar?
+                        
+                            No módulo CFG em  Cadastros  >  Cadastros de Integração G7 e configure:
+                            
+                                Serviço de Monitoramento:Usuário: usuário que tem acesso à plataforma.Senha: senha do usuário.URL: endereço web onde está hospedada a plataforma.Selecione a empresa ou empresas que irão utilizar este serviço.Adicione o serviço de Monitoramento a lista de serviços.A opção “Não Autenticar” deve estar desmarcada.
+                                Baixa de Movimentos de Entrega:Usuário: usuário que tem acesso ao serviço Baixa de Movimento de Entrega.Senha: senha do usuário.URL: endereço web onde está hospedado o serviço.Selecione a empresa ou empresas que irão utilizar o serviço.Marque a opção “Não Autenticar”.Adicione o serviço de Baixa de Movimentos de Entrega a lista de serviços.
+                            
+                        
+                    
+                    Como selecionar os Documentos que serão enviados para roteirizar?
+                        
+                            No módulo CFG, em Cadastros  >  Cadastro Integração Plataforma G7, incluímos a guia Roteirizador, com as opções:
+                            
+                                Enviar Documentos para Roteirização:CTe;NFS-e;Coleta.
+                            
+                            
+                                
+                            
+                            
+                                Configuração de Envio CT-e pelo MDF-e, com as opções:Não Enviar;Enviar com a Data de Atividade sendo Data de Previsão de Chegada na Filial Destino;Enviar com Data de Atividade sendo Data de Saída do Manifesto Operacional.
+                            
+                            
+                                
+                            
+                            Nota: A configuração de envio CT-e pelo MDF-e (segunda imagem) só será habilitada as opções quando o documento CT-eestiver marcado na opção de enviar os documentos para roteirização (primeira imagem).
+                            Na guia Serviços, quando estiver marcada a opção para roteirização, o sistema verifica também a guia roteirizador se está com a opção de enviar os documentos, e quais documentos serão enviados, de acordo com a regra da configuração.
+                        
+                    
+                
+            
+            CCE:
+                
+                    Histórico de Entrega:
+                        
+                            Em CCe  >  Cadastros  >  Entregas  >  Histórico de Entregas, no cadastro de Histórico de Entrega configurar o código da ocorrência que está no RMS.
+                            
+                                
+                            
+                        
+                    
+                    Histórico de Coleta:
+                        
+                            Em CCe > Cadastros > Coletas > Histórico de Coletas, no cadastro de Histórico de Coleta configurar o código da ocorrência que está no RMS.
+                            
+                                
+                            
+                        
+                    
+                
+            
+            
+                Importante!
+                
+                Utilize sempre a ultima versão disponibilizada do tmsintegraocorrenciabackend  para integração 
+            
+            Instalação do serviço tmsintegraocorrenciabackend:
+                
+                    Proceda com um dos comandos abaixo, utilizando o usuário root da máquina virtual Linux:
+                    
+                        Comando de exemplo de instalação/configuração no servidor Linux para conexão através do Banco de Dados Oracle, apenas alterar o que está em negrito e caixa alta.
+                    
+                    Como:
+                    docker run -d -e BROKER_HOST=IP_LOCAL -e SOFTRAN=/root/ -e
+			DB_TYPE=Oracle -e TENANT=TENANT -e JAVA_OPTS="-Dspring.profiles.active=dev
+			-Ddb.url=jdbc:oracle:thin:@IP_BD:1521:INSTANCIA_BD
+			-Ddb.username=USUÁRIO_BD -Ddb.password=SENHA_BD
+			-Duser.timezone=America/Sao_Paulo
+		-Dservicemodel.logger.br.com.senior=INFO" --name=tmsintegraocorrenciabackend seniorsa/tmsintegraocorrenciabackend:LATEST
+                    
+                        Comando de exemplo de instalação/configuração no servidor Linux para conexão através do Banco de Dados MSSQL, apenas alterar o que está em negrito e caixa alta.
+                    
+                    Como:
+                    docker run -d -e BROKER_HOST=IP_LOCAL -e SOFTRAN=/root/ -e
+			DB_TYPE=SqlServerJtds -e TENANT=TENANT -e JAVA_OPTS="-Dspring.profiles.active=dev
+			-Ddb.url=jdbc:jtds:sqlserver://IP_BD:1433/INSTANCIA_BD
+			-Ddb.username=USUÁRIO_BD -Ddb.password=SENHA_BD
+			-Duser.timezone=America/Sao_Paulo
+		-Dservicemodel.logger.br.com.senior=INFO" --name=tmsintegraocorrenciabackend seniorsa/ tmsintegraocorrenciabackend:LATEST
+                    Onde:
+                    
+                        IP_LOCAL: IP do próprio servidor Linux;
+                        TENANT: Tenant do cliente;
+                        IP_BD: IP do banco de dados utilizado pelo Sistema TMS Senior;
+                        INSTANCIA_BD: Nome da Instância do Banco de Dados (obter informação com DBA do cliente);
+                        USUÁRIO_BD: Usuário do Banco de Dados;
+                        SENHA_BD: Senha do Banco de Dados. 
+                        LATEST: Última versão do serviço
+                    
+                
+            
+            Atualização do serviço tmsintegraocorrenciabackend:
+                
+                    
+                        Acesse o ambiente Linux o qual está instalado o serviço e realize o Login, informando usuário e senha
+                        Execute o comando: “sudo su” para ter privilégios de administrador, em seguida será solicitado a senha novamente.
+                        Execute o comando “docker ps” para verificar quais as imagens estão sendo executadas no servidor.Note que na figura acima está o rabbitmq e serviço de integração de ocorrências (tmsintegraocorrenciabackend:1.0.20), junto à versão que está sendo executada, no caso de exemplo: versão 1.0.20. O campo “NAMES” informa o nome do serviço o qual será atualizada a imagem, no caso da figura: “gceintegracao”.
+                        Execute o comando “docker images” para verificar qual a versão da imagem:
+                        Execute o comando “docker stop + nome do serviço“ para encerrar o serviço. Exemplo: docker stop gceintegracao
+                        Execute o comando “docker rm + nome do serviço“ para remover o container. Exemplo: docker rm gceintegracao
+                        Execute o comando abaixo, com as configurações do seu banco de dados e servidor para atualizar a imagem. ImportanteOnde diz LATEST, informar a versão da imagem o qual deseja instalar.Comando de exemplo de instalação/configuração no servidor Linux para conexão através do Banco de Dados MSSQL, apenas alterar o que está em negrito e caixa alta.docker run -d -e BROKER_HOST=IP_LOCAL -e SOFTRAN=/root/ -e DB_TYPE=SqlServerJtds -e TENANT=TENANT -e JAVA_OPTS="-Dspring.profiles.active=dev -Ddb.url=jdbc:jtds:sqlserver://IP_BD:1433/INSTANCIA_BD -Ddb.username=USUÁRIO_BD -Ddb.password=SENHA_BD -Duser.timezone=America/Sao_Paulo -Dservicemodel.logger.br.com.senior=INFO" --name=tmsintegraocorrenciabackend seniorsa/ tmsintegraocorrenciabackend:LATESTComando de exemplo de instalação/configuração no servidor Linux para conexão através do Banco de Dados Oracle, apenas alterar o que está em negrito e caixa alta.docker run -d -e BROKER_HOST=IP_LOCAL -e SOFTRAN=/root/ -e
+			DB_TYPE=Oracle -e TENANT=TENANT -e JAVA_OPTS="-Dspring.profiles.active=dev
+			-Ddb.url=jdbc:oracle:thin:@IP_BD:1521:INSTANCIA_BD
+			-Ddb.username=USUÁRIO_BD -Ddb.password=SENHA_BD
+			-Duser.timezone=America/Sao_Paulo
+		-Dservicemodel.logger.br.com.senior=INFO" --name=tmsintegraocorrenciabackend seniorsa/tmsintegraocorrenciabackend:LATESTOnde:IP_LOCAL: IP do próprio servidor Linux;TENANT: Tenant do cliente;IP_BD: IP do banco de dados utilizado pelo Sistema TMS Senior;INSTANCIA_BD: Nome da Instância do Banco de Dados (obter informação com DBA do cliente);USUÁRIO_BD: Usuário do Banco de Dados;SENHA_BD: Senha do Banco de Dados. LATEST: informar a versão da imagem o qual deseja instalar.
+                        Execute o comando: “docker images” e verifique se a imagem baixada está na lista.
+                        Execute o comando: “docker start + nome do 

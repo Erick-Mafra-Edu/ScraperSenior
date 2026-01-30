@@ -1,0 +1,219 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#consultas-relatorios/relatrio.htm%3FTocPath%3D_____12
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Relatórios
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+             Relatórios
+            Este tópico fornece uma visão geral dos relatórios, além de apresentar alguns recursos disponíveis em tela.
+             Acesse: XPlatform>Gestão Logística > Gestão de Fretes > Consultas e Relatórios
+            O que à consulta permite?
+            
+                Uma visão mais abrangente das informações ao carregar a tela.
+                Pesquisar os dados de um determinado  período, através do botão Informar Período.
+                Localizar dados rapidamente filtrando por critérios específicos (condições).
+                Exportar as informações existentes em telas no formato de planilha, na opção Exportar,  na parte inferior da tela.
+            
+            Quais são os relatórios disponíveis?
+            
+                
+                
+                
+                    
+                        Relatórios
+                        Descrição
+                    
+                    
+                        Relatório por Tipo – Pendente
+                        
+                        
+                            Mostra todos os pedidos que foram expedidos e qual a sua situação.
+                            
+                                 entregue;
+                                pendente de entrega ou;
+                                 extravio.
+                            
+                        
+                    
+                    
+                        Relatório Performance Coleta
+                        
+                        É usado para medir a performance dos processos de coleta das transportadoras.
+                    
+                    
+                        Relatório de Pedidos sem Retorno
+                        
+                        Exibe todos os pedidos expedidos e não finalizado a quantidade de dias sem retorno da transportadora, ou seja, quantos dias a transportadora está sem retornar informação de ocorrência.
+                    
+                    
+                        Relatório Performance Entrega
+                        
+                        Esse relatório é usado para medir a performance dos processos de entrega das transportadoras.
+                    
+                    
+                        Painel de Data Prevista
+                        
+                        Este painel mostra a quantidade de número de pedidos para entrega a partir de uma data inicial.
+                    
+                    
+                        Painel de Ocorrência
+                        
+                         Este painel exibe a quantidade de pedidos que recebeu alguma ocorrência a partir de uma data base.
+                    
+                    
+                        Painel de Pontualidade de Entrega
+                        
+                        Esse painel mostra o percentual de pontualidade que a transportadora atingiu dentro de uma data base.
+                    
+                    
+                        Painel  Roubo/Extravio
+                        
+                        Apresenta todos os pedidos que receberam uma ocorrência de roubo/extravio.
+                    
+                    
+                        Relatório de Frete Extra
+                        
+                        Apresenta o valor de frete extra que teve um pedido. O conceito de frete extra está relacionado com valores adicionais de reentrega e devolução.
+                    
+                    
+                        Relatório Cockpit Frete
+                        
+                        Tem por objetivo apresentar o custo de frete por região e separado por quinzena do mês selecionado.
+                    
+                    
+                        Relatório Coleta Fornecedor
+                        
+                        Esse relatório é usado para mostrar o Custo x Quantidade de Coletas que foram executadas  por uma transportadora.
+                    
+                    
+                        Relatório Setor Custo Carro
+                        
+                        É utilizado para mostrar o custo de frete por rota.
+                    
+                    
+                        Entrega Simplificado
+                        
+                        É usado para mostrar um resumo das informações de entrega, dados de pedido, Nota Fiscal, cliente, data de expedição e data de entrega.
+                    
+                    
+                        Relatório Nível de Serviço
+                        
+                        Apresenta informações de nível de serviço das transportadoras, onde o conceito é dar visibilidade para cada entrega realizada mostrando dados de entrega e custo.
+                    
+                    
+                        Pedidos Atrasados e Potencial Atraso
+                        
+                        
+                            Exibe os status dos pedidos que estão na operação, considerando os pedidos que estão em atraso ou que podem vir a atrasar, esses últimos são chamados de potencial atraso. Esse relatório usa como base a data de limite de entrega.
+                        
+                    
+                    
+                        Painel Gestão Financeira
+                        
+                        Apresenta todos os pedidos detalhando o custo de cada um e também a comparação com o o valor calculado pela transportadora.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

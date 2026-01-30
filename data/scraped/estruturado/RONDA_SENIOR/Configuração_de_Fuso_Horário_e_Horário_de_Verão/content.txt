@@ -1,0 +1,200 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#horario-de-verao/configuracao-fuso-horario.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CConfigura%25C3%25A7%25C3%25A3o%2520de%2520Fuso%2520Hor%25C3%25A1rio%2520e%2520Hor%25C3%25A1rio%2520de%2520Ver%25C3%25A3o%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Configurações de Fuso Horário e Horário de Verão
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Configurações de Fuso 
+		 Horário e Horário de Verão
+            Horário de Verão é a alteração do horário de uma região, designada apenas 
+ durante uma porção do ano, adiantando-se em geral uma hora no fuso horário 
+ oficial local. Atualmente, o horário de verão é adotado nas regiões Sul, Sudeste e Centro-Oeste.
+            A mudança de horário impacta no uso de sistemas informáticos, como é 
+ o caso do Ronda Senior, razão pela qual é necessário efetuar 
+ configurações para manter atualizadas as informações de servidores, bancos 
+ de dados, sistema web, processos automáticos, procedimentos on-line, assim 
+ como diversas integrações com hardware:
+            Banco de dados
+                
+                    As definições de fuso horário e horário de verão repercutem nos dados 
+ do banco assim como também nas informações que a aplicação utilizará para 
+ efetuar suas rotinas. São várias as funcionalidades do sistema  que são influenciadas pela configuração de data e hora do 
+ servidor de banco de dados, entre elas estão:
+                    
+                        botões de data/hora;
+                        nova entrada de visitantes;
+                        diversos monitoramentos;
+                        emissão de relatórios;
+                        execução de processos automáticos.
+                    
+                    Sincronização de informações
+                    Acesse a Central de Configurações Senior e configure a sincronização das informações do banco de dados com a aplicação. 
+ A funcionalidade está disponível para os bancos de dados Oracle e SQL Server, neste, antes de realizar a configuração do banco é necessário 
+ dar a permissão CREATE FUNCTION para o usuário do CFG.
+                    Configurações de GMT no servidor de banco de dados Oracle
+                    Em ambientes que contêm sites com diferenças de horário (GMT ou horário de verão)  entre o banco de dados da máquina servidora e a do cliente, é necessário configurar o GMT do servidor de banco de dados Oracle. Na maioria dos servidores essa configuração está zerada.
+                    O comando para configurar o banco de dados é: ALTER DATABASE SET TIME_ZONE = '-00:00'.
+                    Exemplo: 
+                        
+                            Na região sul do Brasil, onde o GMT é -3:00, o retorno do comando 'SELECT DBTIMEZONE FROM DUAL' deverá ser -03:00 fora do período de horário de verão ou -02:00 durante o período de horário de verão.
+
+                        
+                    
+                    Após realizar as parametrizações adequadas na Central de Configurações Senior, é necessário efetuar o procedimento e exclusão e recriação dos objetos da base de dados no CBDS (Central de banco de dados Senior).
+                
+            
+            Servidor
+                
+                    Para que o horário de verão funcione corretamente na CSM Center e na Concentradora, o fuso horário configurado no Windows deve ser um dos disponibilizados por padrão. Não é permitido configurar um fuso horário customizado, isto é, com um nome próprio, que não seja um dos disponibilizados por padrão no Windows.
+                    Exemplo:
+                        
+                            Forma incorreta: "(UTC-03:00) Nome do Cliente"
+                            Forma correta: "(UTC-03:00) Brasília" ou "(UTC-04:00) Cuiabá"
+                        
+                    
+                    Isso ocorre, pois Java utiliza o nome do fuso horário configurado no Windows para consultar, em sua base de dados interna de fuso horário, o GMT que deve ser aplicado. Para cada nome de fuso horário, existe um GMT sem horário de verão e um GMT com horário de verão. Por exemplo, para Brasília, se o Windows estiver fora do horário de verão, o Java utilizará o GMT -3; se o Windows estiver dentro do horário de verão, o Java utilizará o GMT -2.
+                    Se o Java não encontrar o nome do fuso horário em sua base de dados, ele utilizará o GMT explícito no nome, independente de estar dentro ou fora do horário de verão, como por exemplo: "(UTC-03:00)".
+                
+            
+            Senior Gerenciador de Usuários
+                
+                    Na tela de Propriedades do Usuário, na guia Fuso horário e horário de 
+ verão, é possível definir se um usuário utilizará o horário de verão.
+                    Caso esteja atribuído 
+ na Central de Configurações Senior > Banco de Dados > Ronda Senior > Fuso Horário > Assinalamentos Globais, que o mesmo fuso horário e horário 
+ de verão são aplicáveis a todos os usuários, estas opções no SGU são automaticamente 
+ desabilitadas.
+                
+            
+            Processos automáticos
+                
+                    Configuração de Processos Automáticos
+                    Na Central de Configurações Senior, em Middleware > Web 5.0 > Processos Automáticos,  informe o fuso horário 
+ do servidor onde o monitor de aplicações será executado, e se o 
+ servidor utiliza horário de verão ou não.
+                    Selecione essa opção de utilizar o fuso horário caso o servidor, onde o monitor de aplicações 
+ é executado, use o recurso de fuso horário. Sempre que escolhida essa 
+ opção é necessário definir qual será o GMT do local onde está o servidor 
+ de aplicações.
+                    Exemplo:
+                        
+                            
+                                 Local 
+ A: onde está alojado o servidor do Middleware = GMT -03:00 (Brasil - SC)
+                                 Local 
+ B: onde está alojado o servidor do banco de dados = GMT –06:00 (México)
+                                 Local 
+ C: onde está o usuário 1 = GMT +08:00 (China)
+                                 Local 
+ D: onde está o usuário 2 = GMT +05:30 (Índia)
+                            
+                            Passo 
+ a passo da configuração:
+                            Local 
+ A:
+                            
+                                Configure o servidor na Central de Configurações Senior, em Middleware > Web 5.0 > Processos Automáticos;
+                                 Selecione 
+ a opção de utilizar o fuso horário;
+                                 Escolher 
+ o (GMT -03:00) Brasília;
+                                 Selecione 
+ o servidor do horário de verão, pois o servidor está localizado 
+ em Santa Catarina.
+                            
+                             Local 
+ B: 
+                            
+                                Configure o servidor de banco de dados em Central de Configurações Senior 
+ > Banco de dados;
+                                Clique em Fuso horário...;
+                                Na guia 
+ Configurações, selecione Habilitar utilização de fuso horário e horário de verão.
+                                 Selecione 
+ o Fuso horário do banco de dados como GMT -06:00;
+                                 Não 
+ selecione o uso de horário de verão, pois no GMT -06:00 não é aplicado 
+ o horário de verão;
+                                 Na guia 
+ Assinalamentos Globais não selecione qualquer opção.
+                            
+                            Locais C e D:
+                            Configure os usuários dos locais C e D, individualmente através 
+ do Senior Gerenciador de Usuários, nas Propriedades de Usuário, guia Fuso horário e horário de 
+ Verão. Essa configuração não pode ser efetuada pelo Assinalamentos Globais
+ da Central de Configurações Senior, em Banco de dados, pois os usuários estão em diferentes locais.
+                            Se no local C ou D a quantidade de usuários for superior a um, 
+ necessariamente a configuração deverá ser efetuada pelo Senior Gerenciador de Usuários.
+                        
+                    
+                
+            
+            Locais físicos
+                
+                    O sistema utiliza o local físico como a 
+ entidade que representa, na aplicação, um local existente na organização. 
+ A configuração do fuso horário dos locais físicos é realizada no Plano 
+ de Localização Física, onde são cadastrados de acordo com os  
+ tipos de categorias.
+                    Apenas a categoria Site permite a configuração 
+ de fuso horário e de horário de verão, fazendo com que todos os locais 
+ físicos cadastrados como filhos adotem automaticamente tanto o GMT 
+ como as datas de início e fim do horário de verão do local pai.
+                    Essas informações de GMT, início e fim do horário de verão serão utilizadas 
+ na configuração de equipamentos.
+                    Controla Fuso por Planta
+                        Ao assinalar este campo, na tela de definições gerais, guia Gerais, é possível determinar se será calculado o GMT do local (Fuso horário da Planta) ou GMT do servidor nas rotinas de entrada e saída de visitantes. Por padrão o v

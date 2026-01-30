@@ -1,0 +1,213 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#checklists/checklist-retaguarda.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CChecklists%7C_____3
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Checklists > Checklist de Processos no Retaguarda
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Checklist de Processos no Retaguarda
+            Para facilitar a gestão de responsabilidades em relação ao sistema de Retaguarda no dia-a-dia de operação da loja, sugerimos utilizar este checklist.
+            
+                Dica
+                
+                Se desejar, imprima este documento em formato PDF, no leiaute "Paisagem", a partir do ícone de impressão visível no início desta página.
+            
+            Equipe da Loja - Periodicidade Diária
+            
+                
+                
+                
+                
+                
+                
+                    Item
+                    Menu
+                    Observação
+                    Responsável
+                    Dia/Mês/Ano
+                
+                
+                    Controle de fretes
+                    Mercado
+                    Verificar o andamento dos controles de fretes existentes no sistema, afim de identificar possíveis falhas processuais, entregas não realizadas, fretes em atraso, entre outras situações. Realizar lançamentos referente aos valores corretos dos fretes negociados e finalizar os controles após a entrega.
+                     
+                     
+                
+                
+                    Controle de montagens
+                    Mercado
+                    Verificar o andamento dos controles de montagem existentes no sistema, a fim de identificar possíveis falhas processuais, montagens não realizadas, entre outros. Realizar lançamentos referentes aos valores corretos das montagens negociadas e finalizar os controles após a entrega.
+                     
+                     
+                
+                
+                    Notas fiscais de saída (NF-e, NFC-e e SAT-Cfe)
+                    Mercado
+                    Verificar se todas as notas de saída geradas na filial estão com status final ("Autorizada", "Denegada", "Cancelada", "Inutilizada"). Não pode haver notas com erro de envio, críticas de validação ou rejeitadas, estas devem ser tratadas pela loja.
+                     
+                     
+                
+                
+                    Pedidos e Pré-vendas
+                    Mercado
+                    Verificar pedidos e pré-vendas que não serão mais utilizados e efetuar processo de Expiração dos mesmos. Analisar pedidos de entrega futura que ainda não tiveram remessa efetuada, identificando eventual falha no processo operacional da loja.
+                     
+                     
+                
+                
+                    Pedidos aguardando entrega
+                    Mercado
+                    Dar manutenção nos pedidos aguardando entregas, visando fluidez no processo de venda e entrega ao cliente, identificando possíveis falhas no processo operacional. Geração das NF de Remessa aos clientes.
+                     
+                     
+                
+                
+                    Tabelas de Preço e Promoções
+                    Cadastros
+                    Verificar se as tabelas de preço e promoções vigentes estão integradas e ativas no sistema Gestão de Lojas. Eventuais divergências deverão ser apontadas para o setor responsável, que efetuará análise a partir das tabelas e promoções cadastradas no sistema ERP.
+                     
+                     
+                
+                
+                    Posição de estoques e Consulta de Movimentos de Estoque
+                    Suprimentos
+                    Analisar as posições de estoque, identificando produtos que podem estar com estoque físico divergente do estoque do sistema, buscando identificar através da tela de Consulta de Movimentos de Estoque o motivo da divergência.
+                     
+                     
+                
+                
+                    Reservas e Bloqueios
+                    Suprimentos
+                    Verificar as reservas e bloqueios de estoque ativos no sistema, efetuando cancelamento das reservas ou bloqueios que não são mais aplicáveis.
+                     
+                     
+                
+                
+                    Notas fiscais de entrada
+                    Suprimentos
+                    Verificar se todas as notas de entrada geradas na filial estão com status final ("Autorizada", "Denegada", "Cancelada", "Inutilizada" para as notas emitidas pelo Retaguarda), e fechadas para notas integradas pelo ERP. Não pode haver notas com erro de envio, críticas de validação, rejeitadas ou "Em digitação". Estas devem ser tratadas pela loja. Em processos de transferência entre filiais, poderão estar com status de "Aguard. Conferência", possibilitando aos responsáveis efetuar conferência e finalizar estas NF manualmente.
+                     
+                     
+                
+                
+                    Análise de crédito
+                    Finanças
+                    Verificar pedidos com análise de crédito pendente, dando manutenção aos mesmos e concluindo os pedidos (faturando ou cancelando), levando em conta os processos definidos pela empresa para a aprovação ou reprovação do crédito (autenticadores, central de crédito, etc.)
+                     
+                     
+                
+                
+                    Fechamento de caixa
+                    Finanças
+                    Efetuar o fechamento de caixa, consistindo se todos os valores estão corretos no sistema, se todos os valores do sistema fecham com o valor financeiro apurado (em espécie). Verificar ainda se os valores estão corretamente lançados em suas respectivas contas (conta do PDV e conta Geral da loja).
+                     
+                     
+                
+                
+                    Títulos reservados
+                    Finanças
+                    Verificar se há títulos reservados, observando data e hora da reserva de forma a identificar possíveis títulos que o PDV reservou e não saíram da reserva, o que impediria o título de ser recebido ou pago em outro PDV.
+                     
+                     
+                
+                
+                    Redução Z
+                    Fiscal
+                    Conferir se as reduções Z estão inseridas no sistema Retaguarda com valores corretos. Verificar junto ao departamento fiscal da empresa, se as reduções Z integraram com o sistema ERP.
+                     
+                     
+                
+                
+                    Operações PDV
+                    Diversos
+                    Verificar e tratar situações não integradas em operações PDV - situações com erro ou não processadas são registros que não entraram no Retaguarda, consequentemente não sobem ao ERP e gerarão problemas na gestão da loja.
+                     
+                     
+                
+                
+                    Dashboard
+                    Diversos
+                    Conferir os relatórios do dashboard, comparando com os relatórios do sistema, especialmente de fechamento de caixa, a fim de encontrar e tratar eventuais divergências.
+                     
+                     
+                
+                
+                    Integrador Monitor - Negócio
+                    Diversos
+                    Analisar as ocorrências do Integrador Monitor, nas 3 esferas de relatórios no que refere-se a mensagens de negócio (erro de cadastros, validações de notas fiscais, validações de regras de negócio da empresa): Integrador Matriz: Registros que estão subindo para a matriz e geraram mensagens de erro na integração com o ERP, acionando o setor específico do ERP para tratar cada situação. Integrador Filial: Analisar os registros que estavam descendo para sua filial e geraram exceção na integração, verificando e tratando cada situação. Notificações: Registros que ainda não foram enviados por conta de dependência de outros registros. Normalmente referem-se a registros que encontram-se em logs Matriz os registros mestres dessas notificações.
+                     
+                     
+                
+            
+            Equipe da Loja - Periodicidade Semanal
+            
+                
+                
+                
+                
+                
+                
+                    Item
+                    Menu
+                    Observação
+                    Responsável
+                    Dia/Mês/Ano
+                
+                
+                    Condições e Formas de Pagamento
+                    Cadastros
+                    Verificar se as condições e formas de pagamento utilizadas com frequência pela loja estão ativas no sistema Retaguarda.
+                     
+                     
+                
+            
+            Equipe da Loja - Sob demanda
+            
+                
+                
+                
+                
+                
+                
+                    Item
+                    Menu
+                    Observação
+                    Responsável
+                    Dia/Mês/Ano
+                
+                
+                    Cadastros de Entidades (Cliente e Fornecedor)
+                    Cadastros
+                    Manter cadastros de clientes e fornecedores, atualizando dados quando necessário.
+                     
+                     
+                
+                
+                    Inventários
+                    Suprimentos
+                    Analisar contagens e inventários em aberto para dar o devido andamento e conclusão nos mesmos.
+             

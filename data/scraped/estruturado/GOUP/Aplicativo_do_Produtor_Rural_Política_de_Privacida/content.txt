@@ -1,0 +1,111 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#mobilidade/produtor-rural/politica-privacidade-app.htm%3FTocPath%3DMobilidade%7CProdutor%2520Rural%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Mobilidade > Produtor Rural > Aplicativo do Produtor Rural | Política de Privacidade
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Aplicativo do Produtor Rural | Política de Privacidade
+            A Senior se obriga, nos termos da legislação em vigor, a garantir a privacidade dos usuários dos seus produtos e serviços. Esta Política de Privacidade explica alguns processos de dados pessoais da Senior, em especial os processos relacionados ao aplicativo PRODUTOR RURAL, compreendendo a forma como a Senior os coleta, utiliza e para que fins.
+            Aceite desta Política
+            O aceite aos termos desta Política ocorrerá quando você acessar ou usar o aplicativo Produtor Rural da Senior. Ao acessar ou utilizar o aplicativo, você declara que está ciente e de acordo com os termos e condições previstos neste documento. Se você não concordar com algum dos termos e condições aqui previstos, você não deverá utilizar o aplicativo. Neste caso você poderá entrar em contato com a Senior conforme previsto na seção Fale Conosco.
+            Proteção dos dados e informações
+            A Senior está empenhada em garantir a proteção e a confidencialidade dos dados aos quais venha a ter acesso, em especial no que diz respeito aos dados pessoais, de acordo com os fundamentos, princípios e demais disposições previstas na Lei Geral de Proteção de Dados e demais legislação aplicável. Para isso, a Senior implementou medidas de segurança aptas a proteger os dados pessoais de acessos não autorizados e de qualquer forma de tratamento inadequado ou ilícito, cujo detalhamento consta neste documento, na Política de Privacidade da Senior (https://www.senior.com.br/politica-de-privacidade), bem como nos demais documentos e políticas internas da Senior.
+            Coleta de dados pessoais
+            A Senior coleta os dados do usuário do aplicativo através das interações que temos diretamente com você e através do aplicativo. Você fornece alguns desses dados diretamente, enquanto outros são obtidos ao coletarmos dados sobre suas interações, uso e experiências no aplicativo.
+            O aplicativo exige determinados dados pessoais para que o serviço seja oferecido. Caso você opte por não disponibilizar os dados necessários para o fornecimento deste produto/serviço (aplicativo), você não poderá usá-lo.
+            O aplicativo coleta as informações referentes a:
+            
+                Sua localização no momento em que são exibidas informações sobre a previsão do tempo;
+                Informações de sobre sua rede;
+            
+            Uso de dados pessoais
+            A Senior usa os dados que coletamos para proporcionar experiências agradáveis aos nossos usuários. Especificamente, usamos dados para:
+            
+                Fornecer nosso produto (aplicativo) e prestar os nossos serviços, incluindo as notificações de uma atualização ou solução de problemas, bem como o fornecimento de suporte. * Isso também inclui o compartilhamento de dados, quando necessário para fornecer o serviço ou realizar as transações que você solicitar;
+                Avaliar as principais características de utilização do nosso produto (aplicativo) e serviços;
+                Melhorar e desenvolver nossos produtos;
+                Personalizar nossos produtos e fazer recomendações;
+                Anunciar e comercializar para você, incluindo o envio de comunicações promocionais, o direcionamento de anúncios e a apresentação de ofertas relevantes;
+                Como parte de nossos esforços para manter nossos produtos seguros;
+                Cumprir as obrigações contratuais assumidas pela Senior com seus clientes e usuários;
+                Qualquer outra finalidade autorizada pelo usuário ao fornecer seus dados.
+                Também usamos os dados para operar nossos negócios, incluindo a análise de nosso desempenho, o desenvolvimento de nossa força de trabalho e a realização de pesquisas e desenvolvimento de produtos, e ainda o cumprimento de nossas obrigações legais.
+            
+            Ao realizar essas tarefas, combinamos dados que coletamos de contextos diferentes (por exemplo, a partir do uso de dois produtos da Senior) para lhe proporcionar uma experiência melhor, além de outras finalidades legítimas.
+            Nosso processamento de dados pessoais para essas finalidades inclui métodos automáticos e manuais (humanos) de processamento, sempre de acordo com as leis vigentes. Nossos métodos automatizados são muitas vezes relacionados a produtos ofertados com IA, já nossos métodos manuais estão relacionados ao suporte de nossos produtos e serviços.
+            Asseguramos que, caso os seus dados sejam utilizados para alguma finalidade não prevista nesta Política, tal uso não poderá desrespeitar os direitos à proteção dos dados e à privacidade, nem a legítima expectativa dos usuários.
+            Além de tratarmos os dados de acordo com as regras previstas nesta Política, podemos utilizar também seus dados de forma anonimizada, ou seja, dados que não o identifiquem pessoalmente.
+            Por que compartilhamos dados pessoais?
+            Podemos compartilhar seus dados pessoais com o seu consentimento ou para concluir transações ou fornecer um determinado produto ou serviço solicitado ou autorizado. Podemos também compartilhar dados com empresas controladas pela Senior, ou ainda com fornecedores autorizados, tais como fornecedores de serviços essenciais para a oferta do aplicativo, quando exigido por lei ou para responder a um processo judicial, bem como para manter a segurança de nossos produtos e proteger os direitos ou a propriedade da Senior.
+            Produtos fornecidos por sua organização – aviso aos usuários finais
+            Ao utilizar um produto Senior fornecido por uma organização à qual você está vinculado, como um empresa agro, por exemplo, essa organização poderá
+            
+                Controlar e administrar seu produto Senior e a conta do produto, inclusive controlar configurações relacionadas à privacidade do produto ou à sua conta no produto;
+                Acessar e processar seus dados, incluindo os dados de interação.
+            
+            Se sua organização concede a você acesso a um produto Senior, o uso que você fizer deste estará sujeito às políticas da sua organização. Você deve direcionar suas perguntas de privacidade, incluindo qualquer solicitação para exercer seus direitos de proteção de dados, ao administrador da sua organização. A Senior não é responsável pelas práticas de privacidade ou segurança dos nossos clientes, as quais podem ser diferentes das estabelecidas nesta Política de Privacidade.
+            Quando você usa um produto Senior fornecido por sua organização, o processamento de dados pessoais pela Senior em conexão com esse produto é realizado de acordo com um contrato entre a Senior e sua organização. Os produtos Senior podem ser utilizados para processar seus dados pessoais, nos limites estabelecidos entre a sua organização e a Senior para execução do contrato. Conforme mencionado acima, se você tiver dúvidas sobre o processamento de seus dados pessoais realizado nos produtos Senior em conexão com a oferta de produtos feita para a sua organização, entre em contato com a administração da sua organização.
+            Na eventualidade de um conflito entre esta Política de Privacidade e os termos de qualquer contrato entre um cliente e a Senior, os termos dos contratos prevalecerão.
+            Exclusão dos dados
+            Os dados coletados pela Senior serão excluídos de nossos servidores quando você solicitar ou quando não forem mais necessários para a finalidade proposta, salvo se houver outro motivo para a sua manutenção, como o cumprimento de uma obrigação legal ou a necessidade de preservação dos dados para assegurar o exercício de direitos da Senior.
+            Mudanças na Política de Privacidade
+            A Senior se reserva o direito de alterar esta política de privacidade de tempos em tempos sempre que entender necessário para cumprir as finalidades previstas. A data da última atualização sempre estará prevista na parte inicial do documento. Caso haja alguma mudança substancial na forma de utilização das suas informações, iremos notificá-lo com um anúncio em destaque em nosso site.
+            Fale conosco
+            Se você estiver preocupado com sua privacidade, tiver uma reclamação, pergunta ou solicitação referente a este assunto, ou ainda queira exercer quaisquer dos direitos previstos na legislação, entre em contato conosco usando o nosso formulário ou nos enviando um contato por meio de correio eletrônico: lgpd@senior.com.br.
+            
+   

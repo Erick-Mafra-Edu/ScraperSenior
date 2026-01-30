@@ -1,0 +1,227 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/patrimonio/calculo-credito.htm%3FTocPath%3DSegmentos%7CControladoria%7CGest%25C3%25A3o%2520de%2520Patrim%25C3%25B4nio%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Controladoria > Gestão de Patrimônio > Cálculo de Crédito
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Cálculo do Crédito
+            Para fazer o cálculo de crédito dos impostos PIS, COFINS e CSLL a rotina verifica, na guia Impostos 2 da tela F070FEF, o indicativo dos campos de base para cálculo do bem para crédito dos impostos citados, isto é, quando o indicativo for igual a:
+            
+                "C - Valor do custo do bem (Vlr. Total da Nota - Impostos Recuperáveis)": o valor atual do bem será o valor base e será dividido pela quantidade de meses informada na guia Fiscal da tela F670BEM
+                "A - Valor da Aquisição do Bem (Vlr. Total da Nota - Vlr. IPI)": o valor de aquisição para crédito do imposto será dividido pela quantidade de meses. O campo Quantidade Meses Inicial PIS/COFINS/CSLL indica a quantidade de meses inicial que foi calculada em outro sistema ou bem origem.
+                Tanto a opção "C" quanto a "A"  permitem reconhecer o ICMS deduzido das Bases de Cálculo do PIS e da COFINS quando a transação de compra indicar que  deve haver esta dedução ((E001TCP.CprIcp/CprIcc <> "N"). Neste caso, as bases de cálculo serão integradas de forma total, conforme previsto no parâmetro e a parcela do ICMS a deduzir será integrada ao campo Valor Base Excluir PIS/COFINS. Com a opção "C", se houver ICMS efetivamente creditado (no documento fiscal ou CIAP) e Valor Base a Excluir, o ICMS não será deduzido da base de cálculo do imposto; será somente lançado como parcela a excluir. Isso ocorre para evitar que o ICMS seja descontado do crédito em duplicidade.
+            
+            Exemplo:
+            
+            
+                Qtd. Total: 48Qtd. Inicial: 12Parcelas a calcular: 36
+            
+            O campo Valor Base Excluir PIS/COFINS/CSLL indica o valor base a excluir da recuperação.
+            Exemplo:
+            
+            
+                Valor Aq. para crédito: 1000,00Parcela mensal: 50,00Valor base a excluir: 400,00Parcela mensal: 20,00
+            
+            
+                O cálculo das parcelas a excluir, ocorre em paralelo ao valor base a recuperar. Ou seja, no patrimônio estas informações não irão interagir uma com a outra, apenas no cálculo do imposto em tributos que isto ocorre
+                O campo Valor Base Exc. Inicial PIS/COFINS/CSLL Índ. Ofi. indica o 
+			valor base a 
+		excluir acumulado em índice oficial que já foi calculado em outro 
+		sistema ou bem origem
+                O campo Depr. Recuperação s/ aceleração disponível na tela F670BEM, indica se o sistema deverá considerar como base de cálculo dos impostos recuperáveis a cota da depreciação mensal em índice oficial sem aceleração
+                A tela F670CAL atende a geração dos registros F120 e F130 
+		do SPED PIS/COFINS. Estes registros devem ter a origem das parcelas 
+		mensal de cada base de recuperação ("Q - Quantidade de meses" ou "D - 
+		Depreciação no mês") e o valor da parcela a excluir de cada base de 
+		recuperação
+            
+            Cálculo
+            Base de cálculo da PIS/COFINS/CSLL a recuperar no mês. Quando a quantidade total for informada, o cálculo será realizado da 
+		seguinte forma:
+            
+                
+                    "Base Mês" = (Valor aquisição - Valor Acumulado inicial já em moeda 
+		corrente) / (Qtd. Total - Qtd. Inicial).
+                
+            
+            Se o campo Qtd. Inicial for informado e o Valor acumulado inicial 
+		não ou se o Valor Acumulado inicial for informado e também o campo 
+		Qtd. 
+		Inicial, o cálculo será realizado da seguinte forma:
+            
+                
+                    
+		"Base Mês" = Valor aquisição / (Qtd. Total - Qtd.Inicial).
+                
+            
+            Neste momento a origem da parcela no mês será "Q - Quantidade de 
+		meses", independentemente se o valor base para cálculo de PIS/COFINS for maior ou menor que o valor da depreciação do mês.
+            Caso não haja quantidade de meses total informada, o cálculo ocorrerá conforme abaixo
+            
+                
+                    Percentual da depreciação = Depreciação no mês / Valor Base.
+                    "Base Mês" = Valor Aquisição * Percentual da depreciação.
+                
+            
+            Origem da parcela será sempre D - Depreciação no mês.
+             Valor da parcela a excluir da recuperação de PIS/COFINS/CSLL
+            Este cálculo é realizado da mesma forma que o cálculo acima. Porém, 
+		quando chegar neste cálculo, a origem já estará definida. Ou seja, o 
+		cálculo da parcela a excluir no mês sempre será com base na origem da 
+		base a recuperar.
+            
+                
+                    	Se for Q - Quantidade de meses, a rotina pega o valor base a excluir 
+		e divide pela quantidade total menos inicial
+                
+            
+            
+                Observação
+                
+                Esse campo não é comparado com valor da depreciação do mês.
+            
+            
+                	Se for D - Depreciação no mês, a rotina pega o valor base a excluir e 
+		aplica o percentual da depreciação no mês.
+		As origens das parcelas de cada base de recuperação e o valor de cada 
+		parcela a excluir são gravados nas tabelas de cálculo e movimentação
+            
+            Implementamos melhorias e alterações na base de cálculo de Pis e Cofins ao integrar os bens para o patrimônio em operações com ICMS creditado ou ICMS ST:
+            
+                Quando a Forma da Base de Cálculo de Pis/Cofins = "C": O valor do bem menos os impostos recuperáveis não será mais descontado quando a transação indicar que este ICMS deduz da base de cálculo de Pis e Cofins. Essa alteração foi feita para evitar a dedução duplicada do ICMS (reduzindo a base de cálculo e também como parcela a excluir).
+                Quando a Forma da Base de Cálculo de Pis/Cofins = "A": Agora é possível deduzir também o ICMS ST da base de cálculo dos créditos, desde que o identificador de regras PAT-670DESICM1 esteja ativo.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

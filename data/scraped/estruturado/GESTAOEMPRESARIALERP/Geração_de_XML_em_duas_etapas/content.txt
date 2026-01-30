@@ -1,0 +1,126 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/mercado/geracao-xml.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____16
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > Geração de .XML em duas etapas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Geração de .XML em duas etapas
+            Essa documentação tem por finalidade detalhar o processo de geração em duas etapas do .XML para NF-e e NFS-e, disponibilizado por padrão nos sistemas Gestão Empresarial | ERP e Gestão Empresarial PME | GOUP a partir das versões 5.8.11.117 e 5.10.1.30. Em versões anteriores, essa rotina era habilitada mediante parametrização (identificador de regras ou parâmetro global), porém a partir das versões indicadas ela passa a ser utilizada por padrão.
+            Esse processo atualmente está disponível apenas para notas fiscais de produto (NF-e) e notas fiscais de serviço (NFS-e). Caso haja necessidade desse tratamento para outros documentos, entre em contato com o nosso Suporte.
+            Há casos em que o arquivo eletrônico de NF-e e NFS-e é gerado no diretório e o programa de documentos eletrônicos interpreta o arquivo, valida na SEFAZ e retorna ao ERP antes que todos os processos do sistema tenham sido finalizados. Com isso a NF era autorizada no eDocs e na SEFAZ/Prefeitura, porém ainda não existia no ERP/GO UP por conta de um erro durante a gravação da NF no banco de dados.
+            Para que isso não ocorra, a geração dos arquivos eletrônicos de NF-e e NFS-e ocorre em duas etapas:
+            
+            
+                o arquivo .XML de emissão de uma nota fiscal de venda é gerado no diretório de geração das NF-es configurado no cadastro do usuário (primeira opção) ou no cadastro da série (segunda opção). Essa geração, porém, não salva o arquivo com o formato padrão .XML, mas sim com o formato temporário .PREXML;
+                depois que todas as operações relacionadas à emissão do documento fiscal forem efetuadas no banco de dados, os arquivos gerados com o formato .PREXML são renomeados para .XML e o programa de documentos eletrônicos, após a análise, os envia para a SEFAZ/Prefeitura.
+            
+            
+                Importante
+                Para que o processo funcione, o usuário logado no sistema precisa ter permissão para alterar arquivos no diretório das NF-es, bem como para gravar arquivos com a extensão .PREXML. Todas as rotinas do sistema que permitem a geração de uma NF-e ou NFS-e irão utilizar esse processo (processos via tela, web service, Ação SID etc.).
+            
+            Parametrização
+            
+        A parametrização base para indicar se o sistema gera um arquivo .XML é a configuração do parâmetro Software Emissor NF-e na tela F070FVE, guia Documentos Eletrônicos 3. Todos os códigos  diferentes de 02 - eDocs - Envio e Retorno via Web Service eDocs geram o .XML no formato .PREXML.
+            A geração em si da NF não foi alterada (gravação das informações nas tabelas E140NFV, E140IPV, E440NFC, geração das tags no .XML etc.). Esse processo afeta apenas o formato do arquivo .XML na pasta configurada no cadastro da série ou no cadastro do usuário.
+            Nos casos em que a emissão de NF é feita através de telas que fazem emissão em lote (F140LOT, F135GNA, F149GNA e F140CAN), a alteração do arquivo .XML ocorre de forma individual logo após a finalização dos processos referentes à NF processada. Isso ocorre por causa do parâmetro global MdoDspXml. Esse parâmetro é inicializado com o valor padrão C, que tem como objetivo  não aguardar o fim da geração de todos os .XMLs na pasta, mas sim renomear o .XML da NF-e gerada logo após a finalização de todos os processos relacionados a ela.
+            Exemplo:
+                
+                    São geradas 10 notas fiscais após os pedidos serem processados na tela F140LOT (a numeração das NFs é de 1 a 10). Se o parâmetro Emitir automaticamente a(s) nota(s) gerada(s) estiver marcado, o sistema começa o processo de geração do .XML das NFs nas quais não ocorreu nenhum problema no processamento:
+                    
+                        se o parâmetro global MdoDspXMl for C (padrão), ao finalizar a geração do .XML da NF de número 1 como .PREXML, o sistema logo a renomeia para o formato correto (desde que os demais processos relacionados à nota estejam finalizados, como por exemplo a geração dos boletos). Com isso a nota fica apta para ser processada pelo programa de documentos eletrônicos e ser enviada para a SEFAZ/Prefeitura;
+                        se o parâmetro global MdoDspXMl for P, o sistema primeiro gera o .XML de todas as 10 notas fiscais processadas na tela no formato .PREXML para depois renomeá-los.
+                    
+                
+            
+            Durante a geração do XML das notas fiscais, utilizando o parâmetro global MdoDspXml com o valor P, o sistema abre uma transação, monta uma abrangência com todas as notas selecionadas e chama uma rotina que gera o arquivo XML e/ou comunica a nota com o eDocs. Nessa rotina é atualizado o campo NUMNFA da tabela Séries de Notas Fiscais (E020SNF) para gravar o número da ultima nota emitida. O valor do campo NUMFVA é utilizado somente na tela F140CAN para trazer o número da última nota fiscal emitida nos campos de filtro das notas fiscais. Essa atualização do NUMFVA pode colocar a tabela E020SNF em lock para evitar que outra instância pegue uma numeração incorreta de nota fiscal. Já, ao utilizar o valor C do parâmetro global MdoDspXml um lock será iniciado antes da emissão de cada nota, e o sistema desbloqueará ao final da geração do XML de cada nota. Na prática, utilizar o parâmetro MdoDspXml com o valor igual a C minimiza muito os travamentos na geração e emissão de notas fiscais, uma vez que o lock é iniciado e liberado para cada nota e não para uma abrangência de notas. Por isso, esse é o valor recomendado para uso visando o melhor desempenho. Vale lembrar que ainda existirão locks, que são importantes para a garantia da integridade das informações na base de dados, no entanto, eles serão bem menores, ou seja, um tempo mais curto.
+            Este parâmetro pode interferir também na emissão de relatórios e/ou geração de boletos por meio de modelos. Em resumo, quando o parâmetro mencionado estiver com valor C, então o processamento (emissão de relatórios, geração de arquivos, etc.) é individualizado para cada nota, enquanto com o valor igual a P , o processamento é unificado e acontece de uma só vez ao final de tudo para todos os documentos. 
+            Por exemplo, se um cliente que fatura várias notas em lote usar o parâmetro com valor P, o sistema ficaria processando sem gerar arquivo algum até o final do processamento. Isso ocasionaria um desperdício de recursos do eDocs, que ficaria ocioso até que o ERP disponibilizasse os XMLs. Quando o parâmetro estiver com o valor igual a C, os XMLs serão gerados nota a nota, garantindo um fluxo constante de integração desde o início ao fim da geração de documentos.
+            Para determinar a quantidade máxima de tentativas para renomear os arquivos com extensão .prexml para .xml na emissão dos documentos fiscais, configure o parâmetro global QtdTenXML na tela F000PGS. 
+            
+                Observação
+                
+                Se ocorrer algum problema na geração do .XML após atualizar a versão, há a possibilidade de utilizar o processo anterior em que o .XML não é renomeado. No entanto, antes de ativar o identificador de regras ou o parâmetro global indicados abaixo, verifique junto ao nosso Suporte se há a necessidade de ativá-los, pois pode não ser um problema no sistema relacionado à geração ou alteração do arquivo na pasta, mas sim relacionado ao ambiente, como por exemplo ausência de permissão para alterar arquivos no diretório.
+                Para que o sistema volte a gerar o arquivo diretamente no formato .XML:
+                
+                    no ERP, ative o identificador de regras VEN-140NAOPRE0 por meio da tela F098REG;
+                    no GO UP, ative o parâmetro global VEN-UTIXMLPRE por meio da tela F000PGS.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu

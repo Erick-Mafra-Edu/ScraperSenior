@@ -1,0 +1,153 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/relatorios/gerrel_padraorelatorios.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CTelas%7C_____10
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Telas > Padrão para os Relatórios
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Padrão para os Relatórios
+            Configuração da página 
+            A empresa deve ser configurada em tamanho personalizado:
+            
+                Retrato: Altura-29,5; Largura - 21,0; margens(Todas) - 0,5;
+                Paisagem: Altura-21,0; Largura - 29,5; margens(Todas) - 0,5;
+            
+            Esta configuração de página pode ser diferente em modelos específicos ou com muitos dados.
+            Nome do relatório
+            O nome do arquivo de relatório obedece a uma sequência. Esta deve estar entre 1 e 99 (fixos do sistema). A partir do 100 está reservado para o usuário. Nos relatórios fixos (1-99), distribua os assuntos de maneira organizada, atribuindo sem intervalos o número da seqüência nos arquivos.
+            No máximo informe 99 relatórios para cada categoria. Se existir a necessidade de mais relatórios, deve-se definir uma nova categoria.
+            Parâmetros de Entrada
+            Todos os relatórios devem conter no mínimo como parâmetro de entrada:
+            
+                Sintético/Analítico (lista com S/A) e máscara "U". Somente para relatórios que possuem soma de valores;
+                Mostrar Usuário (lista S/N) com máscara "U".
+            
+            No Modelo existe uma propriedade que indica se deve salvar os valores da tela de entrada. Esta deve estar sempre como verdadeiro.
+            Os parâmetros de entrada que forem usados com a intenção de inserir na cláusula where do select devem ser do tipo Cadeia e Abrangência = "Sim". Somente com essa configuração esses campos serão inseridos na cláusula where. Para campos numéricos colocar (+) na descrição do campo e para strings colocar (+).
+            Codificação dos Relatórios
+            O sistema utiliza duas codificações para gerar os relatórios: ANSI e UTF-8. A escolha da codificação é feita com base nas informações que estão sendo listadas, visando atender melhor às necessidades do usuário. A variação entre uma codificação e outra ocorre principalmente devido aos caracteres presentes no relatório.
+            Para definir qual codificação será utilizada na exportação de um relatório, é possível utilizar a variável ConverteCodificacaoString. Esta variável permite especificar a codificação desejada, garantindo que o relatório seja gerado de acordo com os requisitos específicos de cada situação.
+            Abrangência
+            O conceito de abrangência do gerador de relatórios indica se o campo deve ser usado na cláusula where do select e não se deve permitir selecionar mais de um valor. 
+            Campos definidos como data, dinheiro, numero ou outros só servirão para uso em regras e devem ter a propriedade Abrangência = "Não". Somente os campos com Abrangência = "Não" ficam disponíveis para utilização em regras.
+            O conceito de abrangência nos componentes de relatório não se trata de uma questão específica com relação ter mais do que uma informação em um campo, mas sim da sintaxe do filtro que será utilizada no componente da Tecnologia.
+            Ao ser utilizado o caractere "-" (hífen) em um valor de entrada e este campo de entrada não estiver utilizando Abrangência, ou seja, Abrangência = "Não", a montagem do select de entrada do relatório irá considerar o hífen como um separador de informações, alterando o filtro.
+            Exemplo: 
+                
+                    Valor do campo = "TESTE-123". 
+                    Na montagem de um filtro SQL para esse valor em um campo de entrada que não esteja definido como Abrangência, o SQL será entendido como "TESTE" AND "123" (o hífen indicará separação de duas informações distintas).
+                    Para tratar essa situação, o campo deverá ter o atributo "Abrangência = Sim".
+                
+            
+            
+                Nota
+                
+                A tecnologia utilizada para relatórios precisa ser genérica e atender diversos cenários, não tendo como foco usabilidades tão específicas como existentes em rotinas de uma tela de um produto, por exemplo. A tela de um produto, quando é desenvolvida, tem o tratamento da funcionalidade e da usabilidade de forma conjunta, diferente de uma tecnologia que permite gerenciamento e construção de relatórios diversos que permitam atender a diversos processos distintos em momentos distintos.
+                Então, é possível em uma tela termos definições mais específicas, conforme a necessidade levantada naquele determinado momento, diferente da questão que envolve a Tecnologia de relatórios. Esse é, inclusive o contexto com relação ao hífen não ter efeito "separador" do filtro do SQL em telas do sistema, mas ter esse efeito no Gerador de Relatórios.
+            
+            Listas
+            As listas são particulares para cada relatório. Ao utilizar as listas, deve-se fazer uma regra de pré-seleção para tratar a opção selecionada na lista.
+            Empresa x Filial
+            Todos os relatórios que são subordinados a uma empresa e/ou filial devem conter esta(s) como parâmetro.
+            Ordenação dos campos
+            Quanto a ordem dos campos: sempre que possível, a empresa e filial devem vir primeiro. Caso haja uma tela de consulta sobre o assunto, a ordenação deverá obedecer a esses critérios. Caso não existir tela de consulta, a ordem deve estar de acordo com a ordenação lógica da tabela principal.
+            Seção Cabeçalho
+            
+                Se for necessário, mostrar a Empresa ou a Filial. Para relatórios subordinados a Empresa/Filial, mostrá-las no cabeçalho e forçar o salto de página para cada Empresa/Filial.
+                Fonte: Arial 09, Negrito;
+                Altura: 30 para relatórios padrão. Para relatórios mestre detalhe, altura de acordo com o número de linhas de detalhe.
+                Moldura: Moldura na Seção;
+                Linha de Desenho: Separando o cabeçalho em duas partes, na primeira parte o título do relatório, empresa, filial e número de página, na segunda parte virá o cabeçalho referente aos itens do relatório.
+                Obs.: Para relatórios com a configuração de página igual ao padrão, o tamanho (Largura) da linha deve ser 258 para retrato, e 365 para paisagem. Desta maneira o relatório sai corretamente, independente da impressora utilizada.
+                Descrição do Modelo: Fonte Arial 14 negrito. Para uma descrição de quebra, como "Por fornecedor", "Por Vencimento", usar fonte Arial 12 negrito e deve estar sempre abaixo do Titulo principal/Descrição do modelo.
+                Cor de Fundo: Branco.
+            
+            Seção Subtítulo
+            
+                Fonte: Fonte Arial 8, negrito.
+                Altura da Seção: Usar altura 5.
+                Altura do campo: Usar altura 4.
+                Moldura: A moldura deve apresentar a espessura = 1.
+                Quebras: Se houver quebras por Empresa ou Filial, deve-se iniciar nova página, setando a propriedade saltar página para verdadeiro e imprimir para falso.
+                Demais quebras, obedecer especificações do relatório.
+            
+            Seção Detalhe
+            
+                Fonte: Fonte Arial 8, normal.
+                Altura da Seção: Usar altura 5.
+                Altura do campo: Usar altura 4.
+                Moldura: Obedecer especificações do relatório (Normalmente não tem).
+            
+            Seção Subtotal
+            
+                Fonte: Fonte Arial 8, negrito.
+                Altura da Seção: Usar altura 9.
+                Altura do campo: Usar altura 5.
+                Moldura: Obedecer especificações do relatório (Normalmente não tem).
+            
+            Rodapé
+            Deve estar definido no rodapé o módulo/categoria/sequência/data/hora/usuário. Para isto definir um campo de sistema e associar com a variável de sistema DesRodape com tamanho de 150. Colocar ainda no canto direito o nome do usuário logado e fazer uma regra para obedecer se deve ou não imprimir este de acordo com o parâmetro de entrada.
+            
+                Fonte: Arial 7, normal.
+                Altura: Usar altura 4.
+                Moldura: Moldura na Seção.
+                Cor de Fundo: Branco.
+            
+            Tamanho do Papel
+            Para os relatórios do tipo gráfico, na esquerda deve começar a partir da coluna 1 e na direita até a coluna 245. No gerador, a coluna de um campo por exemplo, é definida pela esquerda, portanto deve-se considerar a coluna 245 pelo lado direito de um campo.
+            Regras
+            Sempre documentar ao máximo as regras para facilitar a manutenção e principalmente deixar amigável para o usuário.
+            Outros detalhes
+            Sempre usar nomes significativos para variáveis de regras, formulas, totais, seções e outros.
+            Como o gerador traz os modelos ordenados por descrição na hora de abri-los, a descrição usad

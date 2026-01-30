@@ -1,0 +1,186 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/contabilidade/contabilizacao-data-extrato-bancario-conciliado.htm%3FTocPath%3DSegmentos%7CControladoria%7CGest%25C3%25A3o%2520de%2520Contabilidade%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Controladoria > Gestão de Contabilidade > Contabilização pela data do extrato bancário conciliado
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Contabilização pela data do extrato bancário conciliado
+            Para realizar a contabilização de um pagamento de título quando o extrato bancário for conciliado, fazer o seguinte:
+            Na tela F048FCT, informe o código da forma que contabiliza o pagamento de títulos, acesse a aba ITENS, clique no botão Reg. Parcial e acrescente a regra abaixo:
+            
+                @----------------------------------------------------------------------@
+                Definir Numero nEmpCco;
+                Definir Alfa aNumCco;
+                Definir Data dDatCco;
+                Definir Numero nSeqCco;
+                Definir Data dDatCon;
+                nEmpCco = E501MCP.EMPCCO;
+                aNumCco = E501MCP.NUMCCO;
+                dDatCco = E501MCP.DATCCO;
+                nSeqCco = E501MCP.SEQCCO;
+                Definir Cursor Cur_E660MCC;
+                Cur_E660MCC.SQL "SELECT DATCON \
+                FROM E600MCC \
+                WHERE \
+                CODEMP =:nEmpCco AND \
+                NUMCCO =:aNumCco AND \
+                DATMOV =:dDatCco AND \
+                SEQMOV =:nSeqCco";
+                 
+                Cur_E660MCC.AbrirCursor();
+                 
+                Se (Cur_E660MCC.Achou)
+                Inicio
+                dDatCon = Cur_E660MCC.DATCON;
+                Se (dDatCon = 0)
+                Inicio
+                vVlrBas1 = 0;
+                Fim;
+                Fim;
+                Cur_E660MCC.FecharCursor();
+                @----------------------------------------------------------------------@
+            
+            Ative o identificador de Regras CTB-645LZERO02.
+            Desta maneira, ao realizar a integração contábil na tela F645CTB a rotina fará o seguinte:
+            Lê os títulos pagos na data, de acordo com o período sugerido nesta tela, porém não realiza a integração para contabilidade, pois o extrato ainda não foi conciliado, apresenta a mensagem: "Nenhum movimento foi selecionado!"Isso se, houver apenas  títulos com DATCON zerado na tabela E600MCC, se houver mais títulos, com outra forma, que contabiliza com outra data diferente do DATCON, estes títulos serão validados e contabilizados com sucesso, apenas o titulo com DATCON=zero(Porque ainda não foi conciliado ) não será contabilizados e não apresentará nenhuma inconsistência na tela F645CTB.
+            Quando o extrato for conciliado consequentemente a rotina grava no campo DATCON da tabela E600MCC a data da conciliação.Ao acessar a tela  F645CTB, deverá ser informado no  campo "periodo sugerido" a data do pagamento dos títulos, assim será contabilizado os títulos pagos neste dia, porém na contabilidade a data do lançamento contábil ficará de acordo com o DATCON da tabela E600MCC.
+            
+                Importante
+                
+                Lembrar que,  ao realizar a conciliação do extrato, a rotina de integração deverá ser executada, no "período sugerido"  deverá ser informado a data de pagamento dos títulos.
+            
+            
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

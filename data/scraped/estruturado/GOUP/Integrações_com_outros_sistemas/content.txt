@@ -1,0 +1,298 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#geral/recursos-adicionais-sistema.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520com%2520outros%2520sistemas%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Manuais de integrações do Gestão Empresarial com parceiros
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Manuais de integrações do Gestão Empresarial com parceiros
+            Confira as integrações disponíveis:
+            
+            
+                Web services
+                
+                Pré-requisitos de proprietária para habilitar integração via web service
+                
+                Boas práticas para o Web Services
+                
+                Gestão de Processos Assíncronos
+                
+                Web services disponíveis no Gestão Empresarial
+                
+                Com.senior.g5.co.ast.ocorrencia
+                
+                Com.senior.g5.co.cad.agrupamentos
+                
+                Com.senior.g5.co.cad.cidades
+                
+                Com.senior.g5.co.cad.clientes
+                
+                Com.senior.g5.co.cad.condicaopagamento.exportar
+                
+                Com.senior.g5.co.cad.contribuinte
+                
+                Com.senior.g5.co.cad.deposito
+                
+                Com.senior.g5.co.cad.derivacao
+                
+                Com.senior.g5.co.cad.duplicarempresa
+                
+                Com.senior.g5.co.cad.exportarrateio
+                
+                Com.senior.g5.co.cad.familiaparametros
+                
+                Com.senior.g5.co.cad.familias
+                
+                Com.senior.g5.co.cad.filial.exportar
+                
+                Com.senior.g5.co.cad.formapagamento
+                
+                Com.senior.g5.co.cad.fornecedor
+                
+                Com.senior.g5.co.cad.grupoempresas
+                
+                Com.senior.g5.co.cad.parametrosintegracao
+                
+                Com.senior.g5.co.cad.produtos
+                
+                Com.senior.g5.co.cad.ramoatividade
+                
+                Com.senior.g5.co.cad.representante
+                
+                Com.senior.g5.co.cad.rotinasapiens
+                
+                Com.senior.g5.co.cad.servicos
+                
+                Com.senior.g5.co.cad.sittributarias.dispfiscal
+                
+                Com.senior.g5.co.cad.tabelapreco
+                
+                Com.senior.g5.co.cad.transportadora
+                
+                Com.senior.g5.co.cad.unidadedemedida
+                
+                Com.senior.g5.co.ger.apr.niveisaprovacao
+                
+                Com.senior.g5.co.ger.cad.centrocusto
+                
+                Com.senior.g5.co.ger.cad.centrorecurso
+                
+                Com.senior.g5.co.ger.cad.clientes
+                
+                Com.senior.g5.co.ger.cad.controladoria.tributos.dispositivosfiscais
+                
+                Com.senior.g5.co.ger.cad.controladoria.tributos.tarifabancaria
+                
+                Com.senior.g5.co.ger.cad.controladoria.tributos.unidadeimobiliaria
+                
+                Com.senior.g5.co.ger.cad.favorecido
+                
+                Com.senior.g5.co.ger.cad.fornecedor
+                
+                Com.senior.g5.co.ger.cad.fornecedores
+                
+                Com.senior.g5.co.ger.cad.impostos
+                
+                Com.senior.g5.co.ger.cad.marcaveiculo
+                
+                Com.senior.g5.co.ger.cad.ModeloPlano
+                
+                Com.senior.g5.co.ger.cad.modeloveiculo
+                
+                Com.senior.g5.co.ger.cad.motivoparada
+                
+                Com.senior.g5.co.ger.cad.motivos
+                
+                Com.senior.g5.co.ger.cad.operador
+                
+                Com.senior.g5.co.ger.cad.produto
+                
+                Com.senior.g5.co.ger.cad.produto.origemProduto
+                
+                Com.senior.g5.co.ger.cad.produto.safra
+                
+                Com.senior.g5.co.ger.cad.propriedadeSubpropriedade
+                
+                Com.senior.g5.co.ger.cad.rpa.exclusaolotacao
+                
+                Com.senior.g5.co.ger.cad.rpa.exportacaolotacao
+                
+                Com.senior.g5.co.ger.cad.rpa.importacaolotacao
+                
+                Com.senior.g5.co.ger.cad.sacado
+                
+                Com.senior.g5.co.ger.cad.servico
+                
+                Com.senior.g5.co.ger.cad.tipoveiculo
+                
+                Com.senior.g5.co.ger.cad.transportadora
+                
+                Com.senior.g5.co.ger.cad.usuario
+                
+                Com.senior.g5.co.ger.cad.veiculo
+                
+                Com.senior.g5.co.ger.convenio
+                
+                Com.senior.g5.co.ger.db
+                
+                Com.senior.g5.co.ger.mcserviceemail
+                
+                Com.senior.g5.co.ger.monitorprocesso
+                
+                Com.senior.g5.co.ger.portal.prop
+                
+                Com.senior.g5.co.ger.relatorio
+                
+                Com.senior.g5.co.ger.sid
+                
+                Com.senior.g5.co.int.agr.pesagem
+                
+                Com.senior.g5.co.int.cad.produtofornecedor
+                
+                Com.senior.g5.co.int.agr.recebimento
+                
+                Com.senior.g5.co.int.eletronicos.documentos
+                
+                Com.senior.g5.co.int.geral.cotacoesmoedas
+                
+                Com.senior.g5.co.int.geral.cotacoesmoedashora
+                
+                Com.senior.g5.co.int.geral.exportacao
+                
+                Com.senior.g5.co.int.geral.fotosprodutos
+                
+                Com.senior.g5.co.int.geral.intencaobaixatitulos
+                
+                Com.senior.g5.co.int.geral.moedas
+                
+                Com.senior.g5.co.int.geral.relatorio
+                
+                Com.senior.g5.co.int.geral.relatorio.davs
+                
+                Com.senior.g5.co.int.geral.relatorio.estoqueblocox
+                
+                Com.senior.g5.co.int.geral.relatorio.lfdp
+                
+                Com.senior.g5.co.int.geral.relatorio.registroj
+                
+                Com.senior.g5.co.int.geral.relatorio.sintegra
+                
+                Com.senior.g5.co.int.geral.relatorio.sped
+                
+                Com.senior.g5.co.int.geral.tributosProdutosServicoVenda
+                
+                Com.senior.g5.co.int.gs.produtogs
+                
+                Com.senior.g5.co.int.gs.titulo.receber
+                
+                Com.senior.g5.co.int.padrao.documentos
+                
+                Com.senior.g5.co.int.padrao.pessoa
+                
+                Com.senior.g5.co.int.padrao.produtocaracteristica
+                
+                Web service Com.senior.g5.co.int.varejo.autenticadores
+                
+                Com.senior.g5.co.int.varejo.bancos
+                
+                Com.senior.g5.co.int.varejo.categoriaprodutos
+                
+                Com.senior.g5.co.int.varejo.cfesat
+                
+                Com.senior.g5.co.int.varejo.chequepresente
+                
+                Com.senior.g5.co.int.varejo.clientes
+                
+                Com.senior.g5.co.int.varejo.colecoes
+                
+                Com.senior.g5.co.int.varejo.convenios
+                
+                Com.senior.g5.co.int.varejo.cupomespelho
+                
+                Com.senior.g5.co.int.varejo.cupomfiscal
+                
+                Com.senior.g5.co.int.varejo.definicaometa
+                
+                Com.senior.g5.co.int.varejo.depositos
+                
+                Com.senior.g5.co.int.varejo.entrega
+                
+                Com.senior.g5.co.int.varejo.escrituracao
+                
+                Com.senior.g5.co.int.varejo.formaspagamento
+                
+                Com.senior.g5.co.int.varejo.fornecedores
+                
+                Com.senior.g5.co.int.varejo.grupofiscalproduto
+                
+                Com.senior.g5.co.int.varejo.IntegracoesPendentes
+                
+                Com.senior.g5.co.int.varejo.ligacaocategoriasprodutousuarios
+                
+                Com.senior.g5.co.int.varejo.nfce
+                
+                Com.senior.g5.co.int.varejo.notaautorizada
+                
+                Com.senior.g5.co.int.varejo.notaCompra
+                
+                Com.senior.g5.co.int.varejo.notaVenda
+                
+                Com.senior.g5.co.int.varejo.obteraliquotaicmspartilha
+                
+                Com.senior.g5.co.int.varejo.ordemcompra
+                
+                Com.senior.g5.co.

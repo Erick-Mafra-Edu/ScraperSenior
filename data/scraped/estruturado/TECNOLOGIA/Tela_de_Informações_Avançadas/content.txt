@@ -1,0 +1,220 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/tela-de-informacoes-avancadas/rtfrmadvanced.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CTela%2520de%2520Informa%25C3%25A7%25C3%25B5es%2520Avan%25C3%25A7adas%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Tela de Informações Avançadas > Tela de Informações Avançadas
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Informações Avançadas
+            Contêm informações detalhadas sobre memória, DLLs carregadas, versões e dados sobre a máquina onde o sistema está sendo utilizado. A tela pode ser acessada pressionando Shift + F3 em qualquer tela ativa do sistema ou em Ajuda > Sobre.
+            O botão Salvar informações grava um relatório completo da tela em formato texto.
+            Características do Sistema
+            Esta guia traz informações sobre versões de banco de dados, usuário e memória:
+            Tamanho do sistema
+                Tamanho do executável do sistema.
+            Data e hora do sistema
+                Data e hora do executável do sistema.
+            Data e hora do servidor
+                Data e hora extraídos do servidor de Banco de Dados.
+            Usuário do sistema
+                Usuário efetivamente logado no sistema.
+            Código do Cliente
+                Código que representa o cliente na Senior.
+            Arquivo de CFG
+                Arquivo de configuração utilizado para acessar o sistema.
+            Banco de Dados
+                Versão do cliente do Banco de Dados.
+            Versão do Banco no Servidor
+                Versão do Banco de Dados instalado no Servidor.
+            Diferenciar maiúsc./minúsc.
+                É verificado se o Banco de Dados no servidor está configurado para diferenciar caracteres maiúsculo e minúsculo.
+            Engine de Acesso
+                Forma de acesso utilizado.
+            Usuário do Banco de Dados
+                Nome do usuário do Banco de Dados.
+            ID do Usuário do BD
+                ID do usuário do Banco de Dados.
+            Versão do TBS de Sistema
+                Versão da base de dados segundo o sistema.
+            Versão do TBS de Rotinas
+                Versão da base de dados segundo os recursos da Tecnologia.
+            Data de Geração do TBS
+                Data correspondente a geração do arquivo de TBS.
+            Tipo de TBS
+                Indica o valor referente ao tipo para arquivo TBS.
+            Mem. Alocada Virtual
+                Contém o tamanho da memória virtual que está efetivamente alocada pela aplicação. O valor deste campo é obtido através da função GlobalMemoryStatus do Windows, calculando-se a diferença entre o tamanho total da memória virtual para o processo e o tamanho de memória virtual não utilizado. A Memória Virtual Alocada considera memória comitada e reservada e o campo Tamanho da VM do Task Manager considera apenas as páginas comitadas.
+            Versão de Sistema na Base
+                Informa a versão do sistema que está contida na base de acordo com a tabela R999VER.
+            Versão de Rotinas na Base
+                Informa a versão das rotinas de tecnologia conforme especificado na tabela R999VER.
+            PID da aplicação
+                Informa o número de identificação do processo em execução no Windows.
+            Mem. Alocada Virtual
+                Informa o tamanho da memória alocada virtual.
+            Mem. Alocada Real
+                Contém o tamanho total de todos os blocos de memória utilizados pela aplicação. Informa a quantidade de memória utilizada pela aplicação corrente. O valor deste campo é obtido através da função AllocMemSize do Delphi.
+            Blocos Alocados
+                Quantidade de blocos de memória alocados pelo sistema.
+            Memória Livre
+                Contém a quantidade de memória virtual livre dentro do espaço total de memória virtual para a aplicação. O valor deste campo é obtido através da função GlobalMemoryStatus do Windows.
+            Memória Compartilhada Alocada
+                Quantidade de memória alocada que pode ser compartilhada entre as instâncias Java do módulo em execução.
+            Memória Compartilhada Utilizada
+                Parte da memória compartilhada alocada que está sendo utilizada.
+            Ordenação do Banco
+                Método de ordenação configurado no banco de dados. 
+            Qtd. Transações Abertas
+                Quantidade de transações ainda abertas com o servidor.
+            Janela Ativa no Momento
+                Janela ativa no momento em que a tela de Informações Avançadas foi aberta.
+            Idioma
+                Informa o idioma que está atuando.
+            Versão Idioma de Sistema
+                Mostra a versão do Idioma de Sistema. A versão está contida no arquivo SML do Sistema.
+            Versão Idioma de Tecnologia
+                Mostra a versão do Idioma da Tecnologia. A versão está no arquivo SML da Tecnologia.
+            Arquivos de Mensagens
+                Informa o caminho completo e a versão de todos os arquivos de mensagem. Caso não tenha os arquivo de mensagem (extensão SML) no diretório de idiomas, a versão irá mostrar como Não Disponível.
+            Arquivos e Versões
+            Esta guia é dividida em quatro seções que trazem informações sobre todas as DLLs e BPLs necessárias para a execução do sistema juntamente com a versão de cada arquivo:
+            DLLs
+                Traz todas as DLLs necessárias para a execução do sistema.
+            BPLs carregadas
+                Exibe todas as BPLs da Tecnologia utilizadas pela aplicação.
+            BPLs ainda não carregadas
+                Exibe as BPLs que não foram carregadas pela aplicação mas que podem ser carregadas em algum determinado momento.
+            Outros arquivos
+                Mostra os arquivos que foram necessários para a aplicação, mas não são nem DLLs, nem BPLs.
+            Computador
+            Esta guia exibe um relatório com informação sobre o hardware da máquina onde está rodando a aplicação. São exibidos os dados do Processador bem como a quantidade de Processadores, Sistema Operacional, Quantidade de Memória e Capacidade do disco rígido.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

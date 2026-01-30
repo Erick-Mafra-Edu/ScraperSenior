@@ -1,0 +1,154 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#instalador/instprogressform.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CRepara%25C3%25A7%25C3%25A3o%7C_____6
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Atualização > Progresso e conclusão
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Progresso e conclusão
+            Depois de selecionar os produtos e formas de acesso, o processo será iniciado. Nesta etapa é apresentado o progresso da atualização do sistema, que serve como uma fonte de informação para acompanhamento. Basta aguardar o processo .
+            Log
+            Caso ocorra alguma problema nesse procedimento, será apresentada uma mensagem em tela ou um log contendo informações sobre o que ocorre, que será gerado em <diretório da instalação>/instFiles/temp.
+            Os principais arquivos deste diretório tem a seguinte nomenclatura:
+            
+                Log do processo de Deploy dos Produtos: deploy-<Data e hora de geração>.log
+                Log do processo de Instalação do Sistema: INS-<código de identificação binário senior>.log
+                Log do processo de Atualização do Sistema: UPD-<código de identificação binário senior>.log
+            
+            Sempre que houver um problema na atualização é importante verificar os três logs acima, filtrando pela data e hora da atualização realizada. Neles estão informações sobre os procedimentos realizados. 
+            
+                Nota
+                
+                Quando houver necessidade da abertura de um chamado ao Suporte, envie estes arquivos junto com as demais informações do problema encontrado.
+            
+            Ao final da atualização, reinicie o servidor Java EE (serviço do WildFly) para que as alterações sejam aplicadas e assim, os serviços sejam executados com os arquivos atualizados, garantindo a consistência do ambiente.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

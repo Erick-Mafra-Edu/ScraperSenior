@@ -1,129 +1,63 @@
 # Senior Documentation Scraper
 
-Scraper automatizado de documentação técnica Senior Sistemas com MCP Server para busca e suporte a notas de versão.
+> **v2.0** - Monorepo Architecture | Scraper automatizado de documentação técnica Senior Sistemas
 
-## Quickstart
+## 🚀 Quick Start
 
 ```bash
 # Setup
 pip install -r requirements.txt
 playwright install chromium
 
-# Executar scraper (inclui documentação e notas de versão)
-python src/scraper_unificado.py
-
-# Descobrir notas de versão por módulo
-python src/adicionar_notas_versao.py
+# Executar scraper
+python apps/scraper/scraper_unificado.py
 
 # MCP Server (busca)
-python src/mcp_server.py
+python apps/mcp-server/mcp_server.py
 
 # Testes
-python src/test_mcp_server.py
+pytest tests/
 ```
 
-**Output**:
-- `docs_estruturado/` - Documentação estruturada por módulo (inclui notas de versão)
-- `docs_indexacao_detailed.jsonl` - Índice de busca (933+ documentos)
-- `docs_metadata.json` - Metadados
-- `release_notes_config.json` - Configuração de notas de versão
-
-## Estrutura do Projeto
+## 📁 Estrutura
 
 ```
-src/
- scraper_unificado.py      # Scraper principal (MadCap + Astro + Release Notes)
- adicionar_notas_versao.py # Descobridor de URLs de notas de versão
- mcp_server.py             # MCP Server para busca
- test_mcp_server.py        # Testes MCP
- indexers/                 # Indexação
-    index_local.py        # Indexador JSONL
-    index_meilisearch.py  # Indexador Meilisearch
-
-docs_estruturado/              # Documentação estruturada por módulo
-docs_indexacao_detailed.jsonl  # Índice para busca
-release_notes_config.json      # Configuração de notas de versão
-MCP_SERVER.md                  # Documentação MCP
-RELEASE_NOTES_GUIDE.md         # Guia de scraping de notas de versão
+apps/       → Aplicações executáveis (scraper, mcp-server, zendesk)
+libs/       → Bibliotecas compartilhadas (scrapers, indexers, utils)
+scripts/    → Utilitários (analysis, indexing, fixes, queries)
+data/       → Dados e outputs (scraped, indexes, metadata)
+docs/       → Documentação completa
+tests/      → Testes (unit, integration, e2e)
+infra/      → Docker e CI/CD
 ```
 
-## Formatos Suportados
+## 📖 Documentação
 
-- **MadCap Flare** (15 módulos) - Extração hierárquica com expansão de menu
-- **Astro** (1 módulo) - Navegação direta via sidebar
-- **Release Notes** (Múltiplos módulos) - Notas de versão com âncoras (#versão.htm)
+**Ver [docs/](docs/) para documentação completa** ou acesse diretamente:
 
-## ✨ Novo: Notas de Versão
+- **[Guia Rápido](docs/guides/QUICK_START.md)** - Primeiros passos
+- **[MCP Server](docs/guides/MCP_SERVER.md)** - Busca e integração
+- **[Release Notes](docs/guides/RELEASE_NOTES_GUIDE.md)** - Scraping de notas
+- **[Docker](docs/guides/DOCKER.md)** - Setup de containers
+- **[Arquitetura](docs/architecture/)** - Decisões técnicas
 
-Agora suporta scraping automático de notas de versão do Senior ERP X:
+## ✨ Features
 
-```bash
-# Descobrir URLs de notas de versão
-python src/adicionar_notas_versao.py
+- **Scraping**: MadCap Flare (15 módulos) + Astro (1 módulo) + Release Notes
+- **MCP Server**: 4 ferramentas para busca (search_docs, list_modules, etc.)
+- **Indexação**: JSONL local + Meilisearch
+- **Docker**: Pronto para produção
+- **CI/CD**: Pipeline completo
 
-# Scraping (inclui documentação + notas de versão)
-python src/scraper_unificado.py
-```
+## 🔄 Changelog
 
-Veja [RELEASE_NOTES_GUIDE.md](RELEASE_NOTES_GUIDE.md) para detalhes completos.
+**v2.0.0** (2026-01-30) - Refatoração completa para monorepo
+- Nova estrutura: apps/, libs/, scripts/, docs/, data/
+- Consolidação de 60+ arquivos markdown
+- Organização de código por responsabilidade
 
-Exemplo de URL:
-```
-https://documentacao.senior.com.br/gestao-de-pessoas-hcm/notas-da-versao/#6-10-4.htm
-```
-
-O scraper detecta automaticamente páginas de notas de versão e extrai cada versão (âncora) como documento separado.
-
-## MCP Server (NEW)
-
-Servidor Model Context Protocol para busca em documenta��o com 4 ferramentas:
-
-1. **search_docs** - Busca full-text com filtro por m�dulo
-2. **list_modules** - Lista m�dulos dispon�veis
-3. **get_module_docs** - Documentos de um m�dulo
-4. **get_stats** - Estat�sticas do �ndice
-
-### Uso
-
-``````bash
-# Iniciar servidor
-python src/mcp_server.py
-
-# Usar (Python)
-from src.mcp_server import MCPServer
-server = MCPServer()
-result = server.handle_tool_call("search_docs", {"query": "CRM"})
-``````
-
-Ver [MCP_SERVER.md](MCP_SERVER.md) para documenta��o completa.
-
-## Melhorias Implementadas
-
--  Detec��o autom�tica de formato
--  Expans�o agressiva de menus (at� 5 rounds)
--  Retry com backoff exponencial
--  CSS seletores m�ltiplos
--  Valida��o de conte�do
--  Organiza��o hier�rquica com breadcrumb
--  **Op��o --save-html para preservar HTML original**
--  **Indexa��o local (JSONL) sem depend�ncia de servidor**
--  **Meilisearch integration para produ��o**
--  **MCP Server para AI integration**
-
-## Docker (Meilisearch)
-
-``````bash
-# Iniciar Meilisearch
-docker-compose up -d meilisearch
-
-# Indexar documentos
-python src/indexers/index_meilisearch.py
-``````
-
-## Configura��o
-
-Copiar `.env.example` para `.env` se necess�rio.
+Ver [CHANGELOG.md](CHANGELOG.md) para histórico completo.
 
 ---
 
-Ver [CHANGELOG.md](CHANGELOG.md) para hist�rico e [MCP_SERVER.md](MCP_SERVER.md) para guia completo do MCP Server.
+�� **[Documentação Completa](docs/)** | 🐳 **[Docker Setup](infra/docker/)** | 🧪 **[Testes](tests/)**

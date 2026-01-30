@@ -1,0 +1,203 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#checklists/checklist-implantacao.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CChecklists%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Checklists > Checklist de Implantação
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+             Checklist de Implantação
+            Para que a implantação do sistema Gestão de Lojas ocorra corretamente, sugerimos verificar alguns itens antes de iniciar este processo. Estes itens estão divididos em processos com objetivo de fornecer uma ordem lógica, e não cronológica, por exemplo, é possível definir as soluções antes de determinar a alocação das equipes.
+            
+                Dica
+                
+                Se desejar, imprima este documento em formato PDF, no leiaute "Paisagem", a partir do ícone de impressão visível no início desta página.
+            
+            Descrição dos itens
+            
+            
+                Requisito: itens necessários para ocorrer implantação do Gestão de Lojas;
+                Comentários: conteúdo de apoio para a implantação do sistema.
+            
+            Pré-requisitos
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Item
+                        Requisito
+                        Comentário
+                        Responsável
+                        Dia/Mês/Ano
+                    
+                    
+                        Instalação dos sistemas
+                        Possuir os sistemas Gestão Empresarial | ERP e Documentos Eletrônicos instalados e configurados para o Gestão de Lojas
+                        Obtenha a confirmação sobre a instalação e operação regular dos sistemas a partir dos pré-requisitos do sistema Gestão de Lojas. Acesse o item Instalação do Manual do Usuário do produto para mais informações
+                         
+                         
+                    
+                    
+                        Alocação das equipes
+                        Verificar as equipes de negócio, operacional e suporte responsável pelo funcionamento do sistema
+                        A partir da definição da alocação das equipes, é possível ter conhecimento dos responsáveis por orientar as necessidades de negócios, operar o sistema e oferecer suporte durante e após a implantação
+                         
+                         
+                    
+                    
+                        Definição das soluções
+                        Ter a definição do documento fiscal a ser utilizado (PAF-ECF, NFC-e e/ou SAT-Fiscal) de acordo com a legislação de cada estado
+                        Obtenha informação das soluções fiscais credenciadas por estado
+                         
+                         
+                    
+                    
+                        Aquisição das Impressoras Fiscais (ECF)
+                        Ter a definição do modelo, quantidade e data de disponibilidade das impressoras fiscais
+                        Defina o tipo, quantidade e quando as impressoras fiscais estarão disponíveis para uso na implantação e na operação  da loja. Verifique os equipamentos homologados e os passíveis de homologação com a Senior
+                         
+                         
+                    
+                    
+                        Liberação de Impressoras (PAF-ECFs)
+                        Atualizar os requisitos técnicos para liberação das impressoras
+                        Manter os requisitos técnicos necessários atualizados para liberação das impressoras
+                         
+                         
+                    
+                    
+                        Credenciamento e lacre das impressoras
+                        
+                            Após adquirir as impressoras, ou caso elas já existam com outro fornecedor de Software, o interventor responsável pelo lacre deve acionar a Gestão de Faturamento (copias@senior.com.br) com as informações presentes no documento anexo abaixo e, posteriormente, podendo fazer a liberação no site da SEFAZ:
+                            
+                                formulario-impressoras-fiscais.pdf;
+                            
+                            Além disso, as seguintes informações precisam estar preenchidas corretamente:
+                            
+                                CNPJ da Empresa;
+                                Inscrição Estadual da Filial;
+                                Número de Série das ECFs;
+                                Leitura X com o Grantotal e número de fabricação da ECF.
+                            
+                            É necessário, ainda, emitir o arquivo de Autorização de uso da ECF, conforme imagem de exemplo abaixo:
+                            
+                            
+                            Após esses passos, a Senior irá liberar o uso das ECFs no site da SEFAZ, atualizando o cadastro realizado pelo órgão interventor.
+                        
+                         
+                         
+                         
+                    
+                    
+                        Credenciamento SEFAZ
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        Credenciar contribuinte para uso da solução SAT Fiscal
+                         
+                         
+                         
+                    
+                    
+                        Gerar Código de Segurança do Contribuinte (CSC) para uso da solução NFC-e
+
+                        Verifique as necessidades do SEFAZ do estado
+                         
+                         
+                    
+                    
+                        SAT Fiscal
+                        Adquirir ao menos dois equipamentos (uso e reserva)
+                        O SAT Fiscal pode fazer uso de uma impressora não fiscal para impressão da nota fiscal. Portanto, verifique as impressoras homologadas pela Senior
+
+                         
+                         
+                    
+                    
+                        Instalar e configurar o Gestão de Lojas e o Documentos Eletrônicos para o Gestão de Lojas
+                         
+                         
+                         
+                    
+                    
+                        Disponibilizar ao menos uma porta de entrada USB para comunicação com o equipamento
+                        Acesse SAT-CF-e  para mais informações 
+                         
+                         
+                    
+                    
+                        Documentos
+                        Definir CNPJ, estado da implantação e número de inscrição estadual do contribuinte
+
+                        Esses registros são imprescindíveis para o credenciamento do contribuinte na SEFAZ, para o lacre e liberação das ECFs, e consequentemente, para homologação de primeira venda juntamente com a instalação e configuração das ECFs
+                         
+                         
+                    
+                    
+                        Cadastrar o contribuinte junto aos estados, de acordo com a solução fiscal escolhida. Além de disponibilizar CNPJ e número de inscrição estadual da loja
+                        Esses registros são utilizados durante a implantação, instalação e configuração do Documentos Eletrônicos, do Gestão de Lojas e do Gestão Empresarial | ERP para a homologação das soluções fiscais. Verifique orientações nos sites do SEFAZ de cada estado. Essas informações são necessárias para fins de liberação de novos clientes e de impressoras fiscais
+                         
+                         
+                    
+                    
+                        Periféricos
+                        Adquirir periféricos 
+                        Por solicitação, é possível adquirir ao menos dois equipamentos SAT Fiscal, Pin Pad, gaveta, leitor de código de barras, leitor de cheques, impressora não fiscal (SAT Fiscal), entre outros
+                         
+                         
+                    
+                    
+                        Ambiente
+                        Conexão com a internet para  a validação da instalação, testes e homologação
+                        Sem conexão com a internet não é possivel testar a comunicação com o Gestão Empresarial | ERP e o funcionamento de rotinas importantes com os web services durante a implantação
+                         
+                         
+                    
+                    
+                        Liberar acesso remoto para máquina de homologação e testes
+                        Verifique políticas de segurança e opções de acesso remoto para homologação e testes
+                         
+                         
+                    
+                    
+                        Adequar o ambiente às condições indicadas no Documento de Estimativa de TI - DETI
+
+                        Este documento - DETI, pode ser adquirido com a Gestão Técnica de Negócios
+                         
+                         
+                    
+                
+            
+            Por decisão estratégica da Senior, o software de PDV do Gestão de Lojas não será homologado no PAF-ECF para sistemas operacionais Linux. Sendo assim, a partir do vencimento do certificado atual (março/2020), o software não estará mais disponível para a versão Linux. Esta restrição se aplica apenas ao estado de Santa Catarina, no qual, é o único que exige a emissão do PAF para atendimento da legislação. Para os demais estados que possuem a emissão de NFC-e/S@T, o software estará 

@@ -1,0 +1,255 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#menu_mercado/nf-transferencia.htm%3FTocPath%3DSegmentos%7CMercado%7C_____3
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Mercado > Geração de Nota fiscal de Transferência via Nota 
+ Fiscal de Saída
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Geração de Nota fiscal de Transferência via Nota Fiscal de Saída
+            Processo
+            Para fazer uso desta rotina, cadastre, de forma integrada à 
+transação de produto e/ou serviço da nota fiscal de saída, uma transação do 
+módulo COF (Compras - NF Entrada Produtos) ou COS (Compras - NF Entrada 
+Serviços) na tela de Integrações. É necessário vincular:
+            
+                Na transação de saída de produtos da nota 
+fiscal de saída, uma transação de entrada de produtos do módulo COF;
+                Na transação de saída de serviços da nota fiscal de saída, uma transação de 
+entrada de serviços do módulo COS.
+            
+            Pode-se vincular as duas ou apenas uma das transações. 
+Com o sistema configurado, no momento do fechamento da 
+nota fiscal de saída uma nota fiscal de entrada tipo 11 (Transferência entre 
+empresas/filial), idêntica à nota fiscal de saída, será gerada automaticamente com 
+base na nota fiscal de saída, permanecendo com a situação (Fechada ou Digitada) 
+definida no cadastro da filial de compras.
+            As notas fiscais tipo 11 (Transferência entre empresas/filial), de entrada, 
+serão geradas automaticamente na filial que tem ligação com o cliente da nota 
+fiscal de saída. Dessa forma, podem ser geradas entradas por transferências em 
+uma filial diferente ou  em uma empresa que não seja a da nota 
+fiscal de saída.
+            
+                 Observação
+                
+                A série da nota de entrada é mantida conforme a nota de origem (saída), sendo necessário tê-la cadastrada em ambas as filiais. O sistema utiliza a mesma série da nota de saída na geração da nota de entrada tipo 11 e faz uma validação quando a série da nota não está cadastrada na filial de destino.
+            
+            O cliente que tem ligação com a filial da nota fiscal de saída é obtido 
+via cadastro da filial, por meio do campo Filial como Cliente da tela F070FCA 
+(Cadastros > Filiais > Cadastro).
+            Você também pode usar o identificador de regras CPR-440DTNFT01 
+cuja finalidade é alterar a data de entrada da nota fiscal de entrada para a nota de transferência, que é
+gerada a partir do fechamento da nota fiscal de saída. A data de entrada não 
+pode ser menor que a data atual (padrão na geração da nota fiscal de 
+entrada).
+            Se a nota fiscal de saída estiver fechada, o sistema não vai permitir
+cancelar, excluir ou reabilitá-la, sendo necessário que você primeiro exclua a 
+nota fiscal de entrada para depois mexer na
+nota fiscal de saída.
+            Em Cadastros > Filiais > Compras há o campo Depósito para 
+entrada por transferência (DppTrf), onde você pode informar qualquer depósito, desde que esteja ativo e cadastrado no sistema e o 
+campo Estado inicial da nota fiscal de transferência (EstNft) seja igual a "1 - Digitada" ou "2 - Fechada". Esses campos ficam 
+na tabela E070CPR (cadastros de filiais, parâmetros de compras, guia Compras 
+2).
+            Se a diversidade de leiautes, lançamentos manuais e inconsistências no recebimento de notas de serviço são alguns dos seus problemas, conheça mais sobre a solução de  Recebimento de NFS-e da Senior.
+            
+            
+            Web service
+            A rotina de geração de nota fiscal de entrada para 
+transferência via nota fiscal de saída também está disponível no seguinte web service:
+            
+                Com.senior.g5.co.mcm.cpr.nfentradatransfvianfsaida
+                
+                Porta: Gerar
+                Descrição: Gestão Empresarial | ERP - Compras - Nota Fiscal de Compra para Transferência via Nota 
+Fiscal de Saída
+                Classe: TSr142DivergenciasPedidoNFVenda
+            
+            Alguns campos de entrada devem 
+ser informados antes da sua execução:
+            
+                PEmpNfv: código da empresa da nota fiscal de saída
+                PFilNfv: código da filial da nota fiscal de saída
+                PSnfNfv: código da série da nota fiscal de saída
+                PNumNfv: número da nota fiscal de saída
+                PCliNfv: código do cliente da nota fiscal de saída
+                PTnsPro: transação de produto da nota fiscal de saída
+                PTnsSer: transação de serviço da nota fiscal de saída
+            
+            Por meio do campo 
+PResultExec você pode verificar se a geração da nota fiscal de entrada via 
+nota fiscal de saída foi executada com sucesso (retorno igual a 0) ou se houve 
+algum erro (retorno igual a 1). Em caso de erro, o campo memLogExec vai apresentar a mensagem retornada pelo sistema. 
+            Exemplo:
+            @ Definição do variável de acesso ao serviço @definir interno.com.senior.g5.co.mcm.cpr.nfentradatransfvianfsaida.gerar Nfe;
+@ Atribuição dos filtros ao serviço @Nfe.PEmpNfv = 1; Nfe.PFilNfv = 1;Nfe.PSnfNfv = UNI;Nfe.PNumNfv = 1;Nfe.PCliNfv = 201;Nfe.PTnsPro = 61202;Nfe.PTnsSer = ; @ Definição do tipo de execução do serviço @Nfe.ModoExecucao = 1; @ 1 para execução local @ @ Execução da rotina do serviço @Nfe.Executar();
+            
+                
+                    
+                    
+                    
+                        
+                            
+                                
+                            
+                            Veja também:
+                        
+                    
+                
+                
+                    Preparação da Nota Fiscal de Saída (F140PRE)
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

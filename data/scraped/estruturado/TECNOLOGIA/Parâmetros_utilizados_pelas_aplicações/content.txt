@@ -1,0 +1,148 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/outras-configuracoes/parametros.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7COutras%2520configura%25C3%25A7%25C3%25B5es%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Outras configurações > Parâmetros utilizados pelas aplicações
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Parâmetros utilizados pelas aplicações
+                Na inicialização das conexões dos sistemas, a Tecnologia utiliza os seguintes parâmetros:
+                
+                    mcdebug: Utilizado para a depuração de serviços;Importante Esse parâmetro deve ser utilizado apenas para fins de testes e depuração de web services. Não deve ser utilizado para operações do dia a dia dos sistemas, pois não é otimizado para esse fim e sua usabilidade pode ser complexa para usuários não especialistas.Não é recomendável seu uso sem o conhecimento dos dados de entrada do web service e dos processos que serão executados. Fazer uso deste recurso sem o conhecimento adequado pode ocasionar em perda de dados na base do sistema e inconsistências de ambiente.
+                    mcsrv: Indica que a conexão é servidora de serviços. Utilizado pelas conexões gerenciadas automaticamente pelo servidor Java EE;
+                    shareTBSMem: Indica que a conexão deve utilizar memória compartilhada para carregar o TBS;
+                    mcdelaytime: Adiciona um delay na execução local de web services que utilizem telas. O parâmetro funciona somente em conjunto com o parâmetro mcdebug e nos módulos XT do Gestão de Pessoas | HCM, Ronda Senior e Gestão Empresarial | ERP. Para utilização deste parâmetro, deve ser informado no atalho da aplicação o parâmetro com o tempo de delay em milissegundos. Por exemplo, para um delay de 2 segundos deve-se registrar a seguinte informação: \\Servidor\Senior\Iniciar.exe -SystemModule:VETORH.RUBI -seniordir:"C:\Senior\" -mcdebug -mcdelaytime:2000.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

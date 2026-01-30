@@ -1,0 +1,145 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/emissao-pedido-de-venda.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____3
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Emitir Pedido de Venda
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                
+            
+             Pedido de Venda
+            O pedido de venda ou documento auxiliar de venda (DAV) é um documento que pode ser utilizado no processo de venda e tem a função de registrar os itens que serão vendidos e as negociações realizadas entre o vendedor e o consumidor. Além disso, é um documento que não possui valor fiscal e permite viabilizar todas as etapas de um processo de venda que não se caracterize apenas em registrar os produtos.
+            
+                Observação
+                
+                O tipo de exibição do pedido de vendas é definido por meio do parâmetro dinâmico PEDIDOS.LAYOUT, podendo ser:
+                
+                    Padrão
+                    Simplificado
+                    Calçadista
+                    
+                    Construção
+                    
+                
+            
+            Utilização 
+            Processos como: Análise de Crédito, Agendamento de Frete, Agendamento de Montagem, Negociações e outros utilizam o pedido como referência de informação e controle. As seguintes informações podem ser registradas em uma venda por meio do pedido: 
+            
+                Cliente – Permite a identificação por meio de código, nome, CPF, cidade, endereço;
+                Mercadorias e Serviços – Permite a identificação por meio de código, código de barras e descrição;
+                Informações da Negociação - tabela de preço, preço, descontos, acréscimos/encargos, juros, promoções e brindes;
+                Informações de controle de estoque - lote de fabricação, número de série, depósito e quantidade;
+                Informações do Pagamento - formas de pagamento, condições de pagamento, parcelamento e juros;
+                	Informações de Frete – Data para entrega, itens que devem ser entregues, endereço para entrega, responsável por realizar o frete, responsável pelo recebimento, definição de qual loja realizará a entrega e observações relacionadas ao frete;
+                Informações de Montagem – Data para montagem, itens que devem ser montados, endereço para montagem, responsável por realizar a montagem, responsável pelo recebimento, definição de qual loja realizará a montagem e observações relacionadas a montagem;
+                	Informações de Análise de Crédito - todo o histórico do processo de análise de crédito, interações com central de crédito e autenticadores de crédito, motivos de aprovação/reprovação, responsáveis pelo processo e avalistas;
+                Intermediação de Venda – Venda de Garantia Estendida e Seguro Parcela Protegida (proteção financeira) por intermediação, permite atuar como representante/corretor da seguradora e permite vender garantias e seguros de vendas anteriores (recuperação de vendas);
+                Informações de volumes – Permite informar os volumes que serão preparados para o transporte;
+                Pedidos para entrega futura – Permite registrar vendas que serão para entrega futura, este tipo de venda gera um processo diferenciado, sem a emissão de cupom fiscal ou NFC-e;
+                Pedidos para entrega por centro de distribuição (CD) – Permite registrar vendas que serão entregues por um centro de distribuição.
+            
+            Fluxo do processo
+                
+                    
+                    
+                
+            
+            Processo
+            A tela do pedido de venda é acessada através do caminho: Menu Mercado > Gestão de vendas > Pedido.
+            Na tela inicial é apresentada a lista de todos os pedidos ainda não atendidos no PDV e suas informações nas colunas respectivamente: número do pedido, cliente, valor líquido, situação, forma de entrega, adiantamento recebido, quantidade de produtos, quantidade de serviços, tempo, e data da criação.
+            
+                
+            
+            Adiant.Recebido Esta coluna só ficará como "Sim" quando houver entrega futura envolvida, pedido vinculado ou quando a venda for composta somente por intermediação.
+            A tela inicial possui a opção de Pesquisa, para que sejam aplicados filtros de busca. Assim, um pedido poderá ser filtrado com mais agilidade  por número, nome do cliente, situação, etc.
+             Incluir pedido
+            Para incluir um novo pedido, acione o botão Incluir(F2);
+            
+                Importante
+                A tela de pedidos permite a digitação e a navegação de forma rápida, utilizando atalhos disponíveis no teclado, além disso, utiliza a mesma interface para todas as funções, evitando que seja necessário alternar entre telas, tornando o atendimento mais rápido.
+                Ao pressionar a tecla ENTER, setas ↓ e ↑ no teclado, é possível navegar entre os campos com mais agilidade.
+            
+            Alterar pedido
+            Para alterar o pedido, clique no botão Alterar (F3). Caso o pedido selecionado estiver alguma das situações abaixo, a opção para alterar ficará desabilitada:
+            
+                Em Faturamento
+                Expirado
+                Faturado
+                Faturado por Nota Fiscal
+                Mesclado
+            
+            Após clicar para alterar um pedido,  podem ocorrer outras validações que também impedem a alteração do pedido:
+            
+                Pedido com origem do Gestão Empresarial | ERP;
+                Pedido impresso no PDV;
+                Pedido gerado por mesclagem;
+                Pedido na situação: "Bloqueado por Análise de Crédito" com a situação da análise diferente de "Não Iniciado", "Reprovado Análise", "Reprovado Central Crédito" ou "Reprovado Financeira";
+                Pedido com a situação da análise em "Reprovado Financeira", mas com proposta financeira que não permite reanálise;
+                Pedido cuja pendência de integração não esteja concluída (integrada e com feedback).
+            
+            Não existindo estas condições no pedido, ele poderá ser alterado através do botão Alterar (F3).
+            Campos do Cabeçalho
+            Pedido (Ctrl + F1)
+                Neste campo será gerado um número sequencial automaticamente pelo sistema, após a inclusão de um item/produto. Esse será o número do pedido.
+            
+                Nota
+                
+                O campo Pedido permite ainda que seja utilizado o botão de pesquisa, se houver a necessidade de abrir uma pré-venda existente para efetuar alterações.
+            
+            Cliente (Ctrl + F2)
+                Para identificar o cliente, basta digitar o código do cliente, CPF ou o nome parcial e pressionar ENTER. Se o cliente já possuir cadastro no sistema, será apresentado e selecionado automaticamente.Se optar pelo botão de pesquisa,  a tela de busca de cliente será exibida para inserção dos dados.
+            
+                Notas
+                
+                    Todo pedido exige a identificação do cliente.
+                    Se caso o cliente informado estiver bloqueado, o sistema apresentará uma mensagem avisando que o cliente está bloqueado informando o motivo e a observação do bloqueio. Será solicitado ao usuário se deseja continuar ou não. Ao escolher "Sim", a digitação do pedido continuará normalmente, porém o recebimento do pedido será somente à vista ou em formas que não exijam cliente cadastrado. Caso não, o cliente será removido do pedido. 
+                
+            
+            Vendedor (Ctrl + F6)
+                
+                Para identificar o vendedor no pedido, basta digitar o login ou o nome completo do vendedor, conforme cadastrado em cadastro de usuários. Os vendedores também poderão ser pesquisados através do botão de pesquisa.
+            
+                Nota
+                
+                Por padrão, o sistema sempre exibirá neste campo o usuário logado no terminal de venda, que pode ser alterado a cada inclusão de pedido e a cada item que for incluído no mesmo. O vendedor que estiver informado na tela do pedido no momento em que um item for adicionado, será o vendedor daquele item.
+            
+            Ficha
+                Campo disponibilizado apenas para consulta. Toda inserção de ficha no pedido deverá ser feita através da tela Ficha (Mercado > Gestão de Vendas > Ficha). 
+            
+                Nota
+                
+                Este campo somente estará disponível se houver parametrização no Gestão Empresarial | ERP (o parâmetro PEDIDO.LAYOUT com valor igual à 5, correspondendo ao layout de Ficha.)
+            
+            Consultar cliente na rede
+                Ao utilizar a opção do botão de pesquisa no campo Cliente, são apresentados todos os cliente cadastrados da filial logada. Na tela de pesquisa apresentada, o sistema permite, através do botão Consultar na rede, pesquisar os clientes de toda a rede de filiais. A pesquisa poderá ser feita por meio do  nome ou CPF/CNPJ. A tela de consulta apresenta  as informações de: Código, CPF, Nome, Endereço, Estado e Cidade do respectivo cliente. Dessa forma, o registro desejado poderá ser importado  para o pedido através do botão Importar F12.
+            Situação
+                Exibe a situação do pedido, que é atualizada automaticamente pelo sistema e não pode ser alterada. As situações possíveis são:
+            
+                Aberto – Situação do pedido após ser iniciado ou reaberto;
+                Bloqueado – Situação do pedido caso tenha bloqueios;
+                Finalizado – Situação do pedido

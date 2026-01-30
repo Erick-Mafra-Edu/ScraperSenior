@@ -1,0 +1,189 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/servicos/seguro-parcela-protegida.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7C_____8
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Parcela Protegida
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Adicionar Seguro Parcela Protegida no pedido
+                Conceito
+                Vender seguro parcela protegida para pedidos que tenham recebimento selecionado, via venda direta ou intermediação de serviço.
+                Utilização
+                A venda de seguro parcela protegida pode ocorrer diretamente na venda de um pedido, e também para compras que tenham sido realizadas anteriormente, sendo esta uma norma regulamentada pela SUSEP - Superintendência de Seguros Privados.
+                A adesão do seguro pode ocorrer através de uma venda direta, ou através de uma intermediação de serviço, para compras que tenham sido realizadas anteriormente e que ainda possuam no mínimo  uma parcela a vencer. Por exemplo: se a venda for realizada em dez vezes no carnê, com o pagamento de duas parcelas já efetuadas e no dia do vencimento outra parcela for paga, o serviço será calculado sobre as sete parcelas a vencer.
+                
+                    Observação
+                        a respectiva venda não pode conter algum seguro parcela já existente, é permitido adicionar apenas um. 
+                
+                O valor do seguro é calculado de acordo com o valor financiado, sendo assim, em devoluções de mercadorias, ambos os valores serão reajustados.
+                Como comprovação da aquisição do seguro, será apresentado no cupom fiscal (neste caso apenas quando for uma venda direta), e também na geração de apólice (documento emitido pela seguradora, que formaliza a aceitação do risco objeto do contrato de seguro. Nela está discriminada uma série de condições, como o bem assegurado, as coberturas e garantias contratadas, o valor do prêmio, prazo do contrato, entre outros) ou bilhete. A apólice ou o bilhete serão emitidos para qualquer venda de seguro realizada na loja.
+                Processo  
+                
+                    Confira abaixo a intermediação de serviço de venda de seguro parcela, via recebimento. 
+                
+                Exemplo:  
+                    
+                         No pedido, ao clicar em recebimento, é incluída a forma de pagamento "Crediário" - neste momento a opção de adicionar o seguro é habilitada.
+                        
+                            
+                        
+                         
+                        
+                            
+                        
+                        Finalize a venda conforme processo atual. 
+                    
+                
+                2. Ao identificar um cliente em uma venda no PDV, é realizada uma busca de vendas em que se pode vender seguro parcela no Gestão Empresarial | ERP.
+                Exemplo:  
+                    
+                        
+                            Selecione a venda e identifique o cliente.  
+                        
+                        
+                            
+                        
+                        
+                            Será exibida uma mensagem na existência de vendas anteriores que permitam vender seguro parcela para o respectivo cliente. O botão  F3 - Seguro Parcela, é habilitado para realizar a venda.
+                        
+                        
+                            
+                        
+                        
+                            Selecione um seguro parcela para uma venda anterior
+                        
+                        
+                            
+                        
+                        Caso a venda seja realizada,  um dos itens do pedido será o próprio seguro parcela, que  contemplará o número da apólice ou bilhete para ser enviado ao Gestão Empresarial | ERP, na integração dos cupons fiscais.  
+                        Finalize a venda conforme processo atual. 
+                    
+                
+                
+                    
+                        Nota
+                        Ao finalizar a venda e possuir impressora  configurada no sistema, poderão ser  impressas  duas vias do contrato de seguro parcela, uma via do cliente e uma via da loja, e assim assinado o acordo realizado entre as partes.
+                        Caso o parâmetro dinâmico VENDA.IMPRIMESEGURO do cadastro de filial do Gestão Empresarial | ERP esteja definido como "0", não acontece a impressão automática do documento. Caso seja necessário, é possível imprimir os comprovantes através da reimpressão de documentos de cupom fiscal ou NFCe.
+                    
+                
+                Devolução de itens com seguro parcela protegida
+                Quando um produto para o qual se adquiriu seguro parcela protegida é devolvido pelo cliente, o valor do seguro associado é devolvido junto ao valor do produto, mesmo que não tenha sido adquirido no mesmo momento em que o produto. 
+                A devolução do valor do seguro parcela protegida ocorre automaticamente e pode ser de duas formas:
+                
+                    Integral: se a devolução ocorre até 7 dias após a venda, é devolvido o valor integral do seguro.
+                    Parcial: quando a devolução se dá 7 dias após a venda,  a taxa de IOF referente a este seguro, adicionada do valor proporcional à quantidade de meses utilizados, é descontada do valor da devolução, arredondando para cima. Ou seja, caso o seguro tenha sido utilizado por 1 mês e 2 dias, são descontados 2 meses de uso dela.
+                
+                
+                    Nota
+                    
+                    O tempo de 7 dias pode variar, veja o item Tempo para devolução integral do valor seguro parcela protegida.
+                
+                Tempo para devolução integral do valor seguro parcela protegida
+                A quantidade de dias para devolução integral do seguro é definida no parâmetro dinâmico SEGUROPARCELA.PRAZODEVOLUCAOINTEGRAL, do cadastro de Filial do Gestão Empresarial | ERP. Seu valor padrão é 7 dias, portanto não é necessário configurá-lo caso o valor padrão seja utilizado.
+                O percentual de IOF considerado é conforme o parâmetro dinâmico SEGUROPARCELA.PERCENTUALIOF também configurado no cadastrado da Filial no ERP.
+                
+                    Importante:
+                    
+                    O sistema armazena internamente o valor de IOF utilizado no momento da venda para que este seja utilizado no cálculo da devolução parcial, caso esta ocorra. Porém, no caso de devolução de venda realizada em outra filial, o sistema não tem como resgatar esta informação (já que ela fica somente no Retaguarda e não integra com o ERP). Portanto, no caso de devolução de vendas de outra filial, uma simulação do valor do IOF levando em consideração o valor da garantia vendida e o percentual de IOF configurado no sistema neste momento é calculada no momento da devolução. Caso o percentual de IOF aplicado tenha sido alterado no sistema depois do dia em que foi realizada esta venda, isto pode gerar uma pequena diferença no desconto da garantia, se comparado à devolução da mesma venda na filial de origem. Neste caso, recomenda-se realizar a devolução na filial de origem.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo

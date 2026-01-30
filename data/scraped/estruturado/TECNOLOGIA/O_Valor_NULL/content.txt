@@ -1,0 +1,279 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/valornull.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____9
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > O Valor NULL
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                O Valor NULL
+                O valor NULL serve para indicar que o valor da coluna ou da expressão não 
+ foi informado, pois significa ausência 
+ de valor. Esta definição de NULL é uma convenção adotada pela maioria 
+ dos bancos de dados. 
+                As comparações do valor 
+ NULL não retornam TRUE:
+                
+                    NULL=NULL
+                    NULL<>NULL
+                    NULL=0
+                    NULL<>0 
+                    1>NULL
+                    1<NULL
+                    NULL IN (1, 2, 3, NULL)
+                    2 NOT IN (1, 3, 5, NULL)
+                
+                Por 
+ convenção, o valor de todas as expressões acima é UNKNOWN (desconhecido). 
+ Assim, algumas expressões que contém comparações com NULL, podem retornar 
+ TRUE, FALSE, ou UNKNOWN:
+                
+                    
+                    
+                    
+                    
+                        Expressão
+                        Reduzindo para TRUE, FALSE e UNKNOWN
+                        Resultado booleano final
+                    
+                    
+                        (1=1) AND (1=NULL)
+                        TRUE AND UNKNOWN
+                        UNKNOWN
+                    
+                    
+                        (1=0) AND (NULL=NULL)
+                        FALSE AND UNKNOWN
+                        FALSE
+                    
+                    
+                        (1=1) OR (NULL=NULL)
+                        TRUE OR UNKNOWN
+                        TRUE
+                    
+                    
+                        (1=0) OR (1=NULL)
+                        FALSE OR UNKNOWN
+                        UNKNOWN
+                    
+                    
+                        NOT (NULL=NULL)
+                        NOT UNKNOWN
+                        UNKNOWN
+                    
+                    
+                        NOT (NULL<>NULL)
+                        NOT UNKNOWN
+                        UNKNOWN
+                    
+                    
+                        (NULL = NULL) OR NOT (1=0)
+                        UNKNOWN OR NOT FALSE, 
+        UNKNOWN OR TRUE
+                        TRUE
+                    
+                
+                A questão mais comum envolvendo o valor NULL é o fato de que NULL=NULL não 
+ retorna TRUE. Isto causa confusão para algumas pessoas, e outras se perguntam 
+ se isto é mesmo necessário. Observe que o NULL significa ausência de valor, neste caso, NULL=NULL retorna FALSE, pois não 
+ há qualquer valor sendo. Esta convenção se mostra interessante em muitos casos.
+                Nota
+                    Em consultas, na cláusula WHERE, caso não haja mais expressão para ser avaliada e o
+ valor final obtido com uma linha seja UNKNOWN, esta linha não será retornada.
+                
+                
+                    Exemplo 01
+                        
+                            Dadas as tabelas:
+                            
+                                
+                                
+                                
+                                    Funcionarios
+                                    Contatos
+                                
+                                
+                                    CPF
+                                    NOME
+                                
+                                
+                                    NOME
+                                    ENDEREÇO
+                                
+                                
+                                    DATADM
+                                    TELEFONE
+                                
+                                
+                                    ENDEREÇO
+                                    EMAIL 
+                                
+                                
+                                    TELEFONE
+                                     
+                                
+                                
+                                    EMAIL
+                                     
+                                
+                                
+                                    RAMAL 
+                                     
+                                
+                            
+                            Visando descobrir quais funcionários são contatos 
+ e vice-versa, usando como ligação o campo EMAIL, empregando o comando:
+                            
+                                SELECT A.NOME,B.NOME FROM FUNCIONARIOS A, CONTATOS B WHERE A.EMAIL=B.EMAIL
+                            
+                            O campo EMAIL pode ter o valor NULL, pois nem todo funcionário 
+ ou contato possui e-mail.  Se o banco considerasse que NULL=NULL retornasse TRUE, a consulta iria retornar incorretamente, todos os funcionários e contatos 
+ que não possuem e-mail.
+                        
+                    
+                
+                
+                    Exemplo 02
+                        
+                            Dadas as tabelas:
+                            
+                                
+                                
+                                
+                                    Funcionarios
+                                    Contatos
+                                
+                                
+                                    CPF
+                                    NOME
+                                
+                                
+                                    NOME
+                                    ENDEREÇO
+                                
+                                
+                                    DATADM
+                                    TELEFONE
+                                
+                                
+                                    ENDEREÇO
+                                    EMAIL 
+                                
+                                
+                                    TELEFONE
+                                     
+                                
+                                
+                                    EMAIL
+                                     
+                                
+                                
+                                    RAMAL 
+                                     
+                                
+                            
+                            Visando verificar se existem ramais na empresa subtilizados ou sobrecarregados, empregando o comando:
+                            
+                                SELECT RAMAL,COUNT(*) FROM FUNCIONARIOS GROUP BY RAMAL
+                            
+                            Nem todos os funcionários terão ramal. Portanto, o campo RAMAL pode 
+ ter o valor NULL. Se o banco considerasse que NULL=NULL retornasse TRUE, a consulta 
+ iria retornar uma linha onde RAMAL=NULL, e COUNT(*)=quantidade de funcionários 
+ que não possuem ramal.
+                            Para obter a quantidade de funcionários 
+ que não possuem ramal, o comando empregado deveria ser:
+                            
+                                SELECT COUNT(*) FROM FUNCIONARIOS WHERE RAMAL IS NULL
+                            
+                            Para  uma lista de utilização dos ramais, incluindo o 
+ número de funcionários que não possuem ramal, o comando empregado deveria ser:
+                            
+                                SELECT IFNULL(RAMAL, 0), COUNT(*) FROM FUNCIONARIOS GROUP BY 1
+                            
+                            O IFNULL pode ser usado no caso dos contatos também:
+                            
+                                SELECT A.NOME,B.NOME FROM FUNCIONARIOS A, CONTATOS B WHERE IFNULL(A.EMAIL,'N/D')=IFNULL(B.EMAIL,'N/D')
+                            
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+      

@@ -1,0 +1,205 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#integracoes/edocs/integracao-erp-edocs.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > Integração com o eDocs
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Integração com o eDocs
+            Essa documentação tem por finalidade detalhar o processo de Integração entre o Gestão Empresarial | ERP e Gestão Empresarial PME | GO UP e o eDocs.
+            
+                Informações sobre status eletrônicos de
+documentos fiscais
+                
+                Diretório onde o ERP gera os
+arquivos .XML dos documentos eletrônicos
+                
+            
+            Sobre o que você precisa saber?
+            1. Integração Gestão Empresarial | ERP com eDocs para emissão e recebimento de documentos
+                
+                    As informações da página se aplicam tanto ao Gestão Empresarial | ERP quanto ao Gestão Empresarial PME | GO UP.
+                    
+                    O ERP permite a parametrização de integração com o eDocs de três formas diferentes para processos de emissão de documentos:
+                    
+                        Envio via Arquivo e retorno via web service do ERP;
+                        Envio e retorno via web service do eDocs;
+                        Envio via Arquivo e retorno via web service do eDocs.
+                    
+                    Para processos de recebimento, o ERP permite a integração de duas formas diferentes:
+                    
+                        Retorno via web service do ERP;
+                        Retorno via web service do eDocs.
+                    
+                    Em ambientes onde não se encontra disponível o GlassFish, a integração do ERP com o eDocs para emissão/recebimento poderá ser parametrizada utilizando o retorno via web service do eDocs.
+                    A parametrização do tipo de integração para emissão de documentos é efetuada através da tela Parâmetros da Filial para Vendas (F070FVE), guia Documentos Eletrônicos, campo Software Emissor NF-e.
+                    Para processo de Recebimento, não há um parâmetro específico de como definir a forma de comunicação com o eDocs. A comunicação irá variar conforme algumas parametrizações efetuadas no ERP, conforme tópicos abaixo da documentação.
+                    Quando houver parametrização do ERP para integração com o eDocs, os documentos eletrônicos não serão assinados, ficando essa atividade a cargo do eDocs no momento do envio.
+                    Com relação ao processo de integração do ERP com o eDocs para emissão/recebimento de documentos, onde ocorre a comunicação com o eDocs através do web service do eDocs, existem limitações para os processos disponibilizados pelos sistemas da Senior e pelos processos disponibilizados pela SEFAZ/Prefeitura. A tabela abaixo demonstra as formas de integração disponibilizadas para cada tipo de documento eletrônico:
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                Processo
+                                Documento Eletrônico
+                            
+                            
+                                NF-e
+                                NFS-e
+                                CT-e/CT-e OS
+                                MDF-e
+                            
+                            
+                                Síncrona
+                                
+                                Assíncrona
+                                
+                                Síncrona
+                                
+                                Assíncrona
+                                
+                                Síncrona
+                                
+                                Assíncrona
+                                
+                                Síncrona
+                                
+                                Assíncrona
+                                
+                            
+                            
+                                Emissão
+                                OK
+                                OK
+                                ND
+                                OK
+                                ND
+                                OK
+                                Indisponível
+                                OK
+                            
+                            
+                                Cancelamento
+                                Indisponível
+                                OK
+                                ND
+                                OK
+                                Indisponível
+                                OK
+                                Indisponível
+                                OK
+                            
+                            
+                                Inutilização
+                                Indisponível
+                                OK
+                                Indisponível
+                                OK
+                                Indisponível
+                                OK
+                                Indisponível
+                                OK
+                            
+                            
+                                Eventos diversos
+                                Sempre síncrona somente para CC-e
+                                OK
+                                Indisponível
+                                OK
+                                Indisponível
+                                OK
+                                Indisponível
+                                OK
+                            
+                            
+                                Recebimento
+                                Indisponível
+                                OK
+                                OK
+                                OK
+                                Indisponível
+                                OK
+                                Indisponível
+                                OK
+                            
+                        
+                    
+                    Legenda:
+                        
+                            
+                                Eventos diversos são: CC-e, Manifestação Destinatário, Prestação de Serviço em Desacordo, Cancelamento de Prestação de Serviço em Desacordo, Inclusão Condutor, Inclusão DF-e e afins;
+                                A informação Indisponível indica a indisponibilidade da SEFAZ/Prefeitura para esse tipo de emissão/documento/forma de comunicação;
+                                A informação ND indica que a SEFAZ/Prefeitura permite esse tipo de integração, porém ela ainda não foi desenvolvida nos sistemas da Senior;
+                                A integração do ERP com o eDocs permite geração de boletos e o envio normalmente, junto com os documentos eletrônicos (conforme documentação). No entanto, mesmo que a comunicação entre os dois sistemas seja efetuada através do web service do eDocs, o processo de envio de boletos do ERP para o eDocs continuará sendo efetuado através da geração de arquivos .PDFs em pastas de integração. Ou seja, ainda não há disponibilidade de integração de Boletos via WebService entre os dois sistemas;
+                                A integração ERP com o eDocs onde utiliza-se a geração de .XMLs em diretório de integração e retorno, via web service do ERP, não permite emissão de forma síncrona. Por esse motivo, a tabela descrita acima não determina informações sobre esse tipo de integração;
+                                O identificador de regras VEN-140NEIMPBO é acionado nos retornos via web service do ERP ou via web service do eDocs, independentemente se a comunicação for síncrona ou assíncrona.
+                            
+                        
+                    
+                    Com relação à integração de registros ao ERP via web service do ERP (exemplo: geração de NF de Entrada, Geração de NF de Saída, Geração de NF de Devolução), caso esses web services tenham campos específicos para determinar a forma de integração do ERP com o eDocs (via arquivo ou via web service do eDocs), a informação definida nestes campos será respeitada. Se o web service não possuir campos específicos para determinar a forma de integração do ERP com o eDocs, será respeitada a forma de integração definida na parametrização da Filial que está processando o documento (F070FVE).
+                    
+                        Importante
+                        
+                   

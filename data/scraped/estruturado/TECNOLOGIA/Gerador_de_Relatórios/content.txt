@@ -1,0 +1,301 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/relatorios/definit.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Relat%25C3%25B3rios%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Relatórios
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Gerador de Relatórios
+            
+                Atenção
+                
+                Para edição e geração de modelos é necessário que a configuração de DPI (ou também conhecido como escala/zoom) no Windows esteja em 100%. Caso esteja diferente deste valor, ao abrir o modelo, todos seus elementos serão reposicionados de acordo com as novas definições de escala da área útil do Windows, causando problemas de campos sobrepostos ou cortados. Caso isso ocorra com um modelo, é necessário restaurar o backup do arquivo de modelo salvo com a escala em 100%.
+                Ao gerar um relatório, seja em tela ou diretamente em arquivo, utilizando a opção Arquivo na grade Saída da tela Parametrização de Saída, e o seu tamanho ultrapassar  2 GB (2.147.483.648 bytes) de dados, o sistema exibirá a mensagem abaixo e o relatório não será emitido:
+                "O tamanho do relatório ultrapassou o limite máximo suportado. O número da ultima página suportada foi: XXXX. Para resolver essa situação, pode-se diminuir a abrangência de dados para gerar um relatório menor, ou gerar vários relatórios menores."
+                Essa rotina deve-se ao limite do tipo de dados  inteiro (Integer) da arquitetura dos computadores. Ao listar um relatório, é gerado um arquivo temporário, sendo que o limite de gerenciamento de arquivos em memória, no Windows, é de 2 GB.
+                Para solucionar esta situação, pode-se diminuir a abrangência de dados para gerar um relatório menor, ou gerar mais de um relatório.
+                 Limitação válida para os sistemas Gestão Empresarial | ERP e Gestão Empresarial PME | GO UP.
+            
+            O Gerador de relatórios possibilita adaptar e criar relatórios (modelo gráfico, texto e arquivo texto), para atender necessidades específicas. Em todos os sistemas, o funcionamento do Gerador de Relatórios é semelhante, porém, os relatórios são subdivididos em categorias, que irão determinar o local onde os modelos serão encontrados, e a lógica de confecção para os mesmos.
+            É necessário ter
+            permissão para 
+            customizações para ter acesso ao Gerador de Relatórios.
+            
+                Importante
+                
+                Caso o usuário possua abrangências definidas em Diversos > Usuários > Abrangências > Colaboradores > Abrangência Geral, para que essas abrangências do Perfil de Usuário sejam consideradas no módulo Gestão do Ponto ao listar um modelo  via custom.Link (ex.: Relatório de Apuração), é necessário que o usuário pertença a somente um único perfil. Caso contrário, as abrangências não serão consideradas.
+            
+            Barra de ferramentas e teclas de atalho
+            A barra de ferramentas contém diversos atalhos para as principais funcionalidades do Gerador de Relatórios.
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    
+                        Ícone
+                        Descrição
+                        Atalho
+                         
+                        Ícone
+                        Descrição
+                         
+                        Ícone
+                        Descrição
+                    
+                    
+                        
+                        
+                        Botão Novo
+                         
+                        
+                        
+                        Controle Descrição
+                        
+                            
+                        
+                        Botão Sair
+                    
+                    
+                    
+                        
+                        
+                        Botão Abrir
+                        Ctrl + A
+                        
+                        
+                        Controle Cadastro
+                         
+                         
+                    
+                    
+                        
+                        
+                        Botão Salvar
+                        Ctrl + S
+                        
+                        
+                        Controle Fórmula
+                         
+                         
+                    
+                    
+                        
+                            
+                        
+                        Botão Salvar Como
+                    
+                         
+                        
+                        
+                        Controle Totalizador
+                         
+                         
+                    
+                    
+                        
+                            
+                        
+                        Botão Visualizar Impressão
+                    
+                        Ctrl + V
+                        
+                        
+                        Controle Sistema
+                         
+                         
+                    
+                    
+                        
+                            
+                        
+                        Botão Restaurar
+                    
+                        Shift + Ins
+                        
+                        
+                        Controle Especial
+                         
+                         
+                    
+                    
+                        
+                            
+                        
+                        Botão Copiar
+                    
+                        Ctrl + Ins
+                        
+                        
+                        Controle Memorando
+                         
+                         
+                    
+                    
+                        
+                            
+                        
+                        Botão Alinhar/Dimensionar
+                    
+                         
+                        
+                        
+                        Controle Imagem
+                         
+                         
+                    
+                    
+                        
+                            
+                        
+                        Botão Tabelas/Campos
+                    
+                         
+                        
+                        
+                        Controle Código de Barra
+                         
+                         
+                    
+                    
+                        
+                            
+                        
+                        Botão Nenhuma Seleção
+                    
+                         
+                        
+                        
+                        Controle Desenho
+                         
+                         
+                    
+                    
+                         
+                         
+                         
+                        
+                        
+                        Controle Gráfico
+                         
+                         
+                    
+                    
+                         
+                         
+                         
+                        
+                        
+                        Controle Grade
+                         
+                         
+                    
+                    
+                         
+                         
+                         
+                         
+                        Controle Cubo
+                         
+                         
+                    
+                
+            
+            Outras teclas de atalho
+            
+                
+                
+                
+                
+                
+                    
+                        Teclas
+                        Ação
+                    
+                    
+                        Ctrl + P
+                        Seleciona a janela de definição de propriedades.
+                    
+                    
+                        Ctrl + T
+                        Selecionar a janela de TABELA/CAMPOS.
+                    
+                    
+                        Ctrl + Q
+                        Selecionar a janela do SQL utilizado pelo gerador para efetuar a consulta.
+                    
+                    
+                        Ctrl + E
+                        Selecionar a janela de Eventos inseridos no modelo (Versão: 1.21).
+                    
+                
+            
+                    Nota
+                O gerador de relatórios assume que as teclas de atalho CTRL + <Tecla> sejam de
+ uso dele, e que as aplicações façam uso das outras disponíveis.
+            
+            Saiba mais em:
+            Abrir ou Criar Modelo de Relatório
+            
+            Salvar Modelo
+            
+        
+        
+   

@@ -1,0 +1,284 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/formas-de-acesso.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CFormas%2520de%2520acesso%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Formas de Acesso
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Formas de Acesso
+                Para optar por uma forma de acesso, é preciso considerar as necessidades e restrições que o ambiente apresenta. Na lista abaixo, há um comparativo das 4 opções de acesso disponibilizadas pela solução Senior:
+                
+                    BrowserAccess: Totalmente em HTML / JavaScript, executado por um navegador de páginas da internet. Todo o processamento é executado no servidor;
+                    Cliente-Servidor: A instalação do sistema é feita completamente na estação, que se comunica diretamente com o banco de dados. Não utiliza o Middleware Senior;
+                    WEB 5.0: É uma interface web que permite personalização dos HTMLs. Todo o processamento é executado no servidor;
+                    WindowsAccess: É um aplicativo para desktop Windows. Todo o processamento é executado no servidor.
+                
+                 
+                Recursos e funcionalidades
+                A tabela a seguir apresenta uma lista de recursos dos sistemas Senior e a disponibilidade de cada recurso de acordo com o tipo de acesso (cliente-servidor, WindowsAccess e BrowserAccess). Os recursos listados com "x" funcionam plenamente e os listados com "-" não estão disponíveis. Existem ainda recursos que estão disponíveis parcialmente, neste caso há um comentário para o mesmo.
+                
+                    
+                        Recurso / Funcionalidade
+                        Cliente - Servidor
+                        WindowsAccess
+                        BrowserAccess
+                        Web 5.0
+                    
+                    
+                        Editor do gerador de relatórios
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Editor de regras
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Depurador de regras
+                        x
+                        -
+                        -
+                        O depurador é exibido pela instância server apenas quando o Middleware está como aplicativo e com a opção de mostrar instâncias.
+                    
+                    
+                        Editor do SGI
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Execução de telas do SGI
+                        x
+                        x
+                        x
+                        x
+                    
+                    
+                        Execução de importação / exportação
+                        x
+                        x
+                        x
+                        -
+                    
+                    
+                        Editor de modelos de importação / exportação
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Gerador de consultas
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Gerador de cubos (definição e análise)
+                        x
+                        -
+                        Limitações
+                        
+                        -
+                    
+                    
+                        Visualização e configuração de gráficos no cubo
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Personalização de menus
+                        x
+                        Funciona, mas não são apresentados os menus de referência a arquivos, aplicativos externos ou seus menus.
+                        Funciona, não é possível associar teclas de atalho aos itens de menu.
+                        -
+                    
+                    
+                        Apresentar personalização de menus
+                        x
+                        Funciona, mas não são apresentados os menus de referência a arquivos, aplicativos externos ou seus menus.
+                        Funciona, mas não serão apresentados menus de referência a arquivos, aplicativos externos ou menus dos mesmos. (com as limitações de tecla de atalho do BrowserAccess).
+                        -
+                    
+                    
+                        Monitor de performance
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Central de segurança
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Tela de captura de imagem
+                        x
+                        x
+                        Apenas carregando a partir de um arquivo.
+                        -
+                    
+                    
+                        Tela sempre visível (stay on top)
+                        x
+                        x
+                        -
+                        -
+                    
+                    
+                        Itens de menu para referência externa
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Execução de aplicativos externos
+                        x
+                        x
+                        -
+                        -
+                    
+                    
+                        Envio de e-mail via MAPI
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Envio de e-mail via SMTP
+                        x
+                        x
+                        x
+                        x
+                    
+                    
+                        Impressão de relatório gráfico
+                        No cliente e no servidor
+                        No cliente e no servidor.
+                        No cliente via PDF, no servidor é completo.
+                        No cliente via PDF, no servidor é completo.
+                    
+                    
+                        Impressão de relatório texto
+                        No cliente e no servidor
+                        No cliente e no servidor.
+                        Download do arquivo.
+                        Download do arquivo.
+                    
+                    
+                        Acesso as informações da proprietária
+                        x
+                        x
+                        x
+                        x
+                    
+                    
+                        Edição de dados
+                        Dados com máscara no momento da digitação
+                        Dados com máscara no momento da digitação.
+                        Dados com máscara na saída do campo.
+                        Dados com máscara na saída do campo.
+                    
+                    
+                        Recursos de grid
+                        Completa
+                        Completa.
+                        Move colunas apenas pela configuração de grade.
+                        As colunas são estáticas.
+                    
+                    
+                        Teclas de atalho
+                        x
+                        x
+                        Mais  informações
+                        
+                        Mais informações
+                        
+                    
+                    
+                        Ajuda
+                        Visualização dentro do contexto, apresentação de hierarquia de assuntos, pesquisas
+                        Visualização dentro do contexto, apresentação de hierarquia de assuntos, pesquisas.
+                        Visualização dentro do contexto, apresentação de hierarquia de assuntos.
+                        Web Help.
+                    
+                    
+                        Tela de configuração de serviços de multicamada
+                        x
+                        -
+                        -
+                        -
+                    
+                    
+                        Manipulação de arquivos
+                        x
+                        x
+                        Não é possível executar operações como excluir ou criar.
+                        Não é possível executar operações como excluir ou criar.
+           

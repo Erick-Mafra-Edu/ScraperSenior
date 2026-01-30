@@ -1,0 +1,181 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#vislog/formmain.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CVisualizador%2520de%2520Eventos%2520(VisLog.exe)%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Visualizador de Eventos (VisLog.exe)
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Visualizador de Eventos (VisLog.exe)
+                O Visualizador de Eventos exibe os eventos registrados pelos aplicativos Senior em determinados períodos, além de permitir a execução de tarefas administrativas em relação a base de dados dos eventos, como gerenciar a quantidade de eventos que serão inseridos na base, consistir a base em eventuais problemas e também fazer a limpeza de eventos com a opção de salvar os registros em um arquivo texto para visualização posterior.
+                Armazenamento de dados
+                Os dados de logs são armazenados de forma criptografada e em formato binário em uma tabela com tamanho pré-determinado. Desta forma, a única maneira de acessar as informações ou alterar o tamanho desta tabela é através do aplicativo Visualizador de Eventos.
+                Para fazer o controle da tabela de dados, é utilizada outra tabela que também só pode ser manipulada através do Visualizador de Eventos.
+                Utilização
+                Para visualizar os detalhes de um evento, selecione-o na lista de eventos para que os detalhes sejam exibidos no campo ao lado, alguns detalhes prévios do evento são apresentados na lista de eventos: 
+                
+                    Evento: O evento em si;
+                    Data/Hora: Quando ocorreu o evento;
+                    Usuário: Executor do evento.
+                
+                Nota
+                    Os dados exibidos na lista são determinados (filtrados) na tela Seleção de Visualização.
+                
+                Os detalhes do evento apresentam a descrição do evento selecionado, cada evento possui dados específicos, porém alguns dados de identificação são comuns a todos os eventos:
+                
+                    Aplicação: Nome (título) da aplicação que gerou o log;
+                    IP: IP da máquina (estação) que gerou o log;
+                    Nome da Máquina: Nome da máquina (estação) que gerou o log;
+                    Domínio: Domínio da máquina (estação) que gerou o log. Caso a máquina não esteja em um domínio, será informado Domínio desconhecido;
+                    Tipo de Conexão: Tipo de conexão utilizada pela máquina (estação) que gerou o log. Existem quatro tipos de conexões disponíveis:		Cliente-servidor;
+					WindowsAccess;
+					BrowserAccess;
+					Web 5.0.
+                
+                
+                    Tipo de Conexão: Tipo de conexão utilizada pela máquina (estação) que gerou o log. Existem quatro tipos de conexões disponíveis:		Cliente-servidor;
+					WindowsAccess;
+					BrowserAccess;
+					Web 5.0.
+                
+                Para monitoração de eventos da base (Delete, Insert e Update), serão também apresentadas as seguintes informações dos detalhes dos eventos:
+                
+                    Tabela: Nome da tabela que sofreu alteração;
+                    Comando: Comando SQL que foi executado;
+                    Linhas Afetadas: Quantidade de linhas afetadas pela execução do comando. Observação: para comandos que serão executados via BATCH (execução em lotes) em banco Oracle, será apresentado o valor -2, pois o Oracle não consegue retornar a quantidade de linhas que foram afetadas. Esse valor representa que o comando foi executado com sucesso.A partir da versão 12.1 do Oracle, será apresentado o número correto de cada linha afetada, para cada linha de comando do bloco, apenas para a versão JAVA.
+                
+                Nota
+                    Nas rotinas de armazenamento de logs, há um limite de 6096 caracteres. Caso a descrição de algum evento seja maior que este limite, a descrição será cortada e ao final serão exibidos os caracteres <<...>>.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,118 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/ibpt.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7C_____11
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > IBPT
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            IBPT - Instituto Brasileiro de Planejamento e Tributação
+            Conceito
+            O IBPT - Instituto Brasileiro de Planejamento e Tributação é especialista em governança tributária, visando a conscientização sobre a alta carga tributária brasileira.
+            Consulte o detalhamento dos impostos para entender sobre a Lei 12.741, que visa tornar transparente o valor pago em impostos pelo consumidor em operações comerciais.
+            Como serão calculados os impostos pagos?
+                
+                    O valor dos impostos pagos pode ser calculado utilizando valores aproximados, levantados por instituição reconhecida.
+                    Esse percentual deve ser aplicado ao total da transação, retornando, então, um valor aproximado do valor pago em impostos para o item comercializado.
+                    Para efetuar esse cálculo, pode-se utilizar a tabela de alíquotas aproximadas, disponibilizada pelo órgão de sua escolha. Hoje, o IBPT disponibiliza uma tabela de alíquotas organizada por NCM, podendo ser utilizada livremente e sendo atualizada a cada seis meses, ou quando ser fizer necessário.
+                    
+                        Nota
+                        
+                        O cliente é o responsável por verificar de tempos em tempos se a planilha inserida no sistema Retaguarda, para a sua filial, é a mais atual disponibilizada pelo IBPT.
+                    
+                
+            
+            Onde a tabela de alíquotas pode ser baixada?
+                
+                    Para atender às exigências da Lei 12.741/12, o IBPT desenvolveu uma solução gratuita para possibilitar que todos os estabelecimentos informem a carga tributária em documento fiscal ao consumidor final.
+                    A integração da Planilha de impostos do IBPT ao sistema Retaguarda deve ser realizada pelo cliente, de acordo com o responsável em cada filial, sendo que a planilha a ser utilizada deverá ser de acordo com o estado que a filial se encontra.
+                    
+                        Nota
+                        
+                        Para realizar o download da planilha de impostos, pode-se acessar o link: https://deolhonoimposto.ibpt.org.br/Site/PassoPasso, que conta com um passo a passo detalhado.
+                        A manutenção da planilha de impostos é de responsabilidade do cliente.
+                    
+                
+            
+            Como faço o cadastro da tabela IBPT através do Gestão Empresarial | ERP?
+                
+                    Para você realizar o cadastro da tabela IBPT:
+                    
+                        Acesse a tela Configuração de Tipos de Informação (F000SXT), do Gestão Empresarial | ERP, e preencha os seguintes campos para habilitar a integração da tabela IBPT:Sistema com a opção correspondente a Varejo Senior;Filial conforme a filial, ou filiais, desejada(s). Esse campo, por sua vez, não é de preenchimento obrigatório. Quando deixado ele em branco, ao clicar no botão Mostrar (descrito no passo de número "2"), todas as filiais serão listadas na grade;Informação como Tabela IBPT.
+                        Clique, então, no botão Mostrar. As filiais selecionadas no campo Filial serão apresentadas na grade.
+                        Ainda na tela Configuração de Tipos de Informação (F000SXT), marque as filiais desejadas na caixa de seleção Sel. e deixe a coluna Situação como A - Ativa e, então, clique em Processar;
+                        Acesse a tela Cadastro da Carga Tributária - IBPT (F075IBP), do Gestão Empresarial | ERP, para realizar a importação de uma tabela IBTP;
+                        Clique, então, no botão Importar (presente ao lado direito do topo da tela Cadastro da Carga Tributária - IBPT (F075IBP));
+                        A janela Integração de arquivos referentes à carga tributária - IBPT será aberta. Selecione o que deve ser integrado;
+                        
+                            Dica
+                            
+                            Na janela Integração de arquivos referentes à carga tributária - IBPT, você pode selecionar a opção Todos (das colunas Tipo de integração e O que integrar) para fazer uma importação completa.
+                        
+                        Clique em Processar;
+                        Selecione, então, o arquivo .csv com as informações da tabela IBPT;
+                        
+                            Nota
+                            
+                            Normalmente, esse arquivo se chama TabelaIBPTaxSP18.1.B.csv, onde:
+                            
+                                TabelaIBPT: se refere ao nome da tabela;
+                                Tax: se refere à taxa;
+                                SP: se refere ao estado no qual a tabela foi pega (pode haver um com todos que, no caso, não aparece nenhuma sigla). No caso do nome citado nesta documentação, a sigla SP, referente ao estado de São Paulo, trata-se de um exemplo. A sigla varia de acordo com cada estado;
+                                18.1.B: se refere à versão da tabela, onde a ordem é sempre numero.numero.letra);
+                                .csv: se refere ao tipo de arquivo.
+                            
+                        
+                        A mensagem Todas as cargas tributárias serão excluídas. Deseja continuar? Versão(ões) do(s) arquivo(s): X.X.X será apresentada;
+                        Clique, então, na opção Sim para dar continuidade à integração.
+                    
+                    
+                        Observação
+                        
+                        Caso já haja algum item do arquivo no Gestão Empresarial | ERP, a informação será reescrita. O ERP, por sua vez, se encarregará de enviar a tabela para todas as filiais que estiverem com a opção habilitada. O ERP mantém todas as tabelas IBPT cadastradas, já o Retaguarda armazena somente a mais recente.
+                        Há disponível, ainda, o parâmetro dinâmico PERFIL.PERMITEIMPORTARIBPT, que tem os valores S - Sim e N - Não. Esse parâmetro deixa, como padrão, desabilitada a tela de importação da tabela IBPT no Retaguarda, com base no perfil de usuário. Essa tela pode ser acessada pelo menu Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Importação Impostos IBPT.
+                        No Gestão Empresarial | ERP, esse parâmetro pode ser alterado pela tela Perfis de Usuários (F090PFU).
+                        O valor padrão do parâmetro PERFIL.PERMITEIMPORTARIBPT é N - Não. Para que seja possível habilitar a tela de importação no Retaguarda, será necessário alterar o parâmetro dinâmico no Gestão Empresarial | ERP ou ser perfil de usuário do tipo administrador, pois com esse perfil, todas as telas são habilitadas.
+                    
+                    No Retaguarda:
+                    Caso a opção de importar a tabela IBPT pelo Retaguarda esteja habilitada, a tela para realizar a importação via Retaguarda é a Importação impostos IBPT que fica em Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Importação Impostos IBPT. Nessa tela, o processo é como no Gestão Empresarial | ERP. Será importado o .csv da tabela que for enviada.
+                    
+                        Observação
+                        
+                        A importação pelo Retaguarda será apenas para casos em que necessite uma importação de uma tabela com versão não superior a do Gestão Empresarial | ERP. Ou seja, a importação via Retaguarda não faz verificação de versão da tabela. Apenas exclui todos os registros anteriores e importa os novos do arquivo informado.
+                    
+                    
+                        Importante
+                        A Senior não efetua a homologação da importação de novas tabelas IBPTs a cada liberação efetuada no site https://deolhonoimposto.ibpt.org.br (as liberações de novas tabelas ocorre, geralmente, de forma semestral). Enquanto  as novas tabelas seguirem a mesma estrutura de tabelas antigas, a importação ocorrerá sem problemas. Caso, ao importar uma nova tabela IBPT liberada ocorra alguma inconsistência, o Suporte da Senior poderá ser acionado para verificar a situação, pois poderá ser necessária a homologação do Retaguarda para ser compatível com uma nova versão da tabela IBPT, caso tenha ocorrido alterações na estrutura da tabela.
+                        É importante lembrar que na instalação do Retaguarda poderá haver registros no sistema referente a uma tabela IBPT antiga. Cabe ao responsável pela implantação ou o cliente verificarem a necessidade da importação da tabela IBPT para atualização destas informações.
+                    
+                    No PDV:
+                    Na geração do cupom fiscal, as informações do valor aproximado dos tributos é calculado item a item, partindo do valor do item e aplicando a alíquota correspondente a cada uma das esferas, totalizando no final do cupom todas as cargas tributárias dos itens listados no documento. Esses valores aproximados da carga tributária total da operação são apresentados com o seguinte texto:Trib aprox R$: X.XXX,XX Fed, X.XXX,XX Est e X.XXX,XX Mun
+Fonte: <FONTE DADOS> <VERSÃO>
+                    Caso, na operação, todos os itens comercializados não possuírem carga tributária em alguma das esferas, esse item não é gerado na operação.
+                    Exemplo:
+                        
+                            Se na operação não possuir carga tributária mun

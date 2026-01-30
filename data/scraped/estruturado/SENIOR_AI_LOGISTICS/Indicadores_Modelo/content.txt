@@ -1,0 +1,170 @@
+# 
+
+URL: https://documentacao.senior.com.br/senior-ai-logistics/1.0.0/#manual-do-usuario/indicadores-modelo.htm%3FTocPath%3DSenior%2520AI%2520Logistics%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOSenior AI Logistics
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Senior AI Logistics > Indicadores Modelo
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Indicadores Modelo
+            Indicadores do WMS Senior (Alcis)
+                
+                    Recebimentos em operação
+                    
+                        Ordens de recebimento em aberto por:Depositante (através de um card);Status (através de um gráfico do tipo donut);Tipo (através de uma dashboard e legenda.
+                        Linhas de recebimento por status (através de um gráfico do tipo donut)
+                        Paletes recebidos por hora (por depositante, através de um mapa)
+                    
+                    Recebimentos concluídos
+                    
+                        Ordens de recebimento recebidas por: Tipo (através de uma dashboard);Depositante/ano por mês (através de um mapa).
+                        Linhas
+Linhas recebidas por dia (através de um gráfico de linha);% INFULL (quantidade, através de um gráfico de pizza);% INFULL (linhas, através de um gráfico de pizza).
+                    
+                    Pedidos em operação
+                    
+                        Pedidos por:Depositante (através de um card);Status (através de um gráfico de radar);Transportadora (através de um gráfico de pizza).
+                        Pedidos por depositante x dias em aberto (mapa de calor)
+                        Reposições em aberto por área
+                    
+                    Pedidos concluídos
+                    
+                    
+                        Pedidos por:Tipo (através de uma dashboard);Depositante (através de um card).
+                        Linhas expedidas por dia x depositante (através de um gráfico de linha)
+                        % INFULL (quantidade e linhas, através de um gráfico de pizza)
+                        Paletes expedidos por hora (por depositante, através de um mapa)
+                    
+                    Raio-x de estoque
+                    
+                        Percentual de ocupação global (através de uma dashboard)
+                        Idade do estoque FIFO (através de um gráfico de radar ou de pizza)% 3, 6, 12 meses e mais de 12
+                        Ocupação por áreas do CD
+                        Quantidade de paletes/depositantes por área (mapa de calor)
+                    
+                    Picking
+                    
+                    
+                        Picking pendenteLinhas por zona (fracionado, através de um gráfico de barra);Palete pendente por zona (através de um gráfico de barra).
+                        Picking realizadoLinhas x dia x depositante (através de um gráfico de linha);Pegas x dia x depositante (através de um gráfico de linha).
+                    
+                
+            
+            Indicadores do WMS Senior (SILT)
+                
+                    Recebimento
+                    
+                        ArmazenagemRecebidos no dia por depositante (através de um gráfico do tipo donut);Tempo médio total de recebimento (através de um card);Recebimentos em aberto (através de um card) e detalhe por depositante (através de um gráfico de pizza);Recebimentos sem conferência (através de um card) e det. por depositante  (através de um gráfico de pizza);Recebimentos sem alocação;Quantidade recebida por peso no período (através de um gráfico de barra);Quantidade recebida por SKU no período (através de um gráfico de barra).
+                    
+                    Estoque
+                    
+                        Ocupação do armazém (através de um card)
+                        Ocupação por depositante (através de um gráfico do tipo donut)
+                        Ocupação por setor de armazenagem (através de um gráfico do tipo donut)
+                        Remanejamentos pendentes
+                         Estoque valorado por depositante (por linhas)
+                        SKUs alocados por depositante FEFO
+                        Idade do estoque FIFO (através de um gráfico de radar ou de pizza)% 3, 6, 12 meses e mais de 12
+                        Shelf life			 do estoque (à vencer, através de um gráfico de pizza)% 3, 6, 12 meses e mais de 12
+                    
+                    Expedição
+                    
+                    
+                        Ondas em aberto (através de um card)
+                        Ondas em aberto sem separação  (através de um card)
+                        Ondas em aberto sem conferência  (através de um card)
+                        Ondas concluídas no período  (através de um card)
+                        Quantidade de tarefas (por linhas)
+                        Pedidos aguardando faturamento por depositante (através de um gráfico do tipo donut)
+                        Pedidos aguardando liberação da expedição (por depositante, através de um gráfico de linha)
+                        Pedidos aguardando coleta (por depositante, através de um gráfico de pizza)
+                    
+                
+            
+            Indicadores do WMS Senior (WIS)
+                
+                    Recebimentos em operação
+                    
+                        Recebimentos em aberto por:Empresa (valor absoluto);Tipo de nota (através de um gráfico do tipo medidor e legenda);Status  (através de um gráfico do tipo donut);Linhas de recebimento por status (através de um gráfico de setores).
+                        Paletes recebidos por hora/empresa (através de um mapa)
+                    
+                    Recebimentos concluídos
+                    
+                        Recebimentos realizados por:Tipo (através de um gráfico do tipo medidor);Empresa/Ano/Mês (através de um mapa).
+                        LinhasRecebidas por dia (através de um gráfico de linha);INFULL x PARCIAL (quantidade, através de um gráfico do tipo donut);INFULL x PARCIAL (linhas, através de um gráfico do tipo donut).
+                    
+                    Pedidos em operação
+                    
+                    
+                        Pedidos por:Empresa (valor absoluto);Status (medidor);Transportadora (através de um gráfico de pizza);Empresa x dias em aberto (mapa).
+                        Realocações em aberto por área
+                    
+                
+            
+            Indicadores do Senior TMS (Transportador)
+                
+                    Operacional
+                    
+                    
+                        Board 01: Coletas realizadas: coletas realizadas no dia de hoje;Coletas não realizadas: todas as coletas em aberto;Entregas realizada: entregas realizadas no dia de hoje;Entregas não realizadas: todas as entregas em aberto;Situação das coletas e entregas: consolidadado das entregas não realizadas, entregas realizada no dia de hoje, coletas realizada no dia de hoje e todas as coletas em abertor;Volumetria da transportadora: quantidade de CT-es emitidos de todas as filiais no dia de hoje agrupados por hora;Eficiência de entrega: entregas dentro e fora do prazo de hoje.
+                    
+                    
+                        Board 02: Ocorrências de entrega por tipo: distribuição das ocorrências entre os diferentes tipos de entrega (devolvida, entregue, entregue com resalva), identificando quais tipos ocorrem com mais ou menos frequência;Correlação entre entregas e boletins de ocorrência: quantidade de entregas realizadas com e sem boletins de ocorrência hoje;Relação entre entregas e devoluções: relação entre o número de entregas e devoluções no dia de hoje;Volumetria de emissões de conhecimentos de transporte: emissão de conhecimentos acumulado por empresa por hora.
+                    
+                    Comercial
+                    
+                    
+                        Board 01:Valor do ticket médio por CT-e: média da soma do valor líquido de todos os CT-es dos últimos 365 dias - indicador de desempenho, na medida em que mostra o quanto a sua equipe comercial tem conseguido fechar negócios mais vantajosos para a empresa;Valor do ticket médio por CT-e por cliente: média da soma do valor líquido de todos os CT-es dos últimos 365 dias agrupados por cliente, com o limite de 10 clientes - indicador de desempenho, na medida em que mostra o quais clientes tem maior valor monetário por operação;Quantidade de clientes ativos: quantidade de clientes distintos que fizeram operação nos últimos 365 dias ano agrupado por mês - ajuda a medir o sucesso da empresa em manter clientes satisfeitos e fidelizados ao longo o tempo;Movimentação quantidade de transportes (20 principais clientes): identifica os clientes com maior volumetria de transportes nos últimos 2 anos;Movimentação peso cubado (20 principais clientes): identifica os clientes com maior volume transportado com base em documentos de transporte nos últimos 2 anos;Faturamento (20 principais clientes): identifica os clientes com maior valor de compra com base em documentos de transporte nos últimos 30 dias.
+                        Board 02:Divergência entre preço de cotaç

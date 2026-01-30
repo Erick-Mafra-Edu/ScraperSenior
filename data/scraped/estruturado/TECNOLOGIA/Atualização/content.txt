@@ -1,0 +1,279 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#checklists/bi/etl-x-microstrategy/atualizacao.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CChecklists%7CPerformance%2520Corporativa%7CBI%7CETL%2520X%2520%252B%2520MicroStrategy%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Checklists > Performance Corporativa > BI > ETL X + MicroStrategy > Atualização
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Checklist de Atualização
+            Para que a atualização do sistema ETL X on-premises (ETL X + MicroStrategy)   ocorra corretamente, sugerimos verificar alguns itens antes de iniciar este processo. 
+            Para facilitar, imprima esse documento em formato PDF, no leiaute "Paisagem", a partir do ícone de impressão visível no início desta página.
+            
+                Importante
+                
+                Antes de iniciar este processo, verifique se os requisitos de infraestrutura para utilização do ETL X estão sendo atendidos.
+            
+            Descrição dos itens
+            
+            
+                Requisito: itens necessários para ocorrer atualização do ETL X;
+                Necessidade: requisito obrigatório ou opcional para realizar atualização;
+                Evidência: evidências que comprovam que o requisito está sendo atendido para que a atualização ocorra corretamente;
+                Responsável: preenchimento com o nome do responsável por verificar se o requisito está sendo atendido;
+                Data: preenchimento com a data em que o requisito foi avaliado.
+            
+            Pré-requisitos
+            
+                
+                
+                
+                
+                
+                
+                
+                    
+                         
+                        Requisito
+                        Necessidade
+                        Evidência
+                        Responsável
+                        dd/mm/aaaa
+                    
+                    
+                        Banco de Dados
+                        Backup de dados do ETL
+                        Obrigatório
+                        Logs do procedimento
+                         
+                         
+                    
+                    
+                        Backup da base de dados do MicroStrategy
+                        Logs do procedimento
+                         
+                         
+                    
+                    
+                        Usuários de banco de dados do ETL
+                        E-mail
+                         
+                         
+                    
+                    
+                        Dados de conexão com a base do MicroStrategy
+                        E-mail
+                         
+                         
+                    
+                    
+                        Licenças
+                        Senior
+                        Obrigatório
+                        E-mail enviado pela Senior
+                         
+                         
+                    
+                    
+                        MicroStrategy
+                        Ao atualizar de uma versão inferior a 5.8.11.20, é obrigatória a solicitação antecipada da licença da MicroStrategy 2019 Update 2 para a Gestão de Faturamento - Pedidos da Senior: pedidos@senior.com.br. Essa necessidade é em virtude da atualização do sistema, pois o MicroStrategy é atualizado automaticamente. Para atualizações realizadas de uma versão superior a 5.8.11.20 para a versão atual, não é necessária a solicitação desta licença, pois ela é compatível com a que está em uso
+                        E-mail enviado pela MicroStrategy (sem intermediários) 
+                         
+                         
+                    
+                    
+                        Chave ESRI
+                        
+                      Apenas é obrigatório se desejar utilizar os mapas geográficos para análise por regiões. Caso não desejar, não há necessidade da chave ESRI
+                        E-mail enviado pela Senior
+                         
+                         
+                    
+                    
+                        Recursos
+                        
+                            Java Open JDK 11 x64
+                        
+                        Obrigatório
+                        Captura de tela da execução de "java -version" no command do Windows
+                         
+                         
+                    
+                
+            
+            
+                Importante
+                
+                A partir da versão 8, o Oracle JDK teve sua distribuição alterada e passou a ser pago. Para clientes que não possuam contrato com a Oracle possibilitando o uso do Oracle Java JDK, a Senior recomenda a utilização da distribuição Open JDK, disponível neste link.
+            
+            Pré-atualização
+            
+                
+                
+                
+                
+                
+                
+                
+                    
+                         
+                        Requisito
+                        Necessidade
+                        Evidência
+                        Responsável
+                        dd/mm/aaaa
+                    
+                    
+                        Central de Configurações Senior
+                        
+                        Atualizar senha para o usuário "administrator" conforme o tópico Pós-instalação MicroStrategy, publicado no Manual de Instalação
+                        Obrigatório
+                        Captura da tela Central de Configurações Senior
+                         
+                         
+                    
+                    
+                        Definir chave ESRI conforme tópico Atualização do BI, publicado no Manual de Instalação
+                        
+                      Apenas é obrigatório se desejar utilizar os mapas geográficos para análise por regiões. Caso não desejar, não há necessidade da chave ESRI
+                        Captura da tela Central de Configurações Senior
+                         
+                         
+                    
+                    
+                         Instalar o Java Open JDK 11 x64 e definir o Java home em Sistemas > Performance Corporativa > BI ETL e o JAVA_HOME nas variáveis de ambiente no Windows. 
+                        Obrigatório
+                        Captura de tela da execução de java -version no command do Windows
+                         
+                         
+                    
+                    
+                        Usuário
+                        Usuário administrador do servidor
+                        Obrigatório
+                        Captura de tela da gestão de usuário do Windows
+                         
+                         
+                    
+                
+            
+            Atualização
+            
+                
+                
+                
+                
+                
+                
+                
+                    
+                         
+                        Requisito
+                        Necessidade
+                        Evidência
+                        Responsável
+                        dd/mm/aaaa
+                    
+                    
+                        BI
+                        Em Seleção de produtos, assinalar todos os produtos
+                        Obrigatório
+                        Captura de tela do atualizador
+                         
+                         
+                    
+                
+            
+            Pós-atualização
+            
+                
+                
+                
+                
+                
+                
+                
+                    
+                         
+                        Requisito
+                        Necessidade
+                        Evidência
+                        Responsável
+                        dd/mm/aaaa
+                    
+                    
+                        DMZ
+                        Efetuar deploy de WARs MicroStrategy em DMZ
+                        Requisito não obrigatório. Realizar conforme necessidade
+                        Evidências iguais aos das pós-instalações Web e Mobile, na mesma máquina
+                         
+                         
+                    
+                    
+                        Web
+                        Configurar conforme o tópico Configurações web, publicado no Manual de Instalação
+                        Obrigatório
+                        Captura das telas conforme publicadas no tópico Configurações web, no Manual de Instalação
+                         
+                         
+                    
+                    
+                        Mobile
+                        Configurar conforme o tópico Configurações Mobile, publicado no Manual de Instalação
+                        Requisito não obrigatório. Realizar conforme necessidade
+                        Captura das telas conforme publicadas no tópico Configurações Mobile, no Manual de Instalação
+                         
+                         
+                    
+                    
+                        Parâme

@@ -1,0 +1,177 @@
+# 
+
+URL: https://documentacao.senior.com.br/portal/6.10.1/#resolucao-de-problemas.htm%3FTocPath%3DPortal%2520Corporativo%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____10
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOPortal Corporativo - versão 6.10.1
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Portal Corporativo - Manual do Usuário > Resolução de Problemas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Resolução de problemas
+            Atribuição de cookies que contenham um Top Level Domain para integração com Web 5.0
+                
+                    Os navegadores possuem uma restrição de segurança quanto a utilização de um domínio que contenha um Top Level Domain - TLD (domínio de topo), por exemplo: senior.dyndns.org ou cidade.sc.gov.br. O motivo ocorre devido somente um cookie poder ser atribuído a um Second-level Domain - SLD (domínio de segundo nível). 
+                    Por isto, neste caso é necessário editar duas chaves no portal-ext.properties para o funcionamento correto da integração do Portal Corporativo com a Web 5.0 e assim ser atribuído  o cookie a um SLD.
+                    Edite as seguintes chaves ao arquivo <domain_dir>\applications\liferay-portal-6.1.1\WEB-INF\classes\portal-ext.properties:
+                    
+                        # Defina esta propriedade para definir o domínio dos cookies (exemplo senior.dyndns.org ou cidade.sc.gov.br)
+                        
+                        session.cookie.domain=cidade.sc.gov.br
+                        # Defina o hostname que será usado quando o portlet gerar as URLs (exemplo senior.dyndns.org ou portal.cidade.sc.gov.br)
+                        
+                        web.server.host=portal.cidade.sc.gov.br
+                    
+                    Substitua cidade.sc.gov.br pelo domínio utilizado em comum com a Web 5.0 e portal.cidade.sc.gov.br pelo domínio do Portal.
+                
+            
+            Galeria indisponível após upload 
+	 de imagens
+                
+                    Caso as imagens estejam indisponíveis após upload 
+	 de imagens ou as miniaturas  aparecerem em tamanho gigante ao serem consultadas, para o domínio do sistema, execute o comando "update 
+ portletpreferences set preferences = '<portlet-preferences />' where 
+ preferences like '%sc.image.max.size%'" na base 
+ de dados e reinicie o Liferay. Não faça o update com o GlassFish do sistema iniciado.
+                    Para que esse problema não ocorra novamente, 
+ a tela Arquivos de Upload do painel de administração de usuário 
+ não deve ser utilizada. Caso algum parâmetro dessa tela precise ser parametrizado, 
+ use o portal-ext.properties.  
+                
+            
+            Lentidão após instalação
+                
+                    Após a implantação do sistema e a cada vez que é reiniciado, ocorre de demorar alguns segundos a mais do que o normal para abrir algumas páginas na primeira vez que elas são acessadas.
+                     Essa demora é justificada pela natureza dinâmica 
+	 das páginas, que são geradas em tempo de execução. Ou seja, depois de acessada 
+	 pela primeira vez (independentemente do usuário que acessou) essa 
+	 página ficará armazenada em cache e deverá ser renderizada automaticamente 
+	 para  os demais usuários, não sendo normal que o procedimento 
+	 de Pageview tenha overheads.
+                
+            
+            Mensagem de navegador não suportado ao acessar o Gestão do Ponto a partir do Portal Corporativo
+                
+                    Ao acessar o Gestão do Ponto a partir do Portal Corporativo utilizando o navegador Internet Explorer, a mensagem "O seu navegador não é suportado. Alguns componentes visuais podem apresentar problemas pode ser apresentada". Isso acontece devido a uma incompatibilidade entre os sistemas com o tema padrão do Portal Corporativo, quando utilizado este navegador.
+                    Para esses casos, existe o tema Portal Base 6.1 (Gestão do Ponto). Deve-se alterar o tema padrão para este, para que a mensagem de incompatibilidade não apareça.
+                    
+                        Observação
+                        
+                        O tema Portal Base 6.1 (Gestão do Ponto) não é compatível com a forma de acesso BrowserAccess.
+                    
+                
+            
+            Permissões não são aplicadas nos portlets nativos da implantação
+                
+                    Para que as permissões sejam aplicadas aos portlets nativos é necessário removê-los e depois adicioná-los novamente.
+                    
+                        Importante
+                        
+                        As configurações aplicadas ao portlet serão perdidas ao removê-lo. Portanto é recomendável anotá-las antes desta exclusão.
+                    
+                
+            
+            Recurso de Staging não é suportado pelo Portal Corporativo
+                
+                    O recurso de Staging, responsável por salvar alterações ou novos conteúdos sem que fiquem efetivamente disponíveis para visualização dos usuários no Portal Corporativo, não é homologado pelo sistema.
+                    Sua utilização pode apresentar problemas, tais como erros na exibição de caracteres especiais e incompatibilidade com a página inicial padrão do Portal Corporativo. Por essa razão, esta funcionalidade não possui suporte e seu uso não é recomendado.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,211 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/descontos.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____19
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Descontos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Conceder Descontos no PDV
+                Conceito
+                Concede descontos diretamente nas operações do PDV, caso a venda em atendimento não possua desconto informado através de pedido ou pré-venda.
+                 Utilização
+                O desconto na operação do PDV pode ser por item (percentual ou valor fixo) ou pelo valor total da venda (percentual ou valor fixo).
+                Processo    
+                Siga os seguintes passos para conceder descontos diretamente pelo PDV.
+                Desconto no Item
+                O botão Desconto deverá estar configurado e disponível na tela de atendimento do caixa, ou seja, antes de selecionar o botão de subtotal. 
+                Para conceder desconto por item, o atendimento deverá conter no mínimo dois itens; caso contrário, o desconto deverá ser no total da venda.
+                
+                    Selecione a opção Desconto;
+                
+                Exemplo:
+                    
+                         
+                    
+                
+                
+                    O sistema exibirá uma tela para que o usuário selecione o item a conceder desconto, através das teclas de navegação do teclado. Após a seleção, tecle Enter;
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Os campos da parte inferior da tela serão carregados com o respectivo valor do item escolhido. Informe o desconto em % (Percentual), Valor do desconto (R$) ou insira o valor a pagar pelo item diretamente no campo Valor Líquido;
+                
+                Desconto Percentual
+                    
+                        10% de desconto sob o item.
+                        
+                            
+                        
+                    
+                
+                Desconto Valor
+                    
+                        R$ 50,00 de desconto sob o item.
+                        
+                            
+                        
+                    
+                
+                Valor Líquido
+                    
+                        Será informado R$ 50,00 no campo "Valor Líquido". Esse será o valor final que o cliente deve pagar pelo item.
+                        
+                            
+                        
+                    
+                
+                 
+                
+                    Após informado o desconto, selecione o motivo do desconto e selecione a opção Gravar. O desconto ficará visível na tela do caixa;
+                
+                Exemplo
+                    
+                        
+                             
+                    
+                
+                
+                    Importante:
+                    
+                    Caso seja necessário conceder um desconto para um item que já possui um acréscimo, é possível realizá-lo somente através do desconto no subtotal, pois há uma limitação das impressoras fiscais onde não é possível haver um acréscimo e um desconto para o mesmo item.
+                
+                Desconto no subtotal da Venda
+                
+                    Selecione a opção Subtotal;
+                    Selecione a opção Desconto;
+                    Da mesma forma abordada em desconto do item, o sistema exibirá a tela para que o usuário informe o valor do desconto no total da venda através dos campos % percentual, Valor do desconto ou informando o valor pretendido a pagar no campo Valor líquido;
+                
+                Exemplo
+                    
+                        10% de desconto no valor total da venda:
+                        
+                            
+                        
+                    
+                
+                
+                    Escolha o motivo, pelo qual se está concedendo o desconto e utilize o botão Gravar;
+                    Caso o desconto esteja fora do limite permitido para o usuário, o sistema solicitará senha master para liberar o desconto;
+                
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    
+                        Nota 
+                        Os motivos disponíveis nas telas de descontos são cadastrados no sistema ERP, em Cadastros de Motivos.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

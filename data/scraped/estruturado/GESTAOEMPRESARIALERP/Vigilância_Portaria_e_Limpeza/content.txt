@@ -1,0 +1,129 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/vigilanciaelimpeza/vigilanciaelimpeza.htm%3FTocPath%3DSegmentos%7C_____12
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Vigilância, Portaria e Limpeza
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Vigilância, Portaria e Limpeza
+            O Gestão Empresarial | ERP pode ser integrado a soluções de Vigilância, Portaria e Limpeza através de web services.
+            O que você deseja fazer:
+            Parametrizar a integração
+                
+                    
+                        Na tela de Sistemas Integrados (F000SIS), cadastre um sistema do tipo Vigilância, Portaria e Limpeza, informando:Código: Número sequencial de sua escolha;Descrição: Descreva a integração, podendo ser "Vigilância e Limpeza" ou conforme sua escolha;Sigla: VIGLPZ - ou outra de sua escolha;Tipo: 6 - "Vigilância e Limpeza";Situação: A - "Ativo".Após clicar em Inserir, pressione Tab para ativar o botão  Informações.
+                        A tela Configuração de Tipos de Informação - F000SXT é aberta. Nela é possível selecionar as informações do Gestão Empresarial | ERP que devem ser integradas à solução de Vigilância, Portaria e Limpeza pela primeira vez, para iniciar a integração: Centro de CustosFornecedorMovimento de estoqueOrigem do ProdutoFamíliasPedidosProdutosServiçosTítulos Contas a PagarOrdem de CompraBemPara cada tipo de informação a integrar:No campo Filial, informe o código da filial que integra com Vigilância, Portaria e Limpeza. Se o campo for deixado em branco, são consideradas todas as filiais da empresa logada.No campo Informação, selecione o que deseja integrar com Vigilância, Portaria e Limpeza.Clique em Mostrar.Marque o registro na coluna Sel.Altere a Situação para A ("Ativo") - clique em "somente para o item atual" na mensagem de confirmação que é exibida - e clique em Processar.Realize novamente os passos descritos a partir do item a ao e para cada tipos de informação que deve  integrar. Clique em Sair.
+                        Acesse a tela Parâmetros da integração (F191CPT) e configure os parâmetros para uso dos web services de integração, para o Grupo Vigilância e Limpeza.ExemploNo caso de pedidos, informe a transação que deve ser utilizada na integração de pedidos ao ser feita a chamada do web service.
+                        Opcionalmente, acesse a tela F000CIV - Carga Inicial para enviar as informações para o sistema de Vigilância, Portaria e Limpeza pela primeira vez:Informe a Filial que foi configurada nas parametrizações da integração. No campo Sistema, selecione "Vigilância e Limpeza" ou equivalente que tenha cadastrado.Clique em Mostrar.No painel Integrações, deixe selecionados os itens que devem ser integrados.Clique em Processar.Clique em OK na mensagem "Processado com sucesso".O ERP valida se todos os campos necessários para a integração estão devidamente preenchidos. Se houver informações faltantes ou erradas em algum cadastro, esses cadastros não geram pendências para envio à solução de Vigilância, Portaria e Limpeza. Os cadastros com problemas são mostrados na parte inferior da tela, no painel Detalhes.
+                        Libere os seguintes web services para integração para o Sistema de Vigilância, Portaria e Limpeza, através da tela de Configuração de web services - F000CWS:InformaçãoWeb servicePlano Financeirocom.senior.g5.co.mfi.pla.planofinanceiroServiçocom.senior.g5.co.cad.servicosParâmetros Integraçãocom.senior.g5.co.cad.parametrosintegracaoFamíliascom.senior.g5.co.cad.familiasOrigem Produtocom.senior.g5.co.ger.cad.produto.origemProdutoPedidoscom.senior.g5.co.mcm.ven.pedidosProdutoscom.senior.g5.co.cad.produto - porta ExportarContas a pagarcom.senior.g5.co.prj.contaspagar - porta ExportarCentro de custocom.senior.g5.co.ger.cad.centrocusto - porta ExportarNotaEstes web services foram construídos com uma estrutura que necessita liberação. Para os demais web services, construídos antes desta versão, não é necessário executar este processo.			
+                    
+                
+            
+            Integrar Cadastros
+                
+                    Os seguintes cadastros são disponibilizados para integração com o sistema de Vigilância, Portaria e Limpeza:
+                    
+                        Centro de Custo
+                        Plano Financeiro
+                        Fornecedor
+                        Origem do Produto
+                        Família
+                        Produto
+                        Serviço
+                        Bens
+                    
+                    Diferentes ações relativas a estes cadastros podem ser originadas tanto na solução de Vigilância, Portaria e Limpeza como no Gestão Empresarial | ERP e todas são integradas através de web services.
+                    Cadastro originado na solução de Vigilância, Portaria e Limpeza: Cliente
+                    O sistema de Vigilância, Portaria e Limpeza:
+                    
+                        Efetua a ação que é integrada relacionada ao cadastro, que pode ser inclusão, alteração ou exclusão.
+                        Faz a chamada do web service e então inclui, altera ou exclui o registro:AçãoWeb serviceInclusão e Alteraçãocom.senior.g5.co.ger.cad.clientes, porta GravarClientesExclusãocom.senior.g5.co.ger.cad.clientes, porta ExcluirClientes ObservaçãoAlém do cadastro de clientes existem processos que tem origem na solução de Vigilância, Portaria e Limpeza e integram com o ERP, como por exemplo Requisição de materiais, ordem de compra, pedidos e títulos de contas a pagar.
+                    
+                    Cadastros/Processos oriundos do Gestão Empresarial | ERP
+                    Quando as ações relacionadas aos cadastros são provenientes do ERP:
+                    
+                        O sistema de Vigilância, Portaria e Limpeza verifica se há pendências de integração através do serviço com.senior.g5.co.int.geral.exportacao, porta ObterPendencias. Caso haja pendências retornadas com um código de integração referente a um destes cadastros, significa que há algum tipo de cadastro para ser integrado:
+                            
+                            Tipo de CadastroCódigoCentro de Custo158 "S".Origem do produto157Família88Produto05Serviço08Bens15518
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        Fornecedor - inclusive daqueles obtidos através de integração com o Gestão de Pessoas | HCM, desde que na tela de Parâmetros da Integração (F191CPT) o Subgrupo "Fornecedor" do Grupo "Vigilância e Limpeza" esteja com o Valor52
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                
+                            
+                        
+                        Após obter as pendências a solução de Vigilância, Portaria e Limpeza integra as pendências de cadastro através do web service correspondente a cada tipo de ação:Tipo de CadastroAçãoWeb serviceCentro de CustoInclusão, Alteração e Exclusãocom.senior.g5.co.ger.cad.centrocusto, porta ExportarPlano Financeirocom.senior.g5.co.mfi.pla.planofinanceiro, porta ConsultarGeralFornecedor - inclusive daqueles obtidos através de integração com o Gestão de Pessoas | HCM, desde que na tela de Parâmetros da Integração (F191CPT) o Subgrupo "Fornecedor" do Grupo "Vigilância e Limpeza" esteja com o Valor "S".Exportaçãocom.senior.g5.co.cad.fornecedor, porta ExportarInclusão  com.senior.g5.co.ger.cad.fornecedores, porta GravarFornecedores (para parceiros)com.senior.g5.co.int.vetorh.fornecedores, porta IntegrarFornecedores (para integração com o Gestão de Pessoas | HCM)Alteraçãocom.senior.g5.co.ger.cad.fornecedores, porta GravarFornecedores (para parceiros)com.senior.g5.co.int.vetorh.fornecedores, porta IntegrarFornecedores (para integração com o Gestão de Pessoas | HCM)Exclusãocom.senior.g5.co.ger.cad.fornecedores, porta ExcluirFornecedoresOrigem do produtoExportaçãocom.senior.g5.co.ger.cad.produto.origemProduto, porta ExportarFamíliaInclusão, Alteração e Exclusão com.senior.g5.co.cad.familias, porta ExportarProdutoExportaçãocom.senior.g5.co.cad.produtos, porta ExportarServiçoExportação com.senior.g5.co.cad.servicos, porta ExportarBensExportaçãocom.senior.g5.co.mct.pat.bem, porta ExportarPedidosExportaçãocom.senior.g5.co.mcm.ven.pedidos
+                    
+                
+            
+            Integrar Títulos de Contas a Pagar
+                
+                    A integração de Títulos de Contas a Pagar funciona assim:
+                    
+                        A solução de Vigilância, Portaria e Limpeza efetua a ação que é integrada

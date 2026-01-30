@@ -1,0 +1,190 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#introducao/primeiros-passos.htm%3FTocPath%3D_____3
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Primeiros passos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+             Primeiros passos
+            Inicialmente  vamos apresentar as etapas para acesso, seguido de um passo-a-passo das principais parametrizações para que a implantação do sistema ocorra corretamente.
+            Primeiro acesso?
+                
+                    Para utilizar a solução pela primeira vez, você precisa se cadastrar na nossa plataforma. Porém, somente um administrador da plataforma Senior X pode acessar as configurações e criar um login para cada funcionário que depois será cadastrado para usar o Gestão de Fretes. Esta configuração  está condicionada ao consultor (no momento do projeto) ou através de abertura de chamado através da nossa página de suporte (após o projeto).
+                    O Papel do administrador é definido pela organização no primeiro acesso, mas posteriormente outros administradores podem ser adicionados.
+                
+            
+            Como faço login na Empresa/Filial?
+                
+                    Aqui você consegue selecionar a filial de atuação.
+                     Acesse:XPlatform> Gestão Logística > Gestão de Fretes>  Cadastro > Gerais > Filial Login
+                    
+                        Ao entrar é exibido uma lista com as filiais cadastradas;
+                        Basta escolher a filial de interesse;
+                        Clique em Selecionar Empresa/Filial.
+                    
+                    Vale lembrar
+                        
+                        Somente os dados da filial selecionada serão carregados.
+                
+            
+            A partir de agora, vamos iniciar as parametrizações do Gestão de Fretes|FIS.
+            Os cadastros seguintes são necessários para realizar as principais funções do sistema.
+             Cadastre a empresa e suas filiais
+                
+                    Nesta tela é possivel configurar uma empresa como Matriz, ou relacionar a qual matriz pertence a empresa filial.
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes>  Cadastro > Gerais > Cadastro de Empresa > use botão, Cadastrar
+                    
+                        Cadastre as empresas necessárias informando apenas o nome e o código;
+                        Selecione a empresa cadastrada, utilize o botão Filiais, para cadastrar as respectivas filiais;
+                        Preencha os campos conforme à necessidade;
+                        Clique em Salvar.
+                        Opcionalmente, após salvar o cadastro é possivel repetir as informações de uma "filial origem" para outras filiais, para isso, use o botão Replicar Parâmetros
+                    
+                
+            
+              Vincule o Funcionário X Empresa
+                
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes> Cadastro > Gerais > Cadastro de Funcionário >use botão, Cadastrar
+                    
+                        Informe os campos;
+                        Clique em Salvar;
+                    
+                    Observação
+                        
+                        O preenchimento dos campos Login Plataforma X e Nome Plataforma X -  é de acordo com o cadastro na XPlatform
+                    
+                        Para cada funcionário, use o botão Vincular Filial para associar  às  respectivas filiais de acesso;Selecione o funcionário;Use botão CadastrarInforme os campos;Clique em Salvar.
+                    
+                
+            
+            Configuração dos Parâmetros Gerais
+                
+                    A configuração destes parâmetros é necessária , pois  incluem as principais regras de utilização do sistema, a forma de cálculo e definições de integração referentes à empresa.
+                    
+                         Acesse:  XPlatform> Gestão Logística Gestão de Fretes > Definições > Gerais > Parâmetros Gerais.
+                        Inclua as opções conforme à necessidade, o ideal é que estas configurações sejam realizadas com apoio de um analista ou suporte da Senior, visto que interferem em vários processos no sistema. 
+                    
+                    
+                        No botão Editar é possível alterar os parâmetros já cadastrados.
+                    
+                    Segue lista com a descrição dos parâmetros que podem ser alterados.
+                    Dias Operacional
+                    
+                      Compreende o tempo que a operação leva para preparar o pedido e finalizar a expedição.
+                    Por exemplo:
+                    
+                        
+                        
+                        
+                        
+                            
+                                Dias expedição
+                                Dias transportadora
+                                Quantidade dias operacional
+                            
+                            
+                                3
+                                3
+                                6
+                            
+                        
+                    
+                    Cálculo da Tabela de Frete
+                    
+                    Recalcular tabela origem: no sistema que é originado o pedido, existe uma tabela de frete definida para cada transportadora, permitindo que os valores de frete sejam calculados.
+                    
+                        Se esta opção estiver como SIM, o sistema Gestão de Fretes  recalcula a tabela origem definida, possibilitando o novo cálculo do frete.
+                        
+                            Se esta opção estiver como NÃO, o sistema Gestão de Fretes fixa os valores associados à tabela  de frete origem.
+                        
+                    
+                     
+                    Permite troca origem: no sistema que é originado o pedido, existe uma transportadora definida para cada pedido, permitindo que os valores de frete sejam calculados.
+                    
+                        Se esta opção estiver como SIM, o sistema Gestão de Fretes  recalcula a transportadora origem definida, possibilitando o novo cálculo do frete.
+                        
+                            Se esta opção estiver como NÃO, o sistema Gestão de Fretes calcula o frete para a transportadora informada e não havendo tabela de frete que atenda o pedido o mesmo será represado.
+                        
+                    
+                    Descrição Tipo Cálculo 
+                    
+                    Para realizar o ranking da tabela de frete, é necessário informar uma das seguintes opções:
+                    
+                        Cálculo normal valor (CNV): esta opção  toma como base a transportadora que atenda o frete com menor valor.
+                        Cálculo normal por prazo (CNP): esta opção seleciona primeiramente a transportadora que atenda o frete em menor prazo.
+                        Grupo transportadora valor (GTV): esta opção seleciona primeiramente a transportadora que atenda o frete com menor valor, dentro de um grupo de transportadoras.
+                    
+                    
+                        Grupo transportadora prazo (GTP): esta opção seleciona primeiramente a transportadora que atenda o frete em menor prazo, dentro de um grupo de transportadoras.
+                    
+                    Interface pré-cálculo
+                    
+                    
+                        Tipo Interface
+                            
+                                Nome do Arquivo
+                                Tabela Automático
+                                Tabela Manual
+                            
+                        
+                    
+                    Inclui FISUID
+                    
+                    É a identificação única dos registros da tabela de frete. Altere de acordo com a opção desejada:
+                    
+                         NÃO
+                        SIM
+                    
+                    Tipo Interface
+                    
+                    
+                        Webservices: define que as integrações serão realizadas por Webservice.
+                        Banco a Banco: define que as integrações serão realizadas por troca de informações diretamente de um banco de dados para o outro.
+                        Pasta local para Download (X): permite selecionar um local no qual é armazenado os arquivos exportados.
+                    
+                    Tipo agenda
+                    
+                    Define a forma que a agenda pode ser importada. Altere de acordo com a opção desejada.
+                    
+                        Automática
+                        Manual 
+                    
+                    A Partir de ...(Agenda)
+                    
+                    Permite escolher a quantidade de arquivos para iniciar uma importação.
+                    Que contenha ...(Agenda)
+                    
+                    Permite escolher a quantidade de registros dentro de um arquivo para iniciar uma importação.
+                    Usuário da alteração e data da alteração
+                    
+                    Permite verificar quais usuários realizaram alguma modificação e a data da alteração.
+                    Integração Silt
+                    
+                    
+                        A flag Integração Silt deve estar ativa;
+                        Diretórios de recebimento, OK e Bad devem estar parametrizados nos seus respectivos caminhos;
+                        Um agente EDI monitora o diretório e faz o processo de integraçã

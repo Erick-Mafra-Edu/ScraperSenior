@@ -1,0 +1,176 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/dashboard.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7C_____8
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Dashboard
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Dashboard 
+                Conceito
+                O dashboard é uma plataforma que funciona como um painel de acompanhamento consolidado e permite que em tempo real, de forma visual e prática se obtenha por meio de relatórios e gráficos informações gerenciais da loja.
+                Processo   
+                
+                    
+                
+                O dashboard pode ser acessado de três formas:
+                
+                    diretamente através do sistema de Retaguarda, opção Dashboard.
+                    via menu Diversos, opção Dashboard
+                    manualmente, digitando o caminho: endereço da máquina:porta/varejodashboard. Por exemplo: localhost:8282/varejodashboard
+                
+                 
+                
+                    Observações
+                    
+                    
+                        Para adequado funcionamento é extremamente recomendando que o Dashboard seja utilizado no Google Chrome.
+                    
+                
+                Relatórios
+                Veja o detalhamento de cada relatório com as respectivas funcionalidades. 
+                Acompanhamento de vendas por dia 
+                Permite acompanhar vendas, conhecer informações estratégicas do negócio e realizar o acompanhamento da evolução. Além disso: 
+                
+                    Visualizar também dados (Faturamento Líquido, Atendimentos, Qtd. Vendas, % Conversão, Ticket Médio, Volume por venda, Faturamento médio por item, Itens vendidos, Itens Devolvidos, Projeção de Vendas, Meta por Período, % Alcance, entre outros) por dia de um período (com intervalo máximo de 31 dias). Por padrão, são exibidos os dados do mês atual.
+                    Comparar os dados de um período com outro período.
+                    Acompanhar a evolução, comparando um período com outro período.
+                    Visualizar os dados em modo de gráfico de linhas, inclusive comparando períodos.
+                    Filtrar por Grupo Produto, Agrup. Comercial, Coleção, Produto e Vendedor.
+                
+                Acompanhamento de vendas por vendedor
+                Permite que seja realizado o acompanhamento dos vendedores e análise de suas metas. Além disso: 
+                
+                    Visualizar dados (Faturamento Líquido, Atendimentos, Qtd. Vendas, % Conversão, Ticket Médio, Volume por venda, Faturamento médio por item e Itens vendidos) por vendedor referente a um período (com intervalo máximo de 31 dias). É possível escolher o período que se deseja visualizar. Por padrão, serão exibidos os dados do mês atual.
+                    Visualizar os dados em modo de gráfico de colunas, permitindo comparar os dados entre os vendedores.
+                    Filtrar por Grupo Produto, Agrup. Comercial, Coleção, Produto e Vendedor.
+                
+                Acompanhamento de vendas por produtos 
+                Permite  realizar o acompanhamento do giro dos produtos. Além disso:
+                
+                    Saber os produtos que são mais e menos vendidos e conhecer mais detalhes a respeito da venda deles.
+                    Visualizar dados (Faturamento Líquido, Atendimentos, Qtd. Vendas, % Conversão, Ticket Médio, Volume por venda, Faturamento médio por item, Itens vendidos, Coleções) por produto, referente a um período (com intervalo máximo de 31 dias). É possível escolher o período que deseja visualizar. Por padrão, serão exibidos os dados do mês atual. Pode-se filtrar também os dados por Grupo de produtos, por vendedor e por agrupamento comercial.
+                    A coluna Giro de Estoque, trás as informações do giro de estoque de cada produto durante o período analisado. Ela é alimentada através do seguinte cálculo: Giro de estoque = quantidade de vendas do período / média de estoque do período.
+                    Filtrar por Grupo Produto, Agrup. Comercial, Coleção, Produto e Vendedor.
+                
+                
+                    Média de estoque:
+                    
+                
+                
+                    Soma-se a quantidade em estoque do produto no início do período analisado com a quantidade em estoque do produto no final do período analisado e divide por dois.
+                
+                
+                    Exemplo: 
+                        
+                            Se no início do período haviam 10 produtos em estoque e no final do período haviam 20 produtos:  10 + 20 ÷ 2 = 15
+                            A média de estoque do produto no período analisado foi de 15 quantidades.
+                        
+                    
+                
+                
+                    Quantidade de vendas:
+                    
+                
+                
+                    Soma-se todas as quantidades vendidas do produto no período analisado.
+                
+                
+                     
+                    Exemplo: 
+                        
+                            Foram realizadas 5 vendas no período, cada uma com 5 quantidades do produto. Totalizando, foram vendidos 25 quantidades do produto.
+                        
+                    
+                
+                
+                    Giro de estoque:
+                    
+                
+                
+                    Com base na média de estoque e na quantidade de vendas, é possível calcular o giro de estoque.
+                
+                
+                     
+                    Exemplo: 
+                        
+                            Quantidade de vendas = 25; Média de estoque 15;
+                            Giro de estoque = 25/15;
+                            Giro de estoque = 1,66
+                        
+                    
+                
+                
+                    Nota
+                        A informação da Coleção só estará disponível se as coleções estiverem integradas com o Retaguarda. As informações sobre o cadastro de coleções podem ser consultadas em: Cadastros > Produtos e Serviços
+                
+                Acompanhamento de vendas por cliente 
+                Permite	saber quais são os melhores clientes, obter dados das vendas por clientes específicos, os clientes que menos compraram e uma série de informações que ajudam a entender os hábitos de compra do cliente. Além disso:
+                
+                    Acompanhar dados (Faturamento Líquido, Atendimentos, Qtd. Vendas, % Conversão, Ticket Médio, Volume por venda, Faturamento médio por item, Itens vendidos) por cliente referente a um período (com intervalo máximo de 31 dias). Pode-se escolher o período que se deseja visualizar. Por padrão, serão exibidos os dados do mês atual.
+                    Filtrar por Cliente, Vendedor, Grupo Produto, Agrup. Comercial, Coleção e Produto.
+                
+                Glossário do Dashboard 
+                O Dashboard conta um glossário que explica como cada coluna é calculada. Ele pode ser acessado através do link Ajuda, logo abaixo dos relatórios de acompanhamento.
+                Exportação e impressão dos dados
+                É possível exportar as informações através dos botões XLS PDF. Desta forma, pode-se enviar as informações para outras pessoas, assim como imprimi-las
+                O formato de planilha é compatível com Microsoft Excel e Libre Office. 
+                
+                    Considerações gerais 
+                    
+                    
+                        Documentos considerados como vendas: Cupons Fiscais, NFC-e e NF-e de simples faturamento, Nota Manual emitida no PDV para contingência. Nota geradas manualmente não são consideradas nas vendas;
+                        Não há possibilidade de atualizar somente o Dashboard, pois ele é embutido no pacote do Retaguarda;
+                         A porta de acesso ao Dashboard poderá ser alterada somente se o Retaguarda for desinstalado e instalado novamente, pois é na instalação do Retaguarda que é definida a porta de acesso ao Dashboard;
+                        Para utilizar o Dashboard em outros computadores além do computador onde ele está instalado, poderá ser necessário efetuar liberações em Firewall e parametrizações avançadas no ambiente, de acordo com restrições aplicadas por políticas de segurança.
+                        O Dashboard não efetua exportação de gráficos;
+                        No relatório de vendas por clientes, não são exibidas informações sobre vendas onde o cliente não foi identificado;
+                        Não são consideradas devoluções e trocas de vendas para os relatórios. Observação: poderá haver divergências de valores entre o que realmente foi vendido e o que é mostrado no Dashboard.
+
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via 

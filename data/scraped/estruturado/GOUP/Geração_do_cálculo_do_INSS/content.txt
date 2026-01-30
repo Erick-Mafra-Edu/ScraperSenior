@@ -1,0 +1,202 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/processo_geracao_calculo_inss.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7CINSS%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Ajuda por telas > Controladoria > Gestão de Tributos > Operações e Cálculos Fiscais > Cálculos > Apuração > F661IA5 > Geração do cálculo do INSS
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Geração do Cálculo do Imposto INSS
+            INSS - Instituto Nacional do Seguro Social.
+            Parametrizações para apuração do cálculo do imposto
+            
+                Cadastre o imposto na tela Cadastro de Imposto (F051IMP) com o tipo 10 - INSS;
+                Cadastre na filial o código do imposto na tela Configuração de Impostos para a Filial (F055PPF) e informe se existem configuração das exceções de cálculo. Para esse imposto não é preciso cadastrar uma tabela de tributação;
+                Na tela  Apuração dos Impostos (F661PAI)
+			informe o código da filial e o período desejado. Clique no botão Mostrar e selecione o código do imposto e Calcular. É exibida a tela de apuração do cálculo do
+		INSS, onde são demonstrados os valores, e para gravar a apuração clique no botão Processar;
+                É permitido informar exceções de base de cálculo para o 
+			imposto do tipo 10 - INSS, porém, não possui tratamento no cálculo para as 
+		mesmas.
+                Na apuração do cálculo do Imposto INSS são demonstrados os valores do imposto 
+INSS Retido que foram creditados e os valores que foram debitados, conforme 
+abaixo:
+            
+            Valores Creditados
+            
+            No campo 1 - INSS Somado NFE
+                
+                    Será gerado a somatória do campo VLRINS(Valor do INSS) das notas de entrada, quando o parâmetro da transação "E001TNS.CPRIFU"(Indicativo de como a transação considera o valor INSS/Funrural do total da nota fiscal entrada) estiver com a opção "+"(Adicionar).
+                
+            
+            No campo 2 - INSS Subtraído NFE
+                
+                    Será gerado a somatória do campo VLRINS (Valor do INSS) das notas de entrada, quando o parâmetro da transação "E001TNS.CPRIFU"(Indicativo de como a transação considera o valor INSS/Funrural do total da nota fiscal entrada) estiver com a opção "-"(Subtrair).
+                
+            
+            No campo 3 - INSS Destacado NFE
+                
+                    Será gerado a somatória do campo VLRINS (Valor do INSS) das notas de entrada, quando o parâmetro da transação "E001TNS.CPRIFU"(Indicativo de como a transação considera o valor INSS/Funrural do total da nota fiscal entrada) estiver com a opção "N"(Nenhum).
+                
+            
+            Valores Debitados
+            
+            No campo 1 - INSS Somado NFS
+                
+                    Será gerado a somatória do campo VLRINS (Valor do INSS) das notas de saída, quando o parâmetro da transação "E001TNS.VENIFU"(Indicativo de como a transação considera o valor INSS/Funrural do total da nota fiscal saída) estiver com a opção "+"(Adicionar).
+                
+            
+            No campo 2 - INSS Subtraído NFS
+                
+                    Será gerado a somatória do campo VLRINS (Valor do INSS) das notas de saída, quando o parâmetro da transação "E001TNS.VENIFU"(Indicativo de como a transação considera o valor INSS/Funrural do total da nota fiscal saída) estiver com a opção "-"(Subtrair).
+                
+            
+            No campo 3 - INSS Destacado NFS
+                
+                    Será gerado a somatória do campo VLRINS (Valor do INSS) das notas de saída, quando o parâmetro da transação "E001TNS.VENIFU"(Indicativo de como a transação considera o valor INSS/Funrural do total da nota fiscal saída) estiver com a opção "N"(Nenhum).
+                
+            
+            Considerações da apuração
+            No cálculo da apuração do INSS  nas ordens de compra e notas fiscais de entrada, o acerto do valor (arredondamento) é realizado conforme parametrização do campo Tipo acerto (arredondamento) previdenciário do Cadastro de Fornecedor (F095CAD).
+            Na grade Exceções dos Impostos de Retenção da tela Configuração de Impostos para a Filial (F055PPF) é possível configurar mais de um imposto com códigos de retenções diferentes. quando possuir exceções de documentos cadastradas, elas influenciarão na composição da origem do cálculo. As exceções de documentos de entradas são deduzidas no imposto da nota fiscal de entrada e as exceções de documentos de saídas são deduzidas no imposto da nota fiscal de saída.
+            A apuração pode ser feita por regime de competência ou regime de caixa. O tipo de regime é parametrizado no campo Regime Apuração da tela Configuração de Impostos para a Filial (F055PPF). Quando informado Regime de Competência o sistema considera o documento fiscal com a retenção do imposto pela data de entrada,  ou pela data de pagamento (conforme o pagamento dos títulos deste documento fiscal), quando selecionada a opção Regime de Caixa.
+            Movimentos de Redução Z cancelados não são considerados.
+            As notas fiscais de entradas e saídas para serem consideradas na apuração precisam
+estar integradas no módulo de Impostos.
+            Os valores referentes a Outros Créditos e Outros Débitos poderão serem 
+preenchidos
+manualmente.
+            O cálculo do INSS é baseado no total dos Créditos menos o total dos Débitos, sendo
+que, quando esse cálculo gera um resultado credor o valor não é gerado em nenhum 
+campo.
+            Os valores dos campos INSS Retido Somado, INSS Retido Subtraído e INSS 
+Retido Destacado da coluna Créditos são valores a recolher, com isso, são 
+considerados juntamente com os débitos.
+            Quando o resultado é devedor o valor é gerado no campo Imposto a Recolher.
+            Para gravar a apuração do cálculo é preciso clicar no botão Processar a apuração do cálculo é gravada, com isso, ao
+sair da tela e acessá-la novamente no mesmo período, os valores da última apuração
+são demonstrados. Caso desejar apurar novamente, apresentará a mensagem:
+            
+                
+                
+            
+            Ao clicar no botão Não a apuração não é concluída, permitindo o
+usuário informar novos valores na apuração. E ao clicar no botão Sim as informações serão gravadas na apuração, onde
+apresentará a mensagem:
+            
+                
+                
+            
+            O processo de apuração pode ser feito quantas vezes forem necessárias.
+            Quando a filial for totalizadora serão somadas todas as apurações da empresa para o mesmo imposto, considerando em todos os campos a descrição Totalização das Filiais. Esse procedimento é repetido para os três impostos, mais o adicional.
+            RPA
+            Na apuração do imposto 10 - INSS o valor do RPA é gerado como Outros Débitos.
+            Os ajustes de outros créditos e outros débitos da apuração são realizados de acordo com a parametrização realizada na tela Parâmetros da Auração do Imposto (F661PAP).
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+              

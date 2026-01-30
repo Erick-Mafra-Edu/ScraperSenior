@@ -1,0 +1,72 @@
+# 
+
+URL: https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/#primeiros-passos.htm%3FTocPath%3D_____5
+
+---
+
+
+        Ver site completo
+        
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORoteirização e Torre de Controle - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Primeiros passos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Primeiros passos - Roteiro de implantação
+            Estes são os passos necessários para configurar a solução de Roteirização e Torre de Controle para que possa ser usada pela primeira vez, servindo como checklist de implantação:
+            Cadastre as Empresas e suas Filiais
+                
+                    Em Logística > Otimização Logística > Roteirização e Monitoramento> Definições > Empresas, clique em Adicionar: Cadastre as empresas, para isto é necessárias informar:  Razão Social  xxxxx e clique em Salvar, o código será gerado automaticamente.Cadastre então a FilialComo cadastrar uma filial:Após realizar o cadastro da Empresa, clique em Vincular Filial. Assim será habilitado os campos para o cadastro, preencha todos os campos obrigatórios (sinalizados com * em vermelho).NotaNo campo Endereço informe corretamente o endereço completo (Logradouro, Número, Bairro, Cidade e Estado) para que este seja localizado com precisão pelo sistema.Pesquise a empresa cadastrada no filtro e para cada empresa, utilize o botão Vincular Filial para informar as respectivas filiais.Após Salvar o cadastro de cada filial, entre em cada uma dela e utilize o botão Definições (em amarelo) para cadastrar os parâmetros necessários para cada filial: No painel Roteirização, configure:As Definições: o que pode ser feito depende do tipo de roteirização ao qual se tem acesso:No campo Tipo de Roteirização: é possível definir entre roteirização automática, manual ou estática. Para mais detalhes, veja os Tipos de roteirização.No campo Seleção de Veículos para Roteirização:Se o tipo de Roteirização estiver automática permite definir:Por veículo: nesse caso, as rotas são geradas com as placas já definidas.Por grupo de veículo: dessa forma, as rotas são geradas sem placa. Nesse caso, embora não se saiba as restrições referentes à placa (como rodízio, por exemplo), é possível definir o veículo só depois de conhecer a rota.Se o tipo de Roteirização estiver manual: o campo vem com a opção Por veículo, sem possibilidade de alterá-la.Se o tipo de Roteirização estiver estática: o campo vem com a opção Por Grupo de Veículo, sem possibilidade de alterá-la.No campo Atendimento Padrão, defina o tempo padrão das atividades na roteirização. Esse valor é usado quando a atividade não possui tempo de atendimento cadastrado.No campo Horário padrão roteirização, informe qual horário deve ser sugerido automaticamente nas roteirizações dessa filial. Por padrão, ele vem preenchido como 07:00.As Restrições: as que podem ser marcadas ou desmarcadas, dependem se a roteirização disponível é automática ou manual:Roteirização automática: é possível definir se deseja ou não:Considerar quantidade mínima de atividadesConsiderar ocupação mínima de veículosDefinir  quais restrições das definições devem ser consideradas:Considerar restrições dos destinosConsiderar restrições das regiõesConsiderar restrições das operaçõesConsiderar restrições dos tipos de cargasConsiderar somente vias pavimentadasRoteirização manual: é possível definir se deseja ou não:Considerar quantidade mínima de atividadesConsiderar ocupação mínima de veículosRoteirização estática: é possível definir se deseja ou nãoConsiderar quantidade mínima de atividadesConsiderar somente vias pavimentadasO Tráfego: defina a sugestão da intensidade de tráfego a ser considerada por padrão em todas as roteirizações, podendo ser: Leve, Moderado, Intenso e Congestionado.No painel Monitoramento:No campo Colocar atividade em alerta, defina com que antecedência antes da atividade ser iniciada deve ser colocada "Em alerta", sinalizando que está se aproximando.No campo Enviar rotas para monitoramento, defina o tempo para que as rotas sejam colocadas em execução automaticamente.No campo Finalizar rota automaticamente após, defina o tempo para que as rotas sejam finalizadas automaticamente após todas as atividades possuírem apontamentos de conclusão.Na opção Permite finalizar rotas sem apontamento, defina se a filial  permite que as rotas sejam finalizadas sem apontamentos.Na opção Iniciar rotas automaticamente, defina se a filial permitirá iniciar as rotas automaticamente.Na opção Finalizar rotas automaticamente, defina se a filial permitirá finalizar as rotas automaticamente.NotaOs agendamentos serão criados de forma automática quando os parâmetros Iniciar rotas automaticamente e Finalizar rotas automaticamente, estiverem marcados.Configuração de Geofence e tempo mínimo de permanência:Agora, na tela Definições da Filial, você encontra a nova seção Definições do Aplicativo, onde é possível configurar parâmetros importantes relacionados ao Geofence.Nesta seção, você pode:Informar o Raio do Geofence: Defina o raio em metros (de 100 a 500 metros), controlado dinamicamente por um slider interativo.Configurar o Tempo Mínimo de Permanência: Determine o tempo necessário em minutos (de 1 a 10 minutos) para permanecer dentro do raio configurado.O mapa exibido mostra o desenho do raio do Geofence, que ajusta seu tamanho automaticamente conforme o usuário interage com o slider. Essa funcionalidade foi desenvolvida para estabelecer limites virtuais em torno das atividades das rotas do aplicativo, ajudando a monitorar o tempo mínimo de permanência dentro do raio de cada atividade.Clique em Salvar.Após salvar as Definições da Filial, entre novamente na filial e clique no botão Regras de Atendimento. Tais regras servem para definir critérios que uma atividade deve atender ao ser cadastrada ou importada para estar apta a ser roteirizada para a Filial, e o que deve ocorrer caso não esteja. De acordo com o atendimento ou não das regras, as atividades são classificadas em:"Aceita", portanto pode ser roteirizada."Em análise", não podendo ser roteirizada."Recusada", então não pode ser roteirizada.Siga estes passos para definir as Regras de Atendimento:Defina o Grau de confiança mínimo. Por padrão, ele vem marcado como Alto.Os graus de confiança estão separados em cinco níveis:NívelCor representativaExplicaçãoManualCinzaEndereço com a coordenada geográfica informada manualmente AltoVerdeEndereço com compatibilidade alta por possuir todos os campos preenchidosMédioAmareloEndereço com compatibilidade média por possuir apenas logradouro e número preenchidosBaixoVermelhoEndereço com compatibilidade baixa por não possuir o logradouro preenchido, provavelmente outros campos tambémNuloPretoEndereço não geocodificadoEm seguida, defina a Ação que deve ocorrer caso a atividade não tenha o Grau de confiança mínimo definido:Ficar "Em análise": a atividade é mostrada no Painel Diário do roteirizador, no quadro Destinos para Geocodificação, para que seja geocodificada e atenda ao grau de confiança mínimo.Ser "Recusada": a atividade não é considerada em nenhuma roteirização.Informe no campo Raio de Distância (km), a distância máxima permitida, em linha reta,  entre o endereço da filial e o endereço da atividade.Depois, defina a Ação que deve ocorrer caso o Raio de Distância (km) definido seja ultrapassado:Ficar "Em análise": a atividade é mostrada no Painel Diário do roteirizador, no quadro Atividades em Análise, para que seja aceita ou reprovada.Ser "Recusada": a atividade não é considerada em nenhuma roteirização.Clique em Salvar.NotaQuando as Regras de Atendimento de uma filial são alteradas, todas as Atividades ainda não roteirizadas da filial podem ter sua classificação alterada automaticamente, de acordo com as regras.Após o cadastro da filial, use o botão Ponto de Apoio para cadastrar diversos endereços de apoio para a filial, desta forma é possivel gerar a roteirização por estes pontos de partida.Atenção!É necessário realizar a Permissões dos Papéis para utilização do sistema. No painel inicial de Consulta de Empresas,  use o botão Permissões para definir papéis, permissões e suas filiais:No painel Permissão, selecione o papel desejado.No painel Permissões, defina se para tal papel:Permite editar roteirizaçãoPermite editar restriçõesPermite editar rotas em execução: nesse caso, o papel pode adicionar atividades de coleta ou serviço em rotas em execução, para roteirização manual e automática.Permite finalizar rotas sem apontamento: para que este campo seja habilitado, é necessário primeiramente ativar esta função nas definições da filial, painel de monitoramento.No painel Filiais, marque aquelas às quais o papel está vinculado.Clique em Salvar.Após realizar o cadastro de uma empresa, algumas vezes existe a necessidade de alterar a razão social. Sendo assim, na tela de Cadastros de Empresa será permitido realizar a manutenção no nome da empresa - Razão Social. Após o ajuste serão apresentados os dados de quem realizou a alteração: usuário, data e hora. 
+                
+            
+            Cadastre Rastreadoras, Veículos e Grupos e Agrupamento Dinâmico
+                
+                    Em Logística > Otimiza

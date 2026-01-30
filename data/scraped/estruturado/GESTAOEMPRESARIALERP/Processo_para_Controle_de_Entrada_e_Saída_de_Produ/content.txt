@@ -1,0 +1,143 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#menu_controladoria/processo-controle-entrada-saida-produto.htm%3FTocPath%3DSegmentos%7CCompliance%7C_____2
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Processo para Controle de Entrada e Saída de Produtos (PEPS/FIFO)
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Processo para Controle de Entrada e Saída de Produtos (PEPS/FIFO)
+            O PEPS  - Primeiro a Entrar, Primeiro a Sair (em inglês FIFO - First In, First Out) trata-se de uma metodologia para gerenciamento de estoque, funcionando como uma fila simples, onde aquilo que chegou primeiro sairá primeiro e o que chegou por último sairá por último. 
+            Por padrão, o sistema não aplica o Controle PEPS nas movimentações de estoques dos produtos. 
+            O Controle de Entrada e Saída de produtos é aplicado a empresas comerciais, atacadistas e distribuidores. E com o advento do bloco K, que solicita o saldo do estoque, muitos estados brasileiros já obrigam que qualquer alteração no estoque (manual ou inventário) tenha um documento fiscal para de entrada ou saída da quantidade desejada. Assim, quem utiliza desta rotina de Controle de Entrada e Saída deve realizar os acertos de estoques a partir de notas fiscais.
+            
+                Observação
+                
+                Para  que os clientes que possuem apenas o módulo de Controladoria tenham o Controle de Entrada e Saída ligados, deve-se utilizar o campo Módulo Origem para informar o módulo de origem das notas fiscais.
+            
+            Habilitar controle
+                
+                    Para habilitar esse Controle, acesse o Cadastro de Empresas (F070EMP) e no campo Registra entrada e saída dos produtos informar "S - Sim", podendo ser aplicado para empresas comerciais, atacadistas e distribuidores.
+                    Com o Controle ativado para a empresa, os produtos configurados para terem o estoque controlado pelo PEPS passarão a respeitar o Controle. 
+                
+            
+            Configurar produtos
+                
+                    Para configurar os produtos, acesse a tela de Parâmetros Fiscais (F075PFF), informe os filtros necessários e clique no botão Mostrar. Em seguida, acesse a guia Derivação, onde serão configurados para utilizar o Controle de Entrada e Saída no campo Reg. Ent. Sai.
+                    Exemplo:
+                        
+                            
+                            
+                        
+                    
+                
+            
+            Inicializar campos do Controle de Entrada e Saída (PEPS) (F660GDG)
+                
+                    Para atender o leiaute 14 do SPED Fiscal, estão disponíveis campos no Controle de Entrada e Saída:
+                    
+                        Controle de Entrada: Alíquota FCP, Base FCP, Valor FCP;
+                        Controle de Saída: Base FCP Complementar, Valor FCP Complementar, CFOP, CST ICMS, Valor Total do Item, Unidade de medida.
+                    
+                    Para inserir esses campos nos registros já presentes nas tabelas do Controle, basta processar a rotina.
+                    Com o Controle ativado para a empresa e os produtos configurados para terem o seu estoque controlado pelo PEPS, basta inicialize o Controle do consumo do estoque. A forma de inicializar o Controle do PEPS de um produto é por meio da tela F075CEP. Com isso, o produto indicado anteriormente para ter o Controle por PEPS terá todo o seu histórico inicializado com base no período informado, fazendo as  ligações entre os documentos fiscais de entrada e seus respectivos documentos fiscais de saída.
+                    A rotina atende apenas os campos citados acima, não interferindo nos  já existentes no Controle.
+                    
+                        Importante
+                        
+                         E ao processar a tela Controle de Entrada de Produtos (F075CEP), caso não tenha sido feita essa inicialização será apresentada a mensagem: "É necessário fazer a inicialização dos campos do Controle de Entrada e Saída através da tela F660GDG para a empresa". Uma vez feito esse procedimento, não será mais necessário realizá-lo novamente para a Empresa/Filial/Período.
+                    
+                
+            
+            Identificar compra ou venda em movimentação do controle de entrada e saída
+                
+                    Para que o sistema identifique se uma compra ou venda deve movimentar o Controle de Entrada e Saída, ele irá se basear na transação da nota fiscal de entrada, saída ou cupom fiscal. Para isso, informe o campo Mov. Contr. Ent. Prod. nas telas de Transações de Compra e Venda (F001TDV, F001TVE, F001TDC ou F001TCP), guia Dados Gerais. Se o produto controlar entradas e saídas e a transação possuir o parâmetro como "S - Sim", o registro irá para o Controle, independentemente da origem (módulo Comercial ou Tributos).
+                
+            
+            Controlar produtos com ICMS ST entre filiais em estados diferentes
+                
+                    Quando uma empresa possui duas ou mais filiais em estados diferentes e comercializa produtos com ICMS ST em um estado, enquanto em outro o produto não é controlado pelo ICMS ST, este último não pode ser considerado no Controle de Entrada e Saída; o primeiro, sim.
+                    Exemplo: no estado de SC, o produto A não tem ICMS ST. No estado do RS, sim; ou seja, deve passar pelos processos de ressarcimento, restituição e complementação. Como o processo parte do produto registrado nas estruturas de Entrada e Saída, se o produto para determinada filial não estiver no Controle, ele não será apresentado na declaração para o estado. Diante disso, é necessário parametrizar a nível de filial se o produto deve ou não entrar no Controle:
+                    Ao tratar uma nota/cupom fiscal, o sistema analisa o conteúdo do campo Reg. entradas e saídas para controle de impostos das telas F075PFI/F075APF, juntamente com as parametrizações das telas F075PRO/F075GFP:
+                    
+                        Quando não há ligação do produto com a filial: o sistema gera um registro no Controle de Entrada e Saída de produtos apenas se na derivação for informado S-Sim para o campo Reg. entradas e saídas para controle de impostos;
+                        Quando há ligação do produto com a filial: o sistema gera um registro no Controle de Entrada e Saída de produtos apenas se na derivação e na ligação for informado S-Sim para o campo Reg. entradas e saídas para controle de impostos;
+                        Caso contrário, o sistema não gera um registro no Controle de Entrada e Saída de produtos.
+                    
+                
+            
+            Controle de Entrada ao cadastrar um movimento manual de estoque pela tela F210MVP
+                
+                    Ao cadastrar um movimento manual de estoque pela tela Geração Individual de Movimentos de Estoque (F210MVP) serão verificadas as seguintes informações:
+                    
+                        Movimento de estoque deve ser de "E - Entrada";
+                        Produto deve estar parametrizado para Registrar entradas e saídas de produtos;
+                        Produto deve estar parametrizado para ser Vendido;
+                        Produto deve ser do tipo Comprado ou Produzido que pode ser vendido (misto);
+                        Movimento não deve ter vínculo com Nota Fiscal de Entrada ou Saída;
+                        Quantidade do movimento deve ser maior que zero;
+                        Tipo do estoque movimentado deve ser "NO - Normal".
+                    
+                    Dessa forma, se o movimento manual de estoque gerar o Controle de Entrada, ao salvá-lo será gravado um registro na tela Manutenção de Controle de Entrada de Produtos (F440RCI). Esse registro não terá vinculo com Nota Fiscal de Entrada e Saída e seus valores de ICMS ST serão gerados conforme a parametrização de ICMS ST Presumido.
+                    Na rotina de Fechamento de Estoque (acionada pela tela Fechamento dos Estoques (F215FES) ou pelo web service com.senior.g5.co.mcm.est.estoques, porta Fechar), nos processamentos onde for gerado um movimento de acerto que ajuste quantidade, seja gerado também o Controle de Entrada e Saída de Produtos para controle de imposto. 
+                    Será gerado um registro para cada movimento de acerto de estoque. Para consultar os registros de Controle de Entrada e Saída gerados, acesse a tela de Manutenção de Controle de Entrada de Produtos (F440RCI).
+                    Além disso, para que o Controle de Entrada e Saída de Produtos seja atualizado quando o fechamento de estoque estiver sendo regerado, ou seja, quando processado novamente um fechamento de estoque, serão excluídos os movimentos de acerto gerados anteriormente e serão gerados novos. 
+                
+            
+            Após is

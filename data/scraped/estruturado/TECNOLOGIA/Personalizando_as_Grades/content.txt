@@ -1,0 +1,184 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/grades/fcfggrid.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CGrades%7CPersonaliza%25C3%25A7%25C3%25A3o%2520de%2520Grade%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Grades > Personalização de Grade > Personalizando as Grades
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Personalizando as Grades
+            As grades presentes em todos os sistemas da Senior permitem mover e alterar o tamanho de suas colunas. Essas alterações podem ser salvas por usuário, módulos, tela e por grade. Não são todas as grades que podem sofrer essa personalização, é de responsabilidade de cada módulo definir quais podem ser personalizadas.
+            A tela Configuração dos campos da grade, pode ser acessada pela opção Configurar do menu contexto ou pelo botão C (encontrado no canto superior esquerdo da grade).
+            Campos Disponíveis
+                Nesta lista estão os campos que estão disponíveis para serem incluídos. Para incluir um único campo, basta selecionar o campo desejado e clicar sobre o botão >. Caso queira incluir todos os campos disponíveis basta clicar sobre o botão >>.
+            
+                Ordenação: É possível ordenar os campos disponíveis para inserção na grade pelo padrão adotado no sistema ou em alfabética.
+            
+            Campos Selecionados
+                Nesta lista estão os campos que serão apresentados na grade. Para retirar campos selecionado, utilize os botões < ou <<.
+            
+                Ordenação: A ordenação segue a mesma configuração do grupo Campos Disponíveis, porém, é configurável com botões;
+                No canto superior direito da tela, existem dois botões que permitem mover as colunas selecionadas para cima  ou para baixo .
+            
+            Campos Ordenados
+                Nesta lista estão dispostos os campos pelos quais os dados da grade serão apresentados de forma ascendente ou descendente. Da mesma forma como na lista de campos disponíveis, utilize os botões com seta simples ou seta dupla para selecionar os campos desejados;
+            
+                No canto superior direito da tela, existem dois botões que permitem mover as colunas selecionadas para cima  ou para baixo ;
+                Ordenação: É possível ordenar os campos disponíveis para inserção na grade pelo padrão adotado no sistema ou em alfabética.
+            
+            Salvar Como
+            
+            
+                Individual: Salva as alterações efetuadas na grade por usuário, por módulo, por tela e por grade . Essas alterações nunca afetarão outra grade ou outro usuário;
+                Todos: Salva as alterações dessa grade na tela específica para todos os usuários;
+                Padrão: Salva as alterações dessa grade na tela específica para todos os usuários. Novos usuários já virão com essas configurações.
+            
+            Restaurar Original
+                Volta toda a grade para o estado original (sem nenhuma personalização), caso haja um padrão, serão retornadas todas as alterações para o padrão;
+            Cancelar
+                Cancelar todas as alterações realizadas e sai da tela de personalização de grades;
+            OK
+                Aplica todas as alterações e volta para a tela do sistema. Este campo somente é habilitado após escolher uma opção para salvar.
+            Ajuda
+                Abre o arquivo de ajuda com as informações sobre a tela;
+            Barra de Opções habilitadas
+                Na barra de status da janela (canto inferior esquerdo), estão listadas as opções de configuração da grade que estão habilitadas dentre as opções disponíveis:
+            
+                Exibir/ocultar campos do sistema: Permite que campos do sistema (que não são campos de usuário) sejam ocultos e exibidos na grade. Se esta opção e a opção Exibir/ocultar campos de usuário não estiverem habilitadas, a lista Campos disponíveis não será exibida;
+                Exibir/ocultar campos de usuário: Permite que campos de usuário sejam ocultos e exibidos na grade. Se esta opção e a opção Exibir/ocultar campos do sistema não estiverem habilitadas, a lista Campos disponíveis não será exibida;
+                Ordenar: Permite que seja configurada a ordenação dos registros na grade por uma determinada coluna. Caso esta opção não esteja habilitada, a lista Campos ordenados não será exibida na tela;
+                Alterar tamanho: Esta opção indica que todas as alterações de tamanho feitas nas colunas da grade serão salvas no fechamento da tela. As colunas da grade sempre podem ter seu tamanho alterado, mas se esta opção não estiver habilitada, os tamanhos definidos nunca serão salvos, e sempre que a tela for aberta a grade será exibida com os tamanhos de coluna padrão do sistema;
+                Alterar posição: Esta opção indica que todas as mudanças de posição das colunas da grade serão salvas no momento em que a tela for fechada. Além disso, os botões para mover campos, Ordenar pelo Padrão e Ordenar Alfabeticamente só estarão habilitados quando esta opção também estiver habilitada. O recurso de mover as colunas da grade clicando e arrastando as colunas não depende desta opção, mas quando esta opção não estiver habilitada as novas posições das colunas não serão salvas, e sempre que a tela for aberta, a grade será exibida com as colunas em suas posições padrão;
+                Esconder campos obrigatórios ou com dependentes: Permite que campos obrigatórios ou campos dos quais depende algum campo obrigatório sejam ocultos;
+                Ignorar dependências na ordenação: Permite que campos dependentes de outros campos sejam posicionados antes destes campos. Como exemplo, pode-se citar o campo Tipo do Colaborador, que depende do campo Código da Empresa, e poderia ser posicionado antes do campo Código da Empresa caso esta opção estivesse habilitada.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

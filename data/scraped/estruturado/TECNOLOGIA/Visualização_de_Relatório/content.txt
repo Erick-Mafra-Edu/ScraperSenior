@@ -1,0 +1,205 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/relatorios/prevform.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CTelas%7C_____30
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Telas > Visualização de Relatório
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Visualização de Relatório
+                Esta tela serve apresenta um relatório gerado pelo Gerador de Relatórios. Ela permite ampliar e reduzir a visualização, salvar em diversos formatos, imprimir, etc. Abaixo estão relacionados as funções disponíveis para o usuário.
+                Informação e navegação de páginas
+                Os relatórios podem conter várias páginas, e para permitir que todas sejam visualizadas, existe informações e ações para manipular as páginas do relatório.
+                
+                    
+                    
+                
+                Da esquerda para a direita, os controles têm a seguinte funções:
+                Página atual
+                    Informa a página atualmente sendo visualizada. Também permite que um número seja inserido para indicar a página que se deseja visualizar.  Não são permitidos números maiores do que a quantidades de páginas disponíveis para a visualização;
+                Total de páginas
+                    Indica o número de páginas disponíveis para a visualização;
+                Primeira página
+                    Visualiza a primeira página do relatório;
+                Página anterior
+                    Visualiza a página anterior à atual;
+                Próxima página
+                    Visualiza a próximo página em relação a página atual;
+                Última página
+                    Visualiza a última página do relatório.
+                Ampliação e redução da imagem
+                Os botões de ampliação e redução permitem aumentar ou diminuir a visualização do relatório gerado.
+                
+                    
+                
+                Da esquerda para a direita, os botões são:
+                Indicativo
+                    Apenas indica que os botões à direita são de referentes a visualização;
+                Ampliação atual
+                    Indica a ampliação atual aplicada na visualização. Os valores permitidos variam de 1 a 200. É permitido a digitação direta do valor da ampliação, mas números menores que zero (0) ou maiores que duzentos (200) são ignorados;
+                Página inteira
+                    Ajusta a ampliação da visualização para que a página atual seja completamente visualizada na janela;
+                Visualizar 100%
+                    Volta a configuração da ampliação ao valor de 100%, permitindo que o relatório seja visualização no tamanho normal;
+                Tamanho da página
+                    Ajusta a ampliação à largura da página, ocupando todo os espaço da janela na horizontal e permitindo rolagem na vertical.
+                Manipulação de relatório
+                Os botões de manipulação de relatório permitem salvar, imprimir e sair da tela de visualização.
+                
+                    
+                    
+                
+                Da esquerda para a direita, os botões são:
+                Salvar
+                    Permite salvar o relatório em arquivo, em diversos formatos. Para informações sobre os formatos suportados pelo Gerador de Relatórios, consulta Formatos Salvos e Enviados Pelo Gerador de Relatórios. Para salvar o relatório, o usuário deve ter permissão de "configurar parametrização de saída", caso ele não tenha está permissão o arquivo será salvo com o nome do arquivo do modelo de relatório ou com o nome que foi informado via regra (mais deltahes em "Alterar o nome do relatório via regra"), ou com diretório, nome e formato do arquivo definido na tela de Parametrização de saída do modelo.
+                Abrir
+                    Permite abrir um relatório gerador para que seja visualizado. Os tipos IMP, HTML e TXT podem ser escolhido no diálogo de abertura de arquivo, mas somente o tipo IMP é visualizado na tela. Os demais tipos são abertos com os respectivos programas associados.
+                Imprimir
+                    Permite que o relatório atual seja impresso. Maiores informações sobre a configuração de impressora, consulte Configurar Impressora;
+                Enviar e-mail
+                    Permite que o relatório atual seja enviado por e-mail num formato determinado pelo usuário. Para maiores informações sobre o envio de e-mails e dos formatos suportados, consulte Formatos Salvos e Enviados Pelo Gerador de Relatórios;
+                Layouts de exportação
+                    Disponibiliza um meio de exportação dos dados contidos no relatório através de um layout pré-definido. Maiores informações em Exportação SAGA e EXCEL através de LAYOUTS;
+                Sair.
+                Nota
+                    Pode-se atribuir permissões para os botões "salvar", "imprimir", "enviar e-mail" e "layouts de exportação" através da tela de "Parametrização de saída" quando acessada através da tela Diversos > Definir parametrização de saída por usuário.
+
+                
+            
+            Confira também:
+            Gerador de Relatórios
+            
+            Abrir ou Criar modelo de relatório
+            
+            Salvar Modelo
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

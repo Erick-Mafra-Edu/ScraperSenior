@@ -1,0 +1,162 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/pedido-erp-para-loja.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____10
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Pedido do ERP para o Lojas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Importação de Pedido do ERP para o Lojas
+            Conceito
+            A rotina de importação de pedido consiste na digitação do pedido no Gestão Empresarial | ERP e exportação desse pedido para o Gestão de Lojas. O Gestão de Lojas, por sua vez, torna-se o responsável por faturar esse pedido.
+            Como parametrizo esta funcionalidade?
+            No Gestão Empresarial | ERP:
+                
+                    Para que esta rotina funcione:
+                    
+                        Acesse a tela Configuração de Tipos de Informação (F000SXT);
+                    
+                    
+                        Preencha os seguintes campos:
+                    
+                    
+                        Sistema: esse campo deve ser preenchido com o código do sistema integrado configurado na tela Sistemas Integrados (F000SIS). Para integração com o Gestão de Lojas, o sistema integrado é aquele que tiver o campo Tipo configurado como 2 – Varejo Senior;
+                        Filial conforme a filial (ou as filiais) desejada para atender essa rotina;
+                        Informação como Pedidos.
+                    
+                    
+                        Na coluna Situação, da grade, selecione a opção A - Ativa.
+                    
+                    Exemplo:
+                        
+                            
+                                
+                            
+                        
+                    
+                    
+                        Observação
+                        
+                        Ao realizar a liberação da exportação de pedidos, os pedidos já estarão aptos a serem exportados. Com isso, não é necessário realizar nenhuma outra parametrização para habilitar esta funcionalidade.
+                    
+                
+            
+            No Gestão de Lojas:
+                
+                    Não se faz necessário realizar nenhuma parametrização.
+                
+            
+            Como utilizo esta funcionalidade?
+            Como faço um pedido no ERP sem definir um recebimento prévio?
+                
+                    
+                        Acesse a tela Entrada de Pedidos Agrupado (F120GPD_VAR_RVPE) (caminho no sistema: Mercado > Gestão de Vendas > Pedidos > Varejo > Agrupado);
+                        Informe os dados do seu pedido, conforme necessidade. Para mais informações, você pode consultar a documentação da tela Entrada de Pedidos Agrupado (F120GPD);
+                        Feche o pedido. Neste momento, o pedido já está apto a ser exportado ao Gestão de Lojas.
+                    
+                    
+                        Atenção
+                        
+                        O pedido gerado, por sua vez, pode ser bloqueado e, nesta situação, ele não será exportado ao Gestão de Lojas. Para liberá-lo, acesse a tela Liberação de Pedidos bloqueados (F120LIB), libere o produto (marcando a caixa de seleção Sel.) e clique em Processar.
+                        O pedido, então, será exportado ao Gestão de Lojas.
+                    
+                    
+                        Nota
+                        
+                        O campo Tipo Faturamento, da tela Entrada de Pedidos Agrupado (F120GPD_VAR_RVPE), é preenchido automaticamente com o valor 1 - ECF, não sendo possível alterar esse valor manualmente.
+                    
+                    Consultando um pedido no Retaguarda
+                    O pedido pode ser consultado através da tela Pedidos, do Retaguarda (caminho no sistema: Mercado > Gestão de vendas > Pedido).
+                    A tela Pedidos, por sua vez, dispõe das colunas Cód. Referência e Processo de Origem. A coluna Cód. Referência traz a informação de qual é o número do pedido no Gestão Empresarial | ERP. Já a Processo de Origem indica onde o pedido foi realizado (sistema Gestão Empresarial | ERP, por exemplo).
+                    
+                        Observação
+                        
+                        O campo Recebimento, presente na tela Pedido de venda (aberta ao selecionar um pedido na tela Pedidos), é apresentado desabilitado. Caso seja informado um recebimento no Gestão Empresarial | ERP, esse campo fica disponível.
+                    
+                    Faturando um pedido no PDV
+                    
+                        No PDV, clique no botão Importa;
+                        Na tela de importação, selecione o pedido e clique em Fatura.
+                    
+                    
+                        Observação
+                        
+                        A tela de importação dispõe da coluna Cód. Ref, que exibe o número do pedido realizado no Gestão Empresarial | ERP.
+                    
+                    A partir desse ponto, o PDV segue o seu processo padrão. Quando não há nenhum recebimento informado, torna-se necessário informar. Para isso:
+                    
+                        Clique em Finalizar venda;
+                        Selecione a forma de pagamento;
+                        Finalize a operação.
+                    
+                    Ao realizar o fechamento do cupom, ele será integrado ao Retaguarda (bem como faturado) e, também, ao Gestão Empresarial | ERP.
+                    O pedido pode ser consultado através da tela Consulta de Pedidos (F121CPD). É possível, ainda, consultar também o cupom por meio da tela Consulta de Notas Fiscais de Saída (F141CNS).
+                
+            
+            Como faço um pedido no ERP definindo um recebimento prévio?
+                
+                    
+                        Acesse a tela Entrada de Pedidos Agrupado (F120GPD);
+                        Clique no botão Diversos, preencha o campo Tem Parcelas Especiais como S - Sim, pois essa é a única forma do Gestão Empresarial | ERP liberar a edição de parcelas do pedido;
+                        De volta à tela Entrada de Pedidos Agrupado (F120GPD), informe, na coluna Forma Pgto., presente na guia Parcelas, qual será a forma de pagamento (por exemplo, Crediário);
+                        
+                            Observação
+                            
+                            Os vencimentos das parcelas definidos no Gestão Empresarial | ERP são integrados com o Gestão de Lojas, quando definido manualmente nas parcelas. Porém, quando o vencimento das parcelas é determinado através da quantidade de dias da condição de pagamento definida no pedido, o campo de vencimento da parcela não é definido. E o Gestão Empresarial | ERP, por sua vez, calcula o vencimento da parcela com base na data em que o faturamento do pedido foi realizado. Nesse caso, o Retaguarda irá determinar a data de vencimento utilizando os dias definidos na condição de pagamento, porém, irá utilizar como a data base para esse cálculo,  a data em que o pedido foi integrado ao Retaguarda.
+                        
+                        Feche o pedido.
+                    
+                    
+                        Atenção
+                        
+                        O pedido gerado, por sua vez, pode ser bloqueado e, nesta situação, ele não será exportado ao Gestão de Lojas. Para liberá-lo, acesse a tela Liberação de Pedidos bloqueados (F120LIB), libere o produto (marcando a caixa de seleção Sel.) e clique em Processar.
+                        O pedido, então, será exportado ao Gestão de Lojas.
+                    
+                    
+                        Nota
+                        
+                        O campo Tipo Faturamento, da tela Entrada de Pedidos Agrupado (F120GPD_VAR_RVPE), é preenchido automaticamente com o valor 1 - ECF, não sendo possível alterar esse valor manualmente.
+                    
+                    Consultando um pedido no Retaguarda
+                    O pedido pode ser consultado através da tela Pedidos, do Retaguarda (caminho no sistema: Mercado > Gestão de vendas > Pedido).
+                    Diferente do processo de fazer um pedido no Gestão Empresarial | ERP sem recebimento, quando feito um pedido com recebimento no Gestão Empresarial | ERP, o campo Recebimento, presente na tela Pedido de venda, do Retaguarda (aberta ao selecionar um pedido na tela Pedidos), fica habilitado. Ao clicar no botão Recebimento, serão apresentadas informações da forma de pagamento, valor e número de parcelas, porém, elas não poderão ser editadas.
+                    Faturando um pedido no PDV
+                    
+                        No PDV, clique no botão Importa;
+                        Na tela de importação, selecione o pedido e clique em Fatura;
+                    
+                    
+                        Observação
+                        
+                        A tela de importação dispõe da coluna Cód. Ref, que exibe o número do pedido realizado no Gestão Empresarial | ERP.
+                    
+                    
+                        Clique em Finalizar venda;
+                        Como a forma de pagamento do cliente (recebimento) já foi informada no Gestão Empresarial | ERP, não se faz necessário informar nenhuma outra forma de recebimento no PDV, basta confirmar o recebimento já informado;
+                        Finalize a operação.
+                    
+                    Ao realizar o fechamento do cupom, ele será integrado ao Retaguarda (bem como faturado) e, também, ao Gestão Empresarial | ERP.
+                    O pedido pode ser consultado através da tela Consul

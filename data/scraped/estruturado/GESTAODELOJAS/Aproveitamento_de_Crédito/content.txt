@@ -1,0 +1,205 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/formas-de-pagamento/aproveitamento-de-credito.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CFormas%2520de%2520Pagamento%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Formas de Pagamento > Aproveitamento de Crédito
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Aproveitamento de Crédito
+                Conceito     
+                Esta é uma forma de pagamento (Finalizador) por aproveitamento de crédito.
+                Utilização
+                Aplica-se quando o cliente possui um crédito a utilizar da filial por conta de alguma devolução ou prejuízo que obteve na compra do produto. Esse processo funciona em acordo entre as partes. 
+                Processo
+                O aproveitamento de crédito para o cliente é gerado a partir de uma devolução de mercadoria, feito através de nota fiscal, descrito no processo Devolução ou Troca, executado no Retaguarda de loja.
+                O recebimento de venda com a forma de pagamento "Aproveitamento de Crédito" pode ser utilizado através das opções de crédito por cliente, crédito por documento ou ambas na mesma operação.
+                Para utilizar um crédito, o cliente precisa obrigatoriamente estar identificado para que o sistema faça a pesquisa de títulos a pagar e vincule-a para o cliente.
+                
+                    Nota
+                    
+                    É possível que um Pedido venha do Retaguarda com a opção de aproveitamento de crédito sem título informado, ficando então necessário informar o título no PDV.
+                
+                Fluxograma
+                    
+                        
+                            
+                        
+                        
+                            Importante
+                            
+                            A consulta de títulos está habilitada para ser executada apenas no SeniorPDV, portanto, este aproveitamento de crédito não estará disponível no Retaguarda da outra filial, somente na filial origem do título.
+                        
+                    
+                
+                Por cliente
+                O aproveitamento de crédito por cliente só permite que o crédito seja utilizado pelo cliente identificado na venda, não podendo nenhum outro cliente utilizá-lo.
+                Requisitos: 
+                
+                    O cliente deverá ser identificado no pedido, pré-venda ou PDV;
+                    O crédito disponível poderá ser utilizado parcial ou totalmente;
+                    O PDV deverá estar online no sistema de retaguarda, caso contrário, o recebimento será bloqueado;
+                    Todos os títulos a receber devem ser do mesmo cliente, utilizar o cliente identificado nos títulos;
+                    O recebimento será bloqueado quando existir recebimento de títulos de clientes diferentes.
+                
+                Exemplo:
+                    
+                        Ao utilizar a forma de pagamento "Aprov. crédito", informe a opção 1:Cliente.
+                        
+                            
+                        
+                        Escolhendo essa opção, o sistema exibirá o valor disponível para o cliente identificado. O valor poderá ser utilizado parcial ou totalmente. Observe que o sistema informa o valor de crédito disponível para o cliente e o valor de sua compra atual.
+                        
+                            
+                        
+                        Digite o valor parcial do crédito a ser utilizado ou tecle "Enter" para considerar o valor total. O pagamento será subtraído do valor total para quitar. No exemplo, o saldo a pagar após utilizar o crédito de R$ 500,00 é de R$ 5.499,90.
+                        
+                            
+                        
+                    
+                
+                Por documento
+                O aproveitamento de crédito por documento permite que seja utilizado o crédito de qualquer cliente, desde que seja informado seu número no PDV (do título ou do localizador), ou seja, a utilização do crédito por documento não obriga que o resgate seja para o cliente identificado na venda.
+                 
+                Requisitos
+                
+                    O cliente deverá ser identificado;
+                    O operador deve identificar o documento de aproveitamento de crédito;
+                    Podem ser identificados vários documentos: o operador pode utilizar todo o valor de cada documento, desde que obedeça o valor máximo disponível;
+                    Não é possível utilizar documentos repetidos na mesma operação (venda ou recebimento);
+                    Deve ser verificado se o documento existe no sistema. Caso o documento seja inválido, não deve ser utilizado.
+                
+                Exemplo:
+                    
+                        Ao utilizar a forma de pagamento "Aprov. crédito", informe a opção 2:Documento.
+                        
+                            
+                        
+                        Escolhendo por documento, o sistema obriga informar um número  de documento válido a ser utilizado. Dessa forma, o valor disponível será exibido na tela para ser utilizado em partes ou totalmente. 
+                        O número do documento deverá ser apresentado pelo cliente no ato do resgate. Esse número é gerado a partir de uma devolução feita na loja anteriormente ou no mesmo dia.
+                        
+                            
+                        
+                        Se a busca resultar em mais de um documento com o respectivo número informado pelo operador, o parâmetro de Aproveitamento de Crédito, disponível na tela F000PPD, será verificado da seguinte forma:Caso o parâmetro  esteja habilitado para apresentar a lista para seleção: serão listados os documentos para o operador selecionar qual deseja utilizar para o aproveitamento de crédito, com informacoes de: Número do Documento, Nome do Cliente, Total do Título e Saldo a Utilizar do Título.Exemplo:
+                        
+                            Já, caso o parâmetro  esteja habilitado para não apresentar a lista para seleção para mais de um registro, a mensagem Mais de um documento foi encontrado com o Número informado. Realize o processo de aproveitamento de crédito por cliente será apresentada.
+                        
+                        Exemplo:
+                            
+                                
+                                    
+                                
+                            
+                        
+                        Se a busca resultar em somente um documento com o respectivo número informado pelo operador, será solicitada a confirmação para uso, e este documento é o que será utilizado para aproveitamento de crédito. E, caso não seja encontrado,  uma mensagem será apresentada.
+                        
+                            
+                        
+                        Digite o valor a ser utilizado ou tecle "Enter" para considerar o valor total. O pagamento será subtraído do valor total para quitar. No exemplo, o saldo a pagar após utilizar o crédito é de R$ 1.949,00.
+                        Crédito utilizado:
+                        
+                            
+                        
+                        
+                            
+                        
+                    
+                
+                Após utilizar o crédito, finalize a venda registrando o recebimento do saldo.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+     

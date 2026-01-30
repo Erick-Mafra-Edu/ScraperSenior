@@ -1,0 +1,246 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#identificadores_modelos/indice.htm%3FTocPath%3DFerramentas%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Ferramentas > Identificadores de modelo
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Identificadores de Modelo
+            
+                
+                
+                
+                    
+                        Identificador
+                        Finalidade
+                    
+                    
+                        E631VCP-1
+                        
+                        Impressão de modelos com gráficos de variações dos Custos dos Processos                    
+                    
+                    
+                        F046CON-1
+                        
+                        Permitir ao usuário que utilize modelos de relatórios próprios para a impressão das visões contábeis.                    
+                    
+                    
+                        F075CSM-1
+                        
+                        Permitir associar modelos ao imprimir da tela F075CSM.                    
+                    
+                    
+                        F075EPP-1
+                        
+                        Impressão de produtos na tela F075EPP ao clicar em Imprimir no rodapé da tela.                    
+                    
+                    
+                        F085CAC-1
+                        
+                        Consultar a categoria de análise de crédito.                    
+                    
+                    
+                        F085INC-1
+                        
+                        Ao clicar no botão Imprimir da tela F085INC irá procurar por esse identificador e executá-lo.                    
+                    
+                    
+                        F102CEI-1
+                        
+                        Executar relatórios a partir do botão Imprimir na tela F102CEI                    
+                    
+                    
+                        F104CRG-1
+                        
+                        Associar modelos de relatório ao botão Imprimir da tela F104CRG.                    
+                    
+                    
+                        F118OCR-1
+                        
+                        Associar modelos de relatórios à tela F118OCR                    
+                    
+                    
+                        F118PSI-1
+                        
+                        Permitir ligar diversos modelos na tela F118PSI.                    
+                    
+                    
+                        F120APR-1
+                        
+                        Impressão de pedidos liberados pela tela de Aprovação de Pedidos pelo ASGQ                    
+                    
+                    
+                        F120GPC-1
+                        
+                        Impressão de pedidos.                    
+                    
+                    
+                        F120GPD-1
+                        
+                        Impressão de pedidos.                    
+                    
+                    
+                        F120LIB-1
+                        
+                        Impressão de pedidos liberados pela tela de Liberação de Pedidos e Notas Fiscais                    
+                    
+                    
+                        F124CPV-1
+                        
+                        Permitir utilizar outro modelo de consulta vencimentos pedidos                    
+                    
+                    
+                        F135AEA-1
+                        
+                        Permite a impressão das pré-faturas geradas em uma análise de embarque.As variáveis disponibilizadas para tela de entrada são a chave da análise de embarque.                    
+                    
+                    
+                        F135APF-1
+                        
+                        Ao final do processo de agrupamento de pré-faturas tela F135APF, irá procurar por esse identificador e executá-lo. Serão disponibilizadas as variáveis ECodEmp, ECodFil e ENumAne.                    
+                    
+                    
+                        F135FEC-1
+                        
+                        Permitir a impressão das etiquetas das embalagens.                    
+                    
+                    
+                        F135FET-1
+                        
+                        Impressão de etiquetas de volumes, quando estes não forem enviados por SEDEX.                    
+                    
+                    
+                        F135FET-2
+                        
+                        Impressão de etiquetas de volumes, quando estes forem enviados por SEDEX.                    
+                    
+                    
+                        F141CNS-1
+                        
+                        Impressão de relatório  vinculado à tela F141CNS.
+                    
+                    
+                        F142DNS-1
+                        
+                        Impressão de registros da tela F142DNS.
+                    
+                    
+                        F144MIN-1
+                        
+                        Impressão de Minuta de Embarque.                    
+                    
+                    
+                        F145EBQ-1
+                        
+                        Impressão de controles de embarque.                    
+                    
+                    
+                        F160CVC-1
+                        
+                        Permitir utilizar outro modelo de consulta vencimentos contratos                    
+                    
+                    
+                        F160NOV-1
+                        
+                        Efetua a impressão pelo modelo ligado ao identificador, mostrando a tela de entrada de dados ao imprimir.                    
+                    
+                    
+                        F170COL-1
+                        
+                        Utilizar Modelo de Relatório do Cliente para a tela F170COL - Coletas.                    
+                    
+                    
+                        F170CON-1
+                        
+                        Utilizar modelo de relatório do cliente para a tela F170CON. Contratações para coletas.                    
+                    
+                    
+                        F172MAN-1
+                        
+                        Utilizar Modelo de Relatório do Cliente para a tela F172MAN (Manifesto).                    
+                    
+                    
+                        F210AME
+                        
+                        Disponibiliza o identificador de modelo na tela F210AME, enviando variáveis de empresa, número e sequência de requisição de produtos.
+                    
+                    
+                        F210CCA-1
+                        
+                        Disponibiliza na tela F210CCA enviando as variáveis:ECodFil - Filial do Deposito analisadoECodPro - Código do ProdutoECodDer - Código da DerivaçãoECodDep - Deposito analisadoEDepDis - Deposito distribuidor                    
+                    
+                    
+                        F210CNP-1
+                        
+                        identificador de modelo de relatório a ser gerado ao final do processamento na tela F210CNP , permitindo imprimir os números de série que foram processados e cuja situação foi modificada para 2 (Numerados). O modelo a ser impresso pode ser modificado, através da utilização do identificador do identificador de regra 210MODSR01 módulo EST.                    
+                    
+                    
+                        F210CPM-1
+                        
+                        Impressão de etiquetas                    
+                    
+                    
+                        F210CPN-1
+                        
+                        Identificador de modelo de relatório a ser gerado ao final do processamento da tela F210CPN, quando uma embalagem é fechada (seu conteúdo está completo) permitindo imprimir uma etiqueta para a embalagem para identificação da mesma. O modelo padrão pode ser substituído pelo modelo informado pela regra do identificador 210MODSR02, módulo EST caso este identificador de regra esteja cadastrado.                    
+                    
+                    
+                        F210GIS-1
+                        
+                        identificador de modelo de relatório a ser gerado ao final do processamento e geração das séries, para a tela F210GIS. Geração Intervalos Numeração, permitindo imprimir os números de série gerados neste processamentos.                    
+                    
+                 

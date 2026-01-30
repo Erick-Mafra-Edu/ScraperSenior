@@ -1,0 +1,242 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/controladoria-tributos/ifrs-16.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7C_____9
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Norma IFRS-16
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Norma IFRS-16
+            O que você precisa saber?
+            1. Conceito
+            2. Processo
+            2.1 Fluxo do processo
+            2.2. Informações  importantes
+            2.3. Fórmula para cálculo do AVP
+            3. Parametrizações
+            3.1. Pré-requisitos
+            3.1.1. Taxa para cálculo do AVP
+            3.1.2. Cadastro do contrato
+            3.1.3. Contrato com diversos beneficiários
+            3.1.4. Flexibilização dos títulos
+            3.2. Cálculo do AVP
+            3.2.1. Flexibilização do cálculo
+            3.2.2. Estorno do cálculo do AVP
+            3.3. Cadastro de bem via contrato
+            3.4. Depreciação do bem
+            3.5. Reajuste do contrato
+            3.5.1. Cálculo do AVP sobre o reajuste
+            3.5.2. Reajuste do valor do bem no Patrimônio
+            3.6. Rescisão contratual
+            3.6.1. Estorno do AVP na rescisão contratual
+            3.6.2. Baixa Contratual no Patrimônio
+            4. Contabilização
+            4.1. Reconhecimento do Passivo e Direito de Uso do Bem
+            4.2. Baixa Decorrente de Pagamentos
+            4.3. Reajustes Que Aumentam o Valor do Contrato
+            4.4. Reajustes Que Diminuem o Valor do Contrato
+            4.5. Rescisão do Contrato
+            4.6. Depreciação do Bem ou Amortização de Direito de Uso
+            5. Relatório
+            1. Conceito
+            Em janeiro de 2019 entrou em vigor o modelo único de tratamento contábil para todos os arrendamentos mercantis da arrendatária (IFRS 16/CPC 06). Isso impacta várias empresas com portes diferentes e em diversos ramos de atuação, exceto as optantes pelo Simples Nacional. As principais mudanças ocorrem nos processos internos, balanços patrimoniais e demonstrações de resultado.
+            É possível classificar as operações desse tipo de duas formas:
+            
+                Financeira, que é reconhecida utilizando o mesmo tratamento de uma compra financiada;
+                Operacional, onde a despesa é reconhecida em linha reta, de forma linear.
+            
+            Norma antiga
+                
+                    
+                        
+                        
+                        
+                        
+                            
+                                Contabilização
+                                Forma Operacional (aluguel)
+                                Forma Financeira (venda financeira)
+                            
+                            
+                                Ativo
+                                -
+                                Ativo imobilizado
+                            
+                            
+                                Passivo
+                                -
+                                Passivo de arrendamento
+                            
+                            
+                                Demonstração do Resultado
+                                Despesas de arrendamento
+                                Depreciação e despesa financeira
+                            
+                        
+                    
+                
+            
+            Norma atual:
+            
+            
+                
+                
+                
+                    
+                        Contabilização
+                        Forma Única
+                    
+                    
+                        Ativo
+                        Direito de uso do ativo
+                    
+                    
+                        Passivo
+                        Passivo de arrendamento
+                    
+                    
+                        Demonstração do Resultado
+                        Depreciação e despesa financeira
+                    
+                
+            
+            As entidades precisam avaliar seus contratos e identificar se eles possuem ou não arrendamento. Para isso, confira o fluxo abaixo:
+            
+                
+                
+            
+            2. Processo
+            É possível controlar no patrimônio e contabilmente os arrendamentos mercantis, seus ajustes a valor presente e  custo de desmobilização. Esses arrendamentos mercantis sao originados a partir do contrato, ou seja, o usuário não precisa registrar essa informação manualmente no patrimônio, pois cada contrato gerar um bem.
+            2.1. Fluxo do processo
+            
+            
+            2.2. Informações  importantes
+            
+                Valor do arrendamento contrato:
+                    
+                        cálculo do AVP e controle patrimonial;
+                        a empresa pode optar para que o patrimônio seja controlado pelo valor do arrendamento ou pelo  valor presente;
+                        precisa ser contabilizado.
+                    
+                
+                Valor presente do arrendamento contrato:
+                    
+                        cálculo do AVP e controle patrimonial;
+                        a empresa pode optar para que o patrimônio seja controlado pelo valor do arrendamento ou pelo  valor presente;
+                        precisa ser contabilizado.
+                    
+                
+                Valor mensal pago pelo arrendamento:
+                    
+                        cálculo da correção da parcela mensal;
+                        precisa ser contabilizado.
+                    
+                
+                Valor total do AVP para provisão por esse motivo precisamos dessa informação já no início do contrato:
+                    
+                        será provisionado contabilmente no início do contrato.
+                    
+                
+                Valor mensal do AVP:
+                    
+                        obtido  através do cálculo do AVP;
+                        precisa ser contabilizado.
+                    
+                
+                Valor residual a ser pago no final do contrato de arrendamento:
+                    
+                        usado em casos específicos; é separado porque seu cálculo de AVP é diferente em relação ao prazo;
+                        precisa ser contabilizado.
+                        o valor do contrato possui esse valor em sua composição;
+                        se a empresa controlar o bem pelo valor presente o sistema  calcula separadamente o valor AVP do resto do contrato e, no final, soma os dois para chegar ao valor do bem.
+                    
+                
+                Valor presente residual a ser pago ao final do arrendamento:
+                    
+                        usado em casos específicos; é separado porque seu cálculo de AVP é diferente em relação ao prazo;
+                        precisa ser contabilizado.
+                        o valor do contrato possui esse valor em sua composição;
+                        se a empresa controlar o bem pelo valor presente o sistema  calcula separadamente o valor AVP do resto do contrato e, no final, soma os dois para chegar ao valor do bem.
+                    
+                
+                Prazo do contrato:
+                    
+                        utilizado no cálculo.
+                    
+                
+                Amortização do arrendamento mercantil:
+                    
+                        segue o processo já existente no Patrimônio.
+                    
+                
+                Juros:
+                    
+                         alíquota fixa por contrato ou fixa baseada em um indicador econômico (moeda).
+                    
+                
+            
+            
+                Observação
+                
+                
+                    o arrendamento mercantil pode sofrer reajustes positivos/negativos. Normalmente esses reajustes ocorrem de forma anual;
+                    um contrato de arrendamento mercantil pode sofrer uma rescisão contratual. A partir dessa rescisão é possível gerar os lançamentos contábeis de baixa do saldo restante a valor presente;
+                    bem patrimonial vinculado a um contrato: em caso de rescisão será gerado um movimento de baixa com motivo de rescisão contratual;
+                    um contrato de arrendamento mercantil possibilita a geração de títulos a pagar correspondentes ao valor total mensal. Há casos onde o bem vinculado ao contrato pertence a mais de uma pessoa, logo os títulos para pagamento gerados a partir desse contrato permitem a criação de vários títulos conforme a definição de percentuais atribuídos a cada uma das entidades/pessoas às quais será efetuado o pagamento;
+                    no arrendamento mercantil onde, ao final do contrato, o ar

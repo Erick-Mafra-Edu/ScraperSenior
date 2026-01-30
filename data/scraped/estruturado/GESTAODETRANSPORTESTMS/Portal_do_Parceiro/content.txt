@@ -1,0 +1,124 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodetransportestms/7.0.0/#portal-do-parceiro/movimento-de-entrega.htm%3FTocPath%3DPortal%2520do%2520Parceiro%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão de Transportes | TMS - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Portal do Parceiro > Movimento de Entrega
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Movimento de Entrega
+            O passo a passo para utilizar a movimentação de entrega são:
+            Definições das Ocorrências:
+                
+                    Para realizar a consulta das definições das ocorrências de entrega acesse Gestão Logística > Gestão de Transporte > Portal do cliente > Definições > Ocorrências.
+                    
+                        Selecione uma Ocorrência
+                        Serão mostradas todas as permissões
+                        Após realizadas alterações nas permissões, clique em Salvar.
+                    
+                    Dentre as permissões, temos:
+                    
+                        Exigências de Informações de Contato: Define a exigência dos campos ao lançar a movimentação de entrega, podendo obrigar o preenchimento dos campos Nome, Nome e RG ou Nome e Telefone, de acordo com o que for selecionado.
+                        Permite data de movimentação posterior a atual: Permite lançar a movimentação de entrega com data superior a data que será realizado o lançamento. Caso selecionada a opção Configuração Geral, o sistema irá buscar das definições do movimento de entrega a configuração “Informar data de entrega posterior a data e hora atual para entregas e devoluções”.
+                        Situação da Mercadoria: Tem como objetivo definir a situação do conhecimento que será movimentado, podendo ser entregue, não entregue, entregue com ressalvas ou devolvida.
+                        Exigir o preenchimento da quantidade de pallets: Define a exigência do campo quantidade de pallets ao lançar a movimentação de entrega.
+                        Permitir informar uma ocorrência anterior a existente: Permite lançar a movimentação de entrega com data inferior a data do último lançamento realizado para o conhecimento.
+                        Permitir agendar com data anterior que a data atual: Permite lançar a movimentação de entrega com data de agendamento inferior a data que será realizado o lançamento.
+                        Exige agendamento: Define a exigência do campo data de agendamento ao lançar a movimentação de entrega.
+                        Disponível para movimentação no Portal: Permite lançar a movimentação de entrega, onde se assinalado o campo a Filial no Movimento de entrega será preenchido também no Portal do Cliente.
+                        Exige Filial no movimento de entrega: Define a exigência de informar a filial de origem do movimento de entrega via portal do cliente.
+                    
+                    Nota: Estas informações são importadas do TMS e para alterá-las é necessário acessar o cadastro de histórico de entrega no módulo CCE.
+                
+            
+            Após realize:
+            Definições do Movimento de entrega:
+                
+                    Para realizar a consulta das definições das ocorrências de entrega acesse Gestão Logística > Gestão de Transporte > Portal do Transportador Parceiro > Definições > Permissões de acesso > Movimento Entrega
+                    Dentre as permissões, temos:
+                    
+                        Informar data de entrega posterior a data e hora atual para entregas e devoluções: Permite lançar a movimentação de entrega com data superior a data que será realizado o lançamento, as ocorrências com a situação de movimento como entrega ou devolvida.
+                        Movimentação de conhecimentos Manifestados / Não Manifestado: Permite lançar a movimentação de entrega somente para conhecimentos manifestados.
+                        Movimentação conhecimentos já entregues: Permite lançar a movimentação de entrega para conhecimentos que já concluíram a entrega.
+                    
+                    Nota: Estas informações são importadas do TMS e para alterá-las é necessário acessar as configurações do módulo CCE no módulo CFG.
+                
+            
+            Após realizar as definições, entenda como funciona a utilização do Movimento de entrega:
+            Lançamento:
+                
+                    Em Gestão Logística > Gestão de Transporte > Portal do Transportador Parceiro > Movimento de Entrega.
+                    
+                    
+                    Onde, para o quadro:
+                    
+                        Ocorrência: Informe o Número da ocorrência ou a Descrição, para que seja listada, onde esta somente será listada as ocorrências disponíveis para movimentação no portal do cliente. Ao selecionar a ocorrência desejada, será carregada as permissões necessárias para realizar o movimento. Informe também a Data, informando a data e hora da movimentação. Clicando no ícone, apresenta o calendário.
+                        CT-e: preencha os campos, Chave de Acesso, onde é possível utilizar a leitura do código de barras da DACTE para encontrar o conhecimento. Ao encontrar o documento, caso não possua nenhuma obrigatoriedade, definida pela ocorrência, a movimentação será adicionada na guia A Enviar. Para o campo Documento, também há possibilidade de informar os dados referentes ao conhecimento utilizando a guia Documentos. Ao encontrar o documento, caso não possua nenhuma obrigatoriedade, definida pela ocorrência, a movimentação será adicionada na guia A Enviar.
+                        Informações Adicionais: Grupo de campos para detalhar as informações referentes a movimentação e conforme a ocorrência selecionada, será destacado os campos que contém obrigatoriedade. No campo Filial deve ser apresentada todas as filiais cadastradas na rotina Configurações de Acesso. Quando, na rotina de Ocorrências, o parâmetro Exige Filial no movimento de entrega estiver marcado, na rotina Movimento de Entrega o campo Filial passa a ser Obrigatório. Caso o parâmetro Exige Filial no movimento de entrega estiver desmarcado o campo Filial passa a ser Não Obrigatório. No campo Observação é permitido adicionar por conhecimento somente uma ocorrência. Caso seja necessário efetuar mais de uma movimentação para o mesmo conhecimento, deve ser realizado envios em lotes diferentes.
+                    
+                    O quadro de Movimento de entrega, o envio dos lançamentos, é realizado da segunda forma:
+                    
+                        Guia A Enviar: Contém os lançamentos realizados, que ainda não foram processados. Após finalizar as movimentações, efetue a conferência e caso necessário é possível alterar clicando na movimentação ou então excluindo a mesma através do botão X localizado no final de cada linha. Ao encerrar a conferência, clique no botão Enviar, e as movimentações serão movidas para a guia Em Processamento, exibindo um aviso de que ao concluir o processamento, uma nova notificação apresentará as informações do processo.
+                        Guia Em processamento: Esta guia apresentará os movimentos que estão processando. Ao encerrar o processamento, será apresentada uma notificação. Para visualizar o resultado das movimentações, clique na notificação ou atualize a tela de movimentação de entrega, e será exibido na guia Movimentados, se o processo foi o efetuado com sucesso ou na guia Falhas, caso possua alguma inconsistência encontrada durante o processamento.
+                        Guia Falhas: Quando ocorrer alguma inconsistência durante o processamento, nesta guia será apresentada a movimentação enviada com a coluna Inconsistências preenchida, descrevendo o motivo pelo qual não foi possível efetuar o movimento. Após a revisão das inconsistências, para reenviar, selecione o movimento desejado, caso necessário, altere os dados da movimentação e clique em Adicionar. Com isso, a movimentação será transferida para a guia A Enviar, e após a conclusão da revisão de todas as movimentações, clique em Enviar. Porém, se o movimento não precisará ser reenviado, basta apenas retirá-lo da lista de falhas clicando no botão X localizado no final de cada linha ou então, após o envio do novo lote, a lista será apagada para que sejam mostradas as novas movimentações com inconsistências.
+                        Guia Movimentados: Será exibida as movimentações de entrega que foram efetuados com sucesso, e a cada novo envio, está lista será apagada para que sejam mostradas as novas movimentações realizadas com sucesso.
+                    
+                    Importante! Para realizar a consulta das permissões dos papéis do usuário, acesse: Tecnologia > Administração > Autorização > Gestão de Papéis.
+                
+            
+            Dúvidas frequentes
+            Quem devo acionar quando o sistema apresentar a mensagem "Movimentação não Realizada - Tente novamente mais tarde. Erro: Serviço de integração do TMS indisponível, entre em contato com o suporte"?
+                
+                    Entre em contato com o suporte do TMS da Senior através de um de nossos canais ou com a transportadora vincula

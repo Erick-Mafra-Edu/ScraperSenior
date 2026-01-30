@@ -1,0 +1,86 @@
+# Integração SET
+
+URL: https://documentacao.senior.com.br/seniorxplatform/manual-do-usuario/crmx/integracoes/senior-x/integrador/integracao-set/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM X                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     Manual do Usuário
+                 > Integrações
+                 > Integrador
+                 > Execução SET                         Integração SET
+A integração SET tem a responsabilidade de enviar as informações presentes no Gestão de Relacionamento | CRM para outro sistema (receptor). O envio de informações através do Integrador tem suas particularidades e são configuradas de forma diferente das outras integrações, pois como os campos tem funções diferentes, eles também recebem valores diferentes.
+Quando a integração finalizar com sucesso, o Integrador set vai retornar uma mensagem de sucesso. Caso o web service tenha algum tipo de retorno para quem foi configurado o envio, será exibido o retorno e a mensagem. No caso de erro, o Integrador só vai apresentar o erro, cujos detalhes serão exibidos no log.
+
+Dicas de usabilidade
+Ordenação para a criação da integração
+Sugestão de ordenação para a criação da integração, cadastrando informações entre as tabelas conforme necessidade, para facilitar a compreensão e organização dos dados. Dessa forma há um loop entre as tabelas CAMPOS_INTEGRACAO, DEPENDENCIAS e REGRAS, para que a cada informação registrada em CAMPOS_INTEGRACAO seja verificado se há a necessidade de criar registros nas demais tabelas.
+Valores das variáveis
+Todos os valores variáveis são escritos na linguagem do Integrador, utilizando do símbolo #, no início e final do nome da variável. E, ao configurar os SQLs de consulta, inserção e atualização o Integrador compila a string exatamente como uma string PHP, então, o valor pode estar dentro da string contendo ou não aspas duplas ou simples. Por exemplo, SELECT * FROM contas WHERE id = ‘#id#’.
+Ordem das integrações
+Ordem que são dispostas as integrações na tabela INTEGRACOES faz diferença, então devem ser colocadas em uma ordem lógica, conforme estrutura do CRM.
+Ordem dos índices
+Ordem dos índices da string JSON no campo CAMPO_CRM da tabela CAMPOS_INTEGRACAO não faz diferença, porém deve-se manter a estrutura lógica.
+Cadastro de integrações
+O nível de customização no cadastro das integrações é grande e os SQLs presentes na tabela INTEGRACOES colunas CONSULTA, SQL_CONSULTA, SQL_INSERT e SQL_UPDATE podem ser complexos e mais de um, se necessário, porém não é recomendado usar mais de um SQL no mesmo campo.
+ NotaÉ possível executar integrações de diferentes tipos em dependência (GET + SET), porém é recomendado executar em dependência apenas integrações do mesmo tipo. Primeiramente é preciso configurar a conexão com o sistema a ser integrado, e em seguida configurar os módulos e os campos.  
+Tabelas
+O Integrador possui uma estrutura de tabelas em banco de dados onde será possível cadastrar e configuraras integrações.
+  CONEXAO_INTEGRACAO   CampoDescriçãoValores possíveis  TIPO_CONEXAOClassifica a forma de conexão da integração.
+Conexão via Web Service;
+Conexão via banco de dados;
+Conexão via API.
+  NOME_CONEXAOInforma o nome da conexão salva no arquivo de conexões do cliente dentro dos arquivos do Integrador. Cada tipo de conexão tem um layout específico para configurar a conexão no arquivo.      
+ INTEGRACAO   CampoDescriçãoValores possíveis  NOMEDescrição da integração. Informação importante no caso da integração INFO, pois é o índice de retorno para se chegar nas informações integradas.  TIPO_SERVICOString que representa o tipo da integração a ser executada.SET: envio dos valores para sistema terceiro.  EMPRESA_ID/EMPRESA_FILIAL_IDEmpresa a qual a integração está disponível.  LINKString que informa endereço para conexão da integração, o complemento para se chegar a um determinado serviço.LINK WEB: complemento do endereço da conexão para um determinado serviço;PALAVRA CHAVE: sendo atualmente ‘componente’ a palavra-chave disponível, e ela informa que a integração é um componente ou um campo de uma outra integração.  TABELATabela onde será executada a integração.  CONSULTATexto JSON que deve representar a consulta dos dados feita no sistema CRM.JSON-SQL: dentro da chave “consulta” pode ser escrito um texto SQL completo que será executado para busca.  CONEXAO_INTEGRACAO_IDIdentificador que referencia a informação da tabela CONEXAO_INTEGRACAO.  PORTA_WSRefere-se à porta para execução de um determinado serviço. Utilizado somente em integrações via web service. Essa informação pode ser encontrada na documentação do WSDL do sistema a ser integrado.Pode conter valores NULOS.  INDICE_ARRAY_RETORNORepresenta a chave do array de retorno onde estão os dados de feedback da integração realizada. Esse valor deve constar na documentação do serviço. Caso a requisição seja via web service ou API e não tenha um índice padrão para o retorno de valores, pode-se usar a palavra reservada ‘parameters’ como indice_array_retorno;Pode conter valores NULOS.  INDICE_VALOR_RETORNOÍndice que será pesquisado no array de retorno do envio de valor para o sistema terceiro, para realizar ações após sucesso na integração. Podem ser inseridos mais de um índice, basta que sejam separados por vírgula.Pode conter valores NULOS.  INDICE_ERRO_RETORNOSão os índices que serão buscados os erros no array de retorno das buscas executadas pelo Integrador, ou seja, se esses índices forem encontrados com valor, o Integrador interpretará a busca como ‘com erro’. O campo pode conter vários índices separados por vírgula (não pode haver espaçamento entre os índices e a virgula). Somente o primeiro índice da lista será utilizado como validador geral, ou seja, se o primeiro índice não apresentar erros, os demais não serão contabilizados.  SQL_CONSULTACampo não utilizado na integração SET.  SQL_INSERTCampo não utilizado na integração SET.  SQL_UPDATESQL que será responsável por atualizar um registro no CRM quando o retorno da integração SET for positiva e trazer a informação do identificador do cadastro realizado no sistema terceiro. Não esqueça da dica 2. Para montar a query de atualização, é habilitado a injeção de valores, que contém todos os valores mapeados, da tabela CAMPOS_INTEGRACAO, do CRM, coluna CAMPO_CRM e o resultado da integração, ou seja os valores retornados da inserção do registro, que são informados na coluna INDICE_VALOR_RETORNO, que podem ser acessados conforme:#conta_id#: representa as colunas disponíveis na integração, campos do CRM consultados e que estão listados para a integração em execução;#codCli#: representa os valores cadastrados na coluna INDICE_VALOR_RETORNO que são os índices retornados da inserção do registro do sistema terceiro.Ex.: UPDATE oportunidades SET numero_pedido = #numPed# WHERE id = #id#  DEPENDENTEInforma que a integração atual depende da integração com o identificador informado e a mesma será executada antes. O valor informado é o identificador da tabela INTEGRACOES. Pode conter valores NULOS.   DEPENDE_DE Informa que o valor cadastrado é uma integração que depende da integração atual e a mesma será executada depois. O valor informado é o identificador da tabela INTEGRACOES. Pode conter valores NULOS.  PARAMETROS_OBRIGATORIOSInforma quais são os valores devem, obrigatoriamente, estar na URL da requisição da integração. Os parâmetros devem ser separados por vírgula e devem ser exatamente iguais aos parâmetros que serão passados pela URL.Pode conter valores NULOS.   Exemplo: 
+
+Campo id: 19
+
+
+Campo nome: SET-WS-CONTAS
+
+
+Campo tempo_servico: SET
+
+
+Campo empresa_id/empresa_filial_id: 1
+
+
+Campo link: /g5-senior-services/sapiens_Synccom_senior_g5_co_ger_cad_clientes?wsdl
+
+
+Campo tabela: contas
+
+
+Campo consulta: {“consulta”:“SELECT c.id_erp, c.fax, c.email_geral, c.email_financeiro, c.cadastro_timestamp, c.cliente_desde, c.status, c.representante_id, c.id, c.tipo_conta, c.tipo_pessoa, c.cidade_id, c.celular, c.telefone, c.telefone2, c.telefone3, c.nome, c.fantasia, c.cnpj, c.cpf, c.ramo_atividade_id, c.inscricao, c.inscricao_municipal, c.endereco, c.complemento, c.numero, c.cep, c.bairro FROM contas AS c WHERE c.id = #contaId#”}
+
+
+Campo conexao_integracao_id: 3
+
+
+Campo porta_ws: GravarClientes
+
+
+Campo indice_array_retorno: retornosClientes - em integrações via web service o valor dessa coluna precisa ser identico ao valor do web service
+
+
+Campo indice_valor_retorno: codCli - essa coluna só é usada em integrações SET
+
+
+Campo indice_erro_retorno: erro,mensagemErro,erroExecucao
+
+
+Campo sql_consulta: não utilizado
+
+
+Campo sql_insert: não utilizado
+
+
+Campo sql_update: UPDATE contas SET id_erp = #codCli# WHERE id = #contaId#

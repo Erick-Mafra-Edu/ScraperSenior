@@ -1,0 +1,144 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#editor-de-regras/editform.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CEditor%2520de%2520Regras%7C_____8
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Editor de Regras > Tela Principal do Editor
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Editor de Regras
+            O Editor de Regras é uma ferramenta  para desenvolver rotinas complementares e auxiliares as que os sistemas Senior já possuem. A Senior possui sua própria linguagem de programação (LSP – Linguagem Senior de Programação), e seu próprio compilador.
+            Os comandos da LSP são no idioma português e sua sintaxe é semelhante a outras linguagens de programação utilizadas no desenvolvimento de sistemas, o que facilita muito a aprendizagem e produtividade. Com a LSP é possível, por exemplo, exibir uma mensagem ao usuário, executar um relatório ou mesmo um web service.
+            Manipular informações de banco de dados torna-se mais simples com as regras. Leitura de arquivos, envio de e-mail, manipulação de dados em memória entre muitos outros recursos, permitem  flexibilidade, segurança e robustez nos sistemas da Senior.
+            
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

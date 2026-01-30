@@ -1,0 +1,150 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/pagamento-fornecedor.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____38
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Pagar  Fornecedor 
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Pagamento  a Fornecedor no PDV
+                Conceito    
+                Efetuar retirada do caixa como totalizador de sangria para efetuar pagamentos de títulos a fornecedores via caixa da loja.
+                Utilização
+                É utilizado para registrar saída em dinheiro do caixa com a finalidade de efetuar pagamento a fornecedores. Para esse processo, somente utiliza-se a forma de pagamento padrão "Dinheiro" conforme saldo disponível no caixa.
+                Processo
+                Para efetuar um  pagamento a fornecedor, é preciso que o fornecedor esteja cadastrado no sistema e possua um título para pagar. Normalmente, esse processo é utilizado para casos extremos como, por exemplo, pagamentos de serviços.
+                Efetuar pagamento 
+                
+                    Selecione a opção Pagamento na tela inicial do PDV;
+                    Informe o fornecedor pelo nome, código ou utilize a pesquisa;
+                    O sistema apresentará o valor total em aberto a pagar para o fornecedor informado.
+                
+                Exemplo:
+                    
+                        A loja obteve um serviço de manutenção de ar e, após o serviço, a filial precisará efetuar o pagamento.
+                        Depois de informar o fornecedor, informe o valor que deseja retirar do caixa para pagamento.
+                        O usuário poderá digitar o valor manualmente, utilizar o botão Total para pagar todo o saldo devido ou utilizar o botão Parcelas para marcar apenas as parcelas a pagar.
+                         
+                        O ECF emitirá um comprovante não fiscal de sangria no ECF, referente ao valor retirado do caixa. Emitirá também, o relatório gerencial com informações do pagamento e um recibo que contém as seguintes informações:
+                        
+                            Operador do caixa;
+                            COO do comprovante impresso;
+                            Código da filial;
+                            Número dos títulos pagos;
+                            Data de vencimento dos títulos pagos;
+                            Valor total pago.
+                        
+                        
+                            
+                        
+                        
+                            
+                            
+                            
+                            
+                        
+                    
+                
+                Após a retirada para efetuar o pagamento, o título terá que ser baixado no Contas a Pagar utilizando o processo de baixa no ERP.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

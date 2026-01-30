@@ -1,0 +1,226 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/gestao-de-pessoas-hcm/gp-geracaoescala.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CGest%25C3%25A3o%2520de%2520Pessoas%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Gestão de Pessoas > Geração de Escalas
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Geração de Escalas
+                Instalação
+                Servidor de Aplicação WildFly
+                
+                     Durante a instalação do sistema, na tela de seleção de produtos a serem instalados, marque o item Gestão de Pessoas > Controle de Ponto e Refeitório – Gerenciamento de Escalas;
+                
+                Observação 
+                    Para que este item possa ser marcado, o item Gestão de Pessoas > Controle de Ponto e Refeitório também deve estar marcado.
+                
+                
+                    
+                
+                
+                     Na tela de configuração de produtos que disponibilizam recursos Java EE, marque o item Controle de Ponto e Refeitório – Gerenciamento de Escalas e, na coluna Servidor Java EE, selecione um servidor dentre os cadastrados.
+                
+                
+                    
+                
+                Após a execução destes passos, basta prosseguir com o processo de instalação.
+                
+                Configuração
+                
+                     Acessar o sistema e entrar no Editor de Web services (Menu: 
+	 Controle de Ponto Recursos > Implementações > Editor de Web services)
+                    Incluir um novo Provedor. (Menu: Arquivo > Provedor > 
+	 Adicionar)
+                    Configurar o nome do Provedor, URL onde o serviço está sendo 
+	 disponibilizado e contexto conforme o exemplo abaixo:
+                    
+                        Nota
+                        
+                        A URL e a porta do Servidor Wildfly podem variar conforme o ambiente do usuário.
+                    
+                    
+                        
+                    
+                
+                
+                     Após clicar em Ok e criar o provedor, incluir um Serviço com o nome “AlgoritmoEscala”: 
+	 (Menu: Arquivo > Serviço > Adicionar)
+                    
+                        
+                    
+                    Selecionar o Serviço e incluir uma porta com o nome “gerar” 
+	 seguindo os parâmetros abaixo: (Menu: Arquivo > Porta > Adicionar)
+                    
+                        
+                    
+                    
+                        Importante
+                        
+                        
+                            Identificador universal: http://services.senior.com.br
+                            Estilo de codificação: http://schemas.xmlsoap.org/soap/encoding/
+                        
+                    
+                    Dentro desta porta, inclua dois parâmetros do tipo alfanumérico. Um deles é um parâmetro de entrada com o nome "String_1":
+                    
+                        
+                    
+                    E outro parâmetro de saída como nome “return”:
+                    
+                        
+                    
+                    A estrutura do serviço deve estar conforme abaixo:
+                    
+                        
+                    
+                     No módulo Controle de Ponto, informe o provedor, serviço e porta no menu: Controle de Ponto > Geração de Escalas > Definições.
+                    
+                        
+                    
+                    Observação
+                        
+                            Nos parâmetros String_1 e result, o campo Identificador Universal deve permanecer vazio.
+                            Os nomes das portas devem ser cadastrados conforme informado acima, respeitando letras maiúsculas e minúsculas.
+                            Para utilizar a geração de escalas com um usuário não administrador do SO, deve-se registrar as DLLs pocketHTTP.dll, pSOAP32.dll, psProxy.dll e psDime.dll, executando o comando regsvr32 /s /i caminho\nome_dll em cada estação, utilizando um usuário administrador.
+                            Se o Sistema Operacional for 64 bits, o aplicativo para registro de DLLs regsvr32 fica no diretório Windows\SysWow64\.
+                        
+                    
+                
+                Exemplo do comando: 
+                    
+                        regsvr32 
+	 /s /i c:\senior\vetorh\pocketHTTp.dll
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

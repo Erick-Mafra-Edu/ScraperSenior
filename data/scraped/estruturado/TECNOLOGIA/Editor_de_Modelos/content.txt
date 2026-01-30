@@ -1,0 +1,220 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/editor/dgn_editor.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CEditor%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Editor > Editor de Modelos
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Editor de Modelos
+            Essa documentação demonstra os aspectos de inicialização e informações 
+ gerais da ferramenta Editor de Modelos.
+            Inicialização
+            Ao executar o arquivo do aplicativo (EditorDiagnostico.exe), abrirá 
+ a tela para seleção do arquivo .CFG referente ao sistema que será considerado 
+ para o efetuar diagnóstico.
+            Basta selecionar o arquivo e clicar no botão Ok.
+             
+            É possível adicionar um arquivo .cfg na lista para seleção, clicando 
+ no botão Novo.
+            
+                
+            
+            Para criar um arquivo, clique no botão  e o aplicativo 
+ irá abrir no diretório do arquivo padrão. Mas se for necessário, é possível 
+ buscar outros arquivos em diretórios diferentes.
+            
+                
+            
+            Ao selecionar o arquivo do diretório, clique no botão Abrir, 
+ o nome do arquivo será preenchido na tela de Edição 
+ da lista do CFG, adicione uma descrição e clique no botão Ok.
+            Também é possível editar o nome ou o diretório de um arquivo já existente, 
+ como na criação de um arquivo novo.
+            
+                
+            
+            O botão Opções permite que as 
+ seguintes configurações sejam feitas:
+            
+                
+            
+            
+                Sempre pedir para o usuário escolher 
+	 qual arquivo de configuração será aberto: Com essa opção marcada, 
+	 sempre que o arquivo for executado, abrirá a tela para selecionar 
+	 o .CFG a ser usado.
+                Abrir o seguinte arquivo de configuração: Se 
+	 essa opção for marcada, é preciso informar qual o arquivo .CFG será 
+	 considerado padrão, e ao inicializar o aplicativo, a tela para seleção 
+	 do arquivo .CFG não será apresentada.
+                Abrir o arquivo de configuração 
+	 padrão: O aplicativo carrega os arquivos .CFG existentes 
+	 no diretório em que o executável está, e os apresenta na lista. Para 
+	 que a opção acima funcione, um arquivo deve ser selecionado neste 
+	 campo.
+                Arquivo de configuração padrão: 
+	 Se o EditCFG possuir um arquivo padrão definido, o aplicativo irá 
+	 buscar esse mesmo arquivo para permitir configurar ou não um arquivo 
+	 .cfg padrão para o Robô. O nome do arquivo será preenchido no campo 
+	 Arquivo de configuração padrão:.
+            
+             
+            Durante a inicialização, é apresentada uma tela contendo:
+            
+                Logo da Senior;
+                Nome do produto;
+                Versão do produto;
+                Status da inicialização;
+            
+            Conforme a imagem abaixo:
+            
+            
+             
+            Tela Principal
+            Após a inicialização, o editor se apresenta dividido em três menus principais 
+ e a área de edição do modelo, como mostra a imagem abaixo:
+            
+                Arquivo;
+                
+                Opções;
+                
+                Ajuda;
+                
+                Modelo;
+                
+            
+            
+            
+            Para utilizar o Editor de Modelos, 
+ é recomendado que as configurações já tenham sido feitas. Depois disso, 
+ é preciso apenas executar o atalho para a ferramenta.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

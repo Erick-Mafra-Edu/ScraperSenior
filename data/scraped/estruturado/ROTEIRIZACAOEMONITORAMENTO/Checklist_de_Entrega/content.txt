@@ -1,0 +1,220 @@
+# 
+
+URL: https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/#solucao-negocio/check-list-de-entrega.htm%3FTocPath%3D_____11
+
+---
+
+
+        Ver site completo
+        
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORoteirização e Torre de Controle - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Checklist de Entrega
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Checklist de Entrega
+            A rotina Checklist de Entrega tem como objetivo gerar mais segurança nas coletas e entregas, gerando a cada atividade apontada dentro do aplicativo Senior Gestão de Entregas, um questionário com perguntas conforme regras definidas dentro da plataforma Senior X.
+            Primeiro, realize os cadastros:
+            Cadastro de Perguntas
+                
+                    Acesse Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Checklist de Entregas > Cadastro de Perguntas e  clique no botão Adicionar.
+                    Na tela Pergunta serão apresentados os campos Referência, Descrição, Tipo de resposta (Numérica, Texto ou Sim/Não) e Resposta obrigatória. Onde para o tipo de resposta texto, os campos Tamanho mínimo da resposta e tamanho máximo da resposta serão habilitados. Sendo então necessário informar o tamanho mínimo e máximo entre 1 a 255.
+                    
+                    
+                
+            
+            Cadastro de Questionário
+                
+                    Acesse Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Checklist de Entregas > Cadastro de Questionários e clique no botão Adicionar.
+                    Na tela Questionários informe a descrição do questionário e clique em Salvar. O sistema busca automaticamente o valor do campo Código.
+                    Para vincular as perguntas é necessário clicar em Adicionar pergunta. No campo Pergunta é possível digitar a pergunta que irá fazer parte desse questionário ou procurar ela pela barra de rolagem. Após encontrar a pergunta desejada, clique em Incluir. É possível incluir mais de uma pergunta para o mesmo questionário.
+                     Depois de incluir todas as perguntas que irão fazer parte desse questionário, clique em Salvar.
+                    
+                    
+                    Regras de Questionários
+                        
+                            Acesse Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Checklist de Entregas > Regras de Questionário
+                            Para realizar o cadastro regras de questionários, é necessário ter previamente cadastrados os questionários que serão vinculados as regras de questionário.
+                            Para cadastrar as regras de questionários, clique em Adicionare informe os campos de Descrição e Questionário que são campos obrigatórios, os campos de Ocorrência, Tipo de Carga e Espécie de Carga não são obrigatórios, mas o sistema permite que seja cadastrado somente uma regra genérica, sendo assim, é permitido comente o cadastro de um questionário sem os campos de Ocorrência ou Tipo de Carga.
+                            
+                            
+                        
+                    
+                
+            
+            Cadastro Embarcadores
+                
+                    Acesse Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Pessoas > Embarcadores, deve ser preenchido o campo  Ocorrências Permitidas, nele é possível selecionar uma ou mais ocorrências para serem apresentadas no aplicativo do Motorista.
+                
+            
+            Realizado os cadastros, veja como funciona o(a):
+            Apontamentos de Atividades no Aplicativo:
+                
+                    No aplicativo do motorista temos algumas regras para apontamento de atividades:
+                    
+                        Caso no cadastro da atividade a ser apontada o campo Embarcador estiver em branco, o aplicativo apresenta todas as ocorrências cadastradas e ativas.
+                        Caso no cadastro da atividade a ser apontada o campo Embarcador estiver preenchido, o aplicativo apresenta somente as ocorrências selecionadas para aquele embarcador.
+                    
+                
+            
+            Apresentação Checklist no Aplicativo:
+                
+                    Para apresentar os questionários no aplicativo, o Sistema verifica as regras cadastradas e busca uma combinação de Ocorrência mais Tipo de Carga. O Sistema verifica o tipo de carga na atividade a ser apontada. Caso não encontre uma regra com a combinação de Ocorrência mais Tipo de Carga o Sistema apresenta o questionário genérico, ou seja, sem a informação de ocorrência e/ou tipo de carga.
+                
+            
+            Checklist na Torre de Controle e Consulta da Rota:
+                
+                    É possível visualizar os questionários respondidos no aplicativo, consultando a atividade na Torre de Controle no Detalhamento da Ocorrência e também consultando os detalhes da rota na rotina Consulta de Rotas e Viagens.
+                
+            
+            Regras para exclusão ou inativar um questionário ou pergunta:
+                
+                    O Sistema apresenta algumas regras ao tentar excluir ou inativar uma pergunta ou questionário, sendo elas:
+                    
+                        não é possível vincular uma pergunta que está inativa em questionário;
+                        não é possível inativar ou excluir uma pergunta que está vinculada a um questionário;
+                        não é possível excluir um questionário que está vinculado a uma regra;
+                        não é possível inativar um questionário que está vinculado a uma regra ativa;
+                        não é possível excluir uma Regra que já foi realizado um apontamento pelo aplicativo;
+                        não é possível ativar uma regra genérica que estava inativa, quando já tem outra regra genérica cadastrada.
+                    
+                
+            
+            
+                 Quer saber mais sobre  o Desafios do transporte: quais os KPIS para gerenciamento de operação? Promovemos esta Talk de Produto onde nossos especialista contam tudo sobre o tema e também o status de entrega.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+    

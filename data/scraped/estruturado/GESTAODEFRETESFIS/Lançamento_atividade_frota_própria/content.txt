@@ -1,0 +1,141 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/lancamento_atividade_frota-pr%C3%B3pria.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____15
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Lançamento atividade frota própria
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Lançamento atividade frota própria
+            
+                
+                
+                
+                    
+                        Descrição
+                        
+                         
+                    
+                    
+                        Url do Serviço
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/lancamentoAtividadeFrotaPropria				
+                    
+                    
+                        Tipo de Envio
+                        POST				
+                    
+                    
+                        Momento
+                        Após auditoria de peso do pedido é disponibilizada a integração de lançamento de atividade				
+                    
+                    
+                        Tabela
+                        TI_WS_S_LANCAMENTO_ATIVIDADE				
+                    
+                    
+                        Array
+                        Sim - Irá retornar a lista de lançamento de atividades				
+                    
+                
+             HeaderChaveValorContent-TypeApplication/jsonAuthorizationBearer inserir_token_aquiDetalhamento dos atributos em JSON entradaNome do AtributoTipo de DadoDefaultObrigatórioDescriçãoCNPJString SCNPJ da empresaExemplo do layout de entrada em JSONDescrição{"cnpj": "91830836000179"}É com base no CNPJ da empresa que será realizada a busca dos lançamentos de atividades.RegrasNome do atributoDescriçãoRetorno1cnpj_empresaO CNPJ deve possuir 14 caracteres			Irá retornar uma mensagem de CNPJ inválido					2cnpj_empresaO CNPJ já deve ter sido cadastrado préviamente		Irá retornar uma mensagem de Empresa não localizada				3geral"Cada conjunto de dados inicialmente estaram com ID_PROCESSADO = 'N'.
+Uma vez já retornados irão receber ID_PROCESSADO = 'S'."		É retornado somente os conjunto de dados que ID_PROCESSADO = 'N'Detalhamento dos atributos em JSON saídaNome do AtributoTipo de DadoDefaultObrigatórioDescriçãoRegistrosInteger SQuantidade de registros encontradosMensagemString SMensagem com o status do request realizadoListaArray SContém o Array de elementos encontradosCnpj_empresaString SCNPJ da empresaCd_empresaString SCódigo da empresaCd_transportadoraString SCódigo da transportadoraNumero_nfInteger SNúmero do documento fiscalDt_emissao_nfString SData de emissão do documento fiscalValor_descontoInteger SValor de desconto auditoria de pesoValor_totalInteger SValor do freteObservaçãoString SObservação vinda da T_DOCUMENTO_FRETEExemplo do layout de saída em JSONDescrição{"transportadoras": [{"cnpj_empresa" : "20121850000155","cd_transportadora" : 111222,"ds_transportadora" : "Transportadora Teste","ds_nome_fantasia" : "J Teste","nu_cgc" : "00122233777756","nu_ie" : "00128884567756","cd_cep" : "14404000","ds_endereco" : "Endereco Teste J","numero" : "1010","complemento" : null,"ds_bairro" : "Bairro Teste j","ds_cidade" : "Cidade Teste j","cd_municipio" : "MU","sg_uf" : "SP","nu_telefone_1" : "8338743102","nu_telefone_2" : null,"nm_contato" : "Marcelo Raul da Luz"}]}Caso o CNPJ seja válido e já tenha sido cadastrado préviamente háverá duas condições de retorno:• Se o conjunto de dados for igual a ID_PROCESSADO = 'N', irá retornar uma lista de registros.• Se o conjunto de dados for igual a ID_PROCESSADO = 'S', irá retornar uma lista vazia.
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,136 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/processo-geracao-simples-nacional.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7CSimples%2520Nacional%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Simples Nacional > Geração do cálculo do imposto 68 - Simples Nacional
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Cálculo do imposto 68 - Simples Nacional 
+            A apuração do imposto "68 - Simples Nacional" é similar a do imposto "30 - Super Simples", porém possui algumas caracteristicas: 
+            
+                As receitas brutas auferidas no mercado interno e no mercado externo são consideradas separadamente;
+                O cálculo desse imposto atende as novas normas do Simples Nacional, válidas a partir de 2018.
+            
+            
+                Importante
+                
+                A partir da competência de 2018, o imposto "30 - Super Simples" não deve mais ser utilizado, pois não contempla as novas normas. Na tabela de tributação, o campo % Proporção limite faixa deverá ser cadastrado com 999,99 para a  busca da alíquota.
+            
+            Ver também Notas Fiscais de Saída (F140GNF) - Simples Nacional.
+            Parametrizações para apuração do cálculo do imposto
+            
+                Parametrize o campo Forma de Tributação Simples Nacional na tela Cadastro da Filial para Tributos (F070FEF), com as opções "1 - Regime por Competência ou 2 - Regime de Caixa";
+                Cadastre o imposto na tela Cadastro de Imposto (F051IMP) com o tipo "68 - Simples Nacional" e informe a qual anexo ele pertence;
+                Cadastre na filial o código do imposto na tela Configuração de Impostos para a Filial (F055PPF) e informe se existem configurações de exceções de cálculo e transações de exportação;
+                Cadastre as alíquotas que serão utilizadas no cálculo do imposto "68 - Simples Nacional" na tela Cadastro de Tabela de Tributação (F049TTR), de acordo com as Tabelas do Simples Nacional. Nessa parametrização deve-se informar:Sequência para cada faixa de alíquota;% Proporção Limite Faixa;Valor Limite Faixa;Valor Limite Abatimento;% Cálculo Valor Base;% Imposto;% Imposto Exportação.Na apuração, quando existir mais de um imposto sendo calculado (de acordo com as Tabelas do Simples Nacional), será considerada somente a parametrização da guia Simples Nacional do imposto principal para fazer o processo.
+                Cadastre as alíquotas por estado que serão utilizadas no cálculo do Simples Nacional na tela Tabela de tributação do Simples Nacional por estado (F049TSN), se necessário. E caso sua filial seja do estado do Paraná ou Rio Grande do Sul, esses estados possuem alíquotas específicas utilizadas no cálculo do Simples Nacional, que devem ser cadastradas e vinculadas ao imposto na tela  Tabela de tributação do Simples Nacional por estado (F049TSN); 
+                Parametrize a composição do faturamento bruto (F053FFB) e líquido (F054FFL) para a empresa;
+                Faça a apuração do faturamento (F667AFM);
+                Se a forma de tributação do Simples Nacional da filial for realizada pelo Regime de Caixa, faça a integração dos títulos (entrada e baixa) na tela F660ITI;
+                Na tela  Apuração dos Impostos (F661PAI)
+			informe o código da filial, o período desejado e clique no botão Mostrar. São exibidos apenas os impostos principais, os vinculados não são exibidos. Selecione o código do imposto e clique em Calcular. 
+                É exibida a tela Resumo de Apuração do Imposto (F661I20);
+                Para gravar a apuração, clique no botão Processar.
+            
+            
+                Observação
+                
+                A documentação de tela Resumo de Apuração (F661I20) possui informações detalhadas sobre a geração dos valores.
+            
+            Reconhecimento da receita 
+            De acordo com a legislação, no caso de prestação de serviço, as receitas decorrentes da venda de bens ou direitos ou da prestação de serviços devem ser reconhecidas quando do faturamento, da entrega do bem ou do direito ou à proporção em que os serviços são efetivamente prestados, o que primeiro ocorrer.
+            O Gestão Empresarial | ERP, no caso de prestação de serviço,  considera a data de prestação do serviço quando for anterior a data de emissão da nota, e quando for posterior considera a data de emissão do documento fiscal. Para a receita de mercadorias e produtos, considera a data de emissão do documento fiscal.
+            Geração da alíquota
+            O valor devido mensalmente pela empresa optante pelo Simples Nacional é determinado mediante aplicação das alíquotas efetivas, calculadas a partir das alíquotas nominais constantes das tabelas dos Anexos I a V, sobre a base de cálculo, observando-se que devem ser segregadas as receitas brutas auferidas no mercado interno e aquelas decorrentes da exportação.
+            Para efeito de determinação da alíquota nominal, a empresa utiliza a receita bruta acumulada nos 12 meses anteriores ao do período de apuração.
+            A alíquota efetiva é o resultado de: RBT12 X ALIQ - PD/RBT12. Sendo que:
+            
+                RBT12: receita bruta acumulada nos 12 meses anteriores ao período de apuração;
+                Aliq: alíquota nominal constante dos Anexos I a V do Simples Nacional;
+                PD: parcela a deduzir constante dos Anexos I a V do Simples Nacional.
+            
+            
+                Observação
+                
+                
+                    A opção pelo regime de caixa é exclusiva para a apuração da base de cálculo mensal, aplicando-se o regime de competência para as demais finalidades, especialmente para determinação dos limites e sublimites, bem como da alíquota a ser aplicada sobre a receita bruta recebida no mês;
+                    Quando for identificado um RBT12 igual a "0" e, na tabela de tributação, estiver indicado que a alíquota do ICMS deve ser deduzida, o sistema irá considerar como alíquota efetiva a alíquota da tabela de tributação - (menos) a parcela do ICMS.
+                    Em caso de empresas em início de atividade, a rotina de cálculo do Simples Nacional localiza a data do parâmetro global PerIniFat, caso este esteja informado. Se não, irá localizar a data do cadastro da inscrição estadual e aplicar sobre ela as médias de faturamento e multiplicar pelos 12 meses para gerar o valor a ser utilizado como base para a busca da alíquota na tabela de tributação.
+                
+            
+            
+                Código do imposto Simples para alíq. ICMS/ISS
+            
+            Se o campo Código do imposto Simples para alíq. ICMS/ISS estiver preenchido na tela F049TTR, será calculada a alíquota efetiva do imposto informado, a representatividade do ICMS sobre esse valor e acrescido ao valor da alíquota efetiva do imposto que deu origem ao cálculo.
+            
+                Se o campo Código do imposto Simples para alíq. ICMS/ISS for igual ao código do imposto apurado, o sistema calculará o acréscimo do ICMS ou ISS com base no descritivo do parágrafo 17 do artigo 18 da LCP 123/2006;
+                Se o campo Código do imposto Simples para alíq. ICMS/ISS for diferente do código do imposto apurado, o sistema calculará o acréscimo do ICMS com base no descritivo do parágrafo 5 do artigo 18 da LCP 123/2006.
+            
+            Legislação conforme LCP 123 art. 18º
+                
+                    § 5º-E. Sem prejuízo do disposto no § 1o do art. 17 desta Lei Complementar, as atividades de prestação de serviços de comunicação e de transportes interestadual e intermunicipal de cargas, e de transportes autorizados no inciso VI do caput do art. 17, inclusive na modalidade fluvial, serão tributadas na forma do Anexo III, deduzida a parcela correspondente ao ISS e acrescida a parcela correspondente ao ICMS prevista no Anexo I.
+                    § 17. Na hipótese do § 13 do art. 3o, a parcela de receita bruta que exceder os montantes determinados no § 11 daquele artigo estará sujeita, em relação aos percentuais aplicáveis ao ICMS e ao ISS, às alíquotas máximas correspondentes a essas faixas previstas nos Anexos I a V desta Lei Complementar, proporcionalmente, conforme o caso.
+                    Exemplo de cálculo no cenário do § 17:
+                    
+                    
+                        Receita bruta acumulada dos 12 meses (RBT12) se enquadra na 6ª faixa;
+                        Alíquota efetiva = {[(RBT12 x alíquota nominal da 6ª faixa) – Parcela a Deduzir da 6ª Faixa]/RBT12};
+                        Alíquota efetiva	= 9,05263158%;
+                        Base de cálculo	= R$ 200.000,00;
+                        Valor Simples Nacional (sem ICMS)	 = R$ 18.105,26.
+                    
+                    Cálculo

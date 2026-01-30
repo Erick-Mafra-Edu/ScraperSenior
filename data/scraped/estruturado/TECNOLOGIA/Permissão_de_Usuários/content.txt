@@ -1,0 +1,165 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/bi/permissao-de-usuarios-microstrategy.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CPerformance%2520Corporativa%7CBI%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Performance Corporativa > BI > Permissão de Usuários
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Permissão de Usuários do MicroStrategy
+            O MicroStrategy possui uma estrutura de autorização baseada em usuários, grupos, papéis e permissões, em que é possível atribuir permissões especificas a um usuário, bem como gerenciar as permissões por associação a grupos.
+            Outra forma de controle são as ACLs - Access Control List(listas de controle de acesso) que permitem o controle de acesso a um nível mais granular. Controlando permissões de leitura e escrita a objetos do MicroStrategy. A licença Senior permite manipular as ACLs dos seguintes objetos: pastas, métricas, relatórios, cubos, documentos e dashboards. 
+            No nível de relatórios existem os filtros de segurança, que permitem a aplicação de filtros de acordo com o perfil do usuário, possibilitando que dados específicos  sejam vistos apenas pelas pessoas aos quais se destinam.
+            Os usuários são armazenados no repositório interno do MicroStrategy e estão disponíveis pelo Developer, em Senior > Administração > Gerenciador de Usuários > Everyone ou através do MicroStrategy Web, em <Servidor>:<Porta>/MicroStrategy/servlet/mstrServerAdmin > <Ambiente> >Gerenciador de Usuários > Everyone, sendo que o grupo Everyone é virtual e serve apenas para fins de simplificar o gerenciamento dos usuários. 
+            Na instalação são criados grupos com permissões pré-definidas seguindo a licença disponibilizada pela Senior, permitindo uma configuração de segurança rápida, em que cada grupo representa um papel dentro do MicroStrategy. Os grupos estão disponíveis em Senior > Administração > Gerenciador de Usuários > MicroStrategy Groups > LDAP Users ou através do MicroStrategy Web, em <Servidor>:<Porta>/MicroStrategy/servlet/mstrServerAdmin > <Ambiente> >Gerenciador de Usuários > MicroStrategy Groups > LDAP Users, que estão neste diretório por ser a forma de integração de usuários utilizada:
+            
+                mstr-starter: permite acessar dossier, documentos e relatórios e filtrar dados. Não permite criar visões;
+                mstr-professional: herda as permissões do mstr-starter e permite criar visões pela WEB, usando cubos existentes, e modificar as visões existentes. Não permite programar o envio de visões por e-mail e criar visões usando dados externos, no caso de SaaS;
+                mstr-distribution: herda as permissões do mstr-professional e permite programar o envio de visões por e-mail;
+                mstr-mobile: permite acessar dossier, documentos e relatórios por meio de aplicativo próprio da MicroStrategy.
+            
+            
+                Importante
+                
+                Para qualquer alteração ou configuração no MicroStrategy Developer é necessário possuir a licença de architect. Caso não possua a licença com esta chave, entre em contato com o seu canal ou seu executivo de negócios para solicitar esta alteração/configuração necessária.
+            
+            No MicroStrategy há uma distinção entre permissão e privilégio, em que permissão é equivalente ao Windows,  define quem pode ler, escrever, executar um objeto e privilégio é o que pode ser feito, que funções podem ser utilizadas.
+            O controle de usuários é unificado num único metadado, não sendo necessário replicar os usuários entre diferentes projetos. E privilégios e permissões atribuídos a um grupo são propagados a seus membros, auxiliando na definição da arquitetura de segurança.
+            Privilégios
+            Os privilégios são agrupados por papéis e utilizados para facilitar a atribuição de privilégios e a contabilização de licenças de usuários. Os papéis disponíveis na licença de cliente são: 
+            
+                Web Reporter;
+                 Web Analyst;
+                Web Professional;
+                Privilégios comuns;
+                Mobile;
+                Entregas;
+                Opção de várias Origens.
+            
+            
+                Nota
+                
+                Para mais informações sobre os privilégios disponíveis para estes papéis, acesse o manual AdminSupplemental.pdf (a partir da página 391), localizado em: %programfiles(x86)%\Common Files\MicroStrategy\help\English\AdminSupplemental.pdf. Documento disponível com o MicroStrategy previamente instalado em seu computador.
+            
+            Papeis disponíveis na licença Senior
+            A licença do MicroStrategy instalado em conjunto ao ETL é vendida nos formatos MicroStrategy Mobile e MicroStrategy Web.
+            A utilização de privilégios não presentes na licença ou excedendo o número de usuários acarreta em avisos do MicroStrategy sobre inconformidade da licença, podendo invalidar  caso não seja corrigida.
+            	Atribuição de privilégios
+            A atribuição de privilégios é no Intelligence Server pelo Developer. Para atribuir privilégios a um usuário/grupo:
+            
+                Acesse o MicroStrategy Developer;
+                Clique duas vezes na fonte de projeto Senior;
+                Forneça os dados do administrador;
+                Expanda a árvore até Administração > Gerenciador de Usuários;
+                Selecione um usuário ou grupo e clique com o botão direito do mouse:
+                Selecione os privilégios que o usuário/grupo deve possuir e clique em OK.
+            
+            Permissões
+            As permissões são atribuídas a nível de objeto (pasta, métrica, relatório, cubo e dashboard). Por restrições da licença elas devem ser definidas pela camada Web.
+            São disponibilizadas as seguintes permissões:
+            
+                Exibir: permissão para apenas visualizar/executar o objeto;
+                Modificar: permissão para modificar o objeto;
+                Controle total: controle total sobre o objeto, incluindo alterar permissões de acesso;
+                Todos Negados: bloqueia por completo o acesso ao objeto;
+                Personalizar: permite atribuição de permissões mais especificas:Procurar: permite que o objeto apareça em buscas;Ler: ler as configurações do objeto,  como abrir o editor especifico do objeto;Gravar: ler as configurações do objeto, como abrir, editar e salvar com o editor especifico do objeto;Excluir: excluir o objeto;Controle: controlar as permissões de acesso;Usar: usar o objeto, por exemplo incorporar uma métrica num relatório ou usar um relatório o cubo como fonte de um dashboard;Executar: executar um objeto (relatórios, cubos e dashboards).
+            
+            Atribuição de permissões
+            
+                Através do módulo Web, em http://<servidor>:<porta>/MicroStrategy/, acesse um projeto e navegue até o objeto que deve ter suas permissões alteradas;
+                Pressione o botão direito do mouse sobre o objeto e selecione Compartilhar...:
+				
+                Na tela de compartilhamento, clique para exibir todos os usuários e adicionar uma nova permissão:
+				
+                Pressione Procurar e  marque o usuário/grupo desejado:
+				
+                Escolha a permissão:
+				
+                Pressione Adicion... para adicionar a permissão e pressione OK;
+                Para editar uma permissão, pressione a seta ao lado do nome do usuário/grupo e escolha a nova permissão. Clique em OK:
+				
+                Para permissão avançada, pressione a seta ao lado do nome do usuário/grupo e selecione Personalizar...:
+				
+                Marque as permissões desejadas e pressione OK nesta tela e na anterior.
+            
+            
+                Nota
+                
+                Para informações complementares sobre permissão e privilégios de usuários por projeto, acesse o manual Admin.pdf (a partir da página 69), localizado em: %ProgramFiles(x86)%\Common Files\MicroStrategy\Help\English\Admin.pdf. Documento disponível com o MicroStrategy previamente instalado em seu computador.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+        

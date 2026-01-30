@@ -1,0 +1,202 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#central-de-configuracao/cfgcentermainform.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CCentral%2520de%2520Configura%25C3%25A7%25C3%25A3o%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Central de Configuração
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Central de Configurações Senior
+            
+            A Central de Configurações unifica os parâmetros de configurações dos softwares. Todas as configurações das soluções  após as definições do usuário, são geradas em um único arquivo de configurações, o que facilita o controle de mudanças e permite mais consistência e padronização dos arquivos.
+            A Central de Configuração (SeniorConfigCenter.exe) 
+ permite realizar diversas configurações no ambiente selecionado. Essas 
+ configurações podem abranger desde rotinas básicas para o funcionamento 
+ do ambiente, como peculiaridades de um sistema em específico.
+            
+                Importante
+                
+                Esta documentação contém passos que explicam como modificar configurações de registro. Portanto, problemas podem ocorrer se você alterar esses registros incorretamente. Tenha certeza de que você está alterando essas informações com cuidado e seguindo as instruções.
+            
+            Arquivo de configurações
+            Para garantir uma segurança extra, realize o backup das informações fazendo uma cópia do arquivo .CFG que sofrerá alterações. A localização desse arquivo de encontra no topo da tela da Central de configuração, no qual é possível visualizar o nome do ambiente selecionado e caminho do diretório do arquivo 
+ de configurações.
+            Através do campo de busca, localizado acima do menu, realize uma nos menus de 
+ configuração. Conforme o texto da pesquisa for escrito, os menus que contiverem 
+ esse texto no seu nome, serão apresentados.
+            Ambientes
+            O gerenciamento de ambientes instalados pode ser feito a partir do botão , com possibilidade criar novos ambientes ou definir o ambiente padrão para utilização da Central de Configurações Senior. Ao clicar em Gerenciar ambientes... , as seguinte opções são apresentadas para o gerenciamento dos ambientes instalados:
+            
+                Editar:
+  permite editar a descrição do ambiente. O nome não pode ser alterado 
+ depois de criado;
+                Duplicar: crie 
+ um novo ambiente com as mesmas configurações do ambiente utilizado como 
+ base. A opção apenas adiciona o caractere "2" no nome, entretanto, 
+ é possível alterar o nome e a descrição do ambiente duplicado;
+                Excluir: permite 
+ excluir ambientes. Somente o ambiente definido como padrão não pode ser 
+ excluído;
+                Ambiente 
+ padrão: define o ambiente padrão da instalação ou que está 
+ sendo manipulado na Central de configuração.
+            
+            O ambiente que estiver selecionado na Central 
+ de Configuração será definido como ambiente padrão.
+            Através da opção Ambiente de inicialização... defina como o usuário acessará os sistemas Senior 
+ controlados por um arquivo .CFG:
+            
+                Sempre 
+ pedir para o usuário escolher qual ambiente será utilizado: ao 
+ acessar um sistema, a tela de seleção de ambiente (arquivo .CFG) sempre 
+ será exibida, obrigando o usuário a selecionar um;
+                Usar 
+ o seguinte ambiente: define o .CFG de um ambiente específico 
+ como padrão de inicialização dos sistemas que fizerem parte deste ambiente;
+                Usar 
+ o ambiente padrão: define um ambiente específico para uso 
+ na Central de Configurações Senior.
+            
+            Em Informações de instalação... visualize uma tela com o ID da Instalação gerado no momento da criação do serviço Senior - Serviço de informações da instalação (ID da instalação <número>). A consulta deste ID permite identificar os IDs utilizados em uma instalação ou ambiente. 
+            
+                Observações
+                
+                
+                    O Serviço Senior - Serviço de informações da instalação irá gerar log somente quando iniciado de forma manual. Ou seja, é necessário executar o arquivo SeniorInstInfoService.exe com o parâmetro -debug. Por exemplo, C:\Senior\SeniorInstInfoService.exe -debug;
+                    
+                        Ao marcar a opção Usar o ambiente padrão, esse ambiente sempre será carregado. Por outro lado, dentro dos sistemas Senior (seja Gestão de Pessoas | HCM ou Ronda Senior), é possível marcar a opção Sempre pedir para o usuário escolher qual ambiente será utilizado, acessando o menu Diversos e dentro dele preencher a opção CFG de Inicialização. Apesar disso, o sistema irá priorizar o ambiente que estiver definido como padrão, ou seja, vai respeitar o SeniorConfigCenter e não a definição em tela.
+                    
+                
+            
+            Ao alterar 
+ alguma informação ou configuração em uma das guias, pressione o botão Aplicar para consistir a alteração. Caso a tela seja fechada antes 
+ disso, as alterações não serão aplicadas. Ao aplicar alguma configuração, é necessário reiniciar os aplicativos cliente-servidor, para as configuração referente ao ambiente Middleware. O próprio gerenciador do Middleware é responsável por realizar automaticamente essa reinicilização nos aplicativos do Middleware.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

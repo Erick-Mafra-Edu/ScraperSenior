@@ -1,0 +1,208 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/configuracaoperftelas.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7C_____14
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Configuração de Performance de telas
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Configuração de performance de telas
+            Para indicar quais usuários tem permissão para alterar as configurações de performance, acesse o item Configurações de performance na guia Configurações da Central de Segurança.
+            Tela
+            Abrir
+                Define a opção de carregamento de registros ao abrir a tela:
+            
+                Em branco: A tela será mostrada vazia;
+                Posicionada no primeiro registro: Exibe a tela com o primeiro registro carregado;
+                Posicionada no último registro: Exibe a tela com o último registro carregado.
+            
+            Fechar cursores quando ocioso
+                Define a opção de fechamento dos cursores de datasets da tela quando o sistema está ocioso:
+            
+                Padrão: Quando esta opção estiver selecionada, se o banco for MS-SQL Server e o tipo de acesso é DBExpress o sistema irá fechar os cursores, senão o sistema não irá fechar os cursores;
+                Sim: Fechar os cursores quando o sistema fica ocioso;
+                Não: Não fechar os cursores quando o sistema fica ocioso.
+            
+            Nota
+                Ao fechar os cursores abertos na tela em questão, o sistema irá liberar a memória e os recursos do banco de dados alocados para eles.
+            
+            Tabelas
+                O valor definido no campo RowSet size será utilizado por todos os datasets que estiverem na tela.
+            Atualizar dados
+            Opções que indicam quando será feita a leitura (SELECT) do registro em uso para controle de multiusuário.
+             Cada vez que for executado um SELECT para atualizar o registro o cache desta tabela será descartada, obrigando a tabela a executar um SELECT para carregar o registro.
+            Estas opções podem tornar operações em telas mais lentas, mas são indicadas quando existem vários usuários trabalhando no sistema ao mesmo tempo na mesma tela e mesmo registro.
+            Ao sair do grupo chave
+                O SELECT será feito após informada a chave do registro e antes de começar a alterá-lo.
+            Ao excluir registro
+                O SELECT será feito antes de excluir um registro.
+            Ao confirmar inclusão/alteração de registro
+                O SELECT será feito antes de gravar as alterações de um registro.
+            Ao cancelar inclusão/alteração de registro
+                O SELECT será feito depois de cancelar alterações de um registro.
+            Ao sair de um campo com ligação
+                A tabela de ligação é atualizada para refletir alterações de outros usuários. Cada vez que uma tabela de ligação for atualizada o cache desta tabela será descartado. Esta opção obriga a tabela de ligação a executar um SELECT para validar o valor informado no campo. Isto pode tornar a saída de campos com ligação mais lenta, mas é indicado quando existem vários usuários trabalhando no sistema ao mesmo tempo. Esta atualização também pode ser feita manualmente através do menu de contexto Atualizar dados de ligações, ou quando o usuário digita uma ligação inválida e é mostrada a opção Atualizar. 
+            Buscar descrições de ligações
+            Define como serão executados os comandos para buscar as descrições de ligações.
+            Estas opções dependem da configuração do sistema, como o banco de dados que está sendo usado, configuração do banco de dados, tamanho da base, configuração da rede, etc.
+            Por este motivo é necessário testar as opções para saber qual delas melhora a performance do sistema, dependendo da tela o resultado poderá ser completamente diferente.
+            Com vários selects
+                Executa um SELECT para cada descrição de ligação. Serão executados vários selects para trazer todas as descrições da tela. É mais indicado quando o usuário tem o sistema configurado para usar cache.
+            Com um único select com Outer Join
+                Executa um SELECT para mostrar todas as descrições de ligações. Será executado um comando mais complexo para trazer todas as descrições de ligações da tela utilizando a sintaxe de Outer Join. Essa opção traz todos os resultados desejados, mas pode ter uma redução na performance em alguns casos.
+            Dicas para comandos Select
+            Envia junto de cada SELECT uma dica (QUERY HINTS) para o banco sobre a forma de resolver o SELECT.
+            Não há como afirmar qual dica tornará os SELECTS mais rápidos, pois dependem da maneira como cada banco estará configurado, para descobrir qual terá a melhor performance é necessário testar todas as opções.
+            SQL Server
+            Otimizar para primeiro registro (Option FAST 1)
+                Irá informar o banco resolver os SELECTS de maneira otimizada para trazer o primeiro registro.
+            Nenhum (conforme banco)
+                Utiliza a maneira já configurada no banco.
+            Oracle
+            Primeiro registro (First Rows)
+                Irá informar o banco resolver os SELECTS de maneira otimizada para trazer o primeiro registro.
+            Automático (Choose)Irá verificar se o banco possui estatística, se possuir irá utilizar All Rows, se não irá utilizar Rule.
+            Nenhum (conforme banco)
+                Utiliza a maneira já configurada no banco.
+            Colocar dica para usar melhor índice
+                Quando estiver utilizando este assinalamento, será analisado a cláusula ORDER BY no SELECT, e se houver indice de acordo com os campos utilizado, irá informar para o banco utilizar esse indice.
+            Salvando as configurações
+            Salvar configuração
+                Indica como será salva a configuração:
+            
+                Individual: Salva a configuração para o usuário logado no sistema;
+                Como padrão: Salva a configuração como padrão. Os usuários que não tiverem configuração individual usarão esta configuração;
+                Para todos os usuários: Salva a configuração para todos os usuários. Todos os usuários passarão a usar esta configuração;
+                Para todas as telas do sistema: Esta configuração será aplicada em todas as telas do sistema.
+            
+            OK
+                Aplica todas as alterações e volta para a tela do sistema. Este campo somente é habilitado após escolher uma opção para salvar.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

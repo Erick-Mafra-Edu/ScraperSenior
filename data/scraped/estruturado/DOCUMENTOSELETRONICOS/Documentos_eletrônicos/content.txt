@@ -1,0 +1,362 @@
+# 
+
+URL: https://documentacao.senior.com.br/documentoseletronicos/5.8.16/#documentos-eletronicos/documentos-eletronicos-capa.htm%3FTocPath%3DManual%2520do%2520usu%25C3%25A1rio%2520-%2520eDocs%7CDocumentos%2520eletr%25C3%25B4nicos%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOeDocs - versão 5.8.16
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Manual do usuário - eDocs > Documentos eletrônicos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Documentos eletrônicos
+            Nesse documento você encontra informações sobre:
+            
+                NF-e
+                
+                Emissões NF-e
+                
+                Envio de boleto nos e-mails de emissão de NF-e, NFS-e e CT-e
+                
+                Recebimentos NF-e
+                
+                Baixa automática de NF-es da SEFAZ (Distribuição de DF-es)
+                
+                Informações da tag <infSenior> - NF-e
+                
+                Manifestações do Destinatário
+                
+                Gerar manifestação de destinatário
+                
+                Eventos de manifestação de destinatário
+                
+                Visualizar eventos de manifestação de destinatário
+                
+                Verificações adicionais para recebimento de documentos eletrônicos
+                
+                Controle de contingência
+                
+                NFS-e
+                
+                Emissões NFS-e
+                
+                Envio de boleto nos e-mails de emissão de NF-e, NFS-e e CT-e
+                
+                Cidades homologadas para Emissões de NFS-e
+                
+                Lista de fornecedores para emissão de NFS-e homologados para a Reforma Tributária
+                
+                Fornecedores
+                
+                Fornecedor ADM Sistemas (Saatri)
+                
+                Fornecedor BHISS
+                
+                Fornecedor Coplan
+                
+                Fornecedor Coplan - versão 2.02
+                
+                Fornecedor CPQD
+                
+                Fornecedor CtaConsult
+                
+                Fornecedor DBSeller
+                
+                Fornecedor DSF/SIAT/Pro Solution
+                
+                Fornecedor Edza
+                
+                Fornecedor E&L Gestão Pública - versão 1.00
+                
+                Fornecedor E&L Gestão Pública - versão 2.04
+                
+                Fornecedor Elotech
+                
+                Fornecedor Equiplano
+                
+                Fornecedor E-Receita
+                
+                Fornecedor eTransparencia
+                
+                Fornecedor FGMaiss
+                
+                Fornecedor Fiorilli
+                
+                Fornecedor Fisslex
+                
+                Fornecedor Ginfes
+                
+                Fornecedor Ginfes - versão 2.04
+                
+                Fornecedor GOVBR
+                
+                Fornecedor Governo Digital
+                
+                Fornecedor Infisc
+                
+                Fornecedor IPM
+                
+                Fornecedor ISSFortaleza
+                
+                Fornecedor João Pessoa
+                
+                Fornecedor Joinville
+                
+                Fornecedor Londrina
+                
+                Fornecedor Memory
+                
+                Fornecedor N&A Informática
+                
+                Fornecedor Natal
+                
+                Fornecedor NF-Eletrônica
+                
+                Fornecedor Publica
+                
+                Fornecedor São Paulo
+                
+                Fornecedor Simpliss
+                
+                Fornecedor Simpliss Assinado
+                
+                Fornecedor Thema
+                
+                Fornecedor Tinus
+                
+                Fornecedor Tinus Soap
+                
+                Fornecedor 4R Tecnologia
+                
+                Fornecedor Ábaco
+                
+                Fornecedor Ábaco - versão 2.04
+                
+                Fornecedor Abase
+                
+                Fornecedor Agilicore
+                
+                Fornecedor Agili InfoPlus
+                
+                Fornecedor Ambiente Nacional
+                
+                Fornecedor Aspec
+                
+                Fornecedor Assessor Público
+                
+                Fornecedor Barueri
+                
+                Fornecedor Bauhaus Sistemas
+                
+                Fornecedor Bauru
+                
+                Fornecedor Betha Sistemas - versão 1.00
+                
+                Fornecedor Betha Sistemas - versão 2.02
+                
+                Fornecedor Betha Cloud - versão 1.00
+                
+                Fornecedor Betha Cloud - versão 2.02
+                
+                Fornecedor Campinas
+                
+                Fornecedor Cecam
+                
+                Fornecedor Centi Rest
+                
+                Fornecedor Chapecó
+                
+                Fornecedor Citta
+                
+                Fornecedor Cotia
+                
+                Fornecedor Curitiba
+                
+                Fornecedor DEISS
+                
+                Fornecedor Desenvolve Cidade
+                
+                Fornecedor Digifred - versão 2.0
+                
+                Fornecedor DSF
+                
+                Fornecedor EddyData
+                
+                Fornecedor Embras
+                
+                Fornecedor E-receita
+                
+                Fornecedor Fintel
+                
+                Fornecedor FISCO - SGA (São Gonçalo do Amarante - leiaute próprio)
+                
+                Fornecedor GeisWeb
+                
+                Fornecedor GeisWeb - versão 2.00
+                
+                Fornecedor Giap
+                
+                Fornecedor GOVBR - versão 1.00
+                
+                Fornecedor GOVBR - versão 2.02
+                
+                Fornecedor GOVBR - versão 2.03
+                
+                Fornecedor GOVBR - versão 2.03 - ABRASF
+                
+                Fornecedor Governa
+                
+                Fornecedor iiBrasil
+                
+                Fornecedor Infisc PcGif
+                
+                Fornecedor IPM - versão 2.04
+                
+                Fornecedor IPM Rest
+                
+                Fornecedor IsaNeto - versão 2.03
+                
+                Fornecedor IssDigital
+                
+                Fornecedor Isse
+                
+                Fornecedor ISS Intel
+                
+                Fornecedor ISS NFe
+                
+                Fornecedor Kalana
+                
+                Fornecedor KBF Sistemas
+                
+                Fornecedor Lanza
+                
+                Fornecedor Lençóis Paulista
+                
+                Fornecedor Lexsom
+                
+                Fornecedor Libre Soluções
+                
+                Fornecedor Megasoft
+                
+                Fornecedor Modernização Pública
+                
+                Fornecedor Município Eletrônico
+                
+                Fornecedor NFSD
+                
+                Fornecedor ISS Net
+                
+                Fornecedor ISS Net/NotaControl - versão 2.04
+                
+                Fornecedor Nota Digital
+                
+                Fornecedor Portal Fácil
+                
+                Fornecedor Prescon
+                
+                Fornecedor PrimaxOnline
+                
+                Fornecedor Prodata
+                
+                Fornecedor PublicSoft
+                
+                Fornecedor Quasar
+                
+                Fornecedor Rio Branco
+                
+                Fornecedor RZL
+                
+                Fornecedor Salvador
+                
+                Fornecedor São José dos Campos
+                
+                Fornecedor São José dos Pinhais
+                
+                Fornecedor Semfaz Online - versão 2.04
+                
+                Fornecedor SH3 Sistemas
+                
+                Fornecedor Siappa
+                
+                Fornecedor SIAP Sistemas
+                
+                Fornecedor SIGEP
+                
+                Fornecedor SigISS - versão 1.00
+                
+                Fornecedor SigISS - versão 2.03
+                
+                Fornecedor SigISS - versão 2.04
+                
+                Fornecedor SigISS Web
+                
+                Fornecedor Simpliss - versão 2.03
+                
+                Fornecedor Sinsoft
+                
+                Fornecedor SISGENF-e
+                
+                Fornecedor Sistema4R
+                
+                Fornecedor Smarapd - versão 1.00
+                
+                Fornecedor Smarapd - versão 2.03
+                
+                Fornecedor Smarapd - versão 2.04
+                
+                Fornecedor Softplan
+                
+                Fornecedor SpeedGov
+                
+                Fornecedor STM
+                
+                Fornecedo

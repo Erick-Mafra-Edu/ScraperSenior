@@ -1,0 +1,183 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#reforma-tributaria.htm%3FTocPath%3DReforma%2520Tribut%25C3%25A1ria%7C_____0
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Reforma Tributária
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Reforma Tributária
+            A Reforma Tributária, recentemente aprovada, traz mudanças estruturais no sistema de tributos sobre o consumo no Brasil, com impactos diretos sobre a apuração e o recolhimento de impostos por parte das empresas. Para apoiar a conformidade com as novas exigências legais, o ERP XT passou por atualizações que permitem a parametrização adequada dos tributos conforme os novos modelos estabelecidos.
+            
+                 Quer entender melhor os impactos da Reforma Tributária na sua empresa?
+                A Senior preparou uma ferramenta exclusiva para te ajudar: o Simulador da Reforma Tributária. Com ele, é possível visualizar, de forma prática e personalizada, como as mudanças previstas podem afetar seu negócio. Acesse a matéria completa e descubra como utilizar o simulador para tomar decisões mais estratégicas e se preparar para o novo cenário tributário do país.
+            
+             
+            Para mais informações sobre a Reforma Tributária, clique nos botões abaixo:
+            
+                Informações oficiais
+                
+                Simulador
+                
+                Parametrizações no ERP XT
+                
+            
+            
+                Rotinas impactadas 
+                
+                Robô Diagnóstico
+                
+                Treinamentos disponíveis
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

@@ -1,0 +1,172 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/configuracoes-internacionais/finternationalcfg.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CConfigura%25C3%25A7%25C3%25B5es%2520Internacionais%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Configurações Internacionais > Configurações Internacionais
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Configurações Internacionais
+                
+        O recurso de configurações internacionais permite ao usuário esconder determinadas
+ páginas ou campos das telas do sistema e tornar determinados campos obrigatórios
+ ou opcionais.
+                Selecionando uma configuração internacional
+ para o sistema
+                
+        Para utilizar uma configuração internacional no sistema, acesse o menu Diversos > Configurações
+ internacionais > Selecionar configuração internacional, será exibida a tela Configuração Internacional Padrão. Nesta tela informe a configuração internacional que será utilizada
+ como padrão no sistema para o usuário logado.
+                Utilizando o recurso de configurações
+ internacionais de tabelas
+                
+        Para alterar as configurações internacionais de tabelas e campos do sistema, acesse o menu Diversos > Configurações internacionais > Configurações internacionais
+ de tabelas, será exibida a tela Configurações Internacionais, onde serão apresentadas as tabelas e os campos que podem ser configurados:
+                Configuração
+                    Configuração internacional para a qual a tela está sendo configurada.
+                B009RF1, B010IN1, NomIN1
+                    Tabelas e os campos do sistema que podem
+ ser configurados.
+                Propriedades do campo
+                    Mostra as propriedades do campo que podem ser configuradas.
+                Visível
+                    Define se o campo selecionado ficará visível ou não.
+                Habilitado
+                    Define se o campo selecionado permitirá ser alterado ou não.
+                Obrigatório
+                    Define se o campo selecionado será obrigatório ou não.
+                Valor padrão
+                    Define um valor para preencher o campo ao incluir um registro, se o campo selecionado for do tipo memo, o valor informado não poderá conter quebra de linha nem ultrapassar 255 caracteres.
+                
+                    Observação
+                    
+                    Para evitar a ocorrência de erros, quando forem configurados os valores padrões de uma tela, deve-se levar em consideração o país selecionado e a configuração regional de onde este valor for utilizado. Esta configuração é criada conforme o país selecionado nas configurações internacionais. Para cada país, um valor padrão pode ser selecionado. Se as configurações regionais e internacionais não estiverem de acordo, pode ocorrer erro ao utilizar uma configuração regional com formato diferente.
+                
+                Restaurar
+                    Restaura as propriedades do campo selecionado com os valores
+ originais. Esse botão estará desabilitado caso as propriedades já estejam iguais
+ as propriedades originais. 
+                Restaurar Todos
+                    Restaura os valores das propriedades de todos os campos,
+ com os valores originais.
+                Fechar
+                    Fecha a tela de configuração. Se houver alterações não salvas, será exibida uma mensagem para o usuário confirmar o salvamento ou cancelamento das alterações.
+                Utilizando o recurso de configurações internacionais
+ de telas
+                
+        No menu pop-up de telas que permitem configurações internacionais aparecerá o item
+Configurações internacionais de tela, esta opção exibe a tela Configurações Internacionais, onde serão apresentadas as tabelas e os campos que podem ser configurados:
+                Configuração
+                    Configuração internacional para a qual a tela está sendo configurada;
+                Cadastro1, Cadastro2, Cadastro3
+                    São as guias da tela que podem ser configuradas;
+                Propriedades da página
+                    Mostra as propriedades da guia que podem ser configuradas.
+ Se estiver selecionado um campo ao invés de uma guia, serão exibidas as propriedades
+ do campo e não da guia;
+                Restaurar Todos
+                    Restaura os valores das propriedades de todas as guias,
+ com os valores originais.
+                Fechar
+                    Fecha a tela de configuração. Se houver alterações não salvas, será exibida uma mensagem para o usuário confirmar o salvamento ou cancelamento das alterações;
+                
+        Configurações de página
+                Visível
+                    Define se a página selecionada ficará visível ou não na tela;
+                Habilitado
+                    Define se a guia selecionada ficará habilitada ou não na tela;
+                Restaurar
+                    Restaura as propriedades da guia selecionada com os valores
+ originais mediante confirmação:Sim: Restaura os valores das propriedades de todos os campos da guia selecionada
+ com os valores originais;Não: Restaura apenas os valores das propriedades da guia selecionada com os
+ valores originais. 
+                
+        Configurações de campo
+                O recurso de configurações internacionais foi desenvolvido com o objetivo de definir padrões para os campos do sistema, informando valores padrões que sejam válidos ou escondendo os campos e alterando a obrigatoriedade deles, conforme o País da empresa selecionada.
+                Visível
+                    Define se o campo selecionado ficará visível ou não;
+                Habilitado
+                    Define se o campo selecionado permitirá ser alterado ou não;
+                Obrigatório
+                    Define se o campo selecionado será obrigatório ou não. Junto com a definição de Obrigatório, é necessário informar um valor padrão válido. Quando o campo está ligado a outra tabela, deve ser um registro existente.
+                Valor padrão
+                    Define um valor para preencher o campo ao incluir um registro. Se o campo selecionado for do tipo memo, o valor informado não poderá conter quebra de linha nem ultrapassar 255 caracteres; se o campo for ligado a uma tabela, deverá ser informado um registro existente.Se o campo for ligado a uma tabela, deverá ser informado um registro existente ou não deixar o campo em branco. Quando tiver máscara, poderá ser deixado o valor que já vem preenchido na tela (como 00.0000 para o código da cidade, por exemplo).
+                
+                    Observação
+                    
+                    Para evitar a ocorrência de erros, quando forem configurados os valores padrões de uma tela, deve-se levar em consideração o país selecionado e a configuração regional de onde este valor for utilizado. Esta configuração é criada conforme o país selecionado nas configurações internacionais. Para cada país, um valor padrão pode ser selecionado. Se as configurações regionais e internacionais não estiverem de acordo, pode ocorrer erro ao utilizar uma configuração regional com formato diferente.
+                    Por ser um elemento independente, em algumas telas se faz necessário o uso do botão de alterar para a consistência dos dados durante o processo de internacionalização, isso é avaliado conforme as especificações de cada tela e seu comportamento esperado.
+                    O valor padrão definido pelo usuário será considerado apenas se a tela não definir um valor para o campo durante a inserção do registro.Exemplo: Ao cadastrar um novo colaborador pela ficha básica, o campo R034FUN.ConRho é preenchido automaticamente conforme a regra de negócio do sistema. Nesse caso, o valor padrão definido pelo usuário para o campo R034FUN.ConRho na tela FR034FUN não será aplicado.
+                
+                Restaurar
+                    Restaura as propriedades do campo selecionado com os valores
+ originais. Esse botão estará desabilitado caso as propriedades já estejam iguais
+ as propriedades originais. 
+                Utilizando o recurso de configurações
+ internacionais de grades
+                
+        No menu pop-up de grades que permitem configurações internacionais aparecerá o item
+Configurações internacionais da grade, esta opção exibe a tela Configurações Internacionais, onde serão apresentadas as tabelas e os campos que podem ser configurados:
+                Configuração
+                    É a configuração internacional para a qual a tela está sendo configurada;
+                NomIN1, UFIN1, USU_Teste
+                    São os campos da grade que podem ser configurados;
+                Propriedades do campo
+                    Mostra as propriedades do campo que podem ser configuradas;
+                Visível
+                    Define se o campo selecionado ficará visível ou não;
+                Habilitado
+                    Define se o campo selecionado permitirá ser alterado ou não;
+                Obrigatório
+                    Define se o campo selecionado será obrigatório ou não; Junto com a d

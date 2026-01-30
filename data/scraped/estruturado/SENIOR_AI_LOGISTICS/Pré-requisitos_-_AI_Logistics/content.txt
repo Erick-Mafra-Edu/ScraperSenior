@@ -1,0 +1,174 @@
+# 
+
+URL: https://documentacao.senior.com.br/senior-ai-logistics/1.0.0/#manual-do-usuario/pre-requisitos.htm%3FTocPath%3DSenior%2520AI%2520Logistics%7CPrimeiros%2520acesso%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOSenior AI Logistics
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Senior AI Logistics > Primeiros acesso > Pré-requisitos - AI Logistics
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Pré-requisitos - AI Logistics
+            Pré-requisitos 
+            Antes de acessar as funcionalidades do AI Logistics o usuário precisa se atentar a alguns requisitos necessários para o melhor uso da ferramenta: 
+            Infraestrutura Necessária
+            
+                Servidor:  Windows Server 2016 ou superior;IIS (Internet Information Service) versão 7 ou superior;.NET 6 Runtime & Hosting (x64);Certificado SSL HTTPS (este ponto é necessário para utilizar a porta 443 - HTTPS).
+                Memória:Memoria mínima requerida de 2GB.
+            
+            Componentes Obrigatórios
+            
+                IIS (Internet Information Service) versão 7 ou superior;
+                .NET Runtime e Hosting 6.0.
+            
+            A realização de consultas exige do usuário conhecimentos básicos de SQL, linguagem padrão para a realização de queries, que são as consultas e pedidos que trazem resultados de acordo com o que a pessoa busca. 
+            Para que o AIL possa obter os dados e construir os indicadores, é necessário a liberação do banco de dados onde estas informações estão armazenadas. Recomendamos também a criação de um usuário especifico para essas operações nesse Banco de Dados, apenas com permissões de leitura, a fim de garantir a segurança em todos os processos. Caso tenha dúvidas sobre a configuração do banco de dados, entre em contato com Suporte Senior. 
+            Configuração e Instalação 
+            Instalação do IIS em Windows Server 2016 e 2019
+                
+                    No menu Iniciar, acessar a tela de Server Manager, clicar em Add roles and features, e no menu lateral, na guia Server Roles selecionar a opção Web Server (IIS) e clicar em Add Features. Em seguida, clicar em Next duas vezes para acessar a guia Role Services, nela verificar se os seguintes componentes estão selecionados: 
+                    
+                        Web ServerCommon HTTP FeaturesDefault Document Directory BrowsingHTTP ErrosStatic ContentHealth and DiagnosticsHTTP LoggingPerfomanceStatic Content CompressionSecurityRequest FilteringManagement ToolsIIS Management Console
+                    
+                    Com todos os componentes selecionados, clicar em Next e, por fim em Install. 
+                    Ao finalizar o processo de instalação do Servidor IIS, basta realizar a instalação do .NET 6 Runtime & Hosting (x64). A instalação é um processo simples, basta baixar o arquivo executável,  iniciá-lo e clicar em Install. Após a conclusão da instalação é necessiario configurar o Agente AIL dentro do ISS. 
+                    
+                    
+                
+            
+            Instalação do Agente no IIS 
+                
+                    Configurando o Site da Aplicação
+                    Crie um novo diretório na raiz do seu wwwroot com o nome AgenteAIL. Em seguida, baixe e descompacte o arquivo AgenteAIL.zip nessa pasta. O indicado é sempre criar no diretório C:\Inetpub\wwwroot\AgenteAIL.
+                    
+                    
+                    Para criar um site no IIS chamado AgenteAIL, referenciando o diretório onde o arquivo AgenteAIL.zip foi descompactado, clique com botão direito em Sites e escolha a opção Add Web Site.
+                    
+                    
+                    A tela Add Website será aberta, em que o usuário irá configurar o Site name (nome do site), o Physical Path (diretorio onde estão os arquivos do sistema) e a Port (porta de acesso) etc.   A numeração da porta fica a escolha de quem está realizando a configuração. Um ponto de atenção é verificar se a porta escolhida já não esta sendo usada por outro site. Caso não deseje alterar nada na configuração sugerida, basta seguir os parâmetros contidos no print abaixo. 
+                    
+                    
+                    Finalizada as configurações, clique em OK e o site será criado.
+                    Configurando o Pool da Aplicação
+                    Para configurar o pool de aplicação clique com o botão direito em Application Pools e escolha a opção Add application Pool.
+                    
+                    
+                    Na tela Add Application Pool, no campo Name digite  Agente-AIL, para criar um Pool com esse nome e clique em Ok. Com o Pool criado, procure-o na lista de Application Pools, clique nele 1 vez e, ao lado direito da tela, selecione a opção Basic Settings. 
+                    
+                    
+                    A janela Add Application Pool será aberta novamente. Nela,altere a versão do pacote .Net Framework da v4 para v5. Feito isso, clique em OK.
+                    
+                    
+                    Com o Pool configurado, volte em Sites, procure o Site que criado anteriormente (AgenteAIL), clique nele 1 vez e, ao lado direito da tela, selecione a opção Basic Settings. Será aberta a janela Edit Site, no campo Aplication pool, altere para Agente-AIL (nome do Pool que criamos anteriormente). Feito isso, clique em OK.
+                
+            
+            Configurando o Protocolo HTTPS
+                
+                    No aplicativo IIS Manager, selecione o nome do servidor IIS (Internet Information Service) que foi criado. E na parte direita da tela, acesse a opção nomeada Server Certificates (Certificados de Servidor).
+                    
+                    
+                    Caso já possua um certificado, clique na opção Import, na parte superior direita da tela. Se for necessário gerar um certificado auto-assinado, selecione a opção nomeada Create Self Signed Certificate (Criar um certificado auto-assinado), e digite um nome para o certificado e clique em OK.
+                     
+                    No site desejado, clique com o botão direito do mouse e selecione a opção Edit Bindings (Editar Vinculações), em seguida no botão Add e insira os seguintes paramentros: 
+                    
+                        Type: HTTPS
+                        IP Address: All Unassigned
+                        Port: 443
+                        SSL certificate: Selecione o certificado desejado
+                    
+                    Finalizada a inserção dos parâmetros, clique no botão OK.
+                    No servidor onde está instalado o IIS, abra um navegador de sua preferência e digite o endereço IP do seu servidor web usando o protocolo HTTPS, para validar as configurações realizadas.
+                    Para certificar que a Aplicação está ativa, utilize a sigla HC (Health Check) no final de sua URL. Caso retorne a mensagem abaixo, significa que a aplicação está instalada e está funcionando.
+                    
+                        
+                    
+                
+            
+            Teste de conexão com o Banco de Dados
+                
+                    Para testar a conexão do AI Logistics com o bando de dados basta acessar a  URL https://ociapi.alcis.com.br:4430/. No campo Digite a ConnectionString preencha com a ConnectionString do seu Banco de Dados. 
+                    No AI Logistics existem dois padrões:
+                    Oracle
+                        
+                            
+                                
+                                    user id=USUARIO DO BANCO; password=SENHA PARA CONEXÃO; Connection Timeout=600; Max Pool Size=150; data source= (DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = HOST PARA CONEXÃO)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = NOME DO SERVICO)))
+                                
+                            
+                            Em que: 
+                            
+                                user id = Usuário do banco;
+                                password = Senha para conexão;
+                                HOST = Host para conexão;
+                                SERVICE_NAME = Nome do serviço.
+                            
+                        
+                    
+                    SQL Server
+                        
+                            
+                                
+                                    Data Source=HOST PARA CONEXÃO,1433;Initial Catalog=NOME DO SERVIÇO;User ID=USUÁRIO DO BANCO;Password=SENHA PARA CONEXÃO;
+                                
+                            
+                            Em que: 
+                            
+                                Data Souce = Host para conexão;
+                                Initial Catalog = Nome do serviço;
+                                User ID = Usuário do banco;
+                                Password = Senha para conexão.
+                            
+                        
+                    
+                    Após inserir a ConnetionString, na caixa de seleção Selecione o tipo de database escolha o tipo de datase: Oracle PL/SQL, SQL Server ou MySQL; e clique em Testar Conexão. 
+       

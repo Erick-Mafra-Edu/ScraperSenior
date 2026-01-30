@@ -1,0 +1,250 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#view/tvwviewform.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CView%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > View > Menu
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Menu
+                O Visualizador possui os seguintes menus:
+                Arquivo
+                Abrir
+                    Permite abrir arquivos IMP. A nível de menu somente serão abertos arquivos acessados através da estrutura de diretórios acessível por ele.
+                Salvar Como
+                    Permite salvar os arquivos IMP com outro nome e exportar para outros formatos:
+                
+                    Relatório Texto DOS: Salva as informações do arquivo IMP como se fosse relatório texto acessível a programas DOS;
+                    Relatório Texto Windows: Salva as informações do arquivo IMP como se fosse relatório texto acessível a programas tais como Notepad, etc;
+                    Exportação DOS: Salva as informações do arquivo IMP como se fosse um arquivo de exportação acessível a programas DOS;
+                    Exportação Windows: Salva as informações do arquivo IMP como se fosse um arquivo de exportação acessível a programas tais como Notepad, etc;
+                    Páginas Html: Salva as informações do arquivo IMP em uma página HTML;
+                    Arquivo Excel (XLS): Salva as informações do arquivo IMP em formato XLS para ser aberto no Excel;
+                    Arquivos PDF: Salva as informações do arquivo IMP em formato PDF para ser aberto no Adobe Acrobat Reader;
+                    Arquivos PDF/A: Salva as informações do arquivo IMP em formato PDF/A para ser aberto no Adobe Acrobat Reader;
+                    Arquivos CSV: Salva as informações do arquivo IMP em um arquivo texto com valores separados por vírgula ou outro símbolo.
+                
+                Nota
+                    Relatórios que possuem seções com mais de 5000 caracteres não podem ser salvos nos formatos Arquivo Exportação Windows (TXT), Arquivo Exportação DOS (TXT), Exportação Windows Sem Formato e Exportação DOS Sem Formato.
+                
+                Fechar
+                    Fechar o arquivo atualmente em foco.
+                Fechar Todos
+                    Fechar todos os arquivos carregados.
+                Configurar Impressora Texto
+                    Abre a tela Cadastramento de Impressoras.
+                Configurar Impressora
+                    Permite configurar as informações do driver de impressora do Windows.
+                Imprimir
+                    Permite imprimir o arquivo em foco.
+                Sair
+                
+                 
+                Visualizar
+                Barra de Ferramentas:
+                
+                    Arquivos: Permite desabilitar ou habilitar a barra de ferramentas de arquivos;
+                    Visualização: Permite desabilitar ou habilitar a barra de ferramentas de visualização das páginas;
+                    Movimentação: Permite desabilitar ou habilitar a barra de ferramentas de movimentação entre as páginas;
+                    Desabilitar/Habilitar Todas: Permite desabilitar ou habilitar todos os itens da Barra de Ferramentas.
+                
+                 
+                Ajuda
+                Conteúdo
+                
+                Sobre
+                    Possui informações e versionamento do Visualizador.
+                 
+                Barras de Ferramentas
+                As Barras de ferramentas são componentes utilizados para permitir uma ação rápida, facilitando o acesso as funções do sistema. O Visualizador possui as seguintes barras de ferramentas:
+                 
+                Movimentação
+                
+                    
+                
+                Selecionar a Página
+                    Permite selecionar o número da página.            
+                Primeira Página
+                    Permite movimentar-se para a primeira página.
+                Página Anterior
+                    Permite movimentar-se para a página anterior.
+                Próxima Página
+                    Permite movimentar-se para a próxima página.
+                Última Página
+                    Permite movimentar-se para a última página.
+                 
+                Visualização
+                
+                    
+                
+                Configurar a Visualização
+                    Permite configurar o zoom de visualização da página. Varia de 10% a 200%.
+                Página Inteira
+                    Permite visualizar a página inteira.
+                Visualizar 100%
+                    Permite visualizar a página com zoom de 100%.
+                Tamanho Página
+                    Visualiza a página no tamanho real do tipo de página configurada para o relatório.
+        
+                 
+                Arquivo
+                
+                    
+                
+                Salvar Relatório
+                    Permite salvar arquivos IMP com outro nome e outras extensões.
+                Abrir Arquivo
+                    Permite abrir um arquivos do tipo IMP. Os arquivos podem ser obtidos de duas formas: 
+                
+                    Normal: Abre arquivos IMP contidos na estrutura de diretórios acessíveis pelo View;
+                    Area FTP: Abre arquivos IMP a partir de um servidor e diretório de FTP informados.
+                
+                Imprimir
+                    Imprime o arquivo em foco.
+                Gerar Layouts para Exportação
+                    Permite salvar o conteúdo do arquivo em outros formatos:
+                
+                    Relatório Texto Dos;
+                    Relatório Texto Windows;
+                    Exportação DOS;
+                    Exportação Windows;
+                    Páginas Html.
+                
+                Nota
+                    As parametrizações necessárias para salvar o conteúdo do arquivo em outros formatos são definidas no modelo do gerador de relatórios.
+                
+                Fechar: Fecha o arquivo atualmente em foco.
+                Sair
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

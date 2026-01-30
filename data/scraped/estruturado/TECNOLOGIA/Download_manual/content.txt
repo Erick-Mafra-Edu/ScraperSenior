@@ -1,0 +1,194 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#download-e-montagem-da-midia/download-manual-midia.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CDownload%2520e%2520montagem%2520da%2520m%25C3%25ADdia%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Atualização > Pré-requisitos > Download manual
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Download manual da mídia
+            Para fazer download da mídia através do Portal do Cliente
+                
+                    
+                        Abra o navegador de internet;
+                        Acesse o Portal do Cliente;
+                        Entre com seu login e senha;
+                        Utilize a aba lateral para acessar a Central de Sistemas;
+                        Selecione a opção Atualização de ambiente;
+                        Selecione os arquivos desejados e certifique-se de selecionar os arquivos comuns, conforme exemplificado abaixo; 
+                        Clique em Baixar arquivo selecionado. Os arquivos serão baixados na sua pasta de downloads;
+                        Após concluir os downloads, será necessário recortar os arquivos presentes na pasta Downloads, seguindo o exemplo, e então colá-los na pasta destinada à mídia;
+                        Ao aplicar os arquivos na pasta da mídia, certifique-se de descompactar as pastas dos produtos, se aplicável;
+                        Extraia a pasta Arquivos Comuns na raiz da pasta da mídia. O conteúdo desse .zip deve ser descompactado em paralelo às pastas dos produtos: 
+                        Com essas etapas concluídas, a mídia estará pronta para uso. Agora  pode executar o Senior Updater e indicar o caminho para a mídia.
+                    
+                
+            
+            Pastas e arquivos
+            É possível baixar todos os arquivos ou somente os relacionados aos produtos que serão utilizados, validados na Proprietária.
+            Verifique os arquivos obrigatórios por produto para instalação ou atualização. Alguns deles são integrados e irão necessitar de arquivos dos produtos que fazem integração:
+            Gestão Empresarial | ERP
+                
+                    
+                        Arquivo ArquivosComuns.zip
+                        Bases (somente arquivos correspondentes ao produto)
+                        Sapiens. zip
+                    
+                
+            
+            Gestão de Pessoas | HCM
+                
+                    
+                        Arquivo ArquivosComuns.zip
+                        Bases (somente arquivos correspondentes ao produto)
+                        Vetorh.zip
+                    
+                    Para a nova interface do Gestão do Ponto, o arquivo gestaopontonovainterface.irp já esta na pasta Vetorh. Consulte mais informações em Instalação do Gestão do Ponto - Nova interface.
+                
+            
+            Ronda Senior
+                
+                    
+                        Arquivo ArquivosComuns.zip
+                        Bases (somente arquivos correspondentes ao produto)
+                        Segurança.zip
+                    
+                
+            
+            
+                Importante
+                
+                
+                    Mantenha a organização dos arquivos e pastas baixados conforme a existente no diretório da mídia no Portal do Cliente.
+                    Arquivos "Bases" são obrigatórios apenas na instalação do sistema, não é necessário para atualização do sistema.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

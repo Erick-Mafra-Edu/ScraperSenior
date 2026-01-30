@@ -1,0 +1,215 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/outras-configuracoes/sts_troubleshot.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7COutras%2520configura%25C3%25A7%25C3%25B5es%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Outras configurações > Middleware Senior Resolução de Problemas
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Resolução de Problemas
+            Erro ao conectar 
+ o "client" com o Gerenciador de Middleware
+            (ServerName= 
+ servidor port=porta de conexão)
+            (WindowsAccess e 
+ BrowserAccess)
+            Este erro ocorre quando o WindowsAccess 
+ é utilizado para acessar algum sistema e ele não encontra o Gerenciador de Middleware no servidor 
+ e porta informados.
+            Causas
+            
+                Esta situação pode ocorrer quando no servidor informado simplesmente 
+	 o Gerenciador de Middleware não está iniciado.
+                O servidor informado (Server Name ) no qual se deseja conectar 
+	 pode estar errado.
+                A porta informada naquele servidor pode estar errada.
+            
+            Soluções
+            
+                Iniciar o Gerenciador de Middleware no servidor.
+                Alterar o servidor no qual se deseja conectar no WindowsAccess.
+                Pode-se alterar a porta do WA no qual se tenta conectar, ou no 
+	 servidor, pode alterar a porta no qual o Gerenciador de Middleware estará monitorando os 
+	 aplicativos clientes na Central de Configurações (Menu: Middleware > Gerenciador > campo Porta TCP).
+            
+            Não há qualquer aplicativo disponível pelo Gerenciador de Middleware
+            (WindowsAccess e BrowserAccess)
+            Ocorre quando o Gerenciador de Middleware não tem nenhuma aplicação para disponibilizar ao acesso via Windows Access ou BrowserAccess.
+            Causas
+            
+                O Gerenciador de Aplicativos não está iniciado, seja como aplicativo ou serviço.
+                As configurações do Gerenciador do Middleware (servidor ou porta TCP) foram alteradas e os Gerenciadores de Aplicativos e o Gerenciador do Middleware estão utilizando versões diferentes do CFG.
+            
+            Soluções
+            
+                Iniciar o aplicativo ou o serviço Gerenciador de Aplicativos.
+                Reiniciar o Gerenciador do Middleware e todos os Gerenciadores de Aplicativos
+            
+            Erros ao iniciar uma aplicação por WindowsAccess
+            Situação 1:
+            Ao iniciar o WindowsAccess ou BrowserAccess e tentar utilizar o sistema, 
+ podem ocorrer algumas situações como a aplicação travar, ocorrer mensagens 
+ de erro de Access Violation ou erro no envio de dados do cliente para 
+ o servidor, além de algumas outras mensagens. Nestas situações descritas, 
+ há a possibilidade do serviço Gerenciador de Middleware parar ou cair, sendo necessário reiniciar 
+ o ambiente. Só é possível ocorrer estas situações quando o Gerenciador de Aplicativos estiver 
+ como serviço.
+            Causas
+            
+                O Gerenciador de Aplicativos como serviço, em propriedades na aba Logon, e estiver com 
+	 a opção Fazer logon como conta do sistema local, o checkbox "Permitir 
+	 que o sistema interaja com a área de trabalho" pode estar desabilitada.
+            
+            Soluções
+            
+                Habilitar a opção "Permitir que o sistema interaja com a área 
+	 de trabalho" nas propriedades do serviço Gerenciador de Aplicativos, e reiniciar os 
+	 serviços do Gerenciador de Middleware e Gerenciador de Aplicativos.
+                Também pode-se informar um usuário e senha para o serviço logar.
+            
+            Situação 2:
+            Assim como na situação anterior, outros erros além daqueles também são 
+ possíveis. Erros, alguns, relacionados a memória e recursos do sistema 
+ e windows, mas também é possível ocorrer erros aleatórios. Os mais padrões 
+ são:
+            Erro em Memo.Lines.String Linha X
+            Não há mais espaço suficiente para alocação de memória.
+            Win32 Error. Code: 14. Not enough storage is available to complete this 
+ operation
+            Estes erros ocorrem principalmente quando o Gerenciador de Aplicativos está como serviço, pois 
+ assim tem menos recursos disponíveis. No entanto também é possível ocorrer 
+ no Gerenciador de Aplicativos como aplicativo, ocorrerá após ter mais instâncias abertas no servidor, 
+ quando tiver mais carga do que quando Gerenciador de Aplicativos serviço. Os erros que ocorrem 
+ são semelhantes, de qualquer forma além destes citados, podem ocorrer 
+ aleatórios, travando o sistema inclusive. Um forte sintoma é quando o 
+ Aplicativo ou serviço Gerenciador de Aplicativos trava.
+            Causas
+            
+                Nos gerenciamentos dos Windows, existem alguns tipos de recursos 
+	 no qual as aplicações utilizam, recursos de Desktop, e de sessão de 
+	 usuário. Sessão de usuário, é uma sessão que se reserva quando se 
+	 loga no windows por exemplo, onde terá um ou mais Desktops, onde as 
+	 aplicações serão executadas. Para serviços, existe um comportamento 
+	 semelhante, mas no caso dos serviços, todos compartilham de uma mesma 
+	 sessão de usuário, onde é reservado um espaço muito menor de memória 
+	 para os mesmos. Estes problemas ocorrem quando estes recursos terminam 
+	 ou estão perto de terminar.
+            
+            Soluções
+            
+                Para Gerenciador de Aplicativos como serviço, pode-se informar um usuário e senha para 
+	 o Gerenciador de Aplicativos iniciar, em propriedades do serviço. Isto significa que irá ser 
+	 criado uma sessão de usuário e aquele usuário informado vai logar 
+	 nesta sessão. Se deixar para rodar como uma conta local, irá rodar 
+	 na mesma sessão dos serviços como informado acima.
+                Se ainda não resolver para Gerenciador de Aplicativos como serviço, o que deve se fazer 
+	 é parar o ambiente Middleware Gerenciador de Middleware e todos os servidores de Gerenciador de Aplicativos como 
+	 serviço. Após isto, para cada servidor Gerenciador de Aplicativos deve-se alterar a seguinte 
+	 chave do registro:
+            
+            HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\SubSystems\Windows. 
+ Nesta chave tem um identificador chamado SharedSectionNo Windows 2003, o seu valor deve ser alterado para 1024,3072,2048. No Windows 2008 deve ser alterado para 1024,20480,20480. O servidor precisa ser reiniciado para as configurações serem aplicadas.
+            Page not found ao tentar acessar BrowserAccess
+            Situação
+            Ao tentar acessar o link do BrowserAccess, 
+ irá aparecer uma mensagem no Browser, Error 404, Page not found.
+            Causas
+            Não está achando o endereço especificado 
+ no browser.
+            Soluções
+            
+                Verificar se o link está correto de acordo com o servidor, ao tentar 
+	 acessar o BrowserAccess. Basicamente a sintaxe do link interno é http://servidor:porta(geralmente 
+	 8080)/context (ba, bavetorh, basapiens). Para links externos a sintaxe 
+	 é a definida no domínio registrado.
+                O servidor Java EE pode estar parado, ou ocorreu algum tipo de 
+	 erro crítico, inicie ou reinicie o servidor Java EE.
+                O arquivo que está no servidor Java EE pode estar com problemas.
+            
+            Travamentos
+            Situação
+            Ao tentar iniciar o BrowserAccess ou WindowsAccess 
+ simplesmente fica na tela inicial travado.
+            Causas e soluções
+            Os sistemas da Senior, por WindowsAccess 
+ ou BrowserAccess, não devem travar, no entanto problemas assim como esse 
+ ou semelhantes podem ocorrer. Podem ser várias as causas ou situações, 
+ as principais são referentes a versionamentos de arquivos referentes aos 
+ sistemas. Deve-se verificar estes arquivos e versões, se estão na versão 
+ de arquivo correta de acordo com a versão do sistema. Estes travamentos 
+ podem ocorrer também por causa de mensagens que ocorrem no servidor, e 
+ estão esperando uma resposta, assim os clients podem ficar travados. De 
+ um modo geral, ao ocorrer travamentos, sempre deve-se verificar a situação 
+ no servidor, as configurações de um modo geral, e versões de arquivos.
+            Timeout
+            Situação
+            Na 
+ configuração de perfil de conexão 
+ para servidor Gerenciador de Middleware, existe o campo “Manter Conexões Ociosas por [...] 
+ Minutos” que define o tempo máximo que um servidor Gerenciador de Middleware pode aguardar o 
+ envio de um pacote de dados de um cliente. Quando esse tempo é atingido, 
+ uma mensagem é apresentada e a aplicação é encerrada. 
+            Causas e soluções
+            Para 
+ aplicações BrowserAccess o tempo configurado pode ser insuficiente, dificultando 
+ a sua utilização já que quando a conexão se encerra e o usuário se vê 
+ obrigado a reiniciar o aplicativo e recomeçar os processos a partir do 
+ zero. O contorno para esta situação é aumentar o tempo em que uma conexão 
+ pode ficar ociosa.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+              

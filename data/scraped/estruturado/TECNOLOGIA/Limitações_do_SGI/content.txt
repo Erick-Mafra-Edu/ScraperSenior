@@ -1,0 +1,176 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/telas/sgi_limitacoes.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Telas%2520-%2520SGI%7CInforma%25C3%25A7%25C3%25B5es%2520Complementares%7C_____6
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Telas - SGI > Informações Complementares > Limitações do SGI
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Limitações do SGI
+            Campo com máscara especial
+            Os campos com máscaras especiais são definidos em tempo de execução, ou seja, quando o sistema abre, muda esta máscara conforme condições internas. No CBDS (Central de banco de dados Senior) não há estas condições, por isto o campo é considerado de acordo com o tipo de campo informado.
+            Campos Chave
+            Todo formulário X-Window necessita de uma tabela-base e seus respectivos
+		campos chaves. Os formulários Web não necessitam, 
+mas se uma tabela-base for informada, ela obrigatoriamente necessita de campos chaves. 
+            Para que um campo possa ser informado como campo chave, 
+		alguns requisitos devem ser obedecidos:
+            
+                O campo não pode ser do tipo Lookup;
+                O campo deve possuir um campo físico correspondente;
+                O campo deve estar na tabela principal ou em uma tabela da direita ligada em 1-para-1 com a tabela
+			principal. Mais informações em Ligações Simples e Ligações Customizadas.
+            
+            Tabelas
+            Duas tabelas informadas na Interface e relacionadas 
+		entre si com uma ligação 1-para-1, 1-para (1-opcional), ou 1-para-n, não 
+		é permitem criar no mesmo formulário, uma grade de ambas as tabelas. Se uma tabela da Interface for utilizada no campo Tabela 
+ nas propriedades de uma página, a mesma tabela não pode ser usada em uma  grade. O SGI não permite que a mesma tabela do SGI seja usada em dois lugares 
+		do formulário. Por "lugar do formulário", entende-se:
+            
+                Campo Tabela-base;
+                Campo Tabela nas propriedades de uma página;
+                Campo Tabela-base nas propriedades de uma grade.
+            
+            Limitações na Web
+            Em tabela-base de uma grade não é possivel efetuar a carga de dados dos campos de tabela. Essa funcionalidade apenas é suportada nas telas SGI X-Window.  
+
+            Não é possível realizar a atribuição de valores para campos de tabela, devido ao conteúdo das telas SGI Web não ser dinâmico
+como em telas SGI X-Window. 
+            A variável CodOpe não se atualiza de maneira semelhante ao X-Window, é necessário realizar a utilização dos botões padrões para que o valor da variável receba os valores diferentes do status "Iniciando".
+            Tradução
+            Quando existir uma personalização de menus de SGI, para alterar a descrição de algum menu é necessário acessar a tela Personalização de menus. Caso a descrição seja alterada através do SGI ou pela tradução do menu da tela, ela não será gravada na personalização, ocasionando erros na visualização dos menus. Pois com a personalização de menu é mantida a descrição do menu configurada na personalização.
+            Campos lógicos
+            Ao adicionar campos lógicos (campos que não existem na tabela física) em uma tabela e efetuar uma ligação deste campo com uma outra tabela, apenas para criar o campo com o B2 resulta em um comando SQL inválido, pois o sistema não tem como resolver essa ligação. Este comando inválido pode não retornar valores corretamente, dependendo da versão do banco de dados. Para solucionar essa situação, o recomendável é criar na tabela um campo de usuário e alterar o campo lógico para corresponder ao campo de usuário criado, desta forma, o comando SQL gerado é válido e todos os bancos de dados conseguem executar corretamente.
+            Palavras reservadas na nomenclatura dos campos
+            Os campos criados em tabelas via SGI não poderão conter uma palavra reservada de banco de dados em sua nomenclatura, pois ocasionarão erro em tela ao executar a sua consulta ao executar o formulário que a utilizar. Exemplos de palavras que não deverão ser utilizadas: SELECT, AS, FROM, ORDER, BY, ASC, DESC, UPDATE, DELETE, entre outras.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,161 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/entenda-nfc-e/entenda-nfc-e.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____14
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Entenda a NFC-e
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Entenda a NFC-e
+             O projeto NFC-e nasce com base no projeto bem sucedido chamado NF-e, a NFC-e substituirá o tradicional cupom fiscal emitido em lojas, supermercados, drogarias, comércios varejistas, entre outros estabelecimentos.
+            O processo de vendas continuará da mesma forma, pois ao invés do Cupom Fiscal, a NFC-e será gerada e entregue em vendas onde há a presença física ou entrega em domicílio do consumidor.
+            A Nota Fiscal Eletrônica para o Consumidor Final (NFC-e) é identificada pelo modelo de documento fiscal 65 e foi instituída pelo Ajuste Sinief nº 01/2013, que alterou o Ajuste Sinief nº 07/2005 (Nota Fiscal Eletrônica – NF-e).
+             A NFC-e substitui a nota fiscal de venda a consumidor, modelo 2, e o cupom fiscal emitido por ECF. Porém, o documento não tem o objetivo de ser a única solução ou ser de adoção obrigatória pelas Unidades Federadas.
+            Ao aderir a NFC-e, o consumidor é beneficiado tendo o poder de conferência sobre a validade e autenticidade do documento fiscal recebido, por meio do portal da Secretaria da Fazenda (Sefaz), assim como é com a NF-e, ou por meio de QR-Code (código de barras bidimensional), que virá impresso na nota.
+            
+                Objetivos 
+            
+            A Nota Fiscal de Consumidor Eletrônica – NFC-e  é um documento de existência apenas digital, emitido e armazenado eletronicamente, com o objetivo de documentar as operações comerciais de venda presencial ou venda para entrega em domicílio ao consumidor final (pessoa física ou jurídica) em operação interna e sem geração de crédito de ICMS ao adquirente. A Nota Fiscal de Consumidor Eletrônica tem como intuito principal reduzir custos de obrigações tributárias e aprimorar o controle fiscal. 
+             
+            Os principais benefícios e características com a NFC-e para as empresas contribuintes são:
+                
+                    
+                         Dispensa de obrigatoriedade de adoção de equipamento fiscal para emissão de NFC-e;
+                         Não é mais exigido qualquer tipo de homologação de hardware ou software;
+                         Possibilidade de uso de qualquer impressora, não sendo obrigatória a impressora fiscal;
+                         Simplificação de Obrigações Acessórias (dispensa de redução Z, leitura X, mapa de caixa, aposição de lacres, registros em atestados de intervenção);
+                         Não exigência da figura do Interventor Técnico;
+                         Uso de papel com menor requisito de tempo de guarda;
+                         Transmissão em tempo real ou online da NFC-e;
+                         Redução significativa dos gastos com papel;
+                         Integrado com programas de Cidadania Fiscal (eliminação do envio posterior à Secretaria da Fazenda de Arquivos de Impressora Fiscal, como REDF);
+                         Uso de Novas Tecnologias de Mobilidade;
+                         Flexibilidade de Expansão de pontos de venda no estabelecimento sem necessidade de obtenção de autorização do Fisco;
+                         Possibilidade, a critério da Unidade Federada e do interesse do consumidor, de impressão de documento auxiliar resumido, ou apenas por mensagem eletrônica;
+                         Integração de plataformas de vendas físicas e virtuais;
+                        Não necessita informar dados de clientes em vendas presenciais em caso de não haver necessidade de entrega;
+                        Não permite carta de correção;
+                        Devolve somente por meio de NF-e;
+                        Permite cancelamento entre 30 minutos e 24 horas após emissão (tempo definido pelo Estado);
+                        Informa, de forma obrigatória, o governo sobre o faturamento de operações comerciais;
+                    
+                
+            
+            Quem está obrigado 
+            Com exceção do estado de Santa Catarina   todos os demais já aderiram ao projeto, estando em fase inicial de implementação, ou até mesmo, já possuem decreto instituído para adesão voluntária.
+            Mesmo que alguns estados ainda não tenham cronograma de obrigatoriedade estabelecido, os próprios contribuintes estão se mobilizando para poder aderir ao projeto o quanto antes, pois os benefícios são muitos quando confrontados com os projetos concorrentes. 
+            Cronograma 
+            O projeto NFC-e lançado oficialmente em Novembro de 2013 após pouco mais de 1
+ano desde a formação do Grupo de Empresas Piloto, que trabalhou na evolução do mesmo,
+tem apresentado resultados muito expressivos durante sua fase de massificação. Confiantes
+pelos resultados conseguidos, alguns estados não perderam tempo e foram pioneiros no
+lançamento do calendário de obrigatoriedade.
+
+            Os estados do AM e MT encabeçaram esta lista e graças a esta ousada decisão, o
+projeto que estava ainda em um processo de afirmação no cenário nacional, passou a ser
+considerado como o projeto mais promissor em comparação com seus concorrentes.
+Praticamente todos os meses há mudanças neste cenário, tanto de novos estados
+aderindo, quanto de estados que já participam do projeto e estão lançando o calendário de
+obrigatoriedade.
+
+            Em 2015, devemos assistir à expansão de adoção da NFC-e  por mais estados brasileiros. O prazo para que todos os contribuintes façam emissão pelo NFC-e varia de estado para estado. Alguns deles estão em fase de testes, outros em estágios mais avançados, caminhando para a obrigatoriedade da NFC-e.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

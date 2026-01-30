@@ -1,0 +1,78 @@
+# 
+
+URL: https://documentacao.senior.com.br/bpm/7.0.0/#processos.htm%3FTocPath%3DBPM%2520%7CProcessos%7C_____0
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBPM
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BPM  > Processos no BPM
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Processos no BPM
+            Sumário
+            
+            
+                
+                    Conceito
+                    
+                    Menu de Acesso
+                    
+                    Funcionalidades
+                        3.1 Criar Processo3.2 Gerenciar Alterações do Formulário
+                    Configurações do Processo
+                        4.1 Construir o Fluxo 4.1.1 Permissão Visualizar - Andamento do Processo 4.1.2 Classificação do Status do Processo 4.1.3 Formatação de Data 4.1.4 Definir Variáveis 4.1.5 Configurar Integrações 4.1.6 Visibilidade - Aba Anexo
+                    Configurações Globais
+                    
+                    Saúde do Processo
+                        6.1 Eventos com Falha
+                
+            
+             1. Conceito 
+            A construção de um processo BPM é a forma mais completa de desenvolver processos, que abrangem fluxos com tomada de decisões com variações no caminho do processo. Este modelo é utilizado sempre que houver a necessidade de se construir um fluxo em que as saídas variam, dependendo da opção escolhida pelo usuário.
+
+             2. Menu de Acesso
+            
+                No menu, selecione Senior Flow;
+                Selecione BPM;
+                Clique em Processos.
+            
+             3. Funcionalidades
+             3.1 Criar Processo
+            Ao criar um novo processo BPM, será necessário preencher algumas definições bem como escolher o tipo de formulário a ser utilizado, que pode ser ECM ou interface web. No caso de optar por formulário ECM, ele será utilizado em todas as tarefas e deve ser informado o nome do formulário e a versão desejada. Se optar por tipo de execução interface web, deve-se informar a URL do formulário para consulta e para as tarefas.
+            
+                
+                    
+                
+            
+            Após Salvar estas definições,o sistema habilita a configuração do fluxo do processo, bem como suas variáveis e integrações. 
+             3.2 Gerenciar Alterações do Formulário
+            Funcionalidade que permite a leitura de logs referentes às alterações nas versões dos formulários.
+            
+                
+            
+            
+                
+            
+             4. Configurações do Processo
+             4.1 Construir o FluxoA janela de desenho do fluxo apresenta a barra de ferramentas de controles gerais na parte superior, de elementos de fluxo e ajustes na parte esquerda e de propriedades dos elementos na parte direita.Controles gerais:Salvar: permite salvar o processo. As alterações feitas não serão percebidas pelos usuários caso esse processo já esteja em operação;Publicar: permite publicar o processo. Essa ação faz com que as alterações sejam publicadas no processo em operação. Caso possuir alterações, estas serão salvas automaticamente antes de publicar. A nova publicação só terá efeito para novas solicitações. As solicitações desse processo que já estiverem em andamento funcionarão conforme versão do processo no momento da solicitação;Desfazer/Refazer: permite desfazer ou refazer uma alteração feita no processo;Zoom: permite aumentar ou diminuir o zoom do processo para se ter uma visão maior ou menor do processo;Tamanho da grade: permite definir o tamanho da grade do editor BPM. É através dos “pontinhos” na grade que os elementos são movidos no editor. Então se o tamanho da grade estiver muito grande, os elementos da grade ao serem movidos, darão um “passo” maior no editor. Enquanto que se a grade estiver pequena, permite fazer um ajuste dos elementos do editor de forma mais “fina”.Elementos de fluxo e ajustes:Início: elemento que determina o início do fluxo. Todo processo deve possuir apenas um início;Fim: elemento que determina o encerramento do processo. Um processo pode possuir vários pontos de encerramento;Atividade: elemento que determina uma tarefa, que pode ser um formulário ECM ou uma Interface web;Configurar Campos: elemento que permite configurar os campos do formulário ECM, possibilitando defini-los como ocultos, somente leitura ou obrigatórios. As configurações dos campos seguirão a prioridade definida pelo fluxo do processo, mesmo que existam regras de consistência que modifiquem a visibilidade ou obrigatoriedade dos campos.Decisão: elemento que determina um ponto de decisão no fluxo. Pode ser uma decisão de usuário ou uma variável de processo;Trazer para a frente e Enviar para fundo: permite mover os elementos de forma que fiquem na frente ou atrás de outros, para organização do fluxo;Ajustar zoom: permite ajustar o zoom da tela para melhor usabilidade;Organizar automaticamente: permite alinhar os elementos no editor;Elemento seta: não é acessível pela barra de ferramentas, estando disponível apenas diretamente nos elementos adicionados ao fluxo.Propriedades dos elementos:Geral: permite editar aspectos gerais do elemento, como o título;Notificações: permite incluir notificações personalizadas para o elemento. Para saber mais, acesse a documentação sobre o assunto;Apresentação: permite editar a formatação do elemento, como a cor em que é apresentado.4.1.1 Permissão Visualizar - Andamento do ProcessoÉ possível habilitar ou desabilitar a visualização da aba andamento do processo através das permissões.Acesse o menu Senior X > Tecnologia > Administração > Autorização > Gestão dos papéis;Escolha o papel para o qual deve ser atribuída a permissão e clique em Editar;Na aba Permissões, pesquise por workflow, expanda a aba Platform / Workflow;Localize e habilite/desabilite a permissão Visualizar aba de Andamento do Processo.ImportantePara garantir a segurança das informações e a confidencialidade, somente os coordenadores ou aqueles que tenham participado ativamente de uma solicitação - ou seja, interagido com a mesma, seja ao tratá-la ou ao serem responsáveis por alguma etapa do processo - possuem permissão para acessar os dados dessa solicitação.4.1.2 Classificação do Status do ProcessoSobre a classificação dos status dos processos após sua finalização, os resultados que podem ser obtidos quando realizada uma extração das informações via relatório de Visões Dinâmicas são: A coluna Status se refere ao status da solicitação quanto a execução da mesma, pode ser classificado da seguinte forma:Status 1: para solicitações que se encontram Em Andamento, pendentes de alguma ação de um usuário aprovador;Status 4: para solicitações Canceladas, que tiveram sua finalização a partir da tela de Gestão dos Processos;Status 11: para solicitações que foram Finalizadas e não possuem mais nenhuma pendência e/ou atividade dentro do processo.A coluna status_custom se refere a variável do processo que foi configurada no fluxo durante o seu desenvolvimento. Por este motivo, a coluna status_custom não tem referência com a coluna status, e é apresentada de acordo com a etapa em que a solicitação se encontra.Por exemplo, para solicitações que estejam com status = 4, é possível que o campo status_custom esteja como pendente, pois era esta a variável do processo referente a solicitação no momento em que a mesma foi cancelada no Painel de Gestão. Para solicitações que estejam com status = 11, o campo "status_custom" terá o valor referente a variável do processo setada par o fluxo no momento da finalização do processo.4.1.3 Formatação de DataAo utilizar parâmetros de saída do tipo data, em Fonte de Dados ou Serviço Externo, é necessário seguir a ISO 8601, para que o BPM funcione corretamente.O padrão ISO 8601, estabelece a forma internacional de formatação representada por YYYY-MM-DD.Por exemplo, 15 de outubro de 2021 é representado por 2021-10-15.4.1.4 Definir VariáveisPermite visualizar as variáveis do processo e configurar a visibilidade dos dados em detalhes do processo, tela de consulta e aplicativo. Os campos marcamos como visível, serão exibidos na tela Tarefas e solicitações, limitado em três campos.4.1.5 Configurar IntegraçõesPermite que sejam alteradas as visões dinâmicas e integração externa do processo:Habilitar visão: gera uma visão dinâmica do processo. Na visão gerada para o processo, todos os valores de variáveis são tratados como Texto (String);Integração com Aplicação Externa: permite que o BPM integre solicitações com sistemas terceiros. Para saber mais, acesse a documentação sobre o assunto.Assunto obrigatório nas solicitaçõesEsta funcionalidade permite que o usuário, ao criar um template do processo, defina a obrigatoriedade de um assunto. Isso proporciona um melhor controle e organização sobre os processos iniciados a partir daquele template.Caso a opção de tornar o assunto obrigatório seja ativada, o usuário precisará definir o assunto da solicitação antes de iniciá-la.Se a opção permanecer como não obrigatória, o usuário poderá definir o assunto apenas se for conveniente, seguindo com a solicitação normalmente.Por padrão, a configuração vem DESABILITADA, sendo necessário ativá-la para uso.Abaixo uma demonstração do processo de configuração e como funciona com essa opção ativada. 4.1.6 Visibilidade - Aba Anexo Nesta configuração, você pode definir se a aba Anexo estará visível ou não na aba de solicitação.Habilitar: Habilita para que os usuários visualizem a aba anexo nas solicitações.Exemplo quando a opção estiver habilitada:Desabilitar: Desabilita a aba anexo nas solicitações5. Configurações GlobaisAlém das configurações padrão, é possível visualizar algumas opções de configurações adicionais no menu lateral, como:Calendário: possibilita a configuração do SLA do processo;Fonte de dados: possibilit

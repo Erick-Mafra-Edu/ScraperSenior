@@ -1,0 +1,75 @@
+# Integrador
+
+URL: https://documentacao.senior.com.br/seniorxplatform/manual-do-usuario/crmx/integrador/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM X                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     Manual do Usuário
+                 > Integrações
+                 > Integrador                         Integrador
+O Integrador do Gestão de Relacionamento | CRM é uma ferramenta voltada para facilitar a integração dos demais sistemas disponíveis no mercado com o Gestão de Relacionamento | CRM, e vice e versa. Ele permite criar e gerenciar as integrações através de configurações do sistema, ou parametrização, sem a necessidade do desenvolvimento de novos fontes.
+Em termos de execução, o Integrador somente executa o que lhe foi configurado, não realiza todas as ações automaticamente. O que é feito pelo Integrador é interpretar e executar as configurações de uma determinada integração, já cadastrada, no momento em que é chamada para execução, através de um URL. Com isso, é necessário configurá-lo corretamente e executar a chamada.Existem três tipos de execução, que possuem  mesma estrutura de configuração, cada um com sua particularidade:
+
+Integração GET;
+Integração INFO;
+Integração SET
+
+Para utilizar o Integrador é necessário a utilização de um software capaz de realizar requisições, criando o pacote HTTP com parâmetros específicos no header. Para isso é recomendável o software Postman.
+A execução de cada integração é através da chamada de uma URL, com alguns parâmetros de execução da integração informados e pode conter parâmetros configurados para uma integração exclusiva, além dos valores obrigatórios, sendo:
+
+
+EMPRESA_ID ou EMPRESA_FILIAL_ID:  identificador da empresa do CRM ou identificador de qual empresa e filial do CRM, conforme sistema do cliente for para múltiplas empresas;
+
+
+BASE_CRM: nome da base de dados do cliente no CRM;
+
+
+INTEGRACAO_SERVICO_ID: identificador do serviço a ser executado;
+
+
+TOKEN_CRM: chave de segurança que permite acesso em determinada base de dados, conforme permissão. Esse valor deve ser adicionado no header da requisição.
+
+
+ NotaO TOKEN_CRM é obrigatório em todas as integrações.  
+ Exemplo: URL para realizar a chamada de uma determinada integração: https://Integrador.crmsenior.com.br/Integrador/integrar.php?empresa_id=1&base_crm=crmsenior&servico_integracao_id=1Pacote completo utilizando a ferramenta Postman para envio da requisição:ParamsHeaders   
+Cada identificador de empresa do CRM por cliente gera um arquivo de log de erro e de acesso, que irão registrar os passos executados e os erros encontrados durante a execução, sendo avisos ou erros fatais, para possíveis correções. Para qualquer integração a ser executada, é preciso configurar os dados de conexão em um arquivo que será carregado pelo Integrador.
+O Integrador está arquitetado sobre cinco tabelas do CRM, onde é realizado uma consulta conforme a integração a ser executada e relacionada as informações para integração entre os sistemas, sendo elas:
+  TabelasDescrição  CONEXAO_INTEGRACAOEssa tabela é responsável pela configuração das conexões de acesso do Integrador aos provedores ou receptores de dados.  INTEGRACOESSão definidas as integrações com determinado sistema, e suas particularidades.  CAMPOS_INTEGRACAODescrito todos os campos os quais farão parte da integração e seus iguais, no sistema receptor ou provedor.  DEPENDENCIASQuais são as dependências de uma determinada integração, ou seja, os valores originados em outras tabelas do sistema.  REGRASAs regras para execução da integração, sendo vinculadas aos campos, serão executadas para ajustar as informações conforme o sistema, receptor ou o banco de dados do cliente no CRM está preparado para receber.  
+Para que seja possível ajustar as informações da integração conforme o sistema esteja preparado para receber, é preciso carregar as regras disponíveis. A maior parte das regras que são executadas são parte do Integrador,  construídas em código e carregadas pelo Integrador em tempo de execução.
+Para cada tipo de integração  é carregado um código de regra diferente, pois elas se comportam diferentemente para cada tipo. Há casos em que se faz necessário criar regras específicas para uma integração, ou seja, customizar regras para os clientes, para suprir um processo ou ajustar uma informação, permitindo que o sistema receptor ou banco de dados do CRM entenda a informação e processe-a corretamente. Para tal é necessário a ação do desenvolvimento.
+ ImportantePara que a regra seja executada em um campo da integração, é preciso que a mesma esteja cadastrada na tabela REGRAS com as informações pertinentes.  
+Com as definições do Integrador apresentadas, confira o passo-a-passo para criação das integrações GET/INFO e SET.
+Em casos de integrações via web service o Integrador gera um log de envio e de recebimento de XML, nomeado da seguinte forma: base_empresa_requisição.xml e base_empresa_resposta.xml, onde base é a base do cliente igual ao parâmetro base_crm e empresa é o id da empresa do cliente igual ao parâmetro empresa_id ou empresa_filial_id.
+Para toda integração executada com status de erro, o Integrador tentará enviar uma mensagem de e-mail para o e-mail geral do cliente com o conteúdo do log de erro gerado pela integração, os arquivos XML do envio e recebimento caso a integração seja por web service e as mensagens de retornadas pela integração.
+Configurações do arquivo de conexão
+Toda integração tem como pré-requisito uma conexão, que é configurada em um arquivo a ser carregado pelo Integrador. Este arquivo é interpretado junto ao código fonte do Integrador e é importante atentar à caracteres como: parênteses, vírgulas e aspas a mais ou a menos.
+Para configurar a conexão, o arquivo precisa estar no diretório de configurações do Integrador com a nomenclatura NOME-DA-BASE.connection. Esse arquivo deve conter um array com os dados de conexão, onde cada índice do array representa uma conexão.
+ Exemplo: No exemplo, o índice da conexão, destacado em vermelho será referenciado posteriormente na tabela CONEXAO_INTEGRACAO. O índice DEFAULT é obrigatório e deve existir em toda configuração, ele representa a conexão com o próprio CRM e deve conter os dados de conexão do CRM. Cada nova conexão configurada deve ter seu próprio índice.   
+Existem três tipos de conexão possíveis para o Integrador, são elas por Banco de Dados, Web Service e API (web, http). Cada uma das  conexões possuem seus próprios parâmetros e um layout para configurar os dados da conexão, entretanto para a paginação, todas as conexões utilizam a mesma estrutura para a configuração. Os layouts para configuração da conexão de cada tipo de conexão são:
+ Banco Para cada conexão serão usados campos diferentes, vale a pesquisa para descobrir a melhor forma de conectar-se.
+dbname: nome do banco;
+user: usuário de conexão ao banco;
+password: senha de conexão;
+host: servidor da conexão;
+driver: a ferramenta de conexão que o Integrador vai usar, difere de banco para banco e há um número limitado de drivers para conexão, sendo eles: ibm_db2 para IBM-db, pdo_mysql para MySQL, pdo_pgsql para PostgreSQL, pdo_sqlite para SQLite. O Integrador usa uma ferramenta para criar as conexões com os drivers, e, caso seja necessária uma configuração específica, é possível acessar a documentação da ferramenta que traz os passos para a configuração.
+charset: encoding para a conexão, padrão UTF-8;
+dsn: um texto de conexão customizado;
+pdo: funciona como o driver, para conexões customizadas.
+ Exemplo     NotaPara maiores informações acesse a documentação oficial sobre método de conexão.     
+ Web service Conexões web service possuem os mesmo campos, sendo alguns obrigatórios:
+host: servidor da conexão, obrigatório;
+port: porta da conexão;
+charset: encoding para a conexão, padrão UTF-8;
+header: array com dados de cabeçalho para a requisição, alguns web services precisam enviar autenticação por cabeçalho;
+body: um array com um template de corpo padrão para as requisições, no qual o índice deve conter um valor “#BODY#” que será substituído pelo corpo da requisição gerado pelo Integrador e funciona como se fosse uma capa de envio para todas as requisições.
+ Exemplo:       
+ Lista de Web services   MóduloWeb servicePorta  Ramos de Atividade/g5-senior-services/sapiens_Synccom_senior_g5_co_cad_ramoatividade?wsdlExportar  Unidades de Medida/g5-senior-services/sapiens_Synccom_senior_g5_co_cad_unidadedemedida?wsdlExportar  Transportadoras/g5-senior-services/sapiens_Synccom_senior_g5_co_cad_transportadora?wsdlExportar  Depósitos/g5-senior-services/sapiens_Synccom_senior_g5_co_cad_deposito?wsdlExpor

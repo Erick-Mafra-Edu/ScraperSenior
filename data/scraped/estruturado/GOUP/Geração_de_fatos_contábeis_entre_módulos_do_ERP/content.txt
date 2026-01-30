@@ -1,0 +1,170 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/geracao_fato_contabil.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7C_____6
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Geração de fatos contábeis entre módulos do ERP
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Geração de fatos contábeis entre módulos do ERP
+            Para a utilização de fato contábil, o parâmetro Utiliza Fato 
+		Contábil da tela Parâmetros da Empresa para Contabilidade (F070ECT) deve ser preenchido
+		com "S - Sim".Para a apresentação de declarações fiscais, 
+		como IN86 e SPED ECD, é necessária a apresentação dos lançamentos 
+		conforme o FATO CONTÁBIL.
+            Conceito
+            Fatos contábeis são atos que provocam modificações no patrimônio, podendo ou não alterar o Patrimônio Líquido (situação líquida patrimonial), interferindo no aspecto qualitativo e/ou aspecto quantitativo. Ou seja, todas as vezes que a empresa realizar operações, que gerem um documento comprobatório, como compra, venda ou pagamento, estará diante da realização de fatos contábeis.
+            Os fatos contábeis podem ser permutativos, modificativos e mistos.
+            
+                Permutativos: representam permutas ou trocas entre elementos ativos, passivos ou entre ativos, passivos ou entre ambos simultaneamente, sem provocar variações no patrimônio liquido. Ou seja, os fatos contábeis permutativos envolvem apenas contas patrimoniais. Exemplo: Recebimento de duplicatas, onde ocorre a baixa de duplicadas a receber e aumenta o caixa/banco.
+                Modificativos: provocam variações no patrimônio líquido, para mais ou para menos. Dessa forma os fatos modificativos envolvem contas de resultado e, consequentemente alteram o patrimônio liquido. Exemplo: Pagamento de despesa de alimentação, porque nesse caso a conta do caixa diminuiu e a conta de resultando também diminuiu. Em fim, interferiu no patrimônio liquido para menos.
+                Mistos: envolvem, ao mesmo tempo, um fato permutativo em um fato modificativo. Podem acarretar mudanças no ativo e no patrimônio liquido, ou no passivo e no patrimônio liquido, ainda no ativo, passivo e no patrimônio liquido. Exemplo: A empresa pagou uma duplicata em atraso com juros, nessa situação o caixa diminuiu por causa do pagamento e aumentou a despesa pelo atraso do pagamento. A conta de duplicata diminuiu porque houve uma redução de valor das obrigações. Já a conta de resultado diminuiu por causa do juros. Nesse cenário houve uma permuta entre os elementos do ativo, passivo e patrimônio liquido.
+            
+            Parametrizações para geração do Fato Contábil
+            Algumas parametrizações influenciam na forma como o Fato Contábil é gerado:
+            
+                quando o campo Processar fato contábil junto à integração, da tela F070ECT, estiver parametrizado como Sim e o parâmetro global UltNovFat estiver ativo, a geração do fato contábil ocorre junto com a integração contábil (F645CTB);
+                quando o campo Processar fato contábil junto à integração, da tela F070ECT, estiver parametrizado como Não e o parâmetro global UltNovFat estiver ativo, é habilitado o botão Gerar Fato na tela F645CTB que permite a geração do fato contábil em um momento distinto, onde são selecionados os módulos, após a integração contábil.
+            
+            Critério de Geração do Fato Contábil por Módulo
+            Notas Fiscais de Saída
+            
+             O fato contábil da nota fiscal de saída sempre será mandatório.
+            Exemplo de geração do fato contábil: a empresa fez uma venda de uma mercadoria e esse fato gerou os seguintes movimentos no sistema:
+            
+                Emissão da Nota Fiscal de Venda;
+                Geração do Título do Contas a Pagar;
+                Movimentação de Baixa do Estoque.
+            
+            Ao gerar a contabilização para cada um desses movimentos, o sistema gerará a mesma numeração de fato contábil. Abaixo indicação de quais são as ligações em que a nota fiscal de saída será o mandatório:
+            
+                
+            
+            Faturas (Vendas)
+            
+            O fato contábil gerado a partir de contabilizações de faturas sempre será mandatório e sem ligações com outros módulos.
+            Notas Fiscais de Entrada
+            
+            O fato contábil da nota fiscal de entrada sempre será mandatório
+            
+                
+            
+            Faturas (Compras)
+            
+            O fato contábil gerado a partir de contabilizações de faturas sempre será mandatório e sem ligações com outros módulos.
+            Estoques
+            
+            O fato contábil gerado a partir da contabilização de estoques sempre será mandatório.
+            Exemplo de geração do fato contábil: a empresa realizou uma transferência entre estoques.
+            Ao gerar a contabilização dos movimentos, o sistema gerará a mesma numeração de fato contábil. Abaixo indicação de quais são as ligações em que a movimentação de estoques será o fato mandatório:
+            
+                
+            
+            Contas a Receber
+            
+            O fato contábil gerado a partir da contabilização da baixa de títulos sempre será mandatório.
+            Exemplo de geração do fato contábil: a empresa realizou uma baixa no contas a receber que gerou uma movimentação na tesouraria.
+            Ao gerar a contabilização dos movimentos, o sistema gerará a mesma numeração de fato contábil. Abaixo indicação de quais são as ligações em que a baixa de títulos será o fato mandatório:
+            
+                
+            
+            C. Receber - Aju. Financeiro (6)
+            
+            O fato contábil gerado a partir de contabilizações de ajustes financeiros no Contas a Receber sempre será mandatório e sem ligações com outros módulos.
+            
+            C. Receber - Variação Cambial
+            
+            O fato contábil gerado a partir de contabilizações de variação cambial no Contas a Receber sempre será mandatório e sem ligações com outros módulos.
+            C. Receber - Aju. Valor de Mercado
+            
+            O fato contábil gerado a partir de contabilizações de ajustes de valor de mercado no Contas a Receber sempre será mandatório e sem ligações com outros módulos.
+            Contas a Pagar
+            
+            O fato contábil gerado a partir da contabilização da baixa de títulos sempre será mandatório.
+            Exemplo de geração do fato contábil: a empresa realizou uma baixa no contas a pagar que gerou uma movimentação na tesouraria.
+            Ao gerar a contabilização dos movimentos, o sistema gerará a mesma numeração de fato contábil. Abaixo indicação de quais são as ligações em que a baixa de títulos será o fato mandatório:
+            
+                
+            
+            C. Pagar - Aju. Financeiro (7)
+            
+            O fato contábil gerado a partir de contabilizações de ajustes financeiros no Contas a Pagar sempre será mandatório e sem ligações com outros módulos.
+            C. Pagar - Variação Cambial
+            
+            O fato contábil gerado a partir de contabilizações de variação cambial no Contas a Pagar sempre será mandatório e sem ligações com outros módulos.
+            C. Pagar - Aju. Valor de Mercado
+            
+            O fato contábil gerado a partir de contabilizações de ajustes de valor de mercado no Contas a Pagar sempre será mandatório e sem ligações com outros módulos.
+            Comissões
+            
+            O fato contábil gerado a partir de contabilizações da rotina de comissões e sempre será mandatório e sem ligações com outros módulos.
+            Tesouraria
+            
+            O fato contábil gerado a partir da contabilização da transferência entre contas na Tesouraria sempre será mandatório.
+            Exemplo de geração do fato contábil: a empresa realizou uma transferência entre contas internas que gerou uma movimentação na Tesouraria.
+            Ao gerar a contabilização dos movimentos, o sistema gerará a mesma numeração de fato contábil. Abaixo indicação de quais são as ligações em que a Tesouraria será o fato mandatório:
+            
+                
+            
+            Patrimônio
+            
+            O fato contábil gerado a partir de contabilizações das atualizações/movimentações patrimoniais e sempre será mandatório e sem ligações com outros módulo.
+            Projetos - Lçtos Manuais (Y)
+            
+            O fato contábil gerado a partir de contabilizações de lançamentos manuais em Projetos sempre será mandatório e sem ligações com outros módulos.
+            Cota Capital (5)
+            
+            O fato contábil gerado a partir de contabilizações de Cota Capital sempre será mandatório e sem

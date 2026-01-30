@@ -1,0 +1,149 @@
+# 
+
+URL: https://documentacao.senior.com.br/bpm/7.0.0/#getting-started.htm%3FTocPath%3DBPM%2520%7C_____6
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBPM
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BPM  > Getting Started
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Getting Started
+            Sumário
+            
+            
+                
+                    Conceito
+                    
+                    Menu de Acesso
+                    
+                    Funcionalidades
+                        3.1 Criando o Primeiro Processo
+                
+            
+             1. Conceito 
+            Após a conclusão das configurações pelo administrador do sistema através do check-list de implantação, o BPM estará pronto para utilização dos usuários.
+            Nesta documentação vamos prosseguir com as etapas de utilização.
+             2. Menu de Acesso
+            
+                No menu, selecione Senior Flow;
+                Selecione BPM;
+                Clique em Processos;
+                Em seguida, Novo Processo.
+            
+             3. Funcionalidades
+             3.1 Criando o Primeiro Processo
+            Clique em Novo processo no canto superior direito da tela e selecione entre BPM em branco ou um dos templates (modelos pré-definidos) a disposição.
+            Caso clique em BPM em branco, será necessário informar o título do processo e categoria, a descrição é um item opcional.
+            Selecione o tipo de formulário. Como exemplo utilizaremos o ECM. Clique no link crie um novo e preencha o título do formulário. Adicione os campos do formulário clicando em Adicionar campo e preencha as informações. Também é possível adicionar um separador, que é um título de separação de campos e regras de consistência. Com o formulário pronto, clique em salvar.
+            O próximo passo será a criação do fluxo. Para isso, clique em fluxo na coluna esquerda da tela e comece a montar seu fluxo. Para começar clique no botão de início   e adicione tarefas . Sempre conecte  os fluxos.
+            Preencha as informações da tarefa. 
+            Configure os campos como Oculto, Apenas leitura ou Obrigatório, em seguida designe um usuário, grupo ou papel à tarefa.
+            Por fim conecte a última tarefa a bola de fim.
+            Publique o fluxo para que ele fique disponível para uso.
+            Exemplo de fluxo
+            
+            
+                
+            
+            Assim o processo está pronto e você pode seguir criando novas tarefas na central de tarefas do BPM.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

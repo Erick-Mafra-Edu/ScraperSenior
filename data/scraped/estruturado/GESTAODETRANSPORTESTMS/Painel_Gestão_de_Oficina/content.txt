@@ -1,0 +1,192 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodetransportestms/7.0.0/#manual-processos/painel-oficina.htm%3FTocPath%3D_____5
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão de Transportes | TMS - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Painel Gestão de Oficina
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Painel Gestão de Oficina
+            Qual o objetivo da solução?
+                
+                    Compartilhar de forma clara e rápida para o Gestor e demais envolvidos no gerenciamento da frota, uma visão sobre os defeitos pendentes, revisões vencidas ou a vencer e informações sobre as manutenções dos veículos. A rotina possibilita através das informações apresentadas, que o Gestor da Frota possa planejar e priorizar revisões e manutenções, visualizar a disponibilidade dos veículos na oficina e acompanhar a execução do serviço. O Gestor também poderá então prevenir que veículos continuem em circulação sem as revisões em dia ou com defeitos ainda não resolvidos, diminuindo custos com quebras, aumento de consumo e paradas não programadas.
+                
+            
+            Como a solução funciona?
+                
+                    Na rotina Painel Gestão de Oficina (TMS > Gestão de Frotas > Painel Gestão de Oficina), no painel serão apresentados os dados das pendências abertas, revisões e ordem de serviço em execução na oficina para os veículos da frota, conforme o setor que pertence o serviço a ser executado na filial selecionada.
+                    
+                        O Painel estará dividido nos seguintes cards “Visão Geral”, “Pendência”, “Revisão” e “Manutenção”, que poderão ser configurados a exibição.
+                    
+                
+            
+            Pré Requisitos
+            Utilizar Senior x e módulos GFV em versão 3.18.00 ou superior e o CAS a partir da data 22/01/2019 para realizar a movimentação do defeito, configuração do centro de custo da frota e cadastro de setor.
+            Configurações Gerais
+            Como configurar o Centro de Custo da Frota para apresentar no Painel Gestão de Oficina?
+                
+                    Em GFV > Cadastros > Veículos > Centros de Custo da Frota
+                    Na aba “Geral”, defina a máscara que será utilizada para o cadastro de placas dos veículos.
+                
+            
+            Como configurar o Painel de Oficina?
+                
+                    No Senior X em TMS > Gestão de Frotas > Painel Gestão de Oficina, é necessário configurar cards para o painel:
+                    
+                        
+                    
+                    Deve ser configurado da seguinte forma:
+                    
+                        Obrigatoriamente é necessário definir a filial que as informações serão apresentadas, os cards disponíveis no painel de oficina e o intervalo de tempo (em segundos) da troca de card (quando houver mais de um card configurado).
+                        Os cards poderão ser filtrados por setores, essa configuração é opcional. Poderá ser cadastrado, um ou mais cards para um setores definidos(ex.: Mecânica, Pintura ...), mas, uma vez definido os cards por setor, esses serão filtrados somente pelos setores que estão configurados.Após configurar essas informações o Painel de Oficina apresentará as informações nos cards selecionados.
+                    
+                     
+                    
+                        
+                    
+                
+            
+            Tipos de Cards:
+            Card: Visão Geral
+                
+                    Nesse card serão listados no painel cada centro de custo da frota configurado e a quantidade de serviços associados ao veículo pertencente ao centro de custo.
+                    Os serviços estarão classificados pela seguinte prioridade:
+                    
+                        Quadro Verde: Serviços com prioridade baixas;
+                        Quadro Amarelo: Serviços com prioridade média;
+                        Quadro Laranja: Serviços com prioridade alta;
+                         Quadro Vermelho: Serviços com prioridade crítica.
+                    
+                    
+                        
+                    
+                    As informações estarão sendo apresentadas conforme a filial que ao veículo deu entrada.
+                    NotaAs informações do card serão filtrados pelo setor, caso o setor estar configurado para o painel e o card “Visão Geral” estar definido para filtrar pelo setor. 
+                
+            
+            Card: Pendência
+                
+                    
+                        Nesse card serão listadas todas as pendências abertas para os veículos que estão na garagem e deram entrada na filial selecionada, apresentando no topo as pendências originadas de uma notificação.
+                    
+                        
+                    
+                    
+                        Na listagem serão apresentadas as seguintes colunas: “Veículo”,  “Pendência”, “Pendente”,  “Entrada/Saída”, “Prioridade” e quando a pendência for originada de uma notificação será representada por uma exclamação em um triângulo ao lado da prioridade.
+                    Se a listagem de pendências desse card for grande será criado automaticamente a barra de rolagem e irá rolar a listagem conforme o tempo definido nas configurações do painel de oficina.Exemplo: Se configurado 10 segundos para o tempo de transição dos cards, a cada 10 segundos irá rolar a barra de rolagem da listagem.
+                    Nota As informações do card serão filtrados pelo setor, caso o setor estar configurado para o painel e o card “Pendência” estar definido para filtrar pelo setor. 
+                
+            
+            Card: Revisão
+                
+                    
+                        Nesse card serão listados os veículos com revisão vencida ou próximo do vencimento que realizaram entrada/saída na filial definida para o painel. Serão paresentados no topo da listagem os veículos com revisão vencida a mais tempo, ordenando os veículos pela maior diferença em KM. 
+                    
+                        
+                    
+                    Na listagem serão apresentadas as seguintes colunas: “Veículo”, “Placa”, “Revisão”,  “Hodometro” e “Diferença”.
+                    Se a listagem de veículos desse card for grande será criado automaticamente a barra de rolagem e irá rolar a listagem conforme o tempo definido nas configurações do painel de oficina.Exemplo: Se configurado 10 segundos para o tempo de transição dos cards, a cada 10 segundos irá rolar a barra de rolagem da listagem.
+                    Nota: As informações do card serão filtrados pelo setor, caso o setor estar configurado para o painel e o card “Revisão” estar definido para filtrar pelo setor. 
+                
+            
+            Card: Manutenção
+                
+                    Nesse card serão listados os veículos com ordem de serviço: planejadas, em execução ou pausada na oficina, listando o serviço que está sendo realizado a manutenção no veículo, o tempo previsto e realizado para o serviço, previsão de conclusão e o status atual da ordem de serviço.
+                    
+                        
+                    
+                    Se a listagem de veículos desse card for grande será criado automaticamente a barra de rolagem e irá rolar a listagem conforme o tempo definido nas configurações do painel de oficina.Exemplo: Se configurado 10 segundos para o tempo de transição dos cards, a cada 10 segundos irá rolar a barra de rolagem da listagem.
+                    Nota As informações do card serão filtrados pelo setor, caso o setor estar configurado para o painel e o card “Manutenção” estar definido para filtrar pelo setor. 
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o com

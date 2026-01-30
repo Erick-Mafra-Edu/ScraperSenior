@@ -1,0 +1,224 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/telas/edtregsgi.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Telas%2520-%2520SGI%7CInforma%25C3%25A7%25C3%25B5es%2520Complementares%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Telas - SGI > Informações Complementares > Editor de Regras no SGI
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Editor de Regras no SGI
+                O editor de regras que é apresentado no SGI é o mesmo editor usado nos demais pontos
+ de regras do sistema. O seu funcionamento é semelhante, porém é caracterizado pelo SGI.
+
+                Seleção de tabelas e campos 
+                O SGI não permite que acesso à tabelas e campos diretamente pelas regras no
+ formato "tabela.campo", isto permite um maior controle sobre o estado do formulário
+ e também uma maior portabilidade.
+                       Porém, o editor de regras permite que as informações das tabelas do sistema
+ sejam consultadas para facilitar o desenvolvimento de formulários. Este recurso
+ é disponibilizado através da tela de seleção
+ de tabelas e campos.
+                E para evitar que o usuário selecione um campo nesta
+ tela e que o formulário deixe de funcionar corretamente, uma mensagem é apresentada
+ quando o botão Selecionar é pressionado. 
+                A mensagem fala em usar as variáveis disponíveis. Estas variáveis no SGI representam
+ os campos da Interface e das tabelas disponíveis no  formulário.
+                A funcionalidade de seleção de campos de tabela como variáveis, possui algumas restrições quanto ao seu uso.
+  Por exemplo, em uma situação com três ações inseridas em lugares diferentes.
+                
+                    
+                
+                
+                    AcaoInterface é uma ação de Interface. As ações declaradas aqui não tem acesso aos campos de tabelas.
+                    AcaoTabelaPrincipal pertence a tabela que será utilizada como tabela base do formulário
+ (neste caso a tabela E070FIL). Como essa tabela será a principal do formulário
+ as ações declaradas aqui terão acesso apenas aos campos da própria tabela.
+                    AcaoTabelaGrid pertence a uma tabela secundaria (E120PED). 
+Como essa tabela é uma tabela secundaria, poderão ser utilizados os campos dela mesma e da tabela mestre do formulário
+ (neste caso a tabela E070FIL).
+                
+                Selecionando variáveis
+                A seleção de variáveis no SGI e feita pela 
+            tela de seleção de variáveis. Nela são exibidos os campos disponíveis na Interface
+ atual. Também são mostrados os campos de todas as tabelas inseridas na Interface.
+ A tela é acessada pelo menu Seleção > Variáveis:
+                
+                    
+                
+                Tipos de variáveis disponíveis
+                
+                    Data: indicam valores que representam datas.  Nas regras são tratados como variáveis do tipo Data;
+                    Lógico (T ou F): indica um tipo lógico que
+ pode assumir apenas os valores verdadeiro, falso ou nulo (caso não seja obrigatório).
+ Nas regras são tratados como variáveis do tipo Alfanumérico, mas podem receber penas os
+ valores T (verdadeiro),
+            F (falso)
+ ou por uma cadeia alfanumérica
+ vazia;
+                    Alfanumérico: indica uma cadeia de caracteres.
+ Nas regras são tratados como variáveis do tipo Alfa;
+                    Numérico: são variáveis que representam
+ números. Podem ser valores inteiros ou decimais.  Nas regras são tratados como variáveis do tipo Número.
+                
+                Nota
+                    Ao definir um componente de um formulário SGI, este deve ser definido como Alfa, porque
+ está sendo trabalhado o texto que foi informado independente do tipo de informação
+ que será gravada na base de dados.
+                    Por exemplo, quando é informada uma caixa de
+ edição,  tipo de dados que ela recebe pode ser um Número.
+ Porém na regra a caixa de edição deve ser definida como Alfa, porque se trata da
+ propriedade texto.
+                
+                As variáveis cujos nomes terminam em "_old",   representam os valores antigos dos campos usados nas telas. 
+                Por exemplo, ao
+ alterar o valor de um campo de 10 para 20, o valor do campo será 20 e o valor do "_old" será 10. Este valor apenas está disponível quando o
+ registro está sendo alterado. Na inserção e exclusão, o acesso a variáveis "_old" gera um erro em tempo de
+ execução.
+                
+                    Nota
+                    
+                    Ao definir uma variável dentro de uma regra, deve-se tomar o cuidado de não
+declará-la com o mesmo nome de nenhum campo da Interface, porque ao criar um campo na Interface,
+ este campo se torna uma variável de sistema.
+                    Ao declarar uma variável com o
+ mesmo nome dentro da regra, não é mais possível utilizar o campo da Interface, pois
+ neste caso a regra utilizará a variável local.
+
+                
+                Selecionando funções
+                           A tela de seleção de funções para
+ o SGI é a mesma utilizada no restante do sistema. Todas as funções de programador
+ definidas pelo sistema não sendo específicas de uma determinada ferramenta,
+ficam disponíveis nesta tela. Ao selecionar uma função,
+ o seu protótipo é inserido no fonte da regra sendo editada.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

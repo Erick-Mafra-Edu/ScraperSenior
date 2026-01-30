@@ -1,0 +1,185 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#geral/impostos_pis_cofins.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7C_____7
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > PIS / COFINS
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            PIS/COFINS
+            As contribuições para PIS/PASEP e COFINS possuem regras bastante similares, variando conforme seus contribuintes - se pessoas jurídicas de direito privado, pessoas jurídicas de direito público ou contribuintes especiais.
+            Ambos os tributos apresentam três hipóteses de incidência distintas:
+            
+                o faturamento ou o auferimento de receitas, para pessoas jurídicas de direito privado;
+                o pagamento da folha de salários, para entidades de relevância social determinadas em lei;
+                 a arrecadação mensal de receitas correntes e o recebimento mensal de recursos, para entidades de direito público.
+            
+            Fonte: Receita Federal.
+            O que você precisa fazer?
+            Cadastro do imposto PIS/COFINS
+                
+                    Cadastrar os impostos. FOs Tipos utilizados são 41 e 42 ou 43 e 44, dependendo da parametrização do regime tributário do produto.
+                    
+                        Cadastros > Controladoria > Tributos > Cadastro (F051IMP)
+                    
+                
+            
+            Cadastro da alíquota para os impostos
+                
+                    A alíquota para o PIS/COFINS pode ser definida na tabela de tributação ou a partir do cadastro da  classificação fiscal. A alíquota da classificação fiscal tem prioridade em relação a alíquota do cadastro do produto.
+                    
+                        Cadastros > Controladoria > Tributos > Tabelas de tributação (F049TTR)
+                    
+                    Ainda, é possível atribuir uma alíquota no cadastro do fornecedor que será priorizada em relação a tabela de tributação e a classificação fiscal, para os documentos de compra.
+                    
+                    
+                    Para os documentos de compra existem campos na ligação produto x fornecedor serão considerados sobre os demais cadastros caso o produto esteja parametrizado nesta ligação.
+                    
+                    
+                    Fazer a ligação imposto x filial.
+                    
+                        Cadastros > Controladoria > Tributos > Base imposto (Liga Filial) (F055PPF)
+                    
+                    
+                    
+                    Configurar a transação para calcular PIS/COFINS, no campo Tributa PIS Faturamento:
+                    
+                        Cadastros > Transações > Parâmetros por Gestão > Vendas (F001TVE)
+                        Cadastros > Transações > Parâmetros por Gestão > Compras > Ordem Compra > NF Entrada > Fatura (F001TCP)
+                    
+                    Configurar o cliente, nos campos Tributa PIS e Tributa COFINS.
+                    
+                        Cadastros > Clientes e Fornecedores > Clientes > Cadastro (F085CAD)
+                    
+                    Configurar o fornecedor, nos campos Recupera PIS e Recupera Cofins.
+                    
+                        Cadastros > Clientes e Fornecedores > Fornecedores > Cadastro (F095CAD)
+                    
+                    Configurar o cadastro do produto para calcular PIS/COFINS. Se houver ligação produto x fornecedor, este cadastro deve ser verificado.
+                    
+                        Cadastros > Produtos e Serviços > Produtos > Individual (F075PRO)
+                        Cadastros > Produtos e Serviços > Serviços > Individual (F080SER)
+                        Cadastros > Clientes e Fornecedores > Fornecedores > Ligações > Fornecedor X Produtos > Individual (F403FPR)
+                    
+                    
+                    
+                
+            
+            Definição do regime tributário para cálculo dos impostos
+                
+                    Para definir o Regime Tributário do PIS/COFINS, deve-se alterar a configuração na tela Individual (F075PRO). Há o mesmo campo na tela de cadastro de classificações fiscais, porém ele serve apenas para sugestão no cadastro do produto.
+                    
+                        Integração dos movimentos de variação cambial para apurar o PIS e a COFINS no regime Cumulativo
+                        
+                    
+                
+            
+            Identificadores para manipulação do PIS/COFINS
+                
+                    
+                        COM-000ALCOF01
+                        COM-000ALPIS01
+                    
+                
+            
+            Sugestão da situação tributária
+                
+                    A sugestão da situação tributária do PIS e COFINS no item da nota fiscal  acontece conforme a seguinte ordem:
+                    
+                        1º Assume a situação tributária constante no cadastro da transação;
+                        2º Assume a situação tributária constante no cadastro do produto/serviço.
+                    
+                    A situação tributária do PIS e COFINS ainda pode ser atribuída ao item da nota fiscal a partir de uma regra ligada aos identificadores COM-000ALSTR03 e COM-000ALSTR04, respectivamente.
+                    Questão: Na geração de notas fiscais de entrada dos tipos 3, 6, 7 e 10, que por sua vez geram notas fiscais de saída, o sistema atribui nas notas de saída o mesmo CST das notas de entrada. Como fazer para que o sistema faça a sugestão das CST's nas notas de saída a partir da codificação do módulo de Mercado?
+                    Nesse caso, utilize o identificador de regras CPR-440GERCS01. Com ele ativo, o sistema fará a sugestão dos CSTs nas notas de saída conforme condições do módulo de Mercado e fará com que os identificadores de sugestão do CST sejam executados para os itens das notas de saída.
+                
+            
+            Situação tributária x cálculo do imposto
+                
+                    Nas notas fiscais de entrada/saída, a situação tributária influencia no cálculo do PIS/COFINS. Quando o CST for 06 - Operação tributável com alíquota zero nas notas fiscais de saída, o valor do imposto e alíquota serão zerados e  apenas a base será calculada.
+                    Nas notas fiscais de entrada, quando o CST  for 73 - Operação de aquisição a alíquota zero, o valor da base de cálculo será calculado normalmente, porém a alíquota e o valor do imposto serão zerados.Para isso, é necessário parametrizar o PIS/COFINS nas seguintes telas:
+                    
+                        Individual (F075PRO);
+                        Fatura (F001TCP);
+                        Cadastro (F095CAD);
+                        Tabelas de tributação (F049TTR).
+                    
+                
+            
+            Controle único de retenção para os regimes de tributação cumulativo e não cumulativo
+                
+                    Empresas que apuram PIS/COFINS cumulativo e não cumulativo podem compensar as retenções nas duas apurações, conforme exemplo:
+                    01/2018:
+                    
+                    
+                        PIS cumulativo:
+                            
+                                Débito = 100,00
+                                Retenção = 150,00
+                                Imposto a Recolher = 0,00
+                                Saldo Controle de Retenção = 50,00
+                            
+                        
+                        PIS não cumulativo:
+                            
+                                Débito = 200,00
+                                Retenção = 50,00 (a sobra do valor retido da apuração do regime cumulativo pode ser utilizada na compensação)
+                                Imposto a recolher = 150,00
+                            
+                        
+                    
+                    Para isso, utilize o campo Retenção Unificada na tela Método de Utilização Retenções/Créditos (F661UCR). Ele Indica se as retenções de PIS/COFINS serão controladas de maneira unificada entre os regimes cumulativos e não cumulativos. Será habilitado apenas quando se tratar de impostos não cumulativos 41 (PIS) ou 42 (COFINS) e eles estiverem ligados ao seus respectivos impostos cumulativos (41 ao 43 ou 42 ao 44). Se essa premissa não for atendida, o parâmetro ficará como N-Não.
+                    Com isso, na tela Controle de Retenções PIS/COFINS (F661REP), para os impostos cumulativos 43 e 44 (PIS/COFINS) será verificado se existe a configuração de retenção unificada para os seus respectivos impostos não cumulativos. Caso sim, será exibida uma mensagem impedindo a movimentação das retenções dos i

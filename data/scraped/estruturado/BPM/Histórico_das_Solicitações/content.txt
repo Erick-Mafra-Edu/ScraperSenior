@@ -1,0 +1,176 @@
+# 
+
+URL: https://documentacao.senior.com.br/bpm/7.0.0/#historico-das-solicitacoes.htm%3FTocPath%3DBPM%2520%7C_____7
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBPM
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BPM  > Histórico das Solicitações
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Histórico das Solicitações
+            Sumário
+            
+            
+                
+                    Conceito
+                    
+                    Menu de Acesso
+                    
+                    Funcionalidades
+                        3.1 Identificador do Processo3.2 Ação 3.2.1 Tipos de Ações3.3 Usuário
+                
+            
+            1. Conceito 
+            
+            O BPM possui um histórico de todos os processo que existem no tenant, e você poderá acompanhar os detalhes abaixo.
+            2. Menu de Acesso 
+            
+            
+                No menu, selecione Senior Flow;
+                Selecione BPM;
+                Clique em Histórico das Solicitações;
+            
+            Pode ser acessado também dentro da central de tarefas, na aba Histórico e Observações.
+            3. Funcionalidades 
+            
+            Para utilizar essa funcionalidade é necessário ter algum processo já iniciado no BPM, para assim a tela de solicitações consiga trazer as informações/logs da solicitação.
+            Na guia Filtro, será necessário o preenchimento dos campos: Identificador do Processo, Ação e Usuário.Ainda na tela, são apresentadas 5 colunas: Identificador do processo (número do processo), o tipo da ação, a data, login do usuário que efetuou a ação e o endereço de IP.
+            
+            
+            
+                Importante
+                
+                Em processos muito antigos pode não aparecer o endereço de IP.
+            
+            3.1 Identificador do Processo
+            
+            Nesse campo é possível informar o número da solicitação para trazer os dados/logs da mesma.
+            3.2 Ação 
+            
+            Neste campo é possível filtras por todas as ações possíveis hoje no processo, em seguida uma explicação de cada uma dessas ações.
+            3.2.1 Tipos de Ações
+            
+            
+                STARTED: Essa ação indica o inicio de um processo;
+                COMMENT: Essa ação indica comentário no processo;
+                COMMENT_REMOVED: Essa ação indica a remoção de um comentário no processo;
+                ATTACHMENT_ASSED: Essa ação indica quando um anexo foi assinado;
+                ATTACHMENT_REMOVED: Essa ação indica a remoção do anexo;
+                CHANGE_REQUESTER: Essa ação indica a mudança do solicitante do processo;
+                CANCEL_PENDENCY: Essa ação indica quando um processo foi cancelado;
+                RESPONSE_PENDENCY: Essa ação indica quando o processo está pendente de uma resposta;
+                FINISHED: Essa ação indica a finalização do processo;
+                TASK_DELETED: Essa ação indica quando o processo foi deletado.
+            
+            3.3 Usuário
+            
+            No campo usuário é possível efetuar o filtro para um nome de login específico.
+            Após configurar as informações nos campos só basta clicar em filtrar para verificar as informações do Histórico das solicitações.
+            
+                Observações
+                
+                É possível filtrar com um campo configurado.
+                Não é possível filtrar com mais de uma ação.
+                O histórico de observação deve ser configurado através do recurso res://senior.com.br/platform/workflow/request-history-visualization.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

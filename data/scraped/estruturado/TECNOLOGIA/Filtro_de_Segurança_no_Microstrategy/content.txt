@@ -1,0 +1,214 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/bi/filtro-seguranca-microstrategy.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CPerformance%2520Corporativa%7CBI%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Performance Corporativa > BI > Filtro de Segurança no Microstrategy
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Filtro de Segurança no MicroStrategy
+            O filtro de segurança é um recurso da MicroStrategy para que haja controle sobre os dados que podem ser visualizados por cada usuário. Eles são aplicados individualmente aos usuários, ou com maior abrangência, quando aplicado a grupos de usuários.
+            Para a sua criação é necessário que tenha acesso pelo MicroStrategy Developer na pasta Objetos do Projeto > Filtros de Segurança do MD. É muito semelhante à criação de um filtro normal, com a diferença de que somente podem ser utilizados filtros de segurança em Atributos.
+            
+                Importante
+                
+                Para qualquer alteração ou configuração no MicroStrategy Developer é necessário possuir a licença de architect. Caso não possua a licença com esta chave, entre em contato com o seu canal ou seu executivo de negócios para solicitar esta alteração/configuração necessária.
+            
+            No filtro de segurança é possível ter a afirmação e a negação de elementos do filtro. 
+            Exemplo: 
+                
+                    Vamos supor que temos dois grupos de usuários e um usuário:
+                    
+                        
+                    
+                    Desta maneira, o Usuário 2 irá visualizar somente a Empresa 2.
+                
+            
+            Quando um filtro entre em conflito com outro, por padrão o MicroStrategy tem um comportamento que é de colocar um operando "OR" nas abrangências. 
+            Exemplo:
+                
+                    Utilizando o operando "OR", o Usuário 2 tem permissão para ver a Empresa 2, pois o grupo em que ele está permite isso.
+                    
+                        
+                    
+                    Utilizando o operando "AND", o Usuário 2 não tem permissão para ver nenhuma empresa.
+                    
+                        
+                    
+                    Utilizando o operando "OR" o Usuário 2 têm permissão para ver a Empresa 1 e a Empresa 2, pois o Grupo 1 está permitindo a Empresa 2 e este está permitindo a Empresa 1. 
+                
+            
+            A mudança do operando "OR" para o operando "AND"  é feita a nível de projeto, pelo caminho Configurar Projeto > Filtro de Segurança > Geral.
+            
+                
+            
+            Caso for alterada essa configuração, é necessário que seja recarregado o Projeto:
+            
+                 Para recarregar o projeto acesse a configuração, em Administração > Administração do Sistema > Projeto.
+                Clique com o botão direito no projeto desejado e Administrar Projeto > Descarregar.
+                Aguarde o status do projeto ser atualizado para "Descarregado" e clique com o botão direito novamente no projeto, selecionando Administrar Projeto > Carregar. Depois de feito isso, as Configurações de Mesclagem de Filtro de Segurança foram aplicadas.
+            
+            Criação e aplicação dos filtros
+            
+                Acesse Objetos do Projeto > Filtros de Segurança do MD.
+                Clique com o botão direito e selecione Novo > Filtro de Segurança.
+                Na tela de filtros, adicione o filtro conforme a condição desejada para aquele atributo.
+				Exemplo: Pegar apenas a empresa 1.
+                Após isso, salve o filtro na pasta Objetos do Projeto > Filtros de Segurança do MD. Podem ser criados quantos filtros forem necessários, porém para cada usuário/grupo é permitido adicionar apenas um filtro.
+                Após a criação do filtro, relacione os usuários/grupos com os filtros criados, em Administração > Projetos > Gerenciador de filtros de segurança.
+                Escolha o Projeto onde será aplicado o filtro de segurança. No painel da esquerda são exibidos os filtros de segurança, usuários e grupos e os atributos.
+				
+            
+            Definir relacionamento de filtro de segurança
+            Filtros de segurança
+            Apresenta em uma guia os filtros de segurança existentes no projeto. Navegue para um filtro de segurança utilizando a lista de pesquisa no topo do painel. Clique em > para associar o filtro selecionado para o usuário ou grupo que já está selecionado no painel da direita. Possui as seguintes opções:
+            
+                Novo...: abre a tela de Edição de Filtros de Segurança para que seja criado um novo filtro.
+                Editar...: abre a tela de Edição de Filtros de Segurança com o filtro selecionado, permitindo modificá-lo.
+                Importar: converte um Filtro normal em um Filtro de Segurança. O filtro importado (convertido) é um filtro independente do filtro normal selecionado, ou seja, mudanças feitas no filtro convertido não serão replicadas para o filtro normal.
+            
+            Usuários e grupos
+            Mostra os usuários e grupos no projeto. Clique em > para associar o usuário ou grupo selecionado para o filtro de segurança selecionado no painel da direita. Possui as seguintes opções:
+            
+                Exibir usuários: mostra os usuários presentes dentro do grupo selecionado.
+                Localizar: permite localizar um usuário ou um grupo. Porém só serão mostrados os usuários se a opção Exibir usuários estiver habilitada.
+            
+            Mostrar informações agrupadas por 
+            Permite ver detalhes sobre Filtros de Segurança baseados em todos os Filtros de Segurança associados a um usuário/grupo, ou todos os usuários/grupos que possuem um filtro de segurança associados a ele.
+            Clique em < para remover o objeto selecionado do painel da direita ou clique em << para limpar todos os objetos do painel da direita.
+            
+                Nota
+                
+                Após a definição de Filtros de Segurança, é necessário que o usuário alterado desconecte e reconecte-se na fonte do projeto.
+                Apague o cache dos relatórios para que os dados sejam carregados novamente.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

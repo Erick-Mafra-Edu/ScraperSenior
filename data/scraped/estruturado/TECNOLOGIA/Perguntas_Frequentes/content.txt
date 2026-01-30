@@ -1,0 +1,229 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#perguntas-frequentes.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7C_____12
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Perguntas Frequentes
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Perguntas Frequentes
+            BrowserAccess
+            É necessário adquirir 
+				licença de instância web para utilizar o BrowserAccess?
+                
+                    Não é necessário, o BrowserAccess 
+					não agregará custo de licença adicional para o cliente da 
+					Senior. Devido a mudança arquitetural não é mais utilizado 
+					o termo "instância" e sim o termo "conexões 
+				simultâneas".
+                
+            
+            O BrowserAccess pode ser acessado a partir de Linux e Mac OS X?
+                
+                    Sim, desde que sejam usados navegadores Firefox 3.0.10 ou Safari 3.2.
+                
+            
+            Somente estas versões de navegador 
+				são suportadas neste ambiente? Versões mais novas não são suportadas?
+                
+                    Versões mais novas dos navegadores provavelmente funcionam, mas não 
+					foram homologadas pela Senior. Ultimamente (2009), tem sido comum uma 
+					versão nova de navegador quebrar alguma compatibilidade com a versão anterior, 
+				a título de “maior aderência a padrões”.
+                    Como o BrowserAccess utiliza 
+					muitos recursos de HTTP, HTML e JavaScript, a Senior não tem como garantir 
+				que uma versão não-homologada de navegador funciona com BrowserAccess.
+                
+            
+            Por que outros navegadores não 
+				são suportados?
+                
+                    O BrowserAccess utiliza muitos recursos de HTTP, HTML e JavaScript. 
+					Infelizmente estes protocolos / linguagens não são implementados uniformemente 
+				por todos os navegadores.
+                    Portanto a Senior precisa escolher alguns navegadores 
+				para suportar.
+                
+            
+            Eu testei o BrowserAccess num 
+					navegador que não é homologado pela Senior, e funcionou! Posso continuar 
+				usando?
+                
+                    Pode, mas a Senior não se responsabiliza por perda de informações ou 
+				não-funcionamento de algum recurso, decorrente do uso do seu navegador.
+                
+            
+            Eu testei o BrowserAccess num navegador a partir de um sistema operacional móvel Android ou iOS, e funcionou! Posso continuar usando?
+                
+                    Pode, mas o BrowserAccess não é homologado para navegadores em sistemas operacionais móveis. A Senior não se responsabiliza por perda de informações ou não funcionamento de algum recurso, decorrente do uso em navegador ou sistema operacional não homologado.
+                
+            
+            Existem limitações quanto ao uso em Linux e Mac OS X?
+                
+                    Não existem. Todos os recursos do BrowserAccess estão disponíveis.
+                    O único item digno de nota é que Firefox 3.0.11 e Safari 3.2 não suportam 
+					autenticação NTLM, que é própria do Internet Explorer. Mas esta é uma 
+				limitação do navegador e não do BrowserAccess.
+                
+            
+            Percebi que os elementos textuais 
+				exibidos em Linux, Mac OS X e Windows são diferentes entre si. Por quê?
+                
+                    Cada sistema operacional possui seu conjunto de fontes. Por exemplo, 
+					a fonte “Monaco” é comum em Macs, mas é improvável que ela exista em Linux 
+				e Windows.
+                    Muitas fontes de cada SO são protegidas por licenças que impedem 
+					seu uso em outros SOs. O BrowserAccess escolhe a fonte de acordo com o 
+					ambiente usado, visto que os navegadores se limitam a mostrar a fonte 
+					padrão quando determinada fonte não é disponível. Por este motivo, os 
+				textos podem ficar diferentes.
+                
+            
+            Em meu ambiente, elementos textuais 
+				são exibidos incorretamente. O que eu faço?
+                
+                    Você pode criar ou alterar um perfil de navegador. Ele permite que você 
+				escolha fontes adequadas para seu ambiente.
+                
+            
+            Como faço para saber qual perfil está sendo usado?
+                
+                    Na página inicial do BrowserAccess, onde se escolhe uma aplicação para 
+				iniciar, aparece o texto:
+                    Seu navegador foi identificado como 
+				“<nome-do-perfil>”.
+                    Veja que este é o valor do campo “Nome do Perfil”. Não é o valor do 
+				“Tipo do Navegador”.
+                
+            
+            Criei um perfil X, mas o BrowserAccess 
+				insiste em usar o perfil Y. O que eu faço?
+                
+                    O perfil Y está sendo escolhido no lugar de X, porque o valor do campo 
+					“Identificação deve conter” de Y não é suficiente para diferenciá-lo do 
+					ambiente usado por X. Se o ambiente de Y não for mais usado, basta excluir 
+				o perfil Y para resolver o problema.
+                    Caso contrário, deve-se entrar no 
+					ambiente do perfil Y e colocar mais informações no campo “Identificação 
+				deve conter”, de modo a diferenciá-lo corretamente do ambiente de X.
+                    Outra 
+					opção é mover X para cima do Y na tela de escolha de perfis, mas isto 
+					não é recomendado pois pode ocorrer o problema inverso (ou seja, quem 
+				está no ambiente Y pode acabar usando o perfil X).
+                
+            
+            Como faço para eliminar truncamentos / quebras de linhas 
+				que estou vendo em alguns textos do sistema?
+                
+                    Este problema não deve ocorrer se você usar um dos ambientes homologados. 
+					Contudo, se ele ocorrer ou se você usar um outro ambiente, existe uma 
+				solução.
+                    Primeiro entre no perfil que está usando, e verifique, na parte 
+					das fontes, se alguma ocorrência dos textos "Este “texto” deve 
+					caber nesta caixa!!!" ou "$123.456,78" está 
+					sendo truncada.Se estiver, escolha uma fonte diferente ou altere as opções 
+				Negrito, Itálico ou tamanho.
+                    Se isto não resolver o problema, você deve 
+					reduzir ainda mais o texto, de modo que ele fique até menor do que a caixa 
+				(não há problema em deixar cerca de 20% de espaço livre no final da caixa).
+                    
+					As fontes mais usadas no sistema (Identificada como “Fonte original” no 
+				perfil) costumam ser:
+                    
+                        Arial 8pt e 10pt;
+                        MS Sans Serif 8pt 10pt;
+                        Tahoma 8pt 10pt;
+                        Courier 8pt;
+                        Courier New 8pt.
+                    
+                    Procure alterar primeiro estas fontes e veja se o problema foi resolvido. 
+					Se ele não foi resolvido, você deve alterar outras fontes. Se você tiver 
+				com muitos problemas de exibição de fontes, procure avisar a Senior.
+                
+            
+            Está ocorrendo um erro ao salvar o perfil. Como resolvo?
+                
+                    O perfil é armazenado no arquivo user-agent-profiles.conf, que 
+					fica na pasta definida na variável de ambiente BACONF, que deve ser configurada 
+					antes de iniciar o servidor de aplicações onde o BrowserAccess executa. 
+				
+                    Por exemplo, se BACONF possui o valor file:///C:/ConfigsBA, o perfil 
+					será armazenado no arquivo C:\ConfigsBA\user-agent-profiles.conf. Existem 
+				alguns requisitos que devem ser seguidos para que o perfil possa ser salvo:
+                    
+                        A URL definida em BACONF deve ser do tipo file:. Algumas dicas 
+					para definir uma URL do tipo file (o número de barras é relevante!!!):
+                        No Windows, um diretório local é definido por file:///<unidade>/<caminho>. 
+					Exemplo: file:///C:/ConfigsBA.
+                        No Windows, um diretório compartilhado é definido por file:////<máquina>/<compartilhamento>[/<caminho>]. 
+					Exemplo: file:////servidor03/$ConfigsBA.
+                        No Linux, um diretório local é definido por file:///<caminho>. 
+						Exemplo: file:///etc/conf/ba 
+					.
+                        O servidor onde roda o BrowserAccess precisa ter permissão para 
+						criar arquivos na pasta informada, e também para escrever no arquivo 
+					user-agent-profiles.conf.
+                    
+                
+            
+            Eu não posso definir uma variável de ambiente, ou não posso 
+					deixar que o servidor web do BrowserAccess acesse o sistema de arquivos. 
+				O que eu faço?
+                
+                    Caso o servidor web do BrowserAccess não consiga acessar o arquivo user-agent-profiles.conf 
+					do sistema de arquivos, usando a variável BACONF, ele vai usar a configuração 
+				padrão que existe no WAR do BA.
+                    Esta configuração se encontra no arquivo 
+					WEB-INF\classes\user-agent-profiles.conf. Você pode alterar este 
+					arquivo e fazer redeploy do BrowserAccess, mas isto requer conhecimento 
+	

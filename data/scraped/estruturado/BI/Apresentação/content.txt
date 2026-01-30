@@ -1,0 +1,157 @@
+# 
+
+URL: https://documentacao.senior.com.br/bi/5.8.12/#apresentacao.htm%3FTocPath%3DBI%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBI - versão 5.8.12
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BI - Manual do Usuário > Apresentação
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            BI
+            O Business Intelligence (BI) é uma solução responsável por fazer um compilamento de informações e indicadores de produtividade em apresentações, reunindo dados de diversos setores de forma rápida, precisa, clara e com um objetivo principal: facilitar a análise gerencial. 
+            Com este produto é possível os gestores das empresas realizarem perguntas complexas, relativas a performance de sua empresa, e obter respostas concretas e qualificadas e visualizá-las em gráficos e relatórios que contém interpretação de suas múltiplas bases de dados históricas.
+            Composto por uma ferramenta própria de ETL (Extract, Transform, Load) e softwares especialistas (MicroStrategy e Qlik Sense), o BI tem a função de preparar painéis gerenciais de alta performance e permitir uma navegação sobre os dados com alto desempenho para auxiliar na tomada de decisão.
+            ETL
+            Ferramenta responsável por extrair os dados dos sistema da Senior (Ronda Senior, Gestão de Pessoas | HCM, Gestão Empresarial | ERP), transformá-los em informações que atendam às necessidades de negócio e armazená-los em repositórios de dados (Data Marts) especializados por assunto.
+            Data Marts
+                É um sub-conjunto de dados referentes a um assunto em especial ou diferentes níveis de sumarização, sendo uma aplicação e uma parte do Data Warehouse que contém dados específicos de um negócio ou assunto.
+            Gestão de Acesso e Segurança
+                
+                    
+                        Acesso de terceiros
+                        Acesso de visitantes
+                        Ocupação dos locais físicos
+                        Registro de ocorrências
+                    
+                
+            
+            Gestão de Pessoas | HCM
+                
+                    
+                        Absenteísmo
+                        Contabilização de pessoal
+                        Demografia corporativa
+                        Gestão de cursos
+                        Horas extras
+                        Incidentes de ponto
+                        Medicina
+                        Quadro e recrutamento
+                        Recrutamento e seleção
+                        Segurança
+                        Treinamentos
+                        Turnover
+                    
+                
+            
+            Gestão Empresarial | ERP
+                
+                    
+                        Agronegócio e sementes:Disponível em estoque/produtor (exclusivo MicroStrategy)Fechamento de grãos por unidade (exclusivo MicroStrategy)Mapa de grãos (exclusivo MicroStrategy)Perfil de produtor ruralRecebimento de grãos
+                        Clientes
+                        Compras
+                        Compras, vendas e estoques
+                        Contas a pagar
+                        Contas a receber
+                        Contratos
+                        Custos
+                        Estoque
+                        Faturamento
+                        Impostos
+                        Pedido de venda
+                        Plano contábil
+                        Plano financeiro
+                        Produção
+                        Projetos
+                        Recebimento
+                        Tesouraria
+                        Varejo:ABC de compras e vendasGerenciamento de vendas
+                        Visões contábeis
+                    
+                
+            
+            Gestão Empresarial PME | GO UP
+                
+                    Os Data Marts disponíveis para os seus respectivos módulos são:
+                    
+                        
+                        
+                        
+                        
+                        
+                            
+                                Mercado
+                                Suprimentos
+                                Finanças
+                                Controladoria
+                            
+                            
+                                Faturamento
+                                Compras
+                                Contas a pagar
+                                Plano contábil
+                            
+                            
+                                Pedido de venda
+                                Compras, vendas e estoques
+                                Contas a receber
+                                Visões contábeis
+                            
+                            
+                                 
+                                Estoque
+                                 
+                                 
+                            
+                        
+                    
+                    Para os Data Marts de Agronegócio e sementes, o sistema Gestão Empresarial PME | GO UP não possui informações. Além disso, em virtude dos Data Marts de Plano financeiro e Recebimento utilizarem as tabelas presentes somente no módulo Projetos do sistema Gestão Empresarial | ERP, eles não estão disponíveis para este sistema.
+                
+            
+            MicroStrategy
+            Software responsável por carregas as informações dos Data Marts em memória e possibilitar análises gerenciais em forma de gráficos e relatórios. Está disponível para web, tablets e smartphones com android através do navegador. No caso dos dossiers, a sua visualização está disponível somente para web e tablets (iOS).
+            Licença
+                A licença MicroStrategy comercializada pela Senior é no formato OEM, ou seja, por um preço inferior do que a própria MicroStrategy vende para os consumidores finais, por contemplar menos recursos e ser embarcada. Dentro desta licença, o usuário recebe o direito de uso de alguns Data Marts nativos sobre os sistemas Senior: Gestão de Pessoas | HCM, Gestão Empresarial | ERP e Ronda Senior.
+            O MicroStrategy trabalha com dois tipos de cubos, o Intelligent Cube e o personal Intelligent Cube. Sendo o primeiro só pode ser construído por quem possuir a licença Architect  e o segundo, o usuário final (caso possua licença) pode criar pela WEB. Dentro da licença OEM, o uso do personal Intelligent Cube seria para agregar informações adicionais que o cliente possa querer cruzar com os dados existentes, não construir Data Marts novos.
+            
+                Observação
+                
+                Clientes on-premises que desejam conectar a base de dados que não sejam Senior ou utilizar o Intelligent Cube e outras ferramentas mais avançadas, deve solicitar ao comercial a licença full. Já os clientes da nuvem Senior, devem comprar ambiente privado, além desta licença full.
+            
+            Relatório Detalhado
+                Permite a manipulação de dados multidimensionais provenientes de diversas fontes e armazenados em um Data Warehouse. O software permite criar múltiplas visões ou representações de dados, além de acesso rápido, consistente e interativo.
+            O relatório possibilita uma análise multidimensional, a partir do pivoting, page-by e sorting, para os gestores de negócio que necessitam realizar análises que superem os relatórios de operações Standard. Sua principal funcionalidade é a realização do DrillÉ uma funcionalidade de uma ferramenta OLAP ou Relatório Detalhado que permite o usuário navegar entre diferentes níveis de granularidades (detalhamento) de um dado, aumentando ou diminuindo o nível de detalhamento dos dados (Up ou Down). 
+Sua utilização oferece um aprofundamento na informação em busca de sua composição (analítica)., que é uma forma de detalhar ainda mais as informações. Além disso, ele tem a capacidade para manipular e analisar um largo volume de dados sob múltiplas perspectivas, também chamado de OLAP. 
+            Os relatórios detalhados estão disponíveis em Relatórios Compartilhados > Web e tablets > [Sistema de origem] > [Nome do Data Mart] > [Nome do relatório detalhado].
+            Dossier
+                Termo utilizado para indicar um painel de indicadores, controle ou cockpit. Serve para apresentar as informações de forma gráfica na periodicidade determinada e com acesso restrito por gestor. 
+            Pode ser composto por uma ou mais páginas e pode ter mais do que um módulo em cada página, além de tabela de indicadores, relatório analítico e/ou  gráfico analítico, sendo possível existirem diversas variações.
+            Alguns  fornecem aos utilizadores um elevado nível de interatividade e outras apresentações de imagens estáticas. 
+            No caso do dossier, ele é um recurso que permite a criação de painéis interativos de forma rápida e prática, a exploração dos dados disponíveis nos Data Marts através da disponibilização de todos os campos e filtros possíveis, o compartilhamento das visões, edição e reorganização dos dados nas visualizações, inclusão de imagens, entre outros recursos. A sua visualização/edição no tablet apenas é possível em sistemas iOS.
+            MicroStrategy Mobile
+                Somente os Data Marts de Contabilização de Pessoal, Contas a Pagar, Faturamento e Visões Contábeis podem ser consultados no aplicativo MicroStrategy Mobile via dispositivo móvel.
+            MicroStrategy na nuvem
+            Quando o MicroStrategy estiver na nuvem da Senior, existem as seguintes limitações:
+            
+                Data Marts padrões: só é possível carregar dados de dois anos para trás, normalizando em janeiro. Por exemplo, considerando a data atual como 13/06/2018, n

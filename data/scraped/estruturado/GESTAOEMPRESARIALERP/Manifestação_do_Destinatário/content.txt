@@ -1,0 +1,84 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#integracoes/edocs/manifestacao-destinatario-unificada.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____3
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Suprimentos > Manifestação do Destinatário
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Manifestação do Destinatário (unificada - ERP/eDocs)
+            Essa documentação tem como objetivo descrever as parametrizações necessárias para a geração da manifestação do destinatário, sendo ela pelo eDocs ou pelo ERP.
+            Conheça as parametrizações necessárias para a geração da manifestação do destinatário pelo ERP. Para mais informações sobre parametrizações para Manifestação do Destinatário no eDocs, acesse a página Manifestações do Destinatário, disponível no Manual do Usuário do eDocs. Configurar recebimento eletrônicoAcesse Cadastros > Mercado e Suprimentos > Recebimento Eletrônico > Parâmetros (F070PRE);No campo Gerar Manifestação, defina entre as opções a seguir:Desativado: não gera a manifestação, mesmo na tela Controle de Eventos da Manifestação do Destinatário;Manual: gera a manifestação apenas na tela F440MDE;Automático: gera automaticamente no processamento, fechamento e exclusão da nota fiscal de compra e na tela Controle de Eventos da Manifestação do Destinatário, quando solicitado.Parametrize a definição do prazo (em dias)  através do campo Prazo Manifestação. Dentro desse prazo, é possível gerar quantas manifestações forem necessárias, dentro do que estabelece o fisco, para o qual, a última manifestação registrada é a válida/considerada;Em seguida, avalie o preenchimento do campo Tipo de Retorno que indica se o retorno da manifestação é manual ou automático. Este campo permite a digitação manual de manifestações na tela Controle de Eventos da Manifestação do Destinatário (F440MDE);No campo Dir. de Geração, informar o diretório de geração do arquivo XML para manifestações de notas fiscais que não estão na base de dados do ERP.Parametrizar compras e recebimentoAcesse Cadastros > Usuários > Parâmetros por Gestão > Compras e Recebimento (F099UCP).No campo Permitir efetuar MD-e existente na guia Recebimento, defina se o usuário deve possuir permissão de executar a manifestação do destinatário. Executar a manifestação significa enviar algum evento de manifestação pela tela F440MDE ou editar eventos de manifestação cadastrados. A consulta fica disponível para todos os usuários que tiverem acesso à funcionalidade. Além disso, este campo não impacta a geração automática de manifestação pelo processamento, fechamento ou cancelamento da nota fiscal.Manifestação via F440MDEAtravés da tela  F440MDE, tem-se quatro opções no cabeçalho da tela para permitir o fechamento ou a exclusão da Nota Fiscal/Conhecimento de Transporte após a geração da manifestação do destinatário:Fechar NF ao manifestar evento "Confirmação da Operação": com esta opção selecionada, a nota fiscal é fechada se o evento gerado foi uma Confirmação de Operação e a nota fiscal estiver aberta;Excluir NF ao manifestar evento "Operação não realizada": com esta opção selecionada, a nota fiscal é excluída se o evento gerado foi um Operação não realizada;Excluir NF ao manifestar evento "Desconhecimento da Operação": com esta opção selecionada, a nota fiscal é excluída se o evento gerado foi de Desconhecimento da Operação;Excluir NF ao manifestar evento "Prestação de Serviço em Desacordo": com esta opção selecionada, a Nota Fiscal/Conhecimento de Transporte será excluída se o evento gerado foi de "Prestação de Serviço em Desacordo".Para que o registro da nota fiscal de compra seja exibido na grade, basta clicar no botão Mostrar. Os filtros como Chave NF-e, Série, Nr. NFE, Tipo e Seq. evento, podem ser utilizados para limitar o número de registro na grade. A consulta traz todas as notas fiscais de compra que atendam os filtros informados, independente se possui evento de manifestação.Quando o valor no campo Gerar manifestação na tela F070PRE for diferente de "D - Desativado", será possível realizar a inclusão de linha na grade para a geração de novos eventos de manifestação do destinatário.ImportanteQuando a manifestação a ser realizada é “Ciência da Operação” ou “Confirmação da Operação” é necessário que nota que será manifestada esteja integrada no ERP, sendo assim exibida na lista desta tela ao clicar no botão Mostrar;Caso a manifestação a ser realizada for “Operação não Realizada” ou “Desconhecimento da Operação”, não é necessário ter a nota integrada no ERP, porém será necessário preencher os campos Série, Chave NF-e e a Justificativa para a geração do evento;Para gerar a manifestação dos tipos citados acima, deve-se ir ao último registro da grade após clicar em Mostrar e mover o cursor para baixo para gerar uma nova linha onde serão inseridos os dados para gerar a manifestação;O botão Processar gerará o arquivo eletrônico de manifestação do destinatário no local indicado;Caso o diretório de gravação do arquivo eletrônico não seja informado, será exibida a seguinte mensagem na geração da manifestação: "Diretório de gravação do arquivo eletrônico de Manifestação do Destinatário não informado ou inválido. Informar o diretório em Parâmetros do Recebimento Eletrônico (F070PRE), na série ou no usuário. Empresa: "00", Filial: "0", Fornecedor: "00", Série: "NFE", Nota Fiscal de Entrada: "0000". Desta forma, deve-se verificar o diretório parametrizado em:Série: Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Séries Notas Fiscais > Cadastro (F020SNF);Parâmetros do Recebimento Eletrônico: Cadastros > Mercado e Suprimentos > Recebimento Eletrônico > Parâmetros (F070PRE);Usuário: Cadastros > Usuários > Parâmetros por Gestão > Vendas, Faturamento e Transporte (guia Documentos Eletrônicos) (F099UVE).Manifestação via F000INEQuando parametrizado no campo Gerar Manifestação da tela F070PRE, o opção de “Automático”, serão geradas as manifestações de forma automática:No processamento da nota - Ciência da operação;No fechamento da nota - Confirmação da operação;Observação.A tela Via Recebimento de Documento Eletrônico (F000INE) não gera a manifestação Operação não realizada ao excluir a nota. Para gerar esse evento, é necessário processar a nota fiscal na tela Via Recebimento de Documento Eletrônico (F000INE) e, em seguida, excluir pela tela Nota Fiscal de Entrada Agrupada (F440GNE). Por outro lado, caso se deseje evitar a geração da manifestação Operação não realizada durante a exclusão da nota, pode-se utilizar o identificador de regras CPR-440EXMDE01.Geração do Evento de Prestação em Desacordo para CT-ePara gerar este tipo de evento, o CT-e deverá existir na base de dados do eDocs e estar vinculado a um processo de recebimento (já que, neste caso, o gerador do evento é  o tomador original do CT-e);No ERP, em versões atualizadas do sistema, não é obrigatório que o CT-e esteja lançado como uma nota fiscal tipo "8 - NF de Entrada". No entanto, caso o CT-e não esteja lançado, na tela F440MDE será obrigatória a digitação da chave de acesso do CT-e manualmente, pois o sistema não terá de onde buscar essa informação;Para o processo de integração com o eDocs, o ERP gerará o arquivo XML no diretório parametrizado em:Usuário: Cadastros > Usuários > Parâmetros por Gestão > Vendas, Faturamento e Transporte, guia Transporte  (F099UVE);Série:  Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Séries Notas Fiscais > Cadastro  (F020SNF).No eDocs, é obrigatório que o retorno do eDocs para o ERP seja configurado com "WebService 6" (caso o retorno seja via web service do ERP). Essa definição é encontrada nas configurações da filial, campo Diretório de integração (em descontinuação).Importante Para clientes que nunca efetuaram este processo, orientamos a execução de um processo de homologação desta rotina em ambiente de testes, pois depois que um evento de Prestação em Desacordo é gerado, para cancelá-lo para CT-e, deve ser gerado um Evento de Cancelamento de Prestação em Desacordo para CT-e - 610111 via tela F440MDE.Relatório no ERP com informações das manifestações de destinatárioNo ERP, há o modelo de relatório 035 - Eventos de Manifestação do Destinatário (SRNF035), que lista as informações das manifestações geradas de forma manual ou automática através da tela Controle de Eventos da Manifestação do Destinatário.O relatório está disponível no caminho Suprimentos > Gestão de Recebimentos> Notas Fiscais de Entrada > Relatórios.
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-ma

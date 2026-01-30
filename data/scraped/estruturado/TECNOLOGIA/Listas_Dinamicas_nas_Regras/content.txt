@@ -1,0 +1,204 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/lista-dinamica-nas-regras.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7C_____17
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Listas Dinamicas nas Regras
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Lista Dinâmica nas Regras
+            Sempre que é necessário a customização do sistema (mesmo que seja complexa), as regras podem ser usadas com a vantagem de  não precisar recompilar o sistema. Ferramentas como Gerador de Relatórios, Importador e Exportador de Arquivos Texto, por exemplo, também permitem a customização através da regra.
+            O constante aumento de complexidade dos sistemas geraram a necessidade de mais recursos nas regras. Uma destas necessidades era uma lista dinamicamente alocada, flexível para programador/usuário e que fosse de fácil uso e entendimento.
+            Tendo conhecimento desta necessidade, foi implementado dentro das regras o recurso conhecimento daqui por diante como Lista.
+            O funcionamento consiste em determinar os campos que a lista usará,  preencher a lista com valores e usar estes valores de maneira que atenda as necessidades da lógica implementada pelo programador/usuário.
+            Comandos para definição de listas
+            São comandos que determinam o formato da lista. Este formato hoje somente é determinado pelo campos que compõem a lista.
+            
+                
+                
+                
+                    
+                        Comando
+                        Função
+                    
+                    
+                        tipo Lista
+                        Serve para determinar o tipo de uma variável que será lista. Nenhum parâmetro adicional será necessário para esta definição.
+                    
+                    
+                        DefinirCampos
+                        Inicia a fase de adição de campos na lista. Somente podem ser adicionado campos durante este período, ou seja, após a chamada deste comando. O mesmo não adiciona nenhuma informação de campos. Isto será feito por um comando que será visto mais tarde.
+
+                    
+                    
+                        EfetivarCampos
+                        
+                            Determinará o fim da adição de campos e informará ao compilador/interpretador que a partir deste ponto a lista será usada efetivamente (receberá valores). Também permitirá ao interpretador criar estruturas internas de controle e manipulação desta lista.
+
+                        
+                    
+                    
+                        AdicionarCampo
+                        
+                            Adiciona os campos. Nesta adição também deve ser informado o tipo e o tamanho se necessário.
+
+
+                            Sintaxe
+                            funcao <lista>.AdicionarCampo(alfa NomeCampo, <tipo> TipoInterno, numero Tamanho);
+
+                            Parâmetros
+                            
+                                
+NomeCampo: Este parâmetro deve ser uma literal alfanumérica (constante). O nome do campo não deve conter espaços, acentos e nem número como primeiro caracter;
+
+                                TipoInterno: Deve ser um tipo primitivo interno da regra, ou seja, numero, alfa ou data;
+
+                                Tamanho: Parâmetro opcional que determina o tamanho do campo. Se informado, somente será aceito para campos alfanuméricos. Neste caso, o campo terá um tamanho limitado. Se não for informado, campos do tipo alfa não terão limite (podem do ter valores até o limite de memória). Os outros tipos de campos não são afetados.
+                            
+                        
+                    
+                    
+                        Acesso aos campos
+                        
+                            O acesso aos campos que foram definidos dentro da lista devem ser feitos digitando-se o nome da lista, seguido do . (ponto) e o nome do campo. Este nome deverá ser definido previamente através do comando AdicionarCampo. 
+                            Caso o nome digitado após o ponto não for um nome de procedimento, função, propriedade ou campo definido na lista, um erro de compilação será gerado.
+                        
+                    
+                
+            
+            Comandos para manipulação de registros
+            Estes comandos permitem adicionar, inserir, gravar, excluir, etc. registros da listas para usar todo o potencial dinâmico do recurso.
+            
+                
+                
+                
+                    
+                        Comando
+                        Função
+                    
+                    
+                        Adicionar
+                        É o primeiro comando de manipulação de dados do recurso lista. Ele serve para adicionar valores (agrupados em registros) dentro da lista. Ele cria um registro no final dos registros existentes. Este somente respeitará a ordem de adição se não existirem chaves definidas (será visto mais tarde).
+
+                    
+                    
+                        Inserir
+                        Tem a mesma função do comando Adicionar, mas ao invés de adicionar um registro no final dos registros existentes, insere-o na posição atual da lista (apontado internamente e acessível pelo propriedade NumReg).
+
+                    
+                    
+                        Editar
+                        Visa a atualização de registros. Para tal é necessário posicionar a lista no registro que se deseja alterar. Após isto chama-se o comando Editar e então muda-se os valores desejados.
+
+                    
+                    
+                        Gravar
+                        
+                            Quando se altera os valores dos campos (após a chamada do comando Adicionar, Inserir ou Editar), pode-se efetivar os dados através do comando Gravar. Grava as informações dentro da lista para posterior recuperação.
+
+                        
+                    
+                    
+                        Cancelar
+                        Ao alterar os valores dos campos, mas por algum motivo os mesmos não devem ser efetivados, utilize o comando Cancelar. Os dados que estão sendo alterados ficam em um registro virtual que não é trabalhado até que seja chamado o comando Gravar ou Cancelar. No caso do comando Cancelar este registro virtual é descartado não alterando o conteúdo da lista.
+
+                    
+                    
+                        Excluir
+                        Exclui um registro. Para tal é necessário posicionar a lista no registro que deverá ser excluído e então chamar o comando Excluir. Somente o registro atualmente posicionado será excluído. Para excluir mais registros é necessário chamar o comando mais vezes.
+
+                    
+                
+            
+            Comandos para posicionamento de listas
+            Estes comandos existem para que o programador/usuário possa posiciona o registro da lista e permitir uma maior agilidade no uso do recurso.
+            
+                
+                
+                
+                    
+                        Comando
+                        Função
+                    
+                    
+                        Primeiro
+                        
+                            Posiciona no primeiro registro que estiver na lista. Note que o primeiro registro pode ser o primeiro adicionado ou o primeiro que respeitar a chave que estiver atualmente selecionada. Exemplo: se existir um campo que for o nome do funcionário e a chave estiver configurada para este campo, o primeiro registros provavelmente será um nome que comece por A. 
+                            O comando retorna 1 se a lista pôde ser posicionada no primeiro registro e 0 (zero) caso contrário.
+
+
+                        
+                    
+                    
+                        Ultimo
+
+                        
+                            Posiciona a lista no último registro. Da mesma forma como o comando Primeiro, o último registro pode ser o último registro adicionado ou o registro que estiver obedecendo a chave. No exemplo anterior (nome do funcionário) o último registro poderia ser um nome que começasse com Z. 
+                            O comando retorna 1 se a lista pôde ser posicionada no final e 0 (zero) caso contrário.
+
+
+                        
+                    
+                    
+                        Anterior
+
+                        
+                            O comando Anterior posiciona a lista no registro imediatamente anterior ao registro atual. Se não existir registro anterior, será posicionada em IDA. Segue a mesma lógica de chave do comando Primeiro e Ultimo.
+
+                            Se a lista pôde ser posicionada no registro anterior (que não é o IDA), o comando retorna 1, caso contrário retorna 0 (zero).
+                        
+                    
+                    
+                        Próximo
+                        
+                            Posiciona a lista no registro i

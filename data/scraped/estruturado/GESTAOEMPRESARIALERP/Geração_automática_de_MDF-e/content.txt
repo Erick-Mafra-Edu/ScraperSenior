@@ -1,0 +1,202 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/mercado/mdf-e-automatica.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7CMDF-e%2520(Manifesto%2520Eletr%25C3%25B4nico%2520de%2520Documentos%2520Fiscais)%7C_____3
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > MDF-e (Manifesto Eletrônico de Documentos Fiscais) > Geração automática de MDF-e
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Geração automática de MDF-e
+            Conceito
+            Essa documentação tem como objetivo descrever as parametrizações necessárias para a geração automática de MDF-e de saída para o modal rodoviário. Trata-se de um processo que não é nativo do sistema, ou seja, cada cliente deve configurar as regras com base no cenário da sua empresa.
+            Características do MDF-e Automático:
+            
+            
+                apenas para modal rodoviário;
+                MDF-e com base em NF-es ou CT-es de saída;
+                características necessárias para que o documento seja adicionado ao MDF-e:deve estar fechado no ERP (E140NFV.SITNFV = 2);deve estar com a situação autorizada ou autorizada em contingência (E140IDE.SITDOE in 3,16);não estar em outro MDF-e.
+            
+            Esta solução permite que, através de um ponto de regra identificado pelo cliente como sendo o ponto de geração de MDF-e  (fechamento de um documento ou alteração da sua situação  para Autorizado), seja feita a emissão do mesmo de forma automática. O processo definido pelo cliente, então, chama a função de programador GerarMDFeSaidaAutomatico, que traz as informações dos identificadores de regra citados mais abaixo para geração do MDF-e. Essa busca se dá através do campo/chave ChaveMDFeAuto.
+            Parametrização
+            Primeiro configure a sugestão automática dos locais de passagem no MDF-e. Essa informação é necessária para atender a legislação do Manifesto (onde é chamado de percurso) para o modal rodoviário. Para isso, parametrize os locais de passagem na tela F000PER (Cadastros > Mercado e Suprimentos > Percursos do MDF-e) e defina um como sendo o padrão. Feito isso, se o campo Rotas automáticas da tela F145EBQ estiver preenchido, os locais de passagem serão atualizados automaticamente nas telas de geração de MDF-e (F145EBQ, F145GSM e F440MDF).
+            Exemplo
+                
+                    
+                        UF Origem:   SC
+                        UF Destino:  MG
+                        Padrão (S/N):  S
+                        Estados passagem (Sequência/UF):1/PR2/SP
+                    
+                
+            
+            Além disso, para gerar o MDF-e automaticamente, é importante que na tela F070FVE seja informada uma série para a geração do MDF-e no campo Série MDF-e padrão.
+            Após, configure a função de programador  GerarMDFeSaidaAutomatico vinculada a uma regra no identificador de regras VEN-140NEIMPBO. O identificador irá executar após a autorização da nota fiscal eletrônica.
+            Poderá ser utilizada a regra abaixo, onde foi feito um cursor na tabela de informações do documento eletrônico (E140IDE) que busca automaticamente pelas chaves dos documentos eletrônicos autorizados via web service.
+            Exemplo
+                
+                    Definir numero numebq;
+Definir alfa ListaChvDoe;
+Definir alfa ChaveMDFeAuto;
+Definir alfa GerarXml;
+Definir alfa NumEbqAlfa;
+Definir alfa MensagemUsuario;
+Definir numero VSCODEMP;
+Definir numero VSCODFIL;
+Definir alfa VSCODSNF;
+Definir numero VSNUMNFV;
+Definir alfa ChvDoe;
+Definir alfa VCURSOR;
+Definir alfa VSQL;
+
+Inicio
+ChaveMDFeAuto = "1234"; @ Campo de chave a ser utilizado a critério do usuário.@
+@ O valor informado nesse campo estará disponível em todos os IRs do MDF-e Automático.@
+
+GerarXml = "S"; @ Indica a geração automática do XML ao gerar o MDF-e @
+
+SQL_Criar(VCURSOR);
+
+VSQL = "SELECT CHVDOE " +
+       " FROM E140IDE " +
+       " WHERE CODEMP = :VSCODEMP " +
+       " AND CODFIL = :VSCODFIL " +
+       " AND CODSNF = :VSCODSNF " +
+       " AND NUMNFV = :VSNUMNFV";
+
+SQL_DefinirComando(VCURSOR, VSQL);
+SQL_DEFINIRINTEIRO(VCURSOR, "VSCODEMP", VSCODEMP);
+SQL_DEFINIRINTEIRO(VCURSOR, "VSCODFIL", VSCODFIL);
+SQL_DEFINIRALFA(VCURSOR, "VSCODSNF", VSCODSNF);
+SQL_DEFINIRINTEIRO(VCURSOR, "VSNUMNFV", VSNUMNFV);
+SQL_AbrirCursor(VCURSOR);
+
+Se (SQL_EOF(VCURSOR) = 0)
+Inicio
+SQL_RETORNARALFA(VCURSOR, "CHVDOE", ChvDoe);
+Fim;
+
+ListaChvDoe = "'" + ChvDoe + "'";
+
+GerarMDFeSaidaAutomatico(VSCODEMP, VSCODFIL, ChaveMDFeAuto, ListaChvDoe, GerarXml,
+NumEbq);
+Fim;					
+                    
+                    
+                        Observações
+                        
+                        
+                            Caso haja documentos informados tanto no parâmetro ListaChvDoe quanto na regra do identificador VEN-140MDFEA00, o sistema irá priorizar os documentos informados na regra do identificador VEN-140MDFEA00.
+                            Quando for passado uma chave do documento eletrônico para o parâmetro ListaChvDoe da função GerarMDFeSaidaAutomatico, deve-se sempre adicionar um apóstrofe entre a chave. Caso não seja adicionado pode ocorrer erro de banco de dados.
+                        
+                    
+                
+            
+            
+                Importante
+                
+                A indicação de utilização do identificador de regras VEN-140NEIMPBO deve levar em considerações características com relação a Performance do processo. Em maiores volumetrias de processamento, a utilização deste identificador de regras poderá causar problemas de travamento e baixa performance. Neste caso, é possível fazer a utilização de um processo agendado que faça a chamada da função GerarMDFeSaidaAutomatico, localize as NF-e autorizadas na base de dados (E140IDE) e faça a execução do processo (poderão ser utilizadas tabelas de usuário para correto controle das NF-e que precisam ter o MDF-e gerado). Para maiores informações sobre Performance em rotinas e sobre o identificador de regras, consulte a Documentação do sistema e Artigos da Base de Conhecimento do Suporte.
+                
+                    
+                É recomendável não retornar mensagens ao utilizar esse identificador por meio do web service, pois ele é executado no retorno do documento para o ERP. Se a regra retornar alguma mensagem, como por exemplo, uma função de Geralog ou Mensagem, o processo de retorno será bloqueado.
+
+                    Na versão 1.00 da NT 2024.001, a partir de 08/04/2024 é obrigatório informar ao menos um veículo de reboque quando o modal for rodoviária e o tipo de rodado do veículo informado for cavalo mecânico. Também não permite vincular um documento fiscal ao MDF-e com data de emissão menor que seis meses.            
+                
+            
+            Por fim, configure as regras na tela F098REG para atender cada cenário específico do MDF-e, conforme a lista abaixo:
+            
+                VEN-140MDFEA00 - MDF-e Automático - Documentos Fiscais para Emissão do MDF-e;
+                VEN-140MDFEA01 - MDF-e Automático - Dados Gerais;
+                VEN-140MDFEA02 - MDF-e Automático - Rotas;
+                VEN-140MDFEA03 - MDF-e Automático - Lacres;
+                VEN-140MDFEA04 - MDF-e Automático - Vale Pedágio;
+                VEN-140MDFEA05 - MDF-e Automático - Seguro de Carga;
+                VEN-140MDFEA06 - MDF-e Automático - Unidades de Transporte e Unidades de Carga;
+                VEN-140MDFEA07 - MDF-e Automático - Produto Perigoso.
+            
+             
+            
+                Importante
+                
+                Entre os identificadores citados acima, apenas o identificador VEN-140MDFEA01 é obrigatório para cadastrar as informações obrigatórias de tipo de carga, código da transportadora, unidade de medida, placa do veículo e motorista. Os demais identificadores citados são opcionais e podem ser utilizados conforme necessidade.
+                Destaca-se, ainda, que as variáveis e os exemplos de regra podem ser encontrados na documentação de cada IR.
+            
+            Sugestão
+            As sugestões são carregadas com base nas informações dos documentos fiscais informados no MDF-e (chamada da função GerarMDFeSaidaAutomatico ou identificador de regra VEN-140MDFEA00).
+            Campos dos quadros gerais:
+            
+            
+                
+                
+                
+                    
+                        Nome
+                        Sugestão
+                    
+                    
+                        Motorista
+                        Do documento fiscal: E140NFV.CodMtr do primeiro documento encontrado
+                    
+                    
+                        Placa Veículo
+                        Do documento fiscal: E140NFV.PlaVei do primeiro documento encontrado
+                    
+                    
+                        Condição Pagamento
+                        Do documento fiscal: E140NFV.CodCpg do primeiro documento encontrado
+           

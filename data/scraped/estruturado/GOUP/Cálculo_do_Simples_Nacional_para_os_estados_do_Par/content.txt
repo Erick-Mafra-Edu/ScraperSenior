@@ -1,0 +1,254 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_cadastros/simples-nacional-estado.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7CSimples%2520Nacional%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Simples Nacional > Cálculo do Simples Nacional para os estados do Paraná e Rio Grande do Sul
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Cálculo do Simples Nacional para os estados do Paraná e Rio Grande do Sul 
+            Os estados do Paraná e Rio Grande do Sul possuem particularidades na apuração do Simples Nacional. Abaixo o detalhamento por estado de como efetuar os cálculos.
+            Paraná
+            O estado do Paraná adota a regra de cálculo do Simples Nacional, porém possui tabelas específicas para redução do imposto a pagar, logo as regras abaixo são aplicadas apenas quando o cálculo do Simples for executado para filiais deste estado.
+            O sistema cria uma tabela com o percentual do ICMS por faixa de faturamento:
+            
+                
+                
+                
+                    
+                        Tabela do estado do Paraná de 2017
+                    
+                    
+                        Receita Bruta em 12 meses (R$)
+                        Percentual ICMS
+                    
+                
+                
+                    
+                        R$ 180.000,00
+                        ISENTO
+                    
+                    
+                        R$ 360.000,00
+                        ISENTO
+                    
+                    
+                        R$ 540.000,00
+                        0,804%
+                    
+                    
+                        R$ 720.000,00
+                        1,284%
+                    
+                    
+                        R$ 900.000,00
+                        1,596%
+                    
+                    
+                        R$ 1.080.000,00
+                        1,824%
+                    
+                    
+                        R$ 1260.000,00
+                        2,196%
+                    
+                    
+                        R$ 1.440.000,00
+                        2,484%
+                    
+                    
+                        R$ 1.620.000,00
+                        2,724%
+                    
+                    
+                        R$ 1.800.000,00
+                        2,904%
+                    
+                    
+                        R$ 1.980.000,00
+                        3,072%
+                    
+                    
+                        R$ 2.160.000,00
+                        3,204%
+                    
+                    
+                        R$ 2.340.000,00
+                        3,312%
+                    
+                    
+                        R$ 2.520.000,00
+                        3,408%
+                    
+                    
+                        R$ 2.700.000,00
+                        3,504%
+                    
+                    
+                        R$ 2.880.000,00
+                        3,672%
+                    
+                    
+                        R$ 3.060.000,00
+                        3,828%
+                    
+                    
+                        R$ 3.240.000,00
+                        3,96%
+                    
+                    
+                        R$ 3.420.000,00
+                        4,08%
+                    
+                    
+                        R$ 3.600.000,00
+                        4,2%
+                    
+                
+            
+            Regra para calcular a parcela a deduzir do ICMS para o estado do Paraná:
+            
+                Localiza a alíquota nominal e parcela a deduzir do anexo informado na Tabela de tributação do Simples Nacional por estado, sendo que o sistema utiliza como referência o total da receita bruta dos últimos doze meses;
+                Calcula a alíquota efetiva para o estado do Paraná, baseado na receita bruta dos últimos doze meses: ((Receita Bruta * Alíquota Nominal Paraná) - Valor Deduzir Paraná) / Receita Bruta;
+                Localiza o percentual do ICMS conforme tabela do ICMS por faixa de faturamento para o estado do Paraná baseado na receita bruta dos doze meses;
+                Localiza a alíquota efetiva a ser considerada para o estado do Paraná;Conforme legislação, a alíquota efetiva a ser considerada será a menor alíquota entre os passos 2º e 3º, ou seja, caso o percentual do ICMS da tabela de 2017 for menor que a alíquota efetiva de 2018 o sistema deverá manter a alíquota da tabela de 2017 caso contrário deverá manter a alíquota efetiva de 2018.
+                Calcula o percentual de dedução do ICMS para o estado do Paraná. É o resultado da divisão da alíquota do 4º passo pelo percentual do ICMS, conforme anexo do Simples Nacional multiplicado pela alíquota efetiva do Simples Nacional (Alíquota efetiva a ser considerada / (Percentual do ICMS do anexo do simples * Alíquota efetiva do simples nacional));
+                Lança como Deduções 2 o total da parcela do ICMS a deduzir do ICMS para o estado Paraná (Total a pagar do Simples Nacional * Percentual identificado no 5º passo).
+            
+            Rio Grande do Sul
+            Regra para calcular a parcela a deduzir do ICMS para o estado do Rio Grande do Sul:
+            
+                Localiza a alíquota de redução do anexo conforme faturamento dos últimos doze meses;
+                Calcula a base de cálculo do Rio Grande do Sul considerando a alíquota de redução identificada no passo anterior vezes base de cálculo do imposto do Simples Nacional do período, conforme: Base de Cálculo - (Base de Cálculo * Alíquota 1º passo);
+                Calcula a base de cálculo efetiva para o estado do Rio Grande do Sul considerando a alíquota efetiva do Simples Nacional vezes a base de cálculo do Rio Grande do Sul (2º passo), conforme: Base de Cálculo do Rio Grande do Sul * Alíquota Efetiva do Simples Nacional;
+                Calcula a dedução do ICMS para o estado do Rio Grande do Sul considerando a base de cálculo efetiva vezes alíquota do ICMS do anexo do Simples Nacional, conforme: Base de cálculo efetiva * Percentual do ICMS do anexo do Simples Nacional;
+                Lança como Deduções 2 do imposto a parcela a deduzir do ICMS do estado do Rio Grande do Sul.
+            
+             
+            Exemplos de Cálculo
+                
+                    Tabelas de anexo do Simples Nacional, bem como a composição do faturamento dos últimos doze meses da empresa: 
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                Receita mensal dos últimos 12 meses 
+                            
+                            
+                                Jan
+                                Fer
+                                Mar
+                                Abr
+                                Mai
+                                Jun
+                                Jul
+                                Ago
+                                Set
+                                Out
+                                Nov
+                                Dez
+                            
+                        
+                        
+                            
+                                R$45.000,00
+                                R$35.000,00
+                                R$25.000,00
+                                R$45.000,00
+                                R$35.000,00
+                                R$25.000,00
+                                R$40.000,00
+                                R$45.000,00
+                                R$30.000,00
+                                R$45.000,00
+                                R$40.000,00
+                                R$90.000,00
+                            
+                        
+                    
+                    
+                        
+                        
+                        
+                        
+                        
+                            
+                                Anexo I
+                            
+                            
+                                Receita Bruta em 12 Meses (em R$)		
+
+                                Alíquota
+
+                                Valor a Deduzir (em R$)
+
+                            
+                            
+                                1º faixa
+                                Até 180.000,00
+
+       

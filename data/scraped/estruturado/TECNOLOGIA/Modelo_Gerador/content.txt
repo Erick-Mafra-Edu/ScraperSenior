@@ -1,0 +1,152 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/relatorios/suseredt.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CTelas%7C_____8
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Telas > Modelo Gerador
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Modelo Gerador
+                Nesta tela define-se o relatório.
+                Passos necessários para se criar um relatório:
+                
+                    Acesse o menu Modelo > Novo e selecionar o tipo do relatório.
+                    Informe os dados na tela Criar Modelo.
+                    Insira as seções necessárias. Para que o relatório funcione, é necessário que seja inserido no mínimo uma seção detalhe.
+                    Informe na propriedade Tabela Base da seção detalhe a tabela sobre a qual será gerado o relatório. Caso seja incluído mais de uma seção detalhe no modelo, deve-se alterar a propriedade Tipo de Relatório da tela de Propriedades da seção Modelo Gerador, como Mestre Detalhe. Deve-se também, determinar na propriedade Tabela Base de uma das seções detalhe, a tabela Mestre do Modelo.
+                    Inclua os campos de cadastro da tabela desejada, que é necessário para que sejam visualizados ou utilizados para as quebras do relatório. Para inclusão de campos cadastro, tem-se duas maneiras: Incluir um campo do tipo cadastro e clicar com o botão direito do mouse sobre o controle, o qual abre uma tela de tabelas e campos, para a seleção do campo da tabela desejada. Selecionar a seção que se deseja incluir os campos, e teclar Ctrl+T ou pelo menu Visualizar > Tabela > Campos, selecionando os campos desejados.
+                
+                Para que as seções subtítulos e subtotais sejam listadas, estas devem ser definidas na propriedade classificação da seção detalhe correspondente.
+                Todas as seções diferentes de seção detalhe, caso tenham algum campo de cadastro, devem estar ligadas pela propriedade seção ligação SQL, com a seção detalhe correspondente, caso contrário, estes campos cadastros não serão impressos.
+                Os relatórios padrões da Senior, são desenvolvidos segundo uma determinada especificação.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

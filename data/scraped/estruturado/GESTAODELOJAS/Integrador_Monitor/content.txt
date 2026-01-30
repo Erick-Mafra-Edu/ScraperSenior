@@ -1,0 +1,123 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#integracao/integrador-monitor.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%7CIntegrador%2520Monitor%7C_____0
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Integrações > Integrador Monitor
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Integrador Monitor
+            O Integrador Monitor permite visualizar informações das integrações de filiais e matriz envolvendo as soluções de Gestão Empresarial | ERP, Documentos Eletrônicos, Retaguarda e PDV. Ele pode ser acessado em um endereço que segue o seguinte padrão: http://nomedoservidormatriz:porta/IntegradorMonitorWS/, onde "nomedoservidormatriz" varia de acordo com a instalação do produto.
+            Para que ele esteja online, é necessário que os seguintes serviços estejam funcionando:
+            
+                IntegradorFilial
+                IntegradorMatriz
+                IntegradorRetaguarda
+                Postgre SQL
+                SeniorMiddleware
+            
+            Além disso, o domínio do Glassfish deve estar iniciado.
+            As informações exibidas contemplam: o Dashboard, que é mostrado na página inicial e também o Log Filiais, Log Matriz e Notificações, que exibem ao lado de sua descrição o número de pendências de integrações a serem tratados em cada um:
+            
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

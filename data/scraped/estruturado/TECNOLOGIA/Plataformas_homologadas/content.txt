@@ -1,0 +1,256 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/plataformas-homologadas.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Plataformas homologadas
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Plataformas homologadas
+            Banco de dados
+            Microsoft SQL Server
+                
+                    
+                        Para identificar a versão do banco de dados, execute o comando select convert(varchar(1000), @@version).
+                        Para identificar o nível de compatibilidade do banco de dados, execute o comando select compatibility_level from sys.databases where name = db_name().
+                    
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                Homologada
+                                Recomendada
+                                ODBC
+                                Nível compatibilidade
+                                Primeira versão Senior com suporte
+                                Início suporte fabricante
+                                Fim do suporte fabricante
+                            
+                            
+                                MS SQL Server 2022
+                                16.0.4003.1
+                                ODBC Driver 18 for SQL Server: 2018.182.01.01
+                                160
+                                5.10.3.21/6.10.3.42
+                                Nov/2022
+                                Jan/2033
+                            
+                            
+                                MS SQL Server 2019
+                                15.0.2000.5
+                                ODBC Driver 17 for SQL Server: 2017.175.01.01
+                                150
+                                5.10.1/6.2.35
+                                Nov/2019
+                                Jan/2030
+                            
+                            
+                                MS SQL Server 2017
+                                14.0.1000.169
+                                ODBC Driver 13 for SQL Server: 2015.130.811.168
+                                140
+                                5.8.11/6.2.34
+                                Out/2017
+                                Dez/2027
+                            
+                            
+                                MS SQL Server 2016
+                                13.0.1601.5 
+                                ODBC Driver 13 for SQL Server: 2015.130.811.168
+                                130
+                                5.8.9
+                                Jun/2016
+                                Jul/2026
+                            
+                            
+                                MS SQL Server 2014
+                                12.0.2000.8
+                                SQL Native: Client 11.0 2011.110.2100
+                                120
+                                5.8.7
+                                Jun/2014
+                                Jul/2024
+                            
+                        
+                    
+                    Collations
+                        
+                            
+                                Latin1_General_CI_AI (Recomendado pela Senior)
+                                Latin1_General_CI_AS
+                                Latin1_General_CI_AI_KS
+                                Latin1_General_CI_AS_KS
+                                Latin1_General_CI_AI_WS
+                                Latin1_General_CI_AS_WS
+                                Latin1_General_100_CI_AI
+                                Latin1_General_100_CI_AS
+                                SQL_Latin1_General_CP1_CI_AI
+                                SQL_Latin1_General_CP1_CI_AS
+                                SQL_Latin1_General_CP850_CI_AI
+                                SQL_Latin1_General_CP850_CI_AS
+                            
+                        
+                    
+                    Particularidade por produto
+                    Ronda Senior
+                        
+                            Para clientes que instalaram a CSM Center com GlassFish 4.0.89 e JDK 8, cujo banco de dados seja SQL Server e esteja rodando em uma instância na nuvem da Azure, da Microsoft, deve-se copiar o arquivo "mssql-jdbc-8.2.2.jre8.jar" (disponível em "<AMBIENTE>\SP\Util") para dentro da pasta "<GLASSFISH>\glassfish\domains\csmcenter\lib", e remover o arquivo "sqljdbc4.jar" da mesma pasta.
+                        
+                    
+                
+            
+            Oracle
+                
+                    Para identificar a versão do banco de dados, execute o comando select banner from v$version where Upper(banner) like 'ORACLE%'
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                Homologada
+                                Recomendada
+                                Cliente
+                                Início suporte fabricante
+                                Fim do suporte fabricante
+                            
+                            
+                                21.0
+                                21.0.0.0.0
+                                Versão do servidor
+                                Ago/2021
+                                -
+                            
+                            
+                                19.0
+                                19.0.0.0.0
+                                Versão do servidor
+                                Ab/2019
+                                Abr/2027
+                            
+                        
+                    
+                    Orientações de uso
+                    
+                        A arquitetura utilizada pelo client OCI deve ser de 32 bits;
+                        Não há restrições para a arquitetura do servidor (32 bits, 64 bits, ...);
+                        A versão do client em relação ao servidor deve obedecer à especificação do fornecedor (a regra básica é que a versão do client e do servidor seja a mesma);
+                        Para a ordenação de caracteres desse banco de dados, o NLS_CHARACTERSET deve ser: PORTUGUESE_BRAZIL.WE8MSWIN1252, PORTUGUESE_BRAZIL.WE8ISO8859P1 ou PORTUGUESE_BRAZIL.WE8ISO8859P15;
+                        Para mais informações consulte o site ou suporte do fornecedor.
+                    
+                
+            
+            
+                Importante
+                
+                Para sistemas de missão crítica não são recomendadas as edições Oracle  XE e MS SQL Server Express Edition. Caso sejam selecionadas estas edições durante a instalação, será exibida uma notificação informando que a versão selecionada possui restrições de utilização de memória, processamento e tamanho da base de dados.
+                Sistemas Gerenciadores de Banco de Dados em versões anteriores às versões homologadas impedem a instalação ou atualização do sistema.
+            
+            Navegadores 
+            Navegadores por Sistema operacional
+                
+                    
+                        
+                        
+                        
+                        
+                        
+                            
+                                Navegador
+                                Sistema operacional
+                                Início suporte fabricante
+                                Fim do suporte  fabricante
+                            
+                            
+                                Chrome
+                                Windows
+                                -
+                                -
+                            
+                            
+                                Android
+                                -
+                                -
+                            
+                            
+                                Internet Explorer 9
+                                Windows Vista
+                                -
+                                -
+                            
+                            
+                                Internet Explorer 11
+                                Windows
+                                Nov/2013
+                                Jan/2016
+                            
+                            
+                                Microsoft Edge
+                                Windows
+                                -
+                                -
+                            
+                            
+                                Mozilla Firefox
+                                Linux
+                                -
+                                -
+ 

@@ -1,0 +1,375 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/contabilidade/composicao-visao.htm%3FTocPath%3DSegmentos%7CControladoria%7CGest%25C3%25A3o%2520de%2520Contabilidade%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Controladoria > Gestão de Contabilidade > Composição de Visão - Regras
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Composição de Visão - Regras
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+            Composição de Visão - Regras
+            Em visões contábeis do tipo "N - Normal", é possível definir um regra para gerar as informações da composição. 
+			Principais Vantagens
+            
+                criar colunas do tipo "percentual"; 
+                criar colunas de "comparação" (coluna X – coluna Z); 
+                criar células totalizadoras (total da linha e total da coluna); 
+                buscar valores e informações de qualquer tabela do sistema.
+            
+            Variáveis da Regra	 
+            
+                
+                    
+                        Variável
+                        Descrição
+                        Tipo
+                        Retorno (S/N)
+                    
+                    
+                        CTBNCodEmp 
+                        
+
+Variável contendo a informação da empresa da visão contábil 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBACodVis
+                        
+
+Variável contendo a informação do código da visão contábil
+                        Alfa
+                        N
+                    
+                    
+                        CTBNCtaVis 
+                        Variável contendo a informação da conta da visão atual 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBNSeqCol 
+                        
+
+Variável contendo a informação da sequência da coluna atual 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBNSeqCmp
+                        
+
+Variável contendo a informação da sequência da composição atual 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBNAbrFil 
+                        
+
+Variável contendo a abrangência de filiais para cálculo da visão 
+                        Alfa
+                        N
+                    
+                    
+                        CTBNAgrFil 
+                        
+
+Variável contendo a abrangência de agrupamento de filiais para cálculo da visão
+                        Alfa
+                        N
+                    
+                    
+                        CTBDDatIni 
+                        
+
+Variável contendo a data inicial informada para cálculo da visão 
+                        Data
+                        N
+                    
+                    
+                        CTBDDatFim 
+                        Variável contendo a data final informada para cálculo da visão 
+                        Data
+                        N
+                    
+                    
+                        CTBDRefIni 
+                        
+
+Variável contendo a data inicial de referência para coluna 
+                        Data
+                        N
+                    
+                    
+                        CTBDRefFim 
+                        
+
+Variável contendo a data final de referência para coluna 
+                        Data
+                        N
+                    
+                    
+                        CTBNLinhaAtual
+                        
+
+Variável contendo o índice da linha atual 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBNColunaAtual 
+                        
+
+Variável contendo o índice da coluna atual 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBNValorLinhaXColunaY 
+                        Variável contendo o valor da linha *X coluna *Y da visão 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBNTotalLinhaX
+                        
+
+Variável contendo o valor total da linha *X da visão 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBNTotalColunaY 
+                        
+
+Variável contendo o valor total da coluna *Y da visão 
+                        
+
+Numérico
+                        N
+                    
+                    
+                        CTBNVlrCmp 
+                        
+
+Variável de Retorno -> Valor da composição da visão contábil
+                        
+
+Numérico
+                        S
+                    
+                
+            
+            X: Representa o número da linha da visão.Y: Representa o número da coluna da visão.
+            Exemplo:
+            Visão 4 X 5 
+            
+            
+                
+                    
+                        Descrição
+                        Mês 1
+                        Percentual (%)
+                        Mês 2
+                        Percentual (%)
+                        Total
+                    
+                    
+                        Conta 80
+                        1.000,00
+                        25
+                        3.000,00
+                        75
+                        4.000,00
+                    
+                    
+                        Conta 50
+                        -1.000,00
+                        25
+                        -3.000,00
+                        75
+                        -4.000,00
+                    
+                    
+                        Conta 100
+                        1.500,00
+                        42,86
+                        2.000,00
+                        57,14
+                        4.000,00
+                    
+                    
+                        Total
+                        1.500,00
+                        92,86
+                        2.000,00
+                        207,14
+                        3.500,00
+                    
+                
+            
+            Estrutura
+            
+            
+                
+                    
+                        Descrição
+                        Mês 1
+                        Percentual (%)
+                        Mês 2
+                        Percentual (%)
+                        Total
+                    
+                    
+                        Conta 80
+                        Linha 1 x Coluna 1
+                        Linha 1 x Coluna 2
+                        Linha 1 x Coluna 3
+                        Linha 1 x Coluna 4
+                        Linha 1 x Coluna 5
+                    
+                    
+                        Conta 50
+                        Linha 2 x Coluna 1
+                        Linha 2 x Coluna 2
+                        Linha 2 x Coluna 3
+                        Linha 2 x Coluna 4
+                        Linha 2 x Coluna 5
+                    
+                    
+                        Conta 100
+                        Linha 3 x Coluna 1
+                        Linha 3 x Coluna 2
+                        Linha 3 x Coluna 3
+                        Linha 3 x Coluna 4
+                        Linha 3 x Coluna 5
+                    
+                    
+                        Total
+                        1.500,00
+                        92,86
+                        2.000,00
+                        207,14
+                        3.500,00
+                    
+                
+            
+            Variáveis
+            
+            
+                
+                    
+                        Variável
+                        Descrição
+                        Tipo
+                        Retorno (S/N)
+                    
+                    
+                        CTBNValorLinha1Coluna1
+                        
+
+					Variável contendo o valor da linha 1 coluna 1 da visão
+                        
+
+					Número
+                        N
+                    
+                    
+                        CTBNValorLinha1Coluna2
+                        
+
+					Variável contendo o valor da linha 1 coluna 2 da visão
+                        Número
+                        N
+                    
+                    
+                        CTBNValorLinha1Coluna3
+                        
+
+Variável contendo o valor da linha 1 coluna 3 da visão
+               

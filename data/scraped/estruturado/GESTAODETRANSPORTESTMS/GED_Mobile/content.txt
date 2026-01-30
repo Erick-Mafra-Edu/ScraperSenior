@@ -1,0 +1,250 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodetransportestms/7.0.0/#aplicativo/ged.htm%3FTocPath%3D_____6
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão de Transportes | TMS - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                GED Mobile
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            GED Mobile
+            O app do Gerenciamento Eletrônico de Documentos, tem por objetivo armazenar o canhoto do documento fiscal do CT-e (DACTe) bem como possibilitar realização da baixa de entrega do conhecimento. A atualização do app ocorre por meio da Play store para aparelhos com sistema Operacional Android.
+            Primeiros passos
+            Login:
+                
+                    Ao entrar no aplicativo é necessário realizar o login inserindo o Usuário e a Senha
+                    
+                        
+                    
+                    NotaOs dados para login no app devem ser os mesmos dados utilizados para acesso à plataforma SeniorX.
+                
+            
+            Configurações:
+                
+                    Essa opção serve para configurar o ambiente que o app vai estar direcionado para fazer as requisições:
+                    
+                        
+                    
+                    
+                        URL produção (virá como default): https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/ 
+                        URL homologação:  https://platform-homologx.senior.com.br/t/senior.com.br/bridge/1.0/rest/
+                    
+                
+            
+            Telas do APP
+            Menu lateral:
+                
+                    
+                        Informações da Versão do APP:
+                        Dados do Usuário Logado:
+                        Sair:	Pressionando a opção Sair, a aplicação será fechada e a sessão encerrada, sendo necessário entrar novamente com o login e senha.Ao sair do app sem usar o botão Sair, na próxima vez que acessar, não passará pela tela de login, abrirá diretamente na tela principal.
+                    
+                    
+                        
+                    
+                
+            
+            Tela Principal 
+            Scanear:
+                
+                    Nesta tela temos a opção para Scanear Chave de Acesso, onde tocando sobre a imagem do código de barras, será aberto o scanner do celular para capturar o código de barras do CT-e (Conhecimento de Transporte Eletrônico).
+                    
+                        
+                    
+                
+            
+            Digitar:
+                
+                    É obrigatório o preenchimento dos campos: CNPJ (empresa emitente), Série e Número
+                
+            
+            Utilização 
+            Através do código escaneado ou digitado, o app irá validar as informações da chave de acesso e se o CT-e é valido (existente) e se está apto para a captura de comprovante de entrega.
+            Validações de CTe: 
+                
+                    Mensagem padrão
+                        
+                            O app poderá apresentar mensagem definida pelo transportador
+                            
+                                
+                            
+                        
+                    
+                    Informações inválidas
+                        
+                            	O app retornará uma mensagem com a possível causa.
+                        
+                    
+                    Informações válidas
+                        
+                            	O sistema abrirá a câmera fotográfica do celular para efetuar o envio da foto do documento como exemplo abaixo:
+                            
+                                
+                            
+                        
+                    
+                
+            
+            Captura da Imagem:
+                
+                    
+                        Opção OK: O app envia a foto e ao concluir o processo, voltará para etapa anterior (caso escaneado, abrirá novamente o scanner para enviar outro documento e caso digitado manualmente, voltará para a tela de digitação)
+                        Opção Repetir: será aberto a câmera novamente para que seja tirado nova foto.
+                    
+                
+            
+            Vinculação de Usuários no TMS
+                
+                    Vincular um usuário do TMS com o usuário que ira efetuar o login no Aplicativo Ged Mobile, onde após vincular o usuário, ao digitalizar um documento, o sistema terá conhecimento de quem está fazendo a digitalização.
+                    Sistema fará a verificação da permissão do usuário dentro do sistema TMS, e efetuará o bloqueio caso o usuário não tenha permissão para inserir comprovante de entrega do conhecimento informado
+                    Na Plataforma, em Logística | WMS TMS > Otimização Logística > GED > Vinculação de Usuários TMS, clique em Adicionar.
+                    
+                        
+                    
+                    Selecione no Usuário da Plataforma, o e-mail de usuário que irá logar no aplicativo, e no Usuário TMS, o seu respectivo usuário dentro do TMS e clique em Salvar
+                    
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

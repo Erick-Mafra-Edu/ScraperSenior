@@ -1,0 +1,168 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#configuracoes-do-pdv/configuracao-pdv-paf-ecf.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CConfigura%25C3%25A7%25C3%25B5es%2520do%2520PDV%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Configurações do PDV > Configuração do PDV PAF-ECF
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Configuração do PDV PAF-ECF
+            Efetue as configurações conforme requisitos do PAF-ECF e programação dos Meios de pagamento, Alíquotas, Totalizadores não fiscais e Relatórios Gerenciais quando necessário e vinculá-los ao ECF instalado.
+            
+                Importante
+                
+                O ECF já deverá possuir todas as configurações ao ser lacrado na interventora, porém suas configurações ficam disponíveis para futuras inclusões de Meios de Pagamento, alíquotas, totalizadores e relatórios gerenciais.
+                Por decisão estratégica da Senior, o software de PDV do Gestão de Lojas não será homologado no PAF-ECF para sistemas operacionais Linux. Sendo assim, a partir do vencimento do certificado atual (março/2020), o software não estará mais disponível para a versão Linux. Esta restrição se aplica apenas ao estado de Santa Catarina, no qual, é o único que exige a emissão do PAF para atendimento da legislação. Para os demais estados que possuem a emissão de NFC-e/S@T, o software estará disponível e recebendo as devidas atualizações.
+                Para clientes com lojas em Santa Catarina que possuem o software de PDV instalado em sistema operacional Linux, será necessário migrar para o sistema operacional Windows. A condição do sistema operacional se restringe somente ao software PDV. Os servidores de loja e terminais de venda poderão continuar com o ambiente Linux. Um futuro credenciamento com o sistema operacional Linux não está descartado, porém, deverá ser alinhado com a equipe de produto do sistema de Gestão de Lojas.
+            
+            Pré-requisitos 
+            Para configuração correta do ECF é necessário:
+            
+                solicitar o arquivo de autorização de ECF para Senior (nome do arquivo: ARQNS.SER);
+                o CNPJ da filial no ECF deve ser igual ao CNPJ da filial no banco de dados;
+                o ECF deve estar autorizado para uso na filial, no arquivo ARQNS.SER;
+                o 	ECF deve estar autorizado para uso pelo Fisco (lacrado).
+            
+            Autorizar e reconhecer o ECF conectado 
+            
+                Para configurar a impressora fiscal, é necessário que o arquivo ARQNS.SER estar dentro da instalação do PDV e o ECF estar conectado à máquina;NotaCaso esteja utilizando uma ECF da Bematech, verifique se ela está com a configuração correta: no arquivo .ini (BemaFI32.ini ou BemaFI64.ini), caso a ECF seja o modelo MP-4000 TH FI, o item ProtocoloUnico deverá ser = "0". Caso sua impressora seja do modelo MP-4200 TH FI II, o item ProtocoloUnico deverá ser = "1".
+                Execute o  PdvConf.exe, localizado dentro da raiz da instalação do PDV. Em seguida será apresentada a mensagem "Deseja utilizar uma impressora fiscal nesta estação?". Clique Sim para configurar;
+			
+                Neste momento, o sistema fará a identificação e o reconhecimento da ECF conectada automaticamente:
+			
+            
+            
+                Após o reconhecimento do ECF, será apresentada a mensagem de aviso "Por favor entre novamente no programa de configuração do PAF-ECF". Clique em OK e execute o PDVConf novamente.
+			ImportanteCaso o ECF não seja reconhecido e autorizado, será apresentada a mensagem "ECF não autorizado" e todo o processo terá que ser refeito, e as configurações aplicadas no cadastro de empresa, filial e PDV deverão ser verificadas.
+                Após executar o PDVConf novamente, será apresentada a tela para liberar as funções do ECF. Informe usuário e senha do sistema de PDV que possua permissão para configurar ECF. Esse usuário é cadastrado no Gestão Empresarial | ERP ou no Retaguarda.
+            
+            Configurar PAF-ECF
+            Impressora fiscal
+            Ao abrir a tela do PDVConf, utilize primeiramente a guia de configuração Impressora Fiscal e em seguida a guia Programação para cadastrar novas funções para o ECF, caso seja necessário. 
+            
+            
+            Alíquota
+                
+                    Configure os percentuais do imposto de ICMS e ISS devido sobre os produtos e serviços comercializados na venda obedecendo o percentual exigido para cada estado.
+                    Exemplo:
+                        
+                            No estado da filial 1 é destacado ICMS de 17% sobre cada produto vendido. Por isso, configure a taxa de 17,00 no ICMS e utilize o botão Programar.
+                            
+                                
+                            
+                            A alíquota de ICMS é inserida na programação do ECF e ficará destacada na leitura X:
+                            
+                                
+                            
+                        
+                    
+                
+            
+            Meio de pagamento
+                
+                    Programe todos os meios de pagamento disponíveis para recebimento de vendas. Esta programação é feita caso seja necessário inserir um novo meio de pagamento que o ECF não possui.
+                    Verifique os meios já cadastrados através de uma leitura X. Siga a sequência numérica dos meios já cadastrados e marque a opção Cupom vinculado/CCD, para sinalizar que esse meio de pagamento está vinculado a um cupom fiscal. 
+                    Exemplo:
+                        
+                            
+                                
+                            
+                            O meio de pagamento é inserido na programação do ECF e ficará destacado na leitura X:
+                            
+                                
+                            
+                        
+                    
+                    Convênio
+                    
+                    Importe um pedido com convênio, em que a venda já esteja efetuada no Retaguarda. Ou seja, não será efetuada venda direta de convênio no PDV, apenas na importação do pedido.
+                
+            
+            Relatório gerencial
+                
+                    Programa os tipos de relatórios gerenciais que permitem impressão no ECF. Siga a sequência numérica dos relatórios já cadastrados.
+                    Exemplo:
+                        
+                            Relatório para quando for impresso Saldo de Caixa. 
+                            
+                                
+                            
+                            O relatório cadastrado é inserido na programação do ECF e ficará destacado na leitura X:
+                            
+                                
+                            
+                        
+                    
+                
+            
+            Totalizador não fiscal
+                
+                    Os totalizadores não fiscais são todos os documentos impressos no ECF que não são comprovantes de vendas. O totalizador não fiscal é utilizado para impressão de qualquer tipo de recebimento de valores no caixa, não relacionados à venda de produtos/itens (onde são emitidos os cupons fiscais).
+                    Todos os tipos de comprovantes não fiscais deverão ser programados nesta opção. Siga a sequência numérica dos totalizadores já cadastrados.
+                    Exemplo
+                        
+                            
+                                
+                            
+                            O totalizador não fiscal cadastrado é inserido na programação do ECF e ficará destacado na leitura X:
+                            
+                                
+                            
+                        
+                    
+                
+            
+            Para vincular, relacione os meios de pagamento do PDV com os meios de pagamento cadastrados na impressora fiscal e grave. Não é obrigatório relacionar os relatórios gerenciais, pode-se utilizar a opção Default.
+            Exemplo:
+                
+                    
+                        
+                    
+                    Selecione os totalizadores não fiscais cadastrados na impressora fiscal para serem utilizados pelo PDV:
+                    
+                        
+                    
+                    Visualização de todas as alíquotas cadastradas:
+                    
+                        
+                    
+                    Utilização da opção Default:
+                    
+                        
+                    
+                
+            
+            Clique em Emitir Leitura X para a emissão da leitura X na impressora fiscal. Geralmente utilizada após a programação efetuada para verificar as opções cadastradas. Para ativar ou desativar o horário de verão no ECF, utilize o botão Mudar Horário de Verão. Neste caso, após feitas  todas as programações necessárias do ECF, utilize as guias individuais para vincular o ECF com o sistema de PDV.
+            
+                Importante
+                
+                O ajuste para ativar o horário de verão só poderá ser feito após a emissão de uma Redução Z. Portanto, deverá ser ajustado no final do dia após fechamento de caixa. Já o ajuste para desativar o horário de verão só poderá ser feito uma hora após a emissão de uma Redução Z.
+            
+             TEF
+            Configure o corte e o papel da impressora. No campo Picote determine:
+            
+                "Avança o papel": configura o papel da impressora para avançar a cada impressão.
+                "Corta o papel": configura o corte do papel a cada término de 

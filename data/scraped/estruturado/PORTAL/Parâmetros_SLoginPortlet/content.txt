@@ -1,0 +1,158 @@
+# 
+
+URL: https://documentacao.senior.com.br/portal/6.10.1/#definicoes-gerais/parametros-sloginportlet.htm%3FTocPath%3DPortal%2520Corporativo%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CDefini%25C3%25A7%25C3%25B5es%2520gerais%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOPortal Corporativo - versão 6.10.1
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Portal Corporativo - Manual do Usuário > Definições gerais > Parâmetros SLoginPortlet
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Parâmetros SLoginPortlet
+            Alguns parâmetros estão disponíveis para utilização em configurações de links. São parâmetros relativos ao colaborador associado, ao usuário logado e ao cálculo ativo. 
+            Parâmetros:
+            
+                Data 
+				 de início do cálculo ativo do usuário logado = {inical}
+                Data 
+					 de fim do cálculo ativo do usuário logado = {fimcal}
+                Código 
+					 do tipo do cálculo ativo do usuário logado = {tipcal}
+                Código 
+					 da empresa do colaborador selecionado = {addemp}
+                Código 
+					 do tipo colaborador do colaborador selecionado = {addtip}
+                Código 
+					 de cadastro do colaborador selecionado = {addcad}
+                Código da empresa do usuário 
+					 logado = {numemp}
+                Código do tipo colaborador 
+					 do usuário logado = {tipcol}
+                Código de cadastro do usuário 
+					 logado = {numcad}
+                Data de início da apuração 
+					 do cálculo ativo do usuário logado = {iniapu}
+                Data de fim da apuração do 
+					 cálculo ativo do usuário logado = {fimapu}
+            
+            Qualquer 
+					 um dos parâmetros acima poderão ser utilizados para 
+					 preencher campos do formulário Web 5.0, basta incluir 
+					 um "&" antes do "&adicionarParametros=true" 
+					 e incluir um novo campo da Web 5.0 que receberá um dos 
+					 parâmetros acima sempre no formato (&nome_campowebg5={parâmetroportal}).
+            Comando de ativação
+            Para 
+					 que os parâmetros efetivamente sejam buscados, eles 
+					 precisam de um comando de ativação. Sem esse comando 
+					 os parâmetros não serão passados para o relatório/formulário. 
+					 Cada parâmetro de entrada possui parâmetros de ativação 
+					 distintos:
+            
+                Parâmetro 
+					 de ativação (&adicionarParametros=true): 
+					  Aciona os seguinte parâmetros: {addemp}, 
+					  {addtip}, {addcad};
+                Parâmetro 
+					 de ativação (&buscarParametros=true):  Aciona 
+					 os seguinte parâmetros: {inical}, {fimcal}, {tipcal}, 
+					 {numemp}, {tipcol}, {numcad}, {iniapu}, {fimapu}.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

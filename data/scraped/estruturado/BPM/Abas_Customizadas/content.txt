@@ -1,0 +1,164 @@
+# 
+
+URL: https://documentacao.senior.com.br/bpm/7.0.0/#abas-customizadas.htm%3FTocPath%3DBPM%2520%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBPM
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BPM  > Customizações > Abas Customizadas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Abas Customizadas
+            Sumário
+            
+            
+                
+                    Conceito
+                    
+                    Menu de Acesso
+                    
+                    Funcionalidades
+                        3.1 Criação de Abas Customizadas 3.1.1 Adicionando uma Aba Customizada3.2 Ocultar Anexo dos Processos
+                
+            
+             1. Conceito 
+            As abas customizadas, permitem ao usuário personalizar as guias encontradas nos processos do BPM.Essa funcionalidade foi pensada, para situações onde o usuário deseja acessar um ou mais sites específicos, dentro do processo.Caso o usuário não possua o recurso necessário para a criação dessas abas, precisa entrar em contato com um administrador do tenant. O administrador pode limitar o acesso a essa funcionalidade a determinados usuários.
+             2. Menu de Acesso
+            
+                No menu, selecione Senior Flow;
+                Selecione BPM;
+                Clique em Processos.
+            
+            3. Funcionalidades
+            
+            3.1 Criação de Abas Customizadas
+            
+            Para criar abas customizadas, o usuário precisa inserir links sem bloqueios de abertura, dentro de iframes. No momento da criação, é essencial preencher todos os campos, são eles: título e URL.
+             3.1.1 Adicionando uma Aba Customizada
+            Ao acessar o processo, em qualquer etapa do fluxo, menos processos já finalizados.
+            
+                Clique em Aba customizada;
+                Informe um título;
+                Informe uma URL;
+                Clique em adicionar aba.
+            
+            Em seguida, a aba aparece no processo, conforme exemplo abaixo:
+            
+                
+            
+            É possível também remover uma aba customizada:
+            
+                Acesse a Aba desejada;
+                Clique em Remover.
+            
+            Após o processo tratado, a aba customizada permanece configurada, porém não é mais possível remover ou editar nenhuma informação.
+             3.2 Ocultar Anexo dos Processos
+            A guia anexo pode ser oculta dos processos, basta realizar os seguintes passos:
+            
+                Acesse Senior Flow> BPM > Processos;
+                Clique no processo desejado;
+                Na guia Informações do processo;
+                Clique na guia anexo;
+                Defina a visibilidade da guia;
+                Clique em salvar.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

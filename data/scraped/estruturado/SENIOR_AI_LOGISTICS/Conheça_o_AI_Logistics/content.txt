@@ -1,0 +1,159 @@
+# 
+
+URL: https://documentacao.senior.com.br/senior-ai-logistics/1.0.0/#manual-do-usuario/conheca.htm%3FTocPath%3DSenior%2520AI%2520Logistics%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOSenior AI Logistics
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Senior AI Logistics > Conheça o AI Logistics
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Conheça o AI Logistics
+            O Artificial Intelligence Logistics (AI Logistics) é uma ferramenta de Business Intelligence (BI) que coleta e processa grandes quantidades de dados para análise, acompanhamento e apoio à tomada de decisões nos negócios.
+            As informações, extraídas a partir de consultas executadas por meio da ferramenta em uma série de bancos de dados, podem ser transformadas em tabelas, gráficos, gerar dashboards e slideshows para apresentação e monitoramento em tempo real e configuração de relatórios periódicos que chegarão por e-mail.
+            São indicadores que podem ser usados de forma estratégica para acelerar e aprimorar tomadas de decisões, aumentar a eficiência operacional, localizar potenciais de receita, identificar tendências de mercado e apontar novas oportunidades de negócios.
+            O AI Logistics está disponível na versão web e permite consultas em bancos de dados Oracle e Microsoft SQL Server.
+            
+                
+            
+            
+                 Quer saber mais sobre os benefícios de utilizar esta solução? Então acesse a matéria AI Logistics impulsiona a eficiência empresarial que preparamos para você, e veja como esta ferramenta pode ajudar no dia a dia da sua empresa!
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

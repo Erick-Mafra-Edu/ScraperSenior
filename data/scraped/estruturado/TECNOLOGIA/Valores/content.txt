@@ -1,0 +1,168 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/editor/dgn_editor_variaveis_entrada_valores.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CEditor%7C_____17
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Editor > Valores
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Valores
+            Essa tela permite configurar valores padrão para as variáveis 
+ de entrada. Esta opção não terá efeito se o campo Tabela.Campo 
+ da tela anterior for informado. Este campo, no executor, sempre dará prioridade 
+ em mostrar a lista de registros da Tabela.Campo selecionado ao invés de 
+ mostrar a lista criada.
+            Ao informar um valor na aba Valor padrão 
+ se não informado, se a variável não for de preenchimento obrigatório 
+ e caso essa variável não seja informada ao executar o modelo, automaticamente 
+ receberá o valor definido na aba.
+            
+            
+            Valor: Pode 
+ ser informado qualquer valor, desde que atenda o tipo e a máscara informada 
+ no cadastro geral da variável. No exemplo da imagem, a variável será preenchida 
+ com o valor 1 mesmo que não seja informado nenhum valor ao utilizá-la.
+            A aba 'Lista de valores' 
+ permite que vários valores sejam atribuídos a mesma variável. Quando ela 
+ for utilizada, serão apresentados em
+            
+                
+            
+            Selecionar 
+ valor inicial: É preciso selecionar 
+ o valor na lista, e ao clicar sobre esse botão, esse valor será o padrão 
+ sugerido ao utilizar a variável.
+            Valor: 
+ Valor sugerido para a variável.
+            Descrição: 
+ Descrição para identificar a variável 
+ na lista de valores.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

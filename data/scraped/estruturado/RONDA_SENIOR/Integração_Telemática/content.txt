@@ -1,0 +1,175 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#faq/telematica.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CPerguntas%2520Frequentes%7C_____11
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Perguntas Frequentes > Integração Telemática
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            FAQ - Telemática
+            Quais são as arquiteturas suportadas?
+                
+                    A Telemática, possui 3 arquiteturas que são oferecidas aos nossos clientes, são elas:
+                    
+                        Centralizadora: seu nome se deve à um equipamento (ARLON) que se centraliza e gerencia os dispositivos.
+                        TCP/IP: esta é a arquitetura onde os dispositivos estão plugados na rede TCP/IP e a centralizadora, trabalho feito por um micro com um aplicativo CONEX.exe, gerencia os dispositivos.
+                        Híbrida: o conjunto da centralizadora e TCP/IP chamamos de híbrida, a versão que suporta ambas arquiteturas.
+                    
+                    Veja também a documentação de Rotina de sincronização híbrida.
+                
+            
+            O que é o aplicativo PGRWIN?  
+                
+                    O PGRWin — Programa Gerenciador de Redes de Terminais de Coleta de Dados para Windows, como seu próprio nome indica, destina-se ao gerenciamento de redes de terminais da Telemática — CODIN 805, CODIN 9000, CODIN 9000+, MicroDin 9000, MicroDin 9000+, CODIN Jr. 9000 ou CODIN Jr. 9000+ — usados para marcação de ponto de acesso dos funcionários de uma empresa.
+                    Desenvolvido para ser usado em microcomputadores compatíveis com o PC da IBM em ambiente Windows, esse software permite, entre outras coisas:
+                    
+                        Transferir dados coletados nos coletors de ponto eletrônicos (inclusive no CODIN Jr. 9000 e no CODIN Jr. 9000+) para arquivos em disco no microcomputador.
+                        Gerar o programa aplicativo e as listas para validação de entrada de dados.
+                        Exibir, na memória dos terminais, o programa aplicativo e as listas de validação ou gravá-los em disquete para utilização pelo CODIN Jr. 9000 ou CODIN Jr. 9000+.
+                        Exibir a data e hora do microcomputador na memória dos terminais.
+                        Enviar comandos para os terminais da rede e obter o status dos mesmos.
+                        Emitir um relatório das operações executadas no programa e das ocorrências durante essas operações.
+                    
+                
+            
+            O que é o Cliente.cfg?  
+                
+                    É o arquivo de personalização da Telemática. Este arquivos contém as informações do cliente e também é utilizado para verificar a criptografia do crachá.
+                
+            
+            Como receber permissão sobre as tabelas da Telemática?
+                
+                    Deve-se utilizar o script liberado na instalação que está localizado na pasta util, onde existem os scripts compactados. São eles :
+                    
+                        HrAcesso.sql – permissão para usuário no banco Oracle do Solite;
+                        SpAcesso.sql – permissão para usuário no banco Oracle do Gestão de Riscos e Segurança;
+                        Privileg.sql – permissão para usuário no banco MS-SQL Server, MSDE para ambos os sistema.
+                    
+                    Para o Oracle deve-se rodar o script no SQL Plus e passar os parâmetros solicitados pelo script.
+                    No caso Privileg, deve-se alterar o nome do usuário a receber a permissão pois o script possui nomes fixos.
+                
+            
+            Para que serve a tabela Dam00?  
+                
+                    Esta tabela pertence à Telemática e é nela onde são geradas as marcações vindas dos dispositivos.
+                
+            
+            Para que é utilizada a tabela Controle da Telemática?
+                
+                    Esta é a tabela que possui os crachás, suas permissões, validade, situação de acesso, créditos de acesso, mensagem e demais recursos controlados no crachá. Esta tabela muda conforme a versão de acesso (TBS), para consultar as versões acesse o menu Ajuda > Conteúdo e Índice > Versões de Acesso > Tipos de Controle de Acesso. Este ajuda possui todas as versões homologadas pela Senior e Telemática.
+                
+            
+            Para que é utilizada a tabela FxHoraria da Telemática?
+                
+                    Com o objetivo de controlar as faixas horárias, esta tabela foi criada para que as faixas de acesso e ponto fossem cadastradas para cada crachá controlando por dia da semana, como definição abaixo:
+                    
+                        Fx_Seg_P – Controle de faixa para segunda-feira de ponto. Se hoje for terça-feira o valor contido neste campo é da semana que vem e não de ontem.
+                        Fx_Seg_A – Controle de faixa para segunda-feira de acesso, e o valor contido em seu campo tem a mesma característica que todos como explicado anteriormente.
+                    
+                    Esta tabela aparece somente a partir da versão 5 de acesso.
+                
+            
+            Por que é necessário inicializar as tabelas da Telemática?  
+                
+                    Porque se  alguma tabela for alterada via SQL, as mesmas estarão incompatíveis com o sistema.
+                
+            
+            Em que situação é feita a atualização das tabelas DAT07 e DAT08 pelo sistema segurança?
+                
+                    O sistema atualiza a tabela DAT07 nas seguintes telas:
+                    
+                        Cadastro de Coletores (não limpa a tabela DAT07, apenas atualiza os registros).
+                        Tela de Inicialização (limpa a tabela DAT07 e gera todos os registros - existe opção para inserir abrangência do site).
+                    
+                    O sistema atualiza a tabela DAT08 nas seguintes telas:
+                    
+                        Cadastro de Coletores (não limpa a tabela DAT08, apenas atualiza os registros).
+                        Cadastro de Permissões de Acesso (não limpa a tabela DAT08, apenas atualiza os registros).
+                        Cadastro de Grupos de Coletores (limpa a tabela DAT08 e gera todos os registros).
+                        Tela de Inicialização (limpa a tabela DAT08 e gera todos os registros - existe opção para inserir abrangência do site).
+                    
+                    Resumindo, as tabelas DAT07 e DAT08 apenas são reinicializadas se o usuário entrar na tela de inicialização. Já a DAT08 será inicializada também se o usuário mexer no cadastro de grupos de dispositivos, pois na tabela DAT08 a relação é direta com os dispositivos e não existe relação com os grupos de dispositivos.
+                
+            
+            Qual é a capacidade de armazenamento da memória do dispositivo Smart Card?
+                
+                    O dispositivo Smart Card armazena até 8000 pendências off-line e 4.000 on-line. Lembrando que se há pendência de atualização da FxHoraria o Codin gravará na memória apenas o número do crachá.
+                
+            
+            Como receber alarmes de conexão (on-line e off-line) de dispositivos Telemática?
+                
+                    Utilize o script liberado na instalação que está localizado na pasta útil, são eles:
+                    
+                        trsitcoletor.ORACLE.sql - Para o banco Oracle;
+                        trsitcoletor_SQLSERVER.sql - Para o banco SQLServer.
+                    
+                    Quando o dispositivo mudar de status na tabela SITCOLETOR, será gerado um alarme de conexão na tabela SITENTRAD, onde os dados serão coletados pela CSMCenter e seguirão o processo normal.
+                
+            
+            Como ativar a sincronização híbrida de créditos de acesso e nível com Telemática e outro fabricante?
+                
+                    Utilize o script liberado na instalação que está localizado na pasta útil, são eles :
+                    
+                        TRControle_Oracle - Para o banco Oracle
+                        TRControle_sqlserver.sql - Para o banco SQLServer
+                    
+                    Quando a tabela CONTROLE da Telemática receber alterações referentes ao nível e créditos de acesso, essas informações serão inseridas na tabela Sincronização Rotinas Hibrodas (R600HIB), para receber o tratamento pela CSMCenter e atualizar a tabela Controle de Acesso (R070CON). Permitindo que equipamentos de outros fabricantes continuem o controle de crédito ou nível com os mesmos valores.
+                    É necessário habilitar a opção "Habilitar sincronização híbrida" na CSM Center config, e configurar o intervalo da coleta.
+                    Veja também a documentação de Rotina de sincronização híbrida.
+                
+            
+            Como funciona a rotina de permissão para os dispositivos REP da Telemática?
+                
+                    O sistema irá utilizar a permissão 

@@ -1,0 +1,307 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#middleware/mid_diretorios_compartilhados.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Diretórios Compartilhados
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Diretórios Compartilhados
+                Este documento tem a finalidade de servir como base para a documentação 
+ de cada sistema que orienta o cliente com relação aos seguintes aspectos: 
+ 
+                
+                    Quais arquivos e diretórios devem ser compartilhados na instalação;
+                    Quais as permissões necessárias para os usuários que acessam esses 
+	 arquivos e diretórios;
+                    Quais arquivos e diretórios devem ser incluídos em rotinas de backup 
+	 quando o cliente não deseje fazer backup do ambiente inteiro.
+                
+                As configurações abaixo referem-se ao uso feito pela SVCL e aplicativos 
+ externos. Cada sistema deve analisar esse documento e ajustá-lo e complementá-lo 
+ conforme suas particularidades, antes de ir para o cliente.
+                Colunas das Tabelas
+                    Abaixo, estão as explicações sobre cada coluna, sendo que algumas colunas 
+ referem-se a tabelas específicas. Como a coluna Tabela.Campo que pertence 
+ apenas a tabela Banco de Dados, ou a coluna Seção que pertence apenas 
+ a tabela de configurações da Web.
+                    
+                        Chave: Nome da chave do 
+	 arquivo CFG, HTTPCFG.INI ou Registry que contém o diretório ou arquivo 
+	 em questão;
+                        Tabela.Campo: Nome da tabela 
+	 e da coluna que contém o diretório ou arquivo em questão;
+                        Seção: Seção do arquivo 
+	 HTTPCFG.INI que contém a chave;
+                        Tipo: Indica se a configuração 
+	 aponta para um diretório ou um arquivo;
+                        Armazenamento: Indica se 
+	 a configuração aponta necessariamente para um compartilhamento ou 
+	 se permite diretório local. Em ambientes que não são multi-servidor 
+	 e/ou não utilizam acesso cliente-servidor, alguns diretórios ou arquivos 
+	 não necessitam estar compartilhados;
+                        Permissão: Indica se o 
+	 arquivo ou diretório necessita permissão de escrita ou se é utilizado 
+	 apenas para leitura. É importante ressaltar que, para a SVCL, alguns 
+	 destes podem ser utilizados apenas para leitura, o que não impede 
+	 que o Sistema utilize-os para escrita;
+                        Backup: Indica se o arquivo 
+	 ou diretório deve ser incluído em rotinas de backup. Como alguns arquivos 
+	 são temporários e/ou são gerados automaticamente conforme necessidade, 
+	 não é necessário manter backup deles;
+                        Descrição: Breve descrição 
+	 sobre a utilização do arquivo ou diretório.
+                    
+                
+                Arquivo de configurações do sistema (.CFG)
+                
+                    
+                        Chave
+                        Tipo
+                        Armazenamento
+                        Permissão
+                        Backup
+                        Descrição
+                    
+                    
+                        
+                            AjudaProcessos
+                        
+                        
+                            Diretório
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Escrita
+                        
+                        
+                            Não
+                        
+                        
+                            Diretório onde é gravado o arquivo 
+		 de ajuda dos processos.
+                        
+                    
+                    
+                        
+                            AjudaTelas
+                        
+                        
+                            Diretório
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Escrita
+                        
+                        
+                            Não
+                        
+                        
+                            Diretório onde é gravado o arquivo 
+		 de ajuda das telas.
+                        
+                    
+                    
+                        
+                            ArqProprietaria
+                        
+                        
+                            Arquivo
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Leitura
+                        
+                        
+                            Sim
+                        
+                        
+                            Caminho do arquivo da proprietária, 
+		 utilizado apenas se a proprietária não estiver no diretório padrão 
+		 da instalação.
+                        
+                    
+                    
+                        
+                            CUBES ou CUBOS
+                        
+                        
+                            Diretório
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Escrita
+                        
+                        
+                            Sim
+                        
+                        
+                            Diretório onde são gravados os modelos 
+		 de cubos de decisão do sistema.
+                        
+                    
+                    
+                        
+                            IMAGES ou Imagens
+                        
+                        
+                            Diretório
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Leitura
+                        
+                        
+                            Sim
+                        
+                        
+                            Diretório de imagens. 
+                            
+                                Nota: 
+                                A SVCL carrega essa configuração mas não a utiliza, apenas deixa 
+		 disponível para o sistema.
+                            
+                        
+                    
+                    
+                        
+                            IMPORTS ou ModelosImpExp
+                        
+                        
+                            Diretório
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Escrita
+                        
+                        
+                            Sim
+                        
+                        
+                            Diretório onde são gravados os modelos 
+		 de importação e exportação do sistema.
+                        
+                    
+                    
+                        
+                            MESSAGES ou ArqMensagens
+                        
+                        
+                            Arquivo
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Leitura
+                        
+                        
+                            Sim
+                        
+                        
+                            Arquivo de mensagens. A tecnologia 
+		 não utiliza esta chave, pode ser utilizada pelos sistemas.
+                        
+                    
+                    
+                        
+                            MODELS ou Modelos
+                        
+                        
+                            Diretório
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Escrita
+                        
+                        
+                            Sim
+                        
+                        
+                            Diretório onde são gravados os modelos 
+		 de relatórios do sistema.
+                        
+                    
+                    
+                        
+                            NoTranslateFile
+                        
+                        
+                            Arquivo
+                        
+                        
+                            Local ou Compartilhado
+                        
+                        
+                            Leitura
+                        
+                        
+                            Sim
+                        
+                        
+                            Arquivo para filtro de tradução

@@ -1,0 +1,140 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/promocoes.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____11
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Promoções
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Promoções
+            Conceito
+            Através desta rotina, é possível configurar promoções que serão concedidas, automaticamente, pelo sistema durante as vendas via pedido. Atualmente, pode ser definido um período de vigência, indicar quais filiais participam da promoção, definir se a promoção é acumulativa, informar uma combinação de produtos e/ou grupos de produto que formam um combo a ser adquirido na venda para que o(s) benefício(s) seja(m) concedido(s) ou, ainda, indicar apenas uma quantidade a ser adquirida, independente do produto. Também é possível indicar para quais formas de pagamento a promoção é válida ou, ainda, definir os perfis de usuário autorizados a aplicar tal promoção.
+            Como forma de benefício, há a possibilidade de definir desconto nos itens que compõem a promoção, desconto no total do pedido ou, ainda, conceder um desconto na aquisição de um outro produto, podendo chegar ao seu valor total, caracterizando um brinde.
+            Nesta rotina, o cadastro de promoções e condições é realizado pela tela Atributos da Venda (F081ATV), do Gestão Empresarial | ERP. No Gestão de Lojas, é possível visualizar essas promoções cadastradas pela tela Promoções, do Retaguarda.
+            Essas promoções, por sua vez, não são aplicadas automaticamente em vendas feitas diretamente no PDV. As promoções somente são aplicadas nos pedidos feitos no Retaguarda que, quando importados no PDV, são respeitados os descontos previamente atribuídos pelo pedido.
+            
+                Atenção
+                
+                As promoções são cadastradas apenas no Gestão Empresarial | ERP. Porém, elas podem ser visualizadas na tela Promoções, do Retaguarda.
+                Todas as imagens utilizadas nesta documentação, onde é citado e/ou apresentado algum produto com código, descrição etc., tratam-se somente de exemplos para melhor descrever e/ou explicar cada cenário/situação desta funcionalidade e do sistema.
+            
+            Promoções no Gestão Empresarial | ERP:
+            As promoções são cadastradas pela tela Atributos da Venda (F081ATV), do Gestão Empresarial | ERP. Para mais informações, você pode acessar a documentação dessa tela.
+            Promoções no Gestão de Lojas:
+            As promoções podem ser visualizadas pela tela Promoções, do Retaguarda. Essa tela é acessada pelo menu Cadastros > Mercado e Suprimentos > Promoções. Ao acessar a tela Promoções, serão listadas todas as promoções já criadas. Ao selecionar uma promoção, dando duplo clique nela, é aberta a tela Promoções com os detalhes da promoção selecionada. A tela Promoções apresenta as seguintes informações:
+            Cabeçalho
+                
+                    No cabeçalho, há disponível as seguintes informações:
+                    
+                        Campo Empresa: nome da empresa;
+                        Campo Descrição: descrição da promoção;
+                        Campo Início: data inicial da promoção;
+                        Campo Fim: data final da promoção;
+                        Campo Código Ref.: código da promoção no Gestão Empresarial | ERP;
+                        Campo Situação: situação da promoção. Possui as seguintes definições:A - Ativo;I - Inativo.
+                    
+                
+            
+            Guia Filiais de aplicação
+                
+                    Esta guia apresenta para qual(is) filial(is) tal promoção está disponível.
+                
+            
+            Guia Condições da Promoção
+                
+                    Esta guia apresenta as seguintes informações:
+                    
+                        Campo Situação: situação da promoção. Possui as seguintes definições:A - Ativo;I - Inativo.
+                        Coluna Descrição: descrição da condição;
+                        Coluna Observação: observação da condição;
+                        Coluna Acumula Consigo: indica se a mesma condição de promoção pode ser aplicada várias vezes no mesmo pedido;
+                        Coluna Acumula Com Outras: indica se condições de promoção diferentes podem ser atendidas no mesmo pedido.
+                    
+                    Guia Itens
+                    Esta guia apresenta as seguintes informações:
+                    
+                        Coluna Tipo: tipo da condição. Possui as seguintes condições:Produto: para que essa condição seja aplicada, o pedido precisa ter esse item em específico em sua lista;Grupo: para que essa condição seja aplicada, o pedido precisa ter um item vinculado a esse grupo em específico;Qualquer produto: para que essa condição seja aplicada, basta atender à quantidade especificada na condição. Como as condições desse tipo atendem qualquer produto, os itens do pedido são vinculados à promoção de acordo com a ordem de inclusão deles.
+                        Coluna Item: código e descrição do produto (quando o tipo for Produto);
+                        Coluna Grupo: código e descrição do grupo (quando o tipo for Grupo);
+                        Coluna Quant.: quantidade de vezes que essa condição deve aparecer no pedido para que seja aplicado o benefício uma vez.
+                    
+                
+            
+            Guia Formas de pagamento
+                
+                    Esta guia apresenta a descrição das formas de pagamento vinculadas à promoção.
+                
+            
+            Guia Perfis de usuário
+                
+                    Esta guia apresenta a descrição dos perfis de usuário habilitados para aplicar a promoção.
+                
+            
+            Guia Benefícios
+                
+                    Esta guia apresenta as seguintes informações:
+                    
+                        Campo Tipo: possui as seguintes opções:1 - Desconto no subtotal da venda: esse tipo de benefício aplica um desconto (valor fixo ou percentual) sobre todos os itens do pedido, inclusive, aos que não pertencem à promoção. Caso o pedido tenha esse benefício, não é permitido adicionar outros ao mesmo;2 - Brinde: esse tipo de benefício adiciona ao pedido um novo item, seja ele grátis ou com um valor menor;3 - Desconto no subtotal dos itens: esse tipo de benefício aplica um desconto (valor fixo ou percentual) apenas sobre os itens cadastrados na condição.
+                        Coluna Descrição: descrição do produto quando for do tipo Brinde;
+                        Coluna Preço: valor do produto concedido como brinde (pode ser grátis ou com um valor diferente);
+                        Coluna Quantidade: quantas vezes esse brinde será incluído no pedido;
+                        Coluna % Desconto: percentual de desconto aplicado nos itens ou no subtotal do pedido, de acordo com o tipo escolhido;
+                        Coluna Valor desconto: valor fixo de desconto aplicado nos itens ou no subtotal do pedido, de acordo com o tipo escolhido.
+                    
+                
+            
+            Comportamento
+            Promoção com brinde
+                
+                    As promoções que concedem brinde são sugeridas no momento da inclusão do item no pedido. Caso o item seja do tipo Entrega Imediata, o brinde apenas é sugerido se houver quantidade em estoque, e é apresentada a mensagem abaixo:
+                    
+                        
+                    
+                    Caso não haja quantidade em estoque, então o brinde entra na lista de brindes recusados, ou seja, não é sugerido novamente para o mesmo item do pedido. Caso haja desconto na aquisição de um novo produto, a mensagem abaixo será apresentada:
+                    
+                        
+                    
+                    Ou seja, o novo produto (código 024947, apresentado na imagem de exemplo acima), que poderá ser adicionado ao pedido como brinde, terá o valor de R$ 1,00 - sendo R$ 61,00 de desconto no item. Caso o brinde seja negado, ele não será sugerido novamente para o mesmo item do pedido.
+                    Os itens de brinde que não possuem valor, tem fonte na cor azul, conforme a legenda do pedido (na imagem de exemplo abaixo, o brinde é o segundo item).
+                    
+                        
+                    
+                    Os itens de brinde com desconto não possuem alteração de cor, mas têm o valor de desconto visível no campo Desc/Acrés, em azul.
+                    Editar um item que possui desconto é bloqueado. Com isso, a seguinte mensagem é apresentada:
+                    
+                        
+                    
+                    Editar um item brinde também possui bloqueio, e é exibida a seguinte mensagem:
+                    
+                        
+                    
+                    É possível cancelar apenas o brinde no pedido. Caso seja cancelado o item responsável pelo brinde, tanto o item selecionado quanto o seu brinde são cancelados.
+                    No próprio cancelamento do item, as promoções são reavaliadas. Portanto, poderá haver sugestão de promoções nesse momento para os itens que ainda estão disponíveis no pedido, inclusive a mesma promoção (que foi cancelada) poderá ser sugerida para outro item.
+                
+            
+            Promoção com desconto
+                
+                    A tela Descontos por Promoção pode ser acessada pelo botão Opções (presente no rodapé da tela Venda de Itens, aberta ao selecionar um item na tela Pedidos) e, então, Consultar descontos por prom

@@ -1,0 +1,263 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#middleware/processos-automaticos/cadastramento-de-processo.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CMiddleware%7CProcessos%2520Autom%25C3%25A1ticos%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Middleware > Processos Automáticos > Cadastramento de um Processo
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Cadastramento 
+		 de um Processo
+            É muito importante atentar aos campos Processo pode desativar, Gera menagem de log e  E-mail 
+ do responsável no cadastramento do processo. 
+            O cadastramento do processo automático é feito no Ronda Senior no Windows. O Segurancaserver executa o processo de acordo com as instruções do Agendador, ou seja, o Agendador administra os horários, prioridades e periodicidade de execução dos processos. Para mais informações sobre essa rotina, verifique a página Processos Automáticos.
+            Processo pode desativar
+                Significa que se houver alguma inconsistência grave ao executar o processo automático 
+ ele será desativado e o processo não será mais executado, enquanto o usuário 
+ não for habilitar a execução do processo.
+            Recomenda-se preencher este campo com a opção "Não".
+            Gera mensagem de log
+                Significa que o processamento deste processo automático vai gerar log 
+ nas tabelas de log dos processos automáticos. 
+            Recomenda-se escolher a opção "Sim" para este campo.
+            E-mail do Responsável
+                É usado para registrar o e-mail da pessoa responsável pelo processo. 
+ Se ocorrer alguma exceção na execução do processo o responsável receberá 
+ um e-mail informando sobre essa exceção.
+            As alterações do sistema baseiam-se em alterações de mensagens e na 
+ implementação de tratamento de falhas de sistema que podem gerar uma mensagem 
+ de inconsistência. Algumas mensagens do aplicativo podem parecer inconsistências, mas são alertas 
+ enviados para o usuário. Os alertas não devem interromper o processo automático, 
+ mas a inconsistência sim.
+            As mensagens que aparecem no log dos processos não obrigatoriamente 
+ interrompem o processo e enviam e-mail para os responsáveis. Somente erros 
+ graves podem enviar e-mail, mas mesmo estes dependem de algumas configurações.
+            As mensagens de inconsistência que enviam e-mails são: processo automático de 
+ importação e exportação.
+            Poderá haver e-mail para o responsável na exportação quando:
+            
+                o arquivo de layout da exportação não for encontrado ou estiver 
+	 desatualizado;
+                houver inconsistência abrindo os arquivos de exportação.
+            
+            Poderá haver e-mail para o responsável na importação quando:
+            
+                o arquivo de entrada da importação [nome do arquivo] não for encontrado 
+	 neste processo;
+                o arquivo de layout da importação não for encontrado ou estiver 
+	 desatualizado;
+                houver inconsistência abrindo os arquivos de importação.
+            
+            Processo automático em geral (para todos os processos)
+                Poderá haver envio de e-mail para o responsável quando:
+            
+                houver inconsistência executando processo automático;
+                houver inconsistência ao excluir o processo automático [tipo do processo, 
+	 código do processo];
+                houver inconsistência na rotina de definição da próxima execução do processo.
+            
+            Outros requisitos para que seja enviado e-mail para o responsável:
+            
+                o processo automático não pode estar configurado para rodar uma 
+	 única vez;
+                o processo automático não pode ter o campo e-mail do responsável 
+	 em branco.
+            
+            Processo automático de relatórios Poderá haver envio de e-mail para o responsável quando:
+            
+                houver inconsistência na emissão do relatório para o destinatário [e-mail 
+	 do destinatário];
+                o e-mail comercial do chefe [empresa, tipo e cadastro do chefe] 
+	 não estiver cadastrado na Ficha Complementar;
+                o relatório do processo [código e descrição do processo] não for 
+	 gerado, devido ao e-mail do destinatário não estar informado no cadastramento 
+	 do processo automático de relatórios;
+                houver inconsistência na execução do relatório;
+                houver inconsistência no envio do e-mail.
+            
+            Processo automático de execução de regras de negócio Poderá haver envio de e-mail para o responsável quando:
+            
+                os métodos para a execução de regras não forem implementados;
+                o código da regra não for definido.
+            
+            Processo automático de execução de comandos SQLs Poderá haver envio de e-mail para o responsável quando:
+            
+                o arquivo de comandos SQL [comando sql] não for encontrado;
+                for impossível executar o comando SQL, porque o comando não for 
+	 definido.
+            
+            Processo automático no envio de e-mails Poderá haver envio de e-mail para o responsável quando:
+            
+                houver inconsistência no envio do e-mail;
+            
+            Observação
+                Como no processo de envio de e-mails é possível informar um comando predecessor 
+ do tipo Relatório, as probabilidades de inconsistência no processamento se somam 
+ e serão detalhadas na mensagem de erro apresentada, obedecendo a ordem 
+ primeiro erro de envio de e-mail e depois erro no comando predecessor. 
+  Abaixo detalha-se um exemplo:
+                
+                    "erro 
+ na execução de envio de e-mails. 
+ erro na execução do relatório (variável não existente)".
+                
+                
+                    
+                        
+                        
+                        
+                            
+                                1. erro 
+		 no envio do e-mail
+                            
+                            
+                                2. erro 
+		 no comando predecessor
+                            
+                        
+                        
+                            erro na 
+		 execução de envio de e-mails.
+                            erro na 
+		 execução do relatório (variável não existente).
+                        
+                    
+                
+            
+            Processo automático de execução de programas externos Poderá haver envio de e-mail para o responsável quando:
+            
+                houver inconsistência na criação do Processo Externo;
+                houver inconsistência na execução do processo.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias 

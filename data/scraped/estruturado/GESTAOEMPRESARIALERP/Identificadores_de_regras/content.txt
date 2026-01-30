@@ -1,0 +1,150 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#identificadores_regras/indice-identificadores-de-regras.htm%3FTocPath%3DFerramentas%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ferramentas > Identificadores de regras
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Identificadores de Regras disponíveis no Gestão Empresarial | ERP
+            Confira a lista de todos os Identificadores de Regras existentes no Gestão Empresarial | ERP.
+            
+                 Importante 
+                A ativação ou desativação de identificadores de regras (mesmo os  que não fazem uso de regras) mudam comportamentos de rotinas do sistema. Por isso recomendamos que, ao ativar ou desativar algum identificador de regras, o sistema seja reiniciado.
+                Quando se trata da execução do processo através do Senior Middleware, a reinicialização dos servidores do Middleware também é recomendável.
+            
+            Utilização de identificadores de regras no Gestão Empresarial | ERP
+            Veja nos tópicos abaixo, informações sobre o funcionamento dos identificadores de regras:
+            Como funcionam os identificadores de regras do sistema?
+                
+                    Os identificadores de regras são artefatos que o código-fonte do sistema poderá acionar para que uma rotina que está definida para ser executada de uma forma específica, seja executada de outra forma.
+                    Um identificador de regras pode ou não usar regras:
+                    
+                        Caso o identificador de regras permita utilização de uma regra vinculada, através da regra você poderá fazer alterações no processo padrão do sistema, de acordo com as variáveis disponíveis no identificador;
+                        Caso o identificador de regras não permita utilização de uma regra vinculada, então o identificador funciona como se fosse um parâmetro qualquer do sistema.
+                    
+                    Para que o sistema verifique se um identificador de regras está ou não ativado, no ponto do código-fonte que permite utilização de determina identificador, o sistema efetua um comando select na tabela Identificador de Ponto de Regras/Personalização (E098REG) e verifica se o identificador de regras está registrado e se está com a situação de "A - Ativo".
+                    
+                         Importante 
+                        Os identificadores são cadastrados no sistema a nível de Empresa. Portanto, se você possui mais de uma empresa e deseja utilizar um identificador de regras em várias empresa, precisa fazer o cadastro em cada uma das Empresas da base de dados.
+                    
+                
+            
+            Onde é efetuada a ativação e desativação dos identificadores?
+                
+                    A ativação é efetuada através da tela de cadastro de identificador de regras, disponível em Cadastros > Identificadores e parâmetros > Identificador de Regras (F098REG).
+                
+            
+            Existe validação dos identificadores de regras cadastrados na tela F098REG?
+                
+                    Não, não existe. Como o sistema efetua uma busca na tabela Identificador de Ponto de Regras/Personalização (E098REG) para saber se o identificador existe e está ativo no momento da execução da rotina, a inserção de um identificador de regras inválido não afeta nenhum processo do sistema.
+                
+            
+            O que é um identificador de regras restrito?
+                
+                    Um identificador de regras restrito é um identificador cuja utilização depende de uma orientação explícita da Senior através de canal oficial de atendimento, onde a utilização é recomendada após uma análise do cenário de cada ambiente.
+                    Sendo assim, não haverá uma documentação disponível para o identificador restrito no Manual do Usuário.
+                    
+                         Observação
+                        Não existem no sistema grande volume de identificadores de regras restritos. A grande maioria das rotinas não possui nenhum tipo de identificador de regras restrito.
+                    
+                
+            
+            O que é um identificador de regras de rotina de Monitoramento?
+                
+                    Em alguns cenários onde um incidente não é simulado pela Senior e há necessidade de desenvolvimento/liberação de uma rotina de Monitoramento, a ativação do monitoramento pode estar atrelada à inclusão de um identificador de regras específico (identificador esse que não estará no Manual do Usuário).
+                
+            
+            E se um identificador de regras está cadastrado na tela F098REG, mas não é mais utilizado em nenhuma rotina do sistema (identificador descontinuado)?
+                
+                    Neste caso, ele não terá mais efeito nenhum no sistema. Ele pode ser inativado normalmente.
+                
+            
+            E se um identificador de regras está cadastrado na tela F098REG, mas não está documentado?
+                
+                    Neste caso, podem existir quatro possibilidades:
+                    
+                        O identificador de regras é restrito;
+                        Identificador de regras foi cadastrado incorretamente;
+                        Identificador de regras descontinuado;
+                        Identificador de regras utilizado em rotina de Monitoramento.
+                    
+                
+            
+            Posso fazer a exclusão de um identificador de regras?
+                
+                    A tela F098REG não permite exclusão de um identificador. Desta forma, a orientação é inativar o identificador pela tela, podendo incluir uma observação do motivo da inativação.
+                
+            
+            Posso cadastrar identificador de regras que não existe por padrão no sistema para fazer uso em rotinas personalizadas (como se fosse um parâmetro personalizado)?
+                
+                    Não há um impeditivo técnico para realizar esse processo, porém, não é recomendado criar uma rotina personalizada desta forma.
+                
+            
+            Como efetuar um teste no sistema garantindo que nenhuma regra vinculada a algum identificador esteja afetando o processamento padrão do sistema?
+                
+                    A forma mais fácil de fazer o teste em uma rotina garantindo de que nenhuma regra ligada a um identificador de regras seja acionada durante a execução do processo, é inativando todos os identificadores de regras utilizados.
+                    Para fazer esse processo, execute o processo indicado abaixo:
+                    
+                        Efetue a execução do processo no ambiente de homologação onde o problema tenha sido reproduzido. Isso porque a inativação de todos os identificadores poderá impactar os processo que serão executados no ambiente de produção;
+                        Execute o seguinte update na base de dados do ERP:update e098reg set sitreg='X' where sitreg='A'Esse update fará com que todos os identificadores de regras ativos no sistema sejam considerados inativos. Isso porque quando o Gestão Empresarial | ERP, executar uma rotina e busca na base de dados se um identificador está ativo, apenas considera como ativo o identificador cuja situação (E098REG.SitReg) esteja definida como "A - Ativo". Qualquer informação diferente de "A - Ativo" neste campo fará com que o sistema entenda de que o identificador está inativo.E por que a situação dos identificadores não é alterada para "I - Inativo"?Porque desta forma é mais fácil para voltar todos os identificadores para ativo após o teste. Se a situação dos identificadores fosse alterada para "I - Inativo", não seria possível identificar ao certo quais eram os identificadores que realmente deveriam estar inativos na base de dados.
+                        Depois de executar o processo do tópico anterior, saia do sistema e acesse-o novamente (caso esteja aberto). Se o processo a ser efetuado for executado no Middleware (exemplo: Ação SID, Web Service, processo executado Síncrono/Assíncrono/Agendado), então é obrigatório reiniciar todos os serviços do Senior Middleware;
+                        Depois de acessar o sistema com todos os identificadores desativados, execute a rotina para teste.
+			
+				 ImportanteDependendo da rotina, pode ser necessário ativar alguns identificadores de regras manualmente para que a rotina seja executada. Exemplo: algumas telas de conferência de carga no Gestão Empresarial | ERP exigem uma regra customizada para serem executadas. Neste caso, se o problema a ser analisado tem relação com essas telas, será necessário ativar a regra. Se ao ativar a regra o problema já for simulado, então identifica-se de que o problema já está nesta regra. Se o problema não for simulado, já identifica-se de que o problema está em outra regra customiza

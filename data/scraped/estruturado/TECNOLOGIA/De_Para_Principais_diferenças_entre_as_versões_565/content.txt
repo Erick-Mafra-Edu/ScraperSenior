@@ -1,0 +1,261 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/de_para.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7C_____11
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > De > Para (Principais diferenças entre as versões 5.6.5 ou inferiores e 5.7.1 ou superiores)
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            De > Para (Principais diferenças entre as versões 5.6.5 ou inferiores e 5.7.1 ou superiores)
+            Aplicativos
+            
+            
+                
+                    Aplicativo
+                    Status
+                    Observação
+                
+                
+                    ConCFG  
+                    Descontinuado
+                     
+                
+                
+                    OGU
+                    Descontinuado
+                    O controle de conexões será sempre através do banco de dados ao qual o aplicativo estiver conectado.
+                
+                
+                    EditCFG
+                    Descontinuado
+                    As suas configurações foram migradas para o aplicativo Central de Configurações Senior.
+                
+                
+                    CASE
+                    Descontinuado
+                     
+                
+                
+                    HTTPWizard
+                    Descontinuado
+                     
+                
+                
+                    Inst52
+                    Descontinuado
+                    Substituído pelo Instalador.
+                
+                
+                    Atualiza
+                    Descontinuado
+                    Substituído pelo Atualizador.
+                
+            
+            SGU
+            Algumas configurações existentes no aplicativo SGU, agora estão na Central de Configurações Senior, conforme descrito abaixo:
+            
+                
+                
+                
+                
+                
+                    Caminho no SGU
+                    Caminho na Central de Configurações
+                
+                
+                    Formas de logon por tipo de acesso
+                    Opções de segurança > Formas de logon por tipo de acesso
+                
+                
+                    Configurações de LDAP e NTLM
+                    Opções de segurança > LDAP e NTLM
+                
+                
+                    Configurações de LDAP e NTLM\Novos usuários > Permitir o cadastro automático de novos usuários no logon
+                    Sistemas > <Nome do sistema> > Autenticação de usuários > Autenticação de usuários via LDAP e NTLM > Permitir o cadastro automático de novos usuários no login e importação
+                
+                
+                    Configurações de LDAP e NTLM\Novos usuários\Adicionar novos usuários ao seguinte grupo automaticamente no logon e na importação
+                    Sistemas > <Nome do sistema> > Autenticação de usuários > Autenticação de usuários via LDAP e NTLM > Adicionar novos usuários ao seguinte grupo automaticamente
+                
+                
+                    Logoff automático
+                    Opções de segurança >Logoff automático
+                
+                
+                    Logon integrado com criptografia
+                    Opções de segurança > Logon integrado com criptografia
+                
+                
+                    Logon via base de autenticação Senior
+                    Opções de segurança > Logon via base de autenticação Senior
+                
+                
+                    Logon via base de autenticação Senior > Novos usuários > Vincular novo usuário ao grupo
+                    Sistemas > <Nome do sistema> > Autenticação de usuários > Autenticação de usuários via base de autenticação Senior > Adicionar novos usuários ao seguinte grupo automaticamente
+                
+                
+                    Usuário para diretórios compartilhados
+                    Opções de segurança > Usuário para diretórios compartilhados
+                
+                
+                    Replicação de usuários
+                    Opções de segurança > Replicação de usuários
+                
+                
+                    Importação de usuários
+                    Opções de segurança > Importação de usuários
+                
+                
+                    Perfil de usuário
+                    Sistemas > <Nome do sistema> > Autenticação de usuários > Habilitar perfil de usuário
+                
+                
+                     
+                     
+                
+            
+            CBDS
+            Tela de configuração que estava no CBDS e que veio para a Central de Configurações:
+            
+                
+                
+                
+                
+                
+                    Tela no CBDS
+                    Tela na Central de Configurações
+                
+                
+                    CBDS > Assinalamentos > Forma de buscar data/Definir a forma como o sistema deve buscar a data e hora
+                    Banco de dados > <nome da base de dados> > Clicar no botão “Avançado...”
+Marcar a opção “Sempre buscar a data e a hora do banco (desotimizado)”
+
+                
+            
+            Rotinas / recursos
+            Telas que encontravam-se nos sistemas e foram movidas para a Central de Configurações Senior:
+            
+                
+                
+                
+                
+                
+                    Tela no Sistema
+                    Tela na Central de Configurações
+                
+                
+                    Acesso a internet
+                    Conexões de rede > Acesso à internet
+                
+                
+                    Envio de e-mail
+                    Conexões de rede > Envio de e-mail
+                
+                
+                    Web services
+                    Middleware > Web services
+                
+                
+                    Cadastro de impressoras
+                    Impressoras
+                
+            
+            Tela de escolha de CFG para acessar os sistemas
+            A tela de seleção de CFG foi ajustada para poder selecionar o ambiente desejado para acessar um sistema. Nos aplicativos: SGU, CBDS e VisLog, além do ambiente pode-se selecionar também a base de dados utilizada para efetuar a conexão.
+            Tela escolha de CFG padrão
+            A tela de seleção de CFG padrão foi ajustada para poder selecionar o ambiente e base de dados padrão para acessar o sistema.
+            Recursos deprecados
+            
+                Logon com usuário do sistema operacional. Contínua disponível apenas para quem estiver usando o recurso. Ao efetuar uma conversão é solicitado se deseja trocar de forma de acesso. A forma de logon sugerida é NTLM.
+                Visualização de relatórios com ActiveViewer na Web 5.0. Contínua disponível apenas para quem estiver usando o recurso. Ao efetuar uma conversão é solicitado se deseja trocar para PDF.
+                O uso do parâmetro BASE nas aplicações Web 5.0 deve ser substituído pela utilização de um “ambiente” para cada BASE, ou resolvido através da infra estrutura de rede e configuração dos servidores do cliente.
+            
+            Exemplo: 
+            
+            Parâmetro BASE nas aplicações Web 5.0
+            
+                Cenário antigo (mesma instalação):RUBI com BASE=producaoRUBI com BASE=desenvolvimentoHTMS’s e/ou CFG’s diferentes
+                Cenário novo (mesma instalação):RUBI com AMBIENTE=producaoRUBI com AMBIENTE=desenvolvimentoHTMS’s e/ou AMBIENTES diferentes
+                Os seguintes monitoramentos passarão a serem efetuados pela Central de Monitoramento Senior:
+                Aplicativos da Web 5.0 (anteriormente era pelo CASEView e pela ação monstatus;Aplicativos do Middleware anteriormente era pelo MDConfig;Usuários conectados ao banco de dados (anteriormente era pelo SGU com parâmetro -v
+            
+            Chaves
+            Abaixo são apresentadas as chaves antigas configuradas através do EditCFG e onde elas podem ser configuradas na Central de Configurações Senior.
+            Gerais
+            
+                
+                
+                
+                
+                
+                    Chave
+                    Caminho na Central de Configurações
+                
+                
+                    AjudaProcessos
+                    Sistemas > <sistema> > Configurações > Local padrão para arquivos de ajuda dos processos
+                
+                
+                    AjudaTelas
+                    Sistemas > <sistema> > Configurações > Local padrão para arquivos de ajuda
+                
+                
+                    ArqProprietaria
+                    Esta chave é oculta. Ao converter um aplicativo da arquitetura antiga para a nova o valor da chave é convertido. Em uma instalação nova, a proprietária é adicionada no diretório raiz da instalação.
+                
+                
+                    ArqTBS
+                    Banco de dados > <sistema> > Arquivo TBS
+                
+  

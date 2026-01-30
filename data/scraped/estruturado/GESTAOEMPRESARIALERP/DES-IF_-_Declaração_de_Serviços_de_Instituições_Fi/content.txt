@@ -1,0 +1,138 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#compliance/des-if.htm%3FTocPath%3DSegmentos%7CCompliance%7CDES-IF%2520-%2520Declara%25C3%25A7%25C3%25A3o%2520de%2520Servi%25C3%25A7os%2520de%2520Institui%25C3%25A7%25C3%25B5es%2520Financeiras%7C_____0
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > DES-IF - Declaração de Serviços de Instituições Financeiras
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            DES-IF - Declaração de Serviços de Instituições Financeiras
+            A Declaração Eletrônica de Serviços de Instituições Financeiras (DES-IF) é uma obrigação acessória
+constituída pelo registro de informações contábeis-fiscais necessárias à Administração Municipal para a
+apuração do ISS das Instituições Financeiras, que estejam autorizadas a funcionar pelo Banco Central
+(BACEN) e obrigadas a utilizar o Plano de Contas das Instituições do Sistema Financeiro Nacional (COSIF).
+            A DES-IF permite um tratamento uniforme das informações fiscais peculiares das Instituições Financeiras,
+através da padronização da Escrituração Fiscal, visando um efetivo controle gerencial da apuração do ISS
+destes estabelecimentos por parte do Município. Estão obrigadas à apresentação da DES-IF todas as Instituições Financeiras estabelecidas no Município
+obrigadas pelo Banco Central do Brasil à utilização do COSIF - Plano de Contas das Instituições Financeiras
+do Sistema Financeiro Nacional.
+            
+                 
+            
+            1. Parametrização
+            Parametrizações para geração da DES-IF. Algumas  podem não ser necessárias, dependendo do leiaute do município.
+            1.2. Desdobrar valores em contas mistas
+            Quando a empresa contabiliza lançamentos de naturezas tributárias distintas em uma mesma conta contábil, esses valores podem ser desdobrados em Contas Mistas. Isso é registrado através de contas auxiliares na Gestão de Contabilidade, permitindo detalhar os lançamentos e o saldo da conta contábil para cada conta mista, quando o município assim determinar.
+            
+                Acesse Cadastros > Controladoria > Tributos > Desdobramento das contas mistas  (F050DCM);
+                Inclua os desdobramentos das contas mistas nos campos Código da conta mista (CodDcm) e Descrição da conta mista (DesDcm). Os saldos dos lançamentos são controlados através de contas auxiliares. Assim, para cada conta mista cadastrada na tela F050DCM deve haver uma conta analítica no plano de contas auxiliar da empresa. A conta auxiliar serve para controlar os saldos contábeis e a conta mista é a que será exportada para a DES-IF (código de descrição);
+                Acesse Cadastros > Controladoria > Plano Contábil > Relacionamento de Conta Contábil X Conta Auxiliar (F045CXA) e faça o relacionamento entre as contas contábeis do plano de contas e as contas auxiliares com suas respectivas contas mistas.O desdobramento por conta mista é parametrizado por empresa, aplicando-se este controle de saldos para todas as filiais. Caso alguma filial entregue a DES-IF a uma prefeitura que não exija esse desdobramento, os saldos serão apresentados conforme a orientação de cada leiaute.
+            
+            1.3. Informar código de tributação da DES-IF
+            
+                Acesse Cadastros > Controladoria > Tributos > Códigos de Tributação da DES-IF (F050CTD);
+                Em Cidade ISS, informe o código RAIS do município para o qual serão aplicadas as configurações;
+                Insira a data inicial da vigência do código de tributação. Com base nessa data o registro pode ser referenciado na tela F660DAR. Se um código de tributação for alterado (por exemplo, a descrição ou alíquota de ISS) um novo registro de vigência inicial deve ser cadastrado com os novos parâmetros;
+                Em Percentual ISS informe Alíquota do ISS do Código de Tributação da DES-IF no município informado.
+            
+            
+                Importante
+                
+                A inclusão de registros na grade é permitida quando ela for condizente com os parâmetros de cidade e vigência informados. Para inserir registros em diferentes municípios e/ou vigências, preencha o campo Cidade com 0 (zero).
+            
+            1.4. Cadastrar tarifas bancárias
+            
+                Acesse Cadastros > Controladoria > Tributos > Tarifas bancárias (F050TAR);
+                Em  Exporta Descrição, se desejar, identifique através da opção "S", o registro como sendo Outro Serviço, e não tarifa bancária. Somente pode ser alterado quando o campo PreVar estiver preenchido;
+                Conforme determinação do município, informe o Código de Tributação da DES-IF. Quando informado, será sugerido o valor dos campos SerImp, CodFim e PerIss, conforme parametrizado na tela Códigos de Tributação da DES-IF (F050CTD), para o código de tributação e vigência;
+                Opcionalmente, informe Percentual ISS.
+            
+            1.5. Cadastrar dependência da instituição financeira
+            Acesse Cadastros > Filiais > Dependência da Instituição Financeira (F070CDE) e informe o Código da dependência, Inscrição municipal, CNPJ, Tipo dependência DESIF, Endereço completo da dependência e a paralisação comunicada ao BACEN.
+            Após o cadastro, ao exportar a DES-IF, as declarações que utilizam o  registro 0400 - Identificação da dependência serão geradas com estas dependências.
+            1.6. Criar ligação entre plano contábil da empresa, município e código de tributação
+            Faça o relacionamento entre o plano contábil da empresa, o código de tributação da DES-IF que será atribuído à conta e o código do evento para os leiaute que seguem o padrão ABRASF. A tabela de eventos é fornecida por cada município, portanto a ligação é feita para cada cidade. 
+            Acesse a documentação da tela Ligação Plano Empresa X Município X Código Tributação DES-IF (F043LPD) para mais informações sobre o preenchimento dos campos.
+            1.7. Criar relacionamento entre plano de contas da empresa e plano de contas COSIF
+            
+                Acesse Cadastros > Modelos de plano > Relacionamentos > Entre planos (F043RMP);
+                grave o relacionamento entre as contas do plano contábil da empresa com o plano de contas COSIF. Para isso, cadastre o modelo de plano COSIF na tela Cadastro de Modelos de Plano (F043MPC) com:Tipo Plano = "1 - Contábil";Modelo Referencial = "S - Sim";
+                Clique no botão Hierárquico e faça o cadastro de cada conta sintética ou analítica (F043HIE). Depois, informe no campo Classificação Paralela o código da conta do plano COSIF (composta por Grupo, Subgrupo, desdobramento do Subgrupo, Título e Subtítulo) e com a formatação do plano COSIF: X.X.X.XX.X-X.
+            
+            O relacionamento deve ser feito para todas as contas,  analíticas ou sintéticas, seguindo a mesma estrutura hierárquica do COSIF. Quando o nível da conta for maior que a conta  analítica do COSIF, repita o COSIF da superior.
+            1.8. Apurar ISS próprio de instituição financeira
+            As receitas de instituições financeiras não são geradas com base nos documentos fiscais, mas sim  nas tarifas e serviços cobrados dos clientes. Os valores das  tarifas bancárias e informações para apuração do ISS de instituições financeiras são tratadas em determinadas rotinas.
+            Clique aqui para mais informações sobre a apuração do ISS para instituições financeiras.
+            1.9. Cadastrar parâmetros de exportação por município
+            Defina o leiaute e parâmetros para exportação da DES-IF para cada município. Acesse a documentação da tela DESIF - Declaração Eletrônica das Instituições Financeiras (F008GDM) para mais informações sobre o preenchimento dos campos.
+            
+                 
+            
+            2. Lançamentos
+            2.1. Resumo das tarifas bancárias
+            Para a inclusão, alteração, exclusão e consulta dos resumos das movimentações de tarifas bancárias utilizadas na geração das  declarações abaixo, acesse a tela Resumo das tarifas bancárias (F660ATA) para mais informações sobre o preenchimento dos campos
+            2.2. Informações Mensais
+            Para  filiais cujo leiaute adotado pelo município solicite informações sobre a quantidade de correntistas, essa informações deve ser informada mensalmente através da tela Informações mensais (F660INF), nos campos Quantidade de Correntistas, Quantidade de Novos Correntistas e Quantidade de Saída de Correntistas.
+            2.3. Demonstrativo de apuração da receita tributável e ISSQN devido por substituto
+            Para a inclusão, alteração, exclusão e consulta dos demonstrativos da apuração da receita tributável e ISSQN devido por substituto utilizados na geração das  declarações, acesse a tela Demonstrativo apuração da receita tributável e ISSQN devido por substituto (F660DAR) para mais informações sobre o preenchimento dos campos.
+            
+                 
+            
+            3. Geração do arquivo DES-IF
+            Faça a exportação 

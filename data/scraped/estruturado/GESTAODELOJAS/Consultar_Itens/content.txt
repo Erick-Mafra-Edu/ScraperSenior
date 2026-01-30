@@ -1,0 +1,132 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/consultar-itens.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____10
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Consultar Itens
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Consultar Itens
+            A consulta de itens no PDV permite verificar preço, descrição e quantidade em estoque dos produtos consultados.
+            Para efetuar a consulta de um produto, utilize botão Consulta, disponível na tela inicial do PDV. 
+            Informe o produto para consulta. Para informar o produto, insira o nome parcial, código de cadastro e tecle Enter, ou utilize diretamente leitor de código de barras.
+            Se utilizar nome parcial, o sistema listará todos os itens com a mesma descrição, para que seja selecionado o item desejado. Nesse caso deve-se utilizar o botão Seleciona ou teclar Enter no item selecionado;
+            Exemplo:
+                
+                    
+                    
+                
+            
+            Será apresentado na tela informações da consulta.
+            Exemplo:
+                
+                    
+                        
+                    
+                
+            
+            
+                Nota
+                
+                Há a possibilidade de definir se a indicação da quantidade em ordem de compra, soma ou não na quantidade disponível para o depósito. Para isto, configure o parâmetro dinâmico PEDIDO.CONSULTAESTOQUETODOSDEPOSITOS.SOMARQTDORDEMDISPONIVEL através da tela F000PPD, do Gestão Empresarial | ERP. Se o parâmetro não estiver cadastrado ou não for localizado, a quantidade em ordem de compra deve somar como quantidade disponível.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,127 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#mobilidade/produtor-rural/parametrizacoes.htm%3FTocPath%3DMobilidade%7CProdutor%2520Rural%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Mobilidade > Produtor Rural > Aplicativo do Produtor Rural | Parametrizações
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Aplicativo do Produtor Rural | Parametrizações
+            O Aplicativo do Produtor Rural é uma plataforma que permite a interação do produtor rural com empresas de agronegócio, sejam elas cooperativas, cerealistas, indústrias, armazéns e revendas, fazendo com que esse processo de acesso as informações do produtor aconteça de forma fácil e rápida, disponibilizando aos produtores rurais acesso rápido e simplificado aos seus dados na empresa de agronegócio. As informações que são fornecidas aos produtores são obtidas através de API’s de integração com o sistema Gestão Empresarial | ERP utilizado nas empresas, podendo essa API ser consumida por outros sistemas, além do Gestão Empresarial | ERP da Senior. 
+            
+                
+            
+            Para integrar informações do Gestão Empresarial | ERP com o Portal do Produtor Rural, é feita a utilização da tecnologia API Rest. Assim, para que o aplicativo do Produtor Rural fique disponível para a empresa e permita aos produtores rurais acessarem suas informações, é necessário que algumas configurações sejam feitas:
+            
+                Atualização do ERP da Senior para a versão 5.10.2.20 ou superior; 
+                Criação do tenant da cooperativa, caso ainda não possua um tenant criado;
+                Configuração da integração via API REST;No ERP da Senior: Na Central de Configurações Senior, parametrizar tenant, access key e secret key; Na tela Sistemas Integrados (F000SIS), cadastrar o tipo de sistema 11 – Agronegócio Senior. O campo Sigla é obrigatório, podendo ser informada qualquer uma;Na tela de Configuração de Tipos de Informação (F000SXT), habilitar para todas as filiais os tipos de informações para a integração;Tipos de informação a serem habilitadas: Clientes, fornecedores,  inclusão baixa e exclusão de contas a pagar e contas a receber, movimentação cota capital e cotação de moedas. Na tela Parâmetros das Filiais para Integrações (F070VAR) incluir um registro para a filial e o código do sistema de integração (código gerado no item dois); Para a configuração do aplicativo não há necessidade de informar todos os campos dessa tela, apenas os obrigatórios. Gerar cargas iniciais para todas as filiais; Cadastrar os processos agendados 151 - Integração ERP x Agronegócio Senior - Envio  e 152 - Integração ERP x Agronegócio Senior - Confirmação na tela de Cadastro de Processo Automático (F000AGE).
+                Criação do papel de produtor na XPlatform;
+                Configuração do servidor SMTP para disparo das notificações (via e-mail);
+                A integração dos registros podem ser acompanhadas através das telas Painel de Exportações (F000PEX) e Log de Integrações (F115PRL).
+            
+            
+                Observação 
+                
+                Para clientes Cloud, deve ser aberto um chamado para o IT Services. 
+            
+            Confira o passo a passo das configurações: 
+            Atualização do ERP
+                
+                    O primeiro passo para que o aplicativo do Produtor Rural seja implantado nas empresas de agronegócio e permitir o uso dos produtores, é utilizar a versão 5.10.2.20 ou superior do Gestão Empresarial | ERP. Essa versão conta com as rotinas de integração entre o Gestão Empresarial | ERP e o aplicativo, ou seja, sem a atualização o ERP não conseguirá se conectar ao aplicativo e disponibilizar as informações. 
+                
+            
+            Criação do tenant 
+                
+                    Para que a empresa integre seu dados no Gestão Empresarial | ERP com o aplicativo do Produtor Rural, é necessário que um tenant dentro da XPlatform seja criado, essa é uma etapa fundamental para que o aplicativo funcione. A criação pode ser feita através da Sara, basta escolher a opção Tenant. Caso a empresa já possua um tenant criado na XPlatform, essa etapa pode ser pulada.
+                
+            
+            Configuração da integração via API Rest 
+                
+                    Para que os dados exibidos ao produtor sejam importados para o aplicativo, existe uma API que pode ser consumida para o envio desses dados. Para integrar os dados do Gestão Empresarial | ERP da Senior ao aplicativo, é necessário realizar as configurações abaixo.
+                    
+                        Na XPlatform: Realize login na XPlatform com a conta de administrador e no menu, acesse: Tecnologia > Administração > Gerenciamento de Aplicações; Na tela que será aberta serão exibidas as aplicações já cadastradas na plataforma, é necessário cadastrar uma nova aplicação para que o Gestão Empresarial | ERP faça autenticação na plataforma. Para isso, basta clicar em Nova aplicação.A tela para cadastro de Aplicações conta com os campos obrigatórios: O cadastro de uma aplicação é indispensável para a utilização do aplicativo, pode-se utilizar qualquer aplicação ou cadastrar o padrão do ERP XT. Nome;Descrição;Geração de tokens (Gerar um token diferente para cada tipo de operação). No campo Geração de tokens, é necessário a opção "Gerar um novo token diferente para cada sessão da aplicação” seja selecionada;Após selecionar e clicar em Salvar, os campos Chave de acesso e Secret são apresentados;Os novos campos apresentados possuem valores que devem ser preenchidos  respectivamente na Central de Configurações Senior, nas opções Access Key e Secret Key;O tenant da empresa de agronegócio pode ser obtido na XPlatform em: Tecnologia > Administração> Gestão dos Tenants > Configurar;Após cadastrar a aplicação e informar os dados de acesso na Central de Configurações Senior, é necessário habilitar a aplicação. Para isso, acesse: Tecnologia > Administração > Autorização > Gestão de papéis; Por padrão, o papel de administrador já estará atribuído a sua conta de administrador, porém ainda é necessário ativar a aplicação previamente cadastrada dentro do papel de administrador. Para isso, acesse a tela Gestão do papel no menu: XPlatform > Tecnologia > Administração > Autorização > Gestão dos Papéis;Em seguida, basta associar a aplicação na conta de administrador; Realizada  essas configurações será possível ativar a integração das informações utilizando a API de integração.No ERP da Senior:  Acesse a Central de Configurações da Senior;Em Sistemas > Gestão Empresarial | ERP > Configuração ERP XT preencha os campos: Nome do Tenant da plataforma: Obtido na plataforma;Access Key da plataforma: Obtido na plataforma;Secret Key da plataforma: Obtido na plataforma;URL da plataforma;As informações listadas acima podem ser encontradas acessando a conta de administrador da XPlatform, disponibilizada para a empresa de agronegócio.
+                    
+                
+            
+            Integração ERP com a XPlatform
+                
+                    Arquitetura da integração Gestão Empresarial | ERP
+                    
+                    
+                    Arquitetura da integração XPlatform
+                    
+                    
+                    Diagrama de sequência da integração:
+                    Envio:
+                    
+                    
+                    Confirmação:
+                    
+                    
+                    Registros: 
+                    No ERP, a tabela E000CIX armazena todas as pendências de integração, como clientes, fornecedores e outros. A tabela E115PRP é um agrupamento de protocolo de envio separada por tabela e a sua tabela filha E115PRI terá o vinculo com os registro de integração da E000CIX.
+                    Os registros da tabela E000CIX apresentam os status dos registros por tipo, conforme abaixo, visto que o número de lote não é utilizado nessa integração. 
+                    
+                        P - Pendente: status é apresentado quando a pendência foi gerada;
+                        C - Pendente de Confirmação: status apresentado quando a pendência foi encaminhada para a XPlatform e está aguardando confirmação; 
+                        S - Integrado: status apresentado quando o retorno do processo 152 - Integração ERP x Agronegócio Senior - Confirmação é realizado com sucesso. Em caso de retorno com erro, o processo volta como pendente. 
+                    
+                    
+                        Importante 
+                        
+                        Os títulos só são enviados para a XPlatform apenas quando o fornecedor/cliente está integrado a plataforma e já possui usuário produtor vinculado.
+                        Por meio do processo agendado 151, o sistema envia todas as pendências para 

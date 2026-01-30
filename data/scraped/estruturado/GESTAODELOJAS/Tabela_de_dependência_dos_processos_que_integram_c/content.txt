@@ -1,0 +1,281 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#integracao/tabela-dependencia-processos-integracao.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Integrações > Tabela de dependência dos processos que integram com o Gestão de Lojas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Tabela de dependência dos processos que integram com o Gestão de Lojas
+            Esta tabela permite que o usuário entenda os relacionamentos entre os diversos tipos de integração que os Integradores do sistema Gestão de Lojas administram. Desta forma, é possível identificar o motivo pelo qual um eventual registro não foi processado por um Integrador, ou seja, que está com status de "Enfileirado", neste caso.
+            Exemplo onde a consulta de informações desta tabela será necessária:
+                
+                    
+                        Foi verificado que uma Nota Fiscal de Entrada gerada no ERP não está integrada no sistema Retaguarda, no entanto, ela já foi finalizada no ERP e exportada ao Gestão de Lojas.
+                        O Fornecedor da NF de entrada foi recém cadastrado no ERP.
+                        Identificado, que no IntegradorMonitorWS existe uma pendência de integração do tipo "CEP_ERP" na fila da Filial que deverá integrar a NF de entrada.
+                        Neste caso, através da análise das dependências entre as integrações, é possível identificar que o registro de integração do tipo "99 - NOTA_FISCAL_ENTRADA_ERP" depende da integração do tipo "52 - FORNECEDOR_ERP", que por sua vez depende da integração do tipo "90 - CEP_ERP". Desta forma, é necessário resolver a pendência de integração do tipo "CEP_ERP" para que o Integrador passe a processar os registros do tipo "FORNECEDOR_ERP", e em seguida sejam processados os registros do tipo "NOTA_FISCAL_ENTRADA_ERP".
+                    
+                
+            
+            
+                
+                
+                
+                
+                    
+                        Código da Integração
+                        Descrição da Integração
+                        Dependências da Integração
+                    
+                    
+                        1
+                        PARAMETROS_FILIAL_ERP
+                        10 - CLIENTE_ERP14 - DEPOSITO_ERP78 - TIPO_TITULO_ERP90 - CEP_ERP93 - PAIS_ERP94 - ESTADO_ERP96 - MOTIVO_ERP100 - CONTA_INTERNA_ERP160 - SERIE_ERP
+                    
+                    
+                        2
+                        UNIDADEMEDIDA_ERP
+                        ''
+                    
+                    
+                        3
+                        FORMA_PAGAMENTO_ERP
+                        4 - CONDICAO_PAGAMENTO_ERP13 - OPERADORA_CARTAO_ERP69 - TIPO_COBRANCA_ERP77 - PORTADOR_ERP78 - TIPO_TITULO_ERP138 - INSTITUICAO_FINANCEIRA_ERP
+                    
+                    
+                        4
+                        CONDICAO_PAGAMENTO_ERP
+                        ''
+                    
+                    
+                        5
+                        PRODUTO_ERP
+                        
+                            1 - PARAMETROS_FILIAL_ERP2 - UNIDADEMEDIDA_ERP14 - DEPOSITO_ERP52 - FORNECEDOR_ERP54 - SEGURADORA_ERP66 - FABRICANTE_ERP89 - AGRUPAMENTO_ERP92 - CLASSIFICACAO_FISCAL_ERP126 - GRUPO_FISCAL_PRODUTO_ERP221 - COLECAO_ERP
+                        
+                    
+                    
+                        8
+                        SERVICO_ERP
+                        1 - PARAMETROS_FILIAL_ERP2 - UNIDADEMEDIDA_ERP14 - DEPOSITO_ERP52 - FORNECEDOR_ERP54 - SEGURADORA_ERP66 - FABRICANTE_ERP89 - AGRUPAMENTO_ERP92 - CLASSIFICACAO_FISCAL_ERP127 - GRUPO_FISCAL_SERVICO_ERP
+                    
+                    
+                        9
+                        TABELA_PRECO_ERP
+                        3 - FORMA_PAGAMENTO_ERP5 - PRODUTO_ERP8 - SERVICO_ERP
+                    
+                    
+                        10
+                        CLIENTE_ERP
+                        
+                            11 - REPRESENTANTE_ERP19 - CONVENIO_ERP90 - CEP_ERP93 - PAIS_ERP94 - ESTADO_ERP96 - MOTIVO_ERP133 - CATEGORIA_CREDITO_ERP
+                        
+                    
+                    
+                        11
+                        REPRESENTANTE_ERP
+                        75 - PERFIL_USUARIO_ERP
+                    
+                    
+                        13
+                        OPERADORA_CARTAO_ERP
+                        10 - CLIENTE_ERP
+                    
+                    
+                        14
+                        DEPOSITO_ERP
+                        ''
+                    
+                    
+                        18
+                        PEDIDO_ERP
+                        ''
+                    
+                    
+                        19
+                        CONVENIO_ERP
+                        "
+                    
+                    
+                        23
+                        IMPOSTO_DETALHADO_PRODUTO_ERP
+                        ''
+                    
+                    
+                        24
+                        IMPOSTO_DETALHADO_SERVICO_ERP
+                        "
+                    
+                    
+                        51
+                        OPERADORA_TELEFONIA_ERP
+                        10 - CLIENTE_ERP52 - FORNECEDOR_ERP
+                    
+                    
+                        52
+                        FORNECEDOR_ERP
+                        90 - CEP_ERP93 - PAIS_ERP94 - ESTADO_ERP96 - MOTIVO_ERP
+
+                    
+                    
+                        53
+                        TRANSPORTADORA_ERP
+                        90 - 
+                    
+                    
+                        54
+                        SEGURADORA_ERP
+                        90 - CEP_ERP93 -  PAIS_ERP94 - ESTADO_ERP96 - MOTIVO_ERP
+                    
+                    
+                        55
+                        DEFINICAO_META_ERP
+                        ''
+                    
+                    
+                        58
+                        MONTAGEM_ERP
+                        5 - PRODUTO_ERP8 - SERVICO_ERP10 - CLIENTE_ERP70 - TABELA_PRECO_FRETE_ERP96 - MOTIVO_ERP
+                    
+                    
+                        60
+                        ANALISE_CREDITO_RETAGUARDA
+                        ''
+                    
+                    
+                        61
+                        MOTORISTA_ERP
+                        53 - TRANSPORTADORA_ERP
+                    
+                    
+                        62
+                        PEDIDO_ANALISE_CREDITO_AUTENTICACOES_ERP
+                        ''
+                    
+                    
+                        64
+                        ORDEM_COMPRA_RETAGUARDA
+                        ''
+                    
+                    
+                        65
+                        MOVIMENTO_ESTOQUE_ERP
+                        5 - PRODUTO_ERP14 - DEPOSITO_ERP
+                    
+                    
+                        66
+                        FABRICANTE_ERP
+                        90 - CEP_ERP93 -  PAIS_ERP94 - ESTADO_ERP96 - MOTIVO_ERP
+                    
+                    
+                        68
+                        FERIADO_ERP
+                        90 - CEP_ERP
+                    
+                    
+                        69
+                        TIPO_COBRANCA_ERP
+                        ''
+                    
+                    
+                        70
+                        TABELA_PRECO_FRETE_ERP
+                        
+                            3 - FORMA_PAGAMENTO_ERP
+                            8 - SERVICO_ERP
+                        
+                    
+                    
+                        73
+                        BANCO_ERP
+                        ''
+                    
+                    
+                        74
+                        FRETE_ERP
+                        ''
+                    
+                    
+                        75
+                        PERFIL_USUARIO_ERP
+                        ''
+                    
+                    
+                        77
+                        PORTADOR_ERP
+                        ''
+                    
+                    
+                        78
+                        TIPO_TITULO_ERP
+                        ''
+                    
+                    
+                        79
+                        BAIXA_TITULO_PAGAR_ERP
+                        176 - TITULO_PAGAR_ERP
+                    
+                    
+                        84
+                        CONSULTA_TITULO_PAGAR_ERP
+                        ''
+                    
+                    
+                        85
+                        CONSULTA_TITULO_RECEBER_ERP
+                        ''
+                    
+                    
+                        88
+                        FAMILIA_ERP
+                        ''
+                    
+                    
+                        89
+                        AGRUPAMENTO_ERP
+                        ''
+                    
+                    
+                        90
+                        CEP_ERP
+                        93 -  PAIS_ERP94 - ESTADO_ERP
+                    
+                    
+                        91
+                        CFOP_ERP
+                        94 - ESTADO_ERP
+                    
+                    
+                        92
+                        CLASSIFICACAO_FISCAL_ERP
+                        ''
+                    
+                    
+                        93
+                        PAIS_ERP
+                        ''
+            

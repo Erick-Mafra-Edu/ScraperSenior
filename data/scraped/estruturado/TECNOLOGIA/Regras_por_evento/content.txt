@@ -1,0 +1,191 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/importacao-exportacao/regras-por-evento.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7C_____6
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Regras por evento
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Regras por evento
+                A tela Regras por evento, pode ser acessada pela opção Regras por evento, clicando com o botão direito nas telas geradas. As regras associadas a um evento serão executadas sempre que o evento em questão for efetuado na tela em que essas regras foram associadas, ou seja, cada tela pode ter suas próprias regras para cada evento. Além disso, são executadas somente em eventos do DataSet principal.
+                As regras associadas poderão utilizar valores de tabelas existente na tela para consulta, desde que a tela esteja ativa no momento em que a regra será executada.
+                Estas regras não estão disponíveis para versão web do sistema Gestão de Pessoas | HCM, nas duas versões.
+                Importante
+                    As regras por evento não devem executar comandos SQL que afetam a tabela da tela.
+                
+                Exemplo
+                    
+                        
+                            @  Regra que consulta a tabela R034FUN @
+                                
+                                							Definir alfa NomFum;
+														NomFum = R034FUN.NOMFUN;
+														Mensagem(Retorna, NomFum);
+						
+                        
+                    
+                
+                Variáveis:
+                Para que seja possível identificar em que guias o usuário está ao executar 
+ uma regra por processo, são disponibilizadas cinco variáveis de sistema:
+                Evento
+                    Deve-se selecionar a opção para seleção do tipo de evento que executará a regra.
+                
+                    Antes de Inserir;
+                    Após Inserir;
+                    Antes de Alterar;
+                    Após Alterar;
+                    Antes de Deletar;
+                    Após Deletar;
+                    Ao abrir a tela;
+                    Ao sair da tela (este evento precisa de um tratamento especial quanto aos erros);
+					Erros tratados: É uma situação tratada pela regra que emite uma mensagem ao usuário. Neste caso a execução do evento (Alterar, Inserir, etc..) será cancelada. Por exemplo: Mensagem(Erro, "Texto da mensagem");Erros não tratados: É uma situação não prevista pela regra. Neste caso, o erro não tratado será exibido ao usuário e a execução do evento (Alterar, Inserir, etc..) não será cancelada.
+                
+                Importante
+                    Todos os tipos de eventos mencionados anteriormente referem-se às ações realizadas na tela Regras por evento, sem envolvimento direto com o banco de dados.
+                
+                NumRegraEvento
+                    Variável responsável por armazenar o número da regra que é utilizada no evento.
+                Formulário
+                     Contém o nome do formulário, por exemplo "FR030EMP".
+                AbaAtiva
+                     Contém o número da guia ativa, começando em 0.
+                DescAbaAtiva
+                    Contém a descrição da guia ativa no momento. Através dessa variável pode-se identificar de qual guia da tela a regra foi chamada e, então, realizar a devida consistência somente para a guia desejada.
+                Regras
+                    Deve-se selecionar a regra criada que será executada no evento escolhido no campo Evento.
+                Nota
+                    Como boa prática, o ideal é que dentro da regra seja incluída uma mensagem ao usuário para que fique claro se a execução do evento foi cancelada ou não, apenas pela definição de erro tratado ou não o usuário não conseguirá identificar o comportamento da regra.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,245 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#geral/procedimento_melhoria_performance.htm%3FTocPath%3DParametriza%25C3%25A7%25C3%25B5es%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Parametrizações > Melhoria de performance
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Procedimento para a melhoria de performance
+            
+                Para conferir as configurações que permitem controlar o número de requisições enviadas ao middleware acesse a página Gestão de Processos Assíncronos.
+            
+            
+            
+            Este manual tem por objetivo auxiliar na melhoria da performance das telas, 
+relatórios e do sistema em geral. Com as instruções a seguir, qualquer usuário 
+que tenha conhecimento em "Banco de Dados" poderá proceder com a melhoria de 
+performance do Gestão Empresarial | ERP
+              Atualizar Estatísticas
+            As 
+estatísticas de banco de dados fornecem informações para a ferramenta de 
+otimização do próprio banco de dados (otimizador), 
+orientando a escolha do plano de execução de uma 
+query, assim otimizando a 
+performance do banco de dados.
+            
+                1.1 -    Oracle
+                EXECUTE SYS.DBMS_UTILITY.ANALYZE_SCHEMA('<usuario>','COMPUTE');
+                1.2 -    MSSQL Server
+                sp_updatestats
+            
+            
+                 Regra de Ordenação Customizada
+                
+            
+            O objetivo principal da regra de ordenação customizada não é a melhoria na 
+performance, mas sim a possibilidade de personalização da ordenação dos dados 
+retornados pelo banco. Entretanto, no caso do banco MSSQL Server a 
+aplicação da regra de ordenação customizada causa uma melhora significativa na 
+performance para uso do ERP.
+            
+                2.1 -
+ Identificar Ordenação do Banco de Dados
+                Para identificar a ordenação de caracteres alfanuméricos utilizados pelo banco 
+de dados é necessário executar um dos comandos abaixo.
+            
+            
+                
+                    2.1.1 -    MSSQL Server
+                    select databasepropertyex('<nome_do_database>', 'collation')
+                
+            
+            
+                2.2 -
+ Aplicação da Regra de Ordenação Customizada
+                As regras homoativas pela Senior estão disponíveis no caminho "Bancos de 
+Dados \ Regra para Ordenação de Dados Alfanuméricos \ Regras Homoativas". Caso 
+o retorno obtido através do item 2.1 não esteja de acordo com nenhuma das regras 
+homoativas, entre em contato com o Suporte ERP. Para a aplicação da regra, 
+siga os passos abaixo:
+                
+                    copie a regra citada no caminho acima, respeitando o 
+collation retornado no 
+item 2.1;
+                    acessar o CBDS, conectar-se a base de dados;
+                    acessar o menu "Ferramentas\Recursos de Banco\Regra" para ordenação customizada;
+                    marcar "Usa 
+collation";
+                     colar a regra;
+                    validar;
+                    quando retornar "OK", Salvar;
+                    sair do CBDS.
+                
+            
+            
+                 Recriação dos Objetos do Banco
+                
+            
+            O procedimento de recriação dos objetos do banco pode ser feito somente 
+enquanto ninguém está utilizando o Gestão Empresarial | ERP.
+            
+                conecte-se ao CBDS na base;
+                vá em Ferramentas/Alterar Tabelas;
+                selecione todas as tabelas e faça:
+            
+            
+                
+                    apagar índices - executar no banco;
+                    apagar triggers - executar no banco;
+                    apagar relacionamentos - executar no banco;
+                    apagar chaves primárias - executar no banco;
+                
+            
+            Observação
+                DEVE ser feito um passo de cada vez, OBRIGATORIAMENTE.
+            
+            
+                após apagar, você deve fazer o seguinte:
+                criar chaves - executar no banco;
+                criar relacionamentos - executar no banco;
+                criar trigger - executar no banco;
+                criar índices - executar no banco;
+            
+            Observação
+                 DEVE ser feito um passo de cada vez, OBRIGATORIAMENTE.
+            
+            
+                Performance de Telas
+                
+            
+            É permitido que sejam feitas diferentes configurações de performance para 
+cada tela do ERP, pois, deve ser considerado que cada tela tem um 
+comportamento diferente. Para acesso a configuração de performance de telas, 
+basta clicar com o botão direito do mouse sobre qualquer parte da mesma, 
+selecionando após a opção "Configurações de Performance da Tela". A documentação 
+abaixo está presente em "FerramentasApoio.chm".
+            
+                
+                Funcionamento do 
+cachêO 
+cachê no sistema funciona gravando os registros contidos na base em memória. 
+Conforme o usuário visualiza os registros, os mesmos vão sendo arquivados no 
+cachê. Com o 
+cachê ativado, as alterações efetuadas por um usuário não serão 
+visualizadas por outro até que os registros sejam atualizados. Existem alguns 
+lugares no sistema onde é feito o descarte do 
+cachê - exemplo: quando é efetuada uma 
+pesquisa utilizando a tela de Pesquisa, quando é fechada a tela, etc... O 
+cachê 
+causa maior consumo de memória, mas compensado pelo aumento de performance. Se 
+um registro é "Incluído/Alterado/Excluído" por um usuário, as alterações não serão 
+apresentadas para os outros usuários até que os mesmos atualizem os valores 
+(isto somente acontecerá se estes mesmos registros estiverem no 
+cachê da outra 
+estação). O 
+cachê não causa problema de integridade, pois todo o Gestão Empresarial trabalha com sistema de comparações de registros via Banco de Dados que assegura 
+a integridade das informações, fazendo com que um usuário não sobrescreva a 
+alteração de outro.O sistema sempre funciona com 
+cachê, o que o usuário pode configurar são os 
+momentos nos quais ele deseja ou não descartar o 
+cachê. Se o sistema for configurado 
+para atualizar dados em vários lugares, o 
+cachê praticamente não será utilizado.
+            
+                4.1 -   Página Tela
+                Opções que indicam em qual registro a tela deverá estar posicionada ao ser 
+aberta.
+            
+            
+                
+                    4.1.1 -   SQL Server
+                    Abrir: indica qual registro será buscado ao abrir uma tela. Em branco: a tela será mostrada vazia para que o usuário informe em qual 
+registro deverá ser posicionada. Esta opção torna a entrada da tela mais rápida, 
+pois não será carregado nenhum registro. 
+                    
+                        Posicionada no primeiro registro: a tela será mostrada posicionada no primeiro 
+registro. Esta opção torna a entrada da tela mais lenta que a anterior, 
+pois carrega o primeiro registro da tabela. 
+                    
+                        Posicionada no último registro: a tela será mostrada posicionada no último 
+registro. Esta opção torna a entrada da tela mais lenta que a primeira opção, 
+pois carrega o último registro da tabela. 
+                    
+                        Fechar cursores quando ocioso: esta opção consiste em fechar os cursores dos 
+datasets da tela quando o sistema está ocioso, ou seja, quando o usuário não 
+está operando o sistema. Quando esta opção está ativada, ao fechar os cursores 
+abertos na tela em questão, o sistema irá liberar a memória e os recursos do 
+banco de dados alocados para aos cursores. Padrão: quando esta opção estiver selecionada, se o banco é MSSQL Server e o 
+tipo de acesso é 
+DBExpress, o sistema irá fechar os cursores, senão o sistema 
+não irá fechá-los. Não: não fechar os cursores. Sim: fechar os cursores quando o sistema fica ocioso. Fechar cursores ao excluir registro: opção disponível apenas quando estiver 
+utilizando MSSQL Server 7.x ou 2000. De acordo com o valor configurado nesta 
+opção, os cursores dos 
+datasets da tela serão fechados, ou não, quando o usuário 
+excluir um registro. Como o MSSQL Server 7.x e 2000 têm limitação de quantidade 
+de requisições pendentes, esta opção visa diminuir a quantidade de requisições 
+com o banco. Tabelas: o valor definido no campo 
+RowSet size será utilizado por todos os 
+DataSets que estiverem na tela. 
+                
+            
+            
+                
+                    4.1.2 -   Oracle
+                    Abrir: indica que registro será buscado ao abrir uma tela. Em branco: a tela será mostrada vazia para que o usuário informe em qual 
+registro deverá ser posicionada. Esta opção torna a entrada da tela mais rápida, 
+pois não será carregado nenhum registro. 
+                    Posicionada no primeiro registro: a tela será mostrada posicionada no primeiro 
+registro. Esta opção torna a entrada da tela ma

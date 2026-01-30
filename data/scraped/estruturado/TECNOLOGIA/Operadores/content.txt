@@ -1,0 +1,270 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/operadores.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____8
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > Operadores
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Operadores da Linguagem SQL Senior 2
+            Lógicos
+            
+                
+                
+                
+                
+                
+                
+                    Sintaxe
+                
+                    Nome
+                
+                    Exemplo
+                
+                    Explicação
+                
+                    Restrições
+                
+                
+                
+                    or
+                    Ou lógico
+                    exp or exp
+                    Efetua um ou lógico entre os dois operandos. Caso um dos operandos seja TRUE, retorna TRUE, ou caso um dos operandos seja NULL, retorna NULL, senão retorna FALSE.
+                    Os operandos devem conter expressões relacionais.
+                
+                
+                    and
+                    E lógico
+                    exp and exp
+                    Efetua um e lógico entre os dois operandos. Caso todos os operandos sejam TRUE, retorna TRUE, ou caso todos os operandos sejam FALSE, retorna FALSE, senão retorna NULL.
+                
+                
+                    not
+                    Não lógico
+                    not exp
+                    Efetua um não lógico no operando. Caso o operando seja TRUE, retorna FALSE, caso o operando seja FALSE, retorna TRUE, ou caso o operando seja NULL, retorna NULL.
+                
+            
+            Relacionais
+            
+                
+                
+                
+                
+                
+                
+                    Sintaxe
+                
+                    Nome
+                
+                    Exemplo
+                
+                    Explicação
+                
+                    Restrições
+                
+                
+                
+                    =
+                    Igual a
+                    exp = exp
+                    Retorna TRUE se os operandos são iguais, senão retorna FALSE.
+                    
+                    Os operandos não podem conter expressões lógicas ou relacionais. Por exemplo, a expressão (a > b) = a, é inválida, pois um dos operandos do operador = é uma expressão relacional.                 Os dois operandos precisam ter o mesmo tipo, exceto se um deles for NULL. Por exemplo, a expressão 'a'=1, é inválida, mas a expressão 1=NULL, é válida.			Veja também: O Valor NULL.
+                
+                
+                
+                    <>
+                    Diferente de
+                    exp <> expexp != expexp ^= exp
+                    Retorna TRUE se os operandos são diferentes, senão retorna FALSE.
+                
+                
+                    >
+                    Maior que
+                    exp > exp
+                    Retorna TRUE se o operando da esquerda for maior do que o operando da direita, senão retorna FALSE.
+                
+                
+                    <
+                    Menor que
+                    exp < exp
+                    Retorna TRUE se o operando da esquerda for menor do que o operando da direita, senão retorna FALSE.
+                
+                
+                    >=
+                    Maior ou igual a
+                    exp >= exp
+                    Retorna TRUE se o operando da esquerda for maior ou igual o operando da direita, senão retorna FALSE.
+                
+                
+                    <=
+                    Menor ou igual a
+                    exp <= exp
+                    Retorna TRUE se o operando da esquerda for menor ou igual o operando da direita, senão retorna FALSE.
+                
+                
+                    in
+                    Pertence a
+                    exp in exp
+                    Retorna TRUE se o operando da esquerda pertencer ao operando da direita, senão retorna FALSE.
+                    
+					O operando da esquerda deve ser do tipo numérico, data, texto, ou NULL.		O operando da direita precisa ser uma expressão do tipo conjunto, ou uma subquery que retorna apenas uma coluna. Pode retornar NULL em alguns casos.			Veja também: O Valor NULL.
+				
+                
+                
+                    not in
+                    Não pertence a
+                    exp not in exp
+                    Retorna TRUE se o operando da esquerda não pertencer ao operando da direita, senão retorna FALSE.
+                
+                
+                    like
+                    Compatível com
+                    exp like exp
+                    Retorna TRUE se o operando da esquerda for compatível com o operando da direita, senão retorna FALSE.
+                    
+                        O operando da esquerda deve ser do tipo texto ou NULL.
+                        O operando da direita precisa ser uma constante do tipo texto.
+                    
+                
+                
+                    not like
+                    Não compatível com
+                    exp not like exp
+                    Retorna TRUE se o operando da esquerda não for compatível com o operando da direita, senão retorna FALSE.
+                
+                
+                    between/and
+                    Dentro da faixa
+                    exp between exp and exp
+                    Retorna TRUE se o primeiro operando estiver entre o segundo e o terceiro operandos, inclusive, senão retorna FALSE.Se qualquer um dos operandos for NULL, retorna UNKNOWN.
+                    Todos os operandos devem ser do mesmo tipo, ou NULL.
+                
+                
+                    not between/and
+                    Fora da faixa
+                    exp not between exp and exp
+                    Retorna TRUE se o primeiro operando não estiver entre o segundo e o terceiro operandos, inclusive, senão retorna FALSE. Se qualquer um dos operandos for NULL, retorna UNKNOWN.
+                
+                
+                    is null
+                    É nulo
+                    exp is null
+                    Retorna TRUE se o operando for NULL, senão retorna FALSE.
+                     
+                
+                
+                    is not null
+                    Não é nulo
+                    exp is not null
+                    Retorna TRUE se o operando não for NULL, senão retorna FALSE.
+                
+                
+                    exists
+                    Existe
+                    exists exp
+                    Retorna TRUE se o operando (que é uma subquery) retornar ao menos uma linha, independente do valor que esta linha possua,  senão retorna FALSE.
+                    O operando precisa ser uma subquery.
+                
+                
+                    not exists
+                    Não existe
+                    not exists exp
+                    Retorna TRUE se o operando (que é uma subquery) não retornar ao menos uma linha, independente do valor que esta linha possua, senão retorna FALSE.
+                
+                
+                    any
+                    Qualquer
+                    exp any exp
+                    Comparação com qualquer elemento do conjunto.
+                     
+                
+                
+                    all
+                    Todos
+                    exp all exp
+                    Comparação com todos os elementos do conjunto.
+                
+            
+            Aritméticos Binários
+            
+                
+                
+                
+                
+                
+                
+                    Sintaxe
+                
+                    Nome
+                
+                    Exemplo
+                
+                    Explicação
+                
+                    Restrições
+                
+                
+                
+                    +
+                    Soma
+                    exp + exp
+                    
+					Retorna a soma dos dois operandos, caso os dois operandos sejam numéricos, retorna a soma aritmética dos dois operandos. Se um dos operandos for NULL, o resultado da soma será NULL.			
+					Caso os dois operandos sejam texto, retorna um texto concatenado, com o conteúdo do operando da esquerda com o da direita. Se um dos operandos for NULL, ele será convertido para uma string vazia.		Se um dos operandos for uma data, o outro operando deve ser um número. Este número será convertido para um intervalo de tempo cuja unidade é a precisão da data. Este intervalo será somado à data, e o resultado da expressão será uma data com a mesma precisão do operando data.Por exemplo:					      day(1977, 12, 3) + 20 = day(1977, 12, 23)					      day(1980, 5, 20) + 85 = day(1980, 8, 13)					      month(1985, 10) + 2 = month(1986, 1)
+                    
+                         
+                        Qualquer combinação de operandos que não esteja na explicação dos operadores ao lado, resultará em erro de compilação.
+   

@@ -1,0 +1,158 @@
+# 
+
+URL: https://documentacao.senior.com.br/bi/5.8.12/#resolucao-de-problemas.htm%3FTocPath%3DBI%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____6
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBI - versão 5.8.12
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BI - Manual do Usuário > Resolução de problemas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Resolução de Problemas
+             
+            Cadastro de processos automáticos com usuários distintos
+                
+                    Atualmente no ETL, ao cadastrar processos automáticos e definir usuários distintos para cada um, o processo sucessor utiliza o mesmo usuário que foi definido para o seu antecessor.
+                    Nesse caso, deve-se utilizar um mesmo usuário administrador para todos os processos automáticos cadastrados. Assim não há impacto nos processos agendados de cargas, além de evitar outros possíveis problemas com a utilização de usuários diferentes para cada processo.
+                
+            
+            Erro ao executar extração de dados: ORA-00942: table or view does not exist
+                
+                    Este situação pode ocorrer quando:
+                    
+                        Causa: a base ETL selecionada no ODBC está incorreta e a base selecionada não possui as tabelas do ETL;
+                        Solução: ajustar a conexão ODBC do Windows para que aponte para a base correta.
+                    
+                    
+                        Causa: após atualização da versão 5.8.8 (ou anteriores) para 5.8.9, no momento da consistência da base não foi habilitada a caixa de seleção Apagar tabelas antigas ou não pertencentes ao sistema;
+                        Solução: executar uma consistência de base habilitando esta opção.
+                    
+                
+            
+            Erro na inicialização do Developer
+                
+                    Ao instalar a MicroStrategy 10.3.0, disponível a partir da versão 5.8.8.11 do BI, o sistema exibia o erro "Failed to load control msiObjectExplorer" ao inicializar o Developer. Para resolver o problema, é preciso instalar o componente Triedit, cujo executável está com a mídia do BI no arquivo compactado MicroStrategy_10.3.0-HF1.7z (Performance Corporativa > etl). Ao descompactar este arquivo, execute o instalador DhtmlEd.msi, que se encontra em MicroStrategy_10.3.0\Installations\Utilities\3rdParty\Triedit.
+                
+            
+            Erro na publicação dos cubos
+                
+                    Esta situação ocorre quando a publicação do cubo levou mais tempo do que está atualmente definido para timeout. Para solucionar, no Developer, altere o valor de Relatórios interativos para no mínimo "3600". Para mais informações, acesse o tópico Configurações do BI - Developer.
+                
+            
+            Mensagens de erro relacionadas ao cache da MicroStrategy
+                
+                    Esta é uma relação de possíveis causas e soluções para erros apresentados durante a limpeza ou geração de cache da MicroStrategy. 
+                    Erros de conexão entre o ETL e a MicroStrategy:
+                    
+                    
+                        Nome do servidor incorretoCausa: o nome do servidor está incorreto no Central de Configurações Senior.Solução: corrija o nome do servidor no Central de Configurações Senior.Causa: as configurações de DNS estão incorretas.Solução: corrija as configurações de DNS do servidor.
+                        Porta do servidor incorretaCausa: a porta do servidor está incorreta no Central de Configurações Senior.Solução: corrija a porta do servidor no Central de Configurações Senior.Causa: o firewall não possui permissão de entrada na porta 34952.Solução: abra a porta 34952 no servidor com a MicroStrategy.
+                        Login/senha incorretosCausa: o usuário e/ou a senha estão incorretos no Central de Configurações Senior.Solução: corrija as credenciais no Central de Configurações Senior.
+                        Usuário desabilitadoCausa: o usuário está desabilitado na MicroStrategy.Solução 1: habilite o usuário na MicroStrategy.Solução 2: informe outro usuário e senha no Central de Configurações Senior.
+                        Projeto inexistenteCausa: o nome do projeto pode estar cadastrado de forma incorreta no Central de Configurações Senior.Solução: corrija o nome do projeto no Central de Configurações Senior.
+                    
+                    Erros internos da MicroStrategy:
+                    
+                    
+                        Erro de conexão com banco de dadosCausa: na MicroStrategy, o usuário e/ou a senha estão incorretos na "Instância do banco de dados".Solução: corrija as credenciais na "Instância do banco de dados".Causa: as configurações do ODBC estão incorretas no executável "odbcad32" (executável do sistema operacional Windows).Solução: corrija as configurações do ODBC no executável "odbcad32" e efetue o teste de conexão.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

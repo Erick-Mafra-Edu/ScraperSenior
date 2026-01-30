@@ -1,0 +1,340 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#geral/processos-funcoes-programador.htm%3FTocPath%3DFerramentas%7CFun%25C3%25A7%25C3%25B5es%2520para%2520regras%2520e%2520gerador%2520de%2520relat%25C3%25B3rios%7C_____2
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ferramentas > Funções para regras e gerador de relatórios > Processos relacionados às Funções de Programador
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Processos relacionados às Funções de Programador
+             Para conferir o índice com as Funções de programador, acesse a documentação. 
+            
+                
+                    
+                    
+                    
+                    
+                        Função
+                        Sigla do Processo
+                        Descrição do Processo
+                    
+                    
+                        Manufatura e Serviços
+                    
+                    
+                        AdicionaComponenteModelo
+                        MECO 
+                        Composição Produto/Serviço
+                    
+                    
+                        AdicionaConsumoComponente 
+                        MECO 
+                        Composição Produto/Serviço
+                    
+                    
+                        AdicionaEstagioRoteiro
+                        MECO 
+                        Composição Produto/Serviço
+                    
+                    
+                        AdicionaOperacaoRoteiro
+                        MECO 
+                        Composição Produto/Serviço
+                    
+                    
+                        AdicionaOperacaoManualRoteiro
+                        MECO 
+                        Composição Produto/Serviço
+                    
+                    
+                        ApontarOPs
+                        MCAP
+                        Apontamento de OP/OS
+                    
+                    
+                        BaixarComponentes
+                        MCCO
+                        Componentes (OP/OS)
+                    
+                    
+                        CancelarOP
+                        MPOP
+                        Ordens de Produção/Serviço
+                    
+                    
+                        CancelarProducao
+                        MPLP
+                        Cancelamento de Produção
+                    
+                    
+                        CriaNovoModelo
+                        MECO
+                        Composição Produto/Serviço
+                    
+                    
+                        CriaNovoRoteiro
+                        MECO
+                        Composição Produto/Serviço
+                    
+                    
+                        ExcluirComponenteOP
+                        MPMO  
+                         Manutenção de OP/OS
+                    
+                    
+                        GerarOP
+                        MPOP
+                        Ordens de Produção/Serviço
+                    
+                    
+                        IncluirComponenteOP
+                        MPMO  
+                         Manutenção de OP/OS
+                    
+                    
+                        IncluirOperacaoOP
+                        MPMO
+                         Manutenção de OP/OS
+                    
+                    
+                        IncluirServicoOP
+                        MPMO
+                         Manutenção de OP/OS
+                    
+                    
+                        TrocarOpcaoOperacaoOP
+                        MPMO
+                         Manutenção de OP/OS
+                    
+                    
+                        Mercado e Suprimentos
+                    
+                    
+                        GerarSeqEmbalagemPFA
+                        RFEX
+                        Expedição
+                    
+                    
+                        GerarItensEmbalagemPFA
+                        RFEX
+                        Expedição
+                    
+                    
+                        AtualizarPesosPFA
+                        RFEX
+                        Expedição
+                    
+                    
+                        AtualizarSituacao_PFA_PES
+                        RFEX
+                        Expedição
+                    
+                    
+                        GeraMovimentoNFSaida
+                        SECE 
+                        Controle de Estoques
+                    
+                    
+                        MontaListSerEst
+                        SECE 
+                        Controle de Estoques
+                    
+                    
+                        CorrigeSaldoporDeposito
+                        SECE 
+                        Controle de Estoques
+                    
+                    
+                        CorrigeSaldoporFilial
+                        SECE 
+                        Controle de Estoques
+                    
+                    
+                        CancelaSaldoRequisicoes
+                        SERE 
+                        Requisição Eletrônica
+                    
+                    
+                        Controladoria
+                    
+                    
+                        LoteLctoCria
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        CarregaSaldoContabil 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        CarregaSaldoContabilAbr 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        CarregaSaldoContabilZer 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        CarregaSaldoContabilHis
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        CarregaSaldoContabilICP 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        CarregaSaldoContabilAux 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        BuscaSaldoAnterior 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        BuscaSaldoAnteriorAbr 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        BuscaSaldoAnteriorAbrAux 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        BuscaSaldoAnteriorHis 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        BuscaSaldoAntCCusto 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        AgluCtbCriar 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        AgluCtbValorAglu 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        AgluCtbContas 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        AgluCtbContaPertence 
+                        CCCT 
+                        Contabilidade
+                    
+                    
+                        CarregaSaldoContabilAbrInt 
+                        CCMM 
+                        Contabilidade Multimoeda
+                    
+                    
+                        BuscaSaldoAnteriorAbrInt 
+                        CCMM 
+                        Contabilidade Multimoeda
+                    
+                    
+                        BuscaDepreciacaoAcumulada 
+                        CPAT 
+                        Atualização Patrimonial
+                    
+                    
+                        BuscaBaixaDepreciacao 
+                        CPAT 
+                        Atualização Patrimonial
+                    
+                    
+                        BuscaBaixaDepreciacaoTipo
+                        CPAT 
+                        Atualização Patrimonial
+                    
+                    
+                        CarregaParametrosMovimento 
+                        CPBE 
+                        Controle de Bens
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            

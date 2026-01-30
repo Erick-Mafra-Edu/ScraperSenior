@@ -1,0 +1,238 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/java.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____14
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Java
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Exemplo em Java
+            Abaixo segue um breve exemplo de uma codificação Java (POST e GET) para o consumo do serviço Rest Utilizando JSON:
+            A codificação abaixo não utiliza API’s especificas para consumo de WebService em REST, somente codificação J2EE, recomendamos a utilização de API’s para facilitar o desenvolvimento.
+            POST
+            
+            import java.io.BufferedReader;
+            import java.io.InputStreamReader;
+            import java.io.OutputStream;
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+            import java.nio.charset.StandardCharsets;
+             
+            public class ClasseTeste {
+            private static final String urlString = "http://127.0.0.1:8080/interfacefis/entrada/pedido";
+            private static final String json = "...";
+             
+            public static void main(String[] args) {
+            try {
+             
+            String userCredentials = "admin:sythex2015";
+            String basicAuth = "Basic " + new String(new Base64().encode(userCredentials.getBytes()));
+            URL url = new URL(urlString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestProperty ("authorization", basicAuth);
+            connection.setDoOutput(true);
+            connection.setDoInput(true);
+            connection.setInstanceFollowRedirects(false);
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json;");
+            connection.setRequestProperty("Content-Length", "" + Integer.toString(json.getBytes().length));
+            connection.setUseCaches (false);
+            connection.connect();
+             
+            OutputStream wr = connection.getOutputStream();
+            wr.write(json.getBytes(StandardCharsets.UTF_8));
+            wr.flush();
+            wr.close();
+            
+                
+                    //BUSCA CÓDIGO E DESCRIÇÃO DO RETORNO
+                
+            
+            System.out.println(connection.getResponseCode()+" - "+connection.getResponseMessage());
+            
+                //BUSCA INFORMAÇÔES DE ERRO
+            
+            if(connection.getErrorStream() != null){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getErrorStream(),"UTF-8"));
+            String line = null;
+            while((line = reader.readLine()) != null) {
+            System.out.println(line);
+            }
+            }
+             
+            //BUSCANDO INFORMAÇÔES DE RETORNO ("OK")
+            else{
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
+            String line = null;
+            while((line = reader.readLine()) != null) {
+            System.out.println(line);
+            }
+            }
+             
+            connection.disconnect();
+             
+            } catch (Exception e) {
+            e.printStackTrace();
+            }
+            }
+            }
+             
+            GET
+            
+            import java.io.BufferedReader;
+            import java.io.InputStreamReader;
+            import java.io.OutputStream;
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+            import java.nio.charset.StandardCharsets;
+             
+            public class ClasseTeste {
+            private static final String urlString = "http://127.0.0.1:8080/interfacefis/saida/calculofrete";
+             
+            public static void main(String[] args) {
+            try {
+             
+            String userCredentials = "admin:sythex2015";
+            String basicAuth = "Basic " + new String(new Base64().encode(userCredentials.getBytes()));
+            URL url = new URL(urlString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestProperty ("authorization", basicAuth);
+            connection.setDoOutput(true);
+            connection.setDoInput(true);
+            connection.setInstanceFollowRedirects(false);
+            connection.setRequestMethod("GET");
+            connection.setUseCaches (false);
+            connection.connect();
+            
+                //BUSCA CÓDIGO E DESCRIÇÃO DO RETORNO
+            
+            System.out.println(connection.getResponseCode()+" - "+connection.getResponseMessage());
+             
+            //BUSCA INFORMAÇÔES DE ERRO
+            if(connection.getErrorStream() != null){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getErrorStream(),"UTF-8"));
+            String line = null;
+            while((line = reader.readLine()) != null) {
+            System.out.println(line);
+            }
+            }
+            
+                //BUSCANDO INFORMAÇÔES DE RETORNO ("OK")
+            
+            else{
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
+            String line = null;
+            while((line = reader.readLine()) != null) {
+            System.out.println(line);
+            }
+            }
+             
+            connection.disconnect();
+             
+            } catch (Exception e) {
+            e.printStackTrace();
+            }
+            }
+            }
+             
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

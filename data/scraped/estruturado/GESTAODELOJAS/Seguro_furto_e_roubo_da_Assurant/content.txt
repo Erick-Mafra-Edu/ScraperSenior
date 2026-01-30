@@ -1,0 +1,71 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/servicos/seguro-furto-roubo.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7C_____10
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Seguro furto e roubo da Assurant
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Seguro furto e roubo da Assurant
+            Conceito
+            O seguro furto e roubo é uma forma de seguro, paga pelo consumidor, regulamentada pela SUSEP (Superintendência de Seguros Privados). Consiste no reembolso de valor pago pelo produto, caso haja comprovação legal do furto ou roubo do produto.
+            Parametrização
+            No Gestão Empresarial | ERP:
+            
+                Nas telas F095CAD (Cadastro de Fornecedores) e F085CAD (Cadastro de Clientes), cadastre a seguradora Assurant, pois ela pode ter tanto títulos a pagar como títulos a receber no processo de seguro furto e roubo.			NotaNa tela F095CAD (Cadastro de Fornecedores), através do botão Par. Dinâmicos, estão disponíveis seguintes parâmetros dinâmicos, com informações que são impressas no bilhete do seguro furto e roubo. Não é obrigatório preenchê-los, pois já vêm preenchidos com um valor padrão, porém podem ser alterados se houver necessidade (apenas caso a seguradora mude os endereços ou números de contato):ParâmetroValorSEGUROFURTOROUBO.TELEFONESINISTROCAPITAISTelefone para abertura do sinistro nas capitaisSEGUROFURTOROUBO.TELEFONESINISTROTelefone para aviso de sinistro nas demais localidadesSEGUROFURTOROUBO.TELEFONESACTelefone para o serviço de atendimento ao clienteSEGUROFURTOROUBO.TELEFONEDEFICIENTEAUDITIVOTelefone para atendimento de deficiente auditivoSEGUROFURTOROUBO.TELEFONEOUVIDORIATelefone da ouvidoria da seguradoraSEGUROFURTOROUBO.ATENDIMENTOONLINEEndereço online para atendimento do clienteSEGUROFURTOROUBO.PROCESSOSUSEPCAPNúmero do processo de capitalização SUSEP
+                Na tela F069SEG (Seguradoras), cadastre a seguradora, com atenção aos seguintes campos:Seguradora como Cliente: e Seguradora como Fornecedor: infome o cadastro da Assurant.Proc. Furto e Roubo: informe o código fornecido pela seguradora.
+                Na tela F070FCA (Cadastro de Filiais), clicando no botão Par. Dinâmicos, está disponível o parâmetro dinâmico Venda.SeguroFurtoRouboNumeroSorte. Ele define se o Retaguarda deve realizar a consulta síncrona de números da sorte ao finalizar pedidos que incluam um ou mais itens de Seguro Furto e Roubo. Os valores são possíveis "0" (Desativado) e "1" (Ativado), que é o valor padrão. ImportanteSe o parâmetro está definido como "1" ou não está configurado (ou seja, está com o valor padrão), se ao finalizar um pedido que inclua um ou mais itens de seguro furto e roubo ocorrer um erro na consulta dos números da sorte, não será possível finalizar o pedido.O uso do parâmetro com o valor "0" (Desativado) existe para contingência em caso de problemas, portanto recomendamos fortemente que ele fique com o valor "1", ativado.NotaTambém estão disponíveis os parâmetros dinâmicos SEGUROFURTOROUBO.REPRESENTANTE.CNPJ e SEGUROFURTOROUBO.REPRESENTANTE.NOME. Eles alimentam o campo Representante do Seguro do relatório de seguro furto e roubo e por padrão exibem os dados da filial em questão, podendo ser alterados, se necessário.
+                Na tela F080SER (Cadastro de Serviços), cadastre um serviço de seguro furto e roubo, com atenção aos seguintes campos:Tipo de Serviço Comércio: defina como U - "Seguro furto/roubo".Seguradora: informe aquela configurada no passo 1.
+                Na tela F069GPS (Grupo Produto/Serviços), crie o grupo de produtos para os produtos que devem ser vinculados ao seguro furto e roubo, informando na guia Itens os produtos que fazem parte, podendo ser por família de produto, por exemplo.
+                Na tela F080CSI (Cadastro de seguros), faça o cadastro do seguro furto e roubo (grande parte das informações é repassada pela seguradora), com atenção aos seguintes campos, pois influenciam no documento impresso que é entregue ao cliente:Na aba Dados gerais:Informe no campo Tipo de serviço o valor "2 - Furto e roubo".No campo %IOF, configure o percentual de IOF aplicado sobre o prêmio do seguro.Na aba Seguro:Descreva no campo Elegibilidade os critérios para que o seguro furto e roubo possa ser utilizado, conforme as informações acordadas com a seguradora. Exemplo: "Aparelho novo ou com até 03 (três) meses de uso."No campo Dias recuperação, informe a quantidade de dias após a venda do produto dentro da qual o cliente pode adquirir o respectivo seguro.Na aba Coberturas:Descrição cobertura: "Roubo ou Furto Qualificado Mediante Arrombamento do Aparelho Celular", por exemplo.LMI (limite máximo de indenização): "É garantido um aparelho eletrônico, igual ou similar, novo ou recondicionado, considerando as mesmas características e tecnologia do aparelho sinistrado, limitado ao valor R$ %.2f, sem quaisquer descontos (exceto pagamento de franquia).", por exemplo. No caso, no lugar do valor deve realmente ser informado %.2f, pois isso é substituído pelo valor bruto do produto segurado.% Referência, % Prêmio e % Franquia: conforme contrato com seguradora.A aba Planos e coeficientes não se aplica ao seguro furto e roubo.Na aba Faixas:Grupo de produtos: aquele cadastro na tela F069GPS (Grupo Produto/Serviços).ObservaçãoO seguro abrange todos os produtos pertencentes à família cadastrada quando criado o grupo de produtos. Valor inicial e Valor final: faixa em que o seguro pode ser vendido.ImportanteNão deve haver intersecção de faixas para um mesmo grupo.Se, por exemplo, para o Grupo 1 a primeira faixa vai de R$ 10,00 a R$ 100,00 e a segunda de R$ 100,00 a R$ 1000,00, um produto de R$ acaba se encaixando em duas faixas, o que não é permitido. Para evitar o problema, no exemplo, a segunda faixa deve iniciar em R$ 100,01.% Prêmio (com IOF): esse é o valor que é cobrado efetivamente, baseado no valor bruto do produto segurado.A aba Filiais contém aquelas às quais o seguro se aplica e entra em efeito quando a Sit. é "A", ativo.
+                Na tela F080ISV (Tipos de Serviço x Transação de Intermediação), cadastre a transação que deve ser usada para o seguro furto e roubo.
+                Na tela F069MAS (Máscaras de Apólice), cadastre uma máscara para o tipo de serviço furto e roubo, no formato fornecido pela seguradora.
+                Na tela FEXEFORM (Importaçao e Exportação de Dados), importe os números da sorte gerados pela seguradora Assurant:Selecione a Operação "Importação".Informe o Código 14001 - Seguradora Assurant - Números da Sorte.Marque a opção Selecionar arquivo.No campo Arquivo, selecione aquele enviado pela seguradora, contendo os números da sorte.Clique no botão Executar.ImportanteComo os números da sorte enviados pela seguradora possuem validade, é necessário refazer estes passos sempre que a validade acabar e um novo arquivo com números for recebido da seguradora.
+                As informações dos seguros são exportadas para o Gestão de Lojas através dos web services com.senior.g5.co.int.varejo.servico e com.senior.g5.co.int.varejo.seguros.
+
+            
+            Processo
+            Para vender seguro furto e roubo na solução de Gestão de Lojas:
+            
+                Na criação de Pedido ou Pré-venda, ou ainda consulta de preço, ao selecionar o produto, sempre que ele ou o grupo ao qual ele está vinculado possuir seguro furto e roubo  associado (e/ou garantia estendida), é mostrada uma mensagem questionando se deseja adicioná-lo:
+                Ao selecionar Sim, é aberta a tela de Oportunidades de Venda. Nela, selecione o seguro desejado. Ainda que haja vários disponíveis, somente é possível selecionar um por produto:
+                Clique em Adicionar.Após adicionar os itens de oportunidades de vendas, caso queira visualizá-los, selecione o produto e utilize o botão Outros > Consultar intermediações de serviços. Essa consulta também pode ser feita depois que o pedido é finalizado..Mesmo que o seguro não seja incluído assim que o produto é informado, ainda antes de fechar o pedido ou pré-venda é possível incluí-lo. Para isso, use a opção Oportunidades de venda > Pedido atual.
+                Prossiga com a emissão do Pedido ou Pré-venda.
+                Os números da sorte são consultados no ERP e recebidos através do web service com.senior.g5.co.int.varejo.ConsumoNumeroSorte, porta Consumir, somente quando há comunicação com o ERP.	
+                Depois que ocorre recebimento de um pedido com venda de seguro furto e roubo no PDV, é impressa a apólice (bilhete) do seguro (nas vias da loja e do cliente) e o Termo de autorização de cobrança do seguro.
+            
+            
+                Notas
+                
+                
+                    A validade do seguro considera como data de início a data da venda e como data final a data da venda + (mais) a quantidade de meses conforme o cadastro do seguro - (menos) 1 dia.
+                    Os números da sorte somente podem ser gerados se os integradores estiverem funcionando. Se houver um problema de integração nessa hora, o pedido não é finalizado. Uma alternativa, nesse caso, é cancelar o seguro na venda atual e vendê-lo depois, conforme Venda de seguro furto e roubo para outra venda.
+                
+            
+            Venda de seguro furto e roubo para outra venda
+            Ao criar uma pré-venda ou pedido, caso tenha ocorrido uma venda anterior para o cliente informado, de um produto que possui seguro furto e roubo e que ainda esteja no período permitido (conforme definido no cadastro de Dias recuperação do Cadastro de seguros do ERP), mas tal seguro não foi adquirido, é possível vendê-lo. Para isso:
+            
+                O botã

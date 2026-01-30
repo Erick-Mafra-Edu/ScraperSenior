@@ -1,0 +1,110 @@
+# 
+
+URL: https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/#solucao-negocio/roteirizacao.htm%3FTocPath%3DRoteiriza%25C3%25A7%25C3%25A3o%7C_____0
+
+---
+
+
+        Ver site completo
+        
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORoteirização e Torre de Controle - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Roteirização
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Roteirização
+            Roteirizador analisa todas as entregas e coletas que precisam ser realizadas, bem como os veículos disponíveis para executá-las. Com base em informações detalhadas de cada atividade e nos critérios de custo e capacidade dos veículos, nossa solução é capaz de definir de forma dinâmica e automática as entregas e coletas por veículo, além de estabelecer o sequenciamento ideal. O resultado? Menos veículos utilizados, menor tempo de realização e menor distância percorrida.
+            Imagine o que isso significa para o seu negócio: economia de recursos, maior eficiência operacional e satisfação do cliente. Nossa tecnologia está revolucionando a logística e transformando a distribuição em um processo mais inteligente e ágil.
+            E claro, para sua jornada ficar completa, utilize a Torre de Controle Senior.
+            
+            
+            Como faço uma roteirização?
+            Inicialmente, adicione as atividades
+                
+                    As atividades são posteriormente  vinculadas a um roteiro para o motorista localizar as entregas, coletas e serviços que devem ser realizados diariamente na sua rota de trabalho. Há duas formas de adicioná-las:
+                    
+                        Cadastrando cada uma no sistema ou
+                        Importando através de uma planilha.
+                    
+                    Como adicionar atividades pelo sistema?
+                        
+                            
+                                Acesse Logística > Otimização Logística > Roteirização e Monitoramento > Atividades > Entregas, coletas e serviços
+                                Clique no botão Adicionar.
+                                Preencha as informações conforme necessário.							ImportanteAo utilizar a roteirização automática, além das informações sinalizadas como obrigatórias (com asterisco vermelho - *), é necessário preencher os campos Código do Destino, Tipo de Carga e Operação para que as definições possam ser consideradas na roteirização. A única definição que não precisa ser informada é a de região, porque o sistema vincula atividades a regiões automaticamente, com base no Endereço do Destino informado (desde que corresponda exatamente ao da região). Caso o Endereço cadastrado não corresponda a uma região, ela é automaticamente criada.
+                                Clique em Salvar.
+                            
+                        
+                    
+                    Como importar atividades?
+                        
+                            
+                                Acesse Logística > Otimização Logística > Roteirização e Monitoramento > Atividades > Entregas, coletas e serviços
+                                Clique no botão Importar
+                                Na tela seguinte, clique no botão Baixar modelo de planilha.DicaEsteja atento a sempre usar a última versão disponível da planilha.
+                                Salve a planilha em sua máquina e preencha com as informações das atividades.
+								ImportanteA importação de atividades pode ser utilizada das seguintes formas:Importar atividades para o sistema, permitindo roteirizá-las posteriormente.Importar atividades já roteirizadas, ou seja, quando importadas será gerada uma roteirização do tipo “Manual” com as rotas e atividades definidas.A planilha já vem com campos preenchidos, como exemplo. Entenda como cada um deve ser preenchido:                          Campo da planilhaPreencher com...Opcional ou obrigatório?PrioridadeValor inteiro entre 1 e 9, sendo que 1 representa a maior prioridade possívelOpcionalPlacaPlaca do Veículo que executará a rotaObrigatório ao importar atividades já roteirizadas. Para fazer a roteirização pelo sistema, deixe em branco.Segunda PlacaSegunda placa do Veículo que executará a rotaOpcionalMotoristaCPF do motorista que executará a rotaObrigatório se não tiver vinculo com a Placa.Referência da rotaCampo alfanuméricoOpcionalData de início da rotaData e horário previsto para saída do veículo para execução da rotaNotaSe a data de inicio não for informada, os sistema adicionada a data posterior a roteirização da rota.OpcionalData da previsão de atendimentoData e horário previsto para início da execução da atividadeOpcionalSequênciaSequência de execução da atividade na rotaOpcionalCód. DestinoCampo alfanumérico. Caso seja informado:Se já existir um destino cadastrado para o Código informado, a atividade assumirá os dados de endereço do destino já existente no sistema.Se o destino já existente não estiver vinculado à filial para qual está sendo realizada a importação, ele será associado nesse momento.Se não existir um destino com o Código informado, o destino também será importado para o sistema.NotaAo lado do campo Código Origem/Destino temos o botão Abrir o cadastro de origem/destino. Ao clicar, será aberta uma nova guia com a tela Cadastro de Origem/Destino, permitindo realizar alterações e salvá-las. Quando retornar à rotina Atividades será necessário vincular novamente o código de origem e destino para que as informações sejam atualizadas.OpcionalCód. EmbarcadorCampo alfanuméricoOpcional
+Descrição DestinoCampo alfanuméricoObrigatórioTelefoneCampo alfanuméricoOpcionalColeta, entrega ou serviçoPreencher conforme o número do tipo de atividade que deve ser realizada no endereço: 1 = Coleta, 2 = Entrega e 3 = ServiçoObrigatórioDocumentoCampo alfanuméricoTipo DocumentoPodendo ser Não informado. E caso seja informado:0 - Não Informado1 - Pedido2 - NF-e3 - NFS-e4 - CT-eOpcionalCódigo PostalDados do endereço no qual deve ser realizada a coleta, entrega ou serviço.NotaQualquer valor alfanumérico que seja informado no campo Número do Endereço da Atividade é importado como Complemento, pois para definição do grau de confiança pelo sistema é necessário que o valor do campo seja puramente numérico.OpcionalLogradouroObrigatórioNúmeroOpcionalComplementoBairroMunicípioEstadoPaísLatitudeCaso não sejam preenchidas, essas informações são geradas pelo sistema.LongitudeCaso não sejam preenchidas, essas informações são geradas pelo sistema.PesoQuantidade de itens, volumes. QuantidadeTotal de itensVolumeMetros cúbicosValor da Mercadoria Campo decimalPrazo de entregaPrazo máximo para execução da atividade.ObrigatórioData AgendamentoDia específico para execução da atividade.OpcionalTempo de Atendimento (HH:mm)Tempo de duração da execução da atividade. Caso seja informado, a previsão de atendimento funciona assim:Horário de Chegada: Data de Previsão de Atendimento.Horário de Término: Horário de Chegada + Tempo de Atendimento.Horário de início da janelaHorário mínimo para execução da atividade no diaHorário de fim da janelaHorário máximo para execução da atividade no diaCód. Tipo CargaCódigo do Tipo de carga da atividade. O Código deve estar previamente cadastrado no Sistema.Cód. OperaçãoCódigo da Operação da atividade. O Código deve estar previamente cadastrado no Sistema.ObservaçõesCampo alfanuméricoImportanteAo utilizar a roteirização automática, é necessário preencher os campos Cód. Destino, Cód. Tipo Carga e Cód. Operação para que as definições possam ser consideradas na roteirização.  A única definição que não precisa ser informada é a de região, porque o sistema vincula atividades a regiões automaticamente, com base no Endereço do Destino informado (desde que corresponda exatamente ao da região). Caso o Endereço cadastrado não corresponda a uma região, ela é automaticamente criada.Ao utilizar a roteirização manual, é necessário que a coluna Placa esteja preenchida, pois é com base nela que o sistema define as rotas.
+                                Na área destinada na tela do sistema, arraste e solte a planilha ou então clique para selecioná-la em seu computador.
+							
+                                As atividades do documento são carregadas e exibidas em tela, podendo ser editadas ou excluídas. 
+                                Para finalizar:Selecione a Filial para qual as atividades são válidas.Se esta filial tiver um ponto de apoio cadastrado, será habilitado um o campo Pontos de apoio da filial, para que seja possível selecionar o campo de apoio desejado.Clique no botão Importar.
+                            
+                        
+                    
+                    Como importar atividades já roteirizadas?
+                        
+                            Isso pode ser feito para empresas que usam roteirização manual e automática. 
+                            Para isso, as atividades importadas precisam ter os seguintes campo campos preenchidos (as células correspondentes são sinalizados na planilha com fundo em cinza):
+                            
+                                Placa
+                                
+                                Motorista (quando não informado no Veículo relaci

@@ -1,0 +1,200 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/recebimento-pedido-entrega-futura.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____22
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Faturar Pedido com Entrega Futura
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Recebimento de Pedido com Entrega Futura
+            Conceito
+            Efetua o recebimento/faturamento  dos pedidos de vendas e faz a geração dos títulos alimentando o Contas a Receber.
+            Processo 
+            O pedido poderá ser importado no PDV normalmente utilizando o atalho PED+Nº do pedido ou utilizando o botão Importar para efetuar a consulta dos pedidos pendentes de atendimento.
+            Exemplo:
+                
+                    
+                        
+                    
+                    Os pedidos pendentes de recebimento para entrega futura, são identificados na cor Azul conforme legenda da tela.
+                
+            
+            Se necessário utilize os botões Detalhes Documento ou Detalhes Cliente para consultar informações do pedido selecionado na linha correspondente.
+            Exemplo: 
+                
+                    Detalhes Documento:
+                    
+                    
+                    Detalhes Cliente:
+                    
+                    
+                
+            
+            Finaliza recebimento 
+            Selecione a linha do pedido desejado pelas teclas de navegação e tecle Enter ou utilize o botão Seleciona.Escolha um finalizador para efetuar o registro do pagamento, caso a forma e condição de pagamento não tenham sido definidas na emissão do pedido de venda: 
+            Finalizar venda com Dinheiro
+            
+            Finalizar venda com Cheque
+            
+            Finalizar venda com Crediário
+            
+            Finalizar venda com Cartão (TEF) 
+            Finalizar venda com Cartão Presente
+            
+            Finalizar Venda com Cartão (POS)
+            
+            
+                Nota
+                
+                Algumas formas de pagamento podem estar configuradas para exigir condição de pagamento (parâmetro dinâmico FORMAPAGAMENTO.EXIGECONDICAOPAGAMENTO do Gestão Empresarial | ERP definido como S - "Sim"). Nesse caso, a tela de pesquisa de condições de pagamento é aberta e os juros da condição, caso haja,  são calculados e somados no subtotal.
+            
+            Imprime comprovante 
+            Após finalizar o recebimento será impresso no ECF um comprovante não fiscal.
+            Exemplo: 
+                
+                    
+                        
+                    
+                
+            
+            
+                Atenção
+                
+                Como o tipo de entrega dos produtos é definido por Item na inclusão do pedido de venda, é importante conhecer o comportamento do sistema com relação a geração de nota/cupom fiscal, pois esse processo impacta algumas rotinas. Verifique abaixo:
+                Pedido com entrega Imediata x Futura pela loja:
+                
+                    o sistema se comportará como uma venda de entrega futura;
+                    não será gerado cupom;
+                    será gerada a nota de simples faturamento contendo todos os itens;
+                    após o pagamento do pedido no PDV, será gerada automaticamente a nota de remessa dos itens definidos como entrega imediata.
+                    para efetuar a entrega, deve ser gerada a nota de remessa dos itens definidos como entrega futura pela loja, através da tela Pedidos aguardando entrega.
+                
+                Pedido com entrega Imediata x Futura pelo CD:
+                
+                    o sistema se comportará como uma venda de entrega futura;
+                    não será gerado cupom;
+                    será gerada a nota de simples faturamento contendo todos os itens;
+                    após o pagamento do pedido no PDV, será gerada automaticamente a nota de remessa dos itens definidos como entrega imediata;
+                    os itens definidos como entrega futura pelo CD, serão exibidos na tela de Controles de entrega, porém não será permitido que a nota de remessa seja gerada.
+                
+                Pedido com entrega Futura pela loja x Futura pelo CD:
+                
+                    não será gerado cupom;
+                    será gerada a nota de simples faturamento contendo todos os itens;
+                    após o pagamento do pedido no PDV, o sistema exibirá todos os itens na tela de Pedidos aguardando entrega, permitindo que seja gerada a nota de remessa para os itens definidos com o tipo de entrega futura pela loja. Porém, não será permitido gerar a nota de remessa dos itens definidos com o tipo de entrega futura pelo CD.
+                
+                
+                    Observações
+                    
+                    Quando todos os itens possuírem o mesmo tipo de entrega, será gerada nota/cupom fiscal da mesma forma como é atualmente.
+                
+            
+             
+            Veja também:
+                
+                    Faturar Pedido
+                    
+                    Faturar Pré-Venda
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

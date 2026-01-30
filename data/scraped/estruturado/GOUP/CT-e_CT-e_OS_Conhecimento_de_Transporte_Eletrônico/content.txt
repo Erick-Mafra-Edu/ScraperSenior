@@ -1,0 +1,158 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#integracoes/ct-e/integracao-cte.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7CCT-e%2520%257C%2520CT-e%2520OS%2520(Conhecimento%2520de%2520Transporte%2520Eletr%25C3%25B4nico)%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > Emissão de CT-e
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Emissão de CT-e
+            
+                 Importante
+                
+                A geração de CT-e dos tipos "2 - CT-e de Anulação" e "3 - CT-e Substituto" foi retirada pelo SEFAZ na versão 3.00 e o tipo "2 - CT-e de Anulação" foi retirado na versão 4.00 do CT-e e CT-e OS. Para mais informações, verifique a NT 2023.001.
+            
+            1. Introdução
+            O Conhecimento de Transporte 
+Eletrônico é um documento de existência apenas digital, emitido e 
+armazenado eletronicamente, com o intuito de documentar para fins fiscais uma 
+prestação de serviço de transporte de cargas realizada por qualquer modal 
+(Rodoviário, Aéreo, Ferroviário, Aquaviário e Dutoviário). Sua validade jurídica 
+é garantida pela assinatura digital do emitente (garantia de autoria e de 
+integridade) e pela recepção e autorização de uso, pelo Fisco.
+            
+                Nota
+                
+                Em virtude do sistema de mensageria oficial da Senior Sistemas ser o eDocs, a integração  entre Gestão Empresarial e NDDigital não recebe qualquer correção ou implementação. 
+            
+            2. Requisitos
+            
+                Processo de Gestão de Transportes habilitado e configurado;
+                Configurações da integração com eDocs parametrizadas. Para mais detalhes, clique aqui.
+            
+            3. Parametrização no ERP
+            3.1. Configuração
+            A integração CT-e só pode ser utilizado 
+por empresas do ramo de transportes ou indústrias que tenham transporte próprio. 
+Portanto, só será possível emitir um CT-e se a configuração do cadastro da 
+filial estiver com os seguintes parâmetros:
+            
+                Campo Tipo Empresa (F070FA) deve ser 04 – TRR – 
+Transp./Rev./Retalhista ou 06 – Indústria/Transporte para utilizar a 
+integração. Para outros tipos de empresa, a emissão do 
+conhecimento de transporte não é possível;
+                Preencher o campo Integração CT-e (F070FVE), guia Transporte;
+                Para que o ERP identifique que o Conhecimento de 
+Transporte que está sendo emitido é eletrônico, é preciso criar uma Série de nota 
+fiscal com o Dispositivo Autorizado igual a 7 – Conhecimento de Transporte 
+Eletrônico para utiliza-lo na emissão (F020SNF).
+                Na criação de uma série de nota fiscal, preencha os campos obrigatórios no sistema (código, descrição,
+abreviatura da série, quantidade máxima de parcelas etc.). Porém, para
+que a série se torne eletrônica, existem 3 campos essenciais:Espécie Documento: deve ser o modelo 57. Ele  foi criado pala SEFAZ especificamente para a emissão de CT-e.;Dispositivo Autorizado: deve ser obrigatoriamente 7 – Conhecimento de 
+Transporte Eletrônico;Dir. Arq. Exportação CT-e: o campo será liberado somente quando o campo acima estiver preenchido. Informe onde 
+serão salvos os arquivos .TXT com as informações do CT-e.Após o preenchimento de todos os campos, clique no botão Processar para 
+salvar as configurações da série.
+                Duplique as  transações 5949S, 6949S, 7949S. A 
+sugestão é que sejam duplicadas para 5949T, 6949T, 7949T. Em seguida, altere as 
+novas transações na guia Dados Gerais, campo Aplicação Operação = F - Transporte);
+                Preencha o campo Tipo Via (F074VIA)  de 
+acordo com a via cadastrada.
+            
+            3.2. Formatação do nome de arquivos eletrônicos
+            A 
+geração dos arquivos eletrônicos de emissões, cancelamentos e inutilizações de 
+CT-e seguem um padrão na geração 
+do nome do arquivo eletrônico. Segue abaixo:
+            Emissão de CT-e:CTe + Chave + _ + Tempo_Geração(YYYYMMDDHHMMSS).xml
+            Cancelamento:Can + Chave + _ + Tempo_Geração(YYYYMMDDHHMMSS).xml
+            Inutilização:Inu + Chave + _ + Tempo_Geração(YYYYMMDDHHMMSS).xml
+            Exemplos
+                
+                    CTe42101080680093000181080010000000020000000020_20101118155404.xmlCan42110280680093000181900010000000410000000560_20110215101317.xmlInu42108068009300018155001000000047000000047_20101118134210.xml
+                
+            
+            4. Conhecimento de Transporte Eletrônico de Outros Serviços (CT-e OS)
+            O Conhecimento de Transporte Eletrônico para Outros Serviços (CTe OS) é um documento eletrônico instituído para atender as necessidades do mercado de transporte e deve ser utilizado em transportes intermunicipais, interestaduais e internacionais de pessoas, transporte de valores e excesso de bagagem.
+            4.1. Parametrização do sistema
+            Para emissão deste serviço é necessário seguir algumas especificações:
+            
+                Cadastre nova espécie de documento na tela Espécies de Documentos (F032EDC), com código  de Modelo do Documento 67, que é específico para transporte de pessoas, valores e bagagens.
+                Cadastre nova Série NF na tela Séries de Notas Fiscais (F020SNF), associando a Espécie do documento criada anteriormente e definindo o Dispositivo Autorizado como 7 - Conhecimento de Transporte Eletrônico.
+                Cadastre um serviço na tela (F080SER) indicando os impostos a serem tributados. Este serviço não é impresso no DACTE, serve apenas para controle tributário.
+                Atribua as informações padrões da filial na tela Parâmetros da Filial para Vendas (F070FVE), guia Transporte, nos campos Série CT-e OS Padrão, Serviço padrão para CT-e OS, Termo de Autorização de Fretamento e Número de registro estadual. Os valores para os últimos três campos são herdados do cadastro da filial e não podem ser alterados na rotina de geração de CT-e OS.
+            
+            
+                Observação
+                
+                O Termo de Autorização de Fretamento e o Número de registro estadual também podem ser informados na tela Transportadoras (F073TRA), porém estas informações somente serão utilizadas para o CT-e OS quando o veículo é de terceiros.
+            
+            
+                Configure os campos Mensagem Fiscal e Interesse Mensag. na tela Mensagens de Notas Fiscais (F024MSG) de acordo com a tag que deve ser preenchida no XML:Tag <infAdFisco>:  campo Mensagem Fiscal definido como S - Sim e campo Interesse Mensag. como F - Fisco.Tag <compl - ObsCont>: campo Mensagem Fiscal definido como N - Não e campo Interesse Mensag. como C - Contribuinte.
+            
+            
+                Observação
+                
+                Ao configurar uma mensagem dinâmica, o campo Entidade, da tela Mensagem Dinâmica (F024MSD), acessada através do botão Mensagem na tela Mensagens de Notas Fiscais (F024MSG), deve estar preenchido com a opção Mercado - Nota fiscal de saída (E140NFV).
+            
+            4.2. Emissão
+            A emissão do CT-e OS é feita pela tela CT-e Outros Serviços (F140COS), sendo necessário preencher os seguintes campos:
+            
+                 O campo Série é sugerido com o próximo número disponível no sistema, podendo ser alterado. Para consultar um CT-e  já existente, basta digitar seu código e as informações referentes serão carregadas na tela.
+                Informe o Tipo de CT-e que será emitido, podendo ser 0 – CT-e Normal, 1 – CT-e de Complemento de valores, 2 – CT-e de Anulação e 3 – CT-e de Substituição.Com as opções 1, 2 e 3 a tela disponibiliza um campo para informar a Origem do CT-e,   em que o documento informado deve ser fechado e emitido. O campo Tomador permanece bloqueado, recebendo as informações do documento de origem. Somente os campos  Novo valor e Data de Saída podem ser alterados. Informando a opção 0, preencha os campos Código do tomador, que se refere ao cliente do CT-e, Transação e Data de Emissão.
+                Os campos de Trajeto, CEP Inicial e CEP Final, e Informações do Transporte, Modal, Quantidade, Tipo do serviço, Descrição do serviço e Valor do frete  são obrigatórios.Quando o tipo de serviço for 8 – Excesso de bagagem é obrigatório informar Documento referenciado.
+                O percurso é obrigatório caso o CEP de início e fim sejam de estados diferentes, contendo um estado que compõe o percurso. 
+				ExemploCep Início: Blumenau - SCCep Fim: Piracicaba - SPUF Percurso: PRNa guia percurso não se deve informar SC ou SP, apenas PR que é o estado que fez parte do percurso. Caso não tenha nenhum, não é necessário informar, mas se houver mais que um, todos devem ser informados na ordem do percurso.Cep Início: Blumenau - SC Cep Fim: Brasília - DFUF Percurso: PR, SP, MG e GO
+                As mensagens fiscais podem ser informadas na guia Doc. Referenciados e Observações, em que a tag <comp

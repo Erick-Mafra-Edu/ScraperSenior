@@ -1,0 +1,150 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/servicos/cartao-presente.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7C_____9
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Cartão Presente
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Cartão Presente
+            Conceito
+            Cartões presente podem ser vendidos no Retaguarda ou PDV ou ser usados como forma de pagamento em pedidos ou vendas. Tanto na venda como na compra de cartão presente, não é preciso identificar o consumidor.
+            Parametrização
+            Para vender ou receber com cartão presente, as seguintes parametrizações são necessárias:
+            
+                No Gestão Empresarial | ERP:No Cadastro de Serviços (F080SER), cadastre um serviço cujo Tipo de Serviço Comércio seja "T - Cartão Presente".Na tela Tabela de Preço de Venda (F081GTP), adicione o serviço a uma validade vigente de uma tabela de preço de vendas.Para vender cartão presente: na tela Parâmetros das Formas de Pagamento para Sapiens Varejo (F066VAR), para cada forma de pagamento (cadastrada na tela F066FPG) ligada à filial e que pode ser usada para comprar cartão presente, de acordo com as definições da loja para isso:Configure o relatório de pós-venda, informando as seguintes tags no campo Texto Comprovante:<CARTAO_PRESENTE>CARTÃO PRESENTE – LOJAS VAREJO SENIOR<DESC_CARTAO_PRESENTE/>NÚMERO:<NUM_CARTAO_PRESENTE/>VALOR:<VALOR_CARTAO_PRESENTE/><COD_BARRAS_CARTAO_PRESENTE/></CARTAO_PRESENTE>TagFinalidade<CARTAO_PRESENTE>Para inserir as informação do cartão presente é necessário inserir essa tag<DESC_CARTAO_PRESENTE/>Descrição desejada para o cartão Presente<NUM_CARTAO_PRESENTE/>Número do cartão presente<VALOR_CARTAO_PRESENTE/> Valor do cartão presente
+
+ 
+<COD_BARRAS_CARTAO_PRESENTE/>Código de barras representando o número do cartão presenteDefina o parâmetro Imprime Comp. Receb como "Sim".NotaEsse relatório só é impresso para a forma de pagamento quando na venda existe o serviço de cartão presente.Para receber com cartão presente: na tela de Formas de Pagamento (F066FPG), deve ser cadastrada uma forma de pagamento cujo Tipo Pagamento seja "12 - Cartão Presente". No campo Tipo Título Vendas, deve ser informado um tipo de título que possua a aplicação igual a "R - Contas a receber".Na tela Parâmetros das Filiais para Integrações (F070VAR), guia Cartão Presente:O campo Utiliza Cartão Presente deve estar definido como "Sim".No campo Dias Val. Cartão Presente, deve ser informada a quantidade máxima em dias para validade do cartão (até 9999).O campo Trans. C.Pagar C. Presente deve conter a transação utilizada para gerar o título de crédito referente ao cartão presente.No campo Tipo Título C.Presente, informe o tipo de título utilizado para geração do título de crédito referente ao cartão presente. A aplicação do tipo de título deve ser “P – Contas a pagar”.Para o campo Fornecedor Cartão Presente, que tem o fornecedor cujo o título de crédito estará vinculado, é recomendável criar um fornecedor específico para cartão presente e vincular todos os títulos de cartão presente a este fornecedor.
+                
+                    Observação
+                    
+                    Torna-se necessário configurar, também, os parâmetros da transação de intermediação para Cartão Presente. Para isso, acesse a tela (F080ISV) para defini-los.
+                
+                Depois que são feitas as configurações no ERP, no Retaguarda:No cadastro de filiais, guia Definições > Cartão Presente, a opção de cartão presente fica definida como "Sim" (somente como leitura, pois a configuração é feita no ERP, conforme passo 1):O serviço com Tipo Especial "10 - Cartão Presente" fica disponível no cadastro de serviços.
+                No PDVConf, na guia Meios de pagamento, informe a finalizadora cadastrada no ECF para cartão presente para o campo Cartão Presente e depois clique em Gravar.
+            
+            
+                Importante
+                
+                Para a venda ou recebimento de cartão presente no PDV é preciso que a comunicação com o Retaguarda esteja online e, caso um cartão comprado em uma loja seja usado em outra, a filial precisa estar conectada ao ERP.
+            
+            Venda de cartão presente
+            Sempre que a filial trabalha com cartão presente é possível vendê-los a partir de pedidos, inclusive em mais de uma quantidade, ainda que a filial esteja offline.
+             O cartão presente também fica disponível na consulta de preço, e após consultado pode ser adicionado à simulação para depois virar uma pré-venda ou um pedido.
+            
+                Nota
+                
+                Não é possível devolver item de serviço de cartão presente. 
+            
+            Depois que o cartão é vendido, é gerado um número e localizador para o cartão. O número do cartão é de grande importância, pois é através dele que é feito o pagamento das compras realizadas com o cartão. 
+            
+                Nota
+                
+                O parâmetro dinâmico PERFIL.MOSTRA_CARTAO_PRESENTE, do cadastro de perfil de usuário do Gestão Empresarial | ERP, determina se os quatro últimos dígitos do cartão presente devem ou não ser apresentados no campo Cartão Presente da tela de contas a pagar. Isso gera mais segurança, impedindo que o número não possa ser copiado e usado indevidamente. Seu valor padrão é "0 - Não", deixando parte do número oculta, sendo necessário alterá-lo para "1 - Sim", se desejado mostrar o número do cartão presente por completo.
+            
+            Ao integrar o comprovante, é gerado o título a pagar referente ao cartão presente. Este título a pagar pode ser visualizado no Retaguarda, permitindo inclusive recuperar o número do cartão presente, caso tenha sido perdido.
+            Uso de cartão presente em venda
+            Ao emitir um pedido, é possível informar o recebimento em cartão presente. Nesse momento já é necessário informar o número do cartão, para que seu saldo seja validado no Gestão Empresarial | ERP. É possível informar mais de um cartão para o recebimento de um mesmo pedido e não é obrigatório utilizar todo o saldo do cartão em um mesmo recebimento.
+            Consulta de saldo do cartão presente
+            Através de Finanças > Contas a pagar, é possível consultar os cartões presente vendidos pela loja, filtrando pelo Tipo correspondente ao cartão presente. Podem ser consultados, por exemplo: o saldo, data de emissão e validade.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

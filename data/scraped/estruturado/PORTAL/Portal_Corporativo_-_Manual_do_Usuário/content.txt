@@ -1,0 +1,188 @@
+# 
+
+URL: https://documentacao.senior.com.br/portal/6.10.1/#home.htm%3FTocPath%3DPortal%2520Corporativo%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____0
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOPortal Corporativo - versão 6.10.1
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Performance Corporativa | Portal Corporativo - 6.10.1
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                
+                Performance Corporativa | Portal Corporativo - 6.10.1
+                
+                    
+                        
+                            
+                                
+                                
+                                    
+                                        Funcionalidades
+                                    
+                                
+                            
+                        
+                        
+                            Portlets
+                            
+                            Portlets de Administração de Pessoal
+                            
+                            Portlets de Controle de Ponto e Refeitório
+                            
+                            Portlets de Treinamento e Pesquisa
+                            
+                        
+                    
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                    
+                                        Informações
+                                    
+                                
+                            
+                        
+                        
+                            Apresentação
+                            
+                            Arquitetura
+                            
+                            Resolução de problemas
+                            
+                        
+                    
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                    
+                                        Tecnologia
+                                    
+                                
+                            
+                        
+                        
+                            Instalação e Atualização
+							
+                            
+                            ​Plataformas Homologadas
+							
+                            
+                            senior x Plataform
+							
+                            
+                        
+                    
+                
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

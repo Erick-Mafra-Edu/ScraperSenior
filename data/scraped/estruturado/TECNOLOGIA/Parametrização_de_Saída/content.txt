@@ -1,0 +1,212 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/relatorios/fgenparvis.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CTelas%7C_____12
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Telas > Parametrização de Saída
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Parametrização de Saída
+                
+        Modo de Execução
+                Estão disponíveis três modos de execução: Local, Assíncrono e Agendado, porém os modos de execução Assíncrono e Agendado somente estarão disponíveis se o serviço multicamada estiver habilitado.
+                A opção configurada nesse campo não é salva, ou seja, sempre que for executado um relatório, por padrão o campo Modo Execução virá com a opção Local selecionada automaticamente, sendo necessário alterar o valor do campo conforme a necessidade antes da execução do relatório.
+                Local
+                Executa o relatório na máquina local de acordo com a operação selecionada pelo usuário (imprimir, abrir no visualizador, salvar ou enviar por e-mail).
+                Assíncrono
+                Executa o relatório em uma das máquinas configuradas como servidor de Middleware Senior assim que existir uma instância configurada disponível. O usuário deve utilizar o console de serviços para visualizar
+                o status e o resultado da execução. O resultado da execução poderá ser um arquivo salvo em disco, quando informado um diretório para o arquivo, ou salvo diretamente no banco de dados.
+                Agendado
+                O relatório será executado conforme o mesmo for agendado no servidor utilizando recursos disponibilizados pelo servidor Java EE.             Para configurar o agendamento, utilize o botão
+                    
+                    ao lado da opção Agendado, com isso a tela Periodicidade do serviço será exibida. O usuário deve utilizar o console de serviços para visualizar o status e o resultado da execução acessado através do menu Recursos > Implementações > Web Services > Console (guia Agendado).
+                
+                    Nota
+                    
+                    Modelos de relatórios programados (que possuem lógica de negócio via código fonte) serão executados localmente, o que resulta na desabilitação dos outros modos de execução. 
+                    Os relatórios com lógica pertencem ao Ronda Senior e ao módulo Administração de Pessoal (AP), e são identificados pelas seguintes extensões e categorias:
+                    Modelos
+                        
+                            
+                                
+                                
+                                
+                                
+                                    
+                                        Sistema/Módulo
+                                        Categoria
+                                        Extensão
+                                    
+                                    
+                                        Ronda Senior
+                                        
+                                        Todas que englobem a extensão .APU
+                                        .APU
+                                    
+                                    
+                                        Todas que englobem a extensão .REF
+                                        .REF
+                                    
+                                    
+                                        Administração de Pessoal (AP)
+                                        RE, RC e RS
+                                        .ENV
+                                    
+                                    
+                                        .CHE
+                                    
+                                    
+                                        .RCS
+                                    
+                                    
+                                        .CPT
+                                    
+                                    
+                                         .EPT
+                                    
+                                    
+                                         .CAG
+                                    
+                                    
+                                        .SIN
+                                    
+                                    
+                                         .PRE
+                                    
+                                    
+                                        CT
+                                        CTB 
+                                    
+                                
+                            
+                        
+                    
+                
+                
+                    Nota
+                    
+                    Modelos de relatórios programados (que possuem lógica de negócio via código fonte) serão executados localmente, o que resulta na desabilitação dos outros modos de execução. 
+                    Os relatórios com lógica pertencem ao Ronda Senior XT e ao módulo Administração de Pessoal (AP), e são identificados pelas seguintes extensões e categorias:
+                    Modelos
+                        
+                            
+                                
+                                
+                                
+                                
+                                    
+                                        Sistema/Módulo
+                                        Categoria
+                                        Extensão
+                                    
+                                    
+                                        Ronda Senior
+                                        
+                                        Todas que englobem a extensão .APU
+                                        .APU
+                                    
+                                    
+                                        Todas que englobem a extensão .REF
+                                        .REF
+                                    
+                                    
+                                        Administração de Pessoal (AP)
+                                        RE, RC e RS
+                                        .ENV
+                                    
+                                    
+                                        .CHE
+                                    
+                                    
+                                        .RCS
+                                    
+                                    
+                                        .CPT
+                                    
+                                    
+                                         .EPT
+                                    
+                                    
+                                         .CAG
+                                    
+                                    
+                                        .SIN
+                                    
+                                    
+                                         .PRE
+                                    
+                                    
+                                        CT
+                                        CTB 
+                                    
+                                
+                            
+                        
+                    
+                
+                Saída
+                De acordo com o tipo de saída escolhida, os formulários com as respectivas configurações de cada saída serão habilitados. Porém os formulários com as opções de Formato de Arquivo e Parametrização de Relatórios Texto são habilitados de maneira diferenciada.
+                O formulário com as opções de Formato de Arquivo, permanece habilitado para quase todos os tipos de saída, exceto para o tipo de saída "Impressora".
+                O formulário com as opções de Parametrização de Relatórios Texto, estará habilitado somente para "Relatórios Texto".
+                O campo Codificação do arquivo estará visível apenas para relatórios do tipo arquivo de texto.
+                Vídeo
+                Esta opção define que a saída será via tela de Visualização de Relatório.
+                Nota: Esta opção é suportada somente no Modo de Execução Local.
+                Impressora
+                Esta opção habilita o formulário com as opções de impressoras disponíveis e desabilita o formulário do Formato de Arquivo, este que é fixado como Padrão neste caso.
+                Nota: 
+                    Mesmo com a Impressora de Destino definida, se a opção Solicitar Impressora for a marcada, ao imprimir será exibida a tela Configurar impressora.
+                
+                Arquivo
+                Esta opção habilita o formulário de dados para geração do arquivo. Por padrão o arquivo será gerado com o nome do relatório no caminho definido  na Central de Configurações Senior (Sistemas > Gestão de Pessoas > Configurações). Porém através do formulário é possível definir um novo caminho

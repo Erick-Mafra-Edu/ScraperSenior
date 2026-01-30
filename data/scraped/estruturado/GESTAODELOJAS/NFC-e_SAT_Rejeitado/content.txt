@@ -1,0 +1,135 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/nfce-sat-rejeitado.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____33
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > NFC-e / SAT Rejeitado
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            NFC-e / SAT Rejeitado
+            Exibe retornos de solicitação de autorização com a situação "Rejeitado".
+            Processo 
+            Para NFC-e:
+                Ao receber um retorno de solicitação de autorização com a situação "Rejeitada", será exibida a mensagem:  "NFC-e não autorizada": <motivo da rejeição>. 
+            Pode-se optar por corrigir a falha e submeter-se à transmissão novamente, ou ainda cancelar a venda, conforme descrito abaixo:Após efetuar as alterações e realizar portanto, o reenvio da solicitação de autorização, o sistema PDV irá gerar novamente o arquivo XML com as informações da NFC-e atualizadas, inclusive data e hora de emissão.
+            É possível executar os seguintes processos:
+            
+                Informar um cliente na venda;
+                Cadastrar um cliente para identificar na venda;
+                Alterar os dados do cliente identificado;
+                Desistir/ Cancelar a venda enquanto a NFC-e / estiver rejeitado. 
+            
+            A venda pode ser finalizada novamente após efetuar as alterações e realizar o reenvio da solicitação de autorização.
+             
+            Para SAT
+                Segue o mesmo processo descrito acima, exceto para o item "Desistência e Cancelamento", que assume o seguinte comportamento:
+            O cancelamento no PDVSat pode ser realizado em Outras > ADM > Consulta operação. Nesse local, seleciona-se o CF-e que deseja-se cancelar e, então, o sistema faz a comunicação com o aparelho do SAT. Após confirmar o cancelamento, o sistema imprime um extrato de cancelamento.
+            A desistência, por sua vez, é igual ao NFC-e.
+            Exemplo de desistência:
+                
+                    O usuário está realizando uma venda e já inseriu produtos. De repente, o cliente não quer mais a compra (desistiu da mesma). Então, o usuário tem as opções de Voltar/Cancelar essa venda. Nesse caso, o sistema questiona se o usuário quer (cancelar) a venda. Se sim, no caso da desistência, o sistema (cancela) por trás e volta ao estado normal do PDV para venda.
+                
+            
+            Botão
+            Identifica
+                Ao selecionar este botão é possível identificar, incluir e alterar os dados do cliente.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

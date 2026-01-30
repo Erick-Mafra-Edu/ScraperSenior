@@ -1,0 +1,231 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#geral/convenio-icms-109-2024.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7C_____10
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Convênio ICMS nº 109/2024
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Convênio ICMS nº 109/2024
+            O Convênio ICMS nº 109/2024 disponibiliza ao contribuinte que realizar a transferência interestadual entre estabelecimentos do mesmo titular a opção de:
+            
+                Transferir o crédito para o estabelecimento de destino da operação, correspondente ao imposto apurado nas operações anteriores (cláusula quarta do Convênio ICMS nº 109/2024 );
+            
+            O crédito apropriado pelo estabelecimento destinatário será transferido pelo estabelecimento remetente, correspondendo ao imposto efetivamente pago nas operações anteriores, limitado à aplicação das alíquotas interestaduais do ICMS. Portanto, se a alíquota da compra for inferior à de saída, o crédito transferido será limitado ao valor tributado na operação anterior. Caso a operação anterior tenha sido isenta ou não tenha incidido ICMS, não haverá transferência de créditos.
+            O crédito a ser transferido deverá ocorrer mediante emissão de nota fiscal, com destaque do ICMS, conforme Ajuste SINIEF 33/2024 (DOU de 12.12.2024) conforme segue:
+            
+                Natureza da Operação: o texto "Transferência de Mercadoria - Estabelecimentos mesmo titular". Para isso será necessário a utilização de uma transação de venda no item da nota fiscal (F001TVE) cujo campo Transferência Crédito ICMS seja definido como "S";
+                Informações Adicionais de Interesse do Fisco: o texto "Procedimento autorizado conforme Convênio ICMS nº 109/2024. Esta informação será adicionada a nota fiscal através do controle de mensagens do ERP (F024MSG) e controle de mensagem da transação de venda do item (F001TVE);
+                Código Fiscal de Operações e de Prestações - CFOP: um dos códigos do grupo "6.150 - Transferências de produção própria ou de terceiros", conforme o caso.
+            
+            A emissão do referido documento fiscal será com finalidade 1 - NF-e Normal, CFOP 6.151/6.152. seguindo as demais disposições previstas no Ajuste relativo ao CST, base de cálculo e ICMS e deve antender os seguintes requisitos legais/operacionais:
+            
+                A empresa deve estar definida para registrar o controle de entrada e saída dos produtos (Registra entrada e saída dos produtos igual a "S - Sim");
+                Deve ter notas fiscais de compra registradas para impostos (F440RCI);
+                A transação do item da nota fiscal deve ter indicativo de Transferência Crédito ICMS igual a "S - Sim";
+                O produto/derivação deve registrar o controle de entrada e saída para impostos (Reg. Ent.Sai igual a "S - Sim") e deve ser um produto do tipo "C-Comprado";
+                O cliente da nota fiscal de saída por transferência deve ser de mesma titularidade da filial que está emitindo a nota fiscal. O ERP não barra a geração da nota, mas o não atendimento deste requisito pode barrar a autorização da nota fiscal;
+                Código de Situação Tributária do item da nota fiscal - CST: o código 090.
+            
+            O atendimento dos requisitos descritos faz com que o item da nota fiscal seja gerado com as seguintes características:
+            
+                Valor Base de Cálculo do ICMS: "valor zerado";
+                Alíquota do imposto: "valor zerado";
+                Valor do ICMS: o valor do crédito a ser transferido, caso exista, deve obedecer aos limites previstos no Convênio ICMS nº 109/2024.
+            
+            O valor do ICMS será definido utilizando como base de cálculo o menor valor entre o preço médio das notas fiscais de compra registradas na estrutura de controle de entrada e saída - valor das compras pelo saldo disponível das notas de compras, e o valor do item da nota fiscal.
+            O documento gerado (.XML) irá apresentar apenas o valor do ICMS e a mensagem de interesse do FISCO conforme segue:
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Natureza da Operação
+                    
+                    
+                        Transferência de Mercadoria - Estabelecimentos mesmo titular
+                    
+                    
+                        CFOP
+                        CST
+                        Valor da base de cálculo
+                        Alíquota do ICMS
+                        Valor do ICMS
+                    
+                
+                
+                    
+                        6151 a 6156
+                        90
+                        0,00
+                        0,00
+                        R$ Valor a ser transferido, caso exista
+                    
+                    
+                        Informações adicionais de interesse do fisco
+                    
+                    
+                        Procedimento autorizado conforme Convênio ICMS nº 109/24
+                    
+                
+            
+            
+                Importante
+                
+                O preço médio para cálculo de ICMS para atender ao convênio somente começa a ser calculado a partir da geração ou alteração de uma nota fiscal de compra.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

@@ -1,0 +1,215 @@
+# 
+
+URL: https://documentacao.senior.com.br/bpm/7.0.0/#lista-de-objetos-em-integracoes.htm%3FTocPath%3DBPM%2520%7C_____10
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBPM
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BPM  > Lista de Objetos em Integrações
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Lista de Objetos em Integrações
+            Sumário
+            
+            
+                
+                    Conceito
+                    
+                    Configuração
+                        2.1 Configuração de um Serviço Externo
+                        2.2 Configuração de um Plugin
+                         2.2.1 Configuração do Campo de Lista de Objetos em Plugins
+                         2.2.2 Configuração do Campo Lista de Objetos em Serviços Externos
+                        2.3 Configuração de um Serviço de Integração com Lista de Objetos
+                         2.3.1 Configuração do Formulário ECM com Lista de Objetos
+                         2.3.2 Configuração do Serviço de Integração no Fluxo do Processo BPM
+                    
+                    Execução do Processo e Análise dos Dados Enviados
+                        3.1 Envio da Lista de Objetos por Serviço Externo
+                        3.2 Envio da Lista de Objetos por Plugin
+                    
+                    Pontos de Atenção
+                    
+                    Considerações Finais
+                        
+                    
+                
+            
+             1. Conceito 
+            Esta documentação tem como objetivo o uso de listas de objetos em serviços de integração (serviço externo e plugin), abordando configurações essenciais e boas práticas. Essas listas organizam elementos estruturados, onde cada item é um objeto com atributos específicos. Com os Serviços de Integração, é possível enviar múltiplos registros, assegurando uma comunicação eficiente com sistemas externos.
+            2. Configuração 
+            
+            Para utilizar corretamente uma lista de objetos em Serviço de Integrações, primeiro, é necessário realizar algumas configurações. Essas configurações podem ser feitas tanto usando um Serviço Externo quanto um Plugin.
+            2.1 Configuração de um Serviço Externo 
+            
+            Acesse a Senior Flow> BPM > Configurações > Serviço de Integrações: selecione a guia de serviços externos para adicionar ou editar uma configuração.
+            Em seguida, ao selecionar um serviço e acessar a opção de configuração, uma tela será exibida com os campos para preenchimento e as ações disponíveis.
+            
+                Campos disponíveis para preenchimento:
+                    
+                        Nome do Serviço: Insira o nome que identifica o serviço;
+                        URL: Informe o endereço do serviço para a integração;
+                        Método de Requisição: Escolha o método conforme a necessidade da integração.
+                    
+                
+            
+            
+                
+            
+            2.2 Configuração de um Plugin 
+            
+            Para configurar um plugin acesse Senior Flow> Plugin (Conector) e selecione o plugin para configuração.
+            
+                
+            
+            2.2.1 Configuração do Campo de Lista de Objetos em Plugins
+            
+            A configuração incial deve ser feita na tela de configuração de um Plugin. Neste exemplo, utilizaremos o plugin Chamada de API HTTP
+            
+                Crie um campo chamado produtos, do tipo lista.
+                Dentro de produtos, adicione os seguintes subcampos:id - Tipo: Listanome - Tipo: Listaquantidade - Tipo: Lista
+            
+            
+                
+            
+            
+                Observação
+                
+                Quando um subcampo de uma Lista de Objetos for usado como variável de processo no fluxo, ele deve ser do tipo lista, independentemente do seu tipo original (texto, inteiro, decimal etc.). A única exceção ocorre quando o subcampo é configurado como variável de execução ou constante, exigindo a definição explícita do tipo de conversão.
+            
+            Para exemplificar, vamos adicionar mais dois campos na lista de objetos produtos:
+            
+                empresa - Tipo: Texto
+                solicitante - Tipo: Texto
+            
+            Feito isso, salve as configurações e prossiga para as próximas etapas.
+            
+                
+            
+            2.2.2 Configuração do Campo Lista de Objetos em Serviços Externos
+            
+            
+                Crie um campo chamado produtos, do tipo lista, e adicione os seguintes subcampos:id – Tipo: Inteironome – Tipo: Textoquantidade – Tipo: Inteiro
+            
+            
+                Observação
+                
+                No caso de Serviço Externo, a regra de conversão de tipo mencionada anteriormente não se aplica, pois não é possível utilizar variável de execução ou constante. Assim, os subcampos assumirão exatamente o tipo definido no fluxo do processo.
+            
+            Feito isso, será apresentada a seguinte configuração:
+            
+                
+            
+            2.3 Configuração de um Serviço de Integração com Lista de Objetos
+            
+            Após configurar a estrutura, é essencial enviar os dados corretamente. A configuração do fluxo do processo é a mesma para Plugin e Serviço Externo, com algumas particularidades no payload enviado.
+            2.3.1 Configuração do Formulário ECM com Lista de Objetos
+            
+            Para enviar a Lista de Objetos, primeiro é necessário criá-la em um formulário ECM, considerando os seguintes campos de exemplo:
+            
+                id – Tipo: Inteiro
+                nome – Tipo: Texto
+                quantidade – Tipo: Inteiro
+            
+            Os campos empresa e solicitante não precisam ser criados no formulário, pois serão configurados como constante e variável de execução no fluxo ao utilizar o Plugin, em vez de variáveis de processo. Com isso, o formulário estará devidamente estruturado.
+            
+                
+            
+            2.3.2 Configuração do Serviço de Integração no Fluxo do Processo BPM
+            
+            A configuração dos campos da Lista de Objetos com um plugin é diferente daquela usada ao utilizar um serviço externo.Veja um exemplo de configuração para ambos os casos.
+            
+                Configuração utilizando o Plugin:
+                
+            
+            
+                
+            
+            
+                Configuração com Serviço Externo:
+                
+            
+            
+                
+            
+            
+                Importante
+                
+                Não é possível utilizar tipo constante e variável de execução em Listas de Objetos nos Serviços Externos.
+            
+            Após configurar o Serviço de Integração, é possível salvar e publicar o processo.
+            3. Execução do Processo e Análise dos Dados Enviados
+            
+            Após realizada a configuração, podemos iniciar uma solicitação preenchendo o formulário e enviando os dados.
+            
+                
+            
+            3.1 Envio da Lista de Objetos por Serviço Externo
+            
+            Ao utilizar o Serviço Externo, os nomes dos campos enviados correspondem exatamente à configuração do fluxo do processo, e não à configuração do próprio Serviço Externo. Isso significa que o Serviço Externo deve estar preparado para receber os campos com os nomes definidos no fluxo.
+            Quando os dados são enviados via Serviço Externo, seguem o seguinte formato:
+            
+                
+            
+            3.2 Envio da Lista de Objetos por Plugin
+            
+            A referência dos campos das Listas de Objetos enviadas pelos Plugins é baseada na configuração do próprio Plugin, diferentemente do uso de um Serviço Externo. Nesse caso, os campos definidos no Plugin determinam quais serão enviados, enquanto os nomes dos campos no formulário do fluxo do processo servem apenas para identificar a origem dos valores.
+            Atualmente, apenas os seguintes Plugins são compatíveis com Listas de Objetos:
+            
+                Chamada de API HTTP
+                Chamada API UAU da Globaltec
+                Iniciar Solicitação (BPM)
+            
+            O payload é enviado no seguinte formato:
+            
+            4. Pontos de Atenção
+            
+            
+		Para evitar erros ao trabalhar com Listas de Objetos, siga estas recomendações:
+            
+                Confirme se os campos estão configurados corretamente.
+                Verifique se os valores no formulário ECM estão preenchidos adequadamente.
+                Antes de enviar grandes volumes de dados, teste a integração com um pequeno conjunto de registros.
+            
+            5. Considerações Finais
+            
+            O uso de Listas de Objetos em Serviços de Integração é fundamental para um fluxo eficiente de informações entre sistemas. Configurar corretamente os campos e entender as diferenças entre Serviço Externo e Plugin assegura uma transmissão estruturada e confiável dos dados. Além disso, testar previamente as configurações ajuda a evitar erros e otimizar a integração, garantindo um processo mais ágil e eficiente.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comen

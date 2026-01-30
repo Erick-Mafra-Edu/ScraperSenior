@@ -1,0 +1,165 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#web%205.0/autenticacao-suportada-web5-0.htm%3FTocPath%3DParametriza%25C3%25A7%25C3%25B5es%7CWeb%25205.0%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Parametrizações > Web 5.0 > Formas de autenticação suportadas na Web 5.0
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Formas de autenticação suportadas na Web 5.0
+            A Web 5.0permite as seguintes formas de autenticação:
+            
+                Logon nativo: o usuário deve informar seu usuário e senha na tela de login padrão da WEB 5.0.
+                Autenticação integrada do Windows (NTLM): para definir essa opção é necessário seguir os passos da configuração.Essa autenticação tem algumas características:O login é automático assim que é acessada a página inicial do Sapiens WEB 5.0Não há redirecionamento para página de login proprietário caso a autenticação NTLM falhe (Exemplo: usuário não pertencente ao domínio, não importado, inativo, etc). Desta forma, não é possível fazer login com usuário nativo ou com credenciais digitadas manualmente, e não há como autenticar fora do domínio da rede do servidor NTLM. Não existe a função de logoff na WEB 5.0.Caso a autenticação integrada do Windows esteja ativada para WEB 5.0, as ações SID utilizarão as credenciais do usuário da máquina que está chamando a ação, utilizando a autenticação integrada. As ações não vão considerar o usuário e senha enviados na requisição.O agendador não utiliza autenticação integrada do Windows, continuando necessário o cadastro de usuário e senha no processo agendado.Os navegadores Firefox e Safari não suportam autenticação integrada do Windows.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

@@ -1,0 +1,170 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/importacao-exportacao/fimpexp.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520Importa%25C3%25A7%25C3%25A3o%252FExporta%25C3%25A7%25C3%25A3o%7CImportador%252FExportador%2520de%2520Arquivos%2520Texto%2520(Defini%25C3%25A7%25C3%25A3o)%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador Importação/Exportação > Importador/Exportador de Arquivos Texto (Definição)
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Importador/Exportador de Arquivos Texto (Definição)
+            O Importador/Exportador de Arquivos Texto apresenta-se como uma excelente ferramenta de apoio à implantação modular dos sistemas Senior. A partir dela é possível adicionar registros em qualquer tabela dos sistemas, através da importação de arquivos textos com layout fixo ou variável. Também, pode-se exportar qualquer tabela do sistema para um arquivo texto permitindo a integração com outros sistemas.
+            É necessário ter permissão para 
+		customizações para ter acesso ao Importador/Exportador de Arquivos Texto.
+            
+                Nota
+                
+                O caractere asterisco  não pode ser o primeiro do registro, pois registros que iniciam por ele serão ignorados. Por exemplo, ao tentar inserir 01;*Teste;Status, será inserido somente 01;Status.
+            
+            Nesse campo é definido se  o modelo  é de importação ou exportação. A diferença entre os modelos de importação e exportação está nas guias de configurações.
+            
+                Guias para configuração de um modelo de importação: Layout, Definições, Procedimentos e Entrada.
+                Guias para configuração de um modelo de exportação: Layout, Definições, Procedimentos, Classificações e Entrada.
+            
+            Código
+                Permite:
+            
+                Selecionar um modelo de importação para editá-lo:
+			No campo Operação, selecionar a opção "Importação";Informar um código de um modelo de importação existente ou pesquisar um código através do botão de busca;O campo Nome será preenchido de acordo com o nome do modelo selecionado.
+                Selecionar um modelo de exportação para editá-lo:
+			No campo Operação, selecionar a opção "Exportação";Informar um código de um modelo de exportação existente ou pesquisar um código através do botão de busca;O campo Nome será preenchido de acordo com o nome do modelo selecionado.
+                Criar um novo modelo de importação:
+			No campo Operação, selecionar a opção "Importação";Informar um código de um modelo de importação que não existe;Informar o nome desse novo modelo no campo Nome.
+                Criar um novo modelo de exportação:				No campo Operação, selecionar a opção "Exportação";Informar um código de um modelo de exportação que não existe;Informar o nome desse novo modelo no campo Nome.
+            
+            Os modelos de 5 dígitos possuem precedência sobre os de 3 dígitos. Por exemplo, se houver um modelo com 5 dígitos (SMIM00001.SCF) e um modelo com 3 dígitos (SMIM001.SCF), apenas o de 5 dígitos será aberto. Na ausência do modelo de 5 dígitos o de 3 dígitos abrirá normalmente.
+            Nome
+                Esse campo é preenchido com o nome do modelo selecionado. Para alterar o nome do modelo selecionado, basta informar o novo nome e clicar no botão Alterar.
+            Tipo Layout
+                Define-se o tipo do layout que o modelo seguirá para importar ou exportar os dados. Estão disponíveis Layout Fixo e Layout Variável.
+            Seção
+                Serve para adicionar seções de layout ao modelo. Com ele podem-se definir:
+            
+                Diferentes configurações para modelos de importação: 
+			Permite que o arquivo texto a ser importado possua diferentes colunas em cada linha;Para isso, deve-se indicar em cada linha as definições de qual seção ela deve seguir.
+                Diferentes configurações para modelos de exportação: 
+			Permite que o arquivo texto a ser gerado possua diferentes colunas em cada linha;Para isso é indicado em cada linha as definições de qual seção ela segue.
+            
+            
+                Nota
+                
+                Seções do tipo Cabeçalho tratam relacionamentos do tipo Mestre-Detalhe. É criada uma seção do tipo Cabeçalho para a tabela mestre e uma seção registro para os detalhes, porém cada seção, independentemente do tipo de seção, irá inserir um registro na tabela destino.
+            
+            Salvar arquivo de log
+                Ao marcar essa opção o campo Nome do Arquivo de Log será habilitado e o arquivo de log da execução do modelo será gravado. 
+            Nome do Arquivo de Log
+                Campo que apenas estará habilitado se a opção Salvar arquivo de log estiver marcada. Nele deve ser informado o diretório e o nome do arquivo em que o log da execução do modelo será gravado.
+             
+            
+                Nota
+                
+                Usuários do Gestão Empresarial | ERP: Esta campo, juntamente da opção "Salvar arquivo de log", não terá efeito ao processar uma importação ou exportação via processo automático no ERP. Para maiores detalhes, acesse a documentação da tela de Cadastro de Processos Automáticos (F000AGE) do ERP.
+            
+            Botão SegurançaDisponível em Diversos > Permissão, é responsável por abrir a janela de segurança, que permite definir as permissões da tela do Importador/Exportador de Arquivos Texto.
+            Botão ListasDisponível em Ferramentas > Listar, é responsável por ativar uma tela onde se pode definir uma lista para conversão de valores no momento da execução do modelo. Esta conversão pode ser utilizada para campos em que os valores pertencem a uma lista fixa, como por exemplo as Siglas dos Estados da Federação. As informações para conversão são definidas nos campos Valor Antigo, Novo Valor, Edição antiga e Nova edição.
+            Exemplo:
+                
+                    
+                        
+                        
+                        
+                        
+                            Valor Antigo
+                            Novo Valor
+                            Edição
+                        
+                        
+                            AC
+                            Acre
+                            UU
+                        
+                        
+                            AM
+                            Amazonas
+                            UU
+                        
+                        
+                            AP
+                            Amapá
+                            UU
+                        
+                        
+                            BA
+                            Bahia
+                            UU
+                        
+                        
+                            CE
+                            Ceará
+                            UU
+                        
+                        
+                            ES
+                            Espírito Santo
+                            UU
+                        
+                    
+                
+            
+            Após a definição do código da descrição e dos valores para a conversão clique no botão Alterar para salvar a lista.
+            Para utilizar uma lista, selecione seu código na coluna Lista DE/PARA na página Layout do Modelo.
+            Botão LocalizarDisponível em Ferramentas > Localizar, permite encontrar modelos de importação e exportação através da pesquisa por palavras chaves que estão contidas no nome ou no próprio conteúdo do modelo.
+            Ao clicar nesse botão a tela Pesquisar Modelos será aberta e a pesquisa poderá ser realizada. Essa pesquisa é feita para o tipo de modelo selecionado no campo Operação.
+            Botão CopiarDisponível em Modelo > Copiar, pode ser utilizado para salvar o modelo aberto com um outro código. Isto é muito útil quando se deseja criar um novo modelo partindo de um modelo já existente. Também pode ser utilizado para converter a operação de um modelo de importação para exportação, ou vice-versa.
+            Botão Abrir modelo de relatóriosDisponível em Ferramentas > Abrir modelo de relatórios, é responsável por ativar o Gerador de Relatórios, onde pode-se confeccionar os modelos para impressão dos layout dos Modelos de Importação/Exportação. 
+            Botão ImprimirDisponível em Ferramentas > Imprimir, é utilizado para a impressão do layout do Modelo de Importação/Exportação, que pode auxiliar na elaboração dos arquivos textos a serem importados/exportados. 
+            Botão SalvarDisponível em Modelo > Salvar, esse botão é habilitado ao efetuar alguma alteração no modelo ou quando está sendo criado um novo modelo. Ele grava essas alterações e também salva o novo modelo. 
+            Botão CancelarDisponível em Modelo > Cancelar, este botão cancela toda alteração realizada após o último clique do botão Salvar. 
+            Botão ExcluirDisponível Modelo > Excluir, é responsável por excluir a lista que está aberta no momento. 
+            Proteger.../Desproteger...
+                Protege ou desprotege um modelo através de uma senha. 
+            Botão OrdenarPermite definir a ordenação das seções Registro e suas respectivas

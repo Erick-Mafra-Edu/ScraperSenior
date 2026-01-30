@@ -1,0 +1,307 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#ferramentas-de-customizacoes/funcoes-para-regras-gerador-de-relatorios/introducao.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CFerramentas%2520de%2520Customiza%25C3%25A7%25C3%25B5es%7CFun%25C3%25A7%25C3%25B5es%2520para%2520Regras%2520e%2520Gerador%2520de%2520Relat%25C3%25B3rios%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Ferramentas de Customizações > Funções para Regras e Gerador de Relatórios
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+            Funções para Regras e Gerador de Relatórios
+             
+            Uma regra é um texto com 
+ comandos para o sistema, que irá determinar procedimentos a serem efetuados. 
+ Com estes comandos, o usuário poderá escrever seus próprios procedimentos, 
+ para que o sistema processe as informações ao seu modo.
+             
+            Fazendo uma análise geral 
+ da rotina de regras nota-se que no seu desenvolvimento são utilizadas 
+ Variáveis, Constantes, 
+ Funções, Operadores, 
+ Comandos, Tabelas/Campos 
+ e anotações de lógica de programação.
+            Variáveis
+            Variáveis são palavras 
+ especiais que podemos utilizar na elaboração das regras. Estas variáveis 
+ assumem ou fornecem dados específicos que podem ou não variar conforme 
+ a execução da regra. O nome da variável pode ser composto de letras e/ou 
+ números ou o caractere “-“ (underscore ou sublinhado), não podendo ter 
+ mais de 30 (trinta) caracteres e tendo que iniciar, obrigatoriamente, 
+ por uma letra. 
+            Toda variável deve ser 
+ declarada no início da regra, através do comando “Definir” (ver comandos), 
+ atribuindo-se um tipo, nome, e se necessário, a quantidade de ocorrências 
+ desta variável. 
+             
+            
+                Importante: 
+                 
+                Variáveis numéricas simples, como contadores, acumuladores, indicadores, 
+ etc., não precisam ser declaradas. Elas são declaradas automaticamente 
+ quando são referenciadas.
+            
+            Constantes
+            Constantes são informações 
+ que não têm seu valor alterado durante a execução de uma regra. São os 
+ números que você digita na regra. Exemplo: quando você diz que VlrAux 
+ = 200; o número “200” é a constante.
+             
+            Tabelas
+            As tabelas são as unidades 
+ básicas para se armazenar dados. São compostas por linhas e colunas.
+            Colunas: também denominadas 
+ “Campos”, as colunas são usadas para representar o valor de dados inseridos 
+ sob cada coluna e possuem as seguintes propriedades:
+            
+                
+                    Cada coluna possui 
+	 um nome único;
+                
+                
+                    São ordenadas da 
+	 esquerda para a direita;
+                
+            
+            Linhas: podem ser vistas 
+ como “registros” em um arquivo, as linhas possuem as seguintes propriedades:
+            
+                
+                    As linhas não são 
+	 ordenadas;
+                
+                
+                    Cada linha de uma 
+	 tabela tem apenas um valor para cada coluna dessa tabela;
+                
+                
+                    Cada linha de uma 
+	 tabela deve ser inédita;
+                
+            
+            Como são utilizados em 
+ todos os locais de definição de regras ou fórmulas, temos a tecla F8 que 
+ traz a relação das tabelas com os dados existentes no sistema.
+             
+            Pode-se então percorrer 
+ a relação de tabelas com as setas, clicar no sinal de “+” apresentado 
+ no lado esquerdo do nome da tabela, para abrir a relação de campos pertencente 
+ a tabela, posicionar o cursor sobre o nome do campo e clicar no botão 
+ Selecionar, para que o dado seja deslocado para o texto da regra, na posição 
+ do cursor. Vários campos podem ser selecionados de uma vez só, porém, 
+ todos serão incluídos na regra, a partir da posição do cursor.
+            Sabendo-se o nome da tabela 
+ e o nome do campo, este dado pode ser digitado, separando o nome da tabela 
+ e o nome do campo por um “.” (ponto).
+             
+            Operadores
+            Descrevemos os operadores, 
+ que são utilizados nas regras e fórmulas: 
+             
+            Operadores 
+ Lógicos
+            Sinal Descrição
+            
+                
+                    =Sinal igual. Utilizado 
+	 em comparações/operações aritméticas
+                
+                
+                    >Maior que. 
+	 Utilizado nas comparações do comando “Se”
+                
+                
+                    <Menor que. 
+	 Utilizado nas comparações do comando “Se”
+                
+                
+                    < >Diferente 
+	 de. Utilizado nas comparações do comando “Se”
+                
+                
+                    >=Maior ou igual 
+	 a. Utilizado nas comparações do comando “Se”
+                
+                
+                    <=Menor ou igual 
+	 a. Utilizado nas comparações do comando “Se”
+                
+                
+                    e Utilizado com 
+	 o comando “Se”, para ligar várias condições, onde todas devem ser 
+	 verdadeiras para que o resultado da comparação seja verdadeira.
+                
+                
+                    ou Utilizado com 
+	 o comando “Se”, para ligar várias condições, onde pelo menos uma das 
+	 condições deve ser verdadeira para que o resultado da comparação seja 
+	 verdadeira.
+                
+            
+            Operadores 
+ Aritméticos
+            Sinal Descrição
+            
+                
+                    =Sinal igual. Utilizado 
+	 em comparações/operações aritméticas
+                
+                
+                    +Sinal de Somar. 
+	 Utilizado nas operações aritméticas de somar
+                
+                
+                    -Sinal de Subtrair. 
+	 Utilizado operações aritméticas de subtrair
+                
+                
+                    /Sinal dividir. 
+	 Utilizado nas operações aritméticas de divisão
+                
+                
+                    *Asterisco. Utilizado 
+	 nas operações aritméticas de multiplicação
+                
+                
+                    ++Incremento de 
+	 +1. Utilizado para aumentar o valor de uma variável, de um em um.
+                
+                
+                    --Decremento de 
+	 – 1. Utilizado para diminuir o valor de uma variável, de um em um.
+                
+            
+            Operadores 
+ Extras
+            Sinal Descrição
+            
+                
+                    @Arroba. Delimitador 
+	 utilizado para incluir comentários que tenham no máximo uma linha.
+                
+                
+                    /*Início de comentário.
+                
+                
+                    */Final de comentário.
+                
+            
+            Comandos
+            Os comandos reconhecidos 
+ pelo sistema são:
+             
+            Inicio 
+ ou { (abre chaves) => Indica o início de um bloco de comandos, 
+ quando este estiver subordinado a uma condição ou conjunto de condições 
+ (Se ou Senao).
+            Sintaxe: Inicio ou {
+            Fim 
+ ou } (fecha chaves) => Indica o final de um bloco de comandos, 
+ quando este estiver subordinado a uma condição ou conjunto de condições 
+ (Se ou Senao).
+            Sintaxe: Fim; ou }
+            Definir 
+ => Define uma variável ou função. Caso a variável não seja definida, 
+ esta será considerada como tipo Numero.
+            Sintaxe: Definir <Tipo> 
+ <Nome_da_Variável>Onde o Tipo pode ser: Alfa, Numero, Tabela, Funcao, ou Cursor.
+            Alfa: 
+ Variável Alfanumérica. Esta poderá conter letras e/ou números. Exemplo: Definir Alfa Vnome[30];
+            Numero: 
+ Variável que poderá guardar apenas números. Estes podem ser inteiros ou 
+ com casas decimais.
+            Exemplo: Definir Numero 
+ Vvalor;
+            Tabela: 
+ Variável que pode guardar valores em forma de tabela, onde tem-se linhas 
+ e colunas. Cada coluna é um nome com um tipo específico de informação. 
+ As linhas são indexadas de 1 até “N”.
+            Exemplo: Definir Tabela 
+ Meses_do_Ano[12] =
+            {Alfa Nome_Mês[9];
+            Numero Qtde_Dias;} 
+             
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+ 

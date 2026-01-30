@@ -1,0 +1,189 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/formas-de-pagamento/cartao-tef.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CFormas%2520de%2520Pagamento%7C_____4
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Formas de Pagamento > Cartão TEF
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Finalizando Venda com Cartão - TEF
+            Essa forma de pagamento é utilizada para recebimento em todos os cartões de crédito magnéticos ou chipados. O sistema se comunica com o banco emissor do cartão ou sua administradora de cartão de crédito e autoriza, ou não, a compra, dependendo dos limites de cada cliente.
+            TEF - Transferência Eletrônica de Fundos, é um equipamento para realizar transações de vendas em cartões de crédito e débito de todas as bandeiras. É integrado diretamente com o sistema de PDV,o que não torna necessário efetuar lançamentos separadamente como no caso do POS. Os comprovantes das vendas são impressos no equipamento fiscal.
+            As bandeiras de cartão são armazenadas no banco de dados em forma de código, de acordo com a tabela de códigos de bandeiras de cartão de crédito e/ou débito disponibilizada pela SEFAZ:
+            Tabela de códigos:
+                
+                    
+                        
+                        
+                        
+                            
+                                Bandeira do cartão
+                                Operadora
+                            
+                            
+                                01
+                                Visa
+                            
+                            
+                                02
+                                Mastercard
+                            
+                            
+                                03
+                                American Express
+                            
+                            
+                                04
+                                Sorocred
+                            
+                            
+                                05
+                                Diners Club
+                            
+                            
+                                06
+                                Elo
+                            
+                            
+                                07
+                                Hipercard
+                            
+                            
+                                08
+                                Aura
+                            
+                            
+                                09
+                                Cabal
+                            
+                            
+                                10
+                                Alelo
+                            
+                            
+                                11
+                                Banes Card
+                            
+                            
+                                12
+                                CalCard
+                            
+                            
+                                13
+                                Credz
+                            
+                            
+                                14
+                                Discover
+                            
+                            
+                                15
+                                GoodCard
+                            
+                            
+                                16
+                                GreenCard
+                            
+                            
+                                17
+                                Hiper
+                            
+                            
+                                18
+                                JcB
+                            
+                            
+                                19
+                                Mais
+                            
+                            
+                                20
+                                MaxVan
+                            
+                            
+                                21
+                                Policard
+                            
+                            
+                                22
+                                RedeCompras
+                            
+                            
+                                23
+                                Sodexo
+                            
+                            
+                                24
+                                ValeCard
+                            
+                            
+                                25
+                                Verocheque
+                            
+                            
+                                26
+                                VR
+                            
+                            
+                                27
+                                Ticket
+                            
+                            
+                                99
+                                Outros
+                            
+                        
+                    
+                
+            
+            Processo
+            Ao obter o recebimento da venda via Pin Pad (leitor de cartões crédito e débito), se comunica diretamente com os sistemas de Transações Eletrônicas de Fundos SiTef,  V$Pague ou Auttar, que por sua vez se comunicam com a operadora de cartão/banco e autorizam a transação. 
+            As modalidades abaixo são disponibilizadas para administradora do cartão: 
+            Crédito Rotativo; Parcelado com juros da administradora; Parcelado com juros da loja; Cancelamento.
+            Débito
+                Instantâneo (D + 0); Normal (D + 1); Pré-datada (D + n); Agendada (dd/mm/aa); Parcelada (com e sem entrada); Forçada (o cliente não possui saldo no momento, mas o lojista assume o risco, dado que pelo menos a senha foi validada e a conta do cliente não possui restrições); Cancelamento.
+            Após a transação e autorização, o cupom fiscal é impresso juntamente com as boletas de cartão no ECF (Impressora Fiscal).
+            
+                Observação
+                
+                Na utilização de V$Pague,  não será possível re-imprimir o comprovante de uma venda, sem informar o NSU da transação. 
+            
+            A data de vencimento do título das vendas realizadas com cartão de débito é calculada de acordo com a forma de pagamento:
+            
+                Á vista: é calculada com base na soma da data de emissão do cupom fiscal e a quantidade de dias para o primeiro repasse definido no cadastro da administradora do cartão;
+                Pré-datado: é a data informada no PDV mais a quantidade de dias para os demais repasses definido no cadastro da administradora do cartão;
+                Parcelado: a data de vencimento do título substituto referente à primeira parcela possui as seguintes regras:Se for informada a data da primeira parcela na venda do PDV, a data de vencimento é: data da primeira parcela mais o intervalo (dias) para os demais repasses (débito);Se não for informada a data da primeira parcela e o parâmetro Vencimento com dia fixo estiver como 1 - Sim, a data de vencimento é: data de emissão da venda mais o intervalo (dias) entre a venda e o primeiro repasse (débito);Se não for informada a data da primeira parcela e o parâmetro Vencimento com dia fixo estiver como 0 - Não, a data de vencimento é: data de emissão da venda mais o intervalo (dias) entre a venda e o primeiro repasse (débito).
+                A data de vencimento das demais parcelas possui as seguintes regras:Se for informada a data da primeira parcela, a data de vencimento das demais parcelas é: data da parcela anterior mais 30 dias corridos;Se não for informada a data da primeira parcela e o parâmetro Vencimento com dia fixo estiver como 1 - Sim, a data de vencimento das demais parcelas é: data da parcela anterior menos o intervalo de dias usado na parcela anterior mais um mês (mesmo dia) mais o intervalo (dias) para os demais repasses (débito);Se não for informada a data da primeira parcela e o parâmetro Vencimento com dia fixo estiver como 0 - Não, a data de vencimento das demais parcelas é: data da parcela anterior menos o intervalo de dias usado na parcela anterior mais os dias de intervalo entre parcelas mais o intervalo (dias) para os demais repasses (débito).
+            
+            Produto TEF
+                Permite definir qual será o produto da rede de cartão, que será utilizado ao efetuar um pagamento com esta forma. Isso permitirá a empresa configurar formas de pagamento específicas para pagamentos de carnês, utilizando um produto da rede de cartão diferenciado. 
+            Ao ser integrado com o sistema de Gestão de Lojas, e caso tenha sido preenchido, o sistema de PDV enviará esta informação na transação TEF com o V$Pague , possibilitando ao usuário definir um produto TEF por forma de pagamento. 
+            Por exemplo: definir uma forma de cartão de débito e informar o produto "Carnê". Isso indica que o produto é para recebimento de parcela (carnê/crediário).
+            Já, caso permaneça vazio, a transação seguirá o fluxo normal do sistema de TEF.
+            Observações
+                
+                    Esses produtos devem ser configurados conforme o sistema V$Pague. O usuário deve solicitar a lista de produtos para a VBI. A rede (administradora de cartão) também deve disponibilizar este tipo de serviço.
+                    Com a utilizacao de produtos específicos na transação, a loja pode transacionar com taxas diferenciadas e garantir que a 

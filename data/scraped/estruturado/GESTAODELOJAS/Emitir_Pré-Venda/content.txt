@@ -1,0 +1,122 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/emissao-pre-venda.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Emitir Pré-Venda
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Emissão de Pré-Venda
+            A pré-venda consiste no documento de abertura da venda e que expressa as necessidades do cliente em produtos e serviços. Pode ser chamado também de DAV - Documento Auxiliar de Venda. As seguintes informações podem ser registradas em uma venda por meio da pré-venda:
+            
+                Cliente – Permite a identificação por meio de código, nome, CPF.
+                Mercadorias e Serviços – Permite a identificação por meio de código, código de barras e descrição.
+                Informações da Negociação - tabela de preço, preço, descontos, acréscimos/encargos, promoções e brindes.
+                Informações de controle de estoque - lote de fabricação, número de série, depósito e quantidade.
+                Intermediação de Venda – Venda de Garantia Estendida por intermediação, permite atuar como representante/corretor da seguradora.
+            
+            Utilização
+            A pré-venda é utilizada para efetuar uma venda rápida que não requer informações detalhadas como no pedido de venda. É um processo mais simples e não é possível incluir frete, montagem, recebimento e nem negociar formas e condições de pagamento.
+            Processo 
+            A tela de pré-venda é acessada através do caminho: Menu Mercado > Gestão de vendas > Pré-Venda.
+            Na tela inicial é apresentada a lista de todas as pré-vendas ainda não atendidas no PDV e suas informações nas colunas respectivamente: Número da pré-venda, cliente, valor líquido, situação, quantidade de produtos, quantidade de serviços, tempo, e data da criação.
+            
+                
+            
+            A tela inicial possui a opção de Pesquisa, para que sejam aplicados filtros de busca. Assim, uma pré-venda poderá ser filtrada com mais agilidade aplicando o filtro por número, nome do cliente, situação, etc.
+             Incluir pré-venda
+            Para incluir uma nova pré-venda, acione o botão Incluir.
+            
+                Nota
+                
+                A tela de pré-vendas permite a digitação e a navegação de forma rápida, utilizando atalhos disponíveis no teclado, além disso, utiliza a mesma interface para todas as funções, evitando que seja necessário alternar entre telas, tornando o atendimento mais rápido.
+                Ao pressionar a tecla ENTER, setas ↓ e ↑ no teclado, é possível navegar entre os campos com mais agilidade.
+            
+            Campo Pré-venda (Ctrl + F1)
+            
+            Neste campo será gerado um número sequencial automaticamente pelo sistema, após a inclusão de um item/produto. Esse será o número da pré-venda. Permite ainda que seja utilizado o botão de pesquisa, se houver a necessidade de abrir uma pré-venda existente para efetuar alterações
+            Campo Cliente (Ctrl + F2)
+            
+            Para identificar o cliente, basta digitar o código do cliente, CPF ou o nome parcial. Se o cliente já possuir cadastro no sistema, será apresentado e selecionado automaticamente.Se optar pelo botão de pesquisa,  a tela de busca de cliente será exibida para inserção dos dados.
+            
+                Notas
+                
+                
+                    
+                        É possível incluir pré-vendas sem identificar o cliente. Porém, algumas condições que podem ser registradas na pré-venda, exigem a identificação do cliente, como por exemplo: vender garantia estendida, vender curso, quando aplicar-se a regra da filial atacadista e quando exceder o valor mínimo da venda para exigir cliente informado nos parâmetros da Filial. Nesses casos, caso a pré-venda não tenha cliente informado, não é possível a sua finalização.Para que não seja obrigatório informar o cliente no pedido, deve-se ter parametrizado previamente um cliente "genérico" que será utilizado no pedido, este parâmetro está localizado na tela F070VAR do ERP.
+                        Caso o cliente informado estiver bloqueado, o sistema apresentará uma mensagem avisando que o cliente está bloqueado informando o motivo e a observação do bloqueio. Será solicitado ao usuário se deseja continuar ou não.Ao escolher "Sim", a digitação da pré-venda continuará normalmente, porém o recebimento da pré-venda será somente à vista ou em formas que não exijam cliente cadastrado. Caso não, o cliente será removido da pré-venda.
+                    
+                
+            
+            Consultar na rede
+                Ao utilizar a opção do botão de pesquisa no campo Cliente, são apresentados todos os cliente cadastrados da filial logada. Na tela de pesquisa apresentada, o sistema permite, através do botão Consultar na rede, pesquisar os clientes de toda a rede de filiais. A pesquisa poderá ser feita por meio do  nome ou CPF/CNPJ. A tela de consulta apresenta  as informações de: Código, CPF, Nome, Endereço, Estado e Cidade do respectivo cliente. Dessa forma, o registro desejado poderá ser importado  para a pré-venda através do botão Importar F12. 
+            Campo Vendedor  (Ctrl + F6)
+            
+            Para identificar o vendedor na pré-venda, basta digitar o login ou o nome completo do vendedor, conforme cadastrado em cadastro de usuários. Os vendedores também podem ser pesquisados através do botão de pesquisa.
+            
+                
+            
+            
+                Notas
+                
+                Por padrão, o sistema sempre exibirá neste campo o usuário logado no terminal de venda, que pode ser alterado a cada inclusão de pré-venda e a cada item que for incluído na pré-venda. O vendedor que estiver informado na tela da pré-venda no momento em que um item for adicionado, será o vendedor daquele item.
+            
+            Campo Emissão
+                A data de emissão será sempre a data em que a pré-venda foi iniciada. É gerada automaticamente pelo sistema, e não pode ser alterada.
+            Campo Situação
+                Exibe a situação da pré-venda que é atualizada automaticamente pelo sistema e não pode ser alterada pelo usuário. A situações possíveis são:
+            
+                Aberto – Situação da pré-venda após ser iniciada ou reaberta;
+                Bloqueado – Situação da pré-venda caso tenha bloqueios;
+                Finalizado – Situação da pré-venda após ser finalizada;
+                Faturado – Situação da pré-venda após seu pagamento no PDV.
+            
+            Emitir Nota Fiscal
+                A opção  Emitir nota fiscal é selecionada para que a pré-venda, após faturada, emita uma nota fiscal para fins de transporte, garantia ou outro motivo.
+            Esta opção já virá selecionada automaticamente ao incluir um item que possua parametrizado "Exigir nota fiscal", no cadastro de produto ou quando informar um cliente de estado diferente do estado da filial.
+            
+                Nota
+                
+                
+                    Mesmo que a pré-venda esteja com a opção selecionada por um dos motivos citados, a marcação poderá ser alterada,  caso necessário.
+                    Quando esta opção estiver marcada na inclusão do pedido de venda, após a emissão do cupom fiscal o sistema se comunica com um servidor e imprime uma NF-e com os dados do cupom. Essa impressão é feita em uma impressora configurada da rede.
+                    Se a filial estiver sem comunicação com o servidor de NF-e ou com a SEFAZ ao tentar emitir uma nota fiscal, ela ficará pendente para impressão até que o servidor se estabilize novamente.
+                
+            
+            Inclusão Rápida 
+                A Inclusão rápida é selecionada para leitura do código de barras do produto, sendo que a cada leitura será adicionado o item lido na pré-venda com quantidade 1 (um), na unidade de medida padrão do produto e utilizando a tabela de preços conforme sugestão do sistema.
+            Caso o item lido tenha seu estoque controlado por lote ou série, o sistema irá solicitar a leitura ou digitação do código do lote ou o número de série do produto informado.
+            A inclusão rápida também ocorre quando a opção estiver selecionada e o usuário digitar o código exato de um item e pressionar Enter.
+            Consultar Títulos
+                Permite realizar a consulta  dos títulos gerados a partir do documento selecionado. A tela de Contas a Receber será aberta, e filtrará somente os títulos vinculados ao pedido selecionado.
+            O botão somente estará habilitado caso o Pedido/Pré-Venda já esteja faturado(a).
+            Documentos Vinculados
+                Permite realizar a consulta de documentos vinculados do pedido. Serão apresentados os dados de Cupom e Notas Fiscais vinculadas.O botão somente estará habilitado caso o Pedido/Pré-Venda já esteja faturado (a).
+             Incluir itens 
+            Para incluir um item na pré-venda, é necessário identificar o Produto ou Serviço (exceto garantias que são registradas de outra forma), informar a quantidade e o preço.
+            Produto/Serviço (F2)
+                Permite identificar o produto ou o serviço. Para incluir um produto, é necessário que o cursor esteja dentro do campo Produto/Serviço (F2). A inclusão pode ser feita através da leitura do código de barras do produto via leitor óptico, digitando o código do produto, informando a descrição do produto ou utilizando o botão de pesquisa para consultar os itens cadastrados.
+            Se a inclusão rápida estiver selecionada, a cada bipagem d

@@ -1,0 +1,140 @@
+# 
+
+URL: https://documentacao.senior.com.br/portal/6.10.1/#configuracoes/relatorio-para-criacao-de-usuarios.htm%3FTocPath%3DPortal%2520Corporativo%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CConfigura%25C3%25A7%25C3%25B5es%7C_____5
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOPortal Corporativo - versão 6.10.1
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Portal Corporativo - Manual do Usuário > Configurações > Relatório para criação de usuários
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Relatório para criação de usuários
+            O relatório para criação de usuários permite todos os colaboradores terem acesso ao Portal Corporativo.
+O relatório procura colaboradores que não têm usuário associado e cria usuários para eles. Para os usuários que já possuem colaborador associado, o relatório exibe e identifica que são usuários já existentes, ou seja, não foram criados na execução do relatório.
+
+            O relatório cria os grupos Portal Corporativo - Gestores e Portal Corporativo - Colaboradores, mas caso ele não seja executado, os grupos devem ser criados manualmente.
+            
+
+Para todas as operações o relatório considera as variáveis de entrada de abrangências definidas:
+            
+                EAbrEmp
+                EAbrTcl
+                EAbrCad
+                EAbrLoc
+
+            
+            Sendo que a abrangência utilizada para a criação de usuários através deste relatório é do tipo 2 (Empresa/Tipo Colaborador/Cadastro). Para alterá-la na criação, é necessária a customização no relatório.
+            Informar parâmetros de entrada do relatório
+                
+                    Modo de execução: define se o relatório cria ou simula a criação dos usuários.
+                    Formato do nome dos usuários: defina o formato do nome dos usuários.
+                    Formato da senha dos usuários: defina o formato da senha dos usuários.
+                    Listar usuários: defina quais usuários serão listados.
+                    Enviar dados dos usuários criados por e-mail: permite enviar os dados do usuário criado para o e-mail do seu respectivo colaborador. Para que o relatório envie o e-mail, o colaborador deve ter um e-mail comercial cadastrado.
+                    Definir usuários gestores: defina se o relatório vai criar usuários e parametrizar com permissão de gestor. 
+                    Gestores: defina quais colaboradores tem usuário criado como gestor.
+                    Listar abrangência: defina se a abrangência dos usuários será listada no relatório.
+                    Empresa: defina a abrangência de empresas fazem parte da criação de usuários.
+                    Tipo Colaborador: defina a abrangência de tipo de colaborador a fazer parte da criação de usuários.
+                    Colaborador: defina a abrangência de cadastros a fazer parte da criação de usuários.
+                    Local: defina a abrangência de local a fazer parte da criação de usuários.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

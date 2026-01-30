@@ -1,0 +1,171 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/ling_lsp_seniorsql2nasregras.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > Linguagem Senior SQL 2 dentro das regras
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Linguagem Senior SQL 2 dentro das regras
+            A linguagem Senior SQL 2 pode ser utilizada nas regras dos geradores de informação (gerador de relatórios e consultas), regras de cálculo (regras avulsas executadas diretamente pelo sistema) e importador/exportador de arquivos texto.
+            Esta linguagem é um padrão adotado pela Senior para que os comandos SQL possam ser escritos em um formato padrão que permita um melhor aprendizado e uma melhor tradução para os bancos de dados suportados pelos sistemas da Senior.
+            Abrangência da implementação
+            A implementação afeta todas as regras que tem comandos SQL em cursores ou em uso juntamente com o comando ExecSQL. Nestes casos a linguagem poderá ser usado como será visto mais adiante neste documento.
+            A ativação da linguagem é feita de várias maneiras, dependendo da ferramenta em questão. Estas maneiras são detalhadas a seguir.
+            Ativação da linguagem no gerador de relatórios
+            No gerador de relatórios a ativação é feita através do menu principal do gerador. No item diversos existe a opção Usar Senior SQL 2.
+            Esta ativação é referente a todas as regras do modelo selecionado, sendo relativa somente aos comandos SQL executados de dentro de uma regra do modelo selecionado, não interferindo no SQL gerado e executado diretamente pelo gerador de relatórios.
+            Ativação da linguagem dentro do importador/exportador de arquivos texto
+            A linguagem Senior SQL 2 dentro do importador/exportador de arquivos texto pode ser ativada através da opção Usar Senior SQL 2 na página Definições.
+            Ativação da linguagem dentro do gerador de consultas
+            Pode ser realizado através do opção Senior SQL 2 do tela principal de definição de modelos.
+            Ativação da linguagem nas regras
+            É feito através do editor de regras em Compilar > Usar Senior SQL 2 ou pela tecla de atalho Ctrl + F12.
+            Comandos SQL em cursores
+            Os comandos SQL Senior 2 executados dentro de cursores das regras não poderão mais usar comandos nativos do banco de dados, como TO_DATE ou CONVERT,por exemplo. 
+            Estes comandos deverão ser substituídos por comandos da linguagem Senior SQL 2.
+            Funções de agregação
+            Funções tais como SUM, COUNT, MAX, por exemplo, não poderão ser usadas quando a regra estiver usando Senior SQL 2. Isto somente acontece dentro da cláusula SELECT do comando, sendo possível a utilização de funções da linguagem Senior SQL 2 dentro da cláusula WHERE.
+            O JOIN e UNION ainda não tem garantias de funcionamento dentro das regras, sendo o seu uso de responsabilidade dos programadores. Hoje a rotina poderá ser alterada sem levar em conta o uso destes recursos da linguagem SQL.
+            Macro __inserir nos Cursores Usados em Regras
+            __Inserir
+                Comando que permite inserir uma String no cursor.
+            
+                Inserir( : <nome_variável> )
+            
+            Onde <nome_variável> é o nome de uma variável alfanumérica definida dentro da regra.
+            Considerações:
+            
+                1) Este comando é uma macro, portanto deve ser usado dentro do comando SQL do cursor. Somente neste caso ele será reconhecido e permite a inserção de valores no comando SQL do cursor em tempo de execução da regra.
+                2) Entre os parênteses deve ser inserido o nome de uma variável precedido por dois pontos. Se for necessário inserir valores constantes, o comando __Inserir não deve ser usado;
+                3) A variável deve estar declarada dentro da regra e deve ser do tipo ALFA (alfanumérico). Variáveis não declaradas na regra ou que não sejam do tipo ALFA ocasionarão um erro na execução da regra;
+                4) Os valores das variáveis a serem incluídas não devem conter o comando __Inserir. Isto pode ocasionar recursividade no tratamento do comando e instabilidade da regra. Tentativas neste sentido ocasionarão um erro na execução do modelo;
+                5) O comando não deve ser usado na lista de campos do comando SQL. Caso isto for feito a regra não poderá reconhecer os campos para a compilação. A inserção do valor da variável dentro do comando SQL somente pode ser feito durante a execução da regra.
+                6) Faz-se necessário a otimização do uso deste comando. O uso excessivo do mesmo poderá degradar a performance durante a execução da regra.
+            
+            Importante
+                Se a regra estiver usando a linguagem Senior SQL 2, esta macro deve figurar no comando de maneira que os conectores não fiquem inválidos no SQL caso a macro seja substituída.
+            
+            
+                Exemplo 1:
+                    
+                        Dada a regra descrita a seguir:
+                        
+                            definir cursor C;definir alfa SQLTipCol;definir alfa SQLNumCad;ObtemWhereTipCol(SQLTipCol);ObtemWhereNumCad(SQLNumCad);C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where NumEmp = 1 __inserir(:SQLTipCol) and TipSex = 'M' __inserir(:SQLNumCad)";C.AbrirCursor();se (C.Achou)inicio  ...  ...fim;C.FecharCursor();
+                        
+                        O comando SQL contido no cursor acima funciona corretamente em Senior SQL 2. Isto acontece porque a macro __Inserir está disposta de maneira que seja opcional, ou seja, podem ser retirados sem que o comando SQL seja prejudicado.
+                    
+                
+            
+            
+                Exemplo 2:
+                    
+                        
+                            C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where NumEmp = 1 and TipCol=__inserir(:SQLTipCol) and NumCad=__inserir(:SQLNumCad)"
+                        
+                        Neste caso a macro __Inserir  está sendo comparada com o valor do campo e se a macro for retirada não funcionará.
+                    
+                
+            
+            
+                Exemplo 3:
+                    
+                        
+                            C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where NumEmp = 1 and __inserir(:SQLTipCol) TipSex = 'M' and __inserir(:SQLNumCad)"
+                        
+                        Neste caso existem os conectores entre a expressão do NumEmp e entre as macros. Da mesma forma se a macro for retirada o comando ficará incompleto e não funcionará.
+                        
+                            Importante
+                            
+                            Se a macro puder ser removida e o comando ficar sem erros de sintaxe, a macro pode ser utilizada. Caso contrário, não pode ser utilizado.
+                        
+                    
+                
+            
+            
+                Exemplo 4:
+                    
+                        
+                            C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where NumEmp = 1 __inserir(:SQLTipCol) and TipSex = 'M' __inserir(:SQLNumCad)";
+                        
+                        Uso sem problemas.
+                        
+                            C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where NumEmp = 1 and TipSex = 'M'";
+                        
+                        Note que neste caso o comando continua sintaticamente correto depois que a macro foi removida. Portanto, a macro pode ser utilizada neste lugar.
+                    
+                
+            
+            
+                Exemplo 5:
+                    
+                        
+                            C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where NumEmp = 1 and TipCol=__inserir(:SQLTipCol) and NumCad=__inserir(:SQLNumCad)";
+                        
+                        Se removida a macro o SQL fica incorreto e não irá compilar.
+                        
+                            C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where NumEmp = 1 and TipCol= and NumCad=";
+                        
+                        Note que a macro foi removida. Este comando não compilaria mais em Senior SQL 2. Neste caso a macro não poderá ser usada.
+                    
+                
+            
+            
+                Exemplo 6:
+                    
+                        
+                            C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where NumEmp = 1 and __inserir(:SQLTipCol) and TipSex = 'M' and __inserir(:SQLNumCad)
+                        
+                        Se removida a macro, o comando SQL fica incorreto e não irá compilar.
+                        
+                            C.SQL "select NumEmp, TipCol, NumCad, NomFun, ValSal from R034FUN where N

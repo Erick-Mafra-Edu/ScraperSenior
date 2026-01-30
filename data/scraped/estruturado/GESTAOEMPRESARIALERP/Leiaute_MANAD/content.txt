@@ -1,0 +1,313 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#menu_controladoria/manad/capa.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7CINSS%7C_____3
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > INSS > Leiaute MANAD
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Layout MANAD - Portaria INSS/SRP nº  IN 12/2006
+             Versões:
+            
+                
+                    Código
+                    Instituído por
+                    Versão
+                    Obrigatoriedade
+                
+                
+                    001
+                    Portaria nº 63/2004 da MPS/SRP
+                    Nº 1.0.0.0
+                    A partir de 01/01/2005
+                
+                
+                    002
+                    Portaria nº 58/2005da MSP/SRP
+                    Nº 1.0.0.1
+                    A partir de 31/01/2005, com reflexos sobre toda competência janeiro de 2005.
+                
+                
+                    003
+                    Instrução Normativa MPS/SRP nº 12/2006
+                    Nº 1.0.0.2
+                    A partir de 20/06/2006, com reflexos sobre toda a competência de junho de 2006.
+                
+            
+            Tabela 5: Finalidade do Arquivo
+            
+                
+                    Código
+                    Descrição
+                
+                
+                    61
+                    Solicitação de Auditor-Fiscal da Secretaria da Receita Previdenciária através da MPF.
+                
+                
+                    62
+                    Entrega na Secretaria da Receita Previdenciária  Movimento anual de órgão público, conforme intimação.
+                
+                
+                    90
+                    Dados internos UF.
+                
+            
+            Bloco 0: Abertura, identificação e referência
+            
+                
+                    Registro
+                    Descrição
+                
+                
+                    0000
+                    
+                    Abertura do arquivo digital e identificação dos estabelecimentos (inclusive obras) do contribuinte.
+                
+                
+                    0001
+                    
+                    Abertura do bloco 0 (zero).
+                
+                
+                    0050
+                    
+                    Dados do contabilista.
+                
+                
+                    0100
+                    
+                    Dados do técnico/empresa responsável pela geração do arquivo
+		digital.
+                
+                
+                    0990
+                    
+                    Encerramento do bloco 0.
+                
+            
+            Bloco 9: Controle e encerramento do arquivo digital
+            
+                
+                    Registro
+                    Descrição
+                
+                
+                    9001
+                    
+                    Abertura do Bloco 9.
+                
+                
+                    9900
+                    
+                    Registro de Blocos.
+                
+                
+                    9990
+                    
+                    Encerramento do Bloco 9.
+                
+                
+                    9999
+                    
+                    Encerramento do Arquivo Digital.
+                
+            
+            Bloco I: Lançamentos Contábeis
+            
+                
+                    Registro
+                    Descrição
+                
+                
+                    I001
+                    
+                    Abertura do Bloco I.
+                
+                
+                    I005
+                    
+                    Identificação da escrituração contábil.
+                
+                
+                    I050
+                    
+                    Plano de Contas.
+                
+                
+                    I100
+                    
+                    Centro de custos.
+                
+                
+                    I150
+                    
+                    Saldos Mensais.
+                
+                
+                    I200
+                    
+                    Lançamento contábil.
+                
+                
+                    I250
+                    
+                    Saldos das contas de resultado antes do encerramento.
+                
+                
+                    I990
+                    
+                    Encerramento do Bloco I.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

@@ -1,0 +1,175 @@
+# 
+
+URL: https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/#introducao.htm%3FTocPath%3D_____1
+
+---
+
+
+        Ver site completo
+        
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORoteirização e Torre de Controle - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Introdução
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Introdução
+            
+            Assista ao vídeo explicativo da solução:
+            
+            
+             É possível utilizar a  Roteirização e Torre de Controle em conjunto ou individualmente, confira o que cada um deles trata:
+            Roteirização
+            Você já se perguntou como otimizar a complexa tarefa de planejar as operações de distribuição? Deixe que o nosso Roteirizador assuma o comando! Ele trabalha incansavelmente para simplificar e aperfeiçoar todo o processo.
+            O Roteirizador trabalha planejando as operações de distribuição, analisando automaticamente as entregas e coletas que precisam ser feitas e os veículos disponíveis para realizá-las.
+            Com base em informações específicas de cada atividade e nos critérios de custo e capacidades dos veículos, a solução consegue definir de forma dinâmica e automática as entregas e coletas por veículo e seu respectivo sequenciamento, reduzindo a quantidade de veículos utilizados, o tempo de realização ou a distância percorrida.
+            Torre de Controle
+            O Torre de Controle possibilita ao gestor acompanhar em tempo real a execução das rotas planejadas.
+            A execução das rotas é atualizada através de smartphones, de uso pelo motorista, que apresentam as rotas e atividades planejadas, possibilitando a orientação do trajeto e exigindo o lançamento das ocorrências pré-determinadas, observações, comprovantes e assinaturas digitais.
+            O acompanhamento é feito por meio do Torre de Controle, que exibe os dados das rotas e atividades, os percentuais de execução, os status e motivos e os demais dados lançados pelo motorista. O painel é atualizado em tempo real, possibilitando ao gestor atuar imediatamente em problemas ao longo da rota.
+            Esta é a ferramenta que você precisa para simplificar a operação, otimizar recursos e garantir que cada rota seja executada da melhor maneira possível. Não deixe mais nada escapar, esteja sempre um passo à frente.
+            Configurações e Requisitos 
+            
+                Homologamos somente o navegador Google Chrome (versão mínima 70.0.3538) para o funcionamento da Roteirização e Torre de Controle. Não garantimos o funcionamento da aplicação em outros navegadores.
+                Para os Monitores a resolução de ser acima de 1280 X 960 pixel.
+                Para a camada Free Tier, os produtos RMS tem a carência de 6 meses. Dúvidas sobre a Camada Free Tier? Consulte nossa página.
+            
+            
+                Nota: 
+                Caso ocorra erro ou sobreposição dos componentes em tela, deve ser diminuída a resolução do monitor utilizado.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+    

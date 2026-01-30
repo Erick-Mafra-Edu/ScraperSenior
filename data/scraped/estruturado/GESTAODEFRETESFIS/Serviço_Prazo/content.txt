@@ -1,0 +1,182 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/servico-prazo.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____24
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Serviço Prazo
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Serviço Prazo
+            
+                
+                
+                
+                    
+                        Descrição
+                         
+                    
+                    
+                        Url do Serviço
+
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/saidaServicoPrazo				
+
+                    
+                    
+                        Tipo de Envio
+
+                        POST				
+
+                    
+                    
+                        Momento
+
+                        Resposta do cálculo de frete				
+
+                    
+                    
+                        Tabela
+
+                        TI_WS_S_FRETE_SERVICO_PRAZO				
+
+                    
+                    
+                        Array
+
+                        Sim - Será retornada todos os cálculos de fretes pendentes de envio na mesma chamada				
+
+                    
+                
+             HeaderChaveValorContent-TypeApplication/jsonAuthorizationBearer inserir_token_aquiDetalhamento dos atributos de JSON saídaNome do AtributoTipo de DadoDefaultObrigatórioDescriçãoservicosPrazo
+Array
+ SRecebe um array de objetos
+ped_cd_empresa
+Integer
+ SCódigo da Empresa
+ped_cd_cliente
+Integer
+ SCódigo do Cliente
+ped_nu_pedido_origem
+String
+ SNumero do pedido origem
+ped_cd_transportadora
+Integer
+ SCódigo da transportadora
+ped_tipo_entrega
+Integer
+ SDescrição do tipo de entrega
+ped_tipo_imposto
+String
+ SICMS ou ISS
+ped_qt_dias_entrega
+Integer
+ SQuantidade de dias entrega
+ped_frete_valor
+Double
+ SValor do frete
+ped_nf_peso_real
+Double
+ SPeso real do pedido
+ped_fator_cubagem
+Integer
+ SQuando informado significa que a transportadora opta pelo peso cubado
+Exemplo do layout de saída de JSON:[{"ped_cnpj_empresa":"20121850000155","ped_cd_cliente":"123","ped_nu_pedido_origem":"1112223","ped_cd_transportadora":"22","ped_tipo_entrega":null,"ped_tipo_imposto":null,"ped_qt_dias_entrega":"3","ped_frete_valor":"12.50","ped_nf_peso_real":"12","ped_fator_cubagem":null,"ped_pedido_entrega_tracking_number":"EX222222248BR","ped_cnpj_transportadora":"01123456000101"}]
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

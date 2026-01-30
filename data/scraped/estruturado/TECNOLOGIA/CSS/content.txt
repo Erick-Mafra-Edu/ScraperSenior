@@ -1,0 +1,174 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/telas/sgi_informacoes_css.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Telas%2520-%2520SGI%7CInforma%25C3%25A7%25C3%25B5es%2520Complementares%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Telas - SGI > Informações Complementares > CSS
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                CSS
+                O SGI Web foi modificado para suportar o recurso CSS (Cascading Style Sheets), que permite a personalização de todos os elementos gráficos no SGI Web (fontes, cores, botões, imagens, etc).
+                Todas as configurações dos estilos estão no arquivo "SGI.CSS", para personalizar as telas do SGI é preciso alterar este arquivo.
+                Para demonstrar o recurso, foi criado o arquivo "SGI.CSS_EXEMPLO_MODIFICADO", que é uma personalização das telas do SGI. 
+                Para testar é preciso renomear o arquivo "SGI.CSS_EXEMPLO_MODIFICADO" para "SGI.CSS", sobrescrevendo o arquivo antigo, assim todos os estilos serão modificados. 
+                Para retornar à configuração padrão, deve-se utilizar a cópia do arquivo com a configuração original "SGI.CSS_COPIA_ORIGINAL" sobrescrevendo  novamente o "SGI.CSS"  (este que foi renomeado previamente a partir do "SGI.CSS_EXEMPLO_MODIFICADO").
+                Nota
+                    O calendário e a tela de pesquisa não são de responsabilidade do SGI, ele apenas chama estas telas. A tela de pesquisa vai ser modificada pela equipe WEB da Tecnologia para também suportar CSS. Sendo assim, ao personalizar o SGI alterando o arquivo "SGI.CSS", é interessante também personalizar a tela de pesquisa alterando um outro arquivo CSS. Quanto ao calendário, ele já utiliza CSS, e a personalização do mesmo deve ser feita nos arquivos "CALENDAR.JS" para calendários com máscara "DD/MM/YYYY" e "CALENDAR_COMPET.JS" para calendários com máscara "MM/YYYY". Ao editar estes arquivos, deve-se alterar a configuração na seção "CALENDAR COLORS", no início do arquivo.
+                
+                Arquivos Alterados
+                
+                g6webformgen.pas
+                %raiz_da_svcl%\web\calendar.js
+                %raiz_da_svcl%\web\calendar_compet.js
+                %raiz_da_svcl%\web\html_sgiweb\*.htm
+                Arquivos Adicionados
+                
+                %raiz_da_svcl%\web\html_sgiweb\sgi.css
+                %raiz_da_svcl%\web\html_sgiweb\sgi.css_copia_original
+                %raiz_da_svcl%\web\html_sgiweb\sgi.css_exemplo_modificado
+                %raiz_da_svcl%\web\html_sgiweb\imagens\sgi_b1.gif
+                %raiz_da_svcl%\web\html_sgiweb\imagens\sgi_b2.gif
+                %raiz_da_svcl%\web\html_sgiweb\imagens\sgi_calendario.gif
+                Arquivos Excluídos
+                
+                %raiz_da_svcl%\web\html_sgiweb\imagens\sgiboladireita.gif
+                %raiz_da_svcl%\web\html_sgiweb\imagens\sgibolaesquerda.gif
+                %raiz_da_svcl%\web\html_sgiweb\imagens\sgibolatitulo.gif
+                %raiz_da_svcl%\web\html_sgiweb\imagens\calend.gif
+                %raiz_da_svcl%\web\html_sgiweb\imagens\b1.jpg
+                %raiz_da_svcl%\web\html_sgiweb\imagens\b2.jpg
+                %raiz_da_svcl%\web\html_sgiweb\imagens\nav_first.jpg
+                %raiz_da_svcl%\web\html_sgiweb\imagens\nav_last.jpg
+                %raiz_da_svcl%\web\html_sgiweb\imagens\nav_next.jpg
+                %raiz_da_svcl%\web\html_sgiweb\imagens\nav_prev.jpg
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

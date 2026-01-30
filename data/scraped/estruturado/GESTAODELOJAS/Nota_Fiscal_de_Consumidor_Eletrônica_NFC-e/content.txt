@@ -1,0 +1,185 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/nota-fiscal-consumidor-eletronica.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7C_____4
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Nota Fiscal de Consumidor Eletrônica (NFC-e)
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Nota Fiscal de Consumidor Eletrônica NFC-e / SAT-CF-e
+            Conceito
+            Nesta desta tela é possível consultar as notas fiscais de consumidor eletrônicas, realizadas por NFC-e e por SAT-CF-e, sendo diferenciadas pelas Série e Mensagem NFe. Também, pode-se emitir NF-e de SAT-CF-e, da mesma forma como se emite NF-e de NFC-e, e realizar a Reimpressão de Documentos Vinculados.
+            Utilização 
+            A tela de consulta é composta pelas seguintes informações:
+            
+            
+            Botões
+            Para nota fiscal simples faturamento, não há informação de tributação. O reconhecimento somente poderá ser efetuado quando o bem estiver disponível para entrega. Na tela de visualização da nota, estão disponíveis os botões:
+             
+            Cancelar
+                Cancela notas fiscais emitidas e autorizadas pela Sefaz respeitando o prazo máximo permitido para cancelamento de NF-e em cada estado.
+            
+                Este botão fica habilitado para NFC-e quando:O número da nota fiscal estiver preenchido e for maior que zero;O campo Situação NF-e estiver como "Erro solicitação cancelamento".
+                Este botão nunca fica habilitado para SAT.
+            
+            
+                
+                    Nota
+                    
+                    Caso o cancelamento seja rejeitado, deverá ser realizado o procedimento de devolução/troca.
+                
+            
+             
+            Detalhes Nota
+                Conjunto de funções como: Totais, Observações, Transporte, Títulos, Referências Fiscais e Intermediações.
+             
+            Parcelas
+                Apresenta informações reais das parcelas no recebimento efetuado no PDV.
+             
+            Inutilizar
+                Inutiliza a numeração das notas fiscais.
+            
+                Este botão fica habilitado para NFC-e quando:O número da nota fiscal estiver preenchido e for maior que zero;O campo Situação NF-e estiver como "Erro solicitação inutilização", "Erro validação" ou "Erro geração".
+                Este botão fica habilitado para SAT quando:Nunca.
+            
+            
+                Observação
+                
+                Caso o cancelamento seja rejeitado, deverá ser realizado o procedimento de devolução/troca.
+            
+             
+            Reimprimir documentos 
+                Ao clicar neste botão os documentos serão impressos novamente. 
+            Reenviar DANFE
+                Ao clicar nesse botão é possível permite informar um endereço de email para o qual a nota deve ser enviada ou reenviada pelo eDocs. O botão só fica habilitado quando selecionada uma nota fiscal eletrônica cuja situação perante a SEFAZ seja "Autorizada" e que não tenha sido importada do Gestão Empresarial | ERP.
+             
+            Emitir NF-e
+                Ao clicar neste botão será emitida uma NF-e a partir de uma NFC-e/CF-e e enviada a Sefaz para autorização.
+            O comportamento deste botão varia de acordo com o valor informado para o parâmetro dinâmico VENDA.EMISSAONOTAFISCAL, do cadastro da filial no Gestão Empresarial | ERP:
+            
+                
+                
+                
+                    
+                        
+                            Opção
+                        
+                        
+                            Comportamento do Botão Emitir NF-e
+                        
+                    
+                    
+                        1 - Permite a emissão automática de Nota Fiscal
+                        Permite emitir nota fiscal de acordo com as validações da NFC-e/CFE-SAT.
+                    
+                    
+                        2 - Permite a emissão manual com escolha do usuário
+                        Permite emitir nota fiscal de acordo com as validações da NFC-e/CFE-SAT, porém é questionado ao usuário: "A filial está configurada para não emitir nota fiscal, deseja prosseguir?". Caso escolhida a opção "Sim", gera a nota fiscal, caso escolhido "Não", a nota não é gerada.
+                    
+                    
+                        3 - Não permite emissão de Nota Fiscal
+                        Não permite emitir nota fiscal e apresenta a mensagem "A filial está configurada para não permitir emissão de nota fiscal."
+                    
+                
+            
+             
+            Nota fiscal de saída 
+            Ao selecionar a nota e clicar no botão Visualizar aparecerá a tela de Nota fiscal de saída com os dados do documento fiscal.
+            
+            
+            
+                Nota: 
+                Através da tela de Nota fiscal de saída é possível visualizar o detalhamento da NFC-e/CF-e.
+            
+            Ao clicar no botão Recebimento as opções abaixo serão exibidas:
+            
+                Forma de Pagamento: descrição da forma de pagamento do recebimento;
+                Valor: valor do recebimento;
+                Data de Vencimento: data de vencimento do título referente ao recebimento;
+                Número do cheque: número do cheque recebido (somente preenchido quando a forma de pagamento for do tipo cheque);
+                Operação: débito ou crédito (somente preenchido quando a forma de pagamento for cartão);
+                Total de Parcelas: número total de parcelas (quando for crediário ou cartão);
+                Parcela: número da parcela do título referente ao recebimento;
+                Tipo de título: para o qual foi gerado o título referente ao recebimento;
+                Número do título: para o qual foi gerado o título referente ao recebimento.
+            
+            Emissão em Contingência 
+            Caso a conexão não esteja disponível:
+            Neste caso, a NFC-e ficará com a coluna da Situação  preenchida com emitida em contingência e a coluna Situação NF-e ficará como "Não enviada". 
+            Assim que a conexão estiver disponível:
+            O sistema irá solicitar autorização ao SEFAZ e o processo de emissão da nota fiscal de consumidor eletrônica (NFC-e) será concluído. 
+             
+            Para SAT:
+            
+            Caso não haja comunicação com o Documentos Eletrônicos (cliente) ou com o equipamento SAT, o PDV não conseguirá emitir CF-e.  
+            
+                Nota
+                
+                No caso de problemas na rede da loja, apenas o PDV que estiver na mesma estação que o cliente do Documentos Eletrônicos e consequentemente do equipamento SAT, conseguirá emitir CF-e
+            
+             
+            Caso o equipamento SAT esteja sem conexão com a SEFAZ, é possível operar normalmente, observando o prazo determinado pelo Fisco para transmitir os documentos. Quando o modo de operação configurado for NFC-e + SAT, o PDV funcionará  primeiramente com NFC-e e, quando entrar em contingência, irá operar com o SAT. Pois, por exemplo, no estado de São Paulo não é permitida a utilização da contingência off-line da NFC-e, lembrando que, a contingência nesse caso será da NFC-e, e não do SAT, pois o SAT não possui contingência. 
+            Diferenças com utilização de SAT-CF-e
+            Vendas do tipo SAT-CF-e são emitidas no PDV sem possuir uma Série de Nota Fiscal associada. Ao serem integradas com o Retaguarda, são automaticamente associadas às Série de Notas Fiscais no cadastro do Equipamento Fiscal do tipo SAT, que precisa estar previamente cadastrado.
+            Caso o Número da Venda SAT chegue ao limite máximo de numeração do equipamento (999.999), a numeração será reiniciada. O sistema de Retaguarda detectará este reinício na operação que iniciou a nova numeração (baseado na existência de vendas anteriores já integradas, emitidas pelo mesmo equipamento, que tenham números próximos do limite máximo).
+            Caso seja detectado reinício de numeração, o campo Próxima Série do cadastro de Séries de Nota Fiscal será considerado para vincular automaticamente a série subsequente para esta venda.
+            
+                Nota
+                Vendas do tipo SAT-CF-e não podem ser Incluídas/Alteradas/Excluídas, Inutilizadas ou Canceladas pelo Retaguarda. Cancelamento de vendas em SAT-CF-e pode ser feito apenas pelo PDV, dentro do prazo determinado pelo fisco. 
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+               

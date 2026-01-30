@@ -1,0 +1,295 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/executor/dgn_executor_arquivo.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CExecutor%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Executor > Arquivo
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Arquivo
+            Essa documentação descreve como utilizar as telas de manipulação de 
+ arquivos da aba Arquivo do Executor de Modelos para diagnóstico de ambiente. 
+ As demais opções desse menu podem ser encontradas em Arquivos 
+ de Saída.
+            
+                
+            
+            Abrir modelo...
+            Acessando pelo menu principal ou pelo botão , 
+ será aberta a tela para seleção do modelo que será executado.
+            
+            
+            Esta tela permite selecionar modelos existentes. 
+ Informando o código do modelo no campo Número 
+ e pressionando a tecla Enter 
+ ou clicando no botão Ok.
+            Ou utilizando o ícone  
+ e selecionando o modelo na listagem apresentada. A listagem traz as informações 
+ de nome e extensão do arquivo e o nome do diagnóstico. O nome do arquivo 
+ sempre será composto do prefixo "DG" e do número informado no 
+ cadastro, conforme a figura abaixo:
+            
+            
+            Arquivo: Apresenta o nome do 
+ arquivo de todos os modelos que estão no diretório definido na configuração. 
+ E o nome do arquivo é 
+ constituído da seguinte forma:
+            
+                
+                    Prefixo 
+	 "DG";
+                
+                
+                    Número 
+	 do modelo com 5 dígitos possuindo valor entre 00001 e 99999 (máscara: 
+	 99999). Caso 
+	 o número do modelo tanto na abertura como na gravação não obedecer 
+	 a máscara, o sistema deve exibir a mensagem de erro "O número 
+	 do modelo de diagnóstico é inválido.";
+                
+                
+                    Extensão 
+	 do arquivo .DGN. Por exemplo: DG00180.DGN.
+                
+            
+            Nome do Diagnóstico: Apresenta 
+ o nome informado durante a criação do modelo.
+            Ao selecionar o arquivo, dê um duplo clique ou pressione o botão Ok. Para cancelar o processo, clique 
+ em Cancelar.
+             
+            Executar
+            Com o modelo selecionado, a tela apresenta as 
+ seguintes informações:
+            
+                
+            
+             
+            Se houverem Parâmetros 
+ de Execução, definidos na criação do modelo, e se esses parâmetros 
+ forem obrigatórios, será apresentada uma mensagem ao usuário, avisando 
+ que há parâmetros sem valor informado.
+            No Exemplo abaixo, há três parâmetros de entrada:
+            
+                
+                    Alteração de Senha: Mesmo se o valor 
+	 não for informado pelo usuário, será preenchido com 0 (zero).
+                
+                
+                    Status da Conta: Mesmo se o valor 
+	 não for informado pelo usuário, será preenchido com 0 (zero).
+                
+                
+                    Grupo para pesquisa: Não há nenhum 
+	 valor sugerido, e o campo é obrigatório, por isso a mensagem foi apresentada.
+                
+            
+            
+                
+            
+            Os botões de reticências [...] ao lado do campo 
+ para preencher o valor, trazem os possíveis conteúdos para os campos, 
+ ou a tela de pesquisa, que permite procurar o conteúdo adequado para a 
+ variável de entrada.
+            Ao clicar no botão para executar o modelo , o andamento 
+ do processamento é mostrado, conforme a imagem abaixo:
+            
+                
+            
+            Durante a execução do modelo, é apresentada a tela acima, com o status 
+ das execuções enquanto elas ocorrem.
+            Ao final, são apresentados os registros de cada item do modelo.
+            
+                
+            
+            
+                
+                    Status 
+	 das ações: Depois de executadas, após o nome das ações, é apresentada 
+	 a quantidade total de ocorrências e o tempo em minutos e segundo que 
+	 a ação levou para ser executada. O ícone  representa 
+	 que a ação foi executada com sucesso, e o ícone  representa 
+	 que houve alguma falha durante a execução. Mesmo ocorrendo falha em 
+	 uma ou mais ações, o diagnóstico é executado até o final e somente 
+	 as ações falhas não será inclusas no Plano de Ação, até que sejam 
+	 resolvidas.
+                
+                
+                    Informações: 
+	 Na coluna superior direita, são apresentadas informações de:
+                
+                
+                    
+                        Nome da ação: Traz o nome da 
+		 ação.
+                    
+                    
+                        Descrição: Traz as informações 
+		 relevantes ao que a ação faz, com detalhes mais específicos.
+                    
+                    
+                        Situação: Apresenta se a ação 
+		 foi executada com sucesso, se ocorreu algum tipo de falha ou se 
+		 a ação não foi executada..
+                    
+                    
+                        Ocorrências: Quantidade total 
+		 de registros que a ação encontrou.
+                    
+                    
+                        Duração: Tempo total em minutos 
+		 e segundos que a ação levou para ser finalizada.
+                    
+                
+                
+                    Registros: 
+	 Os registros encontrados por cada ação são apresentados em formato 
+	 de linhas e colunas. Os registro são divididos em páginas e a quantidade 
+	 de registros por página pode ser definido na configuração 
+	 do aplicativo. Entre as colunas de resultado, uma será identificada 
+	 com um sinal de mais (+), o conteúdo dessa coluna trará o campo de 
+	 descrição da área de Informações acima. Nos resultados, é possível 
+	 clicar com o botão direto para: “marcar tudo”, “desmarcar tudo” e 
+	 “copiar dados” (transfere os as linhas checadas para sua área de transferência, 
+	 a fim de que sejam coladas em um arquivo Excel, o qual deve respeitar 
+	 as colunas conforme copiadas do executor).
+                
+            
+            Depois que o modelo foi executado, é possível gerar os arquivos 
+ de saída.
+            Fechar
+            Ao acessar essa opção de menu, ou utilizando o botão , 
+ o modelo que estiver aberto no executor é fechado, sem executar nenhuma 
+ ação..
+            Sair
+            Ao clicar sobre o botão , 
+ o aplicativo Robô será fechado.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

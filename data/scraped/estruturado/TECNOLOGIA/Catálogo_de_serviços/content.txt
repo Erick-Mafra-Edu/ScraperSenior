@@ -1,0 +1,229 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#editor-de-web-services/catalogo-de-servicos.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CRecursos%7CIntegra%25C3%25A7%25C3%25A3o%7CWeb%2520services%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Recursos > Integração > Web services > Catálogo de serviços
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Catálogo de serviços
+                O catálogo de serviços é um recurso 
+ que permite que um sistema Senior importe as definições de serviços disponíveis 
+ em um provedor, sem que seja necessário cadastrá-los manualmente. 
+ Este catálogo é obtido através de um serviço que deve ser implementado 
+ sem receber nenhum parâmetro, cujo retorno deve ser um XML, conforme especificado 
+ a seguir:
+                
+                    <services> <service name='servico_1'> <ports> <port 
+ name='porta_1'> <help>VmFsb3IgZG8gcGFy4m1ldHJvIHRleHRvLg0KTGluaGEgZG9pcy4=</help>                    <soapAction>RXhhbXBsZS5BY3Rpb24=</soapAction>                    <encodingStyle>aHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbmNvZGluZy8=</encodingStyle>                    <namespace>aHR0cDovL3NlcnZpY2VzLnNlbmlvci5jb20uYnI=</namespace> <request> <elements>  <element 
+ name='parametro_1' type='tipo'>  <help>HmkJBDhjlkj67JHJK=</help> </element>  <element 
+ name='parametro_2' type='tipo'>  <help>ASkJBDhjl567JHJK=</help> </element>                        </elements>                     </request> <response> <elements>  <element 
+ name='parametro_2' type='tipo'>  <help>HmkJBDhjlkj67JHJK=</help> </element>  <element 
+ name='parametro_3' type='tipo'>  <help>ASkJBDhjl567JHJK=</help> </element>                        </elements>                     </response> </port> <port 
+ name='porta_2'> <help>VmFsb3IgZG8gcGFy4m1ldHJvIHRleHRvLg0KTGluaGEgZG9pcy4=</help> <request> <elements>  <element 
+ name='parametro_1' type='tipo'>  <help>HmkJBDhjlkj67JHJK=</help> </element>  <element 
+ name='parametro_2' type='set'>  <help>ASkJBDhjl567JHJK=</help>                                <style>array</style> <elements>  <element 
+ name='coluna_1' type='tipo'>          <help>HmkJBDhjlkj67JHJK=</help> </element>  <element 
+ name='coluna_2' type='tipo'>  <help>ASkJBDhjl567JHJK=</help> </element>                                </elements> </element>                        </elements>                     </request> </port> </ports> </service> <service name='servico_2'> <ports> <port 
+ name='porta_1'> <help>VmFsb3IgZG8gcGFy4m1ldHJvIHRleHRvLg0KTGluaGEgZG9pcy4=</help>                    <namespace>aHR0cDovL3NlcnZpY2VzLnNlbmlvci5jb20uYnI=</namespace> <request> <elements>  <element 
+ name='parametro_1' type='tipo'>  <help>HmkJBDhjlkj67JHJK=</help>                                <namespace>aHR0cDovL3NlcnZpY2VzLnNlbmlvci5jb20uYnI=</namespace> </element>                        </elements>                     </request> <response> <elements>  <element 
+ name='parametro_2' type='tipo'>  <help>mkzxcdjlkj67asdUjuaLJK=</help> </element>                        </elements>                     </response> </port> </ports> </service> </services>
+                
+                Nós 
+ do XML:
+                
+                
+                    <services>: Nó principal do XML. <service>: Representa um serviço disponível no provedor. 
+ Podem haver vários no mesmo XML. <ports>: Nó que contém as portas do serviço. Deve 
+ haver apenas um para cada serviço. <port>: Representa uma porta do serviço. Podem haver 
+ várias no mesmo serviço.<help>: Texto codificado em base64. Para as portas, 
+ representa a descrição, e deve ter apenas 1 linha. Para os parâmetros, 
+ representa uma explicação sobre o parâmetro, e pode ter várias linhas.<soapAction>: 
+ Ação que identifica a chamada do serviço, definida da WSDL.<encodingStyle>: 
+ Estilo de codificação do XML da porta definido na WSDL. Deve ser usado 
+ apenas em definições não literais.<namespace>: 
+ Identificador universal da porta (MethodNamespaceURI), definido da WSDL. 
+ Deve ser informado também nos parâmetros quando a chamada exigir tipos 
+ qualificados. <request>: Representa a entrada da porta do serviço. <response>: Representa a saída da porta do 
+ serviço.  <elements>: Contém os parâmetros de entrada ou de saída 
+ do serviço. <element>: 
+ Representa um parâmetro da porta ou uma coluna de um parâmetro do tipo 
+ "set". Quando um parâmetro for do tipo "set", o nó 
+ element pode ser composto por outro nó elements.<style>: Representa uma informação 
+ adicional sobre o tipo do parâmetro. O valor "array" usado em 
+ parâmetro do tipo "set" indica que é uma lista ordenada, e que 
+ cada ítem deve ser montado dentro de uma tag <value>. 
+                
+                Exemplo:
+                    
+                        
+                            //Trecho de uma chamada com parâmetro tipo "set" e estilo 
+ "array"<SimpleData_1>    <value>        <code>10</code>         <name>Teste 1</name>    </value>    <value>        <code>11</code>         <name>Teste 2</name>    </value></SimpleData_1>
+                        
+                    
+                
+                Tipos dos parâmetros:
+                
+                
+                    
+                        string: Parâmetro para 
+	 valores alfanuméricos;
+                    
+                    
+                        integer: Parâmetro 
+	 para valores inteiros;
+                    
+                    
+                        double: Parâmetro 
+	 para valores de ponto flutuante;
+                    
+                    
+                        time: Parâmetro 
+	 para valores do tipo hora;
+                    
+                    
+                        datetime: Parâmetro 
+	 para valores do tipo data;
+                    
+                    
+                        blob: Parâmetro 
+	 para valores texto;
+                    
+                    
+                        set: Parâmetro 
+	 que pode respresentar diferentes tipos:
+                        
+                            
+                                Uma tabela, contendo colunas que podem ser  string, 
+		 integer, double, time, datetime, blob e set (realcionamentos mestre/detalhe);
+                            
+                            
+                                Um tipo complexo, contendo propriedades que são representadas 
+		 da mesma forma que as colunas de uma tabela;
+                            
+                            
+                                Uma lista ordenada (array), contendo elementos de qualquer 
+		 tipo desses disponíveis para parâmetros.
+                            
+                        
+                    
+                
+                Nomenclatura
+                
+                Os nomes de serviços, portas, parâmetros e colunas devem ser formados 
+ por caracteres pertencentes ao alfabeto {['A'..'Z'], ['a'..'z'], ['0'..'9'], 
+ '_'}, onde o primeiro caracter não pode ser numérico.Há uma exceção com relação aos nomes dos serviços, onde pode ser usado 
+ também o caracter '.' (ponto), desde que ele não sejá nem o primeiro e 
+ nem o último caracter do nome.
+                Há ainda uma restrição quanto aos nomes das colunas com relação aos 
+ identificadores usados em operações nos parâmetros do tipo "set" 
+ (tabela) dentro de regras LSP. As colunas não podem ter os seguintes nomes:
+                
+                    
+                        QtdLinhas
+                    
+                    
+                        LinhaAtual
+                    
+                    
+                        CriarLinha
+                    
+                    
+                        ExcluirLinha
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Españo

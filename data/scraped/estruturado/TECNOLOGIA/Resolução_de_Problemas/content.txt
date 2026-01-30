@@ -1,0 +1,176 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#resolucao-de-problemas.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7C_____13
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Resolução de problemas
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Resolução de problemas
+            Banco de dados
+            Ao tentar conectar qualquer aplicação com conexão Oracle e aparecer o erro: "Banco de Dados: Oracle 10. Erro do Banco (12154): ORA-12154: TNS: não foi possível resolver o identificador de conexão especificado"
+                
+                    Diagnóstico:A aplicação está com o caracter parênteses, seja de abertura"(" ou de fechamento ")" em seu diretório.
+                    Solução:Alterar o diretório da aplicação para que fique sem o caracter parênteses, seja de abertura "(" ou de fechamento ")".
+                
+            
+            BI
+            Campos não informados
+                
+                    Se durante o processo de instalação ou alteração for marcado o produto MicroStrategy, mas faltar o preenchimento dos campos da tela Configuração do Produtos, será exibida uma mensagem informando que ocorreu um erro na instalação do produto MicroStrategy, juntamente com os campos que não foram informados.
+                    Para continuar a instalação é  necessário selecionar a opção Cancelar execução e recomeçar a instalação.
+                
+            
+            Dados incorretos de conexão de banco de dados
+                
+                    Se no Instalador forem fornecidos dados incorretos de conexão de banco de dados, quando o computar reiniciar, o instalador não conseguirá finalizar a instalação. Para finalizar a instalação, deverá ser editado manualmente o arquivo <Diretório de instalação>\ETL\MicroStrategy\bin\install.properties alterando-se apenas os valores:
+                    
+                        mstr.metadata.odbc=<nome do odbc de metadados>
+                        mstr.metadata.server=<URL do BD>
+                        mstr.metadata.port=<Porta do BD>
+                        mstr.metadata.sid=<SID do BD - oracle>
+                        mstr.metadata.defaultDB=<Banco de dados padrão - SQLServer>
+                        mstr.metadata.user=<Usuário do BD>
+                        mstr.metadata.password=<Senha do usuário do BD>
+                        mstr.metadata.type=<Tipo de banco de dados - aceito "Oracle" ou "SQLServer">
+                        mstr.metadata.version=<Versão do banco de dados - aceito: "2012", "9i", "10g", "10gR2", "11g" e "11gR2">
+                    
+                    Após edição deve ser executado o aplicativo <Diretório de instalação>\ETL\MicroStrategy\bin\mstr-setup.exe.
+                
+            
+            Erro ao criar no registro de sistema a chave: "Software\Microsoft\Windows\CurrentVersion\RunOnce"!
+                
+                    Não foi encontrada a chave "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce". Deve ser criada manualmente.
+                
+            
+            Erro ao tentar acessar MicroStrategy web pelo WildFly
+                
+                    Caso ao tentar acessar a versão web do MicroStrategy pelo WildFly seja apresentada a mensagem de erro "The Web Server encountered an unknow runtime error", siga o passo a passo de pós-atualização do ETL e da migração das aplicações do MicroStrategy.
+                
+            
+            Erro na atualização: "Consistência de Views, Triggers, Stored Procedures processada com problemas"
+                
+                    Este erro encontrado na atualização ocorre devido a um problema na consistência de Views, Triggers, Stored Procedures. O motivo é a base ser importada manualmente e esta consistência não ser feita no processo de atualização. 
+                    Portanto, para que esta situação não ocorra, é necessário sempre que importar uma base manualmente, criar as sequências faltantes. 
+                    Comandos:
+                    
+                        //Executar o comando na base de dados
+                        
+                        SELECT COALESCE(MAX(IDHIE), 0) ULTIMO FROM DI_R016HIE
+                        //Criar a sequence na base de dados
+                        
+                        CREATE SEQUENCE SEQ_DI_R016HIE_IDHIE INCREMENT BY 1 START WITH (<<RESULTADO DO SQL ACIMA>> + 1);
+                        //EXEMPLOS:
+                        
+                        //De acordo com o resultado do primeiro comando, deverá somar mais 1 e adicionar no comando:
+                        
+                        ////Caso retornar 0, ficará assim:
+                        
+                        CREATE SEQUENCE SEQ_DI_R016HIE_IDHIE INCREMENT BY 1 START WITH 1;
+                        ////Caso retornar outro valor, por exemplo '15', ficará assim:
+                        
+                        CREATE SEQUENCE SEQ_DI_R016HIE_IDHIE INCREMENT BY 1 START WITH 16;
+                    
+                
+            
+            Não existe a fonte de dados "Senior" ou projeto "BI".
+                
+                     Isto acontece caso não tenha sido cumprido o pré-requisito descrito em MicroStrategy.
+                
+            
+            BrowserAccess
+             Relatório ultrapassa os limites da página
+                
+                    Este é um problema do no navegador Internet Explorer que 
+ não consegue exibir corretamente a imagem que representa o relatório. Este problema só afeta o BrowserAccess. Deve-se notar que este problema é visual, não influenciando a impressão 
+ do relatório ou o salvamento do relatório em outros formatos. 
+                
+            
+            Central de Configurações
+            Ao tentar alterar alguma configuração na Central de Configurações, o sistema exibe a seguinte mensagem: "Não foi possível salvar as configurações: O usuário <nome do usuário> não tem permissão de escrita no arquivo <nome do arquivo>.
+                
+                    Diagnóstico: O usuário não possui permissão de escrita na pasta de instalação para poder alterar o arquivo de configurações através da Central de Configurações.
+                    Solução: Atribuir permissões de leitura e escrita ao usuário que irá alterar as configurações na Central de Configurações.
+                
+            
+            Central de Monitoramento
+            Ao acessar a Central de Monitoramento, apresentou problema de base de autenticação.
+                
+                    Diagnóstico: Sistema não consegue obter a informação de ambiente existentes para poder apresentar, pois o serviço de informações da instalação não está iniciado.
+                    Solução: Verificar se o “Senior - Serviço de informações da instalação (ID xxx)” está ativo/iniciado.
+                
+            
+            Erro no deploy da Central de Monitoramento
+                
+                    Diagnóstico: URL JDBC inválida. Na conversão para compatibilidade, é informada a URL completa. Já no SeniorConfigCenter, esta URL é parseada, portanto ao abrir o SeniorConfigCenter após converter os campos de aplicativos Java ficam vazios.
+                    Solução:Abrir a Central de Configuraçao, ir nas configurações de cada base de dados e configurar os campos de aplicativos Java.
+                    A chave no CFG da URL JDBC é “com.senior.database.<ID_DA_BASE>.url”
+                
+            
+            Consistência da base de dados
+            Erro: "Não foi possível autenticar no servidor Java EE. Verifique se o serviço está inicializado ou se há um software firewall instalado"
+                
+                    Caso esta mensagem apareça durante o processo de consistência da base de dados, verifique como está o serviço do WildFly, em relação aos domínios correspondentes ao ambiente:
+                    
+                        Certifique-se que o serviço do WildFly está iniciado. Caso esteja, pare e o reinicie.
+                        Aguarde alguns minutos até o serviço iniciar (acompanhe pelo Gerenciador de Tarefas do Windows).
+                        Abra o console do WildFly e faça um teste conexão. Por exemplo: http://<servidor>:<porta>. Usuário: admin. Senha: adminadmin.
+                        Caso o acesso tenha sido realizado, o WildFly está funcionando normalmente. Se não estiver, aguarde, pois o serviço ainda pode estar iniciando. Acompanhe pelo Gerenciador de Tarefas do Windows o consumo de CPU do Java.
+                    
+                    Após certificar que o domínio do WildFly está novamente iniciado e funcionando corretamente, retorne a tela responsável pela consistência da base e clique em Tentar novamente para que uma nova tentativa de deploy ocorra. Em seguida, informe o login padrão (descritos acima) do WildFly. 
+                    
+                        Nota
+                        
+                        Caso o usuário e senha tenham sido alterados na instalação do domínio e não funcionem neste momento, entre em contrato com a área responsável pela infraestrutura da empresa para obter esta informação.
+                    
+                    Opções disponíveis 

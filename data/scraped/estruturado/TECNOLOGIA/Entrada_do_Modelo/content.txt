@@ -1,0 +1,238 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/relatorios/fitementrance.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CTelas%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Telas > Entrada do Modelo
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Entrada do Modelo
+            
+        Nesta tela são definidos os dados que serão solicitados
+ no momento da emissão do relatório.
+            
+        Deverão ser informados os dados:
+            Nome da Variável
+                Nome de uma variável,
+ já definida pelo sistema ou não. Se for utilizada uma variável não definida pelo
+ sistema, esta deverá ser tratada na Seleção, Pré-Seleção, nos Eventos ou em alguma
+ Fórmula criada no relatório.
+            Descrição da Variável
+                Nome
+ que aparecerá na tela antes da execução do relatório.
+            Tipo
+                Tipo de dado a ser executado.
+            Nota
+                Campos do tipo Hora devem ser
+ acessados.
+            
+            Tamanho: Este dado é necessário somente se o tipo for
+ Cadeia de Caracteres, e pode ser um valor entre 1 e 39600. 
+            
+                Nota
+                
+                Para variáveis
+ do tipo Abrangência = Sim, deve-se utilizar o tamanho 99, exceto em casos que
+ a necessidade do usuário ultrapassar este limite.
+            
+            
+                        Importante
+                
+                Se o tamanho for muito grande, pode ocorrer lentidão na digitação e ao sair do campo
+ na tela de entrada.
+                O máximo de itens possíveis em uma variável de entrada Abrangência = Sim
+            é 1000. Entende-se por item de abrangência todo valor inserido entre vírgulas. 
+                
+                    Exemplos:
+
+                        
+                            1,2,3 -> 3 itens; 
+                            1,2,3-5,6 -> 4 itens (o 3-5 conta como
+ um item só).
+                        
+                    
+                
+            
+            Edição
+                Formato do campo.  Para o tipo Cadeia de Caracteres pode-se deixar a edição em branco e o próprio gerador
+ fará o preenchimento.
+Para mais informações sobre
+ edição de campo clique aqui.
+
+            
+                Nota
+                
+                A edição caso preenchida deve seguir os tipos de edição existentes no sistema.
+            
+            Tabela/Campo
+                Neste item selecionamos a tabela/campo
+ sobre o qual determinada abrangência terá ação. A implementação deste item será
+ necessária apenas se o item Abrangência for igual a Sim.
+            Abrangência
+                Neste item será determinado se o campo
+ será tratado como uma abrangência.
+            Valores
+                Este campo será cadastrado somente quando
+ o item abrangência for igual a não. Permite ao usuário determinar uma validação
+ para o campo. Esta validação será feita no momento da execução do modelo. A tela apresentada possúi as seguintes guias:
+            
+        Limite:
+            Utilizar limite como padrão
+                Caso seja selecionado,
+ identifica ao sistema que a validação deverá ser efetuada sobre os campos desta
+ guia;
+            Mínimo
+                Identifica o valor mínimo que pode ser
+ digitado, não permite valores negativos e pode ser aplicado a valores numéricos
+ e dinheiro, conforme a edição do CAMPO;
+            Máximo
+                Identifica o valor máximo que pode ser
+ digitado, não permite valores negativos e pode ser aplicado a valores numéricos
+ e dinheiro, conforme a EDIÇÃO do CAMPO;
+            
+        Abrangência:
+            Utilizar abrangência como padrão
+                Identifica ao sistema que a validação deverá ser efetuada sobre os campos desta
+ guia;
+            Abrangência
+                Determina a abrangência em que a
+ resposta pode estar. Ex. 1-10,20,50;
+            Valor Inicial
+                Define o valor inicial
+ para a primeira execução do modelo (quando a entrada ainda na foi gravada no banco
+ de dados), pois a partir daí para as demais execuções será sempre utilizado o último
+ valor informado nesta entrada e que foi gravado no banco de dados. Caso a entrada
+ já esteja gravada no banco de dados este valor não irá aparecer para ser utilizado
+ pois será utilizado o valor gravado pelo usuário corrente no banco por último.
+            Lista
+            Permite definir uma lista de opções que estarão disponíveis no momento da digitação.
+            Utilizar a lista como padrão
+                Identifica ao sistema que a validação deverá ser efetuada sobre os campos desta
+guia;
+            Cadastro da Lista de Valores
+                Permite cadastrar
+ o código e a descrição dos dados que aparecerão durante a execução, de acordo com
+ a edição do campo;
+            
+                Nota
+                
+                Caso o conteúdo de Lista e Abrangência seja 'Sim', quando
+ os dados forem cadastrados, será inserida automaticamente na primeira posição a
+ opção " = Nenhuma Seleção".
+            
+            Selecionar Valor Inicial
+                Define o valor
+ inicial para a primeira execução do modelo (quando a entrada ainda não foi gravada
+ no banco de dados), pois a partir daí para as demais execuções será sempre utilizado
+ o último valor informado nesta entrada e que foi gravado no banco de dados. Caso
+ a entrada já esteja gravada no banco de dados, este botão não estará disponível
+ para ser utilizado pois será utilizado o valor gravado pelo usuário corrente no
+ banco de dados por último.
+            Relacionar SQL
+                   Para as entradas que possuem tabela.campo, é possível atribuir esta opção para fazer
+ com que o gerador relacione/filtre o conteúdo deste campo de entrada de acordo com
+ o conteúdo digitado na entrada durante a execução, colocando a cláusula "where"
+ deste filtro automaticamente no SQL do modelo.
+            Caso durante a execução do modelo, o usuário utilizar um filtro de
+ pesquisa como abrangência, este filtro será aplicado no SQL mesmo que a opção Relacionar
+ SQL esteja desmarcada.
+            Máscara de senha
+                Altera a máscara de
+ entrada para a digitação de senhas ou caracteres não visíveis. Com isso é possível
+ "mascarar" as entradas para que seu conteúdo não seja visto pelo usuário.
+            Cor
+                Altera a cor da descrição da entrada
+ na tela de entrada.
+            
+                Nota
+                
+                A cor definida para a descrição da entrada se aplica somente às versões cliente e servidor dos sistemas. A cor definida não é aplicada nas telas de entrada da Web 5.0.
+            
+            Ajuda
+                Abre uma tela para cadastrar
+ um texto que será mostrado no ambiente WEB ao lado da entrada através de um botão
+ de ajuda.
+            Utilizar valores já informados como filtros na pesquisa
+                Caso marcada essa opção, a tela de pesquisa desse campo levará em consideração
+ os campos já informados aplicando-os como filtro. Para que isso aconteça é necessário
+ que existam campos com o mesmo nome na tabela que está sendo pesquisada. Ex: Uma tabela de contratos com chave NumEmp e NumCont.
+  Quando executada a pesquisa do campo NumCont na tela de entrada e existir(em)
+ valor(es) informado(s) no campo NumEmp, a pesquisa somente exibirá registros em
+ que NumEmp pertencer ao grupo de valores informados anteriormente. Esse filtro é somente para pesquisa e não para validação dos campos.
+            Ignorar se não informado
+                Caso essa
+ opção esteja marcada, as entradas que possuem tabela.campo não informadas não
+ serão relacionadas/filtradas no SQL do modelo durante a execução.  Está
+ opção estará disponível apenas quando o tipo do campo for DATA.
+            Filtro p/ Pesquisa
+                        Essa opção permite desenvolver um filtro para restringir os registros
+ exibidos na tela de pesquisa, se a variável de entrada possuir um campo relacionado.
+ Quando clicado em algum botão de pesquisa na tela de entrada e foi definido
+ um filtro para pesquisa nessa variável de entrada, a tela de pesquisa exibirá os
+ registros conforme o filtro de pesquisa definido.         Na tela Entrada do Modelo quando clicado no botão Filtro p/
+ pesquisa, abre a tela de filtro para pesquisa (que possui o mesmo funcionamento
+ da tela filtro avançado), onde poderá ser desenvolvido
+ o filtro desejado.
+            Exemplo: tabela relacionada ao campo (E001TFI.CODTNS -> E001TNS.CODTNS). Para carregar apenas os registros da tabela E001TNS, deve ser informado no filtro para pesquisa "CodTns IN (SELECT E001TFI.CodTns FROM E001TFI)".
+            
+                Nota
+                
+                Se a opção Utilizar valores já informados como filtros na pesquisa estiver
+ marcada, serão aplicados ambos os filtros.
+            
+            Variáveis especiais de entrada: 
+            GrdOutputFile
+            
+            Ao cadastrar uma variável de entrada com este nome em um relatório do tipo Texto,
+ o gerador de relatórios assumirá que este relatório, ao ser impresso, utilizará
+ o driver da impressora para gerar um arqu

@@ -1,0 +1,191 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#manuais_processos/controladoria-tributos/pagamentos-indevidos-ou-a-maior-de-tributos-federais.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Pagamentos indevidos ou a maior de tributos federais
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Pagamentos indevidos ou a maior de tributos federais
+            Parametrização inicial
+            Na tela Parâmetros da Filial para Tributos (F070FEF), deverá ser indicado qual será a forma de compensação/restituição dos impostos pagos maior ou indevidamente, para este campo existem as opções:
+            
+                T - Automática impostos mesmos tipo: Só serão considerados os saldos para o mesmo tipo do imposto apurado, para compensar o imposto a pagar
+                A - Automático para qualquer tipo de imposto: Todos os tipos de imposto serão considerados para compensar o imposto a pagar
+                M - Manual: A tela F661RST será exibida durante a apuração, para que seja realizada a compensação manualmente, conforme necessidade
+                N - Nenhum: não possui o controle
+            
+            Na tela  Configuração de Impostos para a Filial (F055PPF) o imposto deve estar parametrizado para gerar guia de recolhimento.
+            Tributos pagos à maior/indevidamente (F661RST)
+            Essa tela tem a finalidade de incluir, alterar, consultar, baixar e excluir os impostos dos tipos 17, 22, 23, 24, 25, 41, 42, 43, 44, 47, 48, 53, 54, 55, 56, 57, 58, 59, 60, 61 pagos a maior ou indevidamente através dos filtros de empresa, filial e período informado esse processo pode ser realizado manualmente ou de forma automática.
+            Grades
+            Resumo dos Créditos da Apuração
+                Permite incluir valores de impostos pagos a maior ou indevidamente de apurações anteriores, utilizando o botão Insert do teclado. Nessa grade também é possível consultar os valores incluídos automaticamente pelo sistema através da apuração/reapuração do imposto.
+            Compensações
+                Exibe as compensações realizadas através da apuração dos impostos ou manualmente. O campo Número da PERDCOMP sempre estará disponível para preenchimento.
+            Restituições
+                Está disponível para realizar a baixa manualmente dos valores que foram restituídos através da PERDCOMP.
+            Botões
+            Guias de Recolhimento
+                Através desse botão é possível acessar a tela Seleção Guias de Recolhimento (F661SGR) e buscar os valores de guias cadastradas no sistema que foram pagas a maior ou indevidamente, para inclui-las no controle podendo compensá-las ou restituí-las futuramente.
+            Apuração com imposto pago a menor
+            Imposto utilizado no exemplo abaixo foi o PIS (Tipo 41), mas esse recurso pode ser utilizado para os impostos dos tipos: 17, 22, 23, 24, 25, 41, 42, 43, 44, 47, 48, 53, 54, 55, 56, 57, 58, 59, 60, 61.
+            O campo Forma de Compensação/Restituição está parametrizado com diferente de nenhum.
+            
+                
+            
+            A Guia de Recolhimento já foi Paga:
+            
+                
+            
+            Ao excluir a apuração do imposto, o sistema não irá excluir a guia de recolhimento, porque ela já foi recolhida. Se existir título ele também não deverá ser excluído visto que a guia de recolhimento já foi paga.
+            
+                Importante
+                
+                Se a guia de recolhimento e título (se houver) não foram pagos, ambos devem ser excluídos para reapurar o imposto.
+            
+            
+                
+            
+            
+                
+            
+            Ao reapurar o imposto, o valor a recolher ficou a maior:
+            
+                
+            
+            Para essa situação o sistema irá gerar uma guia de recolhimento complementar com a diferença a ser recolhida.
+            
+                
+            
+            Ou se existir imposto pago a maior ou indevidamente será possível realizar a compensação. Ambas guias serão apresentadas na geração do arquivo da DCTF.
+            No SPED Contribuições a informação também é apresentada.
+            Apuração com imposto pago a maior ou indevidamente
+            Imposto utilizado no exemplo abaixo foi o PIS (Tipo 41), mas esse recurso pode ser utilizado para os impostos dos tipos: 17, 22, 23, 24, 25, 41, 42, 43, 44, 47, 48, 53, 54, 55, 56, 57, 58, 59, 60, 61.
+            O campo Forma de Compensação/Restituição está parametrizado com diferente de nenhum.
+            
+                
+            
+            A guia de recolhimento já foi paga:
+            
+                
+            
+            Ao excluir a apuração do imposto o sistema não irá excluir a guia de recolhimento, porque ela já foi recolhida. Se existir título ele também não será excluído visto que a guia de recolhimento já foi paga.
+            
+                Importante
+                
+                Se a guia de recolhimento e título (se existir) não foram pagos ambos devem ser excluídos para realizar a reapuração do imposto.
+            
+            
+                
+            
+            
+                
+            
+            Ao reapurar o imposto, o valor a recolher ficou a menor:
+            
+                
+            
+            No momento de processar a apuração do imposto, o sistema verificará que para esse período já existe uma guia de recolhimento no valor de R$ 957,00 que já foi paga para esse imposto.
+            Sendo assim, o sistema irá incluir na estrutura de “Impostos pagos a maior ou indevidamente” tela F661RST, o valor da diferença entre o valor devido ao fisco e o valor recolhido, para que futuramente a empresa possa compensar esse imposto ou restitui-lo através da PERDCOMP.
+            Essas informações são apresentadas na DCTF e também é apresentada no SPED Contribuições.
+            Compensação de imposto a maior ou indevidamente
+            Imposto utilizado no exemplo foi o PIS (Tipo 41), mas esse recurso pode ser utilizado para os impostos dos tipos: 17, 22, 23, 24, 25, 41, 42, 43, 44, 47, 48, 53, 54, 55, 56, 57, 58, 59, 60, 61.
+            O campo Forma de Compensação/Restituição está parametrizado com a opção "M - manual".
+            Apuração do Imposto:
+            
+                
+            
+            No momento de processar a apuração do imposto o sistema irá verificar se existe algum valor disponível na estrutura de impostos pagos a maior ou indevidamente que possa ser compensado e apresentará a informação para o usuário indicar qual valor deverá ser compensado.
+            Como o imposto disponível para compensação é inferior ao imposto devido o sistema gerou uma guia com a diferença que falta ser recolhida R$ 363,00.
+            
+                
+            
+            
+                Importante
+                
+                Se a forma de compensação/restituição dos impostos pagos maior ou indevidamente na tela de parâmetros da filial tributos estiver parametrizada com:
+                
+                    T - Automática impostos mesmos tipo: Só serão considerados os saldos para o mesmo tipo do imposto apurado, para compensar o imposto a pagar. Exemplo: Para a situação acima o sistema iria compensar automaticamente todos os valores disponíveis do imposto do tipo 41 (PIS Não Cumulativo SPED)
+                    A - Automático para qualquer tipo de imposto: Todos os tipos de imposto serão considerados para compensar o imposto a pagar.  Exemplo: Para a situação acima o sistema iria compensar automaticamente todos os valores disponíveis para os impostos dos tipos: 17, 22, 23, 24, 25, 41, 42, 43, 44, 47, 48, 53, 54, 55, 56, 57, 58, 59, 60, 61
+                
+            
+            Essas informações são apresentadas na DCTF e também no SPED Contribuições.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                   

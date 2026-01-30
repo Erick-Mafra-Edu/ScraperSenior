@@ -1,0 +1,142 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/permissao-de-diretorios.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Permissão de Diretórios
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Permissão de diretórios para Geradores e LSP
+            Os geradores de informação (gerador de relatórios, gerador de consultas e gerador de cubos), editor de regras e o importador/exportador de arquivos texto, utilizam-se de regras na construção de seus modelos. Estas regras podem sofrer mudanças de versão, o que exige que as mesmas sejam recompiladas para a geração de um código binário que seja compatível com a versão atual das regras.
+            A conversão sempre acontece na primeira vez que se abre um modelo ou quando chama-se uma regra global e as regras ainda não tenham sido recompiladas. Neste caso os modelos serão abertos e recompilados e novamente gravados nos respectivos diretórios. 
+            Sendo assim, o usuário que tem permissão para executar um modelo qualquer, seja ele de relatório, consulta, cubo ou importação/exportação deve ter permissão de leitura e escrita nos respectivos diretórios definidos no CFG para armazenar os modelos. Caso o usuário tenha permissão para executar as regras globais do sistema (definidas através do editor de regras), deve ter permissão de leitura e escrita no diretório onde estão armazenados os arquivos LSP.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

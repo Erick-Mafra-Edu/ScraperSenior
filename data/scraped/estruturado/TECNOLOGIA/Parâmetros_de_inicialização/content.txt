@@ -1,0 +1,234 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/parametros-de-inicializacao.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Parâmetros de inicialização
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Parâmetros de inicialização
+            Como executar um parâmetro de inicialização
+            Atualmente, os sistemas permitem que parâmetros de inicialização sejam executados das seguintes formas:
+            
+                Atalho: Clique com o botão direito sobre o atalho do aplicativo. Vá até a aba Atalho e adicione os parâmetros no campo Destino.Clique em Aplicar. Ao executar o aplicativos após esse procedimento, ele já será inicializado utilizando o parâmetro informado.
+                Linha de comando de execução: Abra o prompt de execução do Windows (Windows + R). Informe o caminho completo do executável do aplicativo e informe o parâmetro. Clique em Ok, o aplicativos  será inicializado utilizando o parâmetro informado.
+            
+            Comando
+            É um texto que representa uma ação a ser executada no sistema. Quase 
+ todos os comandos começam com hífen "-", com exceção do comando 
+ "genlog".
+            Exemplo:
+                
+                    
+                        "-s" (Faz com 
+	 que o sistema execute login automaticamente).
+                        "-p" (Faz com 
+	 que o sistema conecte em uma base automaticamente).
+                        "genlog" (Habilita 
+	 o sistema a gerar logs de erros.).
+                    
+                
+            
+            Parâmetro
+            É um texto que dará ao comando uma informação que o sistema necessite 
+ para executar propriamente. Os parâmetros geralmente são obrigatórios 
+ e os opcionais possuem um valor padrão.Além disso, os parâmetros podem ser de dois tipos: anônimos 
+ e nomeados.
+            Parâmetro anônimo
+                
+            
+            Informado logo após o comando sem uma identificação própria, é separado 
+ pelo sí¬mbolo ":". Cada comando possui apenas um parâmetro anônimo.
+            Exemplo:
+                
+                    
+                        "-s:senior/senior" é o comando "-s", com o 
+	 parâmetro anônimo "senior/senior".
+                        "-log:C:\Caminho\arquivoDeLog.txt" é o comando "-log" com o parâmetro 
+	 anônimo "C:\Caminho\arquivoDeLog.txt".
+                    
+                
+            
+            Parâmetro nomeado
+            
+            É um parâmetro com uma identificação própria. Deve ser separado do comando 
+ por um espaço em branco e a identificação do parâmetro deve ser separada 
+ do valor do parâmetro com o símbolo ":".
+            Exemplo:
+                
+                    "-CriarGrupo nome:usu" é o comando "CriarUsuario" 
+ com o parâmetro nomeado "nome", com o valor "usu".
+                
+            
+            Parâmetros gerais
+            
+                
+                
+                
+                
+                    Parâmetros
+                    Descrição
+                    Sintaxe
+                
+                
+                    -s
+                    Efetua o login automático no sistema, com parâmetro obrigatório.
+                    -s:usuario/senha
+                
+                
+                    -p
+                    Permite informar o ambiente e a base de dados a serem usados pelo aplicativo, com parâmetro obrigatório.
+                    -p:ambiente;db=base_de_dados
+                
+                
+                    -log
+                    Habilita a geração de logs. Os logs são gerados na pasta da aplicação.
+                    -log
+                
+                
+                    genlog
+                    Habilita o sistema para que gere logs no mesmo 
+		 diretório do executável, caso ocorram falhas nos sistemas. Não 
+		 possui parâmetros e deve ser o primeiro comando a ser informado.
+                    c:\executavel.exe genlog -p:"C:\Caminho\Configuracoes.cfg"
+                
+                
+                    -CriarUsuario
+                    Permite criação de usuário automaticamente, utilizando parâmetros nomeados.
+                    c:\executavel.exe -CriarUsuario usuario:administrador senha:administrador
+                
+                
+                    -logR911SEC
+                    Habilita a geração de log dos registros da tabela R911SEC na inicialização do sistema.
+                    c:\executavel.exe -logR911SEC
+                
+                
+                    -NotZipLog
+                    Desabilita a compactação de logs do Middleware e das aplicações do Middleware.
+                    c:\executavel.exe -NotZipLog
+                
+                
+                    -logexceptions
+                    Adiciona no arquivo de log todos os erros gerados desde a inicialização do sistema.
+                    c:\executavel.exe -logexceptions
+                
+                
+                    -disabledetails
+                    Omite o botão detalhes e cria um log com a stacktrace do erro, disponível na versão 6.10.3 e 5.10.3.
+                    c:\executavel.exe -disabledetails
+                
+            
+            Parâmetros específicos
+            CBDS
+            Caso algum comando ou parâmetro inválido seja passado, ou algum parâmetro 
+ esteja faltando, será mostrada uma mensagem de erro e o CBDS será finalizado. E caso o parâmetro -log não seja informado, os logs do CBDS serão gerados 
+ no arquivo [caminho do executavel] \CBDS_Erro_[data e hora de início do 
+ CBDS].log.
+            
+                
+                    Parâmetros
+                    Descrição
+                    Sintaxe
+                
+                
+                    -restore
+                    Efetua o 'restore' de uma base de dados. Este 'restore' é feito com todas as configurações padrão. Para este comando ser executado, devem existir os parâmetros "-s" e "-p", para que seja possível conectar à uma base.Quando esta opção for utilizada, todas as tabelas do usuário são apagadas automaticamente antes do 'restore' ser executado.
+                    -restore sdm:caminhoSDM
+                
+                
+                    -backup
+                    Efetua o backup de uma base de dados. Este backup é feito com todas as configurações padrão. Caso seja informado um SDM já existente, ele será automaticamente sobrescrito.Para este comando ser executado, devem existir os parâmetros "-s" e "-p", para que seja possível conectar à uma base.
+                
+                    -backup sdm:caminhoSDM
+                
+                
+                    -RelDiffTbs
+                    Executa o relatório "Descrição das diferenças entre 2 (dois) arquivos TBS", comparando os TBSs informados em "tbsantigo" e "tbsnovo". O relatório é gerado no arquivo informado em "saida".O relatório pode ser gerado com dois detalhamentos: Técnico (T) e Operações p/ consistência (C). O detalhamento desejado deve ser informado no parâmetro "detalhamento", e é opcional. Caso não seja informado, o relatório será gerado com detalhamento técnico.
+                    -RelDiffTbs tbsantigo:arquivoTBS tbsnovo:arquivoTBS saida:arquivo detalhamento:T/C]
+                
+                
+                    -RelOperTBS
+                    Executa o relatório "Relatório das operações geradas na atualização a partir de 2 TBS", comparando os TBSs informados em "tbsantigo" e "tbsnovo". O relatório é gerado no arquivo informado em "saida". O relatório pode ser gerado usando as opções de otimização de atualização de base (UseNewOperationKind). O uso dessa opção é definido no parâmetro opcional "newoperationkind", que aceita os valores (S) e (N). Caso este parâmetro não seja informado, o relatório será com a opção (S).
+                    -RelOperTBS tbsantigo:arquivoTBS tbsnovo:arquivoTBS 
+		 saida:arquivo newoperationkind:S/N]
+                
+            
+            Senior Gerenciador de Usuários
+            
+            Todas as rotinas fazem validações de permissões, portanto, qualquer 
+ ação será executada somente se o usuário tiver a devida permissão. É permitido 
+ apenas um parâmetro por vez.
+            Se o parâmetro "-log" for informado, o Senior Gerenciador de Usuários não mostrará sua 
+ interface, serão executados os comandos passados na inicialização e se 
+ fechará. Se ocorrer algum erro ou alerta, nenhuma mensagem será apresentada 
+ em tela, apenas no arquivo de log especificado no parâmetro.
+            
+                
+                    Parâmetros
+                    Descrição
+                    Sintaxe
+                
+                
+                    -CriarUsuario
+                    Permite criar um usuário.
+                    -CriarUsuario usuario:NomeDoUsuario senha:Senha
+                
+                
+                    -ExcluirUsuario
+                    Permite excluir um usuário.
+                    -ExcluirUsuario usuario:NomeDoUsuario
+                
+                
+                    -CriarGrupo
+                    Permite criar um grupo.
+                    -CriarGrupo grupo:No

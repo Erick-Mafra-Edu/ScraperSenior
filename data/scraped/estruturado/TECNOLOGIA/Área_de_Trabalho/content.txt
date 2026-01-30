@@ -1,0 +1,167 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/area-trabalho.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Área de Trabalho
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Área de trabalho
+            A área de trabalho do sistema proporciona facilidade e agilidade no uso do sistema, uma vez que esta facilita o acesso, navegação e leitura das telas do sistema, dando produtividade no uso do sistema. Quando aberto, é carregada a área de trabalho da mesma forma como esta foi deixada no último acesso ao sistema, como o estado do painel de navegação, o tamanho do painel de navegação, entre outros.
+            Área de exibição de telas
+            Para facilitar a operação, o sistema apresenta as telas abertas (formulários, relatórios, cubos) em guias ou, para algumas telas específicas, em modo flutuante, bloqueando o uso de toda a área de trabalho até sua finalização, por exemplo no caso de alguns filtros para a execução de relatórios.
+            A primeira guia apresenta uma página inicial que contém as seis telas  mais acessadas pelo usuário, facilitando assim o acesso a estas telas do sistema. Esta guia não pode ser fechada e as telas mais acessadas não podem ser excluídas. Por exemplo:
+            
+                
+            
+            Modos de exibição
+                
+                    Defina a opção de exibição da tela, a partir das opções disponíveis no canto superior direito da tela:
+                    
+                        Tela cheia: as telas ocuparão toda a área de exibição, sendo possível visualizar apenas uma tela por vez;
+                        Vertical: as telas dos sistema ocuparão metade da área de exibição, sendo visualizadas duas telas por vez, uma ao lado da outra.
+                        Horizontal: as telas dos sistema ocuparão metade da área de exibição, sendo visualizadas duas telas por vez, uma abaixo da outra.
+                    
+                    
+                        Nota
+                        
+                        Utilize os modos de exibição Vertical ou Horizontal para arrastar os formulários de uma divisão da área de exibição para outra.
+                    
+                
+            
+            Formulários
+                
+                    Um formulário pode ser destacado da área exibição pressionando o botão direito e selecionando a opção       Destacar formulário. Para re-fixar o formulário, pressione com o botão direito sobre o formulário e desmarque a opção Destacar formulário.
+                    Não é possível destacar formulários com acesso via BrowserAccess e WindowsAccess.
+                    Teclas de atalho:
+                    
+                        Ctrl + Tab: navega para a próxima guia (guia a direita da guia focada);
+                        Ctrl + Shift + Tab: navega para a guia anterior (guia a esquerda da guia focada);
+                        Ctrl + Page Up: se houver guias dentro da guia focada, navega para a próxima guia (guia a direita da guia focada);
+                        Ctrl + Page Down: se houver guias dentro da guia focada, navega para a guia anterior (guia a esquerda da guia focada);
+                        Ctrl + F4: fecha a guia focada.
+                    
+                
+            
+            Barra de menu
+            Através da barra de menu, são acessados os formulários do sistema, que também estão disponíveis no grupo menu do Painel de navegação. Esta barra de menu vem oculta por padrão, sendo apresentada através da tecla Alt. Ela também pode ser fixada através do botão  que é exibido no painel de navegação quando este está oculto. A ordem de exibição dos formulários é definido na tela de Personalização de menus, a qual pode ser acessada pelo painel de navegação.
+            Painel de navegação           
+    
+            Através do painel de navegação são acessadas todas as telas do sistema de forma rápida e personalizável, o que torna o uso do sistema mais simples e adequado de acordo com a realidade de cada usuário. 
+            O painel de navegação oferece alguns recursos que facilitam a utilização do sistema de forma mais personalizada e flexível:
+            
+                
+                    
+                    
+                : permite acessar o formulário de Personalização do menu.
+                
+                    
+                    : oculta o painel de navegação deixando disponíveis as ações abaixo.
+                
+                    : com o painel de navegação oculto, este restaura o painel e fixa em seu estado original.
+                
+                    : permite visualizar o menu rapidamente sem fixa-lo, ocultando automaticamente quando clicado fora do painel. Esta opção é apresentada somente quando o painel está oculto. A configuração que for efetuada neste formulário irá refletir no grupo Menu e na Barra de menu;
+                
+                    : faz com que a Barra de menu permaneça visível sem que seja necessário pressionar a tecla Alt.
+            
+            Para navegar entre as opções do painel de navegação pode-se utilizar as teclas de direção e o Enter, onde cada uma tem uma respectiva função:
+            
+                ↑: navega para o item acima sem expandir ou recolher os nós;
+                ↓: navega para o item abaixo sem expandir ou recolher os nós;
+                g: expande o nó caso este tenha filhos. E se o nó já estiver expandido navega para o primeiro filho;
+                f: recolhe o nó caso este tenha filhos. E caso não tenha, navega para o nó pai;
+                Enter : acessa a tela cujo cursor está posicionado.
+            
+            Este painel de navegação é dividido nas seguintes partes:
+            Pesquisa
+      
+                
+                    A pesquisa permite a rápida localização de itens que se encontram em algum dos grupos do menu. Para efetuar esta pesquisa, basta digitar o termo desejado no campo de texto disponibilizado logo abaixo da barra de ferramentas, e caso esteja sendo utilizado o BrowserAccess ou WindowsAccess será necessário pressionar Enter. 
+                    Os itens encontrados são exibidos juntamente com sua hierarquia para facilitar a identificação. Para que sejam apresentados os elementos anteriores a pesquisa, basta limpar o termo digitado.
+                    
+                        Nota
+                        
+                        A hierarquia não é considerada na pesquisa, sendo verificados apenas os nomes dos itens do menu. O termo pesquisado não considera leras maiúsculas ou minúsculas, nem acentuação, e pode estar em qualquer parte do título.
+                        A pesquisa pode ser rapidamente acessado pela tecla F10.
+                    
+                
+            
+            Favoritos
+      
+                
+                    Na área de favoritos são apresentados todos os formulários que foram marcados como favorito. Esta marcação permite destacar neste grupo os formulários que são utilizados com mais frequência, proporcionando assim uma maior agilidade no acesso as telas desejadas.
+                    Ao selecionar um item no grupo Favoritos, é aberta uma nova guia na área de exibição de acordo com o modo de visualização selecionado.
+                    A partir deste grupo temos então as seguintes ações:
+                    Marcar item como favorito
+                    
+                    
+                        BrowserAccess e WindowsAccess: com o formulário desejado selecionado, pressione com o botão direito sobre o item e selecione a opção Adicionar item selecionado aos favoritos. 
+                        Demais formas de acesso:Posicione o mouse sobre o item que será marcado como favorito;Clique sobre o ícone  para que este seja marcado como favorito, alterando o ícone para ;O item será inserido no grupo favoritos.
+                    
+                    Remover favorito
+                    
+                    
+                        BrowserAccess e WindowsAccess: no grupo Favoritos, pressione com o botão direito sobre o item que será removido do grupo e seleciona a opção Remover item selecionados dos favoritos.
+                        Demais formas de acesso: no grupo Favoritos, posicione o mouse sobre o item que será removido e clique sobre o ícone .
+                    
+                    Ordenar favoritos
+                    
+                    
+                        BrowserAccess e WindowsAccess: no grupo Favoritos, pressione com o botão direito sobre o item que será ordenado e selecione a opção Mover item selecionado para cima ou para baixo de acordo com o desejado;
+                        Demais formas de acesso: arraste o item desejado para a posição onde este deve ficar.
+                    
+                
+            
+            Menu     
+                
+                    O grupo de Menu disponibiliza acesso a todas as telas do sistema, desde formulários de cadastro até relatórios e cubos. Ao selecionar um item no grupo Menu, este é aberto em uma nova guia na área de exibição de acordo com o mo

@@ -1,0 +1,178 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#processo/carga-lotacao-antt.htm%3FTocPath%3D_____14
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Carga Lotação ANTT
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Carga Lotação ANTT
+            O módulo de Carga Lotação utiliza o  processo de carga fechada para a tabela de frete da ANTT, sendo esse um modelo de funcionamento Gestão de Fretes precisando ser ativado pelo consultor em momento de projeto, pois sem a ativação o processo não funciona.
+             
+            
+                
+            
+            Parametrizações 
+            Abaixo segue uma lista das parametrizações necessárias para que o processo de Carga Lotação funcione adequadamente
+            Em cadastro de Empresa
+                
+                    Acesse > Logística > Gestão de Fretes > Cadastro > Gerais > Cadastro de Empresa
+                    
+                        Ao abrir a tela selecione a Empresa de interesse,
+                        Clique em botão Filiais
+                        Selecione a Empresa de interesse
+                        Use botão, Cadastrar
+                    
+                    Aqui você irá ativar 3 parâmetros sendo eles:
+                    
+                        Romaneio Automático por pedido – com esse parâmetro ativado Gestão de Fretes abra um romaneio automático por pedido para cada pedido gerado na tela de documento frete.
+                        Permite duplicidade Qt eixos tipo veículos - esse parâmetro ativado permite que o usuário inclua no cadastro de veículos duplicidade de eixos.
+                        Permite duplicidade Cap.eixos tipo veículos - esse parâmetro ativado permite que o usuário inclua no cadastro de veículos duplicidade de capacidade de veículos.
+                    
+                
+            
+            Em cadastro transportadoras
+                
+                    Acesse APPS > Logística > Gestão de Fretes > Cadastro > Transportadora > Cadastro Transportadora 
+                    
+                        Selecione a Transportadora desejada,
+                        Clique em botão, Geral/Parâmetros
+                        Selecione a transportadora desejada;
+                        Clique em botão Cadastrar ouEditar
+                        Ativar os parametros Tipo de Diferença Permitida (Auditoria Peso) - permite a escolha entre percentual ou valor para o tipo de diferença.Diferença permitida (Auditoria Peso) - possibilita que seja informado qual será o valor da tolerância da diferença permitida.
+                    
+                    Observação
+                        
+                        Se estes parâmetros também estiverem informados no cadastro de cliente o Gestão de Fretes trata como prioritário essas informações e desconsidera no Cadastro de Transportadora.
+                
+            
+            Em tipo de veículo
+                
+                    Acesse APPS > Logística > Gestão de Frete > Cadastro > Transportadora > Tipo de Veiculo
+                    Essa tela tem por objetivo permitir que o usuário possa cadastrar os tipos de veículos que serão usados na operação.
+                    
+                        Clique em Cadastrar;
+                        Informe os campos conforme necessidade;
+                        Clique em, Salvar
+                        Opções com "Editar" e "Excluir" estão disponíveis.
+                    
+                    Observação
+                        
+                        A exclusão dos dados so podem acontecer se o cadastro não estiver vinculado ao cadastro de cliente.
+                
+            
+            Em cadastro de cliente
+                
+                    Acesse > Logística >Gestão de Fretes > Cadastro > Gerais > Cadastro de Cliente > botão Cadastrar
+                    Realize o cadastro e parametrização de novos clientes. No entanto, o cadastro básico é feito de forma integrada restando apenas  a parametrização do cliente,porém, também pode ser realizada de forma manual.
+                    Para realizar a parametrização de regra de desconto de auditoria peso:
+                    
+                    
+                        Ao entrar na tela, selecione o nome do cliente desejado
+                        Clique em botão, Editar;
+                        Ative os seguinte parâmetros
+                    
+                    
+                        Tipo de Diferença Permitida (Auditoria Peso) – permite que o usuário escolha entre percentual ou valor para o tipo de diferença.
+                        Diferença Permitida (Auditoria Peso) – permite que seja informado qual será o valor da tolerância da diferença permitida.
+                        Tipo de Desconto (Auditoria Peso) – possibilita que seja informado se o desconto será parcial,quando o valor a ser descontado é a diferença entre o valor permitido e a diferença de peso do pedido no recebimento, ou será desconto total, quando não importa se tem tolerância o Gestão de Fretes desconta toda a diferença de peso recebido.
+                    
+                    Observação
+                        
+                        - Todos os cadastros de cliente para o processo de carga lotação ANTT são criados inativos e só podem ser ativados após a sua parametrização.- A exclusão de cadastros existente só pode acontecer se o cadastro não estiver vinculado a nenhum pedido no Gestão de Fretes
+                    Para realizar a parametrização de rotas:
+                    
+                    
+                        Ao entrar na tele, selecione o cliente desejado;
+                        Clique no botão, Rota/Ped;
+                        Use botão, Cadastrar;
+                        Informe os veículos usados para a entrega, distância e valor do pedágio;
+                        Clique em Salvar.
+                    
+                
+            
+            Em cadastro de tipo de pedido
+                
+                    Acesse > Logística > Gestão de Fretes > Definições > Operação > Tipo de Pedido
+                    Essa tela tem por objetivo cadastrar e parametrizar os pedidos que serão usados no processo de carga lotação.
+                    
+                        Clique no botão Cadastrar
+                        Ative os seguinte parâmetros:Fechamento Automático Auditoria de Peso –  permite que o processo de Auditoria de Peso recebido seja feito de forma automática sem que o usuário tenha que fazer a aprovação de forma manual.Fechamento Automático Romaneio – possibilita o fechando automático de romaneios abertos através do parâmetro de romaneio por pedido do cadastro de empresa.Tipo de Serviço – esse parâmetro deve se informado para o que o Gestão de Fretes saiba qual a ação do tipo de pedido, se por um processo de entrega ou um processo de coleta.
+                        Opções como "Editar" e "Excluir" também estão disponíveis;
+                        Clique em Salvar.
+                    
+                    Observação
+                        
+                        Lembrando que a exclusão de cadastros existentes só pode acontecer se o cadastro não estiver vinculado a nenhuma categoria de produto no Gestão de Fretes
+                
+            
+            Em cadastro de tipo de entrega
+                
+                    Acesse > Logística > Gestão de Fretes > Definições > Operação > Tipo de Entrega
+                    Essa tela tem por objetivo cadastrar os tipos de entrega que serão utilizados na operação de carga lotação ANTT,vale lembrar que é a mesma tela usada no processo de carga fracionada
+                
+            
+            Cadastros
+             Tipo carga lotação
+                
+                     Essa tela permite  cadastrar os tipos de cargas que serão utilizadas nas tabelas de frete no processo de Carga Lotação ANTT.
+                    Acesse > Logística > Gestão de Fretes > Cadastro > Gerais > Tipo Carga Lotação
+                    
+                        Use botão, Cadastrar e faça novos cadastros  tipo carga lotação
+                        Clique em Salvar
+                        Opções como "Editar" e "Excluir" estão disponíveis
+                    
+                    Observação
+                        
+                        Lembrando que a exclusão de cadastros existentes só pode acontecer se o cadastro não estiver vinculado a nenhuma categoria de produto no Gestão de Fretes
+                
+            
+             Faixa por eixo - Tabela de Frete ANTT
+                
+                    Acesse > Logística > Gestão de Fretes > Cadastro > Transportadora > Cadastro de Faixas por Eixos
+                    Possibilita o cadastro das tabelas de frete de carga lotação ANTT no Gestão de Fretes
+                     A criação de tabela de frete pode ser feita de 2 formas:
+                    Manualmente
+                        
+                            
+                                Clique em Cadastrar
+                                Realize novos cadastros do cabeçalho da tabela de frete lotação ANTT
+                                Clique em Salvar
+                                Opções como "Editar" e "Exclui estão disponíveis
+                            
+                            Lembrando A exclusão dos dados so podem acontecer se o cadastro não estiver vinculado ao cadastro de cliente.
+                        
+                    
+                    
+                    Por Importação
+                        
+                            
+                                Clique em Importar Arquivo
+                                Para importar uma tabela de frete, os seguintes dados devem ser informados:
+                            
+                            
+                                
+                           

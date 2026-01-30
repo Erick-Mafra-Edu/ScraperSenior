@@ -1,0 +1,204 @@
+# 
+
+URL: https://documentacao.senior.com.br/bpm/7.0.0/#templates.htm%3FTocPath%3DBPM%2520%7C_____9
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBPM
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BPM  > Templates
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Templates
+            Sumário
+            
+            
+                
+                    Conceito
+                    
+                    Menu de Acesso
+                    
+                    Funcionalidades
+                        3.1 Criação de Template
+                    Compartilhamento de Template
+                    
+                    Desabilitar Template
+                        5.1 Procedimento para Desabilitar Templates5.2 Impacto na Tela  Templates
+                
+            
+             1. Conceito 
+            A criação está disponível e pode ser utilizada com dois propósitos:
+            Templates compartilhados é uma funcionalidade projetada para criar e compartilhar templates exclusivos com todos os tenants da plataforma. Após a criação de um template, ele é armazenado em uma base compartilhada, tornando-se disponível para todos os usuários da plataforma.
+             Templates por Tenant têm a finalidade de compartilhar templates criados entre os usuários de um mesmo tenant, permitindo que cada tenant possa criar e gerenciar seus próprios templates.
+             2. Menu de Acesso
+            
+                No menu, selecione Senior Flow;
+                Selecione BPM;
+                Clique em Configurações;
+                Em seguida, Gerenciar Templates;
+            
+             3. Funcionalidades
+             3.1 Criação de Template
+            Com o objetivo de tornar o processo de criação mais eficiente, na tela de criação de processos, é possível selecionar um template disponível para edição. Antes de utilizar um template, a visualização do seu fluxo está disponível.
+            A criação de templates pode ser acessada de duas maneiras: através da tela de processos ou seguindo o caminho Senior Flow > BPM > Configurações > Gerenciar templates.
+            
+                
+            
+            Para criar um template, siga os  passos abaixo:
+            
+                Na seção Templates, selecione Criar Novo template;
+                Preencha os campos;
+                Faça o upload  do arquivo .zip, contendo o Template;
+                Clique em Salvar.
+            
+            
+                
+            
+            Se houver algum campo semelhante ao template padrão utilizado, uma aba de conflitos será exibida, mostrando todos os conflitos existentes e as opções de tratamento disponíveis.
+
+            
+                
+            
+            4. Compartilhamento de Template
+            
+            O compartilhamento de templates pode ser acessado de duas formas: através da tela de processos ou seguindo o caminho Senior Flow > BPM > Configurações > Templates BPM.
+            Siga os passos:
+            
+                Na seção templates, encontre o template desejado;
+                Clique em Ações;
+                 Na sequência Distribuir Versão;
+                Selecione a versão do template que deseja compartilhar;
+                Informe os tenants para os quais deseja compartilhar o template;
+                Clique em Enviar.
+            
+            
+                
+            
+            
+                Observação
+                
+                Cada compartilhamento pode ser feito para até 20 tenants simultaneamente.
+            
+            Para realizar o compartilhamento desses templates, é necessário possuir a permissão templateManager, a qual está disponível via feature-toggle. A liberação de feature-toggles são feitas via chamado para o time do suporte.
+            Após efetuar o compartilhamento, o usuário receberá uma notificação confirmando que a operação foi bem-sucedida. Em caso de problemas, o usuário será notificado com uma mensagem de erro e terá a opção de reenviar o template para processamento.
+            Dentro dos templates, é possível aplicar um filtro para encontrar o template desejado. Esse filtro pode ser realizado com base no Nome do Template e no Responsável pelo Template (Templates padrões da senior tem como responsáveis a área designada: HCM e ERP), bem como por Tenant ou Compartilhado.
+            
+                
+            
+            5. Desabilitar Template
+            
+            Existe a possibilidade de desabilitar templates, essa funcionalidade está disponível por meio do recurso: res://senior.com.br/platform/template_provider/disableTemplates.
+            5.1 Procedimento para Desabilitar Templates
+            
+            
+                Acesse a plataforma por meio do recurso res://senior.com.br/platform/template_provider/disableTemplates;
+                Na tela de Gerenciar Templates, está disponível a opção de desabilitar templates, proporcionando um controle mais detalhado sobre os modelos disponíveis.
+            
+            5.2 Impacto na Tela  Templates
+            
+            Ao desabilitar templates na tela de Gerenciar Templates,  os modelos desativados não serão mais visíveis na tela Templates BPM. Essa melhoria visa otimizar o processo de criação de processos, eliminando a exibição de modelos que não estão em uso ou não são necessários para determinados fluxos de trabalho.
+            
+                Importante
+                
+                Avalie cuidadosamente quais templates deseja desativar, pois essa ação afetará diretamente a disponibilidade desses modelos na tela Templates.
+                A desativação de templates não impactará a funcionalidade geral da plataforma, mas é crucial considerar a influência nas práticas de criação de processos via templates.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

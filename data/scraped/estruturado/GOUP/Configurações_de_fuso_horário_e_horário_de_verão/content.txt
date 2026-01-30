@@ -1,0 +1,131 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#horario-verao/configuracoes.htm%3FTocPath%3DParametriza%25C3%25A7%25C3%25B5es%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Parametrizações > Configurações de fuso horário e horário de verão
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Configurações de Fuso Horário e Horário de Verão
+            Horário de Verão é a alteração do horário de uma região, designada apenas durante uma porção do ano, adiantando-se em geral uma hora no fuso horário oficial local. Atualmente, o horário de verão é adotado nas regiões Sul, Sudeste e Centro-Oeste. A mudança de horário impacta no uso de sistemas, razão pela qual é necessário efetuar configurações para manter atualizadas as informações de servidores, bancos de dados, sistema web, processos automáticos, procedimentos on-line e afins.
+            Através do botão Fuso horário, na tela Banco de dados do sistema, faça configurações de fuso horário na base de dados. As configurações de fuso horário e horário de verão funcionam apenas quando o controle de conexão for através do banco de dados. Para mais informações sobre o fuso horário, clique aqui e acesse a documentação específica sobre este assunto.
+            
+                Importante
+                
+                Alterações nas parametrizações de fuso horário e horário de verão só deverão ser efetuadas quando os sistemas não estão sendo utilizados. Desta forma, deve-se seguir todo o processo para efetivação das alterações (que envolve a parada total do ambiente para realização do processo de consistência de base pelo CBDS). Caso seja realizada a alteração de alguma parametrização que envolva a utilização de fusos horários pelo sistema (exemplo: mudança do fuso horário definido no SeniorConfigCenter) e não seja efetuado o processo por completo (com a execução dos procedimentos relativos ao CBDS), poderão ocorrer erros diversos nos cálculos dos horários pelas rotinas do sistema (exemplo: geração incorreta da data/hora/fuso no XML dos documentos eletrônicos gerados pelo ERP).
+                É pré-requisito que os sistemas Senior sejam executados em ambientes que estejam configurados para utilizarem padrões brasileiros de configurações regionais (inclusive métodos de entrada/leiaute de teclado). Estas configurações são efetuadas no sistema operacional Windows onde as aplicações são executadas.
+                Para a correta configuração do sistema operacional deve-se levar em conta:
+                
+                    A forma de acesso dos usuários: se os usuários utilizarem instalações cliente-servidor, as estações de trabalho onde os sistemas estão instalados devem estar de acordo com o padrão brasileiro para configurações regionais. Se o acesso for efetuado através de Browser Access, Windows Access, Web 5.0 ou web services, então os servidores que provém estes acessos devem atender os pré-requisitos das configurações regionais no padrão brasileiro;
+                    No sistema operacional Windows, as configurações regionais são parametrizadas por usuário. Logo, os sistemas da Senior capturarão as informações desta sessão logada. Em um servidor de aplicação/middleware, deve-se confirmar que o usuário parametrizado para instanciar as aplicações/serviços esteja configurado adequadamente. Lembrando que, qualquer alteração nas parametrizações de usuário no sistema operacional Windows só terão efeito após a reinicialização do sistema operacional.
+                
+                A parametrização das Configurações Regionais e Métodos de Entrada (leiautes de teclado) do sistema operacional em desconformidade com o padrão brasileiro poderá acarretar em erros em diversos processos do sistema como, por exemplo, a determinação se uma data digitada pelo usuário é válida ou não. Estas parametrizações são comumente efetuadas através do Painel de Controle do Windows, no entanto, a localização da parametrização poderá variar de acordo com a versão do sistema operacional Windows. Em caso de dúvidas na alteração destas parametrizações, deve-se acionar o responsável pela administração dos sistemas operacionais do ambiente.
+                O maior impacto para a não parametrização adequada do Gestão Empresarial | ERP, de acordo com os fusos horários e o horário de verão, é na geração de documentos eletrônicos (XMLs), que podem ser gerados com horários incorretos, ocasionando diversas rejeições. Para melhor entendimento da relação de Fusos Horários x Arquivos XMLs, clique aqui e verifique a documentação específica sobre este relacionamento.
+                A parametrização de Fusos Horários no Gestão Empresarial | ERP depende de alterações no SeniorConfigCenter, no CBDS e no SGU. O controle de fuso horário é efetuado por usuário do sistema e não por filial. Desta forma, deve-se dar atenção especial as parametrizações necessárias para cada usuário no SGU.
+            
+            Fuso horário e horário de Verão
+            Através desta guia é definido o fuso horário para a conta de usuário e se esta conta estará sujeita ao horário de verão. Esta guia só estará disponível ser as parametrizações do SeniorConfigCenter e CBDS já tiverem sido efetuadas.
+            O fuso horário definido nesta guia será utilizado pelo respectivo sistema para geração/gravação dos registros de horário do usuário que está sendo parametrizado. A lógica utilizada pelo sistema será:
+            
+                O sistema coletará o horário do servidor do banco de dados e o GMT definido na Central de Configurações.
+                Em seguida, ele verificará qual é o GMT definido no SGU para o usuário que estará efetuando o processo.
+                Com base nos dados coletados (Horário Servidor Banco de Dados + GMT do SeniorConfigCenter + GMT do SGU) o sistema calculará qual é o horário a ser utilizado para executar o processo com o usuário especificado.
+            
+            Se o parâmetro “Este usuário utiliza horário de verão” estiver habilitado, será acrescido uma hora no GMT definido no campo Fuso horário. Assim, se no campo Fuso horário estiver definido o GMT “-04:00” por exemplo, ao habilitar o parâmetro “Este usuário utiliza horário de verão”, o sistema entenderá que o GMT deste usuário é “-03:00”.
+            Importante
+                O parâmetro Este usuário utiliza horário de verão só terá efeito na adição de uma hora no fuso horário definido no campo Fuso Horário o processo esteja sendo realizado dentro do período de horário de verão definido no SeniorConfigCenter.
+                Exemplo 1:
+                    
+                        
+                            Período definido como “18/10/2014 à 21/02/2015” e o GMT da Central de Configurações estiver definido como “-03:00”;
+                            Parâmetro “Este usuário utiliza horário de verão” habilitado no SGU para o usuário;
+                            Processo sendo realizado em 15/01/2015.
+                            O sistema considerará que o fuso horário deste usuário é “-02:00”.
+                        
+                    
+                
+                Exemplo 2:
+                    
+                        
+                            Período definido como “18/10/2014 à 21/02/2015” e o GMT da Central de Configurações estiver definido como “-03:00”;
+                            Parâmetro “Este usuário utiliza horário de verão” habilitado no SGU para o usuário;
+                            Processo sendo realizado em 20/03/2015.
+                            O sistema considerará que o fuso horário deste usuário é “-03:00”, pois como o processo está sendo realizado fora do período de horário de verão definido no SeniorConfigCenter, o sistema deixa de considerar a definição do parâmetro “Este usuário utiliza horário de verão”.
+                        
+                    
+                
+                Qualquer alteração nos fusos horários de um usuário só será aplicada às novas sessões dos sistemas abertas após a alteração. Desta forma, recomenda-se solicitar ao usuário o fechamento do sistema e a abertura do mesmo novamente após ter sido efetuada alguma alteração nos seus fusos horários.
+            
+            Nota
+                Caso esteja definido na configuração da base de dados a opção Assinalamentos Globais para Horário de Verão e Fuso Horário, estas opções estarão desabilitadas no SGU.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anô

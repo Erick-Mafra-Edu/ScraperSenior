@@ -1,0 +1,195 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#view/view_cubo.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CView%7C_____8
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > View > Exportação SAGA e EXCEL através de LAYOUTS
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Exportação SAGA e EXCEL através de LAYOUTS
+            O gerador de relatórios disponibiliza layouts de exportação para diversos formatos. Após gerado o modelo, o arquivo IMP pode ser salvo e a exportação através de layouts pode ser acessada diretamente a partir de um botão da tela de visualização de relatórios do gerador.
+            
+            
+            Este recurso também está disponível no visualizador de relatórios, acessível através do mesmo botão - .
+            Nota
+                O layout criado para um relatório só poderá ser reaberto pelo mesmo, pois as informações gravadas no layout não irão condizer com as informações fornecidas por qualquer relatório e sim pelo relatório para que foi criado.
+                Por exemplo, se estiver na tela de criação de layout do relatório FPTA001.CAD, ao abrir para editar o layout do arquivo FIPC002.GER, será exibida uma mensagem alertando que as informações não são correspondentes.
+            
+            Configurações de Layouts
+            A tela Configurações de Layouts será exibida. No painel esquerdo exibe a hierarquia do relatório, quando uma seção é selecionada, seus campos são exibidos no painel central para posterior inclusão no layout. Para inserir e remover estes campos no layout, selecione os campos desejados através das setas azuis. Os campos adicionados terão suas informações listadas na grade do painel da direita.
+            Nome
+                É o nome que identifica o campo na seção.
+            Apelido
+                Descrição utilizada para mostrar no Cubo de Decisão.
+            Layout
+                Mostra se este campo é inicialmente uma Quebra ou Resumo.
+            Tipo de Edição
+                Máscara e tamanho do campo.
+            Estas informações podem ser alteradas através de um clique duplo sobre a linha ou campos ou pressionando Enter sobre o campo que será alterado. Desta forma será exibida a tela Configurações do Campo.
+            Descrição do Layout
+                Permite informar a descrição que será visualizada na execução do Cubo de Decisão.
+        
+            Listar na Seção
+                Indica em qual seção (especificamente na impressão da seção selecionada), que os dados serão gravados no arquivo que o Cubo de Decisão irá utilizar.
+        
+            
+                Nota
+                
+                Caso os campos escolhidos não estejam totalmente preenchidos, será solicitada uma confirmação para continuar.
+            
+            Arquivo
+            Abrir
+                Abre um layout existente. A tela de abertura do modelo existente possui um filtro para mostrar somente os arquivos que contém no seu nome o nome do modelo referência para este layout.
+            
+                Nota
+                
+                Se o criador do modelo não optar por salvar junto com o nome do layout, o nome do modelo, o mesmo deverá estar ciente que ele não aparecerá neste filtro quando o mesmo for utilizado, devendo ele mudar o filtro para poder visualizar o layout com o nome sem o nome do modelo.
+            
+            Salvar
+                Salva o layout atual com o nome do modelo referência, junto ao nome do arquivo do layout para facilitar posterior localização junto aos outros arquivos.
+            Exportação
+            Para exportar arquivos do Excel e Saga é preciso que a ordem de execução dos controles seja a mesma ordenação visual dos controles no relatório (da esquerda para a direita e de cima para baixo).
+            Para realizar estar ordenação, acesse as propriedades da banda que se deseja ordenar e edite a propriedade Ordem Controles. Na tela Ordenação, uma lista de controles é apresentada. Ordene esta lista da mesma maneira em que estão dispostos os controles visualmente, sendo os  controles mais acima, os primeiros a serem executados.
+            Exportar Texto Formato Saga
+                Gera o arquivo para ser visualizado no SAGA.
+            Exportar Arquivo para Excel
+                Gera o arquivo no formato XLS ou XLSX para ser visualizado no Excel. Ao optar por esta opção, informe a tratativa para textos com mais de 255 caracteres.
+            
+                Truncar: Os textos com mais de 255 caracteres serão 
+ exportados apenas os 255 primeiros caracteres e exibidos em uma única célula no 
+ Excel;
+                Múltiplas Linhas: Os textos com mais de 255 caracteres serão divididos em textos de até 255 caracteres e 
+ exportados em células da mesma coluna.
+            
+            Exportar e Visualizar no Editor
+                Gera o arquivo para o SAGA após informado seu nome e caminho, e abre o Notepad para visualizar este arquivo.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

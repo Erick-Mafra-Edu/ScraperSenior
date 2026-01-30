@@ -1,0 +1,182 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/tela-de-pesquisa/exportacao.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CTela%2520de%2520Pesquisa%7C_____6
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Tela de Pesquisa > Exportação de arquivos Excel
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Exportação de arquivos Excel
+                Permite aplicar filtros (Simples ou Avançados), ou utilizar todos os registros exibidos na tela de pesquisa, na exportação direta para Excel, como um relatório simples. A exportação pode ser feita para dois tipos de arquivos reconhecidos pelo Excel, XLS e XLSX.
+                Para exportar, na guia Exportação selecione umas das opções:
+                
+                    Truncar campos em 255 caracteres: Selecionando esta opção, se o relatório possui um campo texto, somente a primeira linha do campo será exportada para o Excel;
+                    Exportar campos em múltiplas linhas: Selecionando esta opção, se o relatório possui um campo texto, todas as linhas do campo serão exportadas para o Excel, onde cada linha do campo ficará em uma linha do Excel.
+                
+                Em seguida, clique no botão Excel e na opção Salvar Como, depois selecione o formato desejado:
+                
+                    Arquivo XLS: Formato XLS para versões do Excel anteriores à 2007;
+                    Arquivo XLSX: Formato XLSX para o Excel 2007 e versões posteriores.
+                
+                Por fim, informe o local e nome do arquivo que será gerado.
+                Considerações sobre o arquivo XLSX gerado
+                
+                    Acesso via Browser Access utilizando o navegador Safari com versão 4.0 em diante: Ao fazer o download de um arquivo com extensão XLSX utilizando o navegador Safari 4.0 em diante, quando o sistema é acessado via Browser Access, existe um comportamento padrão deste navegador que acrescenta a extensão ZIP ao arquivo e o salva neste formato. Para solucionar esta situação, basta retirar a extensão ZIP do nome do arquivo;
+                    Datas 00/00/0000 na grade  serão exportadas como Texto e não como Data;
+                    Valores nulos na base de dados serão exportados considerando as suas máscaras. Por exemplo, um valor nulo com a máscara ZZ9,99, será exportado como 0,00.
+                    Caso um relatório seja exportado para XLSX, é possível que ocorra a exportação de colunas em branco. Esse é o comportamento padrão de formatação do XLSX, então quando um relatório é salvo neste formato, ele definirá o espaço entre os dados pelo tamanho do controle e a distância um do outro. Para que o problema não ocorra, é necessário diminuir o tamanho dos controles para o comprimento de 80 e aproximar os controles um do outro para que em seguida o comprimento seja reduzido.
+                
+                Definindo permissão para a guia Exportação
+                Para definir quais usuários terão permissão para acessar a guia exportação, acesse o menu Diversos >  Usuários > Permissão Configuração Telas, será exibida uma tela na qual deve-se selecionar o item Permitir exportar dados da tela de pesquisa de registro e clique em Segurança, assim você poderá selecionar os usuários desejados e definir a permissão de cada um deles.
+                
+                    
+                        
+                        
+                        
+                            
+                                
+                                    
+                                
+                                Veja também:
+                            
+                        
+                    
+                    
+                        Geração de relatórios em arquivos Excel
+                        
+                        Geração de Arquivos Excel
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

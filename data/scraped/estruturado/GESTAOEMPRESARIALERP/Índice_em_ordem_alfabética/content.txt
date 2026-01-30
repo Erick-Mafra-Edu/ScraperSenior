@@ -1,0 +1,279 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#regra_variaveis/indice_variaveis.htm%3FTocPath%3DFerramentas%7CFun%25C3%25A7%25C3%25B5es%2520para%2520regras%2520e%2520gerador%2520de%2520relat%25C3%25B3rios%7CVari%25C3%25A1veis%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ferramentas > Funções para regras e gerador de relatórios > Variáveis > Índice em ordem alfabética
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Índice das variáveis
+            Variáveis são palavras especiais que fornecem dados específicos para serem utilizados na elaboração das regras.
+            As variáveis disponíveis 
+ para o Gestão Empresarial | ERP são as seguintes:
+            
+                A
+                    
+                        
+                            
+                            
+                            
+                                
+                                    Nome
+                                    Descrição
+                                
+                                
+                                    AmbWeb
+                                    
+                                    Indica se o ambiente em execução é web (AmbWeb = 1) ou
+não (AmbWeb = 0)
+                                
+                                
+                                    AnoS2p
+                                    
+                                    Ano do Sistema com 2 Posições
+                                
+                                
+                                    AnoSis
+                                    
+                                    Ano da Data Atual
+                                
+                                
+                                    AutBan
+                                    
+                                    Número da autenticação bancária
+                                
+                            
+                        
+                    
+                
+                B
+                    
+                        
+                            
+                            
+                            
+                                
+                                    Nome
+                                    Descrição
+                                
+                                
+                                    BloCodIn1
+                                    
+                                    Código Instrução 01 do Bloqueto
+                                
+                                
+                                    BloCodIn2
+                                    
+                                    Código Instrução 02 do Bloqueto
+                                
+                                
+                                    BloDesMe1
+                                    
+                                    Mensagem 01 do Bloqueto
+                                
+                                
+                                    BloDesMe2
+                                    
+                                    Mensagem 02 do Bloqueto
+                                
+                                
+                                    BloDesMe3
+                                    
+                                    Mensagem 03 do Bloqueto
+                                
+                                
+                                    BloDesMe4
+                                    
+                                    Mensagem 04 do Bloqueto
+                                
+                            
+                        
+                    
+                
+                C
+                    
+                        
+                            
+                            
+                            
+                                
+                                    Nome
+                                    Descrição
+                                
+                                
+                                    ChqAno1Po
+                                    
+                                    Ano da Emissão Cheque com 1 Posição
+                                
+                                
+                                    ChqAno2Po
+                                    
+                                    Ano da Emissão Cheque com 2 Posições
+                                
+                                
+                                    ChqDiaDtP
+                                    
+                                    Dia Emissão Cheque
+                                
+                                
+                                    ChqExtLn1
+                                    
+                                    Linha01 Descrição do valor por extenso para Cheque
+                                
+                                
+                                    ChqExtLn2
+                                    
+                                    Linha02 Descrição do valor por extenso para Cheque
+                                
+                                
+                                    ChqExtMes 
+                                    
+                                    Mês da Emissão Cheque por extenso
+                                
+                                
+                                    CodBar
+                                    
+                                    Código de Barras
+                                
+                                
+                                    CodCmp
+                                    
+                                    Código do componente
+                                
+                                
+                                    CodCrt
+                                    
+                                     Código Carteira da Parcela para Nota Fiscal
+                                
+                                
+                                    CodDer
+                                    
+                                    Código da derivação
+                                
+                                
+                                    CodEmp
+                                    
+                                    Código da Empresa ativa
+                                
+                                
+                                    CodEtg
+                                    
+                                    Código do estágio
+                                
+                                
+                                    CodFil
+                                    
+                                    Código da Filial ativa
+                                
+                                
+                                    CodFor
+                                    
+                                    Código do Fornecedor
+                                
+                                
+                                    CodMo1
+                                    
+                                    Motivo para rejeição de títulos
+                                
+                                
+                                    CodMo2
+                                    
+                                    Motivo para rejeição de títulos
+                                
+                                
+                                    CodMo3
+                                    
+                                    Motivo para rejeição de títulos
+                                
+                                
+                                    CodMo4
+                                    
+                                    Motivo para rejeição de títulos
+                                
+                                
+                                    CodMo5
+                                    
+                                    Motivo para rejeição de títulos
+                                
+                                
+                                    CodMod
+                                    
+                                    Código do modelo
+                                
+                                
+                                    CodPar
+                                    
+                                    Código da Parcela para Nota Fiscal
+                                
+                                
+                                    CodPor
+                                    
+                                    Código Portador da Parcela para Nota Fiscal
+                                
+                                
+                                    CodTpt
+                                    
+                                    Tipo de Título
+                                
+                                
+                                    CodUsu
+                                    
+                                    Código do usuário ativo
+                                
+                         

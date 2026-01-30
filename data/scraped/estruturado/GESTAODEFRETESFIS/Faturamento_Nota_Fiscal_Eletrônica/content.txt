@@ -1,0 +1,342 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/faturamento-nfe.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____11
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Faturamento Nota Fiscal Eletrônica
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Faturamento Nota Fiscal Eletrônica
+            
+                
+                
+                
+                    
+                        Descrição
+                        
+                         
+                    
+                    
+                        URL do Serviço
+                        
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/faturamentoNfe
+
+                    
+                    
+                        Tipo de envio
+                        
+                        Post
+                    
+                    
+                        Momento
+                        
+                        Realiza o faturamento da NFe
+                    
+                    
+                        Tabela
+                        
+                         
+                    
+                    
+                        Array
+                        
+                        Sim - recebe array de objetos
+                    
+                
+            
+            
+                
+                
+                
+                    
+                        Header
+                        
+                    
+                    
+                        Chave
+                        
+                        Valor
+                        
+                    
+                    
+                        Content-Type
+                        Application/json
+                    
+                    
+                        Authorization
+                        Bearer inserir_token_aqui
+                    
+                
+            
+            Detalhamento dos atributos de JSON entrada
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Nome do Atributo
+                        
+                        Tipo de Dado
+                        
+                        Default
+                        
+                        Obrigatório
+                        
+                        Descrição
+                        
+                    
+                    
+                        VALIDACAO_SINCRONA
+                        Boolean
+                         
+                        N
+                        Caso True realiza validação e já retorna se houver algum problema
+                    
+                    
+                        faturamentosNfe
+                        
+                        Array
+                         
+                        S
+                        Recebe um array de objeto
+                    
+                    
+                        PED_CNPJ_EMPRESA
+                        
+                        String
+                         
+                        S
+                        CNPJ da Empresa
+                    
+                    
+                        PED_CD_CLIENTE
+                        
+                        String
+                         
+                        S
+                        Código do cliente
+                    
+                    
+                        PED_NU_PEDIDO_ORIGEM
+                        
+                        String
+                         
+                        S
+                        Número do pedido de origem
+                    
+                    
+                        PED_NU_NF
+                        
+                        Interger
+                         
+                        S
+                        Número da Nota Fiscal
+                    
+                    
+                        PED_NU_SERIE_NF
+                        
+                        String
+                         
+                        S
+                        Série da nota fiscal
+                    
+                    
+                        PED_DT_EMISSAO_NF
+                        
+                        String
+                        (DD/MM/YYYY HH24:MI:SS)
+                        S
+                        Data de emissão da nota Fiscal
+                    
+                    
+                        PED_CHAVE_ACESSO
+                        
+                        String
+                         
+                        S
+                        Chave de acesso NF (Danfe)
+                    
+                    
+                        PED_QT_VOLUME
+                        
+                        Number
+                         
+                        S
+                         
+                    
+                    
+                        PED_CFOP
+                        
+                        String
+                         
+                        S
+                        CFOP Predominante da NFe
+                    
+                    
+                        PED_PS_LIQUIDO
+                        
+                        Double
+                         
+                        N
+                        Atualiza o peso liquido do pedido
+                    
+                    
+                        PED_VALOR_NF
+                        
+                        Double
+                         
+                        N
+                        Atualiza o valor da Nota Fiscal no pedido
+                    
+                    
+                        PED_CANAL_VENDA
+                        
+                        String
+                         
+                        N
+                        Atualiza o canal de venda do pedido
+                    
+                    
+                        PED_CNPJ_TRANSPORTADORA
+                        
+                        String
+                         
+                        N
+                        Atualiza a transportadora no pedido
+                    
+                    
+                        PED_EMAIL_CLIENTE
+                        
+                        String
+                         
+                        N
+                        Atualiza o e-mail do cliente
+                    
+                
+            
+            
+                
+                
+                    
+                        Exemplo do layout de entrada de JSON:
+                    
+                    
+                        
+                            {
+                            "validacao_sincrona": true,
+                            "faturamentosNfe":[
+                            {
+                            "ped_cnpj_empresa" : "20121850000155",
+                            "ped_cd_cliente" : "831107",
+                            "ped_nu_pedido_origem" : "TB00102",
+                            "ped_nu_nf" : "888",
+                            "ped_nu_serie_nf" : 1,
+                            "ped_dt_emissao_nf" : "19/09/2019 01:00:00",
+                            "ped_chave_acesso" : "ABC123",
+                            "ped_qt_volume" : 12,
+                            "ped_cfop" : "1111",
+                            "ped_ps_liquido" : 2.10,
+                            "ped_valor_nf" : 125.10,
+                            "ped_canal_venda" : "aaa",
+                            "ped_cnpj_transportadora" : "20101450000158",
+                            "ped_email_cliente" : "admin@email.com.br"
+                            }
+                            ]
+                            }"
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta pub

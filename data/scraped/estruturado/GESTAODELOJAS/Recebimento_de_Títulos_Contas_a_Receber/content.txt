@@ -1,0 +1,207 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/recebimento-tit-ctas-receber.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____29
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Recebimento de Títulos Contas a Receber
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Recebimento de Títulos Contas a Receber
+                Conceito
+                Efetua o recebimentos de títulos relacionados e pendentes do Contas a Receber originados ou não em outras filiais.
+                Os títulos originados de outra filial podem ser recebidos em qualquer filial. Para isso, a pesquisa de clientes é integrada e os títulos pendentes serão apresentados no PDV.
+                Utilização
+                 Registra o recebimento de títulos  vencidos, a vencer ou renegociados.
+                Processo
+                Para efetuar o recebimento de títulos, é preciso primeiramente efetuar a consulta dos títulos pendentes do cliente.
+                
+                    Nota:
+                    
+                    O processo para consulta de títulos é o mesmo para todas as situações inclusive os originados em outras filiais. O que é alterado nesse processo é apenas a forma de como essas informações são buscadas e retornadas entre os sistemas.
+                    A integração das informações são efetuadas através dos web services:
+                    com.senior.g5.co.int.varejo.titulosreceber, porta Consultar e com.senior.g5.co.int.varejo.cliente, porta Exportar.
+                    Para consulta de títulos originados em outra filial, ao informar o CPF/CNPJ do cliente, serão apresentados todos os títulos em aberto para que o usuário selecione o título a receber. 
+                    A integração nesse caso, funcionará da seguinte forma:
+                    
+                        O PDV solicita a identificação de títulos para o Retaguarda, o Retaguarda solicita os dados para o Gestão Empresarial | ERP e retorna as informações ao PDV.
+                        Quando o cliente for selecionado no PDV, é enviado um comando para o Retaguarda para que ele identifique se o cliente selecionado no PDV está em sua base. Caso não esteja, neste momento ocorrerá a importação dos dados do cliente selecionado, da mesma forma como ocorre quando é inserido um cliente digitando um CPF que existe apenas na matriz, por exemplo.
+                    
+                    As definições do cliente geradas automaticamente pelo sistema seguem o seguinte padrão:
+                    
+                        Representante: é obtido conforme parametrizado no campo Representante da Filial na tela F070FRE para a filial que está executando o processo;
+                        Condição de pagamento: Conforme parametrizado no campo Condição Pagamento na tela F070VAR;
+                        Critério de Rateio: igual a 0;
+                        Exige ligação de cliente com produto: igual a N - Não;
+                        Saldo devedor de duplicatas aos fornecedores: igual a 0;
+                        Categoria do Cliente: igual a 0.
+                    
+                    Nota
+                        O restante dos campos serão gerados como se houvesse a geração de definições para o cliente via tela padrão do sistema.
+                
+                Consulta títulos a receber do cliente
+                
+                    Selecione a opção Recebimento na tela inicial do PDV;
+                    Informe o nome, código ou CPF do cliente. Se preferir, utilize a opção de Pesquisa para buscar por parte do nome;
+                    Serão apresentados na tela os valores vencidos, a vencer e total em aberto para o cliente pesquisado.
+                    Para recebimentos de títulos com carnê, utilize a leitura do código de barras dele, o sistema exibirá o título correspondente sem a necessidade de pesquisa;
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                Botões
+                Total
+                
+                Considera o pagamento do valor total apresentado na tela.
+                Parcelas
+                
+                Apresenta todas as parcelas que estão compondo o saldo em aberto.
+                Imprimir
+                
+                Imprime relatório da situação dos títulos e parcelas em aberto, totalizando por mês (vencidas e a vencer).
+                Resumo Mensal
+                
+                Exibe o valor dos títulos em aberto por mês.
+                Marcar
+                
+                Marca na caixa de seleção o documento selecionado para registrar o recebimento.
+                Desmarcar
+                
+                Botão fica ativo apenas quando a parcela selecionada estiver marcada. Desmarca a parcela já marcada.
+                Finalizar recebimento
+                Apresenta os finalizadores para o recebimento dos títulos (Dinheiro, Cheque, Cartão...).
+                Marcar mês
+                Marca todos os documentos a vencer ou vencidos por mês. 
+                Marcar todos
+                Marca todos os documentos apresentados na tela para recebimento.
+                Desmarcar todos
+                Desmarca todos os documentos marcados anteriormente.
+                Exibir detalhes
+                Exibe detalhes correspondentes à compra do cliente que gerou o documento selecionado.
+                Neste item, é possível visualizar se os títulos são provenientes de renegociação. Caso a mensagem: "Não é possível exibir dados da venda e dos itens porque este não é o título original da venda" seja exibida, significa que  o não é o título original.
+                Ocultar detalhes
+                Oculta os detalhes dos  documentos exibidos anteriormente.
+                Editar
+                Efetua a edição do documento selecionado. A edição pode ser feita para aplicar juros, multa e desconto por antecipação.
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                Efetuar a baixa do título
+                Para efetuar a baixa por parcela, siga os seguintes passos:
+                
+                    Selecione o botão Parcelas;
+                    Marque as parcelas que serão pagas através do botão Marcar;
+                    Após marcar as parcelas correspondentes, utilize o botão Subtotal para registrar a forma de recebimento.
+                
+                Exemplo:
+                    
+                        Utilize o botão Subtotal para registrar o recebimento do cliente.
+                        
+                            
+                        
+                        Ao utilizar o botão Subtotal, o sistema apresentará a pergunta:
+                         
+                        Selecione a opção Sim, caso deseje efetuar recebimento de outros clientes nesta mesma operação. 
+                        
+                            Exemplo:
+                                
+                                     Uma pessoa foi até a loja efetuar o pagamento de várias pessoas da mesma família.
+                                
+                            
+                        
+                        Caso o recebimento seja apenas de um cliente, utilize novamente o botão Subtotal e escolha um finalizador para finalizar o recebimento:
+                        
+                            
+                        
+                    
+                
+                
+                    O comprovante não fiscal de recebimento será impresso no ECF.
+                
+                Exemplo:
+                    
+                        
+                            
+                            
+                            
+                        
+                    
+                
+                Recebimento de cheque com troco
+                Permite realizar o recebimento de cheque com troco. Ou seja, o troco ocorrerá, quando através do recebimento de cheque houver valor superior ao valor da parcela selecionada para pagamento.
+                Os passos da operação são semelhantes aos que j á ocorrem na rotina de recebimentos, sendo:
+                
+                    Selecione um títulos para receber no PDV;
+                    Selecione a forma de pagamento Cheque;
+                    Informe o valor do Cheque que será o valor maior que o valor da compra
+                    Ao finalizar o recebimento, será gerado o troco, conforme exemplo abaixo:
+                
+                Exemplo - valor do cheque maior que o valor da mercadoria
+                    
+                        
+                            
+                        
+                    
+                
+                Exemplo - identificação e cálculo do troco do cheque
+                    
+                        
+                            
+                        
+                        Exemplo - impressão do Comprovante Não Fiscal 
+                            
+                                
+                                    
+                                
+                            
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em

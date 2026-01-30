@@ -1,0 +1,144 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/cotacao-frete-simplificada.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____6
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Cotação de Frete Simplificada
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Cotação de Frete Simplificada
+            
+                
+                
+                
+                    
+                        Descrição
+                         
+                    
+                    
+                        Url de serviço
+                        
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/cotacaoFreteSimplificada				
+                    
+                    
+                        Tabela
+                        
+                        POST				
+                    
+                    
+                        Tipo de envio
+                        
+                        Realiza a cotação do frete simplificada				
+                    
+                    
+                        Momento
+                        
+                         
+                    
+                    
+                        Array
+                        
+                        Não				
+                    
+                
+             HeaderChaveValorContent-TypeApplication/jsonAuthorizationBearer inserir_token_aquiDetalhamento dos atributos de JSON entradaNome do AtributoTipo de DadoDefaultObrigatórioDescriçãocotacao_freteObjeto Json SRecebe o objeto JsoncepString SCEP destinocomprimentoDouble SComprimentolarguraDouble SLarguraalturaDouble SAlturacubagemDouble SPeso cubicoquantidadeLong SQuantidadevalor_unitarioDouble SValor unitariopesoDouble SPeso cubicoprodutoString SCódigo produtoExemplo do layout de entrada JSON{"cotacaoFrete": {"cep": "14407315","comprimento": 0.35,"largura": 0.25,"altura": 0.05,"cubagem": 0.004375,"quantidade": 1,"valorUnitario": 69.90,"peso": 0.28,"produto": "73986"}}Detalhamento dos atributos de JSON saídaNomeTipoDefaultObrigatórioDescriçãocotacao_freteArray SArray de Objetosid_cotacaoInteger SSequencial da cotaçãocd_transportadoraInteger SCD da transportadorads_transportadoraString SDescrição da transportadoraservicoInteger SServiçotransporteString STipo transportepesoDouble SPesovalorDouble SValor do freteprazo_maxInterger SPrazo Máximoprazo_minInteger SPrazo mínimodias_uteisBoolean Sse true = prazos em dias uteis, se false prazo em dias corridosExemplo do layout de saídaJSON 
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

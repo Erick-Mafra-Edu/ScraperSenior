@@ -1,0 +1,187 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/configuracao-de-campos/frusrfld.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CConfigura%25C3%25A7%25C3%25A3o%2520de%2520Campos%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Configuração de Campos > Configuração de Campos
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Configuração de tela
+                Este recurso permite adicionar e retirar campos de usuário e de sistema da tela e alterar a ordem dos campos na tela:
+                Campos disponíveis
+                    Lista de campos disponíveis para serem mostrados na tela. Os campos desta lista não são mostrados na tela, mas podem ser configurados para ficarem visíveis;
+				Ordenação: Método de ordenação dos campos disponíveis:
+						Layout: Ordena os campos disponíveis seguindo a ordem definida no layout da tabela (ordem definida no TBS do sistema);Alfabética: Ordena os campos disponíveis seguindo a ordem alfabética.
+                Campos Selecionados
+                    Lista de campos selecionados para serem mostrados na tela. Os campos desta lista são mostrados na tela na ordem que aparecem na lista.
+                
+                    Ordenação: Método de ordenação dos campos disponíveis:
+					Ordenar pelo Layout: Ordena os campos selecionados seguindo a ordem definida no layout da tabela (ordem definida no TBS do sistema). Esta operação afeta a ordem dos campos na tela;Restaurar configuração original: Restaura a configuração original da tela do sistema.
+                
+                Salvar como
+                    Define para quais usuários a configuração será salva:
+				
+                
+                    
+                        Padrão: Salva a configuração como padrão, aplicando as configurações para todos os usuários que não tem configuração individual. Esta opção não afeta configurações individuais de outros usuários;
+                        Todos: Salva a configuração para todos os usuários: Esta operação sobrescreve as configurações de todos os usuários;
+                        Individual: Salva a configuração somente para o usuário logado no sistema. Esta opção não afeta configurações individuais de outros usuários.
+                    
+                
+                Adicionando e removendo campos da tela
+                Ao incluir campos na tela, os campos são movidos do painel Campos disponíveis para o painel Campos selecionados, a inclusão de campos na tela pode ser feita de duas maneiras:
+                
+                    Adicionando todos os campos: Para adicionar todos os campos disponíveis, utilize o botão ;
+                    Adicionando campos individuais: Para adicionar somente alguns dos campos disponíveis, selecione os campos desejados e utilize o botão .
+                
+                
+                    Nota
+                    
+                    O sistema não oferece a possibilidade de inserir campos do tipo imagem nas telas,  eles não são exibidos no painel Campos disponíveis.
+                
+                Ao excluir campos na tela, os campos são movidos do painel Campos selecionados para o painel Campos disponíveis, a exclusão de campos na tela pode ser feita de duas maneiras:
+                
+                    Removendo todos os campos: Para remover todos os campos selecionados (não obrigatórios), utilize o botão ;
+                    Removendo campos individuais: Para remover somente alguns campos selecionados (não obrigatórios), selecione os campos desejados e utilize o botão . Quando algum campo selecionado for obrigatório, será exibida uma mensagem informando que não foi possível realizar a operação nos campos obrigatórios.
+                
+                Alterando a ordem dos campos da tela
+                Para mover um campo para uma posição anterior, selecione o campo no painel Campos selecionados e utilize o botão . Caso o campo selecionado seja dependente do campo superior, por exemplo, o campo Bairro que é dependente do campo Cidade, não será possível movê-lo e será exibida uma mensagem informando que não é possível realizar este posicionamento (Bairro antes da Cidade).
+                Para mover um campo para uma posição posterior, selecione o campo no painel Campos selecionados e utilize o botão . Caso o campo posterior ao selecionado seja dependente do campo selecionado, por exemplo, o campo Cidade em relação ao campo Bairro (dependente de Cidade), não será possível movê-lo e será exibida uma mensagem informando que não é possível realizar este posicionamento (Cidade depois do Bairro).
+                Nota
+                    Em algumas telas não é possível alterar a ordem dos campos de sistema, apenas dos campos de usuário. Neste caso ao tentar alterar a ordem de algum campo de sistema, será exibida uma mensagem informando que não é possível alterar a ordem do campo.
+                
+                Configuração de campos de usuário
+                Algumas telas do sistema permitem uma maior flexibilização na exibição de campos de usuário, onde podem ser exibidos campos de usuário de todas as tabelas do sistema, desde que o usuário tenha permissão para acessar a tabela e que não exista uma restrição específica do sistema na exibição desta tabela.
+                Nestas telas, antes dos campos serem mostrados, eles devem ser configurados através do Assistente de Configuração de Campos de Usuário. Nas telas que necessitam desta configuração, o assistente pode ser acessado através da opção Configurar Campos de Usuário, no menu de contexto da tela (menu popup).
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,263 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/requisicoes-http.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7CFun%25C3%25A7%25C3%25B5es%2520para%2520Requisi%25C3%25A7%25C3%25B5es%2520HTTP%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Funções para Requisições HTTP
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Funções para Requisições HTTP
+            Funções que possibilitam a
+		execução de requisições HTTP, oferecendo suporte à utilização de
+		servidor proxy e requisições sobre SSL, permitindo o acesso a sites da
+		web que utilizem HTTPs.
+            
+                
+                
+                
+                    
+                        Nome
+                        Descrição
+                    
+                    
+                        HttpAdicionaExcecaoProxy
+                        
+                        Adiciona o endereço passado no parâmetro Endereço na lista de exceções de proxy.
+                    
+                    
+                        HttpAlteraAutenticacaoProxy
+                        
+                        Faz o inverso da função HttpLeAutenticacaoProxy, ou seja, altera os valores ao invés de ler.
+                    
+                    
+                        HttpAlteraCabecalhoRequisicao
+                        
+                        Altera valores de cabeçalhos HTTP que serão enviados junto com a requisição.
+                    
+                    
+                        HttpAlteraCodifCaracPadrao
+                        
+                        Altera a codificação de caracteres que é usado por padrão nas respostas do servidor.
+                    
+                    
+                        HttpAlteraConfiguracaoProxy
+                        
+                        Faz o inverso da função HttpLeConfiguracaoProxy, ou seja, altera os valores ao invés de ler.
+                    
+                    
+                        HttpAlteraConfiguracaoSSL
+                        
+                        Faz o inverso da função HttpLeConfiguracaoSSL, ou seja, altera o valor ao invés de ler.
+                    
+                    
+                        HttpAlteraMostrarProgresso
+                        
+                        Faz o inverso da função HttpLeMostrarProgresso, ou seja, altera o valor ao invés de ler.
+                    
+                    
+                        HttpAlteraRedirecionamento
+                        
+                        Especifica se as requisições realizadas devem tratar os redirecionamentos retornados pelo servidor destino.
+                    
+                    
+                        HttpDelete
+                        
+                        Executa uma requisição HTTP usando o método DELETE.
+                    
+                    
+                        HttpDeleteBody
+                        
+                        Executa uma requisição HTTP usando o método DELETE (com parâmetro Body).
+                    
+                    
+                        HttpDesabilitaErroResposta
+                        
+                        Desabilita a geração automática de erros de execução.
+                    
+                    
+                        HttpDesabilitarCookies
+                        
+                        Desabilita o recurso de manter os cookies ao utilizar requisições HTTP em regras LSP.
+                    
+                    
+                        HttpDesabilitaSNI
+                        
+                        Desabilita o SNI (Server Name Indication) na requisição HTTP.
+                    
+                    
+                        HttpDownload
+                        
+                        Funciona da mesma maneira que a função HttpGet, porém o retorno não é na memória, mas sim em um arquivo salvo diretamente em disco.
+                    
+                    
+                        HttpExcluiExcecaoProxy
+                        
+                        Exclui da lista de exceções de proxy o endereço do índice passado como parâmetro em Índice, contado a partir do 0 (zero).
+                    
+                    
+                        HttpGet
+                        
+                        Executa uma requisição HTTP (inclusive HTTPS) de acordo com a URL passada como parâmetro e salva a resposta da requisição, por exemplo, uma página HTML, no parâmetro de retorno HTML.
+                    
+                    
+                        HttpHabilitaErroResposta
+                        
+                        Habilita a geração automática de erros de execução.
+                    
+                    
+                        HttpHabilitarCookies
+                        
+                        Habilita o recurso de manter os cookies ao utilizar requisições HTTP em regras LSP.
+                    
+                    
+                        HttpHabilitaSNI
+                        
+                        Habilita o SNI (Server Name Indication) na requisição HTTP.
+                    
+                    
+                        HttpLeAutenticacaoProxy
+                        
+                        Faz a leitura e retorna os valores do usuário e senha de autenticação no servidor proxy.
+                    
+                    
+                        HttpLeCabecalhoResposta
+                        
+                        Consulta os valores associados à cabeçalhos de respostas das requisições.
+                    
+                    
+                        HttpLeCodigoResposta
+                        
+                        Consulta o código de resposta de uma requisição enviada ao servidor.
+                    
+                    
+                        HttpLeConfiguracaoProxy
+                        
+                        Faz a leitura do valor das propriedades Utilizar servidor proxy, Servidor, Porta e Utilizar autenticação por usuário do objeto HTTP e os retorna nos parâmetros UsarProxy, Servidor, Porta e AutPorUsu, respectivamente.
+                    
+                    
+                        HttpLeConfiguracaoSSL
+                        
+                        Faz a leitura da propriedade Utilizar SSL do objeto HTTP e retorna o valor em SSL.
+                    
+                    
+                        HttpLeContadorExcecoesProxy
+                        
+                         Neste contexto, exceções de proxy são endereços (URLs) que podem ser acessadas sem passar pelo servidor proxy.
+                    
+                    
+                        HttpLeExcecaoProxy
+                        
+                        Retorna no parâmetro Endereço o endereço cadastrado na lista de exceções de proxy no índice passado como parâmetro em Índice, contado a partir do 0 (zero).
+                    
+                    
+                        HttpLeMostrarProgresso
+                        
+                        Faz a leitura da propriedade Exibir progresso de download do objeto HTTP e retorna o valor em Mostrar.
+                    
+                    
+                        HttpLimpaExcecoesProxy
+                        
+                        Exclui todos os endereços cadastrados na lista de exceções de proxy.
+                    
+                    
+                        HttpNormalizaRetorno
+                        
+                        Aplica a normalização de texto para caracteres de combinação na resposta da requisição HTTP.
+                    
+                    
+                        HttpObjeto
+                        
+                        Esta função retorna um objeto HTTP inicializado com as configurações definidas na tela de Configurações de Internet da Central de Configurações.
+                    
+                    
+                        HttpPatch
+                        
+                        Realiza uma chamada de verbo PATCH do HTTP.
+                    
+                    
+                        HttpPost
+                        
+                        Executa uma requisição
+	HTTP usando o método POST.
+                    
+                    
+                        HttpPut
+                        
+                         Executa uma requisição HTTP usando o método PUT.
+                    
+                    
+                        HttpSetAttachment
+                        
+                        Adiciona arquivo no corpo da requisição HTTP.
+
+                    
+                    
+                        HttpSetaTimeout
+                        
+                         Atribui um timeout (tempo de espera) para uma requisição HTTP.
+                    
+                
+            
+            
+                Nota
+                
+                As funções que executam as requisições (HttpGet e HttpDownload)
+		necessitam de um HttpObjeto que contenha as
+		configurações de acesso como: servidor proxy, SSL, entre outras.
+                Essas
+		configurações podem ser feitas na tela de configurações
+			de internet da Central de Configuração ou dentro da própria regra LSP que vai executar a
+		requisição, através das funções de manipulação.
+
+                Ao
+		manipular as conf

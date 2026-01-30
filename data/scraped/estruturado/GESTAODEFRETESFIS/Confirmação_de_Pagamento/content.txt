@@ -1,0 +1,274 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/confirmacao-pagamento.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____7
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Confirmação de Pagamento
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Confirmação de Pagamento
+            
+                
+                
+                
+                    
+                        Descrição
+                         
+                    
+                    
+                        Url de serviço
+                        
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/confirmacaoPagamento
+
+                    
+                    
+                        Tabela
+                        
+                        TI_WS_E_CONFIRMACAO_PAGAMENTO
+                    
+                    
+                        Tipo de envio
+                        
+                        POST
+                    
+                    
+                        Momento
+                        
+                        Confirmação dos pagamentos
+                    
+                    
+                        Array
+                        
+                        Sim- Poderão ser enviadas várias confirmações de pagamentos na mesma chamada.
+                    
+                
+            
+            
+                
+                
+                
+                    
+                        Chave
+                        
+                        Valor
+                        
+                    
+                    
+                        Contente-Type
+                        
+                        Aplication/json
+                    
+                    
+                        Authorization
+                        
+                        Bearer inserir_token_aqui
+                    
+                
+            
+            Detalhamento dos atributos JSON entrada
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Nome do Atributo
+                        Tipo de Dado
+                        Default
+                        Obrigatório
+                        Descrição
+                    
+                    
+                        confirmacaoPagamentos
+
+                        Array
+
+                         
+                        S
+                        Recebe um array de objetos
+                    
+                    
+                        pag_cnpj_empresa
+
+                        String
+
+                         
+                        S
+                        CNPJ da Empresa
+                    
+                    
+                        pag_cd_cnpj_tranp
+
+                        String
+
+                         
+                        S
+                        CNPJ da trasnportadora
+                    
+                    
+                        pag_nu_cte
+
+                        String
+
+                         
+                        S
+                        Número do CTE
+                    
+                    
+                        pag_nu_cte_serie
+
+                        String
+
+                         
+                        S
+                        Série do CTE
+                    
+                    
+                        pag_vlr_pago
+
+                        String
+
+                         
+                        S
+                        Valor total pago
+                    
+                    
+                        pag_dt_pagamento
+
+                        String
+
+                         
+                        S
+                        Data do pagamento
+                    
+                
+            
+            
+                
+                
+                    
+                        Exemplo do layout de entrada em JSON
+                        
+                    
+                    
+                        
+                            {
+                            "confirmacaoPagamentos": [
+                            {
+                            "pag_cnpj_empresa": "20121850000155",
+                            "pag_cd_cnpj_transp": "00100200300456",
+                            "pag_nu_cte": "112233",
+                            "pag_nu_cte_serie": "333",
+                            "pag_nu_titulo": "02",
+                            "pag_vlr_pago": "10.5",
+                            "pag_dt_pagamento": "19/09/2015 00:00:00"
+                            }
+                            ]
+                            }
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

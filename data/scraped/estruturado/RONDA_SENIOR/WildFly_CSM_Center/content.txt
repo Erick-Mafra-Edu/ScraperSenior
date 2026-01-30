@@ -1,0 +1,170 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#faq/faq-wildfly-csmcenter.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CPerguntas%2520Frequentes%7C_____6
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Perguntas Frequentes > WildFly CSM Center
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            FAQ - WildFly CSM Center
+            Ao subir o servidor da CSM Center, ele não fica operacional e, nos logs, aparece a mensagem JmcFailedTextMessage. Como resolver?
+                
+                    Essa mensagem ocorre devido a um grande volume de mensagens na fila de notificações (ERROR_INTERNAL), o que sobrecarrega o processamento e impede o funcionamento correto da CSM Center.
+                    Para solucionar o problema, acesse o diretório:
+                    <WildFly_Home>/domain/servers/<server-name>/data/activemq
+                    Remova os arquivos dentro dessa pasta e, em seguida, reinicie o servidor da CSM Center.
+                
+            
+            Ao migrar o GlassFish para a CSM Center, a mensagem "Não foi possível iniciar a CSM Center. null" é exibida. Como resolver?
+                
+                    Essa mensagem ocorre porque, durante a migração, o serviço do WildFly foi configurado no servidor de aplicação apontando para outro servidor remoto, sem que as devidas parametrizações tenham sido realizadas no ambiente remoto.
+                    Para resolver, tente executar o processo manualmente:
+                    
+                        Acesse a pasta bin da instalação do WildFly. Exemplo: ...\wildfly-30.0.1.Final\bin
+                        No diretório, abra o terminal como administrador e execute o seguinte comando: "hostname"\Senior\InstFiles\Deploy\scripts\CreateDomain\CreateDomainCSMCenter.bat full hostname "diretório do wildfly\wildfly-30.0.1.Final\" primary csmcenter-server-group server-csmcenter admin 9990 "hostname"\Senior\
+                        Após a execução, reinicie o serviço da CSM Center.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

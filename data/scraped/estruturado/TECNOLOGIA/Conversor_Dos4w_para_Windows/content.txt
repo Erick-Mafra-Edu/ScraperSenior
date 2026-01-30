@@ -1,0 +1,141 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/gestao-de-pessoas-hcm/gp-conversao4w.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CGest%25C3%25A3o%2520de%2520Pessoas%7CConversor%2520Dos%252F4w%2520para%2520Windows%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Gestão de Pessoas > Conversor Dos/4w para Windows > Conversor Dos/4w para Windows
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Conversor 4W para Windows
+            
+                Importante
+                
+                O Conversor 4W está disponível apenas para a versão 6.2.34 do Gestão de Pessoas | HCM. Com isso, esta documentação refere-se somente à conversão da solução Gestão de Pessoas | 4W para a versão 6.2.34, do Gestão de Pessoas | HCM.
+            
+            Este Conversor tem como objetivo realizar a conversão da base de dados dos módulos da solução Gestão de Pessoas | 4W para um dos bancos de dados suportados pelos módulos da solução Gestão de Pessoas | HCM (Windows).
+            Consulte quais são os Bancos de dados homologados na documentação de Plataformas homologadas.
+            
+                Atenção
+                
+                A correta execução dos procedimentos é imprescindível para o sucesso da conversão da base. Para isso, é necessário que esta documentação seja inteiramente compreendida e que qualquer dúvida adicional seja esclarecida com o suporte da solução Gestão de Pessoas.
+            
+            Procedimentos
+            
+                Antes de realizar a conversão, é necessário instalar o sistema na versão Windows, na última versão disponível de mercado, utilizando uma base vazia;
+                Baixar, do FTP, os arquivos do Conversor compatível com a versão 4W (origem) e Windows (destino);
+                Descompactar o arquivo zip, baixado do FTP, no diretório onde a versão Windows foi instalada: Senior\Vetorh\Conversor4W;
+                Verificar, no Painel de Controle do Windows, no item Configurações Regionais, se a máscara da data é DD/MM/AAAA;
+                Executar o programa Converte.exe, que foi colocado no diretório Senior\Vetorh\Conversor4W, preenchendo os seguintes campos:
+            
+            
+                
+            
+            Campos
+            
+                Versão: informe a versão da base a ser convertida (válida apenas a última 4W de mercado, a versão DOS foi descontinuada);
+                Base Origem: diretório onde se encontra a pasta dados com a base a ser convertida (arquivos .DSE), por exemplo: C:\vetorh4w\dados;
+                Fotos Origem: diretório onde se encontram as fotos da base a serem convertidas (arquivos .BMP, .JPG ou .JPEG), por exemplo: C:\vetorh4w\dados\fotos;
+                Ambiente Destino: ambiente Windows para o qual serão convertidas as tabelas da versão 4W;
+                Tabelas: informe a abrangência de tabela(s) que deseja converter. Sendo usado como padrão 1-1000, para que todas as tabelas sejam convertidas. Cada número representa uma tabela na base 4W. Clicando no ícone à direita da abrangência, será exibida uma lista com o código de cada tabela;
+                Criar Layout da Base de Dados: esta opção permite que o Conversor crie, no usuário do banco escolhido, todas as Tabelas, Triggers e Stored Procedures necessárias à conversão;
+                Remover Registros Existentes: apaga os registros das tabelas em caso de uma conversão anterior mal sucedida ou algum registro que impossibilite a inserção dos registros convertidos. Como padrão, deve permanecer assinalado;
+                Reorganizar Base Origem: executa o processo conhecido com CtReorg para consistir se os dados da base origem estão consistentes com sua versão 4W;
+                Gerar Tabelas Padrão: gera tabelas padrão que são necessárias na versão Windows. Como padrão, deve permanecer assinalado;
+                Troca de Empresas: permite que o campo Código da Empresa seja alterado na conversão. Se esta opção estiver assinalada, será exibida, no início da conversão, uma tela para a troca do código da Empresa. Não será permitido informar para mais de uma Empresa origem o mesmo código novo, ou seja, cada Empresa deve ter um novo código diferente dos demais códigos novos, informados na grade de troca da tela de Troca de Empresas.
+            
+             
+            
+                Selecione a guia Avançado:
+            
+            
+                
+            
+            Campos
+            
+                Arquivos de Lote: informe o diretório dos arquivos de Lote (.LOT), caso exista na base, para que sejam incluídos na Windows. Exemplo: C:\Vetorh4w\dados\lotes\;
+                Máscara do Crachá: uma máscara de crachá será sugerida de acordo com a base 4W. Poderá ser alterada, caso desejado;
+                Empresa do Terceiro: é o código da Empresa em que os Terceiros serão cadastrados na conversão. O padrão é sugerir o código da primeira Empresa cadastrada na base;
+                Arquivo CBO 2002: pode ser selecionado um arquivo com a lista de CBO's 2012 válidos. Esse arquivo deve conter as linhas com o seguinte formato CODIGO|DESCRIÇÃO;
+                A partir do Cálculo: é possível selecionar a partir de que data devem ser convertidas as marcações de ponto e refeitório. Sendo que a data selecionada é considerada em relação à data do cálculo. Logo, todas as marcações pertencentes aos cálculos com data menor que a selecionada não serão convertidas. Este campo é utilizado para que uma base com muitos registros de frequência converta apenas alguns anos de marcação, melhorando o tempo e performance da conversão da base. Exemplo: uma base com 20 anos de marcações pode levar uma semana para ser convertida. Caso sejam convertidos apenas os últimos cinco anos, a base é convertida em menos de um dia;
+                Alinhar Código de Cargo com zeros à esquerda: alinha com zeros à esquerda o Código de Cargo que é lido da base 4W sem essa formatação. Se esta opção for escolhida, um Código de Cargo 01 sem alinhamento, ficará formatado como 000000001 na base Windows;
+                Abrir a base DOS em modo Exclusivo: permite que a base 4W seja aberta em modo exclusivo. Isto é, nenhum outro programa poderá acessá-la durante o processo de conversão;
+                Converter terceiro quando possuir RPA: com este assinalamento marcado, somente serão convertidos os terceiros que possuírem registros na tabela Pagamentos a Terceiros (RpgTer).
+            
+             
+            
+                Após preencher todos os parâmetros, selecione a guia Geral e clique no botão Converter para iniciar a conversão dos dados.
+            
+            Análise do log de erros
+            Durante a conversão, no mesmo diretório em que se encontra o arquivo executável do Conversor, serão gerados arquivos de log que listam os erros durante o processo. Exemplo: Conv1.log. Ao final da conversão, eles deverão ser analisados para verificar as inconsistências que existem na base e, então, essas inconsistências devem ser corrigidas.
+            Cada caso deve ser analisado, já que existem avisos listados no log que são apenas para informar que a informação na origem está incorreta e está sendo inicializada em branco ou com zeros, enquanto outras situações são erros que deverão ser corrigidos na base 4W e realizada a conversão novamente. Ou então, podem ser ajustados na base Windows migrada.
+            Exemplos de erro no log:
+                
+                    Sobreposição de Afastamentos:
+                        
+                            No log, se constar algum erro de sobreposição de afastamento, deve-se verificar quais os registros que causam a sobreposição e, então. deve-se excluí-los ou corrigi-los. No caso abaixo, deve ser identificado se a data início do segundo afastamento está correta, já que é a mesma data do término do primeiro afastamento:
+                            
+                                1/5/2012 14:02:48Erro de Sobreposição de Afastamento:R038AFA - NumEmp = 1, TipCol = 1, NumCad = 3, DatAfa = 24/10/2002, HorAfa = 0, DatTer = 28/10/2002, HorTer = 0R038AFA - NumEmp = 1, TipCol = 1, NumCad = 3, DatAfa = 28/10/2002, HorAfa = 0, DatTer = 31/12/1900, HorTer = 0
+                            
+                        
+                    
+                    Violação de chave - registro duplicado:
+                        
+                            No exemplo abaixo, no cadastro do evento 11 da tabela 41 na 4W, a situação 5 está informada duas vezes no campo de Situações. Não será necessário ajustar nada, já que a primeira situação 5 já estará gravada no cadastro do evento na Windows.
+                            
+                                11/05/2020 10:03:41Violação de chaveComando:Insert Into R008SIT (CodTab, CodEve, CodSit)  Values (41, 11, 5)
+                            
+                        
+                    
+                    Valor inválido:
+                        
+                            No exemplo abaixo, o campo INSS Transportista, da tela de Pagamentos de Terceiros, está com valor inválido e o campo será migrado inicializando com zero. O cliente poderá ajustar na base 4W antes de migrar ou na base Windows após migrar, ou deixar como z

@@ -1,0 +1,170 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/telas/sgit_grids.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Telas%2520-%2520SGI%7CTutorial%2520SGI%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Telas - SGI > Tutorial SGI > Criando Grades
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Criando Grades no Formulário
+            Para adicionar uma grade, é necessário clicar sobre o formulário no painel à direita no SGI. Na tela de configuração que foi exibida, utilize o botão Inserir. 
+            Se o tamanho já estiver definido, é possível informar a quantidade de linhas a ser visualizada pelo campo Linhas Visíveis.
+            Para acrescentar colunas na grade, utilize o botão Adicionar para exibir a tela para configuração da coluna. Os demais botões, Alterar, Remover,Mover p/ cima e Mover p/ baixo, serão usados se houver a necessidade de ajustar na tela os campos que são adicionados.
+            Selecionar a primeira coluna ao finalizar processo
+                Determina se o foco deve ser posicionado na primeira coluna da Grade ao gravar ou cancelar alterações,  ao excluir um registro e quando se navega pelos registros da tela utilizando o navegador.
+            Selecionar o primeiro registro ao atualizar dados 
+                Determina se a grade será posicionada no primeiro registro quando seus dados forem atualizados.
+            Usar a tecla ENTER para navegar pelos campos
+                Determina se a tecla ENTER deve funcionar da mesma maneira que a tecla TAB para percorrer os campos da Grade.
+            Respeitar condições de editabilidade 
+                Determina se a opção de editabilidade dos campos da Grade deve ser respeitada, caso não esteja assinalada, os campos da Grade estarão editáveis, ainda que tenha uma Condição de editabilidade definida para o campo na Interface.
+            Exemplo:
+                
+                    
+                        
+                    
+                
+            
+            Ao acrescentar uma coluna na grade (através do botão Adicionar), é preciso configurar suas propriedades na tela seguinte:
+            
+                O Campo correspondente determina o campo físico utilizado pela coluna; 
+                O campo Máscara determina o tamanho do campo exibido na tela (quando este campo for deixado em branco assume a máscara do campo físico).
+                O campo Maneira de ajudar o usuário a preencher deve ser escolhido entre as opções disponíveis.
+            
+            É possível adicionar uma caixa de seleção na grade. A máscara  CK['S':'N']: deve-se substituir os valores S e N pelos valores correspondentes à True e False. Este recurso só está disponível para versão web do sistema.
+            Após confirmar esta operação, é preciso aplicar e testar para verificar o resultado.
+            
+                Importante
+                
+                É recomendável adicionar em Campos-chave todos os campos chaves da tabela base que não tenham sido herdados da tabela mestre, assim resultando em uma melhor performance na busca dos registros.
+                Todas as grades criadas que referenciam tabelas, devem possuir uma ligação com a tabela principal da tela, de forma a ser consistida somente pela tabela mestre da tela. Demais ligações com outras tabelas podem ser utilizadas somente para auxiliar no posicionamento de registro ou filtros adicionais.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

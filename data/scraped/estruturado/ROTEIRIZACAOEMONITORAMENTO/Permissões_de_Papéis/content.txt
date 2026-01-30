@@ -1,0 +1,202 @@
+# 
+
+URL: https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/#permissao-de-papeis.htm%3FTocPath%3D_____4
+
+---
+
+
+        Ver site completo
+        
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORoteirização e Torre de Controle - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Permissões de Papéis
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Permissões de Papéis 
+            Para a utilização do Sistema, é necessário configurar quais rotinas cada papel pode ou não ter acesso. Para isso, acesse no menu Tecnologia > Administração > Autorização > Gestão de Papéis. O Sistema já vem cadastrado com alguns papéis padrão, sendo eles:
+            
+                Admin
+                Analista de Transporte
+                Coordenador de transporte
+                Gerente de transporte
+                Motorista
+                Roteirista
+                Usuários
+            
+            Configurar permissões de menu/tela
+                
+                    Configure as permissões necessárias para que um usuário possa incluir, excluir, editar e visualizar em seu menu uma determinada lista de telas do Sistema:
+                    
+                         Com o usuário que tem o papel de Administrador (Admin) na Senior X Platform, acesse Tecnologia > Administração > Autorização > Gestão dos Papéis.
+                        Em Papéis, selecione o papel desejado e clique em Editar.
+                        Na seção Configurações, guia Permissões, clique em Serviço e localize o serviço desejado. Ou ainda, clique em Recurso e localize o recurso desejado de acordo com o resource de cada rotina.
+                        Clique na seta que antecede o nome do recurso e libere a permissão, clicando nas permissões desejadas.
+                        Clique em Salvar.
+                    
+                    A seguir, os recursos e suas telas correspondentes:
+                    Agrupamento Dinâmico
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Veículos > Agrupamento Dinâmico
+                                Serviço: tmsentregas/veiculos
+                                Resource: res://senior.com.br/tmsentregas/veiculos/restricaoVeiculo
+                                Permissões disponíveis: Editar, Excluir, Incluir e Visualizar
+                            
+                        
+                    
+                    Analytics de Alocação
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Analytics > Alocação
+                                Serviço: tmsentregas/atividades
+                                Resource: res://senior.com.br/tmsentregas/atividades/analyticsAlocacaoProdutividade
+                                Permissões disponíveis: Visualizar
+                            
+                        
+                    
+                    Analytics de Desempenho
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Analytics > Desempenho
+                                Serviço: tmsentregas/atividades
+                                Resource: res://senior.com.br/tmsentregas/atividades/analyticsDesempenho
+                                Permissões disponíveis: Visualizar
+                            
+                        
+                    
+                    Analytics do Relatório de Rotas
+                        
+                            
+                                Caminho: Logística > Otimização Logística > Roteirização e Monitoramento > Analytics > Relatório de Rotas
+                                Serviço: tmsentregas/roteiros
+                                Resource: res://senior.com.br/tmsentregas/roteiros/relatorioRoteiro
+                                Permissões disponíveis: Visualizar
+                            
+                        
+                    
+                    Atividades de Cargas Fechadas
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Atividades > Cargas fechadas
+                                Serviço: tmsentregas/atividades
+                                Resource: res://senior.com.br/tmsentregas/atividades/composicao
+                                Permissões disponíveis: Editar, Excluir, Incluir e Visualizar
+                            
+                        
+                    
+                    Atividades de Entregas, Coletas e Serviços
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Atividades > Entregas, coletas e serviços	
+                                Serviço: tmsentregas/atividades	
+
+                                Resource: res://senior.com.br/tmsentregas/atividades/atividade
+
+                                Permissões disponíveis: Editar, Excluir, Incluir e Visualizar
+
+                            
+                        
+                    
+                    Composição de Documento
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Integração Tracking > Composições de Documentos
+                                Serviço: tmsentregas / tracking_integration
+                                Resource: res://senior.com.br/tmsentregas/tracking_integration/apis/composicaoDocumentoTracking
+                                Permissões disponíveis: Atualizar, Criar, Excluir, Listar e Obter
+                            
+                        
+                    
+                    Composição por Filial
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Integração Tracking > Composição por Filial
+                                Serviço: tmsentregas / tracking_integration
+                                Resource: res://senior.com.br/tmsentregas/tracking_integration/queries/buscarDefinicaoGeralComposicaoDocumentoTracking
+                                Resource: res://senior.com.br/tmsentregas/tracking_integration/queries/alterarDefinicaoGeralComposicaoDocumentoTracking
+                                Resource: res://senior.com.br/tmsentregas/tracking_integration/apis/definicaoFilialComposicaoDocumentoTracking
+                                Permissões disponíveis: Atualizar, Criar, Excluir, Listar e Obter
+                            
+                            
+                                Nota: Para apresentar a composição padrão no painel Composição Documenta Padrão, é necessário ter permissão de Obter no resource buscarDefinicaoGeralComposicaoDocumentoTracking. Para alterar as informações desse painel, é necessário ter a permissão de Atualizar do resource alterarDefinicaoGeralComposicaoDocumentoTracking.
+                            
+                            Para ter acesso a tela Composição por Filial, é necessário ter permissão de Listar do resource definicaoFilialComposicaoDocumentoTracking.
+                        
+                    
+                    Controle de Engate
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Veículos > Controle de Engate
+                                Serviço: tmsentregas/veiculos
+                                Resource: res://senior.com.br/tmsentregas/veiculos/engate
+                                Permissões disponíveis: Editar, Excluir, Incluir e Visualizar
+                            
+                        
+                    
+                    Detalhes da Rota
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Consultas > Rotas e Viagens > Detalhes da Rota
+                                Serviço: tmsentregas/driverapp
+                                Resource: res://senior.com.br/tmsentregas/driverapp/obterUrlUploadFotoOcorrencia
+                                Permissões disponíveis: Editar, Excluir, Incluir e Visualizar
+                            
+                            
+                                Nota: Para que o botão Selecionar comprovante seja habilitado, o papel deve ter a permissão de Incluir.
+                            
+                        
+                    
+                    Embarcador
+                        
+                            
+                                Caminho: Gestão Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Pessoas > Embarcadores
+                                Serviço: tmsentregas/atividades
+                                Resource: res://s

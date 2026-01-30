@@ -1,0 +1,121 @@
+# Integração via web services
+
+URL: https://documentacao.senior.com.br/seniorxplatform/manual-do-usuario/crmx/integracoes/senior-x/via-web-service/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM X                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     Manual do Usuário
+                 > Integrações
+                 > Web service                         Integração via web services
+As informações de parametrizações com o Gestão de Relacionamento | CRM se aplicam tanto para o Gestão Empresarial | ERP quanto para o Gestão Empresarial PME | GO UP.
+Pré-requisitos
+No Gestão Empresarial | ERP ou no Gestão Empresarial PME | GO UP:
+
+Middleware e GlassFish instalados e habilitados;
+Proprietárias das áreas envolvidas na integração;
+Liberação, no Gestão Empresarial | ERP, dos web services listados abaixo:
+
+ NotaPara mais informações sobre as proprietárias exigidas para o uso dos web services do Gestão Empresarial | ERP, consulte a documentação sobre****Pré-requisitos de Proprietária para habilitar integração via web service  
+  InformaçãoWeb servicePorta  Clientescom.senior.g5.co.cad.clientesExportar_2  Ramo Atividadecom.senior.g5.co.cad.ramoatividadeExportar  Grupo de Empresascom.senior.g5.co.cad.grupoempresasExportar  Condições de pagamentocom.senior.g5.co.cad.condicaopagamentoConsultarGeral  Formas de pagamentocom.senior.g5.co.cad.formapagamentoExportar  Representantecom.senior.g5.co.cad.representanteExportar  Família de produtocom.senior.g5.co.cad.familiasExportar  Produtoscom.senior.g5.co.cad.produtosExportar  Serviçoscom.senior.g5.co.cad.servicosExportar  Depósitocom.senior.g5.co.cad.depositoExportar  Tabela de Preçocom.senior.g5.co.cad.tabelaprecoExportar  Transportadoracom.senior.g5.co.cad.transportadoraExportar  Unidades de medidacom.senior.g5.co.cad.unidadedemedidaExportar  Pedidocom.senior.g5.co.ven.pedidoExportarConsultarGeral  Nota fiscal de saídacom.senior.g5.co.ven.notafiscalsaidaExportarConsultarGeral  Contas a Pagarcom.senior.g5.co.prj.contaspagarExportar  Contas a Recebercom.senior.g5.co.prj.contasreceberExportar  
+ NotaPara que seja possível liberar uma porta, torna-se necessário configurar o web service, conforme exemplo abaixo:**http://example.com:8080**/g5-senior-services/sapiens_Synccom_senior_g5_co_cad_clientes?wsdlOnde:
+http://example.com:8080: é alterado pelo IP externo + porta do web service do cliente;
+/g5-senior-services/sapiens_Synccom_senior_g5_co_cad_clientes?wsdl: caminho do Gestão Empresarial | ERP para realizar a conexão entre os sistemas.
+O web service precisa sempre estar ativo devido à rotina criada para atualização dos dados.  
+Para envio ao Gestão Empresarial | ERP:
+  InformaçãoWeb servicePorta  Envio de contas ao ERPcom.senior.g5.co.ger.cad.clientesGravarClientes  Envio de pedidos ao ERPcom.senior.g5.co.mcm.ven.pedidosGravarPedidosSimularPedidos  
+Parametrizações
+Passo a passo para integração entre o Gestão Empresarial | ERP ou o Gestão Empresarial PME | GO UP e o Gestão de Relacionamento | CRM:
+
+
+Na tela Sistemas Integrados (F000SIS), cadastre um sistema do tipo Gestão de Relacionamento, informando:
+
+Código: número sequencial de sua escolha;
+Descrição: descreva a integração, podendo ser Gestão de Relacionamento - ou conforme sua escolha;
+Sigla: CRM;
+Tipo: 99 - Outros (esse tipo é exibido apenas quando a proprietária possui integração com o Gestão de Relacionamento | CRM);
+Situação: A - Ativo;
+Clique no botão Informações.
+
+
+
+A tela Configuração de Tipos de Informação (F000SXT) é aberta. Nela, é possível selecionar as informações do Gestão Empresarial | ERP, ou do Gestão Empresarial PME | GO UP, que devem ser integradas ao Gestão de Relacionamento | CRM:
+
+Integração de contas: Condições de Pagamento; Formas de Pagamento; Representante; Cliente; Ramo de Atividades; Grupo de Empresas.
+
+ NotaPara que seja possível utilizar a Integração de pedidos, Integração de visão financeira e Integração Agro, torna-se necessário possuir a Integração de contas.  
+
+Integração de pedidos: Pedidos; Tabelas de Preço; Condições de Pagamento; Formas de Pagamento; Representante; Fornecedor; Transportadora; Produtos; Depósitos; Unidade de Medida; Famílias; Serviços.
+Integração de visão financeira: Empresa/Filial; Condições de Pagamento; Formas de Pagamento; Representante; Agrupamentos; Nota Fiscal de Saída; Títulos Contas a Pagar; Títulos a Receber; Tipos de Título; Centro de Custos.
+Integração Agro: Empresa/Filial; Produtos; Depósitos; Unidade de Medida; Famílias; Ordem de Compra; Origem do Produto; Espécie de Bens; Bem; Safra; Propriedades e Sub-propriedades; Contrato de Compra. Para cada tipo de informação a integrar:
+
+No campo Filial, informe o código da filial que integra com o Gestão de Relacionamento | CRM. Caso o campo seja deixado em branco, são consideradas todas as filiais da empresa logada;
+No campo Informação, selecione o que deseja integrar com o Gestão de Relacionamento | CRM;
+Clique em Mostrar;
+Marque o registro na coluna Sel.;
+Altere a Situação para A - Ativo, clique em somente para o item atual na mensagem de confirmação que é exibida e, então, clique em Processar;
+Realize novamente os passos descritos a partir do item 1 ao 5 para cada tipo de informação que deve  integrar;
+Clique em Sair.
+
+
+
+
+
+Acesse a tela Carga Inicial (F000CIV) para enviar as informações para o Gestão de Relacionamento | CRM pela primeira vez:
+
+
+Informe a Filial que foi configurada nas parametrizações da integração;
+
+
+No campo Sistema, selecione o Gestão de Relacionamento | CRM ou equivalente que tenha cadastrado;
+
+
+Clique em Mostrar;
+
+
+No painel Integrações, deixe selecionados os itens que devem ser integrados:
+
+Integração de contas: Condições de Pagamento; Formas de Pagamento; Representante; Cliente; Ramo de Atividades; Grupo de Empresas.
+
+ NotaPara que seja possível utilizar a Integração de pedidos, Integração de visão financeira e Integração Agro, torna-se necessário possuir a Integração de contas.  
+
+Integração de pedidos: Pedidos; Tabelas de Preço; Condições de Pagamento; Formas de Pagamento; Representante; Fornecedor; Transportadora; Produtos; Depósitos; Unidade de Medida; Famílias; Serviços.
+Integração de visão financeira: Empresa/Filial; Condições de Pagamento; Formas de Pagamento; Representante; Agrupamentos; Nota Fiscal de Saída; Títulos Contas a Pagar; Títulos a Receber; Tipos de Título; Centro de Custos.
+Integração Agro: Empresa/Filial; Produtos; Depósitos; Unidade de Medida; Famílias; Ordem de Compra; Origem do Produto; Espécie de Bens; Bem; Safra; Propriedades e Sub-propriedades; Contrato de Compra.
+
+
+
+Clique em Processar;
+
+
+Clique em OK na mensagem Processado com sucesso;
+
+
+O sistema (Gestão Empresarial | ERP ou Gestão Empresarial PME | GO UP, conforme o que você possui) valida se todos os campos necessários para a integração estão devidamente preenchidos. Caso haja informações faltantes, ou erradas em algum cadastro, esses cadastros não geram pendências para envio ao Gestão de Relacionamento | CRM. Os cadastros com problemas são apresentados na parte inferior da tela, no painel Detalhes.
+
+
+
+
+Libere os seguintes web services para integração com o Gestão de Relacionamento | CRM, através da tela Configuração de web services (F000CWS):
+  InformaçãoWeb servicePorta  Clientescom.senior.g5.co.cad.clientesExportar  Condições de pagamentocom.senior.g5.co.cad.condicaopagamentoConsultarGeral  Depósitocom.senior.g5.co.cad.depositoExportar  Família de produtocom.senior.g5.co.cad.familiasExportar  Formas de pagamentocom.senior.g5.co.cad.formapagamentoExportar  Produtoscom.senior.g5.co.cad.produtosExportar  Serviçoscom.senior.g5.co.cad.servicosExportar  Tabela de Preçocom.senior.g5.co.cad.tabelaprecoExportar  Transportadoracom.senior.g5.co.cad.transportadoraExportar  Unidades de medidacom.senior.g5.co.cad.unidadedemedidaExportar  Nota fiscal de saídacom.senior.g5.co.ven.notafiscalsaidaExportarConsultarGeral  Pedidocom.senior.g5.co.ven.pedidoExportarConsultarGeral  Saldo Estoquecom.senior.g5.co.mcm.est.saldoestoqueExportar  Representantecom.senior.g5.co.cad.representanteExportar  
+
+       
+Este artigo ajudou você?
+   Sim
+  Não
+    
+Gostaria de deixar uma sugestão para melhorar esta página?
+ 
+Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+ 
+Nome/E-mail (Opcional):   
+Deixe seu comentário:      Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+     Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.     SUPORTE SEN

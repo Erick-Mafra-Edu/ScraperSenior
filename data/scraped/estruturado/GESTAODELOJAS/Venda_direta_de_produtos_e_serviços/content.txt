@@ -1,0 +1,179 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/venda-direta-produto-servico.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____12
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Venda direta de produtos e serviços
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Venda de produtos e serviços
+            Conceito
+            A venda de produtos e serviços diretamente no caixa é chamada de venda direta.
+             A venda direta é um sistema de comercialização de produtos e serviços voltado diretamente aos consumidores. É a venda atendida diretamente no caixa (PDV).
+            Utilização
+            É utilizada quando não necessita de uma negociação direta com o vendedor. O cliente  se "auto atende", escolhe e conduz a mercadoria ao caixa para registro da venda, emissão do documento fiscal e realização do pagamento.
+            Processo
+            No processo de venda direta, o operador de caixa poderá vender produtos e serviços, consultar e cadastrar clientes. 
+            Para o atendimento da venda no PDV, utilize o processo a seguir.
+            
+                Nota
+                
+                Somente no PDV NFCe, caso o parâmetro dinâmico NFCE.PERMITEGERARNFE do cadastro de filial do Gestão Empresarial | ERP esteja definido como 1,  ao iniciar uma nova venda, seja de pedido ou não, é solicitado ao usuário que informe qual documento deseja gerar: NFCe ou NF-e. Dessa forma, após a venda pelo PDV, uma operação do tipo "Venda NF-e" é integrada com o Retaguarda que, por sua vez, processa essa operação e emite a nota fiscal.
+
+                Também é necessário configurar o parâmetro dinâmico OPERACAONOTAFISCAL.VENDAPDV na tela F000PPD do cadastro da filial (F070FCA). Este parâmetro conterá a operação da nota fiscal - configurado na F070ONF - que será gerada pelo Retaguarda quando proveniente do PDV.
+            
+            Somente para PDV PAF, não é possível cancelar a última venda caso contenha cartão presente, pois cartão presente somente pode ser devolvido, não pode ser cancelado. 
+            Passo 1: Informe o produto ou serviço a vender.
+            Botão Venda
+            Os serviços/produtos podem ser identificados no PDV por código do item, número do código de barras ou pela descrição. Dessa forma,  a descrição do item (nome parcial), pode ser digitada manualmente para que o sistema efetue a pesquisa e adicione na venda. Se preferir utilize o leitor de código de barras para incluí-lo diretamente no atendimento do PDV sem efetuar nenhuma pesquisa.
+             Poderá ainda utilizar o botão Pesquisa para consultar os produtos e serviços por descrição. Ao efetuar essa consulta, não é possível adicionar diretamente o item na venda, o botão funciona somente para consulta. Dessa forma, anote o número do código do produto para informá-lo na tela de venda. 
+            Após adicionados os itens na venda, escolha como será a forma de pagamento seguindo o passo 2.
+            
+                Importante
+                
+                    O operador de caixa  poderá cancelar os itens vendidos enquanto a venda estiver em aberto (antes do recebimento).
+                    Para cancelar um item incluído na venda, utilize o botão Cancela item. Informe o número do item a ser cancelado e tecle Enter.
+                    Para cancelar a venda total, tecle ESC Cancelar, confirme o cancelamento da venda na mensagem apresentada e o cupom fiscal aberto será cancelado e impresso no ECF.
+                    Em se tratando de cartão presente, não é possível cancelar a operação, pois cartão presente somente pode ser devolvido.
+                    Pedidos com itens promocionais (de tabela de preço promocional ou de tablóide) têm descontos bloqueados, exceto para usuários autorizados a dar o desconto mesmo assim, ou seja, cujo parâmetro PERFIL.PERMITE_DESCONTO_EM_ITENS_PROMOCIONAIS (do cadastro de perfis de usuário do Gestão Empresarial | ERP) esteja definido como "1 - Sim". Isso acontece inclusive se o desconto é gerado automaticamente pela forma de pagamento.
+                    Se o item for controlado por lote, antes de ser solicitada a forma de pagamento, será necessário informar o código do lote do produto. Caso o parâmetro dinâmico HABILITAR.TELA.LOTE esteja configurado "S - Sim", será exibida uma tela para seleção do código do lote. O critério de organização, na tela de exibição dos lotes disponíveis, é do lote mais antigo para o mais novo.
+                
+            
+            
+                Observação
+                
+                No PDV, deve-se, primeiramente, identificar a tabela de preço e, então, depois vender o item. Após a venda, não é possível alterar a tabela do item que já foi registrado, apenas para novos itens.
+                
+                    Caso a tabela de preço não seja identificada, o sistema buscará a tabela default sugerida;
+                    Caso seja necessário alterar o preço depois de registrar o item, a alternativa é cancelar o item e registrar novamente;
+                    Se o item for de pedido ou pré-venda, a tabela considerada será a identificada no pedido/pré-venda.
+                
+                Para identificar a tabela de preço, deve-se acessar a função Venda > Identifica > Outros, no PDV.
+            
+            Passo 2: Informe a forma de pagamento.
+            
+                Nota
+                
+                Algumas formas ou condições de pagamento não podem ser usadas quando o produto for vendido com desconto ou em promoção. Se forem selecionadas, o sistema solicita a liberação de um usuário autorizado (a permissão do usuário é definida pelo parâmetro dinâmico PERFIL.LIBERARFORMAPAGTOCOMDESCONTO no cadastro do perfil de usuário do ERP preenchido como Sim).
+            
+            Botão Finalizar venda
+            Para registrar o recebimento dos itens, escolha uma das formas de pagamento  para finalizar a venda, que podem ser chamados também de finalizadores de venda.
+            
+                Finalizador Dinheiro
+                
+                Finalizador Cheque
+                
+                Finalizador Crediário
+                
+                Finalizador Cartão TEF
+                
+                Finalizador Cartão POS
+                
+                Aproveitamento de Crédito
+                
+            
+            
+                Nota
+                
+                Algumas formas de pagamento podem estar configuradas para exigir condição de pagamento (parâmetro dinâmico FORMAPAGAMENTO.EXIGECONDICAOPAGAMENTO do Gestão Empresarial | ERP definido como S - "Sim"). Nesse caso, a tela de pesquisa de condições de pagamento é aberta e os juros da condição, caso haja,  são calculados e somados no subtotal.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

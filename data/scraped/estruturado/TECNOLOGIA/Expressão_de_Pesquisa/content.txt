@@ -1,0 +1,224 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/gestao-de-pessoas-hcm/gestao-ponto/expressao-de-pesquisa.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CGest%25C3%25A3o%2520de%2520Pessoas%7CGest%25C3%25A3o%2520do%2520Ponto%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Gestão de Pessoas > Gestão do Ponto > Expressão de Pesquisa
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Expressão de Pesquisa
+            A expressão de pesquisa é uma funcionalidade 
+			que possibilita otimizar a busca por dados para preenchimento 
+			de campos de um formulário. A expressão 
+			é definida a partir de uma sintaxe, um formato de escrita pré-definido 
+		específico para realização de pesquisas. 
+            É possível pesquisar 
+			em campos do tipo: texto, 
+		número e data.
+            Sintaxe
+            A sintaxe representa os símbolos pertencentes à linguagem da expressão 
+			de pesquisa. Cada símbolo possui uma função  
+			especial dentro da expressão dependendo do contexto em que são utilizados, 
+		com intuito de otimizar a busca de dados.
+            Esses símbolos podem ser combinados, o que proporciona um aumento da 
+			restrição do filtro. É importante que seja compreendido a função de cada 
+			símbolo para que se possa fazer uso de suas combinações. Esses símbolos 
+		são denominados, no contexto da expressão de pesquisa, como operadores.
+            Operadores
+            São disponibilizados operadores do tipo binário, unário e outros operadores, sendo que 
+			em uma expressão de pesquisa é possível fazer uso de um ou mais operadores, 
+		inclusive, mesclar os tipos de operadores na mesma expressão.
+            Operadores Unários
+            Operadores unários são aplicados a apenas um valor ou uma expressão de pesquisa. A pesquisa avançada suporta um tipo de operador unário, a negação.
+            Negação
+            A negação é o operador responsável por trazer todo resultado diferente do valor informado após o seu símbolo. Ela pode ser representada pelo símbolo "!" ou pela palavra NÃO, escrita em maiúsculo. Seu uso é feito através das seguintes formas:
+            
+                Campo: !Valor
+                Campo: NÃO Valor
+                !Valor
+                NÃO Valor
+            
+            Exemplo:
+                
+                    Pesquisa: Empresa: !1 (ou Empresa: NÃO 1)
+                    Resultado: Todos os colaboradores que não sejam da empresa 1
+                     
+                    Pesquisa: !1 (ou NÃO 1)
+                    Resultado: Todos os colabores que não possuam o valor 1 em nenhum dos campos.
+                
+            
+            Operadores binários
+            Operadores binários são os operadores que ligam dois valores ou expressões para retornar um resultado único. Existem três operadores binários disponíveis na pesquisa avançada: o operador E o operador OU e o operador Intervalo.
+            Operador E
+            É responsável por retornar apenas o resultado que seja verdadeiro para ambas as expressões ou valores. Caso um deles não seja atendido o registro não será retornado. Ele pode ser representado pelo símbolo "&" ou pela letra "E", escrito em maiúsculo. Seu uso é feito através das seguintes formas:
+            
+                Campo: Valor E Campo: Valor
+                Campo: Valor Campo: Valor
+                Campo: Valor & Campo: Valor
+                Campo: Valor E Valor
+                Campo: Valor & Valor
+                Campo: Valor Valor
+                Valor E Campo: Valor
+                Valor & Campo: Valor
+                Valor Campo: Valor
+                Valor E Valor
+                Valor & Valor
+                Valor Valor
+            
+            Exemplo:
+                
+                    Pesquisa: Empresa: 1 E Nome: Ana (ou Empresa:1 & Nome: Ana ou Empresa:1  Nome: Ana).
+                    Resultado: Todos os colaboradores que sejam da empresa 1 e que tenham o nome Ana.
+                     
+                    Pesquisa: 1 E Adriana (ou 1 & Adriana  ou 1 Adriana)
+                    Resultado: Todos os colaboradores que possuam o valor 1 em um dos campos e tenham o nome Adriana.
+                
+            
+            Operador OU
+            É responsável por retornar o resultado que seja verdadeiro para pelo menos uma das expressões ou valores. Ele pode ser representado pelo símbolo ";" ou pela palavra OU, escrito em maiúsculo. Seu uso é feito através das seguintes formas:
+            
+                Campo: Valor OU Campo: Valor
+                Campo: Valor ; Campo: Valor
+                Campo: Valor OU Valor
+                Campo: Valor ; Valor
+                Valor OU Campo: Valor
+                Valor ; Campo: Valor
+                Valor OU Valor
+                Valor ; Valor
+            
+            Exemplo:
+                
+                    Pesquisa: Nome: Ana OU Nome: Adriana (ou Nome: Ana ; Nome: Adriana)
+                    Retorno: Todos os colaboradores cujo nome seja Ana ou Adriana.
+                     
+                    Pesquisa: Empresa: 3 OU Cadastro: 1 (ou Empresa:3 ; Cadastro:1).
+                    Resultado: Todos os colaborados que sejam da empresa 1 ou tenham o cadastro 1.
+                
+            
+            Operador Intervalo
+            É responsável por retornar o resultado que esteja entre os dois valores informados pelo usuário. Ele pode ser representado pelo símbolo "-" (hífen) ou pelos símbolos ".." (dois pontos). Se for informado apenas um intervalo numérico na pesquisa livre, os campos texto não serão considerados na pesquisa, porém se for indicado um campo e o intervalo numérico, este campo será considerado mesmo sendo do tipo texto.
+            Seu uso é feito através das seguintes formas:
+            
+                Valor..Valor
+                Valor-Valor
+                Campo:Valor..Valor
+                Campo:Valor-Valor
+            
+            Exemplo:
+                
+                    Pesquisa: Empresa: 2..3 (ou Empresa: 2-3)
+                    Resultado: Todos os colaboradores que estejam entre as empresas 2 e 3.
+                
+            
+            Outros operadores
+            Além dos operadores unário e binário, a pesquisa avançada ainda conta com outros operadores que ajudam a selecionar os registros de maneira mais precisa. 
+            Operador Maior
+            É responsável por retornar  o resultado que seja maior que o valor informado. Este operador é representado pelo símbolo ">". Seu uso é feito através das seguintes formas:
+            
+                Nome: >Valor
+                >Valor
+            
+            Exemplo
+                
+                    Pesquisa: Empresa: >2
+                    Resultado: Retorna todos os colaboradores cuja empresa seja maior que 2.
+                
+            
+            Operador Maior e Igual
+            É responsável por retornar  o resultado que seja maior ou igual ao valor informado. Este operador é representado pelo símbolo ">='. Seu uso é feito através das seguintes formas:
+            
+                Nome: >=Valor
+                >=Valor
+            
+            Exemplo:
+                
+                    Pesquisa: Empresa:>=2
+                    Resultado: Retorna todos os colaboradores cuja empresa seja maior ou igual a 2.
+                
+            
+            Operador Menor
+            É responsável por retornar  o resultado que seja menor que o valor informado. Este operador é representado pelo símbolo "<". Seu uso é feito através das seguintes formas:
+            
+                Nome: <Valor
+                <Valor
+            
+            Exemplo:
+                
+                    Pesquisa: Empresa: <2
+                    Resultado: Retorna todos os colaboradores cuja empresa seja menor que 2.
+                
+            
+            Operador Menor e Igual
+            É responsável por retornar  o resultado que seja menor ou igual ao valor informado. Este operador é representado pelo símbolo "<='. Seu uso é feito através das seguintes formas:
+            
+                Nome: <=Valor
+                <=Valor
+            
+            Exemplo:
+                
+                    Pesquisa: Empresa:<=2
+                    Resultado: Retorna todos os colaboradores cuja empresa seja menor ou igual a 2.
+                
+            
+            Caractere Curinga
+            São caracteres especiais que sinalizam ao sistema que qualquer caractere é esperado em seu lugar. Existem dois tipos de caractere curinga:  o "?", que espera exatamente um caractere no seu lugar, e o "*", que espera qualquer quantidade de caracteres, inclusive 0 (zero). 
+            Caracteres curingas não podem ser utilizados no início de um termo da pesquisa. O único caso em que é permitido utilizar um caractere curinga no início é ao pesquisar em campos cujo valor seja uma data.
+            Exemplos
+                
+                    Pesquisa: Nome: A*
+                    Resultado: Todos os colaboradores cujo nome comece com a letra A.
+                     
+                    Pesquisa: Admissão: */*/1999
+                    Resultado: Todos os colaboradores admitidos em 1999.
+                     
+                    Pesquisa: Nome: A

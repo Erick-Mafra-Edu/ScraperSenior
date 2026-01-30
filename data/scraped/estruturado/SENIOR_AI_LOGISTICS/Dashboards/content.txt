@@ -1,0 +1,178 @@
+# 
+
+URL: https://documentacao.senior.com.br/senior-ai-logistics/1.0.0/#manual-do-usuario/dashboards.htm%3FTocPath%3DSenior%2520AI%2520Logistics%7CFuncionalidades%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOSenior AI Logistics
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Senior AI Logistics > Funcionalidades > Dashboards
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Dashboards
+            Dashboard é um painel personalizado para exibição de informações que, mais do que unir dados,  permite o acompanhamento de métricas da empresa. No dashboard é possível visualizar, tratar e analisar uma grande variedade de informações, como por exemplo:
+            
+                Número de vendas da empresa no geral;
+                Faturamento por unidade (no caso de redes);
+                Performance dos negócios por estado (para empresas com atuação nacional);
+                Valores de investimento e despesas;
+                Estoque de produtos;
+                Estratégias de campanhas de marketing, etc.
+            
+            Para criar um dashboard no AI Logistics clique em Dashboard no menu lateral principal. Nessa mesma página, será possível encontrar a lista de dashboards salvos na plataforma ou pesquisar por algum deles preenchendo os campos do formulário Filtros. 
+            Para criar um novo clique no botão Criar Dashboard, localizado no canto superior direito da página. Siga, em seguida, os seguintes passos: 
+            
+                Em Dados do Dashboard dê um nome Nome e faça uma breve Descrição dele;
+                No campo Perfis selecione quais grupos de usuários poderão acessá-lo;
+                Em Apresentações do Dashboard clique no botão Adicionar itens, destacado em azul, para selecionar as apresentações. Essa etapa pode ser executada tanto por meio de pesquisa no formulário Filtros quanto por seleção no campo Apresentações. Em seguida, clique em Adicionar;
+                Para adicionar mais de uma apresentação basta repetir a ação anterior;
+                Observe que, quando um dashboard é composto por várias apresentações, é possível mover elas de lugar ou excluir alguma clicando com o botão esquerdo do mouse sobre a apresentação, antes de Salvar;
+                Após essa ação, observe o aparecimento da informação Dashboard criado com sucesso para certificar-se de que a operação foi realizada de forma correta;
+                Em seguida, o sistema irá redirecioná-lo para a página inicial desta função, Dashboards, onde o material recém criado já deve aparecer na lista de dashboards salvos na ferramenta.
+            
+            
+                Atenção
+                
+                Não é possível avançar para a etapa seguinte, de criação de slideshows, sem que o usuário tenha acesso ou criado dashboards.
+            
+            
+                 Quer saber mais sobre os benefícios de utilizar esta solução? Então acesse a Talk de Produto Maximizando a Performance e Produtividade na Gestão de Armazéns e veja como esta ferramenta pode ajudar no dia a dia da sua empresa!
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

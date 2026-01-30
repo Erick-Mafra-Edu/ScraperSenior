@@ -1,0 +1,204 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#menu_controladoria/contabilidade/composicao-auxiliar.htm%3FTocPath%3DSegmentos%7CControladoria%7CGest%25C3%25A3o%2520de%2520Contabilidade%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Controladoria > Gestão de Contabilidade > Composição Auxiliar
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Composição Auxiliar
+            As Contas Auxiliares são extensões das Contas Contábeis. Dessa forma, são subordinadas a estas e têm por finalidade promover um maior detalhamento da conta a que estiver subordinada.
+            Lançamento Contábil Analítico sem Utilização de Conta Auxiliar
+                A contabilização analítica irá registrar um lançamento contábil para cada movimento caracterizando uma contabilização detalhada. Este tipo de contabilização tem como consequência um grande número de registros de lançamentos na contabilidade.
+            Lançamento Contábil Sintético com Utilização de Conta Auxiliar
+                A contabilização sintética irá registrar um lançamento contábil para um grupo de informações, gerando assim uma contabilização resumida e com a utilização da contabilização auxiliar será possível monitorar as transações individuais de uma conta contábil. Segue dois exemplos de contas contábeis que geralmente são apoiados por contas auxiliares:
+            
+                A conta auxiliar da conta contábil Contas a Receber consiste em uma conta individual para cada cliente. A soma de todos os saldos das contas de clientes no plano auxiliar é igual ao saldo da contabilidade geral do Contas a Receber. 
+			
+            
+            Exemplo
+                
+                    
+                        Contas a Receber (contabilidade geral): R$ 20.000,00;
+                        Conta Auxiliar Cliente A: R$ 4.000,00;
+                        Conta Auxiliar Cliente B: R$ 10.000,00;
+                        Conta Auxiliar Cliente C: R$ 6.000,00.
+                    
+                    Segue abaixo um exemplo de Escrituração no ERP - Contas a Receber:
+                    
+                    
+                    
+                        
+                    
+                
+            
+            
+                A conta auxiliar da conta contábil Contas a Pagar contém as contas de cada fornecedor que fez operações com a empresa. A soma de todas as contas de fornecedores no plano auxiliar é igual ao saldo da contabilidade geral do contas a pagar.
+            
+            Exemplo
+                
+                    
+                        Contas a Pagar (contabilidade geral): R$ 15.000,00;
+                        Conta Auxiliar Fornecedor A: R$ 4.000,00;
+                        Conta Auxiliar Fornecedor B: R$ 10.000,00;
+                        Conta Auxiliar Fornecedor C: R$ 1.000,00.
+                    
+                    Segue abaixo um exemplo de Escrituração no ERP - Contas a Pagar: 
+                    
+                    
+                    
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

@@ -1,0 +1,194 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#autenticacao-para-customizacoes.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7C_____17
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Autenticação para customizações
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Autenticação para customizações
+            As seguintes ferramentas de customização dos sistemas da Senior contam com o controle de autenticação dos usuários para acesso:
+            
+                Editor de regras LSP;
+                Gerador de Cubos;
+                Gerador de Importação e Exportação;
+                Gerador de Relatórios;
+                SGI.
+            
+            Essa autenticação será feita através de um arquivo gerado com base na lista de profissionais autorizados a fazer customizações para o cliente onde está sendo executado o sistema.
+            Cadastro de usuários
+            O cadastro dos usuários que terão acesso às ferramentas de customização dos sistemas será feito na Senior, utilizando os seguintes dados:
+            E-mail do usuário (campo chave)
+            Nome do profissional
+            
+            Tipo de vínculo
+            
+            
+                Senior: o código do vínculo não precisa ser informado;
+                Canal: deve-se informar o código do canal que este usuário trabalha. Pode ser informado mais de um código;
+                Cliente: deve-se informar o código do cliente para qual o usuário trabalha. Pode ser informado mais de um código.
+            
+            Data de Alocação
+                				Até qual data o profissional estará alocado para a Senior. Informado apenas quando o tipo de vínculo é 2 e o profissional está alocado para a Senior.
+			
+            Arquivo de controle e autenticação
+            Após efetuado o cadastro dos usuários é gerado e enviado para o cliente um arquivo para controle e autenticação com validade de 30 dias, vencendo apenas entre segunda e quinta-feira.
+            O sistema busca o caminho e o nome deste arquivo na chave com.senior.customauthenticate.filename no arquivo de configuração utilizado pelo sistema, editado através da Central de Configurações. Caso esta chave não exista no arquivo de configuração, o sistema fará uma busca pelo arquivo base.pas iniciando no diretório corrente da aplicação e terminando no diretório raiz da instalação.
+            Por  exemplo, com o sistema instalado em C:\Senior\Vetorh\ caso o arquivo não seja encontrado neste diretório, a busca passará para C:\Senior\ e não sendo encontrado também, será procurado em C:\ onde finalizará a busca. É importante observar a permissão de leitura e escrita para este arquivo.
+            Geração de senhas de usuário
+            As senhas geradas para os usuários terão validade de 180 dias e a solicitação deverá ser feita através dos seguintes canais de comunicação:
+            
+                Clientes: enviar e-mail para suasenhacustomizar@senior.com.br;
+                Consultores e colaboradores Senior e de canais: abrir chamado através do 0800net, em Administração de Vendas / Senhas Customizar.
+            
+            Geração de nova senha e arquivo de controle de autenticação (base.pas)
+            A solicitação de uma nova senha deverá ser feita através da página https://customizar.senior.com.br/senhacustomizar/, informando o e-mail cadastrado do usuário.
+            O download de um novo arquivo de controle e autenticação deverá ser feito através da página https://customizar.senior.com.br/arquivocustomizar/, informando  o código do cliente.
+            Necessidade de atualização do arquivo de controle de autenticação
+            As seguintes situações fazem com que o arquivo de atualização seja atualizado:
+            
+                A validade do arquivo está expirada ou expira em menos de cinco dias;
+                O código do cliente gravado no arquivo não é equivalente ao código da proprietária;
+                O e-mail informado não está presente no arquivo;
+                A senha criptografada não confere com a senha presente no arquivo.
+            
+            A atualização do arquivo é feita de forma automática pelo sistema. Caso esta atualização não seja possível, o cliente deverá atualizar o arquivo manualmente, como descrito no tópico anterior. Lembrar que o arquivo deve estar no caminho indicado no CFG ou no diretório corrente da aplicação, conforme descrito no tópico Arquivo de Controle e Autenticação.
+            Funcionamento do recurso
+            Ao acessar alguma das ferramentas controladas, será apresentada uma tela de login, solicitando o e-mail do usuário e sua senha. Após informar estes dados e clicar no botão Ok, o sistema fará as seguintes validações:
+            
+                Se foi informado um usuário e uma senha;
+                A validade do arquivo de autenticação dos usuários;
+                O código do cliente, que será comparado com o código da proprietária usada no sistema;
+                Se o e-mail está no arquivo de validação das credenciais;
+                Se a senha informada confere com a presente no arquivo de validação.
+            
+            Após estas validações, se as informações de login estiverem corretas, o usuário ficará com acesso permitido até que seja feito um logoff do sistema.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

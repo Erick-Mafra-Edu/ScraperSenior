@@ -1,0 +1,340 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/pagamento-frete-detalhado.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____17
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Pagamento Frete Detalhado
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Pagamento Frete Detalhado
+            
+                
+                
+                
+                    
+                        Descrição
+                         
+                    
+                    
+                        Url do Serviço
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/saidaPagamentoFreteDetalhado
+
+                    
+                    
+                        Tipo de Envio
+                        POST
+                    
+                    
+                        Momento
+                        Dados De pagamento frete detalhade				
+                    
+                    
+                        Tabela
+                        TI_WS_S_FATURAMENTO , TI_WS_S_DET_FATURAMENTO				
+                    
+                    
+                        Array
+                        Sim - Será retornada todas as informações pendentes de envio na mesma chamada
+                    
+                
+            
+            Detalhamento dos atributos de JSON saída
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Nome do Atributo
+                        Tipo de Dado
+                        Default
+                        Obrigatório
+                        Descrição
+                    
+                    
+                        pagamentoFreteDetalhe
+                        Array
+                         
+                        S
+                        Recebe um array de objetos
+                    
+                    
+                        cd_empresa
+                        Integer
+                         
+                        S
+                        Código empresa
+                    
+                    
+                        cd_cnpj_transp
+                        String
+                         
+                        S
+                        CNPJ tranportadora
+                    
+                    
+                        tp_entrada
+                        String
+                         
+                         
+                        Tipo entrega
+                    
+                    
+                        ped_nu_nf
+                        Integer
+                         
+                        S
+                        Número NF
+                    
+                    
+                        ped_nu_serie_nf
+                        String
+                         
+                        S
+                        Número série NF
+                    
+                    
+                        nu_cte
+                        Integer
+                         
+                        S
+                        Número CTE
+                    
+                    
+                        nu_cte_serie
+                        String
+                        (DD/MM/YYYY HH24:MI:SS)
+                        S
+                        Número série CTE
+                    
+                    
+                        dt_emissao_cte
+                        String
+                         
+                        C
+                        Data emissão CTE
+                    
+                    
+                        cte_chave_acesso
+                        String
+                         
+                        C
+                        Chave acesso CTE
+                    
+                    
+                        cte_protocolo_autorizacao
+                        String
+                         
+                        S
+                        Protodolo autorização CTE
+                    
+                    
+                        vlr_frete
+                        Double
+                         
+                        C
+                        Valor frete
+                    
+                    
+                        icms_vlr_base
+                        Double
+                         
+                        C
+                        Valor base ICMS
+                    
+                    
+                        icms_aliquota
+                        Double
+                         
+                        C
+                        Valor aliquota ICMS
+                    
+                    
+                        icms_vlr
+                        Double
+                         
+                        C
+                        Valor icms
+                    
+                    
+                        iss_vlr_base
+                        Double
+                         
+                        C
+                        Valor base ISS
+                    
+                    
+                        iss_aliquota
+                        Double
+                         
+                        C
+                        Valor aliquota ISS
+                    
+                    
+                        iss_vlr
+                        Double
+                        
+                            (DD/MM/YYYY HH24:MI:SS)
+                        
+                        C
+                        Valor ISS
+                    
+                    
+                        dt_vencimento
+                        String
+                         
+                        S
+                        Data vencimento
+                    
+                    
+                        cd_registro
+                        String
+                         
+                        S
+                        Código região
+                    
+                    
+                        cfop
+                        String
+                         
+                        S
+                        CFOP
+                    
+                    
+                        nu_faturamento
+                        Integer
+                         
+                         
+                        Número faturamento
+                    
+                    
+                        detalhe
+                        Array
+                         
+                         
+                        Recebe um array de objetos
+                    
+                    
+                        id
+                        Integer
+                         
+                         
+                         
+                    
+                    
+                        cd_empresa
+                        Integer
+                         
+                         
+                        Código empresa
+                    
+                    
+                        cd_cnpj_transp
+                        String
+                         
+                         
+                        CNPJ tranportadora
+                    
+                    
+                        nu_cte
+                        Integer
+                         
+                         
+                        Número CTE
+                    
+                    
+                        nu_cte_serie
+                        String
+                         
+                         
+                        Número série CTE
+                    
+                    
+                        dt_emissao_cte
+                        String
+                         
+                         
+                        Data emissão CTE
+                    
+                    
+                        nu_nf
+                        Integer
+                         
+                         
+                        Número NF
+                    
+                    
+                        nu_serie_nf
+                        String
+                         
+                         
+                        Número série NF
+                    
+                
+            
+            
+                
+                
+                    
+                        Exemplo do layout de saída em JSON
+                        
+                    
+                    
+                        
+                            {
+                            "pagamentoFreteDetalhe": [
+                            {
+                            "cd_empresa": 111,
+                            "cd_cnpj_transp": "11",
+                            "tp_entrada": "1",
+                            "ped_nu_nf": 6,
+                            "ped_nu_serie_nf": "1",
+                            "nu_cte": 1,
+                            "nu_cte_serie": "10",
+                            "dt_emissao_cte": "20/01/2018",
+                            "cte_chave_acesso": "adfsdfsdfdfsfgsdfdfs",
+                            "cte_protocolo_autorizacao": "4442",
+                            "vlr_frete": 10.5,
+                            "icms_vlr_base":  1.5,
+                            "icms_aliquota": 1.5,
+                            "icms_vlr": 2.8,
+                            "iss_vlr_base": 10.5,
+                            "iss_aliquota": 3,
+                            "iss_vlr": 1.5,
+                            "dt_vencimento": "20/01/2018",
+                            "cd_registro": "3",
+                            "cfop": "3343",
+                            "nu_faturamento": 1,
+                            "detalhe": [
+                            {
+                            "id": 1,
+                            "cd_empresa": 1,
+                            "cd_cnpj_transp": "1",
+                            "nu_cte": 1,
+                            "nu_cte_serie": "2",
+                            "dt_emissao_cte": "1

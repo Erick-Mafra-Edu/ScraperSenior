@@ -1,0 +1,187 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#faq/problemas_concentradora.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CResolu%25C3%25A7%25C3%25A3o%2520de%2520Problemas%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Resolução de Problemas > Concentradora
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Resolução de problemas - Concentradora
+            Limites de informações do Data Mart 
+ da Concentradora  
+                
+                    Para permissões de acesso, a quantidade é limitada à capacidade do equipamento. 
+ Cada fabricante tem seu próprio limite: 
+                    
+                        Apollo   = 38 permissões de acesso por placa controladora.
+                        Digicon = 99 permissões de acesso por dispositivo.
+                        SDK      = 99 permissões por dispositivo.
+                    
+                    Para pessoas e crachás, a quantidade é limitada pela memória disponível 
+ no servidor da concentradora. Cada fabricante tem seu próprio limite:
+                    
+                        Apollo: 
+	 varia conforme a quantidade de memória da placa controladora. Conforme 
+	 a regra de negócio, um crachá pode ocupar desde 6 até 122 bytes.
+                        Digicon
+                        SDK:
+                        
+                            On-line: é limitada à capacidade de memória da concentradora.
+                            Off-line: varia conforme o fabricante homologado, deve-se consultar 
+		 o Manual de Uso de cada fabricante (Dimep, 
+		 Henry e TopData).
+                        
+                    
+                    Para dispositivos, a quantidade é limitada à capacidade do equipamento, 
+ indicando a quantidade de leitoras, entradas e saídas digitais.
+                    A capacidade é de 32.000 crachás ativos por pessoa que exista na concentradora. 
+ Recomenda-se entretando que a tabela R070CON que serve de base para a 
+ carga do Data Mart da Concentradora seja atualizada periodicamente para 
+ que crachás que não estão mais com a pessoa sejam excluídos. Com isso 
+ a carga do Data Mart fica mais rápida dando maior performance na execução 
+ do Gestão de Acesso e da Concentradora.
+                
+            
+            Não inicializa Datamart (SQL Server).  
+                
+                    Identifica-se no log getDatamart que o mesmo não é inicializado, no log Server.log (CSM Center) é identificada a mensagem abaixo:
+                    
+                        Line 2113: java.lang.RuntimeException: Ocorreu um erro inesperado ao enviar dados para o Adapter. java.lang.RuntimeException: java.sql.SQLException: A conversão de um tipo de dados char em um tipo de dados datetime resultou em um valor datetime fora do intervalo.
+                         
+                        Line 2153:     at net.sourceforge.jtds.jdbc.TdsCore.tdsErrorToken(TdsCore.java)
+                    
+                    Essa situação só ocorre para banco de dados SQL Server, e ocorre pois a definição de idioma e data/hora estão diferentes do padrão Senior. A solução é:
+                    
+                        Conectar no banco de dados com o usuário AS;
+                        Acessar a opção Security > Logins
+                        Clicar com o botão direito no nome do mesmo Usuário que está parametrizado no CFG e clicar em Propriedades.
+                        Alterar o campo: Default language para: English, conforme exemplo abaixo:
+                    
+                    
+                        
+                    
+                    
+                        Além dessa alteração, deve-se realizar o seguinte comando na base: 
+                    
+                    
+                        set dateformat mdy
+                    
+                
+            
+            Concentradora não inicializa. 
+                
+                    Após a instalação da CSM Center e atualização da concentradora, identifica-se nos logs da concentradora que o Data Mart não é iniciado e a CSM Console, apesar de inicializar, não carrega as pessoas.
+                    Nos logs da concentradora podem ser exibidos:
+                    Exemplo 1 (log adpg5):
+                        
+                            2011-11-22 11:55:08,840 TRACE putting the version [6, 1, 5]
+                            2011-11-22 11:55:08,949 INFO  Controlador de conexões do AdapterG5 criado.
+                            2011-11-22 11:55:09,136 DEBUG Iniciando GETDATAMART. Ip da CSM [010000003090]
+                            2011-11-22 11:55:10,168 ERROR Erro conectando ao SPGERCOM. Verifique se o processo do SPGERCOM está ativo e se o IP e portas estão configuradas corretamente no arquivo de properties da CSM. java.net.ConnectException: Connection refused: connect
+                            2011-11-22 11:55:13,167 DEBUG Iniciando GETDATAMART. Ip da CSM [010000003090]
+                            2011-11-22 11:55:17,105 DEBUG Iniciando GETDATAMART. Ip da CSM [010000003090]
+                            2011-11-22 11:55:21,151 DEBUG Iniciando GETDATAMART. Ip da CSM [010000003090]
+                            2011-11-22 11:55:25,307 DEBUG Iniciando GETDATAMART. Ip da CSM [010000003090]
+                        
+                    
+                    Exemplo 2 (log adpg5):
+                        
+                            2011-11-22 12:01:13,566 TRACE putting the version [6, 1, 5]
+                            2011-11-22 12:01:13,676 INFO  Controlador de conexões do AdapterG5 criado.
+                            2011-11-22 12:01:13,691 INFO  Preparando para enviar Handshake para a CSM Center.
+                            2011-11-22 12:01:13,895 DEBUG Iniciando GETDATAMART. Ip da CSM [010000003090]
+                            2011-11-22 12:01:13,988 DEBUG A mensagem GETDATAMART não foi enviada, pois o Handshake ainda não foi executado.
+                            2011-11-22 12:01:14,801 ERROR Ocorreu um erro tentando enviar a requisição de Handshake para a CSM Center. Provavelmente ela não está inicializada, ou as configurações de conexão da concentradora estão erradas.
+                            2011-11-22 12:01:16,988 DEBUG Iniciando GETDATAMART. Ip da CSM [010000003090]
+                            2011-11-22 12:01:16,988 DEBUG A mensagem GETDATAMART não foi enviada, pois o Handshake ainda não foi executado.
+                            2011-11-22 12:01:19,988 DEBUG Iniciando GETDATAMART. Ip da CSM [010000003090]
+                            2011-11-22 12:01:19,988 DEBUG A mensagem GETDATAMART não foi enviada, pois o Handshake ainda não foi executado.
+                        
+                    
+                    Solução:
+                    
+                    Verifique no arquivo csm.properties da pasta Concentradora, as configurações abaixo:
+                    
+                        # Tipo de comunicação utilizada: SOCKET | JMS.
+                        adapter.comm.type=JMS
+                        > Para conexão com a CSM Center, deve-se utilizar “JMS”.
+                        # IP do provedor de JMS para comunicação.
+                        adapter.ip.app.jms=10.0.3.90
+                        > IP do servidor onde está instalada a CSM Center.
+                        # Porta de comunicação com o sistema via JMS.
+                        adapter.port.app.jms=7300
+                        > A porta default é 7300, em alguns arquivos ainda aparece 3700 que era o antigo valor default, é necessário alterar.
+                        - Após a correção destes valores, basta reiniciar o serviço Senior Concentradora.
+                    
+                    Caso todas as informações estejam corretas, verifique o arquivo Server.log da CSM Center para análise, a CSM Center pode não estar iniciada.
+                
+            
+            CSM Console não abre tela de login/senha.  
+                
+                    Eventualmente a CSM Console pode exibir o cenário abaixo, e não apresentar a tela de login:
+                    
+                        
+                    
+                    Para resolver esta situação, pare o serviço “Senior Concentradora” remova as pastas “temp” e “plugins” da raiz da instalação, limpe o cache do navegador e tente o acesso novamente.
+                
+            
+            Concentradora não inicia – Locked by another computer. 
+                
+                    Ao tentar iniciar a concentradora é gerado apenas o log “CSM”, nele consta a expressão abaixo:
+                    
+                        2012-05-17 17:13:10,633 ERROR Erro conectando no banco de dados no modo recovery. org.h2.jdbc.JdbcSQLException: Database may be already in use: "Locked by another computer: 10.1.28.145". Possible solutions: close all other connection(s); use the server mode; SQL statement:
+                        null/1375c6d7993a3caccc3e71ec9cb5c058d1d65bfad1f [90020-141]
+                        org.h2.jdbc.JdbcSQLException: Database may be already in use: "Locked by another computer: 10.1.28.145". Possible solutions: close all other connection(s); use the server mode; SQL statement:
+                        null/1375c6d7993a3caccc3e71ec9cb5c058d1d65bfad1

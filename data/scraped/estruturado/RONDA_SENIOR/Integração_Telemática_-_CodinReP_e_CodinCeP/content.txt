@@ -1,0 +1,256 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#faq/faq_telematica_codinrep.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CPerguntas%2520Frequentes%7C_____13
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Perguntas Frequentes > Integração Telemática - CodinReP e CodinCeP
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            FAQ - Integração Telemática - CodinReP 
+		 e CodinCeP
+            
+Quais as possíveis opções do campo STATUS, da tabela REPAFD003, da Telemática?
+
+                
+                    
+                        status "0" quando a marcação ainda não foi coletada;
+                        status "1" quando já foi coletada;
+                        status "5" indica que ocorreu erro no insert na tabela R070CMA;
+                        status "7" indica que ocorreu erro no update na tabela REPAFD003;
+                        status "8" indica que ocorreu erro em algum ponto não tratado dentro da procedure de coleta SP_COLAFD.
+                    
+                    Esse controle de status existe para que a coleta de marcação não trave em um único registro, sendo assim, mesmo que ocorra um erro em alguma marcação, a coleta continuará seu processo. Quando for identificado um status diferente de 0 e 1, o tratamento deve ser feito de forma manual para identificar o erro.
+                
+            
+            Como funciona a rotina de permissão para os dispositivos REP da Telemática?
+                
+                    O sistema irá utilizar a permissão 
+ para direcionar e filtrar as pessoas cadastradas por REP. O uso de permissões 
+ ajuda a definir em qual dispositivo REP o colaborador pode ou deve registrar 
+ seu ponto.
+                    Para inclusão de colaboradores 
+ na lista, a rotina verificará permissão normal, sábado, domingo e feriado. 
+ Se algum colaborador estiver dentro de alguma dessas permissões, a pessoa 
+ será incluída na lista. Basta que o colaborador possua uma permissão cadastrada 
+ para que suas informações sejam enviadas ao REP. Por exemplo: um colaborador 
+ que tem permissão só no sábado não será carregado somente no dia de sábado, 
+ poderá marcar ponto em qualquer dia da semana.
+                    Para outros tipos de colaboradores, 
+ como estagiários ou menores aprendizes, também é necessário utilizar a 
+ rotina de permissões, caso contrário essas informações serão enviadas 
+ ao REP.
+                    A rotina verifica:
+                    
+                        
+                            permissão 
+	 de áreas restritas; 
+                        
+                        
+                            trocas 
+	 de permissão; 
+                        
+                        
+                            permissão 
+	 por local físico (Pessoas 
+	 > Permissão por Local Físico);
+                        
+                        
+                            e 
+	 gera uma lista de exclusão para permissões removidas.
+                        
+                    
+                
+            
+            Como é o comportamento do REP da Telemática 
+ com situações de Afastamentos, Bloqueios de Crachás, Bloqueios de Colaborador 
+ e Bloqueio por Faltas?
+                
+                    Nestas situações as informações dos colaboradores não são retiradas 
+ do REP. Somente são excluídos da memória do REP os colaboradores demitidos. 
+ A Portaria 1510, pela qual o equipamento foi homologado, orienta que não pode haver impedimento de registro de 
+ ponto.
+                
+            
+            Como é o comportamento de Crachá Titular e Crachá Provisório?
+                
+                    Quando o colaborador recebe um crachá provisório, o seu crachá titular 
+ NÃO será excluído do REP. Ao fechar um crachá titular, este será excluído 
+ do REP.
+                    Ao fechar um crachá provisório, este será excluído do REP.
+                
+            
+            Qual é a diferença entre o Processo automático de lista "25 - Ativar lista de 
+	 colaboradores (REP)"  e o Comando "Listas 13 - REP Carregar Lista 
+	 Alteração Colaborador"?  
+                
+                    A lista ativada através do comando 25 envia para o CodinReP apenas os dados dos colaboradores que foram alterados.
+
+                    
+O comando 13 faz a mesma coisa que o processo 25, porém a lista utilizada tem que ser gerada anteriormente (lista 18). 
+
+                
+            
+            Quais são as informações/dados que a lista de alteração  "Listas 13 - REP Carregar Lista 
+	 Alteração Colaborador" lê do sistema? 
+
+                
+                    São as informações da lista 18 - Lista colaborador REP. A geração desta lista inclui todos os colaboradores do tipo "empregado" e "terceiros" que possuírem a definição de acesso para controle de REP (R034DAC.RepOnl).
+                
+            
+            Numa admissão, os processos de lista "25 - Ativar lista de 
+	 colaboradores (REP)" carregam um novo colaborador no REP e preenchem a tabela REPEMPR002? O Comando 13 de carga de listas faz essa mesma função?
+                
+                    Quando um colaborador é admitido, um registro informando esta alteração é gerado na tabela R070ACR. O processo 25 lê os registros desta tabela e envia para o CodinREP. O comando 13 não faz isto. Ao gerar a lista que é utilizada por este comando, todos os colaboradores são carregados novamente. O comando 13 deve ser utilizado apenas na carga inicial do equipamento.
+                
+            
+            
+Numa demissão os processos de lista 26 excluem o colaborador no REP e limpa na tabela REPEMPR002? O comando 13 de carga de listas faz essa mesma função? 
+
+                
+                    Não faz. 
+O comando para informar que a pessoa não é mais ativa no REP é o 26, de lista de exclusão.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

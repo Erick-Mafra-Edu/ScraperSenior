@@ -1,0 +1,150 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/f645ctb-contabilizacao-rpa.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CRPA%2520%7CTributos%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > RPA  > Tributos > Contabilização do RPA
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Contabilização do Recibo de Pagamento Autônomo
+            
+                cadastre uma forma de contabilização na tela F048FCT, informando no campo Origem a opção RPA - Tributos - Recibo de Pagamento Autônomo, e no campo Analítica/Sintética, da guia Itens, será possível selecionar apenas N - Analítico - pelos Itens NF, T - Sintético - pelos itens NF ou C - Conversão;
+                utilize o módulo COS - Compras NF Entrada Serviços no cadastro de transações (F001TCP) e informe no campo Forma de contabilização, da guia Dados Gerais, o cadastro realizado na tela F048FCT;
+                ao inserir os itens na tela Lançamento de RPA (F660RPA), após inserir os Dados Gerais,  informe as transações vinculadas com formas de contabilização RPA;
+                na tela Consulta de Movimentos Não integrados (F645CMI) é possível visualizar os movimentos não integrados desse tipo de contabilização, selecionando a opção Tributos - Rec. Pagto Autônomo no cabeçalho da tela e visualizando-os na guia Trib. RPA;
+                para realizar a integração contábil desses lançamentos de RPA, selecione a opção Tributos - Rec. Pgto. Autônomo na tela Integração Contábil (F645CTB) e informe o período que deseja integrar. Lembrando que o sistema considera a Data de Pagamento do RPA para integração e consultas e não a Data de Emissão;
+                na guia Trib. RPA da tela Consulta de Movimentos Integrados - Movimentos x Lançamentos (F644MOL) é possível visualizar os movimentos por item de RPA e os lançamentos dos lotes;
+                na guia Trib. RPA da tela Consulta de Movimentos Integrados Lançamentos x Movimentos (F644LMO) é possível visualizar os lançamentos dos lotes e os movimentos por item de RPA;
+                a opção Listar Rec. Pgto. Autônomo do modelo de relatório Movimentos Não Contabilizados (CCCG010) exibe um resumo dos movimentos de RPA que não estão contabilizados.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

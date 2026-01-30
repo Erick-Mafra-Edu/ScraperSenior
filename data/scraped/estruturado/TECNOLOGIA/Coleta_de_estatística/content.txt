@@ -1,0 +1,184 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#bancos-de-dados/oracle/coleta-de-estatistica.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CBancos%2520de%2520Dados%7COracle%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Bancos de Dados > Oracle > Coleta de estatística
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Coleta de estatística em Oracle
+            A estatística é um conjunto detalhado de informações coletadas do banco de dados, que são utilizadas para potencializar consultas. Com esses dados, o banco de dados Oracle define o melhor plano de execução para realizar as pesquisas.
+            Rotinas de coleta
+            Recomendação de rotinas de coleta para serem aplicadas aos cenários de implantação do ambiente.
+            Esta rotina deve ser agendada e executada por um DBA e, por recomendação, no mínimo uma vez por semana. Caso agendada, desative a rotina de coleta automática do banco, Auto Optimizer Stats Collection, ou bloqueie as estatísticas da base que será feita a coleta, para não ser sobreposta.
+            Dicionário de dados e sistema em Oracle
+                
+                    
+                        begin
+                        DBMS_STATS.GATHER_SYSTEM_STATS;
+                        end;
+                        /
+                        begin
+                        DBMS_STATS.GATHER_FIXED_OBJECTS_STATS;
+                        end;
+                        /
+                        begin
+                        DBMS_STATS.GATHER_DICTIONARY_STATS(estimate_percent => 100, method_opt => 'FOR ALL COLUMNS SIZE AUTO', cascade => TRUE, options => 'GATHER' );
+                        end;
+                        /
+                    
+                
+            
+            Base de dados do sistema Senior
+                
+                    
+                        begin
+                        DBMS_STATS.GATHER_SCHEMA_STATS(OWNNAME => 'NOME_BASE', CASCADE => TRUE, method_opt => 'FOR ALL COLUMNS SIZE 1');
+                        end;
+                        /
+                    
+                    Para as tabelas com mais de 10 milhões de registros executar:
+                    
+                        begin
+                        DBMS_STATS.GATHER_TABLE_STATS(OWNNAME => 'NOME_BASE', TABNAME => 'NOME_TABELA', partname => NULL, granularity => 'GLOBAL', CASCADE => TRUE, method_opt => 'FOR ALL INDEXED COLUMNS SIZE AUTO');
+                        end;
+                        /
+                    
+                
+            
+            
+                Importante
+                
+                Para ambiente de missão crítica é necessário um planejamento para execução e validação da rotina. Se necessário, entre em contato com a IT Services Senior para avaliação.
+            
+            Estas recomendações são baseadas em boas práticas do banco de dados Oracle e avaliações em ambientes diversos. Acesse o site de suporte principal da Oracle para mais detalhes.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

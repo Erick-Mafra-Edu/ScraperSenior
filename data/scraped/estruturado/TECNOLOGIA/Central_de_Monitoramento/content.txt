@@ -1,0 +1,177 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#central-de-monitoramento/central-de-monitoramento.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CCentral%2520de%2520Monitoramento%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Central de Monitoramento
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Central de Monitoramento
+            A Central de Monitoramento Senior coleta e trata informações que são apresentadas de maneira clara e simples para os administradores de ambientes que possuem sistemas Senior baseados no Middleware ou cliente-servidor.
+            Com esta ferramenta é possível, não apenas consultar dados sobre a execução e funcionamento de aplicativos, mas também interagir com essas informações, encerrando aplicativos em uso.
+            Características técnicas
+            A Central de Monitoramento é um aplicativo Web, padrão atual de mercado, que executa em um navegador de páginas e não exige recursos avançados. Por ser um aplicativo Web, pode ser acessada praticamente de qualquer máquina com acesso a internet.
+            A URL de acesso pode ser verificada na Central de Configurações, em SeniorTools > Contextos.
+            Mesmo disponível na rede, contém alto nível de segurança, pois contém permissões de acesso através de portas e usuários autenticados.Utiliza a tecnologia Senior geração 6.2, a mais recente inovação em arquitetura de nossos produtos.
+            Tornando-se pioneira entre os aplicativos Senior disponibilizados para clientes. A ferramenta é apresentada no formato de área de trabalho, dividida em perspectivas que contém fragmentos interligados entre si. Este formato torna a ferramenta leve e ideal para expandir sua abrangência para vário produtos Senior.
+            É possível estender a abrangência de monitoração para outros produtos Senior, sendo aplicativos ou sistemas. Essa extensão da ferramenta depende da implementação de cada produto, ao adicionar um produto, a árvore de recursos apresentará ao usuário os menus de acesso para as telas de monitoramento.
+            Funcionalidades
+            Desconectar aplicativos
+            A Central de Monitoramento permite desconectar aplicativos. Para cada tipo de aplicativo, podem existir situações diferentes:
+            
+                BrowserAccess: Encerra a execução do aplicativo e desconecta o usuário do BrowserAccess;
+                WindowsAccess: Encerra a execução do aplicativo e desconecta o usuário do WindowsAccess;
+                Web 5.0: Como a conexão é de um usuário para vários aplicativos, apenas os aplicativos selecionados para serem desconectados serão encerrados. Mantendo a execução dos demais, assim como a autenticação do usuário;
+                Web Service: A requisição e o aplicativo são encerrados.
+            
+            Notificações
+            Através da Central de Monitoramento é possível gerar e visualizar notificações sobre a situação dos eventos de um ambiente com sistemas Senior. Essa funcionalidade é chamada de Central de Notificações.
+            Controle de usuários
+            O acesso à Central de Monitoramento requer autenticação de usuário e senha. Isso garante que as informações da Central de Monitoramento sejam acessadas apenas por usuários previamente autorizados. Os dados do login são controlados pelo SGU e validados na base padrão definida na Central de Configuração.
+            A configuração das permissões de acesso é realizada por meio da Central de Segurança.
+            Para configurar a autorização de usuários ou grupos, proceda da seguinte forma:
+            
+                Execute o SeniorConfigCenter.exe;
+                Na tela Base de Dados, verifique a base utilizada no campo Informe a base padrão;
+				ImportanteAs configurações para autorização do usuário/grupo serão aplicadas somente na base informada neste campo. Caso seja necessário que outras bases possuam as mesmas permissões, estas devem ser configuradas da mesma maneira que a base principal.
+                Para atribuir as permissões, abra o sistema correspondente à base informada no item 2.
+                Efetue o login com o usuário administrador.
+                No menu, acesse Recursos > Configurações > Usuários > Central de Segurança.
+				NotaO caminho pode variar de acordo com cada produto. Outra variável para este mesmo local é Diversos > Usuários > Central de Segurança.
+                No campo Usuário/Grupo, selecione o usuário ou grupo que deve obter a permissão de acesso à SeniorMonitorCenter.
+                Na guia Perspectivas, clique em Central de Monitoramento para expandir as opções. Selecione o ambiente a ser liberado e marque a caixa de seleção Acesso Permitido. Em seguida, clique em Aplicar.  Repita este passo com todos os ambientes que deseja autorizar.
+                Reinicie os serviços Middleware e  WildFly.
+            
+            Apresentação dos dados
+            Os dados são apresentados em grades formadas por colunas, linhas e, geralmente, contém totalizadores. A organização em grades permite variadas formas de pesquisa, organização e classificação. Transformando dados em informações e auxiliando na tomada de decisões.
+            É possível realizar pesquisas, tanto pelos itens de menu (o que está sendo monitorado), como os registros apresentados nas grades (resultados da busca de informações).
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

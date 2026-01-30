@@ -1,0 +1,169 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#manuais_processos/agronegocio/processos/lcdpr.htm%3FTocPath%3DSegmentos%7CAgroneg%25C3%25B3cio%7CLCDPR%2520-%2520Livro%2520Caixa%2520Digital%2520do%2520Produtor%2520Rural%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Agronegócio > LDCPR - Livro Caixa Digital do Produtor Rural
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            LDCPR - Livro Caixa Digital do Produtor Rural
+            Conceito
+            O Livro Caixa Digital do Produtor Rural (LCDPR) foi instituído pela Instrução Normativa RFB no 1.848, de 28 de novembro de 2018, que alterou a Instrução Normativa SRF nº 83, de 11 de outubro de 2001. O resultado da exploração da atividade rural deverá ser apurado mediante escrituração do LCDPR, que deverá abranger as receitas, as despesas de custeio, os investimentos e demais valores que integram a atividade.
+            O produtor rural que auferir, durante o ano, receita bruta total da atividade rural superior ao limite estabelecido, deverá entregar arquivo digital que contém o LCDPR até o final do prazo de entrega da declaração do Imposto sobre a Renda da Pessoa Física referente ao respectivo ano-calendário. O limite de receita bruta deve abranger todas as unidades rurais exploradas pelo contribuinte, de modo a permitir a apuração do resultado da atividade rural.
+            O LCDPR deverá ser assinado digitalmente, por meio de certificado digital válido, emitido por entidade credenciada pela Infraestrutura de Chaves Públicas Brasileira (ICP-Brasil), a fim de garantir a autoria do documento digital. O produtor rural que auferir, durante o ano, receita bruta total da atividade rural inferior ao limite estabelecido, ainda que desobrigado, poderá entregar arquivo digital que contém o LCDPR.
+            Legislação:
+                
+                    
+                        Lei no 8.023, de 12 de abril de 1990 - Altera a legislação do Imposto de Renda sobre o resultado da atividade rural e dá outras providências;
+                        Lei nº 9.250, de 26 de dezembro de 1995. - Altera a legislação do imposto de renda das pessoas físicas e dá outras providências;
+                        Decreto no 9.580, de 22 de novembro de 2018 – Regulamenta a tributação, a fiscalização, a arrecadação e a administração do Imposto sobre a Renda e Proventos de Qualquer Natureza;
+                        Instrução Normativa SRF no 83, de 11 de outubro de 2001 – Dispõe sobre a tributação dos resultados da atividade rural das pessoas físicas;
+                        Instrução Normativa RFB no 1.848, de 28 de novembro de 2018, que altera a Instrução Normativa SRF nº 83, de 11 de outubro de 2001, que dispõe sobre a tributação de resultados da atividade rural de pessoas físicas;
+                        Ato Declaratório Executivo nº 3/2019, de 26 de junho de 2019 – Dispõe sobre o leiaute 1.1 e o manual de preenchimento do Livro Caixa Digital do Produtor Rural.
+                    
+                
+            
+            O que você pode fazer:
+            No Gestão Empresarial | ERP, o processo para a geração do arquivo do Livro Caixa Digital do Produtor Rural (LCDPR) passa por diversas parametrizações e especificações, categorizadas e documentadas através das seguintes páginas:
+            
+                Parametrizações
+                
+                LCDPR 2.0 - Processos Específicos
+                
+                Leiautes e Identificadores
+                
+                Geração do Arquivo
+                
+            
+             Quer saber mais sobre gestão financeira e conformidade fiscal com a geração do arquivo do LCDPR no Gestao Empresarial | ERP? Confira o talk de produto que promovemos com nossos especialistas sobre o Livro Caixa Digital do Produtor Rural.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

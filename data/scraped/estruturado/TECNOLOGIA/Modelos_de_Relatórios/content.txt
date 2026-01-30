@@ -1,0 +1,269 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/editor/dgn_editor_modelos_relatorios.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CEditor%7C_____11
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Editor > Modelos de Relatórios
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Modelos de Relatórios (G5)
+            Esta tela permite localizar modelos de relatórios através de informações 
+ contidas no nome, controles ou dentro das regras do modelo. Os filtros 
+ da pesquisa funcionam da seguinte forma: Cada campo tem uma máscara específica, 
+ caso não seja informado valor em algum campo a pesquisa será feita em 
+ todos os registros.
+            Exemplo: Campo "Sistema", 
+ pode-se filtrar da seguinte forma: 
+            
+                FP (buscará pelo Administração de Pessoal); 
+	 
+                F? (buscará pelos sistemas 
+	 que começam com F); 
+                ?F (buscará pelos sistemas 
+	 que terminam com F); 
+                F (apenas "F" 
+	 sem o "?", é equivalente à "F?".  
+            
+            Observação: O exemplo citado acima, funciona para os campos: "Sistema", 
+ "Categoria" e "Extensão".
+            
+                
+            
+             
+            Aba 
+ Geral:
+            Nome: 
+ Nesse campo deve ser informado o nome 
+ do modelo de relatórios que será utilizado no executor, o nome deve ser 
+ único, e auxiliar na identificação dos demais modelos registrados.
+            Descrição: 
+ A descrição deve conter a especificação 
+ do que o modelo faz, justificativas ou outros detalhes relevantes.
+             
+            Parâmetros
+            Sistema: Informa-se a sigla do sistema pelo qual 
+ se deseja procurar, a máscara para este campo é de dois caracteres.
+            Categoria: 
+ Campo disponível apenas para modelos 
+ de relatório. Informa-se a categoria pelo qual se deseja procurar, a máscara 
+ para este campo é de dois caracteres.
+            Número: 
+ Informa-se os números dos modelos pelos 
+ quais se deseja procurar, a máscara para relatórios são de três caracteres:
+            
+                
+                    ":*" 
+	 (dois pontos + asterisco) - Ignora qualquer ocorrência de caracteres 
+	 entre dois termos. Por exemplo "select  :* R034FUN", 
+	 encontra tanto "select NumEmp, TipCol from R034FUN" como 
+	 "select * from R034FUN".
+                
+                
+                    ":?" (dois pontos + interrogação) 
+	 - Ignora apenas um caractere. Por exemplo "select * from R034:??N", 
+	 encontra "select * from R034FUN" e "select * from R034CON". 
+	 Sendo que a quantidade de caracteres "?" depois do caractere 
+	 ":" será a quantidade de caracteres ignorados.
+                    
+                
+            
+            Extensão: 
+ Campo disponível apenas para modelos 
+ de relatório. Informa-se a extensão do modelo pelo qual se deseja procurar, 
+ a máscara deste campo é de três caracteres. Exemplo do Administração de Pessoal: "COL" 
+ (Colaboradores).
+            Procurar 
+ por: Informa-se o texto pelo qual se 
+ deseja pesquisar, ele procurará pelo texto dentro dos modelos. O 
+ sistema permite a entrada de caracteres curingas nas sentenças de busca.
+            
+                
+                    ":*" 
+	 (dois pontos + asterísco) - Ignora qualquer ocorrência de caracteres. 
+	 Por exemplo "select  :* R034FUN", encontra "select 
+	 NumEmp, TipCol from R034FUN" como "select * from 
+	 R034FUN".
+                
+                
+                    ":?" 
+	 (dois pontos + interrogação) - Ignora apenas um caractere. Por exemplo 
+	 "select * from R034:???", encontra "select * from R034FUN" 
+	 e "select * from R034DEP". Sendo que a quantidade de caracteres 
+	 "?" deposi do caractere ":" será a quantidade 
+	 de carcateres ignorados.
+                
+            
+            Botão Adicionar: Ao 
+ informar algum conteúdo no campo "Procurar por" é preciso clicar no botão Adicionar, 
+ assim o filtro de pesquisa será adicionado a lista logo abaixo.
+            Botão Excluir: Permite 
+ excluir algum termo que foi selecionado na lista da opção Procurar 
+ por. O termo deve estar selecionado 
+ e ao clicar com o botão Excluir 
+ ele será eliminado da lista.
+            Diferenciar 
+ maiúsculas de minúsculas: Essa opção 
+ de filtragem é utilizada apenas se for feita pesquisa no campo Pesquisa 
+ por. Ela permite que sejam diferenciados 
+ ou não os caracteres que estiverem em maiúsculo ou minúsculo. Por exemplo: 
+ ao utilizar a palavra 'Regra' e, se essa opção estiver marcada, não serão 
+ apresentados os relatórios que contiverem apenas a palavra 'regra' no 
+ seu conteúdo.
+            Sentença 
+ inteira: Essa opção de filtragem é 
+ utilizada apenas se for feita pesquisa no campo Pesquisa por. Ela faz com que as palavras sejam analisadas 
+ por inteiro, não dividindo-as. Por exemplo: ao informar um termo como 
+ ‘parâmetros de inicialização’ e, se essa opção estiver desmarcada, busca 
+ por cada palavra separadamente não importando a ordem em que aparecem. 
+ Caso esteja marcada, buscará os relatórios que contém estas palavras exatamente 
+ nesta ordem.
+            Ignorar 
+ quebra de linha: Essa funcionalidade 
+ permite que as quebras de linhas inseridas nos relatórios sejam ignoradas, 
+ fazendo com que várias linhas quebradas sejam consideradas como uma sentença 
+ única.
+            Busca 
+ em: Por padrão a opção "Regras" está marcada, mas essa funcionalidade 
+ permite que a pesquisa também seja feita em todo o relatório.
+            Plano 
+ de ajustes (tempo por ocorrência): Link 
+ para a documentação.
+            Excluir 
+ linhas sem ocorrência: Link 
+ para a documentação.
+             
+            Aba Eventos:
+            
+            Eventos.
+            
+                Senior
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

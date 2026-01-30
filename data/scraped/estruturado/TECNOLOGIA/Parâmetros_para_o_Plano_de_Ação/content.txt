@@ -1,0 +1,183 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/editor/dgn_editor_parametros_plano_acao.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CEditor%7C_____13
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Editor > Parâmetros para o Plano de Ação
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Parâmetros para o Plano de Ação
+            A tela de Parâmetros para o Plano de Ação permite que sejam atribuídos 
+ os percentuais representativos de cada atividade dentro do cenário geral 
+ do ambiente a ser analisado.
+            
+                
+            
+            Atividade: 
+ O cadastro das atividades definirá 
+ a divisão do tempo no Plano de Ação, gerado pelo executor. Neste campo 
+ é preciso informar o nome das atividades, para diferenciá-las no resultado 
+ final.
+            Percentual: 
+ O percentual das atividades antes da 
+ linha Total sempre devem somar 
+ 100%, porém o que for registrado após essa linha, será considerado como 
+ excedente. Se a soma das porcentagens for diferente de 100%, a mensagem 
+ “A soma das atividades antes da linha "Total" deve ser igual 
+ a 100.” aparecerá quando o modelo for salvo.
+            Novo: 
+ Disponibiliza os campos Atividade e Percentual 
+ para receber um novo registro.
+            Aplicar: 
+ Salva o registro novo, adicionando 
+ a atividade ao final da lista.
+            Excluir: 
+ Exclui a atividade que está selecionada.
+            
+                 Seta para 
+ cima: Altera a ordem da atividade que 
+ está selecionada para cima.
+            
+                 Seta para 
+ baixo: Altera a ordem da atividade 
+ que está selecionada para baixo.
+            Arredondamento 
+ de tempo para as ocorrências: [...] minutos: Ao 
+ marcar essa opção, os cálculo no executor sempre será ajustado para não 
+ ocorrerem resultados com número muito específicos. No exemplo está para 
+ arredondar em 15 minutos, o que significa que, se o resultado de tempo 
+ de uma atividade der 13 minutos, será automaticamente alterada para 15, 
+ se o resultado 
+            Excluir 
+ linhas sem ocorrência: Elimina linhas 
+ sem conteúdo da tabela de atividades, evitando registros em branco no 
+ Plano de Ações.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

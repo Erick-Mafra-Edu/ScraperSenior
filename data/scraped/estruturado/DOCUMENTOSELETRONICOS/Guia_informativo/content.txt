@@ -1,0 +1,196 @@
+# 
+
+URL: https://documentacao.senior.com.br/documentoseletronicos/5.8.16/#home/home-guia-informativo.htm%3FTocPath%3DManual%2520do%2520usu%25C3%25A1rio%2520-%2520eDocs%7CGuia%2520informativo%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOeDocs - versão 5.8.16
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Manual do usuário - eDocs > Guia informativo
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Guia informativo
+            Introdução
+            O objetivo deste guia é servir de referência para a obtenção de informações técnicas sobre a utilização do eDocs. Nessa guia é possível encontrar informações técnicas que irão auxiliar na utilização do eDocs, principalmente na busca de informações que ajudarão na resolução de dúvidas e problemas frequentes encontrados pelos usuários.
+            Várias informações presentes neste manual envolvem outros aplicativos e sistemas da Senior, como, por exemplo, o Gestão Empresarial | ERP, aplicativo DepuraSID e o aplicativo Gestão Empresarial | ERP em modo MCDebug, além de configurações de ambiente Microsoft Windows, que são de responsabilidade da TI do cliente.
+            
+                Importante
+                
+                Todas as informações que se referem ao Gestão Empresarial | ERP também se referem ao Gestão Empresarial | GO UP, com exceção de telas e rotinas que não estão disponibilizadas no Gestão Empresarial | GO UP (exemplo: possibilidade de customizar regras). Desta forma, ao longo do Guia, quando for citado Gestão Empresarial | ERP, pode-se levar em consideração, também, o Gestão Empresarial | GO UP.
+            
+            Reestruturação do Guia informativo
+                
+                    O guia informativo passou a ser disponibilizado pela Senior em Janeiro de 2014. Desde esta data, o eDocs e outros sistemas da Senior que fazem integração com ele, já sofreram diversas alterações e melhorias, tanto em suas funcionalidades quanto em suas documentações. Por esse motivo, o guia informativo foi reformulado para acompanhar estas mudanças.
+                    A reformulação trouxe ao guia um novo agrupamento das informações conforme os assuntos aos quais elas se referem. Além disso, algumas informações antes encontradas no guia foram transportadas para o Manual do Usuário padrão dos sistemas, para facilitar o encontro da informação pelos usuários.
+                    Abaixo seguem informações sobre a nova disposição do guia, onde pode ser identificado o relacionamento entre os antigos tópicos do guia informativo e os novos tópicos criados. Além disso, é possível identificar as informações que foram retiradas do guia ou transportadas para outras documentações.
+                    Abaixo segue a nova estrutura de tópicos criadas no Guia Informativo e a indicação de quais tópicos do guia antigo estão presentes nos novos tópicos. Existem tópicos novos onde as informações são efetivamente novas, ou seja, não fazem referência a tópicos já existentes no antigo guia.
+                    Tópicos do novo Guia x Tópicos do Guia antigo
+                        
+                            
+                                
+                                
+                                
+                                    
+                                        Tópicos do novo Guia
+                                        Tópicos do Guia Antigo
+                                    
+                                    
+                                        + Guia Informativo
+                                         
+                                    
+                                    
+                                                 - Introdução e Reestruturação
+                                         
+                                    
+                                    
+                                              + Informações relativas ao ambiente
+                                         
+                                    
+                                    
+                                                      - Premissas e informações gerais
+                                        Premissas e Confirmando o usuário utilizado para instanciar os serviços do eDocs
+                                    
+                                    
+                                                      - Certificação digital
+                                        Atualização de cadeias de certificação da SEFAZ/Prefeitura
+                                    
+                                    
+                                                      - Serviço DE vs Monitor vs IIS
+                                         
+                                    
+                                    
+                                              + Logs do sistema
+                                         
+                                    
+                                    
+                                                      - Conceito e coleta de Logs
+                                        Logs do eDocs – Conceito e captura dos Logs
+                                    
+                                    
+                                              + Integração com Gestão Empresarial | ERP
+                                        Parte inicial do tópico Efetuando retorno manual de documento eletrônico através do DepuraSID ou MCDebug
+                                    
+                                    
+                                                     - Retorno manual via SeniorSID
+                                        Testes de retorno via DepuraSID
+                                    
+                                    
+                                                     - Retorno manual via MCDebug
+                                        Testes de retorno de status ou envio de documentos eletrônicos para ERP via MCDebug
+                                    
+                                    
+                                                     - Problemas de retorno – o que avaliar
+                                         
+                                    
+                                    
+                                                     - Conceitos RPS/NFS-e e emissão
+                                         
+                                    
+                                    
+                                              + Ferramentas e verificações auxiliares
+                                         
+                                    
+                                    
+                                                     - Validadores XML SEFAZ
+                                        Utilizando o validador de XML da SEFAZ
+                                    
+                                    
+                                                     - Validar XMLs com XSDs
+                                         
+                                    
+                                    
+                                                     - Contato com SEFAZ/Prefeitura e acesso a Fóruns
+                                         
+                                    
+                                    
+                                                     - Comparação de XMLs
+                                         
+                                    
+                                    
+                                                     - Validador de assinatura digital
+                                         
+                                    
+                                    
+                                                     - Testes com arquivos XMLs
+                                         
+                                    
+                                    
+                                                     - Verificar lotes de RPS
+                                         
+                                    
+                                    
+                                        - Configurar templates customizados
+                                         
+                                    
+                                    
+                                              + Como analisar situações
+                                         
+                                    
+                                
+                            
+                        
+                    
+                    Como já informado, informações presentes no antigo guia foram realocadas para outras documentações ou foram eliminadas. Abaixo segue a relação dos tópicos que foram retirados do Guia ou realocados em outras documentações.
+                    Tópicos eliminados
+                        
+                            
+                                
+                                
+                                
+                                
+                                    
+                                        Tópicos eliminados
+                                        Motivo da retirada
+                                        Caminho Ajuda
+                                    
+                                    
+                                        Informações adicionais sobre o no

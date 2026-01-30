@@ -1,0 +1,203 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/executor/dgn_executor_opcoes.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CExecutor%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Executor > Opções
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Opções
+            Este menu possibilita que você configure o diretório de onde os modelos 
+ serão buscados ou visualizar o histórico de execuções. 
+            
+                
+            
+            Configurações...
+            Esta tela permite configurar o diretório de onde os modelos serão buscados 
+ pelo executor. Mesmo assim, ao executar um modelo, a ferramenta permite 
+ que outros diretórios sejam utilizados.
+            
+                
+            
+            Diretório padrão para os modelos: 
+ É possível incluir o caminho manualmente, digitando diretamente no campo 
+ 'Diretório padrão para os modelos', 
+ ou então usar o botão  
+ e selecionar de um diretório do sistema operacional:
+            
+                
+            
+            Ao clicar no botão 'Ok', o diretório 
+ selecionado será preenchido no campo 'Diretório padrão para os modelos' 
+ da tela anterior.
+            Configurações Gerais
+            Gerar Plano de Ação como: Essas 
+ opções permitem configurar os dois tipos possíveis para gerar um Plano 
+ de Ação, sendo eles:
+            
+                Pasta de Trabalho do Excel (*.xlsx): 
+	 Planilha do Excel, compatível com a versão superior a 2003.
+                Pasta de Trabalho do Excel 97-2003 
+	 (*.xls): Planilha do Excel, compatível com as versões entre 
+	 97 e 2003.
+            
+            Registro por 
+ Páginas de Resultados: Ao configurar essa opção, a exibição das 
+ ocorrências da ação após a execução do modelo será feita conforme a quantidade 
+ informada aqui. As páginas serão quebradas, permitindo a navegação entre 
+ uma e outra. Neste campo, são permitidos números entre 1 e 100.000.
+            Histórico das execuções...
+            Esta tela permite consultar as informações de todas as execuções de 
+ modelos já realizadas. Além de utilizar os Filtros, é possível ordenar 
+ os registros em ordem crescente ou decrescente, clicando sobre a coluna 
+ correspondente.
+            
+                
+            
+            Filtro
+            Data inicial: Permite informar 
+ manualmente ou selecionar usando a tela de calendário do sistema, a partir 
+ de qual data será iniciada a pesquisa de execuções.
+            Data final: Permite informar 
+ manualmente ou selecionar usando a tela de calendário do sistema, até 
+ qual data será feita a pesquisa de execuções.
+            Botão Aplicar: Ao abrir a tela, 
+ são apresentadas todas as execuções já feitas, mesmo que os filtros estejam 
+ informados, é preciso utilizar esse botão para que o filtro seja aplicado.
+            Botão Limpar: Este botão limpa 
+ o filtro aplicado restaurando todos os históricos de execuções (idêntico 
+ como quando foi aberta a tela)
+            Botão Ok: Fecha a tela, não 
+ executa nenhuma ação.
+            Botão Ajuda: Traz a documentação 
+ do aplicativo.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

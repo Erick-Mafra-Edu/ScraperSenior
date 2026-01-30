@@ -1,0 +1,246 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/multilingua/htmltranslator.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CMultil%25C3%25ADngua%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Multilíngua > Tradutor de HTML
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Tradutor de HTML 
+                
+                    
+                        Atualizando 
+		 o arquivo de traduções
+                        
+                    
+                    
+                        Traduzindo 
+		 os arquivos HTM e JS
+                        
+                    
+                    
+                        Tradução 
+		 dos arquivos via Linha de Comando
+                        
+                    
+                    
+                        Log de erros
+                        
+                    
+                
+                Esta ferramenta permite manipular a tradução em arquivos HTML e JavaScript. 
+ Para acessá-la, clique no aplicativo "HTMLTranslator.exe". Então 
+ será mostrada a tela principal do sistema, onde você poderá atualizar 
+ o arquivo de tradução baseado nos documentos HTML e JavaScript ou traduzir 
+ os documentos HTML e JavaScript.
+                Atualizando 
+ o Arquivo de Traduções (.sml)
+                Tendo selecionado a operação Atualizar, 
+ você poderá escolher os arquivos que serão traduzidos. Nesta operação, 
+ serão gerados os IDs que representam o texto no arquivo de tradução (.sml). 
+ Os IDs e seus respectivos textos serão inseridos no arquivo de tradução 
+ (.sml) e os IDs serão inseridos também no parâmetro ID dos fontes (aID para JavaScripts e strid para html).
+                É necessário configurar os seguintes campos:
+                
+                    Arquivo de strings: Indica 
+	 o diretório do path do arquivo de traduções no idioma nativo.
+                    Caminho dos arquivos HTML: 
+	 Indica o diretório dos arquivos a serem verificados.
+                    Incluir subdiretórios: 
+	 Se esta opção for marcada, o aplicativo também  irá verificar 
+	 os subdiretórios da pasta informada em Caminho 
+	 dos arquivos HTML. Esta opção não 
+	 é recomendada, considerando que os arquivos .htm e .js já traduzidos 
+	 (caso já tenha sido feita alguma tradução) poderão ser verificados 
+	 novamente.
+                    
+                        Usar ID's dos HTML/JS: 
+	 Se esta opção estiver marcada, o Tradutor de HTML  irá utilizar 
+	 os ID's dos itens gravados nas tags TransStr dos fontes HTML/JS para 
+	 gravar a mensagem no arquivo SML caso nenhum deles exista no SML, 
+	 caso contrário gera um novo ID e grava no final do arquivo.
+                    
+                
+                Feito isso, clique no botão Verificar. 
+ O Tradutor de HTML irá verificar os fontes e localizar todas as ocorrências 
+ das tags transstr (nos html) 
+ e das funcões TransStr e TransStrFmt (para JavaScripts). 
+ Serão mostradas na lista todas as ocorrências do TransStr que não possuam 
+ ID ou as que possuem ID mas tiveram seu texto alterado (o texto está diferente 
+ do encontrado no arquivo sml).
+                Selecione as strings que deseja disponibilizar no arquivo de tradução 
+ e clique em Processar.  Aguarde 
+ o fim do processamento e clique em Sim 
+ quando o programa solicitar que você salve as alterações no arquivo de 
+ strings. A seleção das strings pode ser feita marcando-a na lista ou acessando 
+ o pop-up menu e selecionando uma das opções fornecidas.
+                Após o processamento desta operação, podem ser notadas as seguintes 
+ mudanças nos fontes que foram processados:
+                
+                    Em códigos html: Será inserido 
+	 o parâmetro strid nas tags 
+	 transstr, deixando o código assim:	<transstr strid="TC000005177">É 
+	 necessário selecionar um cálculo ativo.</transstr>
+                    Em códigos javascript: 
+	 será preenchido o valor do parâmetro aID 
+	 da chamada à função TransStr, deixando o código assim:	TransStr("TC000005177", 
+	 "É necessário selecionar um cálculo ativo.", 0);
+                
+                
+
+Colunas da lista de strings: 
+
+                
+                    String no HTML/JavaScript: 
+	 Representa a string encontrada no arquivo fonte (.htm ou .js).
+                    Id Original: Caso a string 
+	 do arquivo fonte já exista no arquivo de traduções, esta coluna mostrará 
+	 o ID que representa a string no arquivo de traduções.
+                    Id no HTML/JS: Contém o 
+	 ID encontrado no arquivo fonte, caso o mesmo já tenha sido informado.
+                    String Original: Caso 
+	 o parâmetro ID do arquivo fonte tenha sido informado, esta coluna 
+	 mostrará o texto que este ID representa no arquivo de traduções.
+                    Arquivo: Arquivo .htm ou 
+	 .js onde foi encontrado o TransStr.
+                    Sequencia: Sequencial da 
+	 ocorrência do TransStr no arquivo fonte. Em um arquivo .htm, as tags 
+	 <transstr> serão processadas antes das chamadas ao TransStr 
+	 contidas nas tags <script>.
+                
+                Traduzindo os Arquivos HTM 
+ e JS
+                
+                Após realizada a tradução do arquivo .sml, seleciona-se a operação Traduzir. Nesta operação serão gerados 
+ os novos arquivos htm e js com os textos traduzidos de acordo com o arquivo 
+ de idiomas informado. 
+                
+
+Nesta tela, deverá ser configurado: 
+
+                
+                    Arquivo de strings: O path 
+	 do arquivo sml traduzido (diferente do nativo).
+                    Diretório dos arquivos HTML: 
+	 O diretório dos arquivos htm e js originais (no idioma nativo).
+                    Diretório para tradução: 
+	 O diretório onde serão gerados os arquivos .htm e .js traduzidos. 
+	 Caso a opção Incluir subdiretórios estiver 
+	 marcada, será montada a mesma estrutura do diretório dos fontes originais.	Obs.: Serão gerados neste diretório apenas os arquivos que sofram alguma 
+	 alteração.
+                    Incluir subdiretórios: 
+	 Se esta opção estiver marcada, o Tradutor de HTML irá verificar também 
+	 os subdiretórios da pasta informada em Diretório 
+	 dos arquivos HTML. Esta opção não 
+	 é recomendada, considerando que os arquivos .htm e .js já traduzidos 
+	 (caso já tenha sido feita alguma tradução) também serão verificados.
+                    
+                        Destacar início e fim das traduções: 
+	 Gera informações extras nos arquivos para destacar os textos que foram 
+	 traduzidos. Esta opção deve ser usada apenas para testes específicos.
+                    
+                
+                Feito isso, clique no botão Verificar. O 
+ Tradutor de HTML irá verificar os fontes e localizar todas as ocorrências 
+ das tags transstr (nos html) 
+ e das funcões TransStr e TransStrFmt (para JavaScripts). 
+ Serão mostradas na lista todas as ocorrências do TransStr encontradas. 
+ Veja o exemplo abaixo: 
+                Selecione as strings que deseja traduzir e clique em Processar. 
+ O Tradutor de HTML irá substituir as strings nativas pelas strings encontradas 
+ no arquivo sml, de acordo com o seu ID, e um novo arquivo será gerado 
+ na pasta informada. A seleção das strings pode ser feita marcando-a na 
+ lista ou acessando o pop-up menu e selecionando uma das opções fornecidas.
+                Colunas da lista de strings:
+                
+                    Arquivo: Arquivo .htm ou 
+	 .js onde foi encontrado o TransStr.
+                    Sequência: Sequêncial da 
+	 ocorrência do TransStr no arquivo fonte. Em um arquivo .htm, as tags 
+	 <transstr> serão processadas antes das chamadas ao TransStr 
+	 contidas nas tags <script>.
+                    Id: Contém o ID encontrado 
+	 no arquivo fonte. O texto será traduzido com base neste ID.
+                    String Original: Representa 
+	 a string encontrada no arquivo fonte (.htm ou .js).
+                    Tradução: Texto lido do 
+	 arquivo sml, que será inserido no arquivo fonte, substituindo a String Original.
+                
+                Tradução dos arquivos 
+ via Linha de Comando
+                A tradução dos arquivos .htm e .js também está disponível via linha 
+ de comando.  Sintaxe:
+                
+                    HTMLTranslator.exe T:<arquivo de traduções> S:<caminho dos 
+ arquivos originais> D:<caminho dos arquivos traduzidos> [/s]
+                
+                Parâmetros:
+                
+                
+                    
+                        T: - O path do arquivo 
+	 .sml traduzido (diferente do nativo).
+                    
+                    S: - O diretório dos 
+	 arquivos htm e js originais (no idioma nativo).
+                    D: - O diretório onde 
+	 serão gerados os arquivos .htm e .js traduzidos.
+                    /s - Se informado, significa 
+	 que deve traduzir também os subdiretórios.
+                
+                Log de Erros
+                Caso ocorra algum erro durante o processamento de alguma das operações 
+ acima, será gerado um arquivo de log no diretório do HTMLTranslator.exe, 
+ informando qual foi o erro, qual o arquivo em que ele ocorreu, e outras 
+ informações como, por exemplo, linha e coluna do código que estava se

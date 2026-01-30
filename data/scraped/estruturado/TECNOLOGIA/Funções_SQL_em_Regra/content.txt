@@ -1,0 +1,252 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/sql-em-regra.html%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7CFun%25C3%25A7%25C3%25B5es%2520SQL%2520em%2520Regra%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Funções SQL em Regra
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Funções SQL em Regra
+            As funções a seguir podem ser utilizadas para manipulação de comandos SQL e o resultado dos comandos (cursores) em regras. A partir destas funções podem ser executados comandos DML (INSERT, UPDATE, DELETE) e também comandos SELECT que retornam cursores que poderão ser manipulados também.
+            
+                
+                
+                
+                    
+                        Nome
+                        Descrição 
+                    
+                    
+                        SQL_AbrirCursor
+                        
+                        Função que abre o cursor (depois de informado o comando  SQL 
+ a ser utilizado, que é definido na função SQL_DefinirComando).
+                    
+                    
+                        SQL_BOF
+                        
+                        Função que retorna a informação se o cursor está na posição inicial 
+ (antes do primeiro registro: posição BOF). 
+                    
+                    
+                        SQL_Criar
+                        
+                        A partir de uma variável criada como alfa, é criado um cursor 
+ para trabalhar com informações da base de dados.
+                    
+                    
+                        SQL_DefinirAlfa
+                        
+                        Função que define um valor do tipo alfa para o parâmetro dentro do comando 
+ SQL inserido na função SQL_DefinirComando.
+                    
+                    
+                        SQL_DefinirBlob
+                        
+                        Função que define um valor do tipo alfa (que representa o arquivo blob) 
+ para o parâmetro dentro do comando SQL inserido na função SQL_DefinirComando.
+                    
+                    
+                        SQL_DefinirBoleano
+                        
+                        Função que define um valor do tipo boolean (Número 1 para verdadeiro 
+ e 0 para falso) para o parâmetro dentro do comando SQL inserido na função 
+ SQL_DefinirComando.
+                    
+                    
+                        SQL_DefinirComando
+                        
+                        Função que aplica o comando SQL para o cursor passado como parâmetro.
+                    
+                    
+                        SQL_DefinirData
+                        
+                        Função que define um valor do tipo data ou date para o parâmetro 
+ dentro do comando SQL inserido na função SQL_DefinirComando. 
+                    
+                    
+                        SQL_DefinirFlutuante
+                        
+                        Função que define um valor do tipo flutuante ou float (Fracionado 
+ Ex: 1,5) para o parâmetro dentro do comando SQL inserido na função SQL_DefinirComando.
+                    
+                    
+                        SQL_DefinirInteiro
+                        
+                        Função que define um valor do tipo inteiro para o parâmetro dentro do comando 
+ SQL inserido na função SQL_DefinirComando.
+                    
+                    
+                        SQL_Destruir
+                        
+                        Função que elimina um cursor e deve ser chamada quando o cursor não for 
+ mais utilizado.
+                    
+                    
+                        SQL_EOF
+                        Função que retorna se o cursor está na posição final (depois do último 
+ registro chamada de posição EOF).
+                    
+                    
+                        SQL_FecharCursor
+                        
+                        Função que fecha a pesquisa sendo feita pelo cursor.
+                    
+                    
+                        SQL_Proximo
+                        
+                        Função que posiciona o cursor no próximo registro.
+                    
+                    
+                        SQL_RetornarAlfa
+                        
+                        Função que retorna um valor alfa de um campo do registro do cursor.
+                    
+                    
+                        SQL_RetornarBlob
+                        
+                        Função que retorna um valor alfa de um campo do registro do cursor.
+                    
+                    
+                        SQL_RetornarBoleano
+                        
+                        Função que retorna um número que representa um valor boolean, 1 para verdadeiro e 0 (zero) para falso, de um campo 
+ do tipo boolean do cursor.
+                    
+                    
+                        SQL_RetornarData
+                        
+                        Função que retorna um valor do tipo data de um campo do registro do cursor.
+                    
+                    
+                        SQL_RetornarFlutuante
+                        
+                        Função que retorna um valor flutuante (fracionado, por exemplo 1,5) de um campo do 
+ registro do cursor.
+                    
+                    
+                        SQL_RetornarInteiro
+                        
+                        Função que retorna um valor inteiro de um campo do registro 
+ do cursor.
+                    
+                    
+                        SQL_RetornarSeNulo
+                        
+                        Função que retorna se campo do registro do cursor é nulo.
+                    
+                    
+                        SQL_UsarAbrangencia
+                        
+                        Função que informa ao cursor se é para utilizar abrangência de usuários 
+ ou não.
+                    
+                    
+                        SQL_UsarSQLSenior2
+                        
+                        Função que informa se o comando a ser definido para o cursor utiliza a 
+ sintaxe de linguagem Senior ou a sintaxe nativa (SQL Nativa: linguagem 
+ originada da base de dados utilizada, ex: Oracle, SQL server...etc).
+                    
+                
+            
+            Exemplos
+            Ultilização de INSERT
+                
+                    
+                        Definir Alfa xCursor;@ Cria a variável que vai ser passada como 
+ parâmetro. @Definir Alfa xBlob;SQL_Criar(xCursor);@ Insere um novo registro na tabela de intervalos
+. @SQL_DefinirComando(xCursor,"INSERT INTO R006INT \              VALUES 
+ (9999,'Exemplo de intervalo')");SQL_AbrirCursor(xCursor);/* Todas as operações referentes a base de dadosserão feito entre abrirCursor e fecharCursor. */SQL_FecharCursor(xCursor);SQL_Destruir(xCursor);
+                    
+                
+            
+            Ultilização de SELECT
+                
+                    
+                        Definir Alfa xCursor;@ Cria o cursor. @SQL_Criar(xCursor);@ Define um comando para poder carregar as informações no Cursor. @SQL_DefinirComando(xCursor,"SELECT R034FUN.CODFIL FROM R034FUN \                                        WHERE 
+ R034FUN.CODFIL =1\                                          AND 
+ R034FUN.NUMEMP = 1");@ Abri o cursor para Ultilização. @SQL_AbrirCursor(xCursor);/* Todas as operações referentes a base de dadosserão feito entre abrirCursor e fecharCursor. */@ Fecha o cursor depois de Ultilizar. @SQL_FecharCursor(xCursor);SQL_Destruir(xCursor);
+                    
+                
+            
+            Ultilização de UPDATE
+                
+                    
+                        Definir Alfa xCursor;@ Cria a variável que vai ser passada como 
+ parâmetro. @Definir Alfa xBlob;SQL_Criar(xCursor);@ Atualiza as informações na base de dados através do comando UPDATE. @SQL_DefinirComando(xCursor,"UPDATE R034FOT SET FOTEMP 
+ = :xBlob \                                              WHERE 
+ NUMEMP = 9999 \                                                AND 
+ NUMCAD = 9999 \                                                AND 
+ TIPCOL = 9999 ");@ Abre o arquivo para a leitura(Indicado 
+ pelo 2º parâmetro). @xArquivo = Abrir("C:/TEste.jpg", Ler);@ Lê o arquivo que foi aberto acima, 
+ e o atribui a variável xBlob (em binário). @Ler(xArquivo,xBlob,9999999);/*   Passa como parâmetro o Cursor que deseja 
+ manipular e  o nome da variável que deseja carregar com algum 
+ valor,  e por último o valor que deseja carregar.*/  SQL_DefinirBlob(xCursor,"xBlob",xBlob);SQL_AbrirCursor(xCursor);/* Todas as operações referentes a base de dadosserão feito entre abrirCursor e fecharCursor. */SQL_FecharCursor(xCursor);SQL_Destruir(xCursor);
+                    
+                    Nota
+                        Se 
+ o comando não afetar registros, será exibida uma mensagem e a execução 
+ será cancelada.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+              

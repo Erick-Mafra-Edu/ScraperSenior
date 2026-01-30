@@ -1,0 +1,196 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_recursos/diagnostico/diagnostico-ambientes.htm%3FTocPath%3DFerramentas%7CDiagn%25C3%25B3sticos%2520de%2520ambientes%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Ferramentas > Diagnóstico de Ambientes
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Diagnóstico de Ambientes
+            Aplicabilidade 
+
+            Permite analisar situações específicas em uma base de dados e nos artefatos de um cliente Senior, 
+efetua buscas em qualquer tabela do banco de dados, localiza determinadas expressões em relatórios, arquivos de regra LSP e telas SGI.  
+Detecta pontos a serem ajustados devido às mudanças no sistema ou exigências da legislação.  
+Analise a segurança relacionada aos usuários e grupos que acessam o sistema. 
+            Requisitos 
+            
+                150 Mb livre no ambiente onde será instalado;
+                Usuário Gestão Empresarial com permissão de Administrador na Base de Dados;
+                Pacote (zip), contendo os arquivos para execução do Diagnóstico;
+                Proprietária com o Código Identificador do Artefato (modelo) a ser usado no Robô.
+            
+            Executando o Diagnóstico 
+            Acessar Robô de diagnósticos de ambientes disponibilizando o mesmo dentro da pasta de instalação do ERP. Caminho: C:\Senior\ROBO.EXE ou também pode ser acessado através do menu Recursos > Implementações > Diagnóstico de Ambientes > Executar.
+            No arquivo ROBO.INI (Este arquivo sempre é criado após a primeira execução do Robo.exe) editar a chave "MODELS_DIRECTORY=" direcionando para a pasta onde está o arquivo Análise Impacto Bloco K. Caminho: C:\Senior\Sapiens\Modelos\RoboDiagnosticos\
+            Parametrizando a Proprietária 
+            Através da aplicação SeniorConfigCenter.exe, no item Proprietária, e informar o diretório em que foi salvo o arquivo Senior.prop + nome do arquivo Senior.prop, conforme imagem abaixo:
+            
+                
+            
+            Iniciando Diagnóstico 
+            Executar aplicativo ROBO.EXE, selecionando o CFG da base de dados a ser analisada. A partir deste momento você deve seguir a documentação de uso do aplicativo Robô.
+            Glossário 
+            
+                Robô: É a nomenclatura dada para o Diagnóstico.
+                Artefato: É a nomenclatura dada para o modelo do Diagnóstico.
+                .DGN: Extensão do modelo usado para analisar o ambiente do cliente no Diagnóstico.
+                .DGR: Extensão do arquivo de Resultado do Diagnóstico.
+            
+            Modelos de Diagnóstico 
+            Modelos de Diagnóstico Disponíveis no ERP
+            
+            Dúvidas Frequentes
+            
+                Ao executar o ROBO.EXE é apresenta a mensagem abaixo:
+            
+            
+                
+            
+            Para solucionar esse problema, através da aplicação SeniorConfigCente.exe, no item Chaves, deve-se adicionar o arquivo da proprietária apontando para o caminho do arquivo Senior.prop.
+            
+                Ao informar o Usuário no Robô é apresenta a mensagem abaixo:
+            
+            
+                
+            
+            Para solucionar esse problema o Usuário deve possuir permissão de Administrador. 
+            
+                Ao selecionar o Modelo para abrir no ROBO.EXE é apresentada a mensagem abaixo:
+            
+            
+                
+            
+             
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

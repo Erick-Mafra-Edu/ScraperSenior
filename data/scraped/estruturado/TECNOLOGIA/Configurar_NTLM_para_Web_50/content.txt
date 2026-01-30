@@ -1,0 +1,162 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/gestao-de-pessoas-hcm/configurar-ntlm-para-web50.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CGest%25C3%25A3o%2520de%2520Pessoas%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Gestão de Pessoas > Configurar NTLM para Web 5.0
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Configurar NTLM para Web 5.0
+            
+                Importante
+                
+                Neste processo, toda a parte web ficará off-line. 
+                Os respectivos serviços devem estar em modo "Stop":
+                
+                    SeniorMiddleware
+                    Glassfish Services
+                
+            
+            
+                Acesse na Central de Configurações Senior o menu Opções de Segurança > Formas de logon por tipo de acesso;
+                No campo Web 5.0, habilite a opção "Autenticação integrada do Windows (NTLM)" e clique em Aplicar;
+                Acesse o menu Chaves;
+                Para alterar a página inicial da Web 5.0, altere a chave do módulo e valor. Como por exemplo, do Administração de Pessoal com.senior.web50.applications.rubiweb.initial_page, valor "fppntlm.htm".
+                Clique em Alterar e em seguida, em Aplicar;
+                Acesse o menu Middleware > Web 5.0 > Aplicativos, e abra a pasta do diretório dos arquivos das páginas HTML (através da função Executar do Windows);
+                Acesse a pasta WEB-INF, selecione o arquivo web.xml e clique em Editar (opção de mouse);
+                Localize o texto "fppsenha.htm" e altere para a informação que foi adicionado como novo valor, no caso do exemplo citado, "fppntlm.htm";
+                Salve o arquivo;
+                Inicie o serviço do SeniorMiddleware;
+                Inicie o domínio do Glassfish.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

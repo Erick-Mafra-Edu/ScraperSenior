@@ -1,0 +1,169 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#processo/integra%C3%A7%C3%B5es.htm%3FTocPath%3D_____10
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Integrações
+            Este tópico fornece uma visão geral de consultas, reprocessamento e validação de arquivos.
+            Acesse: XPlatform > Gestão Logística > Gestão de Fretes > Integrações
+            O que à consulta permite?
+             A aplicação de filtros simplificando o retorno da busca e a visualização dos registros. Os filtros disponíveis são:
+            •	Filtro por Período
+            •	Notas Fiscais
+            •	Cabeçalho
+            Quais são as consultas disponíveis?
+            CONEMB consulta Arquivos Recebidos: Exibe os arquivos que foram inseridos na pasta da transportadora, e se os mesmos foram validados ou não.
+            CONEMB Consulta Geral: Exibe os arquivos que foram importados e seus detalhes, permite a consulta por dados internos do arquivo, como número de nota fiscal e do conhecimento.
+            Consulta Arquivo EDI Entrada: Informa os arquivos que foram enviados pelas transportadoras e se foram para a pasta OK (processados com sucesso) ou BAD (inválido).
+            Consulta Alteração Tabela Frete:
+            Consulta Log Web Service - Informa os logs de sucesso ou insucesso durante as integrações de WebService. 
+            
+                
+                    Observação
+                    Esta consulta está disponível somente para usuário com permissão.
+                
+                Reprocessamento
+            
+            Permite verificar o erro de processos na integração arquivo e realizar o reprocessamento, além de possibilitar a utilização de filtros.
+            Quais arquivos posso reprocessar? 
+            Reenvio de Arquivos EDI 
+                
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes > Integrações > Reenvio de Arquivos EDI
+                    Permite que gere ou reenvie o arquivo Notfis.
+                    
+                        Verifique se o sistema mostra uma mensagem informando em que pasta ele realizou a geração do arquivo, caso ele não informe abra um chamado no portal, para verificação;
+                        Use o botão Notfis, para gerar o arquivo NOTFIS selecione a transportadora desejada,
+                        Clique em Reenviar, caso o arquivo tenha sido gerado e por algum motivo apagado.
+                        Use o botão Logs, para verificar os logs de erro na geração do arquivo clique no botão.
+                    
+                
+            
+            Reenvio Arquivos Midia
+                
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes > Integrações > Reenvio Arquivos de Midia
+                    Possibilita a geração do arquivo midia, que não foi gerado no fechamento do romaneio, devido a algum erro de cadastro a presentado na tela log.
+                    
+                        Só é possivel a consulta de arquivos cujo romaneio já tenha sido fechado, ou seja, o sistema já gerou ou tentou gerar a mídia.
+                        Use o botão Logs, para verificar os logs de erro na geração do arquivo clique no botão
+                        Clique em Reprocessar, o sistema ira informar que a solicitação de foi realizada com sucesso;
+                    
+                    
+                        Verifique o diretório para identificar se o mesmo foi gerado,
+                         Caso o mesmo não seja gerado, um log de erro é exibido novamente.
+                    
+                
+            
+            Reenvio Prefat
+                
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes > Integrações > Reenvio Pré-Fatura
+                    
+                        Use o botão Log, para verificar os logs de erro na geração do arquivo.
+                        Selecione a transportadora desejada.
+                        Clique em Reenviar
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

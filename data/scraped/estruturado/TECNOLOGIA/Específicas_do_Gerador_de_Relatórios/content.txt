@@ -1,0 +1,287 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/gerador-de-relatorios.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7CEspec%25C3%25ADficas%2520do%2520Gerador%2520de%2520Relat%25C3%25B3rios%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Funções das Regras do Gerador de Relatórios
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Funções Específicas Gerador de Relatórios
+            
+                
+                    
+                        Nome
+                        Descrição 
+                    
+                    
+                        AdicionaDadosGrade
+                        
+                         
+                    
+                    
+                        AlteraControle
+                        
+                        Esta função permite alterar o conteúdo de algumas propriedades dos controles
+                    
+                    
+                        AlteraValorFormula
+                        
+                        Esta função altera 
+ o valor de um controle fórmula pelo seu nome.
+                    
+                    
+                        CancelarRelatorio
+                        
+                        Esta função cancela o relatório que está sendo executado, porém nas regras de 
+ Inicialização e Pré-Seleção, esta função não cancela a execução, pois ela 
+ ainda não foi iniciada.
+                    
+                    
+                        CarregaImagemControle
+                        
+                        Esta função somente aceita imagens do tipo .BMP ou .JPG. Carrega uma imagem
+								qualquer a partir de um endereço, gravado no banco ou não ou ainda a partir
+								de uma imagem gravada no banco.
+
+                    
+                    
+                        CarregaImgControle
+                        
+                        Esta 
+ função carrega uma imagem do banco ou arquivo para um controle imagem 
+ do modelo.
+
+                    
+                    
+                        CarregaImgVetorialControle
+                        
+                        Esta função carrega uma imagem DXF a partir de um arquivo para o controle Imagem e ImagemVetorial do modelo.
+                    
+                    
+                        CodigoEspNivel
+                        
+                        
+                        Esta função retorna o código especial de acordo com um determinado nível.
+                    
+                    
+                    
+                        ConfiguraPontoGrafico
+                        
+                        Esta função só pode ser utilizada para modelos com gráficos de figuras 
+ variáveis (linhas), com todos os pontos configuráveis 
+ pela regra.
+                    
+                    
+                        CriaView
+                        
+                        Esta função cria uma View temporária no banco para otimizar a execução do 
+ relatório, respeitando as abrangências definidas para as tabelas presentes 
+	 no comando SQL da View, semelhante ao comportamento do Gerador de 	 Relatórios.
+                    
+                    
+                        DataInicialFinal
+                        
+                        
+                        Esta função retorna o início e o fim de um período.
+                    
+                    
+                    
+                        DateToDB
+                        
+                        
+                            Converte um valor do tipo data para uma variável alfa com uma data compatível 
+ com o banco de dados utilizado.
+                        
+                    
+                    
+                        DeleteFieldSQL
+                        
+                        
+                        Esta função retira um campo do SELECT da seção passada como parâmetro.
+                    
+                    
+                    
+                        DesCamLista
+                        
+                        
+                        Permite pegar a descrição de um campo lista.
+                    
+                    
+                    
+                        DetPrimConector
+                        
+                        Permite determinar qual será o primeiro conector a ser inserido para 
+ concatenar na cláusula WHERE, valor este inserido pela função INSCLAUSQLWHERE.
+                    
+                    
+                        InsClauSQLCampoDireto
+                        
+                        Esta função insere um campo novo no SELECT que poderá ser utilizado 
+ para agrupamentos e outros tipos de funções.
+                    
+                    
+                        InsClauSQLField
+                        
+                        Esta função inclui um campo de tabela no código SQL montado pelo gerador, 
+ na seção detalhe escolhida.
+                    
+                    
+                        InsClauSQLFrom
+                        
+                        Esta função inclui  uma tabela no código SQL, montado pelo gerador, 
+ na seção detalhe escolhida.
+                    
+                    
+                        InsClauSQLGroupBy
+                        
+                        Esta função insere uma cláusula GROUP BY no SELECT da seção passada 
+ como parâmetro.
+                    
+                    
+                        InsClauSQLOrderBy
+                        
+                        Esta função inclui uma cláusula de ordenação no código SQL, montado 
+ pelo gerador, na seção detalhe escolhida.
+                    
+                    
+                        InsClauSQLWhere
+                        
+                        Esta função inclui uma cláusula WHERE no código SQL, montado pelo 
+ gerador, na seção detalhe escolhida.
+                    
+                    
+                        InsEspAlinhDireita
+                        
+                        Esta função insere espaços a direita de todos os controles no modelo.
+                    
+                    
+                        InsSQLWhereSimples
+                        
+                        Esta função insere uma cláusula WHERE dentro de um SQL durante a execução 
+ da regra de pré-seleção.
+                    
+                    
+                        LimpaDadosGrade
+                        
+                         
+                    
+                    
+                        LimpaDadosGrafico
+                        
+                        Esta função possibilita que um componente do tipo gráfico seja zerado 
+ e reutilizado no mesmo relatório. 
+                    
+                    
+                        ListaSecao
+                        
+                        Esta função lista uma seção adicional do modelo a partir de um evento ou 
+ regra.
+                    
+                    
+                        MontarSQLHisCampo
+                        
+                        Esta função monta o comando SQL para consulta em tabelas de histórico que não possuem sequência, com base no campo Data destas tabelas.
+                    
+                    
+                        MontarSQLHisCampoSeq
+                        
+                        Esta função monta o comando SQL para consulta em tabelas de histórico que possuem sequência, com base no campo Data destas tabelas. 
+                    
+                    
+                        MontarSQLHistorico 
+                        
+                        Esta função monta o comando SQL para uso com os históricos do sistema, com base em uma data.
+                    
+                    
+                        MontarSQLHistoricoSeq
+                        
+                        
+                        Esta função monta o comando SQL para uso com os históricos do sistema, com base em uma data e sequência.
+                    
+                    
+                    
+                        OrdenacaoSelecionada
+                        
+                        Esta função permite saber qual a ordenação variável selecionada.
+                    
+                    
+                        PreenchePagina
+                        
+                        Esta função determina que uma página seja preenchida com rasuras.
+                    
+                    
+                        ProximaPagina
+                        
+                        Esta função permite verificar se uma determinada seção será impressa na próxima 
+ página.
+                    
+                    
+                        RetornaCampoAlfaTabela
+                        
+                        Esta função busca o conteúdo atual de um campo alfanumérico de uma VIEW 
+temporária.
+                    
+                    
+                        RetornaCampoNumeroTabela
+                        
+                        Esta função busca o conteúdo atual de um campo numérico de uma VIEW 
+temporária.
+                    
+                    
+                        SaltarPagina
+                        
+                        Esta função salta de página manualmente.
+                    
+                    
+                        SelecionaImpressora
+                        

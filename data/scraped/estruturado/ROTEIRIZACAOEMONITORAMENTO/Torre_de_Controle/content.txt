@@ -1,0 +1,171 @@
+# 
+
+URL: https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/#solucao-negocio/torre-de-controle.htm%3FTocPath%3D_____9
+
+---
+
+
+        Ver site completo
+        
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORoteirização e Torre de Controle - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Torre de Controle
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Torre de Controle 
+            A Torre de Controle proporciona uma visão geral das rotas/viagens que estão sendo executadas, exibindo todas as rotas que se encontram em execução no momento, mostrando o status de cada atividade vinculada a uma rota. A atualização será realizada conforme configurado no temporizador ou atualizado via botão. 
+            A gestão logística nunca foi tão fácil e eficiente. Com a Torre de Controle, você estará no comando, tome decisões acertivas, ajuste o curso das rotas quando necessário e mantenha tudo sob controle. O complemento perfeito para o Roteirizador da Senior.
+            
+            
+            Para utilizar a Torre de Controle não será necessária nenhuma configuração prévia, apenas é preciso ter as licenças de Roteirização e Torre de Controle acesse Menu Logística > Otimização Logística > Roteirização e Monitoramento > Torre de Controle.
+            
+                 Quer saber mais sobre como o Torre de Controle pode ajudar a Maximizar a Performance e Produtividade na Gestão de Armazéns? Promovemos esta Talk de Produto onde nossos especialistas contam tudo sobre como estratégias e tecnologias podem otimizar processos e entregar resultados diferenciados.
+            
+            Como monitoro minhas atividades?
+            Coloque os roteiros em execução, podendo ser:
+            Manualmente
+                
+                    Isso pode ser feito de duas formas:
+                    Enviando a roteirização completa
+                        
+                            Para isso:
+                            
+                                Acesse a Roteirização por Logística > Otimização Logística > Roteirização e Monitoramento > Consultas > Planejamentos.
+                                Acione o botão Executar rotas que faz com que todas as rotas confirmadas sejam enviadas para monitoramento.
+                            
+                            
+                                Observação
+                                
+                                Somente roteirizações sem nenhuma rota em elaboração podem ser enviadas para monitoramento.
+                            
+                        
+                    
+                    Enviando uma rota específica
+                        
+                            Para isso:
+                            
+                                Acesse a rota através de Logística > Otimização Logística > Roteirização e Monitoramento > Consultas > Planejamentos.
+                                Após filtrar os dados, clique no botão   para enviar a rota para monitoramento.
+                            
+                            
+                                Nota
+                                
+                                Só serão enviadas as rotas para monitoramento se estiverem com o Status igual a "Em Execução".
+                            
+                        
+                    
+                
+            
+            Quais informações posso monitorar?
+            Através de Logística > Otimização Logística > Roteirização e Monitoramento > Torre de Controle, é possível verificar:
+            Localização dos veículos e atividades
+                
+                    O painel Rastrear, exibe o local dos veículos no mapa, conforme situação do veículo, os Pins ( ) são separados por cor, podendo ser:
+                    
+                        
+                    
+                
+            
+            Realização das rotas e atividades
+                
+                    Na guia Torre de Controle no:
+                    
+                        Quadro Visão Geral apresenta o total das atividades concluídas, pendentes e a concluídas.
+                        Quadro Pendentes: apresenta o total das atividades pendentes, No Prazo, Em Alerta e Em Atraso.
+                        No quadro Concluídas: apresenta o total das atividades concluídas, No Prazo, Em Atraso e Não Realizadas.
+                        Quadro Central de alertas são exibidos os alertas emitidos quando uma atividade não foi realizada, quando apontada ocorrência em uma atividade fora da sequência, atividades em atraso e na devolução de uma entrega. Sua ordenação é feita do mais recente para o alerta mais antigo. 
+                        Botão Filtrar, é possível informar os filtros necessários para visualizar as viagens em andamento. Todos os campos dessa tela, filtram somente as informações do quadro Lista de Viagens em Andamento. Os campos Motorista e Placa filtram as informações da placa do veículo e o motorista do quadro Central e Alertas e consequentemente as viagens do quadro Lista de Viagens em Andamento.
+                    
+                    Os alertas não lidos são sinalizados em negrito. Sua ordenação, é realizada a partir das viagens que possuem mais alertas ou possuem mais atividades atrasadas. Onde, as viagens com mais atrasos ficam em primeiro lugar, em seguida vem as viagens com mais alertas. Sendo assim, uma viagem com 2 atrasos tem mais prioridade que uma viagem com 1 atraso e 1 alerta, por exemplo.
+                    Os alertas são verificados caso as viagens tenham o mesmo número de atrasos. Ao clicar sobre ele, será possível tomar algumas ações, como marcar como lido e retirar da lista, ou manter como não lido permanecendo na lista.
+                    No botão  é aberta tela com as configurações dos alertas para que sejam selecionados quais serão exibidos.
+                    No botão   é possível, marcar todos como lido, todos como não lido ou dispensar todos.
+                    No botão  do alerta é possível, marcar como lido ou dispensar e visualizar o Detalhamento da Atividade ou da Viagem (rota).
+                    
+                        Descrição dos alertas emitidos:
+                        
+                            Atividade não realizada: quando o motorista lança uma ocorrência de atividade não realizada.
+                            Atividade baixada fora de sequência: quando o motorista lança uma ocorrência de baixa em uma atividade que não seja a próxima da viagem.
+                            Atividade atrasada: quando a situação da atividade muda de Pendente no prazo para Pendente em atraso.
+                            Entrega devolvida: quando o motorista lança uma ocorrência de devolução.
+                        
+                        
+                            Atividades Pendentes: traz em gráficos o percentual de atividades pendentes, exibindo o status e total das atividades que estão no prazo, em alerta e em atraso.
+                            Atividades Concluídas: traz em gráficos o percentual de atividades concluídas, exibindo o status e total das atividades que foram concluídas no prazo, com atraso, e as não realizadas.
+                            Lista de Viagens em andamento: Lista de viagens em andamento, traz todas as viagens em execução, exibindo a comunicação entre o veículo e a plataforma (online/offline), placa do veículo, nome do motorista e status de cada atividade da rota identificado por cor:Para as atividades pendentes: cinza claro para atividades pendentes, amarelo em alerta, laranja em atraso.Para as atividades concluídas: cinza mais escuro para atividades concluídas com atraso, verde para concluídas no prazo e vermelha para as atividades não realizadas.
+                        
+                    
+                
+            
+            Detalhes das Atividades
+                
+                    No Torre de Controle é possível ver os Detalhes de cada rota e inclusive das atividades das rotas. Também são exibidas Ocorrências, caso existam, na parte inferior da tela, para que seja possível verificar o progresso das viagens, é necessário informar o tempo de atualização no canto superior da tela.
+                    
+                        
+                            
+                        
+                    
+                
+            
+            Comunicação com o Motorista
+                
+                    Pela Torre de Controle, é possível realizar o contato com o motorista, para isso é necessário que na rotina de Cadastro do Motorista, o campo Número esteja preenchido (Logística > Otimização Logística > Roteirização e Monitoramento > Definições > Pessoas > Motoristas). 
+                    Assim ao clicar em Falar com motorista o sistema irá direcionar para a página do WhatsApp Web para o roteirista entrar em contato com o motorista daquela rota.
+                    
+                        
+                            
+                        
+                    
+                
+            
+            Status Online/Offline
+                
+                    Para que o status do aplicativo fique online, deverá ocorrer a sincronização dos pontos capturados pelo APP com a plataforma, como também na sincronização dos ap

@@ -1,0 +1,56 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/venda-com-entrega-futura-cd.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____14
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Venda com Entrega Futura via Centro de Distribuição 
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Entrega futura via Centro de Distribuição
+                Conceito
+                A venda ao cliente para entrega futura a partir do Centro de Distribuição representa uma venda efetivamente concluída (faturada), na loja em que o cliente realizou a negociação, que será entregue posteriormente diretamente pelo Centro de Distribuição. 
+                Utilização                    
+                Este processo é utilizado quando  o cliente efetua a compra de um ou vários itens na loja, realiza o pagamento da mercadoria no caixa e recebe o produto posteriormente diretamente pelo Centro de Distribuição, em sua casa ou no local indicado para entrega. 
+                Um pedido de venda é gerado para servir de base para a geração da nota fiscal de simples faturamento, para que assim o pagamento possa ser efetuado no PDV, oficializando a negociação.
+                
+                    Observação
+                    Ao utilizar a entrega futura via Centro de Distribuição em determinada filial, pode haver a necessidade de realizar uma carga inicial de produtos, para que os depósitos e as respectivas ligações (entre produtos e depósitos), existentes  na base de dados possam ser integradas com o sistema de loja.
+                
+                Pré-requisitos 
+                Para que se utilize o processo de entrega futura pelo Centro de Distribuição é necessário que os seguintes parâmetros sejam configurados no Gestão Empresarial | ERP. 
+                Parametrizações:
+                    
+                        As parametrizações indicadas abaixo devem ser efetuadas para todas as filiais do Gestão de Lojas, que aceitarão entrega pelo Centro de Distribuição. Deve-se levar em consideração a parametrização de acordo com o Centro de Distribuição que atenderá cada uma das filiais (caso exista mais do que um CD). 
+                        Além disso, as parametrizações na tela F070VAR devem levar em consideração o sistema integrado utilizado para integração com o Gestão de Lojas (em que o tipo cadastrado na tela F000SIS  seja "02-Varejo Senior").
+                        
+                            F070VAR: Caso existam informações da filial do Centro de Distribuição, parametrizadas para algum sistema, o campo Integração Varejo deverá estar definido como "N - Não".Guia Geral: a parametrização deverá ser efetuada nas filiais de Varejo. Sugestões de utilização:parametrizar o campo Tipo NF origem p/ Devolução EF via CD não entregue para "R - Pela nota fiscal de remessa";parametrizar o campo Considera Ligação por Filial x Depósitos para "S - Sim". Este campo fará com que o Gestão Empresarial | ERP passe a considerar a ligação entre as filiais e os depósitos efetuada na tela F205LFD para os processos de consultas e exportação de registros.Guia Naturezas de Operação: configurar as seguintes transações nas filiais de Varejo, conforme descrito na tela F070VAR:Transação para produtos sem ST em notas fiscais de remessa simbólica para anulação de vendas de entrega futura pelo CD;Transação para produtos com ST em notas fiscais de remessa simbólica para anulação de vendas de entrega futura pelo CD;Transação para produtos sem ST em notas fiscais de remessa simbólica interestadual para anulação de vendas de entrega futura pelo CD;Transação para produtos com ST em notas fiscais de remessa simbólica interestadual para anulação de vendas de entrega futura pelo CD.Para a geração de nota fiscal de remessa simbólica (utilizada em casos de devolução), as transações acima não devem possuir integrações com estoques e não devem possuir integrações com financeiro. Além das transações citadas acima, as transações abaixo também são obrigatórias para que a rotina de entrega pelo CD possa ser ativada:Transação para produtos sem ST em notas fiscais de anulação de vendas de entrega futura;Transação para produtos com ST em notas fiscais de anulação de vendas de entrega futura;Transação para produtos sem ST em notas fiscais de anulação de vendas interestaduais de entrega futura;Transação para produtos com ST em notas fiscais de anulação de vendas interestaduais de entrega futura.Guia Nota Fiscal: nas filiais de Varejo, no campo Série NF Remessa CD deverá ser informada uma série com a seguinte configuração, conforme cadastrado na tela F020SNF:Aplicação: "S" ou "D";Exclusivo Varejo: "N".Importante Esta será a série utilizada para geração da NF de Remessa da filial de Varejo para o cliente. No entanto, esta NF será emitida pelo Gestão Empresarial | ERP. Desta forma, as parametrizações desta série deverão levar em consideração a possível integração com o sistema Documentos Eletrônicos, caso seja utilizada uma série de Nota Fiscal Eletrônica.
+A série utilizada para a transferência entre o Centro de Distribuição e a Filial de Varejo é definida na tela F149ECD.Guia Frete (para a Filial de Varejo): informar a quantidade de dias padrão a ser considerado como previsão de entrega via Centro de Distribuição, no campo Dias Previsão Entrega Futura através do CD. Este campo será utilizado apenas para um cálculo simples de previsão de entrega do pedido, que será mostrado ao usuário no momento da geração do pedido no Retaguarda;parametrizar a filial para permitir entregas futuras pelo Centro de Distribuição, no campo Permite entrega futura através do CD = "S - Sim".Guia Mercado (para a Filial de Varejo):parametrizar o campo Forma de entrega padrão para pedido de venda de acordo com a forma de entrega que será carregada como padrão na geração de um novo pedido no Retaguarda. Esta forma poderá ser alterada pelo usuário a cada pedido gerado.ImportanteA transferência entre a Filial do Centro de Distribuição e a Filial de Varejo utiliza como base a rotina de transferência entre empresas/filiais já presente no Gestão Empresarial | ERP (rotina que não é específica da solução Gestão de Lojas), com a diferença que a NF de entrada na Filial de varejo sempre será gerada com a situação "Fechada", independente da parametrização. É pré-requisito que esta rotina esteja parametrizada no Gestão Empresarial | ERP. Para maiores informações sobre a rotina de transferência, consulte em: Processo de Geração Nota Fiscal de Transferência via nota fiscal SaídaApós finalizar todas as parametrizações, é necessário forçar a integração de todos os produtos que estão no depósito Matriz, através da tela F210LPD ou gerar a carga inicial de "Ligação Produto x Depósito".F205LFD: ligar a filial Varejo, que poderá efetuar a venda a partir da entrega pelo Centro de Distribuição, ao depósito pertencente ao Centro de Distribuição (campo Filial Localizaçãoda tela F205DEP);F070FES:  informar no campo  Depósito Distribuidor nas filiais de Varejo o depósito pertencente ao Centro de Distribuição. Isto indica que este depósito será considerado como padrão, ao inserir novos pedidos de entrega via Centro de Distribuição no Retaguarda;F000SXT: para as filiais de Varejo, deixar as integrações "Notas fiscais de Saída" e "Montagem" como ativas;F070FVE: para as filiais de Varejo, na Guia Vendas 2, informar os parâmetros conforme definido abaixo com o valor "R – Recalcula alíquota:Manter ICMS do pedido no faturamentoManter IPI do pedido no FaturamentoManter PIS Retido do pedido no FaturamentoManter COFINS Retido do pedido no faturamentoManter CSLL do pedido no faturamentoManter outras retenções do pedido no faturamentoManter IRRF do pedido no faturamentoManter PIS faturamento do pedido no faturamentoManter COFINS Faturamento do pedido no FaturamentoE para cancelar a nota fiscal de transferência, é necessário ativar o parâmetro "Cancelar NFC automático" para "S - Sim". Este parâmetro é necessário para que, ao cancelar a cancelar a nota fiscal de transferência do CD para a Filial de Varejo, a NF de entrada na Filial de Varejo seja cancelada automaticamente.
+                            F135FCP - Caso não existam transações  cadastradas para as situações abaixo, é necessário: para a geração da nota fiscal de transferência: possuir integração com estoques e compras e não  possuir integração com financeiro;para a geração de nota fiscal de remessa: possuir integrações com estoques e não  possuir integrações com financeiro.O identificador de regras VEN-000TNSDE01, disponível nesta tela, permite que seja definida uma transação diferente da padrão para utilização na nota fiscal de remessa. 
+                            F149ECD: para definir a transação que será utilizada na nota fiscal de entrada de transferência, pode-se utilizar o identificador de regras  CPR-440TNSDE01. Além disso, ainda nesta tela, é possível utilizar o identificador de regras VEN-000TNSDE01, para definir a transação que será utilizada na nota fiscal de saída de transferência.
+							ImportanteAs telas F135FCP e F149ECD são acionadas a partir da filial do Centro de Distribuição. Para o correto funcionamento da rotina, parametrizações da Gestão de Mercado do Gestão Empresarial | ERP são pré-requisitos para geração de cargas e para o faturamento. Por exemplo, parametrização da tela F004PAE para a filial do Centro de Distribuição.
+                            F001TVE: em transações que serão utilizadas na geração de NF de remessa da Filial de Varejo para o cliente a partir do Gestão Empresarial | ERP, é obrigatória a parametrização do campo Operação venda, da guia Dados Gerais 2, com o valor "R - Remessa".
+							ImportanteCaso este campo não seja preenchi

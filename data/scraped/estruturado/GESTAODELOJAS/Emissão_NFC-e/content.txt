@@ -1,0 +1,154 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/emissao-nfc-e-sat.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____13
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Emissão NFC-e
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Emissão de NFC-e / SAT 
+            Conceito   
+            O PDV irá emitir uma NFC-e ou um CFe-SAT, de acordo com a configuração do modo de operação da filial, e de acordo com o modo de operação atual do PDV.
+            Pré-requisitos
+            Para realizar as configurações para emitir NFC-e/SAT. é necessário ter as seguintes versões dos sistemas:
+            
+                Gestão de Lojas: versão 6.2.18.35 ou superior;
+                eDocs: versão 5.8.13.30 ou superior;
+                Gestão Empresarial | ERP: conforme matriz de compatibilidade de versões.
+            
+            O DTEC faz parte do sistema SAT (Sistema de Administração Tributária) servindo de meio de comunicação eletrônica entre SEF/SC (Secretária de Estado da Fazenda de Santa Catarina) e as pessoas físicas ou jurídicas que utilizam seus serviços.
+            
+                A contabilidade ou responsável pela empresa deverá acessar o endereço https://sat.sef.sc.gov.br/tax.NET/sat.dtec.web/Acesso.aspx e cadastrar a empresa no sistema DTEC. O acesso deve ser realizado mediante certificado digital da empresa;
+                Após cadastrar no sistema DTEC, o cliente/contribuinte deverá optar pelo modelo de contingência, definindo o TTD (Tratamento Tributário Diferenciado) que será utilizado;PAF-NFC-e (offline): TTD 707;Enviar termo de compromisso (cliente);Dados para preenchimento:CNPJ: 80.680.093.0001-81Aplicativo: Senior Ponto de VendaVersão: 1.4.79
+                É necessário definir o CSC (Código de Segurança do Contribuinte) para homologação e produção por meio de https://tributario.sef.sc.gov.br/tax.NET/Sat.Dfe.NFCe.Web/GestaoDeCscs.aspx. Necessário acessar com certificado digital do cliente.
+            
+            Configurações necessárias
+            Para utilizar a solução NFC-e no estado de Santa Catarina, além dos requisitos, são necessárias configurações nos sistemas Gestão Empresarial | ERP e Gestão de Lojas:
+            
+                Acesse Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Séries Notas Fiscais > Cadastro (F020SNF) e preencha os seguintes campos conforme recomendação para cadastrar a série para emissão da NFC-e:Exclusivo Varejo: Sim;Dispositivo autorizado: 10;Numeração N.F.S Manual: Sim;Modelo Nota Fiscal: 65.
+                Preencha os campos presentes em Cadastros > Integrações > Parâmetros da Filial para Integrações (F070VAR). O preenchimento dos campos é fundamental para operação com o NFC-e. Para dúvidas, utilize a documentação disponível no manual do usuário do Gestão Empresarial | ERP;
+                Preencha todos os campos da guia NFC-e. O campo Modo operação PDV/Retaguarda deve estar preenchido como "N - Não"
+                Em Cadastros > Integrações > Varejo > Cadastro de PDV (F070PDV), defina o PDV que usará NFC-e;
+                Vincule a série da NFC-e cadastrada anteriormente;
+                Vincule a conta do PDV. Cadastro de conta feita em Cadastros > Finanças > Tesouraria > Contas Internas (F600CCO);
+                Após integrar as informações referentes ao PDV/Série, acesse o PDVConf no diretório de instalação do PDV NFC-e;
+                Defina a numeração da última NFC-e, desta maneira as próximas notas terão números sequenciais a partir dela;
+                No eDocs, informe o ID e o CSC Token como configurado na tela Parâmetros da Filial para Integrações (F070VAR).
+            
+            Processo 
+            A NFC-e e o CFE-SAT são emitidos somente ao final de uma venda.
+            Após finalizar uma venda e o PDV gerar a NFC-e/CFE-SAT, esta será encaminhada para o Documentos Eletrônicos, que fará a validação diretamente com a Sefaz (no caso do NFC-e) ou diretamente com o equipamento SAT (no caso do CFe-SAT).
+            
+                Enquanto o PDV não receber retorno do Documentos Eletrônicos a situação da venda (NFC-e ou SAT) ficará como "Não enviada";
+                No caso de NFC-e, se não existir comunicação com a Sefaz, a nota será encaminhada para o Retaguarda para inutilização e o sistema entrará em modo de contingência off-line, emitindo a nota com uma nova numeração;
+                No caso do CFe-SAT, se não existir comunicação com o SAT, a venda só poderá ser cancelada, pois não existe contingência neste caso. 
+            
+            Ao iniciar o PDV, pode-se conferir se existe ou não conexão com a Sefaz ou com o Documentos eletrônicos para a emissão de NFC-e através do campo Sefaz = On. Caso não exista conexão, o problema pode ocorrer devido a falhas de conexão de rede comunicação com o Documentos Eletrônicos ou até mesmo com os servidores da Sefaz.
+            Exemplo
+                
+                    
+                        
+                    
+                
+            
+            Já, para SAT, não é possível verificar se o SAT está online através do sistema, e sim, somente ao tentar finalizar a venda.
+            Solicitar autorização NFC-e
+            Ao receber a nota do PDV, o Documentos Eletrônicos a envia para a Sefaz e solicita sua validação que pode retornar com as seguintes situações:Ao solicitar autorização do NFC-e o retorno poderá ser: 
+            
+                 NFC-e autorizada;
+                NFC-e rejeitada;
+                NFC-e denegada.
+            
+            Solicitar autorização NFC-e
+            Ao receber a nota do PDV, o Documentos Eletrônicos a envia para o equipamento fiscal SAT e solicita sua validação que pode retornar com as seguintes situações:
+            
+                AutorizadaA nota foi autorizada com sucesso pelo SAT.
+                RejeitadaA nota foi rejeitada pelo SAT e, de acordo com a mensagem de aviso que a mesma retornar, ajustes poderão ser feitos na venda para tentar novamente autorizar a venda.
+            
+            Não existe denegação no SAT.
+            Problemas no envio no NFC-e
+            Ao tentar enviar uma NFC-e e ocorrer falha na conexão será apresentada a mensagem "Sem conexão com o servidor, não é possível finalizar a venda", com as seguintes opções:
+            
+                Tentar novamente: é enviado novamente com os mesmos dados.
+                Cancelar: a operação é cancelada, assim como a TEF, caso houver.
+                Entrar em contingência: o sistema entra em contingência se o usuário possuir permissão, caso contrário é possível optar por uma das duas opções anteriores ou solicitar a autorização a outro usuário.
+            
+            A contingência do NFC-e será: NFC-e off-line(caso o modo de operação configurado na filial for NFC-e) ou SAT(caso o modo de operação configurado na filial for NFC-e+SAT).
+            Problemas no envio no SAT
+            Ao tentar enviar uma CFe-SAT e ocorrer falha na conexão, será apresentada a mensagem: Sem conexão com o servidor, não é possível finalizar a venda, com as seguintes opções:
+            
+                Tentar novamente: é enviado novamente com os mesmos dados;
+                Cancelar: a operação é cancelada, assim como a TEF, caso houver.
+            
+            Não existe o botão para entrar em contingência no caso do SAT. Quando trabalhando neste modo, ou a venda é autorizada ou é cancelada.
+            Cancelamento de NFC-e/SAT 
+            Para garantir que o cancelamento de uma NFC-e/SAT não chegue antes de sua autorização, ele ficará pendente até que a venda seja integrada.
+            
+                
+                
+                
+                
+                
+                
+                
+                    
+                        Código
+                        Descrição
+                        
+                            Dependências
+                        
+                    
+                    
+                        196
+                        NOTA_FISCAL_CONSUMIDOR_ELETRONICA_RETAGUARDA
+                        -
+                    
+                    
+                        197
+                        CUPOM_FISCAL_ELETRONICO_SAT_RETAGUARDA
+                        -
+                    
+                    
+                        222
+                        NOTA_FISCAL_CONSUMIDOR_ELETRONICA_CANCELADA_RETAGUARDA
+                        196
+
+                    
+                    
+                        223
+                        CUPOM_FISCAL_ELETRONICO_SAT_CANCELADO_RETAGUARDA
+                        197
+
+                    
+                
+            
+            Mesmo que sejam tratadas como dependências diferentes, a integração de cancelamento continuará utilizando a mesma porta que a autorização. Sendo assim,  todas as quatro integrações mapearão para o mesmo serviço: com.senior.g5.co.int.varejo.nfce.
+            Estas e outras dependências podem ser consultadas em: Tabela de dependência dos processos que integram com o Gestão de Lojas.
+            Informações Adicionais 
+            
+                Referente aos itens da venda: caso exista no cadastro do produto uma Natureza de operação para venda a consumidor final parametrizada, esta será a CFOP do item. Caso não exista, a CFOP do item será a padrão do cadastro da filial para produtos ou serviços, de acordo com o item.
+                Ao finalizar a venda: caso o Valor mínimo da venda para exigir ao cliente seja atingido, o sistema irá exigir que as informações (CPF/CNPJ/ID Estrangeiro) do cliente sejam informadas.  Para vendas em que exista Entrega a domicílio, serão exigidas informações de localização para o frete.
+                As NFC-es

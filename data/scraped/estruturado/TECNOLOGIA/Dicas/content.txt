@@ -1,0 +1,163 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/telas/sgi_dicas.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Telas%2520-%2520SGI%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Telas - SGI > Dicas
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Dicas SGI
+            Utilizando a mesma tabela física duas ou mais vezes no mesmo Formulário
+            O SGI permite que se utilize a mesma tabela física duas ou mais vezes no mesmo formulário, desde que cada utilização seja logicamente diferente. 
+            Por exemplo, ao utilizar a tabela R036DEP como mestre-detalhe, deve-se criar uma tabela lógica R036DEP_MST e outra R036DEP_DET, ambas usando a tabela física R036DEP. Depois, deve-se fazer um relacionamento entre R036DEP_MST e R036DEP_DET.
+            É fundamental que a chave da tabela-cabeçalho seja exclusiva naquela tabela, ou seja, que não aceite mais de um registro com aquela chave. 
+            Um erro comum no caso de históricos, é declarar que a tabela de histórico é a tabela-cabeçalho, e colocar somente a data na chave daquela tabela.
+             Observe que podem haver vários registros para aquela data, de maneira que a chave não é exclusiva, violando a regra descrita. 
+            Por exemplo, na tabela R038HLO, a chave (NumEmp, DatAlt) não é exclusiva. Portanto, esta chave não é válida, e ocorrerá o erro.
+            Soluções
+            Este problema pode ser solucionado de duas maneiras.
+            A primeira solução, é incluir um filtro na tabela-cabeçalho, de maneira que a chave se torne exclusiva. No exemplo da R038HLO, um filtro admissível seria (TipCol=1 and NumCad=1). Como não há dois registros com o mesmo NumEmp, TipCol(1), NumCad(1), e DatAlt, a chave se torna exclusiva. 
+            A segunda solução, é criar uma visão que atue como tabela-cabeçalho. No exemplo da R038HLO, uma visão admissível seria:
+            
+                CREATE VIEW CAB_R038HLO AS SELECT DISTINCT NUMEMP,DATALT FROM R038HLO;
+            
+            Observe que o DISTINCT é fundamental. Se não for possível criar a visão, pode-se criar uma tabela de usuário. Esta tabela teria os campos chave e seria usada como tabela-cabeçalho. A tabela usada na grade teria os mesmos campos chave. Só seria necessário criar uma ligação 1-para-n entre a tabela da grade e a tabela-cabeçalho criada acima.
+            Considerações
+            Não é recomendada a exclusão de registros da tabela-cabeçalho através do botão excluir quando a chave não é exclusiva, como explicado acima. É seguro e mais recomendado, que os registros sejam excluídos através da grade da tabela-detalhe. 
+            Recomenda-se também, a desabilitação da inserção e exclusão da tabela-cabeçalho, deixando estas funcionalidades para a tabela-detalhe.
+            Se houver a necessidade de excluir todos os registros detalhe de uma tabela, pode-se colocar um botão e através de uma regra, excluir todos os registros detalhe conforme valores contidos nos campos da tabela-cabeçalho.
+            Se um formulário possuir vários campos chave, cada campo ligado a uma tabela, por exemplo, na tabela CLIENTE há um campo chamado REPRESENTANTE. Se este campo estiver na tabela de cliente não seria preciso informar na chave. Contudo, se ele não estiver na tabela de cliente, é preciso informá-lo. Neste caso, deve-se criar uma referência para tabela externa da tabela principal para a tabela CLIENTE. Cria-se um campo Lookup que use esta referência e traga o valor do campo REPRESENTANTE. No campo REPRESENTANTE de tabela principal, na fórmula do valor inicial, coloque o campo Lookup criado.
+            
+                Importante
+                
+                A partir da SVCL 1.1.1355 e da 5.2.35.0, é necessário atualizar os arquivos do SGI que estão no diretório \web\html_sgiweb, pois estes sofreram alterações. No diretório \web\html_sgiweb\imagens, os arquivos boladireita.gif, bolaesquerda.gif e bolatitulo.gif foram renomeados para sgiboladireita.gif, sgibolaesquerda.gif e sgibolatitulo.gif.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

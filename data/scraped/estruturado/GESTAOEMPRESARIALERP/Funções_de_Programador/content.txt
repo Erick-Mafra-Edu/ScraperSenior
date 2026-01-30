@@ -1,0 +1,281 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#regra_funcoes/indice_funcoes.htm%3FTocPath%3DFerramentas%7CFun%25C3%25A7%25C3%25B5es%2520para%2520regras%2520e%2520gerador%2520de%2520relat%25C3%25B3rios%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ferramentas > Funções para regras e gerador de relatórios > Funções de Programador
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Índice das funções de programador
+		
+            
+			As funções são comandos pré-definidos pelo sistema, que tem como objetivo
+			calcular um ou mais valores e retorná-los para uso na regra. A vantagem
+			da função é que, se existe uma operação que é repetida em muitas regras,
+			pode-se criar a função e chamá-la em cada regra, sem precisar implementá-la
+			novamente. Uma função pode receber parâmetros e retornar valores.		
+            
+			As funções de programador disponíveis para o Gestão Empresarial | ERP
+			estão listadas abaixo. Algumas estão relacionadas aos artefatos na proprietária
+			e apenas poderão ser utilizadas em alguns processos. Em Processos relacionados a função de programador há uma tabela que informa quais funções estão relacionadas com os processos.		
+            
+			As funções não documentadas na tabela não tem controle de proprietária,
+			ou seja, podem ser utilizadas independentemente das permissões da proprietária.		
+            A
+                
+                    
+                        
+                        
+                        
+                            
+                                
+								Nome
+							
+                                
+								Descrição
+							
+                            
+                            
+                                AbrirTelaSistema
+                                
+                                
+								Esta função serve para abrir uma tela do sistema, também utilizando parâmetros.
+							
+                            
+                            
+                                AdicionaComponenteModelo
+                                
+                                
+								Essa função adiciona um novo componente no modelo de produção.
+							
+                            
+                            
+                                AdicionaConsumoComponente
+                                
+                                
+								Essa função adiciona um consumo para uma derivação do modelo no componente.
+							
+                            
+                            
+                                AdicionaEstagioRoteiro
+                                
+                                
+								Essa função cria um novo estágio de produção no roteiro.
+							
+                            
+                            
+                                AdicionaOperacaoManualRoteiro
+                                
+                                
+								Essa função cria uma nova sequência de operação no estágio do roteiro.
+							
+                            
+                            
+                                AdicionaOperacaoRoteiro
+                                
+                                
+								Essa função cria uma nova sequência de operação no estágio do roteiro.
+							
+                            
+                            
+                                AdicionaRateioRegra
+                                
+                                
+								Esta função tem por objetivo montar a pré-definição do rateio a ser apresentado
+								na tela de rateio (F000RPF).
+							
+                            
+                            
+                                AgendarExecucaoWebservice
+                                
+                                Gera o registro na tabela de plano de execução para que seja executado posteriormente
+
+
+                            
+                            
+                                AgendarExecucaoWebserviceEx
+                                
+                                Cria um novo plano de execução retornando o identificador único gerado
+                            
+                            
+                                AgluCtbContaPertence
+                                
+                                
+								Verificar se a conta informada pertence a aglutinação informada e retorna
+								"SIM" ou "NAO".
+							
+                            
+                            
+                                AgluCtbLibera
+                                
+                                Irá destruir a instância criada(Deve ser utilizando antes do AgluCtbCriar para garantir que se houver uma instância criada anteriormente, ela seja destruída. Deve ser chamada também depois de utilizar os aglutinadores, para não deixar vazamento de memória).
+                            
+                            
+                                AgluCtbCarregar
+                                
+                                Irá carregar um aglutinador em memória
+                            
+                            
+                                AgluCtbContas
+                                
+                                
+								Busca as contas que pertencem a aglutinação, separadas por vírgula.
+							
+                            
+                            
+                                AgluCtbCriar
+                                
+                                
+								Cria a estrutura do aglutinador contábil.
+							
+                            
+                            
+                                AgluCtbValorAglu
+                                
+                                
+								Busca o valor do aglutinador contábil no período informado.
+							
+                            
+                            
+                                AgluCtbValorComp
+                                
+                                
+								Busca o valor do aglutinador na data/competência referente.
+							
+                            
+                            
+                                AlfaParaDecimal
+                                
+                                Esta função converte um valor alfanumérico para decimal.
+                            
+                            
+                                AlfaParaInt
+                                
+                                
+								Esta função é utilizada quando houver a necessidade, por exemplo: De efetuar
+								operações aritméticas com este número							
+                            
+                            
+                                AlteraCampoEncontroPag
+                                
+                                -
+								 
+							
+                            
+                            
+                                AlteraCampoEncontroRec
+                                
+                                -
+								 
+							
+                            
+                            
+                                AlteraCampoRetorno
+                                
+                                
+								Esta tem como o objetivo na cobrança escritural alterar valores que possam
+								vir incorretos, ou que se deseje alterar nos arquivos de retorno, passando-se
+								o campo a ser alterado e o valor que o mesmo irá conter
+							
+                            
+                            
+                                AlteraCampoRetornoPE
+                                
+                                
+								Esta tem como o objetivo no pagamento eletrônico alterar valores que possam
+								vir incorretos, ou que se deseje alterar nos arquivos de retorno, passando-se
+								o campo a ser alterado e o valor que o mesmo irá conter.
+							
+                            
+                            
+                                AlteraCampoSubst
+                                
+                                
+								Esta função permite que o usuário informe valores padrão para os campos
+								da grade de substitutos.
+							
+                            
+                            
+                                AlteraFormaRateioTransacao
+                                
+                                
+								Esta função tem como finalidade alterar a forma de rateio da tabela de
+								transações.
+							
+                            
+                            
+                                AlterarVidaUtilBem
+                                
+                                
+								Gera a movimentação de alteração da vida útil do bem, com a possibilidade
+								da geração dos acréscimos do valor justo.
+							
+                            
+                            
+                                AlteraSitMccTesouraria
+                                
+                                
+								Inativa um movimento da tesouraria.
+							
+                            
+                            
+                                AlteraSitObsPed
+                                
+                                
+							

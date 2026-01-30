@@ -1,0 +1,202 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#geral/protocolo-envio-email.htm%3FTocPath%3DParametriza%25C3%25A7%25C3%25B5es%7C_____7
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Parametrizações > Roteiro para configuração do OAuth2
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Roteiro para configuração do OAuth2
+            Siga o passo a passo abaixo para configurar o modo OAuth2 de autenticação da Microsoft e do Google no Gestão Empresarial | ERP.
+            O que deve ser feito?
+            Para configuração da autenticação utilizando Microsoft
+                
+                    
+                        Abra o Central de Configurações Senior, presente na pasta de instalação do Gestão Empresarial | ERP;
+                        Acesse a tela de configuração de e-mail na Central de Configurações Senior, acessada através do caminho Conexões de rede > Envio de e-mail;
+                        Selecione a opção Habilitar envio de e-mail;
+                        No campo Servidor SMTP, informe as seguintes informações:Servidor SMTP: smtp.office365.comPorta: 587
+                        Informe o endereço que será utilizado para envio de mensagens no campo Endereço do usuário origem das mensagens;
+                        Marque a caixa de seleção Utilizar autenticação OAuth2 e clique na opção  Office365;
+                        Ao clicar no botão Office365, será solicitada a autenticação na conta Microsoft. Ao usuário, será necessário que dê a permissão para o envio de e-mail com a conta do usuário;
+                        Após essas configurações, o envio de e-mail pelo aplicativos Senior estará configurado para o usuário cadastrado da Central de Configurações Senior;
+                        É obrigatório que as caixas de seleção Utilizar SSL e Usar STARTTL estejam assinaladas para que o recurso funcione corretamente.
+                    
+                
+            
+            Para configuração da autenticação utilizando Google
+                
+                    
+                        Abra o Central de Configurações Senior, presente na pasta de instalação do Gestão Empresarial | ERP;
+                        Acesse a tela de configuração de e-mail na Central de Configurações Senior, acessada através do caminho Conexões de rede > Envio de e-mail;
+                        Selecione a opção Habilitar envio de e-mail;
+                        No campo Servidor SMTP, informe as seguintes informações:Servidor SMTP: smtp.gmail.comPorta: 587
+                        Informe o endereço que será utilizado para envio de mensagens no campo Endereço do usuário origem das mensagens;
+                        Marque a caixa de seleção Utilizar autenticação OAuth2 e clique na opção  Gmail;
+                        Ao clicar no botão Gmail, abrirá o navegador padrão com a página de autenticação do provedor;
+                        Selecione ou acesse a conta informada anteriormente;
+                        Confirme as permissões solicitadas;
+                        É obrigatório que as caixas de seleção Utilizar SSL e Usar STARTTL estejam assinaladas para que o recurso funcione corretamente.
+                    
+                
+            
+            
+                Importante
+                
+                
+                    Utilizando essa forma de autenticação não será possível alterar o endereço do remetente. Sendo assim, todos os e-mails serão enviados usando o endereço informado na Central de Configurações Senior;
+                    Para mais informações sobre configuração de envio de e-mail, acesse a documentação presente no manual da Tecnologia e a base de conhecimento.
+                    A partir de junho de 2024, a autenticação básica deixou de funcionar para o Office365, conforme informação da própria Microsoft.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

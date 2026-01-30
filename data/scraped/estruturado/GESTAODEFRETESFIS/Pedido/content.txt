@@ -1,0 +1,143 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/pedido.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____18
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Pedido
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Pedido
+            
+                
+                
+                
+                    
+                        Descrição
+                        
+                         
+                    
+                    
+                        Url do Serviço
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/pedido
+
+                    
+                    
+                        Tipo de Envio
+                        POST				
+                    
+                    
+                        Momento
+                        Dados do pedido enviado para o FIS para cálculo do frete				
+                    
+                    
+                        Tabela
+                        TL_WS_E_DOCUMENTO_FRETE				
+                    
+                    
+                        Array
+                        Sim - Recebe array de objetos
+                    
+                
+             HeaderChaveValorContent-TypeApplication/jsonAuthorizationBearer inserir_token_aquiDetalhamento dos atributos de JSON entradaNome do AtributoTipo de DadoDefaultObrigatórioDescriçãopedidosArray NRecebe um array de objetosped_cnpj_empresaString SCNPJ da Empresaped_cd_clienteInteger SCódigo do cliente (Código de sócio)ped_nu_pedido_origemString SNúmero do pedido de origem (Número de pedidos do Sócio)ped_nu_nfInteger NNúmero da nota fiscalped_nu_serie_nfString NSérie da nota fiscalped_dt_emissao_nfStringDD/MM/YYYY/HH(24:MI:SS)NData da emissão da nota fiscalped_nf_chave_acessoString NChave de acesso da nota fiscalped_ds_natureza_mercadoriaString NNatureza das mercadorias. Ex: calçados, confecções, abrasivos, aparelhos, etc.ped_ds_tipo_acondicionamentoString NTipo de acondicionamento das mercadorias. Ex: caixas, fardos.ped_vlr_nfDouble SValor da nota fiscal ou pedido (preço total do pedido)ped_nu_documentoString NNúmero do documento (secundário)ped_ps_realDouble SPeso real do pedido (kg) - peso teóricoped_ps_cubadoDouble NPeso cubado do pedidoped_qt_volumeInteger1NQuantidade do volume formado pelo pedido (enviar fixo 1)ped_vlr_frete_receberDouble NValor do frete a receber - quando existir (valor pago pelo sócio)ped_cd_transp_origemInteger NCódigo da trasnportadora de origem - quando existirped_tp_pedidoString STipo do pedido. Ex: E - entrega normal, C- coleta normal, D - devolução, etc..fis_uidInteger NCódigo interno da tabela de frete do Sistema FISped_dt_entregaStringDD/MM/YYYY/HH(24:MI:SS)NData prevista de entregacli_nm_clienteString S
+Nome do cliente 
+cli_nu_rgString NNúmero do RG do cliente - quando pessoa físicacli_nu_cgcString SNúmero do CPF do cliente - quando pessoa física ou CNPJ quando pessoa jurídica (CPF do comprador)cli_nu_inscricaoString NNúmero da inscrição estadual - quando pessoa jurídicacli_nu_tel_resString NNúmero do telefone (telefone do sócio)cli_nu_tel_celString NNúmero do celular do sócio)cli_ds_emailString NE-mail (e-mail do sócio)loc_cepString SNúmero do CEP de endereço de entregaloc_enderecoString SEndereço de entregaloc_endereco_numeroString SNúmero do endereço de entregaloc_bairroString SNome do bairroloc_cidadeString SNome da cidadeloc_cidade_cod_ibgeString S loc_sg_ufString SSigla do estadoloc_ds_observacaoString NObservação para entrega (campo referência)qt_dias_entregaInteger NPrazo de entrega, serviço oferecido na lojatp_freteString STipo de frete do pedido CIF/FOBcd_centroInteger NCentro - ERP (campyng type - SACARINO)cd_custoInteger NCusto - ERP (CAMPYNG TYPE - SACARINO)ped_entrega_tracking_numberString NNÚMERO DOS OBJETOS DOS CORREIOScli_id_contribuinte_icmsString SInformar S quando o cliente for contribuinte do ICMSped_cfopString NCFOP predominante da NFEloc_complemento_enderecoString NComplemento para endereço de entrega. Ex: apto 101 - bloco Bcli_nm_recebedorString NNome da pessoa autorizada a receber o pedidocli_nu_tel_recebedorString NTelefone de pessoa autorizada a receber o pedidoped_cd_tipo_entregaInteger NCódigo tipo de entregaped_id_periodoDouble NCódigo períodoped_diametro_volumeDouble SDiâmetro do volumeped_cd_produto_categoriaString NCategoria principal do produtoped_qt_kmDouble NQuantidade de KMped_vlr_tde_erpDouble NValor do TDE - taxa de dificuldade de entregaped_id_carregamentoString NS = carregamento para programacão , N = pedido normalped_dt_carga_descargaString NData de carga ou descarga da programação de transportevalidacao_sincronaBoolean NCaso True realiza a validação e já retorna se houver algum problemaped_observaçãoString NObservação do pedidoatualizar_calculadoBoolean NCaso true a atualização dos dados pedido em 520 e volta a situação para 510Exemplo do layout de entrada de JSON{"pedidos": [{"ped_cnpj_empresa": "24441850006665","ped_cd_cliente": "111","ped_nu_pedido_origem": "10","ped_nu_nf": "124","ped_nu_serie_nf": "1","ped_dt_emissao_nf": "19/02/2019","ped_nf_chave_acesso": "35171144463156002390550550001433331204207022","ped_ds_natureza_mercadoria": null,"ped_ds_tipo_acondicionamento": null,"ped_vlr_nf": "25","ped_nu_documento": null,"ped_ps_real": "8","ped_ps_cubado": null,"ped_qt_volume": "1","ped_vlr_frete_receber": null,"ped_cd_transp_origem": "1","ped_tp_pedido": "M","fis_uid": null,"ped_dt_entrega": null,"cli_nm_cliente": "NOME DO CLIENTE","cli_nu_rg": null,"cli_nu_cgc": "33160999790","cli_nu_inscricao": null,"cli_nu_tel_res": null,""cli_nu_tel_cel": null,""cli_ds_email": null,"loc_cep"": ""17012110","loc_endereco": "RUA NOME","loc_endereco_numero": "123","loc_bairro": "BAIRRO","loc_cidade": "SÃO PAULO","loc_cidade_cod_ibge": "3506003","loc_sg_uf": "SP","loc_ds_observacao": "Obs","qt_dias_entrega": null,"tp_frete": "CIF","cd_centro": null,"cd_custo": null,"ped_entrega_tracking_number": null,"cli_id_contribuinte_icms": "S","ped_cfop": "6503","loc_complemento_endereco": "apto 101 – bloco b ","cli_nm_recebedor": "Nome recebedor","cli_nu_tel_recebedor": "11999991234","ped_cd_tipo_entrega": "1","ped_id_periodo": "M","ped_diametro_volume": "10","ped_cd_produto_categoria": "XXXXXXXXXX","ped_qt_km": "14","ped_vlr_tde_erp": "12.5","ped_id_carregamento": "S","ped_dt_carga_descarga": "25/05/2020","validacao_sincrona": true,"ped_observacao": "Teste de integração de pedido","atualizar_calculado": false}]
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

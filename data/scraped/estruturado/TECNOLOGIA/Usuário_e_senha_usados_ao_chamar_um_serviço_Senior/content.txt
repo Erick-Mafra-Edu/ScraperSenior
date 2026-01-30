@@ -1,0 +1,171 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#middleware/usuariosenhausados.html%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CRecursos%7CIntegra%25C3%25A7%25C3%25A3o%7CWeb%2520services%7C_____9
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Recursos > Integração > Web services > Usuário e senha usados ao chamar um serviço Senior
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Usuário e senha usados ao chamar um serviço Senior
+                Há duas formas de autenticação para web services:
+                Anônimo: Não 
+ faz o logon no sistema limitando o acesso à base de dados e, dependendo 
+ do sistema, às rotinas.
+                Com logon: 
+ Quando um web service que está configurado para fazer logon é chamado 
+ à partir de um sistema da Senior, o usuário e a senha autenticados no 
+ sistema são usados para a autenticação desse web service. A forma de logon 
+ aplicada será conforme a configuração das Formas 
+ de Logon aos sistemas por Tipo de Acesso feitas no SGU.
+                Requisitos para funcionamento do acesso com logon:
+                
+                    O Java deve estar acessível através do path do Windows;
+                    O aplicativo "crypt.jar" deve estar no diretório da aplicação;
+                    Os servidores devem ter o horário sincronizado devido ao recurso 
+	 expirar o token em 1 hora.
+                
+                O acesso com 
+ o logon funciona da seguinte maneira:
+                
+                    Há um serviço cadastrado no provedor interno chamado "WSCalcula";
+                    Nesse serviço está cadastrada a porta "somar" que está 
+	 configurada para fazer logon;
+                    Está logado no sistema o usuário "senior" com a senha 
+	 "123";
+                    Executa-se essa porta de forma síncrona; 
+	mesmo comportamento para execuções assíncronas e agendadas.
+                    O serviço faz logon em uma instância do sistema no servidor com 
+	 o usuário "senior" e a senha "123".
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,212 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#integracoes/gestao-eletronica-de-documentos.htm%3FTocPath%3DSegmentos%7C_____11
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Gestão Eletrônica de Documentos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Integração Gestão Empresarial com Gestão Eletrônica de Documentos
+            A integração da solução Gestão Eletrônica de Documentos, da XPlatform, com o Gestão Empresarial, permite o gerenciamento de documentos em formatos .pdf, .doc, .docx e .txt associados à rotinas internas do módulo de Controladoria. 
+            Todos os arquivos adicionados ficam disponíveis para visualização de todos os usuários. Não há uma restrição de permissão.
+            Definições iniciais
+            Parametrizar destino dos arquivos
+                
+                    Defina o destino dos arquivos por processo de origem, para sua posterior identificação e recuperação. Para isso, acesse  Cadastros > Integrações > X Platform > GED > Tipos de Arquivo para GED (F198GED).
+                    Se desejar, defina mais de um tipo de arquivo para cada processo. Por exemplo,  para uma nota fiscal de saída, parametrizadas formas diferentes para DANFE, XML e guia de recolhimento.
+                
+            
+            O que você pode fazer:
+            Gerenciar arquivos
+                
+                    Faça o gerenciamento dos arquivos (consulta, inclusão, exclusão e download dos arquivos) dentro do Gestão Empresarial, nas rotinas de Controladoria, a partir do botão GED:
+                    
+                        Controladoria > Gestão de Tributos > Escrituração > Lançamentos > Nota Fiscal de Saída (F660NFV)
+                        Controladoria > Gestão de Tributos > Escrituração > Lançamentos > Nota Fiscal de Entrada (F660NFC)
+                        Controladoria > Gestão de Tributos > Escrituração > Lançamentos > Outros Documentos (F660ODC)
+                        Controladoria > Gestão de Tributos > Escrituração > Consultas > Lançamentos (F660BLA)
+                        Controladoria > Gestão de Tributos > Operações e Cálculos Fiscais > Guias de Recolhimento (F661GRI)
+                        Controladoria > Gestão de Tributos > Operações e Cálculos Fiscais > Consultas > Guias de Recolhimento (F661CGR)
+                        Controladoria > Gestão de Contabilidade > Contabilidade > Lançamentos Manuais > Lançamentos (F640LCT)
+                        Controladoria > Gestão de Contabilidade > Contabilidade > Lançamentos Manuais > Lançamentos com Consulta (F640LCC)
+                        Controladoria > Gestão de Contabilidade > Contabilidade > Lançamentos Manuais > Lote/Lançamentos (F640LCL)
+                        Controladoria > Gestão de Contabilidade > Contabilidade > Lançamentos Manuais > Lotes/Lançamentos Multifilial (F640LLM)
+                        Controladoria > Gestão de Contabilidade > Contabilidade > Consultas > Lançamentos > Contábil (F650CLC)
+                        Controladoria > Gestão de Patrimônio > Controle de Bens > Bem > Individual (F670BEM)
+                        Controladoria > Gestão de Tributos > Arquivos Fiscais > Federais > SPED Fiscal (F669EFD)
+                        Controladoria > Gestão de Tributos > Arquivos Fiscais > Federais > SPED Contribuições (F669SPC)
+                        Controladoria > Gestão de Contabilidade > Arquivos Fiscais > SPED Contábil (F669ECD)
+                        Controladoria > Gestão de Tributos > Arquivos Fiscais > Federais > SPED Contábil Fiscal (F669ECF)
+                    
+                    
+                        Importante
+                        
+                        O gerenciamento é feito somente do Gestão Empresarial à Gestão Eletrônica de Documentos. Ou seja, não é possível fazer todo esse gerenciamento na Gestão Eletrônica de Documentos, dentro da XPlatform. Se desejar, utilize a função de programador IncluirArquivoGED para inclusão dos arquivos.
+                    
+                    Para gerenciar os arquivos:
+                    
+                        Acesse Recursos > X Platform > GED > Consulta de documentos (F998GED);
+                        Indique obrigatoriamente o Tipo de Processo do arquivo. Por exemplo, NFS;
+                        Informe o Tipo de Documento. Quando informado, ao clicar em Mostrar são apresentados os tipos de arquivos específicos ligados ao tipo de processo definido;
+                        Informe a Empresa;
+                        Clique em Mostrar para visualizar todos os documentos.
+                    
+                    Tipo de Processo
+                        
+                            
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                    
+                                        Variável	
+                                        NFS	
+                                        NFE	
+                                        OUD	
+                                        GRI	
+                                        EFD	
+                                        SPC	
+                                        ECF	
+                                        ECD	
+                                        LCC	
+                                        PAT
+                                    
+                                    
+                                        Tabela
+                                        E660NFV
+                                        E660NFC
+                                        E660ODC
+                                        E661GRI
+                                        -
+                                        -
+                                        -
+                                        -
+                                        E640LCT
+                                        E670BEM
+                                    
+                                    
+                                        EMP
+                                        CodEmp
+                                        CodEmp
+                                        CodEmp
+                                        CodEmp
+                                        Empresa Tela
+                                        Empresa Tela
+                                        Empresa Tela
+                                        Empresa Tela
+                                        CodEmp
+                                        CodEmp
+                                    
+                                    
+                                        FIL
+                                        CodFil
+                                        CodFil
+                                        CodFil
+                                        CodFil
+                                        Filial Tela
+                                        Filial Tela
+                                        -
+                                        -
+                                        CodFil
+                                        -
+                                    
+                                    
+                                        FON
+                                        -
+                                        CodFor
+                                        CodFor
+                                        CodFor
+                                        -
+                                        -
+                                        -
+                                        -
+                                        -
+                                        -
+                                    
+                                    
+                                        CLI
+                                        CodCli
+                                        -
+                                        CodCli
+                                        -
+                                        -
+                                        -
+                                        -
+                                        -
+                                        -
+                                        -
+                                    
+                                    
+                                        DAT
+                                        DatEmi
+                                        DatEnt
+                                        DatOpe
+                                        DatApi
+                                        Data Final Tela
+                                        Data Final Tela
+                                        Data Final Tela
+                

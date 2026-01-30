@@ -1,0 +1,212 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/suprimentos/reducao-inss.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7CRedu%25C3%25A7%25C3%25B5es%7C_____2
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Reduções > Redução da base de INSS e ISS - por materiais
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Redução do valor base de INSS e ISS
+            A Instrução normativa IN 971/2009 institui que é possível deduzir o valor dos materiais que são utilizados na prestação de serviços. 
+            Exemplo
+                
+                    Prestação de serviço de limpeza no valor: R$ 23.485,74
+
+                    Neste serviço temos um emprego de produtos no valor de R$ 4.697,15
+
+                    A base de cálculo para o INSS fica com o valor de R$ 18.788,59 (23.485,74 - 4.697,15)
+                    
+                        
+                        
+                        
+                            
+                                Valor serviço
+                                R$ 23.485,74
+
+                            
+                            
+                                Produto utilizado no serviço
+                                R$ 4.697,15
+                            
+                            
+                                Base cálculo INSS
+                                R$ 18.788,59
+                            
+                            
+                                Alíquota INSS
+                                11%
+                            
+                            
+                                Valor de INSS da nota fiscal
+                                R$ 2.066,74
+                            
+                        
+                    
+                
+            
+            
+                Importante
+                
+                Esta redução é sempre aplicada antes de qualquer outra redução ou acréscimo configurados no sistema. Ou seja, caso o serviço já possua redução ou acréscimo da base de cálculo será aplicado primeiro o Valor da Dedução e posteriormente a redução ou acréscimo da base de cálculo.
+            
+            Pré-requisitos
+            Este desconto é aplicado por transação, por isso, é necessário habilitá-la, na tela de Transações de Compras (F001TCP):
+            
+                Para o INSS: preencha o campo Descontar dedução da base do INSS/Funrural, na guia INSS/Funrural, com Sim;
+                Para o ISS: preencha o campo Descontar dedução da base ISS, na guia ISS, com Sim.
+            
+            Definir dedução
+            Caso a nota fiscal tenha a transação configurada conforme definido no Pré-requisito, será possível informar o valor de dedução da base de cálculo para o INSS e/ou ISS, que corresponde ao valor do material.
+            Este valor deve ser preenchido no campo Valor Dedução Base (E440ISC), da tela de Nota Fiscal de Entrada Agrupada (F440GNE). Ao preenchê-lo, o sistema irá recalcular o valor da base, aplicando o desconto.
+            Este campo também está disponível para edição na tela de Nota Fiscal de Entrada - Cálculos do Item de Serviço (F440CIS), se a nota estiver na situação 1 - Digitada, e no web service com.senior.g5.co.mcm.cpr.notafiscal, porta GravarNotasFiscaisEntrada_13 (vlrDed).
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

@@ -1,0 +1,245 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/gestao-de-pessoas-hcm/gp-perfomancexcache.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CGest%25C3%25A3o%2520de%2520Pessoas%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Gestão de Pessoas > Performance x Cache
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Performance x Cache
+                Pode-se obter melhor performance no sistema Gestão de Pessoas utilizando 
+ do recurso de tabelas ou stored procedures em cache (nos bancos que dispõem 
+ deste recurso). Estas configurações devem ser acompanhadas pelo responsável 
+ do banco de dados. Abaixo seguem as recomendações:
+                
+                    Tabelas
+                
+                
+                    
+                        R004HOR (para o módulo Controle de Ponto e Refeitório)
+                        R016HIE (para qualquer módulo do Gestão de Pessoas)
+                        R016ORN (para qualquer módulo do Gestão de Pessoas)
+                        R030FIL (para qualquer módulo do Gestão de Pessoas)
+                        R034FUN (para qualquer módulo do Gestão de Pessoas)
+                        R700ABR (para qualquer módulo do Gestão de Pessoas e utilizar do recurso 
+ abrangência usuário)
+                        R006CLE (Controle de Ponto e Refeitório)
+                        R006DES (Controle de Ponto e Refeitório)
+                        R008EVS (Controle de Ponto e Refeitório)
+                        R008SEL (Módulos) 
+                        R008TCL (Administração de Pessoal)
+                        R008TCO (Administração de Pessoal)
+                        R008TOT (Módulos)
+                        R008TSA (Administração de Pessoal)
+                        R008VIN (Administração de Pessoal)
+                        R010CSE (Controle de Ponto e Refeitório)
+                        R012AGE (Módulos)
+                        R012BAN (Administração de Pessoal)
+                        R014NOR (Administração de Pessoal)
+                        R014PDS (Administração de Pessoal)
+                        R020DRA (Controle de Ponto e Refeitório)
+                        R022QUA (Módulos)
+                        R022VIN (Administração de Pessoal)
+                        R024IDC (Módulos)
+                        R024RCF (Módulos)
+                        R024RQU (Módulos)
+                        R024SIS (Módulos)
+                        R025EQE (Módulos)
+                        R025EQV (Módulos)
+                        R026ALI (Administração de Pessoal)
+                        R026CAL (Administração de Pessoal)
+                        R026CFG (Administração de Pessoal)
+                        R026CIN (Administração de Pessoal)
+                        R026FPA (Administração de Pessoal)
+                        R026FPT (Administração de Pessoal)
+                        R026FPV (Administração de Pessoal)
+                        R026IDM (Administração de Pessoal)
+                        R026IFG (Administração de Pessoal)
+                        R026INF (Administração de Pessoal)
+                        R026INM (Administração de Pessoal)
+                        R026IRF (Administração de Pessoal)
+                        R026IRR (Administração de Pessoal)
+                        R028DVT (Administração de Pessoal)
+                        R028MVT (Administração de Pessoal)
+                        R030CAR (Gestão de Pessoas)
+                        R030DAR (Administração de Pessoal)
+                        R030GRC (Administração de Pessoal)
+                        R030GRE (Gestão de Pessoas)
+                        R030GRP (Administração de Pessoal)
+                        R030GRU (Gestão de Pessoas)
+                        R030ORG (Gestão de Pessoas)
+                        R034LOT (Gestão de Pessoas)
+                        R040TOT (Administração de Pessoal)
+                        R042CAU (Administração de Pessoal)
+                        R044TVL (Administração de Pessoal)
+                        R048CLB (Administração de Pessoal)
+                        R048DEF (Administração de Pessoal)
+                        R048NAT (Módulos)
+                        R050REC (Administração de Pessoal)
+                        R058FNC (Controle de Ponto e Refeitório)
+                        R059SOR (Controle de Ponto e Refeitório)
+                        R068DRF (Controle de Ponto e Refeitório)
+                        R068RFT (Controle de Ponto e Refeitório)
+                        R068TRF (Controle de Ponto e Refeitório)
+                        R068VRF (Controle de Ponto e Refeitório)
+                        R070TAC (Controle de Ponto e Refeitório)
+                        R075CAR (Módulos)
+                        R075CRR (Módulos)
+                        R076CLA (Módulos)
+                        R076DEL (Módulos)
+                        R076DEN (Módulos)
+                        R076DES (Módulos)
+                        R076EST (Módulos)
+                        R076MOT (Módulos)
+                        R077APP (Módulos)
+                        R077BHT (Módulos)
+                        R077BLO (Módulos)
+                        R077HTE (Módulos)
+                        R077PRO (Módulos)
+                        R080CLO (Módulos)
+                        R082AGT (Módulos)
+                        R084TPN (Módulos)
+                        R086ACD (Módulos)
+                        R086CAU (Módulos)
+                        R086FGL (Módulos)
+                        R086LLE (Módulos)
+                        R086NLE (Módulos)
+                        R096MTV (Módulos)
+                        R098SVC (Módulos)
+                        R098TEQ (Módulos)
+                        R102BRI (Módulos)
+                        R102FNB (Módulos)
+                        R104VAL (Módulos)
+                        R106PAR (Módulos)
+                        R108ORI (Módulos)
+                        R108TOC (Módulos)
+                        R110AUD (Módulos)
+                        R110REM (Módulos)
+                        R112ITE (Módulos)
+                        R112ITR (Módulos)
+                        R114ETA (Módulos)
+                        R114RFO (Módulos)
+                        R114RLC (Módulos)
+                        R114RLR (Módulos)
+                        R114RMD (Módulos)
+                        R114RRQ (Módulos)
+                        R114SLC (Módulos)
+                        R116GAI (Módulos)
+                        R116GAV (Módulos)
+                        R116ITA (Módulos)
+                        R116ITR (Módulos)
+                        R118GRI (Módulos)
+                        R118GRQ (Módulos)
+                        R118ITQ (Módulos)
+                        R118ITR (Módulos)
+                        R122CRF (Módulos)
+                        R122CRQ (Módulos)
+                        R122CTR (Módulos)
+                        R122EMP (Módulos)
+                        R125CNC (Módulos)
+                        R125FAM (Módulos)
+                        R126EQV (Módulos)
+                        R126ETA (Módulos)
+                        R126EXP (Módulos)
+                        R126ITA (Módulos)
+                        R126ITQ (Módulos)
+                        R126RCF (Módulos)
+                        R126RCN (Módulos)
+                        R126RQS (Módulos)
+                        R127CUF (Módulos)
+                        R127FAS (Módulos)
+                        R128ASS (Módulos)
+                        R128MCU (Módulos)
+                        R129DTU (Módulos)
+                        R130CEV (Módulos)
+                        R130OLV (Módulos)
+                        R130TCU (Módulos)
+                        R133HCU (Módulos)
+                        R133HSE (Módulos)
+                        R136PER (Módulos)
+                        R136RES (Módulos)
+                        R136TES (Módulos)
+                        R140DIS (Módulos)
+                        R140NTR (Módulos)
+                        R140REI (Módulos)
+                        R140SCA (Módulos)
+                        R140SLR (Módulos)
+                        R140TSL (Módulos)
+                        R160DEF (Administração de Pessoal)
+                        R160MOT (BS)
+                        R174CCU (Administração de Pessoal)
+                        R174CND (Administração de Pessoal)
+                        R176CLO (Administração de Pessoal)
+                        R176CND (Administração de Pessoal)
+                        R178DTO (Administração de Pessoal)
+                        R192CAP (Módulos)
+                        R192GDO (Módulos)
+                        R201TBN (Módulos)
+                    
+                
+                
+                    Stored Procedure
+                
+                
+                    
+                        RH_RETHOR (para módulo Controle de Ponto e Refeitório)
+                    
+                
+                Nota
+                     veja no FerramentasApoio.chm no item Banco de dados os comandos utilizados 
+ para disponibilizar tabelas ou stored procedures em cache, como também 
+ a recomendação de tabelas da Tecnologia.
+                
+            
+        

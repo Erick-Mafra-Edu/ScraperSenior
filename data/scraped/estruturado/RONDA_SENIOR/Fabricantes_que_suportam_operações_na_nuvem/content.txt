@@ -1,0 +1,251 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#integracoes-com-dispositivos/fabricantes-que-suportam-operacao-na-nuvem.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%2520com%2520Dispositivos%7C_____7
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Integrações com Dispositivos > Fabricantes que suportam operações na nuvem
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Fabricantes que suportam operações na nuvem
+            Esta tabela relaciona fabricantes de dispositivos e periféricos que podem ser utilizados com operações na nuvem (cloud computing). 
+            Fabricantes
+            Aqui são listados fabricantes de dispositivos para controle de acesso, ponto ou alarmes.
+            
+                
+                
+                
+                
+                    
+                        Fabricante
+                        Testado na nuvem?
+                        Observações
+                    
+                    
+                        Apollo
+                        Sim
+                         
+                    
+                    
+                        Control ID
+                        Não
+                         
+                    
+                    
+                        Digicon
+                        Sim (Acesso e SDK)
+                        A versão 1.0.0.11 do firmware é incompatível com a nuvem. Utilize a versão superior à 6.1.3.8.
+                    
+                    
+                        Dimep
+                        Sim
+                        Funciona apenas se o driver for instalado no ambiente do cliente. O driver na nuvem não funciona.
+                    
+                    
+                        Engesul
+                        Não
+                         
+                    
+                    
+                        Henry
+                         
+                         
+                    
+                    
+                        Hikvision
+                        Não
+                         
+                    
+                    
+                        Honeywell
+                        Não
+                         
+                    
+                    
+                        ID Data
+                        Não
+                         
+                    
+                    
+                        Intelbras
+                        Não
+                         
+                    
+                    
+                        Madis Rodbel
+                        Sim
+                        Funciona apenas se o driver for instalado no ambiente do cliente. O driver na nuvem não funciona.
+                    
+                    
+                        Telemática
+                        Sim
+                        É possível através da oferta "Integração online com equipamentos Telemática (Conex)", mencionada na política comercial do Ronda Senior.
+                    
+                    
+                        Topdata
+                        Não
+                         
+                    
+                    
+                        Trilobit
+                        Não
+                         
+                    
+                    
+                        ZPM
+                        Sim
+                        Funciona apenas se o driver for instalado no ambiente do cliente. O driver na nuvem não funciona.
+                    
+                
+            
+            Periféricos
+            Para utilização de leitoras de mesa no ambiente cloud, é necessária a utilização da aplicação SRVTCP. As leitoras que possuem a integração implementada nesta aplicação estão aptas para serem utilizadas no ambiente cloud.
+            Neste caso, é necessário solicitar à Senior os arquivos do SRVTCP para executá-lo localmente, disponibilizar um IP e porta para acesso externo à sua rede, e repassar estas informações para a Senior realizar as liberações de comunicação no ambiente da cloud, possibilitando a comunicação entre o Sistema em cloud e o SRVTCP.
+            Já para ter habilitada a funcionalidade de webcam, é necessário utilizar este link que  traz a versão RDP do ambiente, permitindo a utilização do dispositivo.
+            
+                Observação
+                
+                Links que utilizam TSPLUS para emular o sistema Ronda Senior não funcionam para webcam.
+            
+             
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

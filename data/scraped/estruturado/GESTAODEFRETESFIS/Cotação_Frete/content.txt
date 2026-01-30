@@ -1,0 +1,111 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#processo/cotacao-frete.htm%3FTocPath%3D_____6
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Cotação Frete
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+             Cotação de Frete
+            A cotação de frete ajuda a identificar qual a opção de envio é mais adequada para ser utilizada em uma entrega.
+            A solução permite integração via Web Service. Ela pode ser realizada de duas maneiras:1. Determinando previamente uma transportadoraO sistema realiza a cotação do frete (cálculo de valores e prazo) somente para a mesma. Neste caso, o sistema apenas retorna os valores de frete e prazo de entrega.2. Sem determinar  uma transportadoraO sistema realiza a cotação do frete com todas as transportadoras que atendem aquela região. Nessa situação, retorna a melhor transportadora, os valores de frete e o prazo de entrega de cada para cada categoria de entrega definida (como por exemplo normal, econômica e expressa).ParametrizaçõesFrete GrátisComo funciona o Frete Grátis?Nessa situação a cotação é enviada via API, o sistema verifica se para o CEP proposto existe frete grátis cadastrado para a região;Caso os critérios da região informada atendam o frete grátis, o retorno do calculo é 0, simbolizando que o frete é grátis para o serviço;Caso os critérios da aplicação " Cadastro Frete Grátis" não forem atendidos a rotina de cálculo acontece normalmente.ObservaçãoNeste caso, a lógica do cálculo do frete não sofre nenhum tipo de alteração, pois se trata de um pedido API apenas para a simulação.Quando o pedido for finalizado o processo de cálculo do frete é realizado normalmente conforme o padrão Gestão de Fretes.Como cadastro o Frete Grátis?Acesse APPS > Logística > Gestão de Fretes> Definições > Operação > Frete GrátisUse o botão, Cadastrar Realize os cadastros dos seguintes parâmentosRegiãoQuantidade de itensValor pedidoData Vigência: este campo é de preenchimento obrigatório e está relacionado como período de validade do Frete Grátis.Clique em SalvarAtençãoAtençãoPara descobrir a região que o CEP pertence durante a validação de Frete Grátis é necessário que os campos CEP Início e CEP Fim estejam preenchidos em  Roteirização Se necessário editar alguma informaçãoClique sobre o Frete Grátis desejado.Use o botão, Editar.Altere conforme necessário.Clique em Salvar
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

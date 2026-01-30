@@ -1,0 +1,189 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/tiposdados.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____11
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > Tipos de Dados
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Tipos de Dados
+                
+                    
+                    
+                    
+                    
+                        Tipo
+                        Explicação
+                        Exemplos
+                    
+                    
+                        number
+                
+                        
+					Guarda números dentro de precisão e escala especificados. A precisão máxima é 15 dígitos. A escala é um número não-negativo que vai de zero a número de dígitos-1.
+				
+                        number(5,2)
+                    				Precisão 5, escala 2. Faixa de valores: de -999,99 a +999,99.number(4)	Precisão 4, escala 0. Faixa de valores: de -9999 a +9999.
+                
+                    
+                    
+                        string
+                
+                        Guarda dados do tipo texto, dentro de um tamanho especificado. O tamanho máximo é 254 caracteres.
+                        string(20)
+                    Pode conter de 0 a 20 caracteres.
+                    
+                    
+                        text
+                
+                        Guarda dados do tipo texto, podendo conter quebras de linha. O tamanho máximo é definido pelo banco nativo. Possui restrições quanto ao uso em expressões.
+                        text(1000)
+                    				Pode conter de 0 a 1000 caracteres.
+                
+                    
+                    
+                        date
+                
+                        Guarda uma data, dentro de um contexto e precisão especificados. Os componentes de uma data podem ser ano, mês, dia, hora, minuto, segundo, e milissegundo. O contexto é o primeiro componente que a data usa. A precisão é o último componente.
+                        date(year to day)Guarda uma data que contém os componentes ano, mês e dia.date				Guarda uma data que contém os componentes ano, mês e dia.date(month to second)				Guarda uma data que contém os componentes mês, dia, hora, minuto e segundo.date(hour to msecond)				Guarda uma data que contém os componentes hora, minuto, segundo e milissegundo.
+				
+                    
+                    
+                        blob
+                
+                        Guarda um conjunto de bytes. Pode ser usado para guardar fotos ou qualquer outro dado no formato binário. O tamanho máximo é definido pelo banco nativo.
+                         
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

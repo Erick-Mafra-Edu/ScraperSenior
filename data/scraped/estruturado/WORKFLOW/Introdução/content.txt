@@ -1,0 +1,110 @@
+# 
+
+URL: https://documentacao.senior.com.br/workflow/6.10.1/#wfe/wfe_introducao_workflow.htm%3FTocPath%3DWorkflow%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOWorkflow - versão 6.10.1
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Workflow - Manual do Usuário > Introdução
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Workflow
+            O Workflow é uma solução que permite, entre outras coisas, modelar, automatizar e realizar a melhoria contínua dos processos de negócio da organização. 
+            Ele permite que cada usuário controle suas tarefas de forma centralizada, da mesma forma o administrador pode controlar as tarefas de todos os usuários. Permite também a extração de dados das instâncias de processos já concluídas para análise de desempenho do negócio, oferecendo mais dados aos gestores para facilitar a toma de decisões sobre os processos.
+            Aplicação
+            O Workflow permite modelar e automatizar os processos de negócio, ajudando a aumentar o controle sobre os processos, reduzindo custos, aumentando a segurança na mudança dos processos e maximizando o resultado. Isso pois, o Workflow auxilia os usuários a cumprir os prazos para tratarem as tarefas, assim como, recebem todas suas tarefas de forma simplificada e com notificações, além disso as tarefas podem ser realizadas de forma centralizada e padronizada, diminuindo o tráfego de formulários pela organização. Com o Workflow é possível:
+            
+                Modelar graficamente processos de negócio (através do padrão BPMN);
+                Automatizar os processos (com o auxílio de scripts escritos em JavaScript);
+                Centralizar as tarefas do usuários;
+                Garantir que as tarefas serão realizadas nos prazos;
+                Controlar a carga de tarefas dos usuários;
+                Acompanhar a execução dos processos;
+                Acompanhar o andamento de cada tarefa;
+                Realizar análise de desempenho de cada execução do processo;
+                Identificar pontos “deficientes” nos processos;
+                Ter mais segurança na publicação de uma nova versão do processo;
+            
+            Termos
+            Segue abaixo alguns termos que devem ser conhecidos:
+            
+                Processo:  Processo de negócio realizado por pessoas e/ou sistemas. Todo processo bem definido segue um fluxo de trabalho que pode ou não ser automatizado. Ele representa a definição do processo de negócio. Depois de modelado, esse é representado pelo Modelo de processo. Os processos de negócio são classificados em dois grupos:Processo de Workflow: Processo de negócio desenvolvido por um cliente - ou para um cliente - que possui o produto Workflow.Processo embarcado: São regras de negócio de outros produtos Senior desenvolvidas pela Senior na forma de processos de negócio, modeladas em BPMN e automatizada  como parte nativa dos sistemas.
+                Instância de processo: Representa o processo previamente definido executado pelo Workflow. É na instância do processo que são armazenados os dados da execução em questão e que as tarefas são efetivamente atribuídas as seus responsáveis.
+                Tarefa: Representa uma atividade atômica dentro do fluxo de um processo. Ela representa a atribuição de um trabalho para um usuário ou sistema:Durante a execução, ela é o único elemento que pode modificar dados da instância do processo;Uma tarefa automatizada, quando executada, é processada por um executor;Quando a tarefa for assíncrona, é originada uma pendência.
+                Pendência: Termo utilizado para representar que uma determinada tarefa está pendente de tratamento, portanto ainda não foi concluída;
+                Performer: Componente responsável pela realização de uma tarefa. Em geral, para cada tipo de integração suportada pelo Workflow, há a implementação distinta de um Performer.
+                Executor: responsável pela orquestração dos processos, implementa a especificação BPMN, tratando os objetos do fluxo e as informações sobre as atividades realizadas para traçar a rota de conexão entre os objetos. O executor também faz a chamada dos Performers, processa tratamento de erros e controla tempo de expiração das tarefas.
+            
+            Partes do Workflow
+            O Workflow é um produto composto, ele possui várias partes que juntas formam a ferramenta. Cada uma dessas partes tem algumas funções. Veja abaixo agora como essas partes podem ser classificadas:
+            
+                Modelador BPMN: Ferramenta onde é realizada a modelagem e automatização dos processos de negócio, tanto os Processos de Workflow quanto os Processos embarcados. Também permite realizar a customização dos processos de negócio e a publicação destes no ambiente de produção;
+            
+            
+                Nota
+                
+                O Modelador é um dos recursos do Senior Developer, no qual são construídas, mantidas todas as customizações do SeniorTools.
+            
+            
+                Engine: Parte responsável pela execução dos processos automatizados no Modelador. É ela que faz a orquestração das atividades entre os usuários, controla prazos previamente determinados, gera notificações e garante a disponibilidade e execução dos processos de negócio;
+                Cockpit: Esta é a parte onde os usuários tem acesso a todas as suas pendências, ele serve como uma caixa de entrada de tarefas, além de permitir, aos administradores, controlar todas as instâncias em execução dos processos, adicionar e tirar processos de execução, controlar o histórico de execução entre outras funcionalidades.
+            
+            Passos envolvidos na automação de um processo
+            Tendo entendido os conceitos, termos e partes que compõem o Workflow, é preciso saber quais passos são realizados para que um processo entre em execução.
+            Os passos para automação do processo formam um ciclo contínuo, que tem como principal objetivo ter o processo sempre executando, e paralelo a isso, sempre sendo administrado e analisado. Isto para que possíveis pontos de melhoria sejam identificados e possam ser corrigidos, sempre visando a melhor execução do processo de negócio. 
+            Segue abaixo os passos que compõem esse ciclo:
+            Mapeie
+            Este é o primeiro passo para a automatização de processos de negócio. Ele consiste em mapear o processo que será automatizar. Isso acontece envolvendo os especialistas para esse processo de negócio. Como saída desse passo temos o processo de negócio mapeado no Modelador BPMN da Senior, onde a modelagem é realizada de forma visual seguindo o padrão de processo de negócio da BPMN. É importante mapear já nessa ferramenta pois isto será necessário para automatizá-lo na sequência. Caso este seja mapeado em outra ferramenta, este mapeamento terá de ser refeito no próximo passo.
+            Para ajudar neste mapeamento, é possível contar com a solução de BPM da Senior. Para mais informações sobre essa solução entre em contato com seu distribuidor ou com a Senior.
+            Modele
+            Tendo o processo mapeado (considerando que este foi mapeado no Modelador BPMN da Senior) pode-se iniciar sua modelagem. Esta modelagem consiste em identificar pontos de problema, oportunidades de melhoria da performance do negócio, além de deixar o processo preparado para ser automatizado. Esse último inclui definir:
+            
+                Nome do processo;
+                Descrição das atividades;
+                Tipos das tarefas (usuário, serviço, tela inicial, etc.);
+                Telas e serviços a serem chamados;
+                Ordem de execução das tarefas;
+                Regras de negócio;
+                Condições no processo (elemento Gateway);
+                Momentos de persistência dos dados em banco;
+                Momento onde é necessário compensação;
+                Entre outros.
+            
+            Esse trabalho é realizado por um analista de negócio. Durante o desenvolvimento, a própria ferramenta auxilia o analista validando o processo que está sendo modelado para garantir que ele respeite a BPMN. Como saída desse passo, temos o processo de negócio modelado no Modelador BPMN da Senior, pronto para ser automatizado.
+            Automatize
+            Com o processo modelado como base, o desenvolvedor automatizará o processo. A automação consiste em definir o que é necessário para que o processo possa ser executado pelo Workflow, isso inclui definir:
+            
+                Chamadas de telas, onde poderão ser informados os dados do negócio;
+                Chamadas de serviços para integração com sistemas Senior;
+                Chamadas de serviços para integração com sistemas de terceiros;
+                Definição de variáveis para manipulação de dados;
+                Implementação das condições de negócio (scripts);
+                Manipulação de dados de entrada e saída de telas e serviços (scripts);
+                Scripts no processo;
+                Entre outros.
+            
+            Todos os scripts que são manipulados durante a automação do processo são feitos na linguagem JavaScript. As telas que são chamadas no processo e que ainda não existirem poderão ser desenvolvidas através da mesma ferramenta onde é realizada a modelagem e automação do processo, o Senior Developer. Como saída desse passo temos o processo de negócio modelado e automatizado, pronto para entrar em execução.
+            Execute
+            Esse passo consiste em pegar o processo de negócio mapeado, modelado e automatizado previamente e  publica-lo no Workflow. Essa publicação é realizada pelo administrador do Workflow através do Senior Developer. A partir disto o  processo já está disponível para ser utilizado.
+            Durante a execução do processo

@@ -1,0 +1,128 @@
+# 
+
+URL: https://documentacao.senior.com.br/documentoseletronicos/5.8.16/#home/home-impressao.htm%3FTocPath%3DManual%2520do%2520usu%25C3%25A1rio%2520-%2520eDocs%7CImpress%25C3%25A3o%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOeDocs - versão 5.8.16
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Manual do usuário - eDocs > Conceito
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Conceito
+            Neste documento você encontra informações sobre:
+            Impressão através do PrintService
+                
+                    O eDocs possibilita o envio de documentos auxiliares (DANFE, DACTE, DAMDFE, ...) para serem impressos em impressoras locais ou de rede. A comunicação com as impressoras é efetuada através do componente PrintService (Servidor de Impressão), cuja instalação é disponibilizada junto ao pacote de instalação do sistema. O PrintService, por sua vez, recebe requisições de impressão do serviço do eDocs ou do Monitor. Ambos nunca se comunicarão diretamente com a impressora.
+                    
+                        Importante
+                        
+                        O componente PrintService também é chamado de Servidor de Impressão. Desta forma, eventuais telas, documentações e campos que citam Servidor de Impressão, deve-se levar em consideração de que se trata do PrintService. Não se deve confundir o conceito de Servidor de Impressão com eventual hardware utilizado como ponte de comunicação entre o sistema operacional e as impressoras (este hardware também é comumente chamado de Servidor de Impressão). 
+                        Para clientes que estão configurando o eDocs devido às exigências do eSocial e possuem o produto Captura Ponto Portaria 373, devem certificar-se que o Servidor de Horas  e o serviço de impressão do eDocs não utilizem a mesma porta de comunicação: 1024.
+                    
+                    
+                        Observação
+                        
+                        Os botões que tem a função de gerar um PDF do documento auxiliar (botão DANFE da tela de emissão de NF-e, por exemplo) não são considerados uma forma de impressão através do sistema, pois o PrintService não é utilizado nestes casos. No entanto, em eventuais problemas que estejam ocorrendo no processo de comunicação do PrintService com a impressora, é possível utilizar esta funcionalidade para gerar os PDFs e efetuar a impressão manual, através de um outro aplicativo.
+                    
+                    As parametrizações do PrintService (que é instalado como um serviço do sistema operacional Windows) são efetuadas através do Configurador. Mesmo que seja instalado somente o componente PrintService em um computador/servidor, é efetuada a instalação do Configurador.
+                    O PrintService é um componente que não possui base de dados e também não se comunica diretamente com a base de dados do eDocs. Ele recebe requisições de impressão oriundas do serviço eDocs e do Monitor e armazena estas requisições em uma fila de impressão em memória. A cada ciclo de impressão o PrintService encaminha para a impressora definida os arquivos que devem ser impressos.
+                    
+                        Importante
+                        
+                        A partir do momento que um documento foi enviado para uma impressora pelo PrintService é possível identificar o documento registrado no Console de Monitoramento da Impressora (onde o sistema operacional Windows mostra o que está sendo impresso). A partir deste momento, o eDocs não tem mais nenhuma responsabilidade pela impressão do documento, cabendo ao sistema operacional Windows se comunicar com a impressora através do serviço Spooler de impressão.
+                    
+                    Existem diversas formas de configurar a impressão através do PrintService (com filtros de impressão, sem filtros de impressão, impressão em PDF, impressão em Cloud, etc.). Serão demonstrados exemplos de parametrização nos tópicos disponibilizados no menu desta documentação de processo de impressão. Da mesma forma, em um ambiente em que o eDocs está instalado, podem haver diversas empresas e filiais cadastradas. Desta forma, as parametrizações que não são comuns a todas as empresas e filiais devem ser efetuadas individualmente em cada empresa ou filial.
+                    
+                        Importante
+                        
+                        Em determinados ambientes, pode haver a utilização em conjunto de funcionalidades de impressão descritas neste documento de ajuda. Exemplo: utilização de Filtros de Impressão em conjunto com Impressão em Cloud, utilização de impressão em arquivo PDF em conjunto com impressão em Cloud. As informações presentes em nos tópicos específicos sobre cada forma de utilização da rotina poderão ser utilizadas para entendimento do processo que utiliza diversas funcionalidades em conjunto.
+                    
+                    A documentação de processos de impressão terá como foco a parametrização dos cinco tipos de impressão abaixo mencionados:
+                    
+                        Impressão padrão (sem filtros de impressão);
+                        Impressão padrão (com filtros de impressão);
+                        Impressão em arquivo PDF;
+                        Impressão manual com seleção de impressora;
+                        Impressão em Cloud.
+                    
+                    A impressão através de diretórios extras de integração não é contemplada na documentação de processo, tendo em vista de que é indicada a utilização de filtros de impressão ao invés de diretórios extras de integração. A indicação é que clientes que utilizam a rotina de impressão através de diretórios extras de integração façam a migração para a rotina de impressão através de filtros de impressão, pois esta rotina permite um nível de parametrização muito mais amplo.
+                
+            
+            Pré-requisitos para utilizar funcionalidade de impressão via PrintService
+                
+                    São pré-requisitos para que a impressão de documentos através do componente PrintService ocorra corretamente:
+                    
+                        Comunicação de rede entre o computador onde o eDocs está instalado e o computador onde o PrintService está instalado. Em alguns ambientes, os componentes estão instalados no mesmo computador, no entanto, em ambientes onde os componentes estão instalados em computadores diferentes, deverá haver a comunicação entre eles;
+                    
+                    
+                        Importante
+                        
+                        Para ambientes onde o PrintService fica em um ambiente diferente do servidor do eDocs e do Monitor (em outra rede, por exemplo), continua sendo obrigatório garantir a comunicação entre os componentes (mesmo que seja através de uma VPN, por exemplo). Eventualmente, se forem utilizadas funcionalidades de IP dinâmico nos computadores/servidores onde os componentes estão instalados, podem haver problemas de comunicação devido a mudança dos IPs. Neste caso, para garantir a estabilidade do processo de impressão, é extremamente recomendável a utilização de IPs fixos nos computadores/servidores que terão cada componente do eDocs instalado.
+                    
+                    
+                        O PrintService deverá ter acesso a todas as impressoras instaladas no sistema operacional Windows onde ele está sendo executado. Desta forma, é obrigatório que as impressoras que serão utilizadas para a impressão em cada Printservice estejam devidamente instaladas e configuradas em cada computador onde estarão instalados os PrintServices;
+                    
+                    
+                        Importante
+                        
+                        Em ambientes onde haja controle de acesso a recursos de rede, apesar das impressoras aparecerem na lista presente na guia PrintService do Configurador, o PrintService pode não conseguir comunicação com a impressora. Nestes casos, indica-se a parametrização do usuário administrador do computador/rede/domínio no serviço do PirntService (parametrização realizada através do Console de Serviços do Windows – services.msc).
+                    
+                    
+                        A porta definida para utilização de cada PrintService não pode ser utilizada por nenhum outro aplicativo ou serviço do sistema operacional, do contrário, o PrintService não é capaz de receber solicitações de impressão;
+                        A impressão de cada documento deve ser devidamente configurada para cada empresa/filial cadastrada no eDocs. Esta parametrização é efetuada através do Monitor do sistema. Exemplos de configuração: URL/porta do servidor de impressão, Filtros de Impressão.
+                        O componente PrintService deve estar na mesma versão que o Monitor e o serviço do eDocs. A utilização de versões diferentes pode acarretar em problemas de comunicação entre os componentes, ocasionando o não funcionamento adequado da rotina de impressão.
+                    
+                    
+                        Importante
+                        
+                        Caso sejam utilizados vários PrintServices conectados a um mes

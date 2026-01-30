@@ -1,0 +1,138 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/assistencia-tecnica/utilizando-erp.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7CAssist%25C3%25AAncia%2520T%25C3%25A9cnica%7C_____3
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Assistência Técnica > Utilizando a Assistência Técnica - Processo no ERP
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Utilizando a Assistência Técnica - Processo no ERP
+            Processo
+            Para utilizar esta rotina, é necessário que ela esteja parametrizada no sistema Gestão Empresarial | ERP, conforme Parametrizando a Assistência Técnica.
+            Este processo é a continuação do processo iniciado no Utilizando a Assistência Técnica - Processo no Gestão de Lojas.
+            
+                Observação
+                
+                Se utilizada a rotina de assistência técnica, será necessário realizar a parametrização de todas as formas de pagamento para todas as filiais no Gestão de Lojas através da tela F066VAR.  A gestão das situações em que as formas de pagamento devem ser inseridas nas filiais deve ser feita no Gestão Empresarial | ERP por meio desta tela.
+            
+            Utilização:
+            
+                A entrada deste processo no Gestão Empresarial | ERP ocorre através da integração da nota fiscal de saída de remessa para conserto emitida na Filial que recebeu o produto com defeito e, logo em seguida, da integração da ocorrência de assistência técnica, que gera, automaticamente, uma pendência de carga para buscar o produto na loja. A partir deste momento, é atender a pendência de carga de duas formas:após formar uma carga pelo módulo de distribuição, ao fechá-la, é possível verificar se existem pendências de carga. Através dessa tela, é permitido vincular as pendências de carga com a carga recém formada. A intenção é aproveitar o caminhão que está saindo para coletar os produtos de assistência técnica já que ele vai passar pela rota da loja, economizando, assim, com logística;acesse a tela Pendências para a Carga (F097PEN), filtre o período, o(s) cliente(s) e/ou a(s) rota(s) desejada(s) e clique em Mostrar. Selecione a(s) pendência(s) desejada(s), altere a situação dela(s) na grade 9 – Finalizada e clique em Processar. Essa opção pode ser efetuada a qualquer momento e não depende da existência de uma carga indo para aquela rota, no entanto, pode gerar desperdícios com logística.
+            
+            
+                Observação
+                
+                Após o atendimento da carga, é alterada a situação da assistência técnica e integrada com o Gestão de Lojas para que a loja tenha conhecimento de que o caminhão já está a caminho para efetuar a coleta.
+            
+            
+                No retorno do caminhão, será preciso confirmar a coleta através da tela Assistência Técnica - Consulta de Ocorrências (F118COC), selecionando as ocorrências desejadas e clicando no botão Conf. Col./Rec./Ent.. Após essa confirmação, o produto está pronto para que seja feita a análise de triagem;
+            
+            
+                Durante a triagem, avalia-se se é possível consertar o produto internamente ou se será necessário enviá-lo para alguma assistência técnica externa, prosseguindo da seguinte forma:para os produtos que puderam ser consertados internamente, selecione-os na garde e clique em Conserto Interno. O sistema irá gerar, automaticamente, uma pendência de carga para que os produtos sejam retornados à Filial;para os produtos que necessitam ser enviados para uma assistência externa, selecione-os na grade, selecione o fornecedor de assistência técnica na guia Assistência Externa e clique em Enviar. Será gerada uma nota fiscal de saída de remessa para conserto para enviar o produto à assistência técnica.Ao retornar à Filial de assistência, será preciso acessar cada assistência técnica através do botão Ocorrência e preencher o campo Ordem da assistência técnica com o código da OS na assistência externa, para que seja permitido confirmar a entrega dos produtos na assistência técnica externa, selecionando-as e clicando em Conf. Col./Rec./Ent.;Quando os produtos retornarem da assistência técnica externa, detalhe o serviço que foi executado através do botão Trâmites. Em seguida, selecione as ocorrências e clique em Receber, optando dentre as opções a seguir:Botão Gerar NFUtilize esta opção quando o fornecedor de assistência técnica não tiver emitido uma nota fiscal para retorno de conserto. Neste caso, o sistema irá gerar esta nota fiscal automaticamente com as naturezas de operações configuradas na operação de nota fiscal Operação Retorno Conserto Externo, disponível na guia Parâmetros Gerais, da tela Parâmetros para Assistência Técnica e Controle de Garantia (F070FAG), e a série definida no campo Série NF desta mesma tela.Botão Vincular NFUtilize esta opção quando o fornecedor de assistência técnica tiver emitido uma nota fiscal para retorno de conserto. Esta nota fiscal pode ser digitada através da tela Nota Fiscal de Entrada Agrupada (F440GNE), ou através da rotina de recebimento eletrônico. Com a nota fiscal disponível, basta informar os seus dados para vinculá-la à ocorrência de assistência técnica.
+            
+            
+                Ao final das opções a e b, do item acima (3), terá sido gerada automaticamente uma pendência de carga para retorno dos produtos à Filial de origem. O atendimento desta pendência de carga pode seguir os mesmos procedimentos das opções a e b, do item 1. Após o atendimento dessa pendência de carga, será gerada uma nota fiscal de saída de retorno de conserto saindo da Filial de assistência técnica e uma nota fiscal de entrada de retorno de conserto na Filial loja, a qual será integrada com o Gestão de Lojas na situação Aguardando Conferência. A nota fiscal de saída da Filial de assistência técnica será gerada com as naturezas de operações configuradas na operação de nota fiscal Operação Retorno Conserto Cliente, disponível na guia Parâmetros Gerais, da tela Parâmetros para Assistência Técnica e Controle de Garantia (F070FAG), e a série definida no campo Série NF dessa mesma tela. E a nota fiscal de entrada na Filial de origem será gerada com a mesma série, porém, as naturezas de operações serão obtidas através da transação de módulo COF – Compras – NF Entrada Produtos, integrada com a transação da nota fiscal de saída;
+            
+            
+                A partir daqui, o andamento da ocorrência de assistência técnica é efetuado a partir do Gestão de Lojas. Para mais detalhes consulte a documentação Utilizando a Assistência Técnica - Processo no Gestão de Lojas.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

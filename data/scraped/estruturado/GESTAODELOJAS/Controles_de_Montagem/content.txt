@@ -1,0 +1,195 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/servicos/controle-de-montagem.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7C_____7
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Controles de Montagem
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Controles de Montagem
+                Conceito              
+                Permite a consulta de montagens agendadas pelo pedido.
+                A tela consiste  em acompanhar a situação de cada controle gerado  pelo pedido de venda e alterar a situação de cada um deles conforme seu andamento.
+                Utilização             
+                Esta tela funciona como uma “agenda”. Nela, é possível visualizar todas as montagens  que foram agendadas a partir de um pedido. Através dos botões disponíveis, pode-se  alterar, visualizar, imprimir e definir a situação para cada montagem agendada.
+                
+                    Nota: 
+                    O sistema de Retaguarda  pode receber do sistema ERP  controles de montagem   gerados por outras filiais que serão montados pela filial indicada, para que sejam responsáveis pela montagem.
+                
+                Processo
+                A tela  é acessada através do caminho: Menu Mercado > Gestão de faturamento > Controles de Montagem.. Ao acessar o caminho, é apresentada na tela a lista de todas as montagens agendadas com situação Aberto.
+                Esta tela inicial possui  ainda, a opção de pesquisa para que sejam aplicados filtros de busca por um controle específico como nome do cliente, situação e outros. Assim, um controle pode ser localizado com mais agilidade através  de filtros. 
+                Botão Alterar 
+                Permite realizar alterações em um controle de montagem enquanto a situação dela não for Fechado, Concluído ou Cancelado.
+                Para efetuar uma alteração, marque na caixa de seleção a linha correspondente ao controle que deseja alterar e utilize o botão Alterar. 
+                O sistema abrirá o controle de montagem selecionado, nele  poderão ser efetuadas alterações de endereço da montagem, montador, data de montagem, período e incluir outros produtos para montagens que constem no pedido. Além disso, podem ser informadas e gravadas ocorrências e, informações adicionais da montagem.
+                Após efetuar as alterações necessárias, utilize o botão Gravar. 
+                Botão Visualizar 
+                O botão Visualizar é utilizado apenas para consultar o controle da montagem selecionado, não sendo possível efetuar nenhum tipo de alteração ou inclusão de informações.
+                Botão Opções de Impressão 
+                Opções de Impressão
+                
+                O botão  efetua a impressão de todos os controles de montagem apresentados. É possível agrupar as informações no momento da visualização, conforme filtros aplicados e selecionar como deseja imprimir, se  Lista ou Itens Selecionados.
+                Exemplo:
+                    
+                        Controles filtrados por situação 5 - Cancelados:
+                        
+                            
+                        
+                        Ao utilizar a opção Imprimir Lista, o sistema perguntará o tipo de saída da impressão:
+                        
+                            
+                        
+                        Será apresentado para impressão a lista de todos os controles de montagem com situação Cancelado:
+                        
+                            
+                        
+                    
+                
+                Se desejar imprimir um controle de montagem específico, selecione-o na caixa de seleção, utilize o botão Visualizar para abrir o controle selecionado   e utilize o botão Imprimir.
+                Exemplo:
+                    
+                        Ao utilizar a opção o botão Imprimir Selecionados com o controle de montagem aberto, selecione na tela exibida as informações que deverão ser impressas junto ao controle.
+                        
+                            
+                        
+                        Selecionando as duas opções, serão apresentados os seguintes relatórios:
+                         
+                        Controle de montagem
+                        
+                            
+                        
+                        Declaração da montagem do produto:
+                        
+                        
+                            
+                        
+                    
+                
+                
+                    Nota
+                    
+                    Se o parâmetro dinâmico VENDA. (do cadastro de filiais do Gestão Empresarial | ERP) é definido como 1, são impressos  em uma única via os itens de todos os controles de montagem do pedido, utilizando os dados gerais do primeiro controle de montagem adicionado:
+                    
+                        
+                    
+                
+                Alterar a situação da montagem
+                Os botões Montado, Saiu para montagem, Fechado e Cancelar são utilizados para alterar a situação dos controles de montagem selecionados.
+                A situação dos controles de montagem podem ser alteradas individualmente ou em séries.
+                Individualmente
+                    
+                        Para alterar a situação apenas de um controle,  é necessário abrir o controle de montagem em modo de alteração. Selecione a situação da montagem conforme status atual e utilize o botão Gravar para salvar a alteração.
+                        Exemplo:
+                            
+                                
+                                    
+                                
+                            
+                        
+                    
+                
+                Em série
+                    
+                        Para alterar  vários controles de montagem para uma mesma situação, selecione-os na tela inicial e utilize os botões disponíveis na tela: Montado, Saiu para montagem, Fechado ou Cancelar.
+                        Exemplo:
+                            
+                                Selecionados 07 controles e alterada a situação de “Aberto” para “Saiu para Montagem”:
+                                
+                                    
+                                
+                                O sistema apresentará a mensagem de alerta:
+                                
+                                    
+                                
+                                Utilize a opção  “Sim” para que a situação dos controles sejam alteradas:
+                                
+                                    
+                                
+                            
+                        
+                    
+                
+                
+                    Dicas:
+                    
+                    Os controles com situação  Aberto podem ser alterados para:
+                    
+                        1 = Saiu para montagem
+                        2 = Montado
+                        3 = Fechado
+                        5 = Cancelado
+                    
+                     
+                    Os controles com situação Saiu para montagem podem ser alterados para:
+                    
+                        0 = Aberto (O usuário deverá entrar no controle individual correspondente e alterar a situação)
+                        2 = Montado
+                        3 = Fechado
+                        5 = Cancelado
+                    
+                     
+                    Os controles com situação Montado podem ser alterados para:
+                    
+                        0 = Aberto
+                        1 = Saiu para montagem
+                        3 = Fechado
+                        5 = Cancelado
+                    
+                
+                Ao alterar a situação de uma montagem para Montado, esse controle poderá ser fechado respondendo a pergunta apresentada pelo sistema. Caso responda que não deseja fechar o controle de frete, este poderá ser fechado utilizando o botão Fechado na tela inicial.
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Notas: 
+                    
+                        Todos os controles de montagem com situação Fechado, Concluído ou Cancelado não poderão  ser alterados.
+                        A situação Concluído, somente poderá ser informada pelo sistema ERP por meio de integração.
+                    
+                
+                Cancelamento de controle de montagem
+                O sistema de Retaguarda não permite a exclusão de controles de montagem. Como alternativa, eles podem ser cancelados através do botão Cancelar na tela inicial. 
+                Para efetuar o cancelamento de uma  montagem agendada, localize-a através do campo de Pesquisa aplicando  filtros  do número do pedido ou do número do controle de montagem. 
+                Selecione o agendamento na caixa de seleção, utilize o botão Cancelar e confirme o cancelamento.
+                Exemplo:
+                    
+                        
+                            
+                        
+                        Ao acionar o botão Cancelar, confirme o cancelamento da montagem respondendo a pergunta apresentada pelo sistema.
+                        
+                            
+                        
+                    
+                
+                Cancelamento automático do controle de montagem
+                Os controles de montagem são can

@@ -1,0 +1,179 @@
+# 
+
+URL: https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/#definicoes/definicoes.htm%3FTocPath%3D_____6
+
+---
+
+
+        Ver site completo
+        
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORoteirização e Torre de Controle - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Definições
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Definições
+            Embora seguindo os Primeiros passos seja possível começar a usar a solução de Roteirização e Torre de Controle rapidamente, essas configurações iniciais são mais básicas. São as demais Definições que permitem maiores ganhos em produtividade e economia na roteirização automática, prevendo atender a situações como:
+            
+                Determinados clientes podem ter restrição de espaço e exigir tipos específicos de veículos para atendê-los.
+                Diferentes operações, como a entrega para abastecer uma loja ou porta a porta para o consumidor final, demandam grupos de veículos distintos para serem realizadas.
+                Certos veículos, grupos de veículos ou placas não podem circular em determinados dias da semana e faixas horárias.
+            
+            Quais definições estão disponíveis?
+            Além daquelas que já são definidas para implantação (Empresas, Veículos, Destinos, Motoristas e alguns aspectos de Ocorrências e Grupos de Veículos), conforme descrito no tópico Primeiros passos, também existem as seguintes:
+            Ocorrências
+                
+                    Além das primeiras configurações relacionadas às ocorrências, que são feitas preferencialmente durante a implantação do produto, também é possível:
+                    Mudar a Situação da ocorrência para "Inativa" (ou "Ativa")
+                        
+                            Para isso:
+                            
+                                Acesse Logístca > Otimização Logística > Roteirização e Monitoramento> Definições > Ocorrências e clique em Filtrar para mostrá-las.
+                                Clique sobre a Ocorrência desejada.
+                                No painel Dados Gerais, mude o valor do campo Situação, para "Inativa" (por padrão, uma Ocorrência é sempre criada como "Ativa"). Com a mudança para "Inativa", a ocorrência não fica mais disponível para uso no Aplicativo do Motorista, mas continua disponível no sistema para ser ativada novamente, se necessário, e também para que eventuais os dados históricos sejam mantidos.
+                            
+                            
+                                Nota
+                                
+                                Não é possível editar ou excluir uma Ocorrência que já tenha sido utilizada (foi apontada em alguma atividade). A única opção, no caso, é deixá-la inativa.
+                            
+                        
+                    
+                    Liberar Atividade para nova roteirização quando a Conclusão da Ocorrência é "Não Realizada"
+                        
+                            Essa opção só fica disponível para roteirização automática ou manual. Para isso:
+                            
+                                Acesse Logística > Otimização Logística > Roteirização e Monitoramento> Definições > Ocorrências e clique em Filtrar para mostrá-las.
+                                Clique sobre a Ocorrência desejada - desde que sua Conclusão seja "0 - Não Realizada".
+                                No item Replanejar, marque a caixa de seleção Liberar atividade, que ao ser marcada, permite definir se a Atividade fica disponível para nova roteirização no Apontamento da ocorrência ou na Finalização da rota.
+                            
+                            
+                                Nota
+                                
+                                A data de início das rotas da nova roteirização funciona de acordo com a forma como a atividade deve ser liberada:
+                                
+                                    Se no Apontamento da ocorrência, deve:Ser posterior à data de previsão de término da rota se a rota não estiver finalizada;Ser posterior à data de término da rota se a rota já estiver finalizada.
+                                    Se na Finalização da rota, deve ser posterior à data de término da rota se a rota já estiver finalizada.
+                                
+                            
+                        
+                    
+                    As ocorrências, podem ser para atividades do tipo :
+                    Entrega
+                        
+                            Para as ocorrências do tipo entrega, temos as seguintes opções de conclusão:
+                            
+                                Não realizada: permite ou não que a atividade seja replanejada para uma nova rota/roteirização.
+                                Realizada e Realizadas com ressalvas: concluí a entrega como efetuada.
+                                Devolvida: indica que a entrega foi devolvida no ato da entrega.
+                            
+                        
+                    
+                    Coleta
+                        
+                            Para as ocorrências do tipo coleta, temos as seguintes opções de conclusão:
+                            
+                                Não realizada: permite ou não que a atividade seja replanejada para uma nova rota/roteirização.
+                                Realizada: concluí como efetuada a coleta.
+                                Cancelada: indica que a coleta foi cancelada na execução da mesma.
+                            
+                        
+                    
+                    Serviço
+                        
+                            Para as ocorrências do tipo serviço, temos as seguintes opções de conclusão:
+                            Não realizada: permite ou não que a atividade seja replanejada para uma nova rota/roteirização.
+                            Realizada e Realizadas com ressalvas: concluí o serviço como efetuado.
+                            Cancelada: permite cancelar o serviço.
+                        
+                    
+                    Replanejamento
+                        
+                            Marcado o parâmetro Liberar atividade, será possível realizar o replanejamento da atividade apontada com a ocorrência configurada com a conclusão não realizada, para novas rotas.
+                            Existem duas opções de replanejamento:
+                            
+                                Apontamento da ocorrência: libera a atividade para ser replanejada após realização e sincronização do apontamento da ocorrência.
+                                Finalização da rota: libera a atividade para ser replanejada após a finalização da rota.
+                            
+                        
+                    
+                    As ocorrências, possuem regras, estas, que no cadastro de ocorrências, possui alguns passos, e para cada passo há uma regra.
+                    Vejamos abaixo como cada passo/regra funciona:
+                    Contato
+                        
+                            Nas regras do contato, temos as opções:
+                            
+                                Não exigir: selecionada essa regra, o passo Contato será apresentado para o usuário no aplicativo, mas sem obrigatoriedade de preenchimento dos campos.
+                                Exigir nome e telefone: selecionada essa regra, será obrigatório o preenchimento dos campos Nome e Telefone do passo Contato.
+                                Exigir somente o nome: selecionada essa regra, será obrigatório o preenchimento do campo Nome do passo Contato.
+                                Exigir nome e RG: selecionada essa regra, será obrigatório o preenchimento dos campos Nome e RG para o passo Contato.
+                                Não utiliza: selecionada essa regra, o passo Contato não será apresentado para o usuário no aplicativo.
+                            
+                        
+                    
+                    Observação
+                        
+                            A regra Observação, somente estará disponível se a regra contato estiver habilitada, caso contrário, o campo ficará bloqueado.
+                        
+                    
+                    Detalhes da Entrega / Serviço
+                        
+                            A regra detalhes da entrega ou serviço, ficará habilitada somente para as ocorrências do tipo entrega ou serviço.
+                        
+                    
+                    Captura de imagem
+                        
+                            A regra de captura de imagem para as ocorrências, se aplicam da seguinte forma:
+                            Quando a ocorrência for para o tipo entrega,  são apresentadas as seguintes opções: 
+                            
+                                Não utiliza: selecionada essa regra, o passo não será exibido para o preenchimento no aplicativo.
+                                Opcional: selecionada essa regra, o passo será apresentado no aplicativo não será obrigatório o seu preenchimento.
+   

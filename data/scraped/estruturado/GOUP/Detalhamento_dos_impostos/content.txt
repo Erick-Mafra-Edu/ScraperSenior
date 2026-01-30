@@ -1,0 +1,170 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#geral/impostos_nos_documentos_fiscais.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Detalhamento dos impostos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Detalhamento dos Impostos
+            A função desta rotina é possibilitar a configuração dos percentuais e alíquotas de cada imposto que influenciam no valor de venda do produto ou serviço. Ela ocorre através da tela F075INF, que calcula os valores dos impostos: ICMS, IPI, ISS, IOF, PIS, COFINS, PIS Importação, COFINS Importação, INSS, CIDE e Imposto de Importação nos documentos fiscais, nela serão listados os produtos e serviços conforme o filtro aplicado na tela.
+            Estes percentuais são destinados a serem aplicados, sobre o preço de venda do documento fiscal, e apresentados ao consumidor final  na nota fiscal, no cupom fiscal (quando existir integração com Varejo) e na nota fiscal eletrônica. Este cálculo é o obrigatório para empresas que tem a necessidade de apresentar os impostos que compõem do preço de venda do produto e que deve ser apresentado nos documentos fiscais de venda a consumidor.
+            Para o cálculo e geração dos impostos no documento fiscal de venda a consumidor, é necessária a configuração dos seguintes parâmetros:
+            Na tela F070FVE (Cadastros > Filiais > Parâmetros por Gestão > Vendas e Faturamento), na guia "Vendas 2", o campo Impostos Documento Fiscal deve preenchido com "S-SIM".
+            Nas telas F085CAD (Cadastros > Clientes e Fornecedores > Clientes > Cadastro) e F075PPC (Cadastros > Clientes e Fornecedores > Clientes > Ligações > Cliente X Produto > Individual), o campo Consumidor Final deve estar preenchido com "S-SIM", ou em branco, porém caso estiver em branco, o campo Aplicação da Operação, da tela F001TVE (Cadastros > Transações > Parâmetros por Gestão > Vendas) deve estar preenchido com  "S – Consumo Próprio" ou "V - Serviço".
+            Exemplo
+                
+                    1º) Ligação Cliente x Produto (F075PPC)
+                    Consumidor Final = S, calcula os impostos;
+                    Consumidor Final = N, não calcular os impostos;
+                    Consumidor Final = '' ver 3° item
+                    2º) Cliente (F085CAD)
+                    Consumidor Final = S, calcula os impostos;
+                    Consumidor Final = N, não calcular os impostos;
+                    Consumidor Final = '' ver 3° item
+                    3º) Transação (F001TVE)
+                    Aplicação da Operação = S (Consumo Próprio) ou V (Serviço), calcula os impostos;
+                    Caso contrário não calcula os impostos.
+                
+            
+            Durante o lançamento da nota fiscal é verificado, primeiramente, se o parâmetro “Impostos Documento Fiscal” está preenchido com “SIM”, neste momento, todas as notas fiscais faturadas são candidatas à impressão dos impostos no documento fiscal. Após esta aprovação, é verificado o parâmetro “Consumidor Final”, na ligação Produto X Cliente, caso ele esteja com preenchimento diferente de SIM, é verificado o parâmetro “Consumidor Final” no Cadastro de Clientes, se este parâmetro estiver com “SIM” ou em branco, e se o campo Cliente Contribuinte ICMS estiver preenchido com "NÃO", o cálculo e o detalhamento dos impostos no documento fiscal serão gerados.
+            Confirmada a geração dos detalhes dos impostos na nota fiscal de venda, durante o faturamento, são localizados os registros para cada item do documento fiscal, referente à configuração dos percentuais e alíquotas dos impostos válidos, conforme a data de emissão da nota fiscal. Os impostos são calculados e armazenados em uma estrutura paralela ao lançamento do item na nota fiscal. 
+            Durante a geração da NF-e, estes valores serão apresentados em seus respectivos campos conforme a definição do leiaute da NF-e. A partir desta informação, no arquivo eletrônico da NF-e, a totalidade destes impostos deve ser impressa no DANFE, de modo a apresentar a carga tributária sobre esta operação fiscal. 
+            Já, para clientes que utilizam as vendas através do Varejo, as informações presentes na configuração dos “Impostos no Documento Fiscal” serão enviadas para o sistema de Varejo, com os valores de cada imposto, conforme determinado na lei. Estes valores são calculados de acordo com o seu preço de venda, definido na tabela de preço. Nesta integração não existe verificação de parâmetros para calcular os detalhamentos de impostos, uma vez que estes impostos estiverem configurados, eles serão enviados para o sistema de Varejo. Porém, como há a ligação da Classificação Fiscal à Configuração de Impostos, é necessário que para produtos e serviços que possuem a mesma configuração de classificação fiscal, possuam, também, a mesma configuração de tributação na tela F075INF.
+            Como a impressão destes impostos não está definida na legislação, o sistema de Varejo contará com duas alternativas de impressão. A primeira é a impressão do total de impostos que o item possui, sendo impresso item a item. A segunda opção é a impressão do total dos impostos no final do cupom fiscal, sendo totalizados os impostos que o cupom fiscal possui.
+            Paralelamente a todo este tratamento, a lei ainda permite, em seu art. 1º § 2º, que a informação do detalhamento dos impostos pode constar em painel afixado no estabelecimento, ou por qualquer outro meio eletrônico ou impresso, de forma a apresentar os valores ou percentuais aproximados dos impostos.
+             
+            Lei 12.741 
+            A Lei 12.741 nasceu de uma iniciativa da FACESP (Federação das Associações Comerciais do Estado de São Paulo) juntamente com 104 entidades de grande representatividade nacional, objetivando tornar transparente o valor pago em impostos pelo consumidor em operações comerciais. O valor deve ser calculado por item, utilizando valores aproximados disponibilizados por entidades reconhecidas de apuração de dados econômicos, desta forma, se espera  maior conscientização dos consumidores quanto ao valor pago em impostos.
+            Através do site: http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12741.htm é possível saber da legislação na íntegra.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

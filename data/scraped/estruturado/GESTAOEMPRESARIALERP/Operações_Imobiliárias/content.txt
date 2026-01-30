@@ -1,0 +1,143 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/controladoria-tributos/operacoes-imobiliarias.htm%3FTocPath%3DSegmentos%7CCompliance%7C_____10
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ajuda por telas > Controladoria > Gestão de Tributos > Escrituração > Lançamentos > Operações Imobiliárias
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Operações Imobiliárias
+            O Gestão Empresarial | ERP dispõe de rotinas para  registrar as operações imobiliárias que precisam ser apresentadas no SPED Contribuições e na Declaração de Informações s/ Atividades Imobiliárias (DIMOB).
+            Parametrização
+            As telas utilizadas para atender as operações imobiliárias  no SPED Contribuições são exibidas apenas quando o tipo de empresa (campo Tipo Empresa da tela Cadastro de Filiais (F070FCA)) da filial for  diferente de 9 ou 12 - Atividade Imobiliária.
+            Telas
+            O Gestão Empresarial | ERP utilizadas as telas abaixo para atender as operações imobiliárias:
+            
+                 Cadastro de Unidade Imobiliária (F056IMO) (Cadastros > Controladoria > Tributos > Unidade Imobiliária):
+            
+            São cadastradas, alteradas ou removidas as unidades imobiliárias que serão locadas ou comercializadas. Este cadastro atende as operações imobiliárias apresentadas no SPED Contribuições e na DIMOB (Declaração de Informações s/ Atividades Imobiliárias).
+            
+                Imobiliárias > Locações/Intermediações (F661OIM) (Controladoria > Gestão de Tributos > Escrituração > Lançamentos):
+            
+            São cadastrados os lançamentos por filial dos  pagamentos relativos às operações de locação/sublocação e intermediação de venda realizados no ano, discriminados mensalmente por rendimento bruto, valor da comissão e imposto retido na fonte, quando houver. 
+            Os lançamento realizados nessa tela servem exclusivamente para atender o arquivo da DIMOB. Para o SPED Contribuições os valores referente a locação devem ser registrados como outros documentos, conforme orientação guia prático essa informação deve ser apresentada no registro F100. Não é possível contabilizar as locações e intermediações a partir dessa tela.
+            
+                Incorporação Imobiliária - Regimes Especiais de Tributação (F661IIR) (Controladoria > Gestão de Tributos > Escrituração > Lançamentos > Imobiliárias):
+            
+            É utilizada pela pessoa jurídica que executa empreendimentos objeto de incorporação imobiliária e que apuram contribuição social com base em Regimes Especiais de Tributação (RET). 
+            As normas relativas ao RET, nas modalidades previstas na legislação tributária, encontram-se dispostas na Instrução Normativa RFB nº 1.435/2013.
+            Os lançamentos realizados nessa tela servem exclusivamente para atender o arquivo do SPED Contribuições (registro 1800). Não é possível contabilizar essas informações a partir dessa tela.
+            
+                 Unidade Imobiliária Vendida (F661UIV) (Controladoria > Gestão de Tributos > Escrituração > Lançamentos > Imobiliárias):
+            
+            É utilizada pela pessoa jurídica que obteve receita da atividade imobiliária, decorrente da aquisição de imóvel para venda, promoção de empreendimento de desmembramento ou loteamento de terrenos, incorporação imobiliária ou construção de prédio destinado à venda, sendo essas operações próprias da atividades imobiliárias. 
+            Consulta dos lançamentos
+            A consulta dos lançamentos de operações imobiliárias realizados na telas, podem ser consultadas na guia Unidade Imobiliária Vendida, na tela Consulta de Lançamentos (F660BLA).
+            As telas Locações/Intermediações (F661OIM) e Incorporação Imobiliária - Regimes Especiais de Tributação (F661IIR) possuem a funcionalidade de inclusão, manutenção e consulta. Sendo assim essas telas não estão disponiveis na tela de consulta de lançamento (F660BLA).
+            Apuração dos impostos
+            PIS e COFINS
+                
+                    A apuração dos impostos PIS e COFINS das empresas que possuem atividade imobiliárias pode ser realizado pelo regime Não Cumulativo (tipos 41 e 42) ou Cumulativo (tipos 43 e 44). A apuração considera as informações das telas para registrar as operações imobiliárias no cálculo por regime de competência.
+                    As informações da apuração de PIS e COFINS referente a operações imobiliárias geradas na apuração são exibidos no modelo de relatório Apuração de PIS/COFINS - Regime Cumulativo (CIOO079).
+                    Para que os lançamentos realizados na tela Unidade Imobiliária Vendida (F661UIV) sejam considerados na apuração do PIS, o código da contribuição social vinculado ao imposto deve ser do tipo 54 - Contribuição cumulativa apurada a alíquota básica - Atividade imobiliária. Essa parametrização é realizada na guia Contribuição Social da tela Configuração do Imposto para a Filial (F055PPF).
+                    Quando a apuração é realizada na tela Resumo da Apuração dos Impostos (F661I12) as informações são discriminadas conforme segue:
+                    Guia Crédito > Resumo
+                    Exibe os créditos escriturados nas guia Custo Incorrido e Custos Orçado da tela Unidade Imobiliária Vendida (F661UIV), quando o CST da escrituração for igual 50, 51, 52, 53, 54, 55, 56, 60, 61, 62, 63, 64, 65, 66 e 67.
+                    O campo Tip. Créd. é gerado com o código 109 - Crédito vinculado à receita tributada no mercado interno – Atividade Imobiliária e o campo Total Créd. é gerado com o valor da parcela a descontar no período da escrituração (proporcional à receita recebida no mês) e o valor do crédito sobre o custo orçado a ser utilizado no período da escrituração.
+                    Os campos Alíq. Imp. e Vlr. Bas. Cálc. não são gerados e os demais campos são gerados de forma padrão.
+                    Os ajustes e as origens são detalhadas nos botões Origens e Ajustes. 
+                    
+                        Importante
+                        
+                        Devoluções de unidade imobiliária vendidas devem ser estornadas manualmente através da inclusão de um ajuste de redução na apuração do imposto.
+                    
+                    Guia Crédito > Detalhamento
+                    Esta guia exibe o detalhamento dos créditos apresentados na guia Resumo. Os campos da guia são exibidos conforme abaixo:
+                    
+                        Base Cálc. Créd.: agrupa pelo código informado na escrituração do custo incorrido e custo orçado;
+                        Sit. Trib.: agrupa pela situação tributária informada na escrituração do custo incorrido e custo orçado;
+                        Tot. Bas. Cál.: exibe o valor da base de cálculo do crédito;
+                        Tot. Bas. Cál. Cum.: exibe o valor da parcela da base de cálculo do crédito, vinculada a receitas de natureza cumulativa;
+                        Bas. Cál. Não Cum.: exibe o valor da parcela da base de cálculo do crédito, vinculada a receitas de natureza cumulativa;
+                        Vlr. Bas. Cál. Créd.: exibe o cálculo do crédito.
+                    
+                    Guia Contribuição > Resumo da Contribuição
+                    Nesta guia são consolidadas as contribuições sociais apuradas no período da escrituração.
+                    O campo Contribuição permite localizar os códigos respectivos para apuração do imposto atividade imobiliária (cumulativo e não cumulativo). E o campo Vlr. Cont. apresenta o valor do imposto devido para o período (somatório das informações do detalhamento).
+                    Guia Contribuição > Detalhamento
+                    Os campos são exibidos conforme abaixo:
+                    
+                        Alíq. Imp.: considera a alíquota informada na tela Unidade Imobiliária Vendida (F661UIV).
+                        Rec. Bru.: exibe o valor total recebido no mês da tela Unidade Imobiliária Vendida (F661UIV).
+                        Vlr. Bas. Cálc.: exibe a base de cálculo da tela Unidade Imobiliária Vendida (F661UIV).
+                        Tot. Contr. Soc.: base de cálculo multiplicada pela alíquota.
+                    
+                    Os demais campos são gerados de forma padrão.
+                    Os ajustes e as origens são detalhadas nos botões Origens e Ajustes. 
+                    
+                        Importante
+                        
+                        Devoluções de unidade imobiliária vendidas devem ser estornadas manualmente através da inclusão de um ajuste de redução na apuração do imposto.
+                    
+                
+            
+            IRPJ e CSLL
+                
+                    Na apuração dos impostos  IRPJ e CSLL (F667RIR) são considerados, na receita, os lançamentos de unidade imobiliária vendida realizados na tela Unidade Imobiliária Vendida (F661UIV).
+                    A ordem para identifica

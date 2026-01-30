@@ -1,0 +1,226 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/multilingua/ftrimpexp.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CMultil%25C3%25ADngua%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Multilíngua > Importar e Exportar Traduções
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Ferramentas de Idiomas - Importar/Exportar 
+		 Traduções 
+                O recurso para importar e exportar traduções
+ permite criar arquivos texto contendo os itens das telas e do dicionário 
+ de dados do sistema que podem ser traduzidos. Este recurso permite também 
+ importar as traduções destes arquivo para o sistema.
+                Para utilizar o aplicativo, acesse a pasta do sistema no Servidor de Aplicativos, por exemplo C:\InstalacaoSenior\Vetorh\ e execute o arquivo TrImpExp.exe
+                Utilizando o recurso 
+ para importar/exportar traduções 
+                Na tela principal do aplicativo 
+ são apresentados os seguintes campos:
+                Processar 
+	 telas
+                    Indica se as traduções de telas devem ser importadas 
+	 ou exportadas pelo aplicativo. Quando esta opção estiver marcada e 
+	 o botão Exportar for acionado as traduções de telas serão 
+	 exportadas da base do sistema para o arquivo informado no campo Arquivo 
+	 de traduções de telas. Quando esta opção estiver marcada e o 
+	 botão Importar for acionado as traduções de telas serão 
+	 importadas do arquivo informado no campo Arquivo de traduções 
+	 de telas para a base do sistema. Quando esta opção não estiver 
+	 marcada as traduções de telas não serão exportadas ou importadas quando 
+	 os botões Exportar e Importar forem acionados.
+                
+                    Arquivo de 
+	 traduções de telas
+                        Quando a opção Processar telas 
+	 estiver marcada deve-se informar o arquivo de traduções de telas neste 
+	 campo.
+                
+                Processar 
+	 tabelas e views
+                    Indica se as traduções de tabelas e views devem 
+	 ser importadas ou exportadas pelo aplicativo. Quando esta opção 
+	 estiver marcada e o botão Exportar for acionado as traduções 
+	 das descrições de tabelas e views serão exportadas da base do sistema 
+	 para o arquivo informado no campo Arquivo de traduções de tabelas/views. 
+	 Quando esta opção estiver marcada e o botão Importar for 
+	 acionado as traduções de tabelas e views serão importadas do arquivo 
+	 informado no campo Arquivo de traduções de tabelas/views 
+	 para a base do sistema. Quando esta opção não estiver marcada as traduções 
+	 de tabelas e views não serão exportadas ou importadas quando os botões 
+	 Exportar e Importar forem acionados.
+                
+                    Arquivo 
+	 de traduções de tabelas/views
+                        Quando a opção Processar 
+	 tabelas e views estiver marcada deve-se informar o arquivo de 
+	 traduções de tabelas e views neste campo.
+                
+                Processar 
+	 campos
+                    Indica se as traduções de campos devem ser importadas 
+	 ou exportadas pelo aplicativo. Quando esta opção estiver marcada e 
+	 o botão Exportar for acionado as traduções de campos serão 
+	 exportadas da base do sistema para o arquivo informado no campo Arquivo 
+	 de traduções de campos. Quando esta opção estiver marcada e 
+	 o botão Importar for acionado as traduções de campos serão 
+	 importadas do arquivo informado no campo Arquivo de traduções 
+	 de campos para a base do sistema. Quando esta opção não estiver 
+	 marcada as traduções de campos não serão exportadas ou importadas 
+	 quando os botões Exportar e Importar forem 
+	 acionados.
+                
+                    Arquivo 
+	 de traduções de campos
+                        Quando a opção Processar 
+	 campos estiver marcada deve-se informar o arquivo de traduções 
+	 de campos neste campo.
+                
+                Processar 
+	 enumerações
+                    Indica se as traduções de enumerações devem 
+	 ser importadas ou exportadas pelo aplicativo. Quando esta opção 
+	 estiver marcada e o botão Exportar for acionado as traduções 
+	 de enumerações serão exportadas da base do sistema para o arquivo 
+	 informado no campo Arquivo de traduções de enumerações. 
+	 Quando esta opção estiver marcada e o botão Importar for 
+	 acionado as traduções de enumerações serão importadas do arquivo 
+	 informado no campo Arquivo de traduções de enumerações 
+	 para a base do sistema. Quando esta opção não estiver marcada as traduções 
+	 de enumerações não serão exportadas ou importadas quando os botões 
+	 Exportar e Importar forem acionados.
+                
+                    Arquivo 
+	 de traduções de enumerações
+                        Quando a opção Processar enumerações 
+	 estiver marcada deve-se informar o arquivo de traduções de enumerações 
+	 neste campo.
+                
+                Opções para importação
+                
+                
+                    Marcação 
+	 de traduções personalizadas
+                        Define como serão manipuladas as 
+	 marcações de traduções personalizadas durante a importação:
+                    
+                        Não alterar marcação das traduções como personalizadas: 
+		 Se esta opção estiver selecionada as marcações das traduções personalizadas 
+		 não serão alteradas na base. As traduções que estão marcadas como 
+		 personalizadas continuarão marcadas como personalizadas e as traduções 
+		 que não estão marcadas como personalizadas continuarão sem marcações 
+		 de personalizadas;
+                        Marcar as traduções existentes no arquivo como não personalizadas: 
+		 Se esta opção estiver selecionada todas as traduções contidas 
+		 no arquivo serão marcadas como não personalizadas na base;
+                        Marcar as traduções importadas como não personalizadas: 
+		 Se esta opção estiver selecionada somente as traduções que forem 
+		 importadas do arquivo serão marcadas como não personalizadas na 
+		 base;
+                        Marcar as traduções importadas como personalizadas: 
+		 Se esta opção estiver selecionada somente as traduções que forem 
+		 importadas do arquivo serão marcadas como personalizadas na base;
+                        Marcar as traduções existentes no arquivo como personalizadas: 
+		 Se esta opção estiver selecionada todas as traduções contidas 
+		 no arquivo serão marcadas como personalizadas na base;
+                    
+                    Sobrescrever 
+	 traduções personalizadas
+                        Indica se as traduções que estão personalizadas 
+	 na base de dados devem ser sobrescritas pelas traduções que estão 
+	 no arquivo que está sendo importado. Se esta opção estiver ligada 
+	 as traduções personalizadas serão sobrescritas na base. Se esta opção 
+	 não estiver ligada as traduções personalizadas não serão sobrescritas 
+	 na base;
+                
+                Não utilizar aspas
+                    Quando a opção estiver marcada, 
+	 ao executar uma exportação, os dados serão separados apenas por ponto-e-vírgula. 
+	 Só utilize essa opção caso tenha certeza de que o texto a ser exportado 
+	 não tenha nenhum ponto-e-vírgula.
+                Botão Exportar
+                    	 Exporta as traduções do sistema para arquivos texto. Para mais detalhes 
+	 ver exportação de traduções.
+                Botão Importar
+                    	 Importa as traduções de arquivos gerados por este aplicativo 
+	 para o sistema. Para mais detalhes ver importação de traduções.
+                Botão Cancelar
+                    Cancela a exportação ou importação que está 
+	 sendo executada no momento. Esse botão aparece somente quando existe 
+	 um processamento em andamento.
+                Botão Sair
+                    	 Fecha o aplicativo.
+                Botão Ajuda
+                    	 Mostra a ajuda para o recurso.
+                Exportação 
+ de Traduções
+                Para exportar as traduções do sistema é necessário marcar os itens 
+ que deverão ser exportados (telas, tabelas/views, 
+ campos ou enumerações. 
+ Pelo menos uma destas opções deve ser marcada). Para as opções marcadas 
+ deve-se informar os nomes dos arquivos correspondentes que serão 
+ gerados com as traduções. Marque a opção Não utilizar aspas 
+ caso queira que os dados exportados estejam separados apenas por ponto-e-vírgula. 
+ Ao clicar no botão Exportar 
+ será apresentada uma tela para a seleção de arquivo de configuração, onde 
+ deve ser escolhido o arquivo da base onde estão as traduções que se deseja 
+ exportar as traduções para os arquivos. Após escolher o arquivo de configuração 
+ será apresentada uma tela para a seleção do idioma que se deseja exportar.
+                Se não existir idiomas cadastrados na base escolhida esta tela não aparecerá. 
+ Se a seleção de idioma for cancelada, ou se for escolhido o idioma nativo 
+ as traduções do arquivo ficarão vazias.
+                Ao final da execução serão apresentados os logs de exportação.
+                Os arquivos são gerados no formato csv (comma saparated values - valores 
+ separados por vírgula), que podem ser abertos em qualquer editor de texto, 
+ no Excel 

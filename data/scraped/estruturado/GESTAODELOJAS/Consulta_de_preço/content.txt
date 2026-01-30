@@ -1,0 +1,155 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/consulta-preco.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Consulta de preço
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Consulta de Produtos / Estoque / Preço
+            Conceito 
+            A tela de consulta de preço do Retaguarda tem como objetivo  permitir ao vendedor realizar um atendimento inicial aos clientes/consumidores e de forma  ágil consultar produtos,  preços e estoques. A simulação funciona como um método de negociação com o cliente. Através dela, pode-se efetuar uma negociação de venda, simular parcelas e  formas de pagamento. 
+            Utilização
+            A consulta de preço é utilizada para consultar informações  como:
+            
+                Consulta de preços /promoções/economia;
+                Consulta de disponibilidade de produtos no estoque de outras filiais;
+                Consulta de informações técnicas sobre o produto;
+                Simulação de venda e condições de pagamento.
+            
+            A partir de uma simulação de venda, o vendedor pode gerar um pedido ou uma pré-venda sem precisar digitar novamente as informações da simulação.
+            
+                Nota 
+                Para vendas com entrega futura, será permitido somente pesquisar os produtos com ligação ativa com o depósito padrão da loja. No caso de entrega futura pelo CD, mesmo que um produto tenha ligação ativa com o CD padrão, para ficar visível na tela também deverá ter ligação com o depósito padrão da loja.
+            
+            Processo
+            Para abrir a tela de consulta, utilize as teclas de atalho Ctrl+ F11 e pesquise pelo nome parcial da tela, ou siga o caminho através do menu: Mercado > Gestão de Vendas > Consulta de preço.
+            Exemplo:
+                
+                    
+                        
+                    
+                
+            
+            Consultar preço 
+            Para efetuar a consulta de um produto, utilize o campo Produto/Serviço. A consulta é rápida e fácil, pois permite informar parte da descrição, modelo, ou qualquer informação técnica, código do produto e de barra ,Marca ou característica para pesquisa de produtos. Semelhante aos sites de busca.
+            Exemplo:
+                
+                    
+                        
+                    
+                    A consulta apresenta as informações em todos os estoques disponíveis: Estoque Filial, Estoque CD, Marca e Estoque da Rede, além de informar se há economia nos itens selecionados e  se  está fora de linha.
+                    Ao consultar um produto que não possui estoque na loja, é apresentada uma mensagem no qual umas das opções de resposta é optar por consultar o estoque na rede
+                    Exemplo:
+                        
+                            . 
+                        
+                    
+                    Também será adicionado um o botão de consulta de estoque na rede, na tela de consulta de estoque da filial (conforme anexo 2).
+                
+            
+            
+                Processo automático para funcionamento da rotina
+                Para a rotina de consulta de produto, estoque e preço, a configuração do processo automático 103 é fundamental para que as colunas Estoque Rede e Estoque CD funcionem corretamente.
+            
+            
+                Nota 
+                Na consulta de produtos do tipo kit, para as colunas Estoque CD e Estoque Rede, serão apresentados os estoques dos itens componentes do kit. Caso todos os componentes contenham valor Sim, então será apresentado valor Sim para o kit. Caso um item componente do kit contenha valor Não, o kit apresentará valor Não nas respectivas colunas.
+            
+            Ao efetuar a consulta de preço, serão considerados os seguintes critérios de ordenação no resultado da busca, cada um em ordem alfabética:
+            
+                Informações do produto no estoque da loja e do CD;
+                Informações do produto no estoque da rede;
+                Demais produtos.
+            
+            Quando o produto consultado possui garantia estendida, o sistema a oferece através da seguinte mensagem: "Deseja adicionar garantia estendida para o item Nome Produto?". A garantia não será oferecida pelo sistema para produtos do tipo Kit.
+            Itens em promoção são exibidos na cor azul. 
+            
+                Observação
+                
+                O destaque de falta de estoque tem precedência em relação ao da promoção: caso um item sem estoque esteja em promoção valerá o destaque de itens sem estoque.
+            
+            
+                Nota
+                
+                Há a possibilidade de definir se a indicação da quantidade em ordem de compra, soma ou não na quantidade disponível para o depósito, na consulta de estoque de todos os depósitos, do item de pedido e na consulta de preço.Para isto, deve-se configurar o parâmetro PEDIDO.CONSULTAESTOQUETODOSDEPOSITOS.SOMARQTDORDEMDISPONIVEL, disponível na tela de F000PPD do Gestão Empresarial | ERP.
+            
+            Produtos substitutos
+            O recurso de produto substituto tem o objetivo de:
+            
+                Identificar alternativas de venda quando determinado produto não está disponível em estoque.
+                Priorizar a venda de um modelo a outro do produto.
+            
+            O cadastro de produtos substitutos é feito no Gestão Empresarial | ERP, na tela F075SUB - Ligação Produto x Produto Substituto e é integrado ao Gestão de Lojas através do web service com.senior.g5.co.int.varejo.produto, porta Exportar.
+            Sempre que identifica um produto que seja substituído por outro ou que substitui a outro, o sistema mostra os seguintes avisos em tela, dependendo da situação:
+            
+                Produto substituído tem estoque na loja ou no CD: "Este produto foi substituído pelo produto [nome do produto substituto], mas sugerimos que venda primeiro as peças que estão no CD e sua amostra antes de vender o produto novo".
+                Produto substituído não tem mais estoque nem na loja e nem no CD: "Este produto foi substituído pelo produto [nome do produto substituto], sugerimos que venda este".
+                Produto substituto para produto que ainda tenha saldo: "Este produto substitui [nome do produto substituído], pedimos que se possível venda [nome do produto substituído] antes de iniciar a venda deste".
+            
+            
+                Nota
+                
+                Caso um produto substitua mais de um, primeiro o sistema sugere a venda do mais antigo cadastrado. Somente quando acabar o estoque dele, é que vai sugerir a venda do segundo.
+            
+            Inserção de garantia estendida ou seguro furto e roubo
+            Sempre que um produto consultado possuir garantia estendida ou seguro furto e roubo, a mensagem "Deseja adicionar Garantia Estendida e/ou Seguro Furto e Roubo para o item Xxx" é exibida:
+            
+                
+                
+            
+            Ao clicar na opção Sim, a tela de Oportunidades de venda é mostrada, listando as opções disponíveis:
+            
+                
+                
+            
+            Somente é possível selecionar uma opção para cada tipo de oportunidade de venda.
+            Simulação de Venda
+            Combinar produtos para calcular o preço, essa é uma informação que é frequentemente solicitada pelos consumidores no primeiro atendimento. E se eu levar 2, quanto fica? E se eu levar este mais aquele? Essas situações são resolvidas muito facilmente por meio da rápida pesquisa e do simulador, que calcula automaticamente os valores da simulação.
+            Para efetuar a simulação de venda desses produtos, selecione a linha correspondente com um duplo clique sobre ela ou utilize Enter para adicionar os itens na grade de simulação. Ao efetuar esse passo, é apresentada uma tela para que seja informado o Tipo de entrega do item.
+            Exemplo:
+                
+                    
+                        
+                    
+                    Só após a informação de entrega, o item será incluído na simulação.
+                
+            
+            
+                Nota
+                
+                O comportamento da seleção de entrega é afetado pelo parâmetro dinâmico PEDIDO.LIMPARTIPOENTREGA, do cadastro de filial do Gestão Empresarial | ERP:
+                
+                    Se ele está definido como 0 - "Não": Este é o comportamento padrão, que mantém o tipo de entrega informado pelo usuário na consulta, inclusive para novos itens, e também é o que acontece caso o parâmetro dinâmico não seja configurado.
+                    Se está definido como 1 - "Sim": Neste caso, o sistema limpa o tipo de entrega informado e exige informar a entrega a cada novo item consultado.
+                
+            
+            
+                Nota
+                
+                Caso seja informado um tipo de entrega incorreto para o produto, é necessário excluir o item e adicioná-lo novamente. Após gerar o pedido, é possível alterar o tipo de entrega de todos os itens através da edição dos itens, pois ao utilizar duplo clique no produto, a opção Entrega(F3) ficará habilitada.
+            
+            Após incluir os itens na grade de simulação, os botões no final da tela ficam habilitados, sendo possível efetuar venda de garantia estendida, simular parcelas e gerar pedido ou pré-venda. Nesse processo, será verificado se há alguma garantia vinculada. Caso exista, a mensagem: Deseja adicionar garantia estendi

@@ -1,0 +1,182 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#geral/regime-calculo-irrf-pis-cofins-iss-fe.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CReten%25C3%25A7%25C3%25A3o%2520%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Retenção  > Regime para Cálculo de IRRF - Fornecedor Exterior
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Gross Up - Retenção de IRRF/PIS/COFINS/ISS - Fornecedor Exterior
+            Retenção do IRRF
+                /PIS/COFINS/ISS
+                 pelo regime de caixa  realizada na baixa do título
+                Define-se por regime de caixa o regime contábil que apropria as receitas e despesas no período de seu efetivo recebimento ou pagamento. No que trata da definição da base de cálculo do IRRF/PIS/COFINS/ISS, fornecedores do exterior exigem uma forma diferenciada de retenção: deve ser comparada a cotação da moeda na data da baixa do título com a cotação de dois dias úteis anteriores e a maior cotação será a utilizada para cálculo da base das retenções destes tributos. 
+            Para que o sistema realize o cálculo destas retenções para Fornecedores do Exterior considerando a Instrução Normativa nº 41/1999, é necessário atender os seguintes critérios:
+            
+                O campo Tipo cálculo IRRF/PIS/COFINS Forn. Exterior definido na tela F070EPF for igual a 2 - Regime de Caixa;
+                Fornecedor do título a pagar que está sendo baixado possuir o Tipo de Mercado igual a E-Externo, conforme definições do Cadastro de Fornecedores (F095CAD);
+                A moeda do título a pagar for diferente da moeda da empresa;
+                O sistema estiver configurado para gerar o título de IRRF/PIS/COFINS/ISS na baixa do Título a Pagar (F001TIT).
+            
+            No que diz respeito ao IRRF somente, ao realizar a baixa de um Título a Pagar gerado a partir de uma Nota Fiscal de Entrada com fornecedor estrangeiro, o sistema  registrará dois valores na tabela de movimentos do Contas a Pagar:
+            
+                Valor da cotação da moeda para fins de cálculo de IRRF fornecedor exterior. Esse campo armazenará a maior cotação levando em consideração a data da baixa do título ou a cotação de dois dias úteis anteriores.
+                Valor Base do IRRF para fins de cálculo de IR fornecedor exterior. Nesse campo é armazenado o valor Base de IRRF, na Moeda da Nota Fiscal de Entrada.
+            
+            
+                Importante
+                
+                A alíquota de IRRF utilizada para o cálculo será aquela cadastrada nas Definições do Fornecedor (F095CAD - Guia Definições). O valor de IRRF, PIS, COFINS, CSLL, ISS e Outras retenções para o Fornecedor Exterior não é descontado do título. Com relação às alíquotas de PIS e COFINS, serão considerados os valores da própria Nota Fiscal de Entrada.
+                Quando o fornecedor for do exterior e pessoa física, o cálculo do IRRF será baseado na tabela progressiva, e não utilizará o percentual de IRRF do Cadastro de Fornecedores (F095CAD). Uma alternativa para fixar o percentual de IRRF nessa situação, desconsiderando a tabela progressiva no cálculo, é utilizar o campo % IR para contrato de mútuo, disponível no cadastro do Tipo de Título (F002TPT).
+            
+            Exemplo
+                
+                    Abaixo segue um exemplo de cálculo a ser feito pelo sistema quando o fornecedor da Nota Fiscal de Entrada possuir moeda estrangeira (nesse caso Dólar). Como determinar o valor da base de cálculo para essa situação quando a cotação da moeda na baixa do título é menor que a cotação do segundo dia útil anterior?
+                    Cenário
+                    
+                    Lançamento de uma Nota Fiscal de Entrada, com valor de US$ 1.868,27 (cotação do dólar no dia da emissão: R$ 5,5709), totalizando R$ 10.407,95. Como o regime utilizado para o cálculo das retenções (IRRF/PIS/COFINS/ISS) está definido para Caixa (conforme parametrizado na tela F070EPF), esses títulos de retenção serão gerados no momento da baixa do Contas a Pagar.
+                    Na data da baixa do título do fornecedor, em virtude de variação cambial, a cotação do dólar estava em R$ 5,5426.
+                    Dois dias úteis anteriores a data da baixa, a cotação do dólar era de R$ 5,5537.
+                    Nesse exemplo, o IRRF irá ser calculado convertendo o valor do título em dólares utilizando a maior cotação, ou seja, a cotação do 2º dia útil anterior a data da baixa do título, logo R$ 5,5537.
+                    Assim, o valor em reais passa a ser de R$ 10.375,81 (1.868,27 × 5,5537).
+                    Cálculo IRRF:
+                    
+                    O IRRF é calculado aplicando-se a metodologia Gross-Up sobre o valor do título na data da baixa.
+                    Fórmula aplicada:
+                        
+                            Valor na Baixa / (1 - Alíquota IRRF) × Alíquota IRRF
+                        
+                    
+                    Cálculo detalhado:
+                        
+                            
+                                Valor do título na baixa: R$ 10.375,81
+                                Alíquota do IRRF: 15% (0,15)
+                                Aplicando a fórmula: 10.375,81 / (1 - 0,15) × 0,15 = 10.375,81 / 0,85 × 0,15
+                                Base de cálculo: 10.375,81 / 0,85 = 12.206,84
+                                Valor de IRRF retido: 12.206,84 x 0,15 = R$ 1.831,03
+                            
+                        
+                    
+                    Cálculo de PIS
+                    
+                    O PIS é calculado aplicando-se a metodologia Gross-Up sobre o valor já ajustado pelo IRRF, considerando também a soma das alíquotas de PIS e COFINS.
+                    Fórmula aplicada:
+                        
+                            (Valor na Baixa / (1 - Alíquota IRRF)) / (1 - (Alíquota PIS + Alíquota COFINS)) × Alíquota PIS
+                        
+                    
+                    Cálculo detalhado:
+                        
+                            
+                                Valor do título na baixa: R$ 10.375,81
+                                Alíquota do IRRF: 15% (0,15)
+                                Alíquota do PIS: 1,65% (0,0165)
+                                Alíquota do COFINS: 7,6% (0,076)
+                                Soma PIS + COFINS: 0,0925
+                                Aplicando a fórmula: (10.375,81 / 0,85) / (1 - 0,0925) × 0,0165
+                                Base de cálculo: 12.206,84 / 0,9075 = 13.451,06
+                                Valor de PIS retido: 13.451,06 x 0,0165 = R$ 221,94
+                            
+                        
+                    
+                    Cálculo de COFINS
+                    
+                    O COFINS segue a mesma metodologia do PIS, mudando apenas a alíquota final aplicada.
+                    Fórmula aplicada:
+                        
+                            (Valor na Baixa / (1 - Alíquota IRRF)) / (1 - (Alíquota PIS + Alíquota COFINS)) × Alíquota COFINS
+                        
+                    
+                    Cálculo detalhado:
+                        
+                            
+                                Valor do título na baixa: R$ 10.375,81
+                                Alíquota do IRRF: 15% (0,15)
+                                Alíquota do PIS: 1,65% (0,0165)
+                                Alíquota do COFINS: 7,6% (0,076)
+                                Soma PIS + COFINS: 0,0925
+                                Aplicando a fórmula: (10.375,81 / 0,85) / (1 - 0,0925) × 0,076
+                                Base de cálculo: 12.206,84 / 0,9075 = 13.451,06
+                                Valor de COFINS retido: 13.451,06 x 0,076 = R$ 1.022,28
+                            
+                        
+                    
+                    
+                        Importante
+                        
+                        O valor 0,0925 utilizado nos cálculos de PIS e COFINS representa o somatório das alíquotas destes dois impostos (COFINS 0,076 + PIS 0,0165), sendo necessário para aplicação correta da metodologia Gross-Up considerando ambos os tributos simultaneamente.
+                        É necessário ter configurado corretamente os percentuais de PIS e COFINS na tela F049TTR.
+                    
+                
+            
+            Para essa rotina de cálculo, também foi disponibilizado o identificador de regra CPA-501BAIFE01.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+          

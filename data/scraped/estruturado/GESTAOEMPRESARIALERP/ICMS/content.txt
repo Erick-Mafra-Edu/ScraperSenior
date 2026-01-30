@@ -1,0 +1,158 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#geral/impostos-icms.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7CICMS%7C_____0
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Rotinas de ICMS
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Rotinas de ICMS
+            Esta página abrange todas as rotinas do sistema relacionadas ao ICMS (Imposto sobre Circulação de Mercadorias e Serviços).
+            Parametrização para calcular ICMSSugestão de alíquotaRedução/acréscimo de baseCálculo de ICMS para serviçosCálculo de ICMS para fornecedores do Simples NacionalRecuperação de ICMSICMS Creditado Efetivamente x F660GDGCampos das tabelas onde o ICMS é gravadoICMS nos movimentos dos estoquesMensagem ao incluir item na notaIsentas/Outras x IPI na base de ICMSRedução da base de cálculo de ICMS x falor do freteHabilitação dos códigos de ICMS especial, ICMS redução e ICMS ST
+            
+            Base de ICMS x valor do descontoCódigo ICMS especial, ICMS redução e ICMS ST x recálculo de nota de devoluçãoNotas de saida x alteração do valor de ICMS no fechamentoICMS x Tabela de PautaICMS DesoneradoSugestão de Situação TributáriaCálculo do diferencial de alíquotaDiferencial de alíquota x ICMS especialDiferencial de alíquota nas notas de saídaConvênio ICMS 52/91Convênio ICMS 236/2021Pauta fiscalICMS DiferidoRetenção de contribuições sociaisAntecipação de ICMSICMS Monofásico
+            
+            
+            
+                
+                    
+                    
+                    
+                        
+                            
+                                
+                            
+                            Veja também:
+                        
+                    
+                
+                
+                    ICMS ST
+                    
+                
+            
+            Parametrização para calcular ICMS
+                
+                    
+                        Definir se o fornecedor e o cliente tributam ICMS:Cadastros > Clientes e Fornecedores > Fornecedores > Cadastro (F095CAD)Cadastros > Clientes e Fornecedores > Clientes > Cadastro (F085CAD)
+                        Definir o produto para tributar ICMS:Se houver ligação produto x fornecedor e o produto estiver definido para obter os parâmetros fiscais desta ligação, então deve ser parametrizada a tela “F403FPR”Cadastros > Produtos e Serviços > Produtos > Individual (F075PRO)Cadastros > Clientes e Fornecedores > Fornecedores > Ligações > Fornecedor X Produtos > Individual (F403FPR)
+                        Definir a transação para calcular ICMS. Informando "N - Não" no campo Isenta ICMS:Cadastros > Transações > Parâmetros por Gestão > Compras > Ordem Compra > NF Entrada > Fatura (F001TCP)Cadastros > Transações > Parâmetros por Gestão > Vendas (F001TVE)
+                    
+                
+            
+            Sugestão da alíquota
+                
+                    Por padrão, a alíquota é atribuída nas definições por estado. É possível definir uma alíquota específica para contribuintes e não contribuintes e para entradas e saídas. Esta alíquota é definida por estado e por filial. Ao incluir os itens nos documentos fiscais, o sistema verifica qual é a unidade fiscal do cliente/fornecedor e o código da filial onde a nota está sendo emitida e faz a busca da alíquota.
+                    É também possível definir uma alíquota válida para todas as filiais definindo “0” como filial. A parametrização da filial “0” serve para aquelas filiais específicas que não tem parametrização definida.
+                    Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Parâmetros por Estado > Cadastro (F009PPE)
+                    Caso seja uma alíquota específica para determinadas condições, pode também ser cadastrado um código de ICMS especial.
+                    Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > ICMS especiais (F019TIE)
+                    Uma vez cadastrado o ICMS especial, este código pode ser vinculado à transação, nas definições do cliente para a filial, no cadastro do produto/serviço, na ligação produto x cliente ou na ligação produto x fornecedora. O ICMS especial tem prioridade sobre as demais alíquotas do sistema.
+                    A base, valor e alíquota também podem ser alterados via identificador de regras VEN-000ALICM01 e CPR-000ALICM01.
+                    Para notas de entrada de devolução, tipos "2 - Devolução (NF do Cliente)" e "3 - Devolução (NF de Saída)", ou notas de entrada de retorno, tipos "4 - Retorno (Industrialização)" e "5 -Retorno (Outro)", com a aplicação da operação sendo "O - Retornos", o sistema buscará a alíquota do ICMS nos campos % ICMS Saída Não Contribuinte e % ICMS Saída Não Contribuinte da tela Parâmetros por Estado (F009PPE).
+                    A sequência para a sugestão do código de redução de impostos e para o ICMS Especial é: Cadastro Transação Definições do Cliente Cadastro do produto/Serviço. Caso haja necessidade de alterar a sugestão do ICMS Especial, pode-se utilizar o Identificador de Regras VEN-140SGRED01. Para saber mais sobre o identificador de regras, clique aqui.
+                
+            
+            Redução/acréscimo de base
+                
+                    Caso tenha uma redução/acréscimo padrão, onde será calculado em todas as operações dentro de determinadas condições, pode-se cadastrar um código com o percentual de acréscimo/redução.
+                    Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Reduções/acréscimos base impostos (F019TIR)
+                    
+                    
+                    Uma vez cadastrado a redução/acréscimo, este código pode ser vinculado à transação, nas definições do cliente para a filial, no cadastro do produto/serviço e na ligação produto x cliente.
+                    A base de ICMS pode também ser alterada via identificador de regras “VEN-000ALICM01” e “CPR-000ALICM01”.
+                
+            
+            Cálculo de ICMS para serviços
+                
+                    Para que haja cálculo de ICMS para itens de serviço, deve-se alterar o cadastro da empresa e definir no serviço que há cálculo de ICMS, no campo Possui Serviços c/ ICMS/IPI.
+                    Cadastros > Empresas > Cadastro (F070EMP)
+                
+            
+            Cálculo de ICMS para fornecedores do Simples Nacional
+                
+                    Quando o fornecedor é definido com o Código do Regime Tributário como Simples Nacional, o ICMS será calculado com a alíquota constante no campo % ICMS.
+                    Cadastros > Clientes e Fornecedores > Fornecedores > Cadastro (F095CAD)
+                    Quando se tratar de um fornecedor do SIMPLES NACIONAL, o valor ICMS é atribuído em campo específico nos itens das notas de entrada e ordens de compra.
+                    
+                        
+                    
+                
+            
+            Recuperação de ICMS
+                
+                    Durante a apuração do ICMS em Tributos, o sistema busca do campo “ICMS Creditado Efetivamente – Base/Valor/Percentual” da nota fiscal os valores a recuperar de ICMS.
+                    
+                        
+                    
+                    Por padrão, os campos de ICMS/IPI Creditado Efetivamente não ficam habilitados, exceto nas notas fiscais de devolução para o campo de IPI Creditado Efetivamente e para qualquer tipo de nota quando o fornecedor for optante do simples.
+                    Para que este campo no item da nota fiscal seja preenchido, é necessário que os cadastros envolvidos no item da nota estejam parametrizado para recuperar ICMS. O valor deste campo pode ser manipulado via identificador “CPR-000ECICM01”.
+                    Onde configurar para recuperar ICMS:
+                    Cadastros > Transações > Parâmetros por Gestão > Compras > Ordem Compra > NF Entrada > Fatura (F001TCP)
+                    Cadastros > Produtos e Serviços > Produtos > Individual (F075PRO)
+                    Cadastros > Clientes e Fornecedores > Fornecedores > Cadastro (F095CAD)
+                    Cadastros > Clientes e Fornecedores > Fornecedores > Ligações > Fornecedor X Produtos > Individual (F403FPR)
+                
+            
+            ICMS Creditado Efetivamente x F660GDG
+                
+                    Quando não há IPI Creditado Efetivamente no item da nota fiscal de entrada e todos os parâmetros estão configurados para recuperar IPI, há a tela “Controladoria > Gestão de Tributos > Escrituração > Lançamentos > > Geração de detalhes (F660GDG)”, os campos Atualizar NF  Entrada e Inicializar valores de IPI E ICMS Creditados Efetivamente em Suprimentos devem ser marcados.
+                    Para que o item da nota seja considerado neste processo, é necessário que a nota não esteja integrada com Tributos – E440NFC. IntImp = N.
+                
+  

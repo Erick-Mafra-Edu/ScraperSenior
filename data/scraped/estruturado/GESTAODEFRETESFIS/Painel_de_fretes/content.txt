@@ -1,0 +1,125 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#painel-fretes/painel-frete.htm%3FTocPath%3DAnalytics%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Analytics > Painel de fretes
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Painel de Fretes
+            Através de um painel de monitoramento é possível visualizar rapidamente diversas análises, referentes à totalizações de faturas e contas, percentual dos fretes para cada região, bem como a situação e divergências de cada frete.
+            Acesse APPS > Logística > Analytics > Painel de Fretes
+            Todas as informações podem ser filtradas por transportadoras ou filiais e os resultados ficam disponíveis para consulta por 30 dias.
+            Veja este exemplo:
+            
+                
+            
+            
+                
+            
+            As análises desenvolvidas no painel de frete são segmentadas de acordo com:
+            
+                Quadro de totalizações:Faturas:Em aberto: nesta opção é possível verificar a quantidade de faturas abertas.Pagas: nesta opção é possível verificar a quantidade de faturas fechadas.Contas: Em abertos – nesta opção é possível verificar os valores totais das faturas abertas.Frete paga -  neta opção é possível verificar os valores totais das faturas fechadas.
+                Gráficos:Fretes por situação:Calculado: pedidos que possuem cálculo de frete.Embarcado: pedidos que tiveram romaneio gerado.Finalizado: pedidos que receberam ocorrência de finalização.Faturado: pedidos que tiveram fatura gerada.Pago: pedidos onde a fatura já foi paga.Fretes por localidades: Percentual de fretes por região para estados nos últimos 30 dias. Divergências de frete:O gráfico de dispersão exibe o valor total das divergências de frete que entraram nos últimos 3 meses e que foram aceitas. O quadro lateral exibe o fluxo do último mês com:O valor a maior: valor de diferença dos documentos emitidos com valor maior do  calculado.O valor a menor: valor de diferença dos documentos emitidos com valor menor do calculado.Total do valor calculado pelo embarcador.Total do valor cobrado pelo transportador.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,263 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#integracoes/integracao-mdf-e-leiaute.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7CMDF-e%2520(Manifesto%2520Eletr%25C3%25B4nico%2520de%2520Documentos%2520Fiscais)%7C_____2
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > MDF-e (Manifesto Eletrônico de Documentos Fiscais) > Leiaute MDF-e
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Leiaute MDF-e
+            Leiaute MDF-e
+                
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                #
+                                ID
+                                Campo
+                                Nível
+                                Descrição
+                                Ele
+                                Pai
+                                Tipo
+                                Ocor.
+                                Tam.
+                                Observação
+                                Origem
+                            
+                            
+                                1
+                                 
+                                infMDFe
+                                0
+                                Informação do MDF-e
+                                G
+                                 
+                                 
+                                1-1
+                                 
+                                 
+                                Tag de abertura do grupo. Gerado conforme o padrão do leiaute da SEFAZ.
+
+                            
+                            
+                                2
+                                 
+                                versao
+                                1
+                                Versão do leiaute
+                                A
+                                 
+                                C
+                                1-1
+                                 
+                                Ex: 3.00
+                                Gera por padrão o valor conforme definido no campo Integração MDF-e da tela F070FVE, guia Documentos Eletrônicos 3. Pode ser manipulada via identificador de regras VEN-140MDFE001, através da variável VsIntVerMDF.
+
+                            
+                            
+                                3
+                                 
+                                Id
+                                1
+                                Identificador da tag a ser assinada
+                                A
+                                 
+                                C
+                                1-1
+                                48
+                                Informar a chave de acesso do MDF-e e precedida do literal MDFe
+                                Campo Chave do documento eletrônico (ChvDoe) da tabela Vendas - Informações de Documentos Eletrônicos (E140IDE) acrescido da palavra "MDF-e".
+
+                            
+                            
+                                4
+                                 
+                                ide
+                                1
+                                Identificação do MDF-e
+                                G
+                                 
+                                 
+                                1-1
+                                 
+                                 
+                                Tag de abertura do grupo. Gerado conforme o padrão do leiaute da SEFAZ.
+
+                            
+                            
+                                5
+                                 
+                                cUF
+                                2
+                                Código da UF do emitente do MDF-e
+                                E
+                                 
+                                N
+                                1-1
+                                2
+                                Código da UF do emitente do Documento Fiscal. Utilizar a
+Tabela do IBGE de código de unidades da federação.
+                                Gera a tag com o código IBGE do estado, com base no valor do campo Estado da tela F070FCA.
+
+                            
+                            
+                                6
+                                 
+                                tpAmb
+                                2
+                                Tipo do Ambiente
+                                E
+                                 
+                                N
+                                1-1
+                                1
+                                1 - Produção; 2 - Homologação
+                                Verifica o valor do campo Ambiente NF-e / MD-e / MDF-e da tela F070FVE: se for 1, a tag recebe o valor 1. Se for 2, a tag recebe o valor 2. Pode ser manipulada via identificador de regras VEN-140NEDGE01, através da variável VSIntIdeAmb.
+
+                            
+                            
+                                7
+                                 
+                                tpEmit
+                                2
+                                Tipo do Emitente
+                                E
+                                 
+                                N
+                                1-1
+                                1
+                                
+                                    1 - Prestador de serviço de transporte;
+2 - Transportador de Carga Própria; 3 - Prestador de serviço de transporte que emitirá CT-e Globalizado.
+                                    OBS.: Deve ser preenchido com 2 para emitentes de NF-e e pelas transportadoras quando estiverem fazendo transporte de carga própria. Deve ser preenchido com 3 para transportador de carga que emitirá à posteriori CT-e Globalizado relacionando as NF-e.
+                                
+                                Gera a tag conforme o valor informado no campo Tipo do Emitente  da tela F145EBQ ou F145GSM.
+
+
+                            
+                            
+                                8
+                                 
+                                tpTransp
+                                2
+                                Tipo do Transportador
+                                E
+                                 
+                                N
+                                0-1
+                                1
+                                1 - ETC; 2 - TAC; 3 - CTC
+                                Gera o valor da conforme a informação que consta no campo Tipo transportador do cadastro da transportadora tela F073TRA. A tag só é gerada se o cadastro do veículo (tela F073VEI) estiver com o vampo Tipo proprietária for igual a "T-Terceiro".
+
+                            
+                            
+                                9
+                                 
+                                mod
+                                2
+                                Modelo do Manifesto Eletrônico
+                                E
+                                 
+                                N
+                                1-1
+                                2
+                                Utilizar o código 58 para identificação do MDF-e.
+                                Gera o valor padrão do campo Espécie Documento do cadastro da série tela F020SNF.
+
+                            
+                            
+                                10
+                                 
+                                serie
+                                2
+                                Série do Manifesto
+                                E
+                                 
+                                C
+                                1-1
+                                1-3
+                                Informar a série do documento fiscal (informar zero se inexistente).
+Série na faixa [920-969]: Reservada para emissão por contribuinte pessoa física com inscrição estadual.
+                                Gera por padrão o valor do campo Série/Subsérie Legal do cadastro da série tela F020SNF. Se não existir valor no campo, será enviado, por padrão, o valor "0" (zero) para a tag.
+
+                            
+                            
+                                11
+                                 
+                                nMDF
+                                2
+                                Número do Manifesto
+                                E
+                                 
+                                C
+                                1-1
+                            

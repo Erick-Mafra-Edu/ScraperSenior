@@ -1,0 +1,157 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_suprimentos/processo-remessa-consignado.htm%3FTocPath%3DSegmentos%7CSuprimentos%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Suprimentos > Processo de remessa para consignado
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Processo de remessa para consignado
+            O processo de remessa e retorno para consignado deve ser norteado de acordo com seus procedimentos:
+            Remessa Armazém Geral
+            Deve ser criada uma nota fiscal de saída do tipo "4 - NF Remessa (Outros)" utilizando a transação 5905 ou 6905 - Remessa Para Depósito Fechado ou Armazém Geral. A nota realiza a transferência do depósito interno (1-100, 1-200 ou 1-300) para o depósito em terceiros (1-500).
+            Remessa Consignado
+            Deve ser criada uma nota fiscal de saída do tipo "4 - NF Remessa (Outros)" utilizando a transação 5917C ou 6917C - Remessa Mercadoria em Consignação (Est.Consig). A nota realiza uma saída no estoque normal (depósito 1-500) efetuando a saída em consignação para o cliente.
+            Retorno Consignado
+            Deve ser criada uma nota fiscal de entrada do tipo "5 - Retorno (Outros)" utilizando a transação 1918C ou 2918C - Devolução Merc. Remetida em Consignação (Est.Consig). A nota realiza uma entrada no estoque normal (depósito 1-500) efetuando a entrada em consignação para o cliente. O botão Nota Saída deve ser utilizado para associar a nota de entrada com a nota de remessa cadastrada com a transação 5917C ou 6917C - Remessa Mercadoria em Consignação (Est.Consig).
+            Retorno Armazém Geral
+            Deve ser criada uma nota fiscal de entrada do tipo "5 - Retorno (Outros)" utilizando a transação 1906 ou 2906 - Retorno de Mercadoria Remetida para Depósito Fechado ou Armazém Geral. A nota realiza a transferência do depósito em terceiros (1-500) para o depósito interno (1-100, 1-200 ou 1-300). O botão Nota Saída deve ser utilizado para associar a nota de entrada com a nota de remessa cadastrada com a transação 5905 ou 6905 - Remessa Para Depósito Fechado ou Armazém Geral.
+            Faturamento
+            Deve ser criada uma nota fiscal de saída do tipo "1 - NF Saída" utilizando a transação 5106 ou 6106 - Venda de Mercad.Adquir.Rec.Terceiros,que não deva por ele Transitar. A nota realiza a saída do estoque normal para o depósito interno.
+            
+                Observação
+                
+                Nas notas de entrada é necessário informar o depósito 1-500 onde está o saldo em terceiro. Desta forma, é preciso desativar o parâmetro global COM-DEPOSITORIGEM para que seja possível informar um depósito diferente do utilizado na nota de saída relacionada.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

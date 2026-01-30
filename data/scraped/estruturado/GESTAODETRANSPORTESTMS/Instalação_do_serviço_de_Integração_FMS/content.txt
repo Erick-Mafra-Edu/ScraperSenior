@@ -1,0 +1,228 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodetransportestms/7.0.0/#detalhamento-tecnico/instalacao-servico-integracao-fms.htm%3FTocPath%3D_____11
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão de Transportes | TMS - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Instalação do serviço de Integração FMS
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Instalação do serviço de Integração FMS
+            Primeiros Passos: 
+            Primeiro passo é realizar o passo a passo do Guia de Implantação. Após realize a instalação e configuração do serviço de integração com o FMS.
+            Instalação do serviço Fmsintegrador
+                
+                    Proceda com um dos comandos abaixo, utilizando o usuário root da máquina virtual Linux:
+                    Comando de exemplo de instalação/configuração no servidor Linux para conexão através do Banco de Dados Oracle, apenas alterar o que está em negrito e caixa alta:
+                    docker run -d -e BROKER_HOST=IP_LOCAL -e SOFTRAN=/root/ -e DB_TYPE=Oracle -e TENANT=TENANT -e JAVA_OPTS="-Dspring.profiles.active=dev -Ddb.url=jdbc:oracle:thin:@//IP_BD:1521/INSTANCIA_BD -Ddb.username=USUÁRIO_BD -Ddb.password=SENHA_BD -Duser.timezone=America/Sao_Paulo -Dservicemodel.logger.br.com.senior=INFO" --name=fmsintegrador seniorsa/fmsintegrador:LATEST
+                    Comando de exemplo de instalação/configuração no servidor Linux para conexão através do Banco de Dados MSSQL, apenas alterar o que está em negrito e caixa alta:
+                    docker run -d -e BROKER_HOST=IP_LOCAL -e SOFTRAN=/root/ -e DB_TYPE=SqlServerJtds -e TENANT=TENANT -e JAVA_OPTS="-Dspring.profiles.active=dev -Ddb.url=jdbc:jtds:sqlserver://IP_BD:1433/INSTANCIA_BD -Ddb.username=USUÁRIO_BD -Ddb.password=SENHA_BD -Duser.timezone=America/Sao_Paulo -Dservicemodel.logger.br.com.senior=INFO" --name=fmsintegrador seniorsa/fmsintegrador:LATEST
+                    Onde:
+                    
+                        IP_LOCAL: IP do próprio servidor Linux;
+                        TENANT: Tenant do cliente;
+                        IP_BD: IP do banco de dados utilizado pelo Sistema TMS Senior;
+                        INSTANCIA_BD: Nome da Instância do Banco de Dados (obter informação com DBA do cliente);
+                        USUÁRIO_BD: Usuário do Banco de Dados;
+                        SENHA_BD: Senha do Banco de Dados.
+                        LATEST: Última versão do serviço
+                    
+                
+            
+            Configurações Senior X
+            Croqui: 
+                
+                    Criação do agendamento
+                        
+                            Para que as informações sejam continuamente integradas,é necessário a criação do agendamento. Para criar um agendamento, acesse a Senior X, menu Tecnologia > Customização > Agendamentos. Procure pelo o domínio frota e criar os agendamentos no serviço fmsintegrador.
+                        
+                    
+                    Agendamento de integração do Croqui: 
+                        
+                            O agendamento tem como função, integrar os dados referentes aos Cadastros de Empresa, Funcionário, Veículo e Motorista vinculado com o Veículo e as movimentações de Entrada e Saída.
+                            Dados do Agendamento
+                            
+                                Nome do agendamento: integração croqui
+                                Situação: Ativo
+                                Funcionalidade: frotaSincronizaCroqui
+                                Parâmetro de entrada: JSON
+                                Entrada: {}
+                            
+                            Execução
+                            
+                            
+                                Iniciar em: data atual
+                                Horário: horário atual + 5 minutos
+                                Repetir: Marcado
+                                Repete a cada: minuto | divisível por | 1
+                                Termina em: Nunca
+                            
+                        
+                    
+                    Agendamento de integração do Croqui - cadastro checklist
+                        
+                            Tem como função, integrar os dados referentes ao cadastro de Checklist.
+                            Dados do Agendamento
+                            
+                            
+                                Nome do agendamento: integração croqui - cadastro checklist
+                                Situação: Ativo
+                                Funcionalidade: checklistSincronizaCroqui
+                                Parâmetro de entrada: JSON
+                                Entrada: {}
+                            
+                            Execução
+                            
+                            
+                                Iniciar em: data atual
+                                Horário: horário atual + 5 minutos
+                                Repetir: Marcado
+                                Repete a cada: minuto | divisível por | 1
+                                Termina em: Nunca
+                            
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,209 @@
+# 
+
+URL: https://documentacao.senior.com.br/roteirizacaoemonitoramento/7.0.0/#solucao-negocio/recursos/visoes-dinamicas-rotas.htm%3FTocPath%3DRecursos%7C_____2
+
+---
+
+
+        Ver site completo
+        
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORoteirização e Torre de Controle - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Recursos > Visões dinâmicas - Rotas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Visões dinâmicas - Rotas
+            As visões dinâmicas são recursos da Senior X Platform que permitem consultar e exportar dados em forma de relatórios. 
+            Estes dados podem ser usados também para construir uma visão gerencial personalizada, usando o Analytics Studio. 
+             Usar as visões dinâmicas para emitir relatórios
+            Os dados são agrupados por views, sendo que cada view serve para buscar tipos diferentes de informações.
+            Os views podem ser selecionados na tela de cadastro das visões dinâmicas, em Tecnologia > Customização > Relatórios > Visões dinâmicas.
+            Depois de selecioná-los, nessa mesma tela você poderá listar as informações desejadas e exportá-las em forma de relatório.
+             Usar as informações dos views com o Analytics Studio
+            O Analytics Studio permite cruzar as informações contidas nas tabelas dos views, com a finalidade de criar gráficos e visões gerenciais dessas informações. Esta ferramenta auxilia na análise dos dados e na tomada de decisão.
+            Para saber como cruzar essas informações e montar os gráficos, acesse a documentação do Analytics Studio no manual da plataforma SeniorX.
+             Views disponíveis para o Rotas
+            Campos que podem ser apresentados:
+            Tabela view_atividade:
+                
+                    
+                        cdatividade: Código da atividade
+                        inatividade: Tipo da atividade, se é uma atividade de coleta, entrega ou serviço.
+                        dsdestinatario: Descrição do destinatário da atividade.
+                        dslocal: Logradouro da atividade
+                        qtvolume: Quantidade de volume da mercadoria
+                        qtpeso: Peso da mercadoria
+                        hrlimite: Hora limite
+                        dsnrdocto: Número do documento da atividade.
+                        dtprazoentr: Data de prazo de atendimento.
+                        dtpreventr: Data prevista para início da execução da atividade. 
+                        dslat: Latitude da localização do logradouro.
+                        dslong: Longitude da localização do logradouro.
+                        nrcep: CEP do logradouro.
+                        dtrealizado: Data realizado.
+                        nrtelefonecontato: Número do telefone.
+                        cdsequencia: Sequência de execução da atividade na rota.
+                        qtmetroscubicos: Metros cúbicos da mercadoria.
+                        inprioridade: Valor inteiro entre 1 e 9, sendo que 1 representa a maior prioridade possível.
+                        dtjanelaini: Data inicial para a janela de atendimento.
+                        dtjanelafim: Data final para a janela de atendimento. 
+                        qttempoatend: Tempo de duração da execução da atividade.
+                        nrcnpjfilial: CNPJ da Filial.
+                        cdnumero: Número do logradouro.
+                        dsbairro: Bairro do logradouro.
+                        dscidade: Cidade do logradouro.
+                        dsestado: Estado do logradouro.
+                        dspais: País do logradouro.
+                        dscomplemento: Complemento do logradouro.
+                        cdtipocarga: Código do Tipo de carga da atividade.
+                        cdoperacao: Código da Operação da atividade.
+                        dsobservacao: Observação da atividade.
+                        cddestino: Código do destino.
+                        dtagendamento: Dia específico para execução da atividade.
+                        dtinclusao: Data da inclusão da atividade.
+                        instatus: Status da atividade.
+                        dsmotivo: Descrição do status da atividade.
+                        cdembarcador: Código do embarcador.
+                        indocto: Tipo do documento.
+                        cdcomposicao: Código da composição.
+                        cdchaveacesso: Chave de acesso do documento. 
+                        idpontoapoio: Ponto de apoio da filial.
+                        vlmercadoria: Valor da mercadoria.
+                        cdespcarga: Espécie de carga.
+                        instatusdisponibilidade: Status de disponibilidade da atividade.
+                        situacao: Status da atividade.
+                        grau_precisao: Grau de precisão da atividade.
+                        raio_precisao: Raio de precisão da atividade.
+                        limites: Limites de latitude e longitude da atividade.
+                        codigotracking: Código do tracking da atividade.
+                    
+                
+            
+            Tabela view_atividade_rota:
+                
+                    
+                        cdatividade: Código da atividade.
+                        cdroteiro: Código do roteiro.
+                        cdsequencia: Código sequência atividade.
+                        dtpreventr: Data previsão.
+                        dtprevchegada: Data prevista chegada.
+                        qttempoestimado: Quantidade de tempo estimado.
+                        qtkm: Quantidade de quilômetro.
+                        inincposterior: Atividade incluída em uma rota já em execução.
+                    
+                
+            
+            Tabela view_grupo_veiculo:
+                
+                    
+                        cdgrupoveiculo: Código do grupo do veículo.
+                        dsgrupoveiculo: Descrição do grupo do veículo.
+                        qtpeso: Quantidade de peso.
+                        qtmetroscubicos: Quantidade de metros cúbicos.
+                        qtcombustivel: Tipo combustível
+                        incombustível: Consumo (quilômetros/litro).
+                        qtcustokm: Custo por quilômetro.
+                        qtcustotempotransitokm: Custo por tempo em trânsito.
+                        qtcustotempoparado: Custo por tempo parado.
+                        qtvelocmedia: Velocidade média.
+                        qtvelocmax: Velocidade máxima.
+                        qteixos: Quantidade de eixos.
+                        qtminatv: Quantidade mínima de atividades.
+                        qtocupminpeso: Quantidade mínima de peso.
+                        qtocupminmetragemcubica: Quantidade mínima de metros cúbicos.
+                        incoleta: Veículo somente aceita atividades do tipo coleta.
+                        inentrega: Veículo somente aceita atividades do tipo entrega.
+                        inservico: Veículo somente aceita atividades do tipo serviço.
+                        intpveiculo: Descrição do veículo.
+                        qtcustohora: Custo por hora.
+                        hrtrabalhoini: Horário início de trabalho.
+                        hrtrabalhofim: Horário fim de trabalho.
+                        hrintervaloini: Horário início do intervalo.
+                        hrintervalofim: Horário fim do intervalo.
+                        qtveiculos: Quantidade de veículos.
+                        inhoratrabalho: Horário de trabalho será fixo ou dinâmico.
+                        qttempotrabalho: Quantidade de tempo de trabalho.
+                        qttempointervalo: Quantidade de tempo de intervalo.
+                        intpcarroceria: Tipo de carroceria do veículo.
+                    
+                
+            
+            Tabela view_motorista:
+                
+                    
+                        cdmotorista: Código motorista.
+                        dsnome: Nome motorista.
+                        nrcnh: Número CNH.
+                        nrcpf: Número CPF.
+                        nrrg: Número RG.
+                        Nrcnpjfilial: CNPJ Filial.
+                        cdusuario: Código usuário.
+                        hrtrabini: Horário inicial de trabalho.
+                        hrtrabfim: Horário final de trabalho.
+                        hrintervaloini: Horário inicial de intervalo.
+                        hrintervalofim: Horário final de intervalo.
+                        usuarioplataforma: Usuário da plataforma.
+                    
+                
+            
+            Tabela view_rota:
+                
+                    
+                        cdroteiro: Código roteiro.
+                        dsreferencia: Descrição de referência.
+                        nrplaca: Número da placa.
+                        insituacao: Situação da rota.
+                        dtinicio: Data início da rota.
+                        Nrcnpjfilial: CNPJ da filial.
+                        cdroteirizacao: Código da roteirização.
+                        qtpeso: Quantidade peso.
+                        qtvolumes: Quantidade volumes.
+                        qtmetroscubicos: Q

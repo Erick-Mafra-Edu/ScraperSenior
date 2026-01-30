@@ -1,0 +1,65 @@
+# Integração CTI
+
+URL: https://documentacao.senior.com.br/seniorxplatform/manual-do-usuario/crmx/integracoes/senior-x/integracao-cti/integracao-cti-externo/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM X                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     Manual do Usuário
+                 > Integrações
+                 > CTI                         Integração CTI
+O CRM, através de sua API WConnect permite integração com CTI, recebendo e enviando eventos de/para a central telefônica compatível com a tecnologia. Utilizando o protocolo XML RPC (SOAP) para envio ou recebimento dos eventos ou através de chamados diretos a URLs, pode prover serviços como:
+
+Click-to-call: permite efetuar ligações pela interface do CRM;
+Screen PopUp: analisa o número que está chamando pela base de contas cadastradas e exibe pop-up com os dados do cliente;
+Geração de logs de ligações efetuadas e recebidas.
+
+Método Click-to-call
+Para originar ligações de dentro do CRM é necessário que a aplicação possa chamar uma rotina através de uma interface direta com a central. O WConnect está preparado para enviar o evento de click-to-call através de chamado de uma URL específica dentro da central, para algum método que esteja disponível no equipamento.
+Para efetuar ligações, o integrador deve fornecer o caminho de seu listener (URL) que o WConnect deve requisitar, e quais os parâmetros necessários para que o comando seja efetuado.
+Estas informações são distintas de acordo com cada integração/appliance que o cliente utilizar, usualmente contendo as informações <número de origem> ou <ramal de origem> e <número de destino> ou <ramal de destino>.
+ NotaO número de destino pode conter a configuração da adição de um tom de discagem ou prefixo 0 (zero). Essa configuração será aplicada a todos os números, exceto ramais internos.  
+Método Screen popup
+Para receber as ligações originadas aos usuários do CRM, o módulo WConnect possui um listener que recebe os eventos da central, que está localizado em:
+Listener inicio de ligação WConnect CTI
+Eventos do CTI devem ser enviados ao Listener WConnect da Senior, com a localização http://EMPRESA.crmsenior.com.br/wconnect/WConnect_WSDL_ConsultaRamal.php
+O listener deve ser requisitado passando parâmetros através da própria URL (via GET), sendo:
+
+[ramal]: número de destino (obrigatório);
+[telefone]: número de origem (obrigatório).
+
+Outras informações pertinentes, como data e hora, são salvos do momento em que o CRM, através do listener, recebe a requisição.
+Listener fim de ligação WConnect CTI
+Com objetivo de ter mais informações sobre a ligação, há uma requisição ao finalizar a ligação. O módulo WConnect do CRM possui outro listener que recebe o evento de finalizar e gerar os logs da ligação. Eventos do CTI devem ser enviados ao Listener WConnect do CRM, sendo sua localização http://EMPRESA.crmsenior.com.br/wconnect/WConnect_WSDL_FinalizaLigacao.php
+Os parâmetros, dos eventos recebidos pelo Listener, que devem ser passados pela própria URL (via GET) são:
+
+[ramal]: número de destino (obrigatório);
+[telefone]: número de origem (obrigatório);
+[url_audio]: endereço do áudio da ligação.
+
+ NotaO número de <telefone> deve conter somente DDD + número de telefone, conforme é permitido a inclusão dos telefones nos cadastros do CRM.         
+Este artigo ajudou você?
+   Sim
+  Não
+    
+Gostaria de deixar uma sugestão para melhorar esta página?
+ 
+Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+ 
+Nome/E-mail (Opcional):   
+Deixe seu comentário:      Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+     Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.     SUPORTE SENIOR SUPORTE MEGA     
+Agradecemos pelo seu feedback!
+Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+  const o=document.getElementById("question"),n=document.getElementById("formcomentario"),i=document.getElementById("feedback-positivo");i?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Sim"}),o.remove(),n.style.display="block"});const r=document.getElementById("feedback-negativo");r?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Não"}),o.remove(),n.style.display="block"});const d=document.getElementById("comentario"),m=document.getElementById("charNum");d.addEventListener("keyup",e=>{let t=100-e.target.value.length;m.innerHTML=`Caracteres restantes: ${t}`});n.addEventListener("submit",e=>{e.preventDefault(),grecaptcha.ready(function(){grecaptcha.execute("6Lf3rgoaAAAAAAx7d9UyE9vFrMv5p1AZdXFyUMif",{action:"submit"}).then(function(a){var t=$("#email").val(),c=$("#comentario").val();gtag("event","feedback-descritivo",{contato:t,comentario:c,aceite:"Com aceite"}),$("#formcomentario").hide(),$("#thanks").show()})})});  var r=document.location.href,n=r.split("/")[3],e=document.getElementById("frame-mkt");e&&(e.innerHTML='<iframe frameborder="0" class="framebanner" scrolling="no" src="https://ads.senior.com.br/ads/#/view-banner/'+n+"?url="+encodeURIComponent(r)+'"></iframe>');    Base de Conhecimento   Portal de Exigências Legais  Documentação em outros idiomas:   English    Español     Senior Store   Universidade Corporativa   Fórum de Produtos   Trabalhe conosco   Blog              Todos os direitos de cópias reservadas para Senior Sistemas S.A. 
+A reprodução não autorizada desta publicação, no todo ou em parte,
+            constitui violação dos direitos autorais (Lei 9.610/98).
+         document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#main"),o=document.querySelector(".new-scroll-to-top"),t=200;e?.addEventListener("scroll",()=>{e.scrollTop>t?o?.classList.add("visible"):o?.classList.remove("visible")}),document.getElementById("newScrollTop")?.addEventListener("click",()=>{e?.scrollTo({top:0,behavior:"smooth"})})});  

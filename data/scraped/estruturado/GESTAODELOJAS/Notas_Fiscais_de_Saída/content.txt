@@ -1,0 +1,145 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/notas-fiscais/notas-fiscais-de-saida/notas-fiscais-saida.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CNotas%2520Fiscais%7CNotas%2520Fiscais%2520de%2520Sa%25C3%25ADda%7C_____0
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Notas Fiscais > Notas Fiscais de saída
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Notas Fiscais de saída
+            Conceito 
+            As notas fiscais de saída são emitidas para efetuar fiscalmente a saída de produtos e serviços de um estabelecimento. Existem diversos processos em que é necessário emitir  nota fiscal de saída. Uma delas e a mais comum é a venda de mercadorias.
+            No sistema de Retaguarda é possível emitir nota fiscal de saída para os  processos a seguir.
+            
+                Importante
+                
+                Informações na DANFE
+                    
+                        Todas as notas fiscais de saída que possuírem produtos controlado por série ou lote, terão os seus respectivos números de controle impressos na Danfe. Essa informação tem como objetivo rastrear se o produto foi ou não vendido com garantia estendida. No XML essa informação consta na tag  <infAdProd>.
+                        Exemplo:
+                            
+                                
+                                    
+                                
+                            
+                        
+                    
+                
+                Controle de emissão por usuário
+                    
+                        As emissões de notas podem ser controladas por usuário. Caso seguintes parâmetros dinâmicos por perfil de usuário estejam configurados no Gestão Empresarial | ERP, acontece conforme explicação:
+                        
+                            NOTAFISCAL.OBRIGAOPERACAO - caso seja informada uma operação que não esteja listada para o perfil do usuário, o sistema mostra uma mensagem indicando que o perfil daquele usuário não possui acesso a determinada operação;
+                            NOTAFISCAL.OPERACOESPERMITIDAS - se as operações foram definidas no perfil do usuário, é mostrada uma mensagem informando a obrigatoriedade de inserção da operação;
+                            NOTAFISCAL.DIAS.REMOVER.EM.DIGITACAO - as Notas Fiscais de Saída com situação Em Digitação e não enviadas para a SEFAZ serão removidas depois do número de dias configurado no parâmetro.
+                        
+                    
+                
+                Sobre Cálculo de Impostos
+                    
+                        É possível realizar o cálculo de impostos que modificam sua base de cálculo conforme o endereço do cliente. Para tanto, é necessário configurar se o sistema deverá considerar o endereço do cliente ou da entrega para os cálculos fiscais.
+                        Foi implementada uma validação para que em casos onde o cliente e a filial de venda são do mesmo estado mas o endereço de entrega é interestadual, o sistema realize o cálculo do DIFAL pelo endereço de entrega interestadual.
+                        Quando os parâmetros FISCAL.ENDERECO.CLIENTE.NOTA e FISCAL.ENDERECOCALCULOIMPOSTO forem iguais a 1, o sistema usará o endereço do cliente, e caso contrário usará da entrega.
+                    
+                
+            
+             Nota Fiscal de Simples Faturamento 
+            Emitida no processo de Venda com Entrega Futura pela loja e Futura pelo CD.
+            Toda nota de Simples Faturamento é de Saída. A operação denominada "Venda para Entrega Futura", de acordo com a legislação tributária, deve ser entendida como aquela em que a mercadoria é entregue em data posterior à da venda ou faturamento, ou seja, quando a emissão da Nota Fiscal é realizada apenas para fins de simples faturamento.
+            
+                Nota
+                
+                Ao finalizar uma nota desse tipo, é possível optar por "Finalizar e imprimir" ou "Finalizar" (sem imprimir).
+            
+            Cancelamento de Nota Fiscal de Simples Faturamento
+            O cancelamento é possível diante das seguintes condições:
+            
+                A nota foi emitida há menos de 24 horas.
+                O recebimento seja totalmente em crediário.
+                Nenhuma entrega foi efetuada (neste caso, é preciso usar a devolução).
+                No caso de entrega futura por outra loja, o controle de entrega está com a filial logada.
+            
+            Se todas as condições são atendidas:
+            
+                No caso entrega futura pelo CD, o sistema confirma via integração com o ERP se o pedido pode ser anulado. 
+                O sistema solicita o cancelamento à SEFAZ e, caso tal cancelamento seja aprovado, o Retaguarda cancela toda a parte financeira, a montagem, a entrega e o complemento de venda.
+                Caso o cancelamento não seja aprovado pela SEFAZ para nota de uma entrega do tipo futura pelo CD, é possível tentar a aprovação novamente ou então utilizar a devolução ao invés de do cancelamento, pois depois que o cancelamento foi solicitado, o pedido já foi anulado no ERP.
+            
+            
+                Observação
+                
+                O cancelamento da nota não realiza o estorno de possíveis títulos já faturados, isso deve ser feito manualmente antes de cancelar a nota.
+            
+            Nota Fiscal de Remessa 
+            Emitida no processo de venda futura (tanto pela loja quanto pelo CD) com o objetivo de gerar remessa para efetuar entrega da venda. Todas as mercadorias que serão frutos de vendas ou transportes para acompanhamento de mercadorias ou bens e todas às vezes que existir alguma operação anterior que necessite de nota fiscal. A tributação depende do tipo de operação quer será realizada. Geralmente é utilizada e conhecida como nota de transporte. (Ver processo de Controles de Entrega). 
+            Cancelamento de Nota Fiscal de Remessa
+            Conforme descrito no processo de cancelamento do controle de entrega,  não é possível que o usuário efetue o cancelamento da remessa ou inutilização de remessa. Nesses casos, para solucionar possíveis problemas de erros operacionais, é necessário que o processo de entrega seja finalizado e logo após seja emitida uma devolução dos itens.
+            Nota Fiscal de Consumidor - Manual ou Eletrônica
+            Nota que foi emitida manualmente em bloco/caneta, depois digitada no PDV e enviada para o Retaguarda. Ver processo de Nota Consumidor.
+            Toda nota Manual é de Saída.
+            
+                Nota
+                
+                Para todos os produtos que possuem CST 060, apresentamos a seguinte mensagem junto ao subtotal dos campos Base de cálculo retida e Valor retenção:ICMS Recolhido em operação anterior por substituição tributária – Base de Cálculo: R$ NN,NN Valor: NN,NN.
+            
+            Nota de Cupom Fiscal 
+            Nota gerada a partir de um Cupom Fiscal emitido do PDV. Ver processo de Nota de Cupom.
+            Toda nota de Cupom é de Saída.
+            Importada ERP 
+            Indica que a nota fiscal foi importada do ERP. São todas as notas fiscais emitidas no ERP da matriz e enviadas para o Retaguarda.
+            Caso o parâmetro Emitir N.F. filial integra retaguardadisponível na tela F070VAR do Gestão Empresarial | ERP, estiver configurado para permitir realizar estas movimentações, será possível:
+            
+                 receber notas de vendas de produtos emitidas pelo ERP;
+                receber notas de devolução de fornecedor emitidas pelo ERP; 
+                 receber notas de transferência entre filiais emitidas pelo ERP;
+                 remessa de produtos emitida pelo CD em nome da filial.
+            
+            Caso esteja parametrizado para não aceitar, a integração de notas de saída emitidas pelo ERP será recusada, exceto as de  Remessa via Centro de Distribuição.
+            
+                Considerações
+                
+                
+                    Independente do parâmetro acima, não será possível realizar alterações, cancelamentos e devoluções de notas fiscais  emitidas pelo ERP no sistema de Retaguarda. Estas operações devem ser realizadas diretamente pelo Gestão Empresarial | ERP quando houver a necessidade. 
+                    Ao receber uma nota já cancelada, o sistema de Retaguarda não fará interação com o estoque, evitando que ocorram erros de movimentação contrária.
+                
+            
+            Nota Fiscal Manual Digitada
+            Nota digitada/incluída manualmente pelo usuário no Retaguarda. As notas Avulsas podem ser de Entrada ou de Saída.
+            Não fazem parte de nenhum processo específico, a nota é incluída e finalizada no Retaguarda.
+            
+                Nota
+                
+                Ao finalizar uma nota desse tipo, é possível optar por "Finalizar e imprimir" ou "Finalizar" (sem imprimir).
+            
+            Nota Fiscal de Inventário
+            Nota fiscal gerada automaticamente pelo Retaguarda na realização do processo de inventário. Um processo de inventário por sua vez pode gerar tanto notas fiscais de entrada quanto notas fiscais de saída. Ver processo de Inventário para melhor entendimento.
+            Nota Fiscal de Remessa Simbólica
+            Nota fiscal gerada automaticamente pelo Retaguarda. As notas fiscais de remessa simbólica são geradas somente em casos previstos no regulamento do ICMS.
+            Nota Fiscal de Remessa de Transferência
+            Nota fiscal gerada para a transferência de mercadoria, ou seja, saídas existentes no estoque do estabelecimento remetente para o estoque de outro estabelecimento pertencente ao mesmo titular.
+            Botões
+            Incluir (F2)
+                Aciona a interfac

@@ -1,0 +1,211 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#integracoes/verificando-diretorio.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____15
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > Diretório onde são gerados os arquivos .XML dos documentos eletrônicos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Diretório onde o ERP gera os
+arquivos .XML dos documentos eletrônicos
+            Em alguns casos, é verificado que um documento eletrônico foi gerado
+pelo ERP, mas não existe registro do mesmo no Documentos Eletrônicos, em nenhuma tela. O primeiro
+passo é verificar onde o arquivo XML foi gerado (em qual pasta) e se o arquivo
+XML encontra-se ainda nesta pasta, ou se ele já foi consumido pelo Documentos Eletrônicos. No
+entanto, não há conhecimento em que pasta/diretório este arquivo XML foi gerado
+pelo ERP. Abaixo seguem informações de como saber em qual diretório o arquivo
+XML foi gerado.
+            O ERP utiliza a seguinte lógica para geração de um arquivo XML:
+            NF-e/CC-e/Manifestação de Destinatário
+                
+            
+            Verifica se existe algum diretório definido no campo Diretório Arquivo NF-e da tela Parâmetros de Usuários para Vendas (F099UVE), guia Vendas (menu Cadastros > Usuários > Parâmetros por Gestão > Vendas e Faturamento), para o usuário que está solicitando a geração do arquivo XML. Se não existir nenhuma informação neste campo, o ERP utiliza o diretório definido no campo Dir. Arq. Doc. Eletrônicos na tela Séries de Notas Fiscais (F020SNF) (menu Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Séries Notas Fiscais > Cadastro), da série do documento que está sendo emitido.
+            
+                MDF-e
+                
+            
+            Verifica se existe algum diretório definido no
+campo Diretório Arquivo MDF-e da tela Parâmetros de Usuários para Vendas (F099UVE), guia Transporte (menu Cadastros > Usuários > Parâmetros
+por Gestão > Vendas e Faturamento), para o usuário que está solicitando a
+geração do arquivo XML. Se não existir nenhuma informação neste campo, o ERP
+utiliza o diretório definido no campo Dir. Arq. Doc. Eletrônicos na tela Séries de Notas Fiscais (F020SNF)
+(menu Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Séries Notas Fiscais >
+Cadastro), da série do documento que está sendo emitido.
+            
+                NFS-e
+                
+            
+            Verifica se existe algum diretório definido no campo Diretório Arquivo NFS-e da tela Parâmetros de Usuários para Vendas (F099UVE), guia Vendas (menu Cadastros > Usuários > Parâmetros
+por Gestão > Vendas e Faturamento), para o usuário que está solicitando a
+geração do arquivo XML. Se não existir nenhuma informação neste campo, o ERP
+utiliza o diretório definido no campo Dir. Arq. Doc. Eletrônicos na tela  Séries de Notas Fiscais (F020SNF)
+(menu Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Séries Notas Fiscais >
+Cadastro), da série da NFS-e que está sendo emitida .
+            
+                CT-e 
+            
+            Verifica se existe algum diretório definido no campo Diretório Arquivo CT-e da tela Parâmetros de Usuários para Vendas (F099UVE), guia Transporte (menu Cadastros > Usuários > Parâmetros
+por Gestão > Vendas e Faturamento), para o usuário que está solicitando a geração do
+arquivo XML. Se não existir nenhuma informação neste campo, o ERP utiliza o
+diretório definido no campo Dir. Arq. Doc. Eletrônicos na tela
+Séries de Notas Fiscais (F020SNF)
+(Cadastros > Mercado e Suprimentos > Parâmetros Fiscais > Séries Notas Fiscais >
+Cadastro), da série
+do CT-e que está sendo emitido. 
+            
+                Importante
+                
+                É possível consultar qual usuário alterou o status
+de 1 - Não Enviada para 2 - Enviada na tela Consulta de Histórico de Documentos Eletrônicos (F141HDE).
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

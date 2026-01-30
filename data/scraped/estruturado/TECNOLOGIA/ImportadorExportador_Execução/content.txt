@@ -1,0 +1,177 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/importacao-exportacao/fexeform.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520Importa%25C3%25A7%25C3%25A3o%252FExporta%25C3%25A7%25C3%25A3o%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador Importação/Exportação > Importador/Exportador (Execução)
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Importador/Exportador de Arquivos Texto (Execução)
+            Tela utilizada para executar um processo de importação ou exportação.
+            
+                Importante
+                
+                Caso as configurações regionais estejam habilitadas é necessário que apenas a tela do Importador/Exportador esteja aberta no momento de sua execução.
+            
+            Operação
+                Escolha o processo que será executado, Importação ou Exportação.
+            Código
+                Selecione o código do modelo.
+            Selecionar arquivo
+                Marque esta opção para escolher o caminho do arquivo que deverá ser executada a importação/exportação.
+            Arquivo
+                Se o processo a ser executado for uma exportação, informe o arquivo para onde os dados serão exportados. Se o processo a ser executado for uma importação, informe a origem dos dados que serão importados. A origem pode ser um arquivo texto ou uma tabela do banco de dados. Nesse caso, para a importação, o arquivo de dados deverá estar na codificação ANSI.
+            Ao escolher um arquivo XML no campo Arquivo e pressionar a tecla Tab, um novo campo Arquivo será exibido na seção Selecionar arquivo. Neste campo, deve ser selecionado um arquivo XSLT (XML de transformação) para o respectivo XML. Para mais informações sobre arquivos XSLT, acesse as páginas XSL Transformations (XSLT) e The Extensible Stylesheet Language Family (XSL).
+            
+                Importante
+                
+                Ao montar o conteúdo do XML, este não deve conter espaços adicionais. 
+ O arquivo XSLT será responsável por pegar os dados 
+ e transformá-los em texto de acordo com suas regras, para depois ser importado 
+ de acordo com algum layout escolhido na execução.
+                Na definição da W3C, o limite é de 10 espaços em branco.
+            
+            Exemplos de Importações mais usuais:
+                
+                    Gestão de Pessoas | HCM: Cadastro de Colaboradores, Vínculos, Situações, Centro de Custos, Horários, Escalas, Cargos, Eventos, Salários, Organogramas, Banco/Agência, Seguros, Históricos Lançamentos, Candidatos.
+                    Gestão Empresarial | ERP: Cadastros de Clientes, Representantes, Fornecedores, Plano de Contas Contábeis, Títulos do Contas a Receber, Notas Fiscais, Cobrança Escritural, Extratos Bancários.
+                    Regente: Cadastro de Clientes, Empresas, Filiais, Cadastro de Fornecedores, Extrato Bancário, Cobrança Escritural.
+                
+            
+            Exemplos de Exportações mais usuais:
+                
+                    Gestão de Pessoas | HCM: Eventos, Marcações, Colaboradores.
+                    Gestão Empresarial | ERP: Lançamentos Contábeis, Notas Fiscais, Cobrança Escritural.
+                    Regente: Cadastro de Clientes, Cadastro de Fornecedores, Cobrança Escritural.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

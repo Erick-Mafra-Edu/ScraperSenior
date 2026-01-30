@@ -1,0 +1,161 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/sat.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7C_____10
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > SAT
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            SAT- CF-e - Sistema Autenticador e Transmissor de Cupons Fiscais Eletrônicos
+            O SAT-CF-e (Sistema Autenticador e Transmissor de Cupons Fiscais Eletrônicos) tem o objetivo de documentar, de forma eletrônica, as operações comerciais do varejo dos contribuintes, em substituição ao Emissor de Cupom Fiscal (ECF). Ele possibilita aos consumidores localizar o documento fiscal num prazo menor do que o atual, além de simplificar as obrigações acessórias dos estabelecimentos varejistas.
+            Para isso, foi criado um novo modelo de documento fiscal eletrônico: o Cupom Fiscal Eletrônico (CF-e), aderente ao modelo da Nota Fiscal Eletrônica (NF-e) e um novo padrão de equipamento de baixo custo, o SAT, para gerar, autenticar com validade jurídica e transmitir, via Internet, os CF-e-SAT emitidos pelos estabelecimentos comerciais. 
+            Parametrizações Gestão Empresarial | ERP
+            Para utilizar o SAT, são necessárias algumas parametrizações que devem ser realizadas no Gestão Empresarial ERP: 
+            Caso já utilize NFC-e:
+            
+                Acesse a tela Parâmetros da Filial para Integrações (F070VAR) e defina o Modo de operação PDV/Retaguarda:"     A - NFC-e + SAT": emiter as vendas em NFC-e por padrão, e caso entre em contingência, emitir usando SAT (opção recomendada);        "S - SAT": emite as vendas utilizando somente SAT, como modo de operação primário. Nesta opção, não existe contingência.
+                Na tela Cadastro de Equipamentos Fiscais (F050EQF) cadastre o equipamento SAT que a loja utilizará para autorizar as Vendas. É importante que neste cadastro seja preenchido o tipo ("4 - SAT") e que, o Número de Série do equipamento coincida exatamente com o Número de Série do equipamento físico.
+				ImportanteEm caso de substituição de equipamento SAT, ou adição de novos equipamentos, o cadastro dos equipamentos devem ser realizados conforme recomendação acima, no Gestão Empresarial | ERP. 
+                Na tela Séries de Notas Fiscais (F020SNF), para cada equipamento SAT que foi cadastrado no passo anterior, deve ser cadastrada uma nova série de nota fiscal da seguinte maneira:Aplicação: Nota Fiscal de Saída;Espécie Documento: 59 (Cupom Fiscal Eletrônico - SAT (CF-e-SAT)). Caso este cadastro ainda não exista, é necessário cadastrá-lo na tela F032EDC;Dispositivos Autorizados = 11 - Cupom fiscal eletrônico;Exclusiva Varejo = Sim;        Associar o Equipamento Fiscal SAT correspondente, cadastrado anteriormente.
+                Na tela Configurações de parâmetros (F000PPD) configure os quatro parâmetros para conexão com o eDocs Cliente:EDOCS.CLIENTE.URL: Alfanumérico. Preencher com a URL onde está publicado o serviço de web services do eDocs Cliente (que é um pré-requisito para venda com SAT). Por exemplo: http://127.0.0.1EDOCS.CLIENTE.PORTA: Numérico. Preencher com a porta onde está publicado o serviço de web services do eDocs Cliente. Porta padrão = 8989.EDOCS.CLIENTE.USUARIO: Alfanumérico. Usuário para conexão com o serviço de web services do  eDocs Cliente.EDOCS.CLIENTE.SENHA: Alfanumérico. Senha para conexão com o serviço de web services do  eDocs Cliente.
+                Aguarde todas as configurações serem integradas com o Retaguarda;
+                Faça uma carga de base no PDV;
+                E, se, necessário, demais configurações no eDocs.
+            
+            Caso utilize PAF - ECF
+            Faça as parametrizações anteriores e configure:
+            
+                Valor mínimo da venda para exigir cliente (Numérico);
+                Tipo de Impressão de DANFE ("1 - Completo", "2 - Resumido");
+                Tempo para solicitar contingência (em segundos) (Numérico).
+            
+            Processo de utilização no PDV 
+            A venda com SAT ocorre da mesma forma que a venda com NFC-e, apenas difere-se no processo de finalização. Diferente do NFC-e, que tenta autorizar a nota através do integrador filial (e por consequência, SDE > SEFAZ), o SAT realiza a tentativa de autorização da nota através do serviço de mensageria do eDocs Cliente, e por consequência SDE > equipamento SAT.
+            Quando a nota fiscal é autorizada, o Cupom Fiscal Eletrônico (CFE) é impresso. Em casos de rejeição, o sistema volta à tela de venda, e permite que se realize a correção de alguma informação da própria venda. Caso ocorra algum erro ou timeout, é possível utilizar as opções: Tentar Novamente ou Cancelar a Venda.
+            
+                Nota
+                
+                O timeout do SAT é o mesmo utilizado nas configurações do NFC-e.
+            
+            É possível saber qual é a configuração de modo de operação da filial no PDV pelo painel de informações:
+            
+                Quando o PDV está configurado para modo de operação SAT:
+				Exemplo:
+                Quando o PDV está configurado para modo de operação NFC-e + SAT ou NFC-e, e não está em contingência:
+				Exemplo:
+                Quando o PDV estiver configurado para modo de operação NFC-e, e está em contingência:
+				Exemplo:
+                Quando o PDV está configurado para modo de operação NFC-e + SAT, e está em contingência:
+				Exemplo
+            
+            
+                Importante
+                    
+                
+                Caso não haja comunicação com o eDocs ou com o equipamento SAT, o PDV não conseguirá emitir vendas. Caso o equipamento SAT esteja sem conexão com a SEFAZ, é possível operar normalmente, porém, observando o prazo determinado pelo Fisco para transmitir os documentos. 
+                Quando o modo de operação configurado for "NFC-e + SAT", o PDV funcionará  primeiramente com NFC-e e, quando entrar em contingência, irá operar com o SAT. Pois, por exemplo, no estado de São Paulo não é permitida a utilização da contingência off-line da NFC-e. A contingência nesse caso será da NFC-e, e não do SAT.
+            
+            Operações de Cancelamento de Venda do tipo SAT- CF-e do PDV
+            O cancelamento junto ao equipamento SAT é realizado pelo próprio PDV e a integração deste cancelamento com o Retaguarda é necessária para desfazer as movimentações de estoque, financeiro, metas de vendas e demais operações que foram realizadas na venda, cujos ão realizados ao processar o recebimento deste tipo de operação. Posteriormente a venda será integrada com o Gestão Empresarial | ERP, com a situação igual a Cancelada. 
+            Alteração da versão SAT para utilização no PDV 
+            Caso seja necessário alterar a versão do SAT que o respectivo PDV irá trabalhar, deve-se parametrizar o parâmetro dinâmico SAT.VERSAO na tela Configuração de parâmetros (F000PPD) do Gestão Empresarial | ERP.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

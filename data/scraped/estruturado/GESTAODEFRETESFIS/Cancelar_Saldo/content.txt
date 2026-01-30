@@ -1,0 +1,140 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/cancelar-saldo.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____4
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Cancelar Saldo
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Cancelar Saldo
+            
+                
+                
+                
+                    
+                        Descrição
+                        
+                         
+                    
+                    
+                        Url do Serviço
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/cancelarSaldo				
+                    
+                    
+                        Tipo de Envio
+                        POST				
+                    
+                    
+                        Momento
+                        Utilizado para realizar o cancelamento de saldo dos pedidos na situacao 504				
+                    
+                    
+                        Tabela
+                         
+                    
+                    
+                        Array
+                        Sim - Recebe um array de objetos				
+                    
+                
+             HeaderChaveValorContent-TypeApplication/jsonAuthorizationBearer inserir_token_aquiDetalhamento dos atributos em JSON entradaNome do AtributoTipo de DadoDefaultObrigatórioDescriçãocancelamento_pedidoArray SimRecebe um Array de objetoscnpj_empresaString SimCNPJ da empresacd_clienteString SimCódigo do Clientenu_pedido_origemString SimNúmero do pedido de origemnovo_saldoDouble SimRecebe o novo saldo do pedido, que devera ser o total da programaçãoExemplo do layout de entrada em JSON{"pedidos": [{"cnpjEmpresa": "91830836000179","cdCliente": "106007","nuPedidoOrigem": "2034","novoSaldo": "81000.0"}]}
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

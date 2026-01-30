@@ -1,0 +1,209 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#integracoes-com-dispositivos/telematica/envio-de-eventos-alarmes-e-acesso.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%2520com%2520Dispositivos%7CArquitetura%2520de%2520Comunica%25C3%25A7%25C3%25A3o%2520e%2520Integra%25C3%25A7%25C3%25A3o%7CTelem%25C3%25A1tica%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Integrações com Dispositivos > Arquitetura de Comunicação e Integração > Telemática > Envio de eventos – Alarmes e Acesso
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Envio de eventos
+            Eventos de Alarme
+            O dispositivo realiza o controle das entradas de alarme através de “pooling”, 
+ verificando por novos sinais de alarme em cada entrada.
+            Quando um sinal é detectado, alarme ou parada de alarme de qualquer 
+ entrada, o dispositivo envia a situação corrente (0 = alarme inativo, 1 = 
+ alarme ativo) de todas as entradas e identifica quais as que tiveram alteração 
+ de estado. Esta informação geral é então gravada pelo sistema no banco 
+ de dados, na tabela temporária de alarmes chamada SITENTRADA, para que 
+ as entradas alarmadas sejam tratadas no monitoramento.
+            A tabela SITENTRADA possui os campos ENTRADAS e LOCAL_OCORR: o primeiro 
+ campo identifica todas as entradas do dispositivo e a situação delas (ativada 
+ / desativada); e, o segundo campo mostra quais as entradas que tiveram 
+ alteração de situação. Isto serve para que o aplicativo Coletor colete 
+ apenas as mudanças de situação.
+            A posição do campo Entradas identifica o status:
+            
+                Valor 1 indica que o dispositivo entrou em modo On-line; e, 
+                Valor 0 em modo off-line. 
+            
+            Quando houver alteração desta entrada, devem-se desprezar as demais. 
+ 
+            Após enviar o alarme, o dispositivo para de alarmar na entrada onde foi 
+ gerado o alarme até que o estado desta entrada retorne ao repouso. Assim 
+ que pare de alarmar na entrada, o dispositivo envia um novo alarme para o 
+ sistema informando o número da entrada, e seta o tipo do sinal para “Alarme 
+ Inativo”.
+            
+            
+            Marcações do Acesso
+            On-line
+                A marcação é realizada em dispositivos ligados a uma central, seja ARLON 
+ (centralizadora) ou CONEX (TCP/IP), que verifica os crachás com acesso 
+ autorizado, rejeitando os demais. A central é automaticamente atualizada 
+ pelo sistema Ronda Senior, quando existe alguma alteração 
+ referente a: crachás, horários, afastamentos, permissões,  programações, 
+ autorizações, e outras que influenciam na liberação de acesso. 
+            Com isso, a marcação não fica armazenada no dispositivo, pois é transferida 
+ imediatamente da base de dados da Telemática. Em seguida, através do  aplicativo 
+ denominado Coletor 
+ de Marcações, as marcações são transferidas para a base de dados do 
+ Sistema Ronda Senior.
+            Off-Line
+                Se houver queda de energia elétrica ou outros problemas de conexão, 
+ as marcações ficam armazenadas nos dispositivos, que utilizam sua lista 
+ liberação ou bloqueio particular, para determinar a autorização de 
+ acesso. O sistema possui um recurso para realizar a coleta off-line, o 
+ qual incluirá em sua base de dados as marcações que estão no dispositivo. 
+ A partir do momento que as marcações são incluídas na base de dados, poderão 
+ ser processadas. Ainda pode ser feita a validação do acesso através de 
+ Listas.
+            Observação 
+                Para verificar se 
+ uma marcação já foi coletada na tabela 
+ Dam00,  confira  o campo posic  da mesma.
+            
+            
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

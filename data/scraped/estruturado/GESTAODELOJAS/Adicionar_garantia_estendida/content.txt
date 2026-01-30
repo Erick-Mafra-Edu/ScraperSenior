@@ -1,0 +1,111 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/servicos/adicionar-garantia-estendida.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7C_____4
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Adicionar garantia estendida
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Adicionar Garantia Estendida
+                Conceito
+                Vender garantia estendida para os produtos que possuem o serviço. A garantia estendida é uma forma de seguro, paga pelo consumidor, regulamentada pela SUSEP (Superintendência de Seguros Privados). Consiste na manutenção do produto adquirido após o vencimento da garantia legal (90 dias) ou garantia contratual (prazo estipulado pelo fabricante).
+                Utilização
+                Utilizado para acrescentar o serviço de garantia estendida no momento da inclusão do pedido do cliente ou pré-venda.
+                Processo 
+                Para vender garantia estendida na solução de Gestão de Lojas:  
+                
+                    Importante
+                        
+                    
+                    Caso a unidade de medida do produto vendido permita informar casas decimais, não é possível vender garantia estendida para tal produto. Esta é uma restrição para a qual o sistema não exibe nenhum aviso.
+                    Se há um produto configurado assim, por exemplo:
+                    
+                        Produto: "TV".
+                        Unidade de medida do produto: "UN".
+                        Quantidade de casas decimais permitida na unidade de medida: 3. Isso significa que é possível informar "1,01" unidades, por exemplo.
+                    
+                    Nesse cenário, ao vender a "TV", mesmo informando "1,00" na quantidade, não é possível vender garantia estendida.
+                    Como contorno, é necessário alterar a configuração do campo Quantidade Decimais no cadastro da unidade de medida no Gestão Empresarial | ERP para: 0.
+                
+                
+                    Na criação do Pedido ou Pré-venda, ao gravar o produto, sempre que ele possuir garantia estendida (e/ou seguro furto e roubo  associado ), é mostrada uma mensagem questionando se deseja adicioná-la:
+                    Ao selecionar Sim, é aberta a tela de Oportunidades de Venda. Nela, selecione a garantia desejada. Ainda que haja vários disponíveis, somente é possível selecionar uma por produto:
+                    Clique em Adicionar.
+                    Prossiga com a emissão do Pedido ou Pré-venda.
+                
+                
+                    
+                        Atenção: 
+                        
+                             O sistema não permitirá finalizar a venda com garantia estendida se o cliente não estiver identificado.
+                            Após o atendimento do pedido no PDV e emissão do cupom fiscal, o sistema permite que seja impresso o contrato do serviço de garantia (apólice ou bilhete), para que o cliente assine o acordo feito entre as partes. Para isso, deve-se configurar a impressão do documento no sistema ERP.
+                        
+                    
+                
+                Venda de garantia estendida avulsa para vendas anteriores
+                Ao reabrir ou registrar um pedido, é será realizada uma consulta das possíveis garantias estendidas para venda, que não tenham sido adquiridas anteriormente e estejam no prazo permitido para serem adquiridas após o produto, conforme parametrizado no Gestão Empresarial | ERP, e caso haja, o botão Oportunidades de venda - F6 fica em vermelho. Utilize a opção Vendas anteriores para localizar aquelas que possibilitam a venda. Esta situação ocorre, mesmo que o cliente não seja alterado. 
+                As garantias estendidas vinculadas ao pedido que já não atendam mais o usuário serão automaticamente canceladas pelo sistema e apresentadas na tela inicial do pedido, conforme já ocorre para as garantias canceladas manualmente. Já, as que estiverem vinculadas aos produtos de vendas anteriores, serão apresentadas junto com os demais itens/produtos, ou como intermediação, se assim estiver configurado. 
+                É possível marcar uma garantia e informar a quantidade do produto que será coberta pela garantia. Ao gravar, a garantia é inserida no pedido, e aparecerá na grade de itens do pedido ou na grade de itens de intermediação, caso a garantia for intermediação.
+                 A informação de identificação da nota fiscal ou cupom da qual o serviço de garantia vinculada ao pedido pertence (origem) pode ser verificada. Essa funcionalidade está disponível na tela inicial do pedido ou na tela de intermediação.
+                O processo de faturamento do pedido com a garantia avulsa é o mesmo.
+                
+                    Observações
+                    
+                    
+                        Caso a consulta  retorne a inexistência de garantias estendidas de vendas anteriores, a mensagem: não existem garantias estendidas de vendas anteriores disponíveis ao cliente, será exibida. 
+                        Somente devem ser oferecidas garantias estendidas para produtos em que:O serviço de garantia estendida está em tabela de preço ativa dentro da vigência;O prazo de recuperação da garantia do produto seja igual ou maior que a data da consulta;O agrupamento do produto seja igual ao agrupamento do serviço de garantia estendida;O valor de aplicabilidade para a garantia estendida compreende o valor do produto.
+                        Caso o parâmetro dinâmico VENDA.IMPRIMEGARANTIA do cadastro de filial do Gestão Empresarial | ERP esteja definido como "0", não acontece a impressão automática do documento de garantia estendida. Caso seja necessário, é possível imprimir os comprovantes através da reimpressão de documentos de cupom fiscal ou NFC-e.
+                        Caso um cupom fiscal ou uma nota fiscal que possua garantia estendida seja cancelado, o sistema permite que seja impressa a "Solicitação de Cancelamento do Bilhete de Seguros". A impressão automática ocorre caso o parâmetro dinâmico VENDA.IMPRIME.GARANTIA.CANCELAMENTO do cadastro de filiais (F070FCA) do Gestão Empresarial | ERP esteja definido com o valor "1". Caso seja necessário, é possível imprimir os documentos posteriormente através da reimpressão de documentos de cupom fiscal ou nota fiscal.
+                    
+                
+            
+            Devolução de itens com garantia estendida
+            Quando um produto para o qual se adquiriu garantia estendida é devolvido pelo cliente, o valor da garantia associada é devolvido junto ao valor do produto, mesmo que não tenha sido adquirida no mesmo momento em que o produto (conforme o item Venda de garantia estendida avulsa para vendas anteriores). 
+            A devolução do valor da garantia pela loja ocorre automaticamente e pode ser de duas formas:
+            
+                Integral: se a devolução ocorre até 7 dias após a venda, é devolvido o valor integral da garantia.
+                Parcial: quando a devolução se dá sete dias após a venda, a taxa de IOF referente a essa garantia, adicionada do valor proporcional à quantidade de meses utilizados, é descontada do valor da devolução, arredondando para cima. Ou seja, caso a garantia tenha sido utilizada por um mês e dois dias, são descontados dois meses de uso dela.No caso de produtos sujeitos a danos elétricos (conforme configuração no sistema), caso seja devolvido dentro da vigência da cobertura de danos elétricos, é descontado o valor do IOF referente à cobertura de danos elétricos mais a quantidade de meses utilizados referente à cobertura de danos elétricos. E caso esteja dentro da vigência da cobertura da garantia estendida, é descontado todo o valor referente à cobertura de danos elétricos, mais o IOF referente à cobertura de garantia estendida e mais a quantidade de meses utilizados da garantia estendida.
+            
+            
+                Nota
+                
+                O tempo de 7 dias pode variar, veja o item Tempo para devolução integral do valor do seguro furto e roubo.
+            
+            Tempo para devolução integral do valor da garantia estendida
+            A quantidade de dias para devolução integral da garantia é definida no parâmetro dinâmico GARANTIAESTENDIDA.PRAZODEVOLUCAOINTEGRA, do cadastro de Filial do Gestão Empresarial | ERP. Seu valor padrão é 7 dias, portanto não é necessário configurá-lo caso o valor padrão seja utilizado.
+            O percentual de IOF considerado é conforme o parâmetro dinâmico GARANTIAESTENDIDA.PERCENTUALIOF também configurado no cadastrado da Filial no ERP.
+            
+                Importante:
+                
+                O sistema armazena internamente o valor de IOF utilizado no momento da venda para que este seja utilizado no cálculo da devolução parcial, caso esta ocorra. Porém, no caso de devolução de venda realizada em outra filial, o sistema não tem como resgatar esta informação (já que ela fica somente no Retaguarda e não integra com o ERP). Portanto, no caso de devolução de vendas de outra filial, uma simulação do valor do IOF levando em consideração o valor da garantia vendida e o percentual de IOF configurado no sistema neste momento é calculada no momento da devolução. Caso o percentual de IOF aplicado tenha sido alterado no sistema depois do dia em que foi realizada esta venda, isto pode gerar uma pequena diferença no desconto da garantia, se comparado à devolução da mesma venda na filial de origem. Neste caso, recomenda-se realizar a devolução na filial de origem.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+              

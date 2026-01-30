@@ -1,0 +1,174 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/suprimentos/recalculo-impostos.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7C_____3
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Recálculo de impostos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Recálculo de impostos
+            
+       
+          É possível definir se os valores de impostos (ICMS e ISS) recebidos para o item da nota fiscal, através do web service com.senior.g5.co.mcm.cpr.notafiscal, serão mantidos ou recalculados no ERP.
+            Esta definição é feita no campo Valor da grade da tela de Parâmetros de Integração, em Cadastros > Empresas > Parâmetros de Integração (F191CPT), que pode ser preenchido com:
+            
+                M - Manter valor: o valor do imposto é mantido conforme recebido da nota fiscal importada;
+                R - Recalcular: o valor do imposto é recalculado com base na parametrização que consta no ERP.
+            
+            Caso a parametrização não seja informada, os impostos serão calculados com a parametrização que consta no ERP. 
+            Esta funcionalidade é válida para os seguintes impostos:
+            
+                ICMS00 - ICMS - Normal;
+                ICMS10 - ICMS - ST;
+                ICMS20 - Redução da base de cálculo;
+                ICMS30 - Isentas de ICMS com ICMS ST;
+                ICMS40 - Isentas e outras;
+                ICMS51 - ICMS normal / isentas e outras e diferido;
+                ICMS60 - ICMS ST destacado;
+                ICMS70 - ICMS redução base cálculo;
+                ICMS90 - junção de todos;
+                ISSCom a opção de Recalcular Valores, mesmo que serviço tenha percentual de redução de ISS definido na tela F080SXC, será considerado o percentual de redução  definido no ERP (Impostos Sobre Serviço).
+            
+            
+                Importante
+                
+                A definição escolhida pela empresa, de manter ou recalcular, é aplicada para todos os tipos de ICMS citados acima. Não é possível recalcular um tipo de ICMS e manter o outro tipo, por exemplo.
+            
+            Manter
+            Caso a configuração selecionada seja manter os valores de ICMS recebidos da nota fiscal, é necessário que:
+            
+                O Produto e/ou Serviço utilizado estejam definidos para calcular o ICMS:Produto: definido no campo Tem ICMS ou Calcula ICMS Importação na tela de Cadastro de Produtos (F075PRO) e Ligação Fornecedor X Produto (F403FPR e F403LFP);Serviço: definido no campo Tributa ICMS na tela de Cadastro de Serviços (F080SER).
+                O ERP receba as informações de Valor Base,  Valor do Imposto e Percentual do imposto.Campos do web servicePara o ICMS Normal (ICMS00) os campos utilizados são:VlrBic: Valor base do ICMS;PerIcm: Percentual do ICMS do item;VlrIcm: Valor do ICMS do item.Para o ICMS Substituído (ICMS10) os campos utilizados são:VlrBsi: Valor base ICMS substituído;VlrIcs: Valor do ICMS substituído do item.Para o ICMS com redução de base de cálculo (ICMS20) os campos utilizados são:VlrIic: Valor isentas ICMS;VlrOic: Valor outros ICMS.Para isentas de ICMS com ICMS Substituído (ICMS30) os campos utilizados são:VlrBsi: Valor base ICMS substituído;VlrIcs: Valor do ICMS substituído do item;VlrIic: Valor isentas ICMS;VlrOic: Valor outros ICMS.Para Isentas e Outras (ICMS40), os campos utilizados são:VlrIic: Valor isentas ICMS;VlrOic: Valor outros ICMS.Para o ICMS Normal, Isentas, Outras e Diferido (ICMS51) os campos utilizados são:VlrBic: Valor base do ICMS;PerIcm: Percentual do ICMS do item;VlrIcm: Valor do ICMS do item.VlrIic: Valor isentas ICMS;VlrOic: Valor outros ICMS;PerDif: Percentual de diferimento do item;BasIdf: Valor base do ICMS diferido;PerIdf: Percentual do ICMS diferido do item;VlrIdf: Valor do ICMS diferido do item;CodStr: Situação tributária do item.Para o ICMS Substituído Destacado (ICMS60) os campos utilizados são:VlrBsd: Valor base ICMS substituído destacado;VlrIsd: Valor ICMS substituído destacado.ImportanteOs valores dos campos acima (VlrBsd, VlrIsd) não são calculados automaticamente pelo sistema, independente da configuração escolhida (cálculo ou recálculo). Sendo assim,  os valores devem ser informados manualmente.Para o ICMS com redução da base cálculo (ICMS70) os campos utilizados são:VlrBsi: Valor base ICMS substituído;VlrIcs: Valor do ICMS substituído do item;VlrIic: Valor isentas ICMS;VlrOic: Valor outros ICMS.Para o ICMS90, os sistema considera todos os campos acima mencionados e também estes:VlrIbs: Valor base do ICMS Simples Nacional;VlrIsn: Valor do ICMS Simples Nacional do item da nota fiscal de entrada;PerIsn: Percentual do ICMS Simples Nacional do item da nota fiscal de entrada.
+            
+            Recalcular
+            A opção para recalcular os impostos contempla os seguintes impostos:
+            
+                ICMS00 - ICMS - Normal;
+                ICMS10 - ICMS - ST;
+                ICMS20 - Redução da base de cálculo;
+                ICMS30 - Isentas de ICMS com ICMS ST;
+                ICMS40 - Isentas e outras;
+                ICMS51 - ICMS normal / isentas e outras e diferido;
+                ICMS60 - ICMS ST destacado;
+                ICMS70 - ICMS redução base cálculo;
+                ICMS90 - junção de todos;
+                ISSCom a opção de Recalcular Valores, mesmo que serviço tenha percentual de redução de ISS definido na tela F080SXC, será considerado o percentual de redução  definido no ERP (Impostos Sobre Serviço).
+            
+            O ERP recalcula os impostos citados acima, ao gravar os seguintes documentos no sistema:
+            
+                Nota Fiscal eletrônica: Dispositivo Fiscal tipo 6 (e020Snf.DisAut);
+
+                Conhecimento Transporte eletrônico: Dispositivo Fiscal tipo 7 (e020Snf.DisAut);
+
+                NFS-e (Nota Fiscal Serviço eletrônico): Dispositivo Fiscal tipo 8 (e020Snf.DisAut);
+
+                RPA (Recibo Pagamento Autônomo): Série configurada com R-RPA (E020SNF.UtiImp = 8);
+
+                Outros documentos: E020SNF.UtiImp = O-Out Doc. 
+
+            
+            
+                Observação
+                
+                Os tipos de documento são definidos na tela de Séries da Nota Fiscal (F020SNF).
+            
+            Pré-requisitos
+            Para que o Recálculo ocorra, é necessário atender aos seguintes pré-requisitos:
+            
+                O recurso está disponível para Notas Fiscais de Entrada geradas a partir do web service com.senior.g5.co.mcm.cpr.notafiscal, porta GravarNotasFiscaisEntrada. O parâmetro TipCal deve ter o valor 0 (zero) = Sim, assim, o sistema considera a opção de recalcular valores.
+                O  Produto e/ou Serviço utilizado devem estar definidos para calcular o ICMS:Produto: definido no campo Tem ICMS ou Calcula ICMS Importação  na tela de Cadastro de Produtos (F075PRO) e Ligação Fornecedor X Produto (F403FPR e F403LFP);Serviço: definido no campo Tributa ICMS na tela de Cadastro de Serviços (F080SER)
+                Há também outras parametrizações que podem influenciar no recálculo dos impostos: A Zona Franca, definida no Cadastro da Filial (F070FCA) e no Cadastro de Clientes (F085CAD). Para o cálculo do ICMS ela não pode ser igual a 1 - Zona Franca de Manaus;O tipo de Nota Fiscal de Entrada utilizado deve ser diferente de 9 (NF Acerto) e 10 (NF Acerto - NF Saída);A Empresa utilizada deve ter o campo Possui Serviços c/ ICMS/IPI, da tela de Cadastro de Empresas (F070EMP) preenchido com S - Sim;A Transação utilizada deve ter o campo Isenta ICMS, da tela de Cadastro de Transações de Compras (F001TCP) preenchido com N - Não.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+   

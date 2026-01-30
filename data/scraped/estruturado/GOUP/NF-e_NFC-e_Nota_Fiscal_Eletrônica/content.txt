@@ -1,0 +1,158 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#integracoes/nf-e/nf-e-introducao.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7CNF-e%2520%257C%2520NFC-e%2520(Nota%2520Fiscal%2520Eletr%25C3%25B4nica)%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > Nota Fiscal Eletrônica
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Nota Fiscal Eletrônica
+            A NF-e é a mais conhecida dentre os documentos fiscais eletrônicos, pois é a nota emitida após qualquer transação comercial de pessoa jurídica. A nota deve ser emitida toda vez que houver a movimentação de produtos palpáveis, sendo utilizada para vendas ou devolução de mercadorias. De acordo com a Receita Federal, a Nota Fiscal Eletrônica pode ser conceituada como sendo um documento de existência apenas digital, emitido e armazenado eletronicamente, com o intuito de documentar, para fins fiscais, uma operação de circulação de mercadorias ou uma prestação de serviços, ocorrida entre as partes. Sua validade jurídica é garantida pela assinatura digital do remetente (garantia de autoria e de integridade) e a Autorização de uso fornecida pelo Fisco, antes da ocorrência do fato gerador.
+            O Governo Federal está sempre atualizando o leiaute dos Documentos Eletrônicos com novas funcionalidades e melhorias na tecnologia. A necessidade destas alterações de leiaute da NF-e são agrupadas durante um tempo e quando emitidas, compõem uma versão nacional. O objetivo é evitar alterações frequentes para diminuir a manutenção nos sistemas de emissão de NF-e para as empresas e para a SEFAZ. A exceção a esta regra é motivada pelas adaptações necessárias na mudança de legislação, que normalmente têm um porte menor, mas que também devem cumprir um cronograma capaz de ser observado pelas empresas e pela SEFAZ.
+            A alteração mais recente, que está em vigência, foi divulgada em Novembro de 2016 pelo CONFAZ (Conselho Nacional de Política Fazendária), no 
+Portal da Nota Fiscal Eletrônica, instituindo a Nota Fiscal Eletrônica 4ª Geração ou NF-e 4.0 no Brasil. A nota técnica NT_2016_002 traz todas os impactos e alterações, sendo utilizada para a adequação do Gestão Empresarial | ERP, conforme publicado no Portal da NF-e. 
+            Nota Fiscal Eletrônica 4.0
+            A nova versão da NF-e sofreu algumas alterações no leiaute para cadastro de produtos e movimentação de notas fiscais, em comparação com a versão 3.10. As principais alterações são:
+            
+                Criação do novo grupo Rastreabilidade de produto: possibilita a rastreabilidade de qualquer produto sujeito a regulações sanitárias (bebidas e comidas por exemplo). A nota fiscal eletrônica apresenta os novos campos, retirados do grupo Detalhamento Específico de Medicamento e de matérias-primas farmacêuticas: Número do lote do produto; Quantidade de produto no lote; Data de fabricação/produção; Data de validade.
+                Envio do código ANVISA: obrigatoriedade da informação do código ANVISA, utilizado em  medicamentos.
+                Inclusão de campos no Grupo Combustível: passa a ser indispensável a informação de percentuais de misturas GLP (Gás Liquefeito do Petróleo) e a descrição do código ANP. O campo Percentual de Gás Natural para o produto GLP foi excluído.
+                Inclusão de opção no campo Indicador de presença (indPres): incluída a opção 5 - Operação presencial, fora do estabelecimento. Esta opção está relacionada ao momento em que não há presença do comprador no espaço físico do estabelecimento, ou seja, operação utilizada no caso de venda ambulante.
+                Criação de campos relativos ao FCP para operações internas ou interestaduais com ST: anteriormente, não existia o campo do FCP (Fundo de Combate a Pobreza) discriminado na emissão da NF-e. Este valor era agrupado na alíquota do ICMS. Com a alteração, esse campo será enviado separadamente nas operações internas ou interestaduais com substituição tributária. Desta forma, a SEFAZ pretende rastrear de forma mais minuciosa o FCP arrecadado pelas empresas.
+                Alteração do nome do grupo Formas de pagamento para Informações de pagamento: além da mudança de nome, houve a inclusão do campo Troco (vTroco) no grupo. 
+                Campo Indicador da Forma de Pagamento (indPag) retirado do Grupo B - Identificação da Nota Fiscal Eletrônica: com esta alteração, para as notas fiscais de ajuste e Devolução o campo Forma de pagamento (tPag), do grupo Informações de pagamento, deve ser preenchido com a opção 90 – Sem pagamento.
+                Inclusão de campos nas operações com combustíveis: foi acrescentada a opção de informar o Grupo de Repasse do ICMS ST devido à UF de destino nas operações com combustíveis, quando informado CST 60 nas operações interestaduais de produtos que tiveram retenção antecipada de ICMS por ST na UF do remetente. Para os revendedores de combustível (postos) na emissão da nota deverão informar os valores de ICMS ST relacionados à operação.
+                Inclusão de campo no grupo Total da NFe: inserido o campo vIPIDevol para informar o valor do IPI no caso de devolução de mercadoria por estabelecimento não contribuinte deste imposto.
+                Alterações no Grupo X- Informações do Transporte da NFe: inseridas novas modalidades de frete, e desmembrados os códigos de contratação do frete.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

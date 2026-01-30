@@ -1,0 +1,217 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/mercado/gnre.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____11
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > GNRE
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Emissão da Guia Nacional de Recolhimento de Tributos Estaduais - GNRE
+            A Guia Nacional de Recolhimento de Tributos Estaduais (GNRE) é um documento para operações de vendas destinadas para fora do estado de produção do produto, sujeitas à substituição tributária. A GNRE tem o objetivo de recolher o ICMS em outros Estados.
+            
+                Importante
+                
+                A partir de 01/01/2020, a GNRE (Guia Naciona de Recolhimento de Tributos Estaduais) aceitará a integração das informações apenas na versão 2.0.
+                Para envio do modelo GNRE Simples (geração da guia para apenas um pagamento) na versão 2.0, deve-se informar o campo Versão na tela Envio GNRE Online (F661AGR) com a opção 2.0 (funcionalidade não disponível na versão 5.8.10). Dessa forma, as informações serão enviadas por meio do relatório GNRE Online 2.0 (CIAE098.GER). Confira o leiaute e mais informações na página do relatório. 
+            
+            É possível gerar as informações da GNRE no momento da NF-e, CT-e (modelo 57) e CT-e OS (modelo 67). Para isso, é necessário preencher os campos Documento de Arrecadação da tela Cadastro de Guias de Recolhimento (F051GUI) e Número do Convênio da tela Guias de Recolhimento (F661GRI). Dessa forma, as informações irão aparecer no .XML da nota fiscal, no grupo <gnre> da tag <infSenior>, sendo preenchidas em seus devidos grupos: difal, fcp, icmsSt e fcpSt.
+            
+                Observação
+                
+                Para que a tag InfSenior seja gerada, o sistema deve estar configurado com o padrão ABRASF (tela F070FVE, guia Documentos Eletrônicos, campo Integração NFS-e como 1 ou 4) e o identificador de regras GER-000GERSDE1 deve estar ativo.
+            
+            Os grupos são estruturados conforme a guia (<difal>, <fcp>, <icmsSt> e <fcpSt>), contendo os parâmetros <codigo> e <convenio>. Além desses parâmetros, ao preencher o campo Código Detalhamento da tela Cadastro de Guias de Recolhimento (F051GUI)  e as informações de Resumo por Classificação de Produto para GNRE (F661MAG), em cada grupo serão geradas as informações de <complementosReceita>, formado pelos parâmetros <detalhamentoReceita>, <produto> e <valorDetalhamento>.
+            
+                Observação
+                
+                
+                    O sistema não gera a tag <produto> do grupo <complementosReceita> se ela estiver zerada;
+                    O detalhamento da receita independe de haver ou não detalhamento por produto; se não há detalhamento por produto, o sistema busca o valor da tag <detalhamentoReceita> da Guia de Recolhimento (campo E051GUI.DetRec).
+                
+            
+            Na geração do documento no sistema, para que as informações sejam geradas na tela F661MAG automaticamente, é obrigatório fazer o cadastro dos produtos  na tela F075PFI. Dessa forma, quando o documento for gerado, as informações de detalhamento dos produtos   serão inseridas, automaticamente, na tela F661MAG e  geradas no .XML. O eDocs, então, fará a leitura das tags de detalhamento para enviar à SEFAZ.
+            
+                 
+            
+            Exemplo NF-e
+                
+                    Exemplo
+                        <infSenior>
+	<gnre>
+		<difal>
+			<codigo>123</codigo>
+			<convenio>456</convenio>
+			<complementosReceita>
+			<complemento>
+				<detalhamentoReceita>100021</detalhamentoReceita>
+				<produto>1</produto>
+				<valorDetalhamento>221.75</valorDetalhamento>
+			</complemento>
+			<complemento>
+				<detalhamentoReceita>100021</detalhamentoReceita>
+				<produto>1</produto>
+				<valorDetalhamento>221.75</valorDetalhamento>
+			</complemento>
+			</complementosReceita>
+		</difal>
+		<fcp>
+			<codigo>123</codigo>
+			<convenio>789</convenio>
+			<complementosReceita>
+			<complemento>
+				<detalhamentoReceita>100022</detalhamentoReceita>
+				<produto>1</produto>
+				<valorDetalhamento>221.75</valorDetalhamento>
+			</complemento>
+			<complemento>
+				<detalhamentoReceita>100022</detalhamentoReceita>
+				<produto>1</produto>
+				<valorDetalhamento>221.75</valorDetalhamento>
+			</complemento>
+			</complementosReceita>
+		</fcp>
+		<icmsSt>
+			<codigo>321</codigo>
+			<convenio>456</convenio>
+			<complementosReceita>
+			<complemento>
+				<detalhamentoReceita>100023</detalhamentoReceita>
+				<produto>1</produto>
+				<valorDetalhamento>221.75</valorDetalhamento>
+			</complemento>
+			</complementosReceita>
+		</icmsSt>
+		<fcpSt>
+			<codigo>321</codigo>
+			<convenio>123</convenio>
+			<complementosReceita>
+			<complemento>
+				<detalhamentoReceita>100024</detalhamentoReceita>
+				<produto>1</produto>
+				<valorDetalhamento>221.75</valorDetalhamento>
+			</complemento>
+			<complemento>
+				<detalhamentoReceita>100023</detalhamentoReceita>
+				<produto>1</produto>
+				<valorDetalhamento>221.75</valorDetalhamento>
+			</complemento>
+			</complementosReceita>
+		</fcpSt>
+	</gnre>
+</infSenior>
+                        
+                    
+                
+            
+            Exemplo CT-e e CT-e OS
+                
+                    Exemplo
+                        <infSenior> Grupo de informações Senior para eDocs
+	<gnre> Grupo de informações de guias GNRE
+		<difal> Imposto na guia F661GRI igual a 63 - Dif. Alíq. do ICMS interestadual com consumidor final
+			<codigo>E051GUI.CodDrf</codigo> Código documento arrecadação
+			<convenio>E661GRI.ConMer</convenio> Número do convênio
+		</difal>
+		<fcp> Imposto na guia F661GRI igual a 64 - FCP e não possui valor de ICMS Substituído
+			<codigo>E051GUI.CodDrf</codigo> Código documento arrecadação
+			<convenio>E661GRI.ConMer</convenio> Número do convênio
+		</fcp>
+		<icmsSt> Imposto na guia F661GRI igual a 34 - ICMS Substituto por Estado
+			<codigo>E051GUI.CodDrf</codigo> Código documento arrecadação
+			<convenio>E661GRI.ConMer</convenio> Número do convênio
+		</icmsSt>
+		<fcpSt> Imposto na guia F661GRI ifual a 64 - FCP e possuir valor de ICMS Substituído superior a zero
+			<codigo>E051GUI.CodDrf</codigo> Código documento arrecadação
+			<convenio>E661GRI.ConMer</convenio> Número do convênio
+		</fcpSt>
+	</gnre>
+</infSenior>
+                        
+                    
+                
+            
+            Quando as tags são geradas?
+            
+                Quando os identificadores de regras GER-000GERSDE1 (NFS-e), GER-000GERSDE2 (modelo 57) ou GER-000GERSDE3 (modelo 67) estiverem ativos;
+                For gerado valor para um dos seguintes tipos de impostos: ICMS ST, DIFAL, FCP e FCP ST;
+                Houver integração com o eDocs (campo Software Emissor NF-e da guia Documentos Eletrônicos, tela Parâmetros da Filial para Vendas (F070FVE), definido como 0 - eDocs - Retorno via Web Service ERP, 02 - eDocs - Retorno via Web Service eDocsou 03 – eDocs - Envio via Arquivo e retorno via Web Service eDocs.
+                For gerada uma guia de recolhimento;
+                Houver o número do Documento de Arrecadação;
+                As tags de detalhamento só serão geradas se houver a parametrização adequada da tela F075PFI;
+                Para geração do DIFAL e do FCP na mesma guia, preencha o campo Gera guia de FCP separada da guia de ICMS DIFAL como "N - Não" para a UF na tela Parâmetros por Estado (F009PPE).
+            
+            
+                 
+            
+            Processos
+            Como gerar a GNRE?
+            1. Parametrizações:
+            
+            
+                Cadastrar uma guia de recolhimento na tela F051GUI;
+                Ligar uma guia de recolhimento ao imposto no campo Guia Rec. da tela F055PPF;
+                Ainda na F055PPF, no campo Atu. Guia informar a opção S - Sim ou N - Não.
+            
+            2. Geração de guia de recolhimento por meio do cálculo do imposto:
+            
+            
+                Após processar a apuração do cálculo de qualquer imposto, ao clicar no botão Guias é acessada a tela F661GRI. Nela será visualizada a guia de recolhimento com as informações da apuração do cálculo,  caso o campo Atu. Guia da tela F055PPF estiver como S - Sim (caso contrário, a guia não será gerada);
+                Quando a guia de recolhimento não atingir o valor mínimo para recolhimento configurado em Base Imposto Liga Filial, será mostrada a mensagem Não será gerado título para o imposto "xx" pois o valor do imposto a recolher não atingiu o valor mínimo para recolhimento configurado em Base Imposto Liga Filial!;
+                Caso o cálculo tenha mais de um imposto gerado, serão geradas as guias de todos os impostos calculados na apuração;
+                Quando na apuração de cálculo for gerado um título e uma guia de recolhimento automaticamente, serão

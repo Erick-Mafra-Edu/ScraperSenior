@@ -1,0 +1,235 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/importacao-exportacao/informacoes-complementares/gerador_importacaodedados.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520Importa%25C3%25A7%25C3%25A3o%252FExporta%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520Complementares%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador Importação/Exportação > Informações Complementares > Importação de dados via tabela do banco de dados
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Importação de Dados via Tabela do Banco de Dados
+                Existe um recurso na ferramenta Importador, que permite a importação de dados seja feita a partir de uma tabela conhecida do TBS do banco de dados. Este recurso pode ser utilizado para realizar uma melhor integração de sistemas.
+                Glossário
+                Sistema Externo 
+                Sistema de outra empresa que não seja do grupo Senior que deseja integrar seus dados.
+                Sistema Senior: 
+                Um dos sistemas do grupo Senior que permitirá que dados de um Sistema Externo sejam integrados na sua base de dados.
+                Tabela de Importação: 
+                Local onde serão inseridos os dados do Sistema Externo e de onde o Sistema Senior deverá ler para realizar o processo de importação.
+                Disponibilização de dados pelo Sistema Externo
+                O Sistema Externo que deseja integrar dados com o Sistema Senior, deverá disponibilizar seus dados e uma Tabela de Importação, que esteja definida dentro da base de dados usada pelo Sistema Senior. Esta tabela deverá estar definida no TBS do Sistema Senior e pode ser uma tabela de usuário, criada a partir do aplicativo CBDS da Senior Sistemas.
+                Os dados que estarão contidos nesta tabela, deverão estar no formato padrão do Importador de Arquivos Texto, ou seja, se o layout for fixo, as posições, os tamanhos e as máscaras deverão ser respeitados. Se o layout for variável, os valores deverão possuir um separador, este que é definido no modelo de importação de dados (geralmente ponto-e-vírgula).
+                Tabela de Importação
+                A tabela de importação deve representar um arquivo de texto, pois durante a importação, é criado um arquivo de texto com os campos TEXTn da tabela, ou seja, os campos TEXTn de cada linha da tabela representam uma linha no arquivo utilizado na importação.
+                A chave primária da tabela é definida pelo usuário, sugere-se utilizar como chave primária os campos TEXTn, pois não pode haver linhas duplicadas na tabela.
+                STATUS (ou USU_STATUS) 
+                Campo obrigatório de tipo number(1), que armazenará o estado de cada registro.
+                
+                    
+                        Valor
+                        Estado
+                    
+                    
+                        0
+                         Indica que a linha ainda precisa ser processada.
+                    
+                    
+                        1
+                        Indica que a linha foi importada com sucesso.
+                    
+                    
+                        2
+                        Indica que a linha foi importada com erro. Se a linha deve ser importada novamente, é necessário mudar o estado para 0 (zero).
+                    
+                    
+                        9
+                         Indica que a linha está sendo processada.
+                    
+                
+                TEXTn (ou USU_TEXTn)
+                
+                Campo obrigatório de tipo varchar, sendo que o n no nome, deve ser um número sequencial (0, 1, 2, 3...).
+                SeqID (ou USU_SeqID) 
+                Campo opcional de tipo number(9), que se preciso, armazenará a sequência na qual os registros devem ser importados, sendo crescente a ordem de importação.
+                Exemplo da  Tabela de Importação
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                            Campos
+                            STATUS
+                            SEQID (opcional)
+                            TEXT0
+                            TEXT1 (Tamanho: 200)
+                        
+                        
+                            Registro 1
+                            0
+                            0
+                            0;100;CAM001;10;01/01/2001;NOME COM MUITOS SOBRENOMES QUE ULTRAPASSA DUZENTOS CARACTERES SE A LINHA NÃO CABE NO TEXT0, O EXCEDENTE DEVE SER PREENCHIDO NO TEXT1 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;31/1
+                            2/2001
+                        
+                        
+                            Registro 2
+                            0
+                            1
+                            0;101;CAM001;200;01/01/2001;NOME SOBRENOME;31/12/2001
+                            (NULO)
+                        
+                        
+                            Registro 3
+                            0
+                            2
+                            1;456;CAM001;200;01/01/2001;NOME SOBRENOME;31/12/2001 
+                            (NULO)
+                        
+                    
+                
+                Nota
+                    
+                        Os dados da tabela de exemplo foram dispostos em layout variável (conceito do Importador de Arquivos Texto).
+                        Caso o conteúdo do registro não caiba no TEXT0, o conteúdo excedente deve ser preenchido nos campos TEXTn seguintes. Por exemplo, o campo TEXT1 deve ser preenchido apenas quando o campo TEXT0 estiver preenchido, ocupando o tamanho total da coluna.
+                    
+                
+                Importação de dados no Sistema Senior
+                O Sistema Senior deverá providenciar um arquivo temporário, seguidamente deverá executar uma rotina que obterá os dados da Tabela de Importação, então estes dados serão armazenados no arquivo temporário determinado anteriormente. Por fim, o Sistema Senior executará a rotina de importação de dados utilizando o arquivo temporário que contém os dados da Tabela de Importação.
+                
+                    Nota
+                    
+                    O Sistema Senior poderá apagar o arquivo temporário gerado anteriormente (sujeito a critérios específicos do sistema).
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

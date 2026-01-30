@@ -1,0 +1,189 @@
+# 
+
+URL: https://documentacao.senior.com.br/bpm/7.0.0/#central-de-tarefas.htm%3FTocPath%3DBPM%2520%7C_____3
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBPM
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BPM  > Central de Tarefas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Central de Tarefas
+            Sumário
+            
+            
+                
+                    Conceito
+                    
+                    Menu de Acesso
+                    
+                    Funcionalidades
+                        3.1 Filtro Rápido3.2 Central de Tarefas - BPM3.3 Tarefas com Usuário em Cópia3.4 Tarefas em Espera3.5 Solicitações3.6 Filtros por Período 3.6.1 Acesse à Central de Tarefas 3.6.2 Selecione o Período Desejado 3.6.3 Visualização das Tarefas no Período Selecionado 3.6.4 Exibição do Formulário Web na Central de Tarefas 3.6.5 Filtros com Operadores Comparativos
+                    Logs de Etapas
+                    
+                     Configurações de Visualização
+                
+            
+             1. Conceito 
+            A central de tarefas permite que os usuários possam visualizar todos os processos do BPM.
+             2. Menu de Acesso
+            
+                No menu, selecione Senior Flow;
+                Selecione BPM;
+                Clique em Central de Tarefas.
+            
+            3. Funcionalidades
+            
+            3.1 Filtro Rápido
+            
+            Acessando essa tela, os processos com pelo menos uma etapa em andamento são automaticamente exibidos. Um filtro rápido está disponível ao lado, permitindo navegar entre as solicitações Em andamento, Canceladas, Encerradas ou Todas. Além disso, o número de solicitações em cada status é exibido.
+            
+                
+            
+            
+                Importante
+                
+                Os nomes exibidos na central de tarefas são referentes a primeira solicitação do processo, independente da quantidade de solicitações realizadas.
+            
+            3.2 Central de Tarefas - BPM
+            
+            A Central de Tarefas é o espaço onde o usuário pode visualizar e gerenciar suas atividades no sistema de BPM, organizada em cinco seções principais:
+            Nesta seção, o usuário encontra todas as tarefas pendentes atribuídas a ele. As principais funções desta área incluem:
+            
+                Visualizar todas as tarefas pendentes: Exibe uma lista de todas as atividades que exigem uma ação do usuário.
+                Ação direta nas tarefas: O usuário pode clicar em cada tarefa para executar a ação necessária, como aprovar, revisar ou completar uma atividade.
+            
+            3.3 Tarefas com Usuário em Cópia
+            
+            Essa seção permite que o usuário visualize as solicitações em que está copiado, mas que não exigem sua ação imediata, a menos que o solicitante original esteja ausente. Para mais informações acerca deste tópico, acesse Usuário em Cópia.
+            
+                Visualizar solicitações: O usuário pode ver todas as solicitações que envolvem seu papel como cópia.
+                Assumir tarefas: Caso o solicitante original esteja ausente, o usuário pode assumir a responsabilidade pela tarefa e continuar o fluxo do processo.
+            
+            3.4 Tarefas em Espera
+            
+            O usuário vê as tarefas que foram encaminhadas para um grupo ou um papel específico, mas que ainda não foram assumidas por ninguém.
+            
+                Tarefas pendentes de grupo ou papel: As tarefas aguardam que um membro do grupo ou papel designado as assuma.
+            
+            3.5 Solicitações
+            
+            Essa seção permite ao usuário visualizar todas as solicitações que ele enviou ou que ele está gerenciando.
+            
+                Solicitações em aberto: Lista de todas as solicitações que ainda estão em andamento.
+            
+            A área de Gestão é reservada para usuários com permissões gerenciais. Esses usuários tem acesso a ferramentas de alçada e gerenciamento de processos.
+            
+                Alçadas gerenciais: É possível efetuar as seguintes alterações:
+                
+                    Alteração do Responsável Atribuído, ou seja, quem está responsável naquele momento.
+                    Alteração do Solicitante, ou seja, do usuário que solicitou atendimento.
+                    Cancelar a solicitação.
+                    Imprimir a solicitação.
+                    Efetuar a exclusão da tarefa - Processo este que deve ser utilizado com cautela.
+                
+            
+            Todas as guias possuem filtros para personalizar a exibição, como por exemplo Tarefas, Tarefas em Espera, Solicitações e Gestão. As opções de filtro seguem o mesmo padrão em todas as telas. 
+            Os campos disponíveis para filtrar são os seguintes:
+            
+                Número de solicitação: Número que identifica a solicitação no sistema;
+                Solicitante: Nome do solicitante associado ao processo;
+                Responsável: Pessoa atribuída ao processo;
+                Agrupar por: Processo, Categoria, Solicitante, Data inicial e Data de expiração;
+                Ordenar pelo campo: Solicitante, Responsável, Status, Data inicial, Data final e Data de expiração;
+                Ordem: Crescente ou Decrescente;
+                Processo: Número do processo específico para filtrar;
+                Etapa do processo*: Etapa específica do processo;
+                Assunto da solicitação: Assunto descrito durante a criação do processo;
+                Nome da variável*: Variável associada ao processo;
+                Operador*: Operador utilizado no processo;
+                Valor: Valor a ser filtrado.
+            
+            
+                Observação
+                
+                 Os campos marcados com "*" só serão pesquisados após adicionar a informação de um processo no campo Processo.
+            
+            
+                
+            
+            Abaixo dos campos de filtro, estão disponíveis as seguintes opções: Cancelar, Limpar, Salvar e Filtrar.
+            Cancelar: Descarta as alterações feitas no filtro e retorna ao padrão anterior;
+            Limpar: Remove todos os filtros existentes;
+            Salvar: Salva o filtro para o usuário. Ao entrar na guia novamente, o filtro será aplicado automaticamente;
+            Filtrar: Realiza a pesquisa com base nas configurações de filtro alteradas.
+            
+                Observação
+                
+                É possível aguardar mais de 30 segundos em chamadas a serviços externos e plugins, tanto no início quanto na resposta de uma tarefa. Para mais detalhes, acesse: Timeout (Integrações Externas)
+            
+            3.6 Filtros por Período
+            
+            Recurso pensado para limitar os filtros a períodos específicos. A utilização é simples, basta seguir os próximos passos.
+            3.6.1 Acesse à Central de Tarefas
+            
+            Realize o login na Senior Flow, acesse a central de tarefas, disponível através do caminho Senior Flow> BPM > Central de tarefas.
+            3.6.2 Selecione o Período Desejado
+            
+            Na central de tarefas, na área de solicitações e gestão, estará disponível o botão período. Você poderá selecionar o intervalo de tempo entre 90, 180 e 365 dias. Além destas opções, você poderá selecionar também a opção todos os dados que irá exibir todas as tarefas.
+            Ao selecionar a opção de 365 dias ou todos os dados, será necessário também informar um ou mais processos para que o filtro seja aplicado. Para isso, basta clicar no botão de filtro e especificar os processos que deseja visualizar.
+            
+                
+            
+            3.6.3 Visualização das Tarefas no Período Selecionado
+            
+            Na lista principal da Central da Tarefas, apenas tarefas dentro do intervalo das datas selecionadas serão exibidas, com isso você pode:
+            
+                Visualizar detalhes das tarefas;
+                Editar informações conforme necessário;
+                Marcar as tarefas como Concluídas ou Pendentes.
+            
+            3.6.4 Exibição do Formulário Web na Central de Tarefas
+            
+            Ao acessar uma solicitação em andamento ou concluída pelo menu Solicitações ou Gestão, a URL do formulário web configurado na definição do processo deve ser renderizada.
+            
+                
+            
+            Assim como, ao acessar os menus Tarefas ou Tarefas em Espera, a URL configurada na etapa de cada tarefa também será renderizada.
+            
+                
+            
+            
+                
+            
+            3.6.5 Filtros com Operadores Comparativos
+            
+            Para aplicar os operadores comparativos, é essencial que as variáveis utilizadas no processo sejam do tipo numérico, como inteiros ou decimais, garantindo assim uma comparação válida entre os valores.
+            
+                
+            
+            Se a variável for um texto, a comparação pode não ser precisa, porque o banco de dados compara caractere por caractere seguindo a ordem ASCII. No exemplo acima, se as variáveis forem do tipo String e tiverem os valores "1" e "20", um filtro baseado nessa lógica pode dar um resultado inesperado, já que "110" vem antes de "20" na sequência ASCII.
+            
+                O SQL compara caractere por caractere, baseado na ordem ASCII ou na collation definida.
+                Letras maiúsculas vêm antes de minúsculas na tabela ASCII.
+                "Ana" < "Maria" porque "A" vem antes de "M".
+            
+            4. Logs de Etapas
+            
+            Os logs de etapa oferecem uma visão detalhada de cada ação realizada, permitindo visualizar cada alteração separada por 

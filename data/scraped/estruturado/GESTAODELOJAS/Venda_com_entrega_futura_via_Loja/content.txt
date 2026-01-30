@@ -1,0 +1,125 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/venda-com-entrega-futura-loja.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____6
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Venda com entrega futura via Loja
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Pedido com Entrega Futura via Loja
+                Conceito
+                A venda para entrega futura representa uma venda efetivamente concluída (faturada) e caracteriza-se pelo fato das mercadorias serem entregues em momento posterior ao fechamento do negócio mediante acordo entre as partes. 
+                Utilização                   
+                Este processo é utilizado quando  o cliente efetua a compra de um ou vários itens na loja e efetua o pagamento  da mercadoria no caixa. Esse pedido é faturado no PDV como simples faturamento para que  possa ser efetuado seu recebimento. 
+                O pedido ficará na lista de Controles de entrega para que seja emitida a nota fiscal de remessa quando o item estiver disponível para entrega.
+                
+                    Importante:
+                    
+                    Quando um pedido de Operação F - Futura possuir itens com entrega “Imediata”, a nota de remessa será gerada automaticamente para esse item logo após o pagamento do pedido no PDV ser integrado para o Retaguarda, ou seja, ela não será emitida através do botão Gerar NF Remessa, na tela de Pedidos aguardando entrega, como ocorre com os itens de Entrega pela Loja.
+                    Outro ponto importante é que, os itens vendidos para entrega futura pela loja não são reservados no estoque após seu faturamento no PDV, pois por se tratar de entrega futura a loja poderá não possuir os produtos em estique no momento da venda. Para efetuar a reserva dos itens, deve-se utilizar o botão Reservar na tela de controles de entrega do Retaguarda.
+                
+                Processo
+                O processo de venda para  entrega futura, é iniciado ao informar o tipo de entrega para os itens inseridos no pedido, no campo Entrega (F3), na grade Venda de Itens.
+                
+                    Nota
+                    
+                    Para opção de gerar pedido com entrega futura, a filial deverá possuir  CFOP para emissão de nota fiscal simples faturamento e remessa para entrega futura informados em seu cadastro. A lista de CFOPs disponíveis pode ser consulta através da tela F070VAR do Gestão Empresarial | ERP. 
+                
+                Incluir  pedido
+                
+                    Identifique o cliente;
+                    Insira o Produto/Serviço;
+                     No campo  Entrega(F3), informe 2 - Futura pela loja e clique em Gravar;ImportanteÉ necessário ter um serviço de frete cadastrado na tela Cadastro de Serviços (F080SER), Gestão Empresarial | ERP, informando uma transportadora para criar o cadastro;Deve estar integrada ao Retaguarda, a tabela de preço de frete cadastrada na tela Tabela de Preço de Frete (F081GTF);Deve estar integrada o cadastro do cliente como transportadora, gerado pela tela Cadastro de Clientes (F085CAD),
+                    Defina a Entrega(F8) para cada item.
+					NotaNão é possível fazer a entrega futura pela loja para filiais localizadas em outro estado, por questões fiscais.
+                    Caso necessário, adicione Garantia Estendida ou Montagem;
+                    Finalize o pedido utilizando o botão Finalizar(F12).  
+                
+                
+                    Nota
+                    
+                    
+                        Caso utilize o botão Entrega (F8) para agendar uma entrega, será gerado controle para esta ação e será possível consultar e/ou alterar as informações/status na tela Controles de entrega;
+                        É possível identificar se um pedido de entrega futura foi entregue ou não para o cliente através da coluna Status Entrega, na tela principal de pedidos ou via  botão Outros(F9) por dentro do pedido, opção Consultar informações de entrega. 
+                    
+                
+                Pendência de carga para Centro de Distribuição
+                Esta opção permite que, ao realizar a venda de um item que encontra-se em uma determinada filial, se possa solicitar que o caminhão do Centro de Distribuição faça o recolhimento deste item na respectiva filial em que encontra-se fisicamente, e posteriormente faça a entrega  conforme o endereço de entrega do cliente.
+                
+                    Observação
+                    
+                    Será permitida a pendência de carga para CD apenas para pedidos de entrega futura pela loja, cuja entrega tenham um único endereço de entrega.
+                
+                Para isto, deve-se seguir o processo de pedido de entrega futura pela loja como padrão e 
+                
+                      Acesse a tela de Pedidos em: Mercado > Gestão de Venda > Pedido ou pelo ícone Pedidos na tela inicial do sistema;
+                     Inclua um novo pedido via botão Incluir (F2);
+                     Informe os dados de cabeçalho do pedido (cliente, vendedor, etc);
+                     Adicione no pedido o(s) produto(s) que deseja vender juntamente com a respectiva quantidade;
+                      Informe o tipo de entrega em Entrega (F3) como 2 - Futura pela Loja;
+                    Selecione o item que deseja indicar que a entrega deste item e sua respectiva quantidade deve ser realizada pelo Caminhão do CD;
+                    Clique na opção Outros (F9) > Pendência de Carga para o CD;
+                
+                
+                    Notas
+                    
+                    
+                        Caso a opção Outros (F9) > Pendência de Carga para o CD seja acionada sem que tenha sido selecionado nenhum item dentre os existentes no pedido em questão, a mensagem "Item não selecionado" será apresentada; 
+                        Caso seja selecionado  um item de serviço e acionada a opção Outros (F9) > Pendência de Carga para o CD, a mensagem "Não disponível para serviços" será apresentada 
+                        Caso seja selecionado  um item de produto, em que o pedido possua tipo de Entrega diferente de "Futura pela Loja" e seja acionada a opção Outros (F9) > Pendência de Carga para o CD, a mensagem "Somente disponível para Pedidos com Entrega Futura pela Loja" será apresentada;
+                        A indicação de Pendência de Carga para o CD deverá ser realizada por sequência de item no pedido. 
+                    
+                    Exemplo
+                        
+                             O vendedor João da filial de Criciúma vende uma geladeira de código 1013 do mostruário da filial Turvo e, vende também uma cômoda de código 2220 de mostruário da filial Araranguá. Neste caso, serão adicionados ambos ao pedido, e posteriormente deverá ser selecionado o item geladeira e indicado como "Filial Origem" do produto Turvo, e selecionar o item cômoda e indicar como "Filial Origem" do Produto Araranguá. Em ambos os casos pode-se inserir uma observação, que poderá ser impressa junto com a Pendência por Rota. 
+                        
+                    
+                
+                 
+                
+                    Será apresentada a tela de Geração de Pendência de Carga para o CD, de acordo com o item selecionado no pedido:
+                
+                
+                    
+                        
+                    
+                
+                
+                    Considerações para a rotina de pendência de carga para distribuição
+                    
+                    
+                         Não será realizada a geração automática de reserva do item/quantidade na filial de origem informada.Caso a filial de venda e filial de origem do item sejam diferentes, cabe aos usuários realizarem a reserva de forma manual para que o item não seja vendido por outro pedido;
+                    
+                    
+                         Não será realizada a geração de pendência(s) de carga por rota no Gestão Empresarial | ERP. A(s) pendência(s) de carga  por rota, na formação de carga, devem ser geradas pelo consultor através de regra.Através da verificação de rota da filial de origem do item em relação a rota do endereço de entrega do cliente, o consultor deverá gerar uma ou duas pendências de carga por rota respectivamente. No caso de mesma rota, deverá gerar uma pendência de "Retirar na Filial e entregar para o cliente" e, no caso de rotas distintas deverá gerar duas pendências:  uma de "Retirar na Filial e entregar no CD" e outra de "Retirar do CD e entregar para o cliente".
+                    
+                    
+                        Não será realizada a geração da NF de transferência entre filiais, caso a filial de venda do item seja diferente da filial de origem do item.Caso a filial de venda do item do pedido e a filial de origem do item do pedido sejam as mesmas, não há necessidade de NF de Transferência entre filiais.Caso a filial de venda do item do pedido e a filial de origem do item do pedido sejam diferentes, há necessidade de NF de Transferência entre filiais.Ficará a cargo dos usuários a geração de NF de transferência antes da NF de Remessa, caso necessário.As NFs de transferência entre filiais já são feitas quando necessário via Retaguarda;
+                    
+                    
+                        Não será realizada a geração da NF de remessa de forma automática pelo sistema após o recebimento da NF de transferência citada acima.A geração da NF de remessa deverá ser feita pelo usuário de venda do pedido, como ocorre atualmente, sem nenhuma alteração ao que já existe;
+    

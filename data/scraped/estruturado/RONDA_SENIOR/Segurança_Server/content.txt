@@ -1,0 +1,183 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#middleware/seguranca-server.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CMiddleware%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Middleware > Segurança Server
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Segurança Server
+            No Segurança Server (Sserver) são executados vários processos que se 
+ refletem diretamente no Ronda Senior. Este aplicativo tem 
+ como objetivo gerenciar as requisições do usuário, sejam elas feitas pelo 
+ acesso web, na integração com outros sistemas ou na execução de vários 
+ outros processos automáticos.
+            O Sserver é aplicado ao  Ronda Senior integrado e não integrado.
+            Funcionalidades
+                Dentre as principais funcionalidades do Sserver, podem-se destacar: 
+
+            
+                Segurança SID: Serviço 
+ de Informações Dinâmicas. Para mais informações, consulte a documentação Ferramentas de Customizações > Integração entre Sistemas > Serviços de Informações Dinâmicas > Segurança - Serviço de Informações Dinâmicas;
+                Segurança Web: interface 
+ web para os usuários do Ronda Senior;
+                Processos Automáticos:  o Sserver gerencia e executa as requisições dos usuários feitas através 
+ de um processo automático. Encontre mais informações
+ no sistema, em Recursos > Processos 
+ Automáticos. 
+            
+            O SServer conta com um log avançado dos Processos Automáticos, que mostra 
+ detalhadamente o consumo de memória de cada passo do processo. Para exibir 
+ o log é necessário utilizar o parâmetro "-logproc".
+            
+                Importante
+                
+                Para o correto funcionamento do SServer:
+                
+                    Coloque o executável nas exceções do antivírus. Recomendamos que seja colocada toda a pasta Senior;
+                    Rode o SServer com um usuário com privilégios administrativos;
+                    Desabilite a UAC do Windows, evitando que a aplicação fique travada.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

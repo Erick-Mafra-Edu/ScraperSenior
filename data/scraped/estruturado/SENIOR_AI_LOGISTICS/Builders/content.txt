@@ -1,0 +1,157 @@
+# 
+
+URL: https://documentacao.senior.com.br/senior-ai-logistics/1.0.0/#manual-do-usuario/builders.htm%3FTocPath%3DSenior%2520AI%2520Logistics%7CFuncionalidades%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOSenior AI Logistics
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Senior AI Logistics > Funcionalidades > Builders
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Builders
+            Por meio do botãoBuilder, no menu lateral principal do AI Logistics, é possível realizar consultas em diferentes bancos de dados e, com estas informações, criar tabelas e gráficos que serão utilizados em apresentações. 
+            São indicadores que podem ser usados de forma estratégica para acelerar e aprimorar tomadas de decisões, aumentar a eficiência operacional, localizar potenciais de receita, identificar tendências de mercado e apontar novas oportunidades de negócios.
+            Fontes de dados
+                
+                    Antes de iniciar qualquer consulta, é necessário se conectar a uma fonte de dados. Esta versão do AI Logistics conecta com bancos de dados de dois provedores: Oracle, incluindo os sistemas de Gestão de Armazém e Gestão de Transportes; e Microsoft SQL Server, sendo esse último gratuito. 
+                    Essa configuração deve ser feita pelo caminho Builder > Fontes de dados > Adicionar fonte de dados, como mostra a figura abaixo:
+                    
+                    
+                    Em seguida, ao ser direcionado para a página Cadastrar Fonte de dados, informe, nos respectivos campos, o Nome da fonte, o Provedor e o String de conexão. Esse último é um texto que passa as informações necessárias para o banco de dados estabelecer uma conexão com a aplicação. Quando a conexão for feita com uma fonte de Sistemas Senior,  o string será encontrado no documento de entrega de ambiente. Já para as demais fontes de dados esta informação deve ser obtida junto ao provedor. 
+                    Após todos os campos obrigatórios, sinalizados com *, serem preenchidos, o sistema habilita o botão Salvar para que estas informações sejam guardadas. 
+                    
+                        Importante
+                        
+                        É recomendável cadastrar a fonte de dados antes de realizar consulta na página Builder avançado.
+                    
+                
+            
+            Builder avançado
+                
+                    Essa é a página principal da ferramenta, pois é nela que serão realizadas as consultas para extração de dados e posterior geração de apresentações, dashboards, slideshows e relatórios. 
+                    Para acessá-la, percorra o caminho Builder > Builder avançado e preencha os campos com um Nome e uma Descrição para a consulta; e selecione a Fonte de dados previamente cadastrada, que é de onde as informações serão extraídas. 
+                    No campo Consulta SQL a query deve ser criada nessa linguagem, independentemente do banco de dados que será acessado.
+                    Para montar a Connection String para a Fonte de Dados do AI Logistics, precisaremos das seguintes informações do Banco de Dados:
+                    
+                        Usuário do banco;
+                        Senha para conexão;
+                        Host para conexão;
+                        Nome do serviço.
+                    
+                    Abaixo temos um exemplo de modelos de ConnectionString que utilizamos para nossas conexões: 
+                    Oracle
+                        
+                            
+                                
+                                    user id=USUARIO DO BANCO; password=SENHA PARA CONEXÃO; Connection Timeout=600; Max Pool Size=150; data source= (DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = HOST PARA CONEXÃO)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = NOME DO SERVICO)))
+                                
+                            
+                            Em que: 
+                            
+                                user id = Usuário do banco;
+                                password = Senha para conexão;
+                                HOST = Host para conexão;
+                                SERVICE_NAME = Nome do serviço.
+                            
+                        
+                    
+                    SQL Server
+                        
+                            
+                                
+                                    Data Source=HOST PARA CONEXÃO,1433;Initial Catalog=NOME DO SERVIÇO;User ID=USUÁRIO DO BANCO;Password=SENHA PARA CONEXÃO;
+                                
+                            
+                            Em que: 
+                            
+                                Data Souce = Host para conexão;
+                                Initial Catalog = Nome do serviço;
+                                User ID = Usuário do banco;
+                                Password = Senha para conexão.
+                            
+                        
+                    
+                    Após o preenchimento de todos os campos anteriores, o botão Testar consulta será habilitado, como mostra a figura abaixo. Clique nele para concretizar a extração dos dados. 
+                    
+                    
+                    Exemplo
+                        
+                            Quando a fonte de dados for o Senior WMS Alcis Web, é possível obter a string necessária para gerar determinada consulta por meio da função Ver nome campo, localizada no menu principal do sistema de gestão de armazém, clicando no ícone . Na janela Propriedades do Item MODUL, que abrirá em seguida, estarão as informações para gerar a consulta no AI Logistics. Basta copiar e colar.
+                            
+                            
+                        
+                    
+                    
+                        Atenção
+                        
+                        Para o perfeito funcionamento do sistema, consultas em SQL geradas com a finalidade de uso para emissão de notificações periódicas via e-mail ou exibição em tempo real por meio de slideshows não devem ter data fixa.
+                    
+                    Além de gerar o Resultado da consulta, o sistema vai fornecer dados sobre a performance dessa query. Após essa etapa, os botões Salvar e Salvar e próximo, localizados no canto inferior direito da página, serão habilitados para que os dados gerados sejam guardados (ver na figura abaixo). 
+                    
+                    
+                    Ao optar pelo segundo botão, automaticamente o sistema irá redirecioná-lo para a etapa seguinte, a criação de Apresentações.
+                    Performance da consulta
+                    Toda consulta  tem um custo de processamento, medido em segundos, e que basicamente depende da quantidade de dados que o sistema tem de processar. Quanto maior esse volume, mais tempo o sistema leva para gerar a consulta, aumentando seu custo. 
+                    Se, ao rodar uma query no AI Logistics esse custo atingir 80% do valor limite para consulta (cujo total são 30 segundos), o processamento é bloqueado e a ferramenta avisa que ela precisa ser refeita. 
+                
+            
+            Apresentações
+                
+                    É por meio dessa funcionalidade que as informações obtidas a partir dos dados extraídos na etapa anterior ganham forma, ao serem transformadas em gráficos e dashboards. Essa página pode ser acessada pelo menu lateral Builder > Apresentações > Criar apresentação. A ferramenta disponibiliza 13 templates para serem utilizados de acordo com as variáveis disponíveis e com a informação que deseja-se destacar. São gráficos de barras, linhas, setores, do tipo donut, radar, valor absoluto, medidor e mapa de calor. 
+                    Como configurar 
+                    
+                        Na página Criar nova apresentação selecione a Fonte de dados da pesquisa, a Consulta criada anteriormente e que será utilizada, dê um Nome a esta apresentação, faça uma breve Descrição dela e selecione a opção Gráfico no campo Tipo de apresentação. Nessa etapa também é possível manter os dados no formato tabela, mas isso limitará o uso deles à geração de relatórios para serem enviados por e-mail, como você verá na seção Notificações.
+                        Se o Tipo de apresentação escolhido for Gráfico, o sistema irá mostrar os 13 templates disponíveis. Selecione um deles e clique em cima para configurá-lo;
+                        Em seguida, novos campos serão abertos para preenchimento: selecione um ou mais agrupadores e valores. As informações disponíveis para seleção vão depender da consulta que está sendo utilizada;
+                        Feito isso, aparecerão outros campos para configuração de aparência do gráfico, exibição de eixos, linhas, valores e legenda. Nesse momento, os botões Salvar e Salvar e próximo também já estarão habilitados para que a apresentação seja gravada ou seja gravada e avance para a próxima etapa, respectivamente;
+                        Se a opção for Salvar e próximo e todas as configurações tiverem sido executadas corretamente, a ferramenta informará, no canto superior di

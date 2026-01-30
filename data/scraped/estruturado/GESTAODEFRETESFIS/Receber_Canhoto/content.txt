@@ -1,0 +1,140 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/receber-canhoto.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____21
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Receber Canhoto
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Receber Canhoto
+            
+                
+                
+                
+                    
+                        Descrição
+                        
+                         
+                    
+                    
+                        Url do Serviço
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/recebeCanhoto				
+                    
+                    
+                        Tipo de Envio
+                        POST				
+                    
+                    
+                        Momento
+                        Insere canhoto				
+                    
+                    
+                        Tabela
+                         
+                    
+                    
+                        Array
+                        Sim - Recebe um array de objetos				
+                    
+                
+             HeaderChaveValorContent-TypeApplication/jsonAuthorizationBearer inserir_token_aquiDetalhamento dos atributos de JSON entradaNome do AtributoTipo de DadoDefaultObrigatórioDescriçãorecebeCanhotoArray SRecebe um array de objetosped_cnpj_empresaString SCNPJ da empresaped_cd_clienteString SCódigo do clienteped_nu_pedido_origemString SNúmero do pedido origemped_nu_nfInteger SNúmero da Nota Fiscalped_chave_acessoString NChave de acesso da Nota Fiscalped_data_entregaString SData de entregaped_ps_liquido_canhotoDouble SPeso liquido da entrega(canhoto)url_imagem_canhotoString NUrl da imagem do canhotoExemplo do layout de entrada JSON{"recebeCanhoto": [{"ped_cnpj_empresa": "468346336553","ped_cd_cliente": 123,"ped_nu_pedido_origem": "555","ped_nu_nf": 12,"ped_chave_acesso": "","ped_data_entrega": "30/08/2019","ped_ps_liquido_canhoto": 125,"url_imagem_canhoto": ""}]}
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

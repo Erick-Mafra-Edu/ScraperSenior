@@ -1,0 +1,112 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/consulta_cadastros_sefaz.htm%3FTocPath%3DSegmentos%7CCompliance%7C_____8
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Consulta de cadastros na SEFAZ
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Consulta de cadastros na SEFAZ
+            O Gestão Empresarial | ERP permite a atualização cadastral de clientes, fornecedores, transportadoras, endereços de entrega de cliente e endereços de origem de mercadoria através de uma consulta ao cadastro centralizado da SEFAZ. Esta consulta é realizada por meio de uma integração entre o Gestão Empresarial | ERP e o eDocs.
+            
+                 Importante
+                
+                A Consulta de cadastros na SEFAZ ocorre por meio da comunicação do eDocs com o web service de NfeConsultaCadastro disponibilizado pela SEFAZ, que faz a conexão com o CCC (Cadastro Centralizado de Contribuinte).
+                Desta forma, caso haja necessidade de verificar como a SEFAZ está disponibilizando as informações deste contribuinte, orienta-se a consulta no Cadastro Centralizado de Contribuinte disponível neste endereço. As informações presentes no CCC podem ser diferentes das informações presentes no Sintegra e na Receita Federal.
+                Um ponto de atenção é que a SEFAZ pode ainda apresentar informações diferentes entre o que é apresentado na consulta no site do CCC em relação ao que é retornado pelo web service de consulta da SEFAZ. Nesse caso, se houver dúvidas sobre o que a SEFAZ retorna na consulta do web service, o log XML do eDocs poderá ser verificado.
+                Em caso de desconformidade de alguma informação entre Sintegra, Receita Federal e CCC, orienta-se o contato direto com a SEFAZ para verificação dessa questão, uma vez que os sistemas da Senior apenas fazem uma consulta ao CCC, mas não são responsáveis por manter essa base de dados.
+            
+            Parametrizações necessárias - Gestão Empresarial | ERP
+            No Gestão Empresarial | ERP, a ativação dessa funcionalidade depende exclusivamente das configurações  parametrizadas na tela Parâmetros de Integração (F191CPT). Ao preencher o campo Grupo com a opção eDocs e o campo Subgrupo com a opção Comunicação com eDocs, deve-se seguir obrigatoriamente a seguinte parametrização:
+            
+                Gerar log integração eDocs: determina se serão gerados registros da comunicação do Gestão Empresarial | ERP com o eDocs. É recomendado configurar este campo como S -Sim quando houver necessidade de coletar as informações geradas durante o processo de integração entre os sistemas
+                Usuário: deverá ser preenchido com o usuário definido no cadastro da empresa registrada no eDocs. Esta informação é definida no campo Usuário da seção web service da guia Integração do eDocs
+                Senha: deverá ser preenchido com a senha do usuário definido no campo Usuário. A configuração desta senha é realizada  no momento do cadastro de uma empresa no eDocs e é definida no campo Senha da seção web service da guia Integração do eDocs
+                URL: a URL a ser parametrizada é a URL de comunicação com o web service do eDocs. A URL sempre estará no padrão http://<servidor_eDocs>:<porta_WebService>/Sde/Integracao?WSDL, onde:<servidor_eDocs>: é o IP ou nome do Servidor do eDocs<porta_WebService>: é a porta do web service configurada em Configuração > Geral > guia Integração > campo Porta
+                No grupo Cliente, subgrupo Gerais é possível escolher quais dados devem ser atualizados no cliente, fornecedor e transportadora:CamposAtualiza informações cadastrais ao realizar consulta na SefazAtualizar o campo UFAtualizar o campo IEAtualizar o campo NomeAtualizar o campo CNAEAtualizar o campo Nome FantasiaAtualizar o campo Regime de ApuraçãoAtualizar o campo EndereçoAtualizar o campo LogradouroAtualizar o campo NúmeroAtualizar o campo ComplementoAtualizar o campo BairroAtualizar o campo Código MunicipioAtualizar o campo Nome MunicípioAtualizar o campo CEPManter cliente ativo no ERP quando inativo na SefazOpções:S - Alterar a situação para a encontrada na SEFAZ (valor padrão para filial configurada com eDocs)I - Alterar a situação apenas quando inativo na SEFAZA - Alterar a situação apenas quando ativo na SEFAZN - Não alterar a situação
+            
+            Ao alterar alguma informação nas telas F085CAD, F095CAD e F073TRA, será aberta uma tela de comparação dos dados do ERP x SEFAZ. Somente os campos nela selecionados serão atualizados.A tela F000APA e os web services, por se tratarem de rotinas automáticas, utilizam os parâmetros por campo para atualização. Dessa forma, é necessário parametrizar  os campos específicos que devem ser atualizados por meio da tela F191CPT, indicando a opção S.
+            
+                Importante
+                    
+                
+                As parametrizações estabelecidas na tela Parâmetros de Integração (F191CPT) são as mesmas utilizadas para  geração do EFD-Reinf e emissão de documentos fiscais via web service do eDocs quando ha integração do Gestão Empresarial | ERP com o eDocs. Atualmente não existe uma forma de ativar apenas a geração do EFD-Reinf e não ativar a rotina de consulta de cadastros, por exemplo. Ou seja, a partir do momento que a opção eDocs é configurada para o campo Grupo, o Gestão Empresarial | ERP considera como ativa a rotina de consulta de cadastros na SEFAZ.
+                A atualização do Código do Regime Tributário no cadastro do cliente e fornecedor ocorre somente para os seguintes regimes: "1 - Simples Nacional", "3 - Regime Normal" e "4 - Simples Nacional - Microempreendedor Individual - MEI". A atualização desse campo considera a informação da tag <xRegApur> retornada pela SEFAZ da seguinte forma:
+                
+                    Se a informação SIMPLES NACIONAL for retornada nessa tag, o campo Código do Regime Tributário no cadastro será alterado para "1 - Simples Nacional".
+                    Se a informação NORMAL for retornada nessa tag, o campo Código do Regime Tributário no cadastro será alterado para "3 - Regime Normal".
+                    Se a informação SIMEI for retornada nessa tag, o campo Código do Regime Tributário no cadastro será alterado para "4 - Simples Nacional - Microempreendedor Individual - MEI".
+                    Se a SEFAZ retornar na tag qualquer valor diferente de Normal, Simples Nacional ou SIMEI, nada será alterado no ERP em relação ao campo Código do Regime Tributário.
+                
+                A atualização do CNAE (Classificação Nacional de Atividades Econômicas) ocorre com base na informação retornada pela SEFAZ na tag <CNAE>. O comportamento padrão do sistema é não atualizar o registro existente nas tabelas de ligação Cliente x CNAE (F085SCN) e Fornecedor x CNAE (F095SCN), mas sim inserir um novo registro com o valor retornado, desde que ele seja diferente dos já existentes para o respectivo cliente ou fornecedor. Além disso, o CNAE retornado pela SEFAZ precisa estar previamente cadastrado na tabela de CNAEs (F064SEG). Caso o código de CNAE não esteja cadastrado na F064SEG, ou não exista nenhuma ligação anterior entre o cliente/fornecedor e um CNAE, nenhum novo registro será inserido nas tabelas de ligação.
+            
+            Parametrizações necessárias - eDocs
+            No eDocs, é importante verificar a parametrização dos campos Usuário, Senha e a porta do web service, bem como ativar o web service de integração. Este web service é ativado através do campo Ativar web service de integração presente na guia Integração do sistema.
+            
+                Importante
+                    
+                
+                Recomendamos que o eDocs seja reinicializado após a alteração das parametrizações.
+            
+            Funcionamento do processo no Gestão Empresarial | ERP
+            Quando a rotina estiver  parametrizada na tela Parâmetros de Integração (F191CPT) e  ativa, o Gestão Empresarial | ERP permitirá a consulta de cadastro dos clientes, fornecedores e transportadoras junto ao cadastro centralizado da SEFAZ. A consulta pode ser feita por meio dos seguintes artefatos:
+            
+                Cadastro de Clientes (F085CAD) - Cadastros > Clientes e Fornecedores > Clientes > Cadastro
+                Cadastro de Fornecedores (F095CAD) - Cadastros > Clientes e Fornecedores > Fornecedores > Cadastro
+                Transportadoras (F073TRA) - Cadastros > Mercado e Suprimentos > Transportadoras > Cadastro
+                Atualização cadastral cliente/fornecedor e transportadora (F000APA) - Cadastros > Clientes e Fornecedores > Atualização Cadastral
+                Com.senior.g5.co.ger.cad.clientes - Recursos > Implementações > Web services
+                Com.senior.g5.co.ger.cad.fornecedores - Recursos > Implementaçõe

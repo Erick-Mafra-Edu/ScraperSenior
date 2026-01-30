@@ -1,0 +1,155 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#https://documentacao.senior.com.br/seniorxplatform/manual-do-usuario/ronda?TocPath=Ronda%2520senior%2520X%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio|Integra%25C3%25A7%25C3%25B5es%2520com%2520dispositivos|_____1#integracoes-com-dispositivos/lista-de-integracoes-com-dispositivos.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntegra%25C3%25A7%25C3%25B5es%2520com%2520Dispositivos%7C_____1
+
+---
+
+
+        
+            
+            Log Console
+            
+            
+            
+            
+        
+        
+            
+                
+                
+                    Todas as Versões
+                        
+                            
+                                Todas as Versões
+                            
+                        
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+            
+        
+        
+            
+                
+                    
+                    
+                    
+                
+                Página inicial
+                
+                
+                    
+                        
+                            
+                                Índice analítico
+                                
+                            
+                        
+                        
+                            
+                            Ronda senior X - Manual do Usuário
+                        
+                    
+                    
+                        
+                        
+                        
+                            
+                            
+                                
+                                
+                            
+                        
+                    
+                    
+                        
+                        
+                        
+                            
+                            
+                            
+                        
+                    
+                    
+                        
+                        
+                        
+                            
+                            
+                        
+                    
+                    
+                        
+                        
+                        
+                            
+                            
+                        
+                    
+                    
+                
+            
+            
+                
+                    
+                    
+                
+                
+                    
+                    
+                        Encontramos  resultado(s) para .
+                        
+                    
+                
+            
+        
+        
+            
+            Create Profile
+        
+            
+                
+                    
+                        Username *
+                    
+                    
+                        
+                    
+                
+                
+                    
+                        Email Address *
+                    
+                    
+                        
+                    
+                
+                
+                    
+                    Email Notifications
+                
+                    
+                    I want to receive an email when...
+                    a reply is left to one of my commentsa comment is left on a topic that I commented ona comment is left on any topic in the Help system
+                
+                
+                    Submit
+                    Cancel
+                
+                An email has been sent to verify your new profile.Please fill out all required fields before submitting your information.
+                
+            
+        
+        
+        
+        
+        $(document).foundation();
+    
+    

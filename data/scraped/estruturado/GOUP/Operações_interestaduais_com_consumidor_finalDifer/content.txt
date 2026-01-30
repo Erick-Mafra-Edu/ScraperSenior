@@ -1,0 +1,213 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_mercado/diferencial-de-aliquota.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Operações interestaduais com consumidor final/Diferencial de alíquota
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            DIFAL - Diferencial de alíquota | Operações interestaduais com consumidor final
+            Conceito
+            
+                O que é DIFAL?
+                
+            
+            A Emenda Constitucional (EC) 87/2015, publicada no DOU 1 de 17/04/2015, apresentou uma  alteração significativa no conceito e no cálculo do ICMS nas operações interestaduais realizadas com consumidor final não contribuinte do imposto. Por se tratar de uma alteração na Constituição Federal, as novas regras do cálculo do ICMS passam a valer apenas no ano seguinte, ou seja, a partir de 01/01/2016.
+
+
+            Com as novas regras, as operações com consumidor final contribuinte ou não do imposto, passam a ter as mesmas alíquotas de ICMS aplicáveis, ou seja, não são mais utilizadas as alíquotas internas da UF de origem nas operações com consumidor final não contribuinte, e sim as alíquotas interestaduais como em qualquer outra operação.
+ Sendo assim, a partir de 01/01/2016 são observadas as seguintes alíquotas interestaduais:
+            
+                Operações com estados do Sul e Sudeste (exceto Espírito Santo): 12%;
+                Operações com estado do Centro-Oeste, Norte, Nordeste e Espírito Santo: 7%;
+                Operações com produtos importados ou com conteúdo de importação superior a 40% (Resolução 12/2012): 4%.
+            
+            
+            
+            Para tanto, haverá o recolhimento do diferencial de alíquota (DIFAL) nestas operações. 
+            Imposto estadual, a DIFAL é um instrumento usado para proteger a competitividade do estado onde o comprador reside (as alíquotas de ICMS são diferentes em cada estado do Brasil). Essa diferença pode causar uma incerteza, principalmente quando há operações interestaduais, pois, essas operações criam o diferencial de alíquota. 
+            Entende-se como diferencial de alíquota, a diferença entre a alíquota interestadual e a alíquota interna no estado de destino. Conforme determinado pela Emenda Constitucional 87/2015, o recolhimento deste valor será de obrigação do estabelecimento remetente, quando o destinatário não for contribuinte do ICMS. E ainda, ce acordo com o Convênio ICMS 93/2015, o estado de destino deve recolher a diferença entre o ICMS devido no destino e o ICMS devido na origem, inclusive com a definição de que a base de cálculo do ICMS da operação (UF Origem) e base do ICMS DIFAL (UF Destino) são diferentes.
+            De forma resumida, o diferencial de alíquota é o cálculo e o recolhimento da diferença da alíquota do estado destinatário e da alíquota interestadual.
+            A versão 1.40 da Nota Técnica 2015.003 trouxe uma nova interpretação com relação a base de cálculo do DIFAL e do ICMS próprio. De acordo com o entendimento do CONFAZ, o valor da operação deverá contemplar o montante do imposto devido na UF de destino, sendo que a base do DIFAL será o valor da operação, conforme consta no Convênio ICMS 93/2015 e na base do ICMS próprio será desconsiderado o ICMS da UF de origem e incluído o ICMS da operação, calculado por dentro de acordo com o conceito do ICMS. O Diferencial de alíquota neste caso será calculado da diferença do total do imposto na UF de destino diminuído do imposto da operação (pago à UF de origem).
+            
+                Importante
+                
+                
+                    Os estados poderão definir a forma de cálculo do DIFAL em seus regulamentos de ICMS, ou seja, será necessário observar qual o procedimento cada estado irá adotar, se irá seguir a determinação do CONFAZ (cálculo do Diferencial com Base Dupla) ou irá manter o diferencial de alíquotas sobre a mesma base de cálculo (Base Simples);
+                    Conforme publicação do Decreto 55.693/2020, as aquisições que terão operação subsequente (comercialização ou industrialização), a partir de 1º de abril de 2021, não devem calcular o diferencial de alíquota quando a diferença for igual ou inferior a 6%.
+                
+            
+            Veja abaixo um exemplo de uma operação com base nas novas regras:
+            
+                
+                    
+                
+            
+            
+                Valor da nota fiscal: R$ 1.204,82 (considerando que a alíquota do destino foi aplicada na formação do preço da mercadoria);
+                ICMS Recolhido para a UF de origem em 2016: R$ 223,64;
+                ICMS da operação: R$ 136,36;
+                60% DIFAL: R$ 41,08;
+            
+            Também foi definida uma regra transitória para adequação dos caixas dos estados, sendo então o diferencial de alíquota partilhado entre os estados de origem e destino durante alguns anos, veja a tabela abaixo:
+            
+                
+                
+                
+                
+                    
+                        Ano
+                        UF Origem
+                        UF Destino
+                    
+                    
+                        2016
+                        60%
+                        40%
+                    
+                    
+                        2017
+                        40%
+                        60%
+                    
+                    
+                        2018
+                        20%
+                        80%
+                    
+                    
+                        A partir de 2019
+                         
+                        100%
+                    
+                
+            
+            Exemplo
+                
+                    Operação de SC com MG:
+                    
+                        Alíquota interestadual: 12%;
+                        Alíquota interna em MG: 18%;
+                        Diferencial de alíquota: 6%.
+                    
+                
+            
+            Segue uma simulação da mesma operação nos dois cenários. Operação interestadual (SC > MG) com consumidor final não contribuinte no valor de R$ 2.000,00:
+            
+                
+                
+                
+                
+                    
+                        2015
+                        2016 (Base Simples)
+                        2016 (Base Dupla)
+
+                    
+                    
+                        
+                            
+                                Base de cálculo do ICMS: R$ 2.000,00;
+
+                                Alíquota do ICMS: 17% (Alíquota interna de SC);
+
+                                Valor do ICMS: R$ 340,00 (A recolher integralmente para SC).
+
+                            
+                        
+                        
+                            
+                                Base de cálculo do ICMS operação : R$ 2.000,00;
+
+                                Alíquota do ICMS: 12%;
+                                Valor do ICMS: R$ 240,00;
+
+                                Diferencial de alíquota: 6% (Alíquota interna em MG 18% - Alíquota interestadual 12%) - R$ 120,00;
+
+                                Valor do Diferencial (SC): R$ 72,00 (60%);
+
+                                Valor do Diferencial (MG): R$ 48,00 (40%);
+
+                                Total do ICMS a recolher para SC: R$ 312,00 (R$ 240,00 + R$ 72,00).
+
+                            
+                        
+                        
+                            
+                                Base de cálculo do DIFAL: R$ 2.000,00
+
+                                Montante do ICMS na UF Destino (2.000 * 18%): R$ 360,00
+
+                                Base ICMS normal (2.000 – 360 / ((100-12)/100): R$ 1.863,64
+
+                                ICMS Operação (SC): R$ 223,64
+
+                                DIFAL (360,00 – 223,64): R$ 136,36
+
+                                SC (60%): R$ 81,82
+
+                                MG (40%): R$ 54,54
+                            
+                        
+                    
+                
+            
+            
+                 
+            
+            Forma de cálculo da base do ICMS na Origem no método de base dupla
+            O ICMS é um imposto calculado por dentro, ou seja, considera-se que o seu valor já está embutido no preço final da mercadoria/serviço. Sendo assim, no exemplo acima o valor de R$ 2.000,00 está considerando 18% de ICMS e esse valor é referente ao ICMS total da operação. Na UF de origem o ICMS é 12%, então o valor da base de cálculo será menor. Para se chegar ao valor da base é necessário subtrair o valor do ICMS total e aplicar o percentual do ICMS na origem por dentro:
+            

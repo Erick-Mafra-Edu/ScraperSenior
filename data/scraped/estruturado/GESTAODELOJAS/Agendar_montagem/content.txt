@@ -1,0 +1,197 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/servicos/agendar-montagem.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7C_____3
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Agendar montagem
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Agendar Montagem no Pedido
+                Conceito
+                Agenda o serviço de montagem para o cliente na emissão do pedido. A montagem é um serviço opcional oferecido ao cliente. Ele pode ser um serviço gratuito ou cobrado.
+                Utilização 
+                É utilizado quando o produto adquirido na loja, necessita de montagem em domicílio.
+                Processo 
+                O processo de agendamento de montagem é feito na emissão do pedido de venda. Ao utilizar o botão Montagem no pedido de venda, é apresentada a tela com todos os itens do pedido para que sejam selecionados os itens que necessitam do serviço de montagem.
+                
+                    Importante 
+                    
+                        Para se incluir/agendar uma montagem, é obrigatório que o cliente esteja cadastrado e identificado no pedido de venda, pois esse serviço exige  um endereço cadastrado.
+                        O cadastro de produto é configurado para que, ao vender determinados itens, o sistema identifique se o produto possui ou não serviço de montagem.
+                        Os controles são gerados separadamente para cada item do pedido.
+                        No processo de montagem de entrega futura pelo Centro de Distribuição apenas serão permitidas alterações de dados de montagem antes que o pedido seja faturado.
+                        Em entrega futura pelo Centro de Distribuição, o status da montagem ficará visível apenas em modo de consulta e o processo funciona diretamente pelo Gestão Empresarial | ERP. 
+                    
+                
+                Incluir montagem no pedido 
+                
+                    Identifique o cliente no pedido;
+                    Utilize o botão Montagem;
+                    Ao acionar o botão Montagem  no pedido de venda, o sistema apresentará a tela para agendar a montagem com lista de produtos do pedido.
+                    Selecione os itens que serão montados e, em seguida preencha os campos:
+                
+                Data de montagem
+                
+                Informe a data para agendamento da montagem.  Não é possível inserir uma data de entrega de montagem que seja anterior à data prevista do pedido. Além disso, não é possível informar a data de montagem anterior à data de entrega do frete do pedido. 
+                Período
+                
+                Escolha o período do dia em que o produto será montado. 
+                
+                    Não informado
+                    Matutino
+                    Vespertino
+                    Noturno
+                
+                Localização
+                
+                Informe a loja que será responsável pela montagem. O preenchimento do campo é obrigatório.
+                
+                    Notas: 
+                    
+                        Ao agendar a montagem, o usuário poderá informar na localização  uma outra filial, desde que esteja cadastrada e disponível. Essa informação significa que a filial informada fará a montagem.
+                    
+                    
+                        
+                    
+                    
+                        O agendamento da montagem irá constar no controle de montagem da filial informada, para que ela se responsabilize pela montagem do produto. A filial que faturou o pedido deverá  manter contato com a filial que fará a entrega para especificar, caso haja dúvidas. 
+                    
+                
+                Montador
+                
+                Informe o montador que irá executar o serviço de montagem, conforme cadastros disponíveis da loja. 
+                Endereço
+                
+                Informe o endereço que será efetuada a montagem. Pode ser digitado o número "0" (zero) para que o sistema considere o endereço principal registrado no cadastro de cliente. 
+                Caso o cliente opte para que a montagem seja realizada em outro endereço, basta utilizar o botão de pesquisa. O sistema apresentará uma tela, em que  poderá ser acionado o botão Cadastrar endereço para inserir outros endereços no cadastro do cliente. 
+                Exemplo:
+                    
+                        
+                            
+                            
+                        
+                        Posteriormente, será apresentada a tela para efetuar o cadastro do endereço para montagem.
+                        
+                            
+                        
+                         
+                        Para reaproveitar o endereço principal do cliente (aquele cadastrado na guia Geral do cadastro do cliente), utilize o botão Copiar endereço principal.
+                    
+                
+                
+                    Observação: 
+                    Caso o cliente já possua mais de um endereço em seu cadastro (entrega, cobrança), ao acionar o botão de pesquisa serão apresentados todos os endereços cadastrados para que seja informado o endereço da montagem.
+                    Exemplo:
+                        
+                            
+                            
+                        
+                    
+                
+                Informações adicionais
+                
+                Campo disponível para anotação de observações importantes, caso necessário.
+                
+                    
+                
+                 Selecionar os produtos para montagem
+                Após adicionar as informações do cabeçalho da montagem, selecione na "lista de produtos disponíveis" a caixa de seleção dos produtos que necessitam de montagem.
+                Situação 1:
+                
+                Se o pedido possuir apenas um item ou produtos distintos para montagem, basta selecioná-los na caixa de seleção e acionar o botão Gravar.
+                Situação 2:
+                
+                Caso o pedido possua mais de uma unidade do mesmo item, ao selecioná-lo na caixa de seleção será apresentada uma mensagem de alerta para que seja informada a quantidade de itens a ser montada.
+                Exemplo:
+                    
+                        
+                        
+                    
+                
+                Após informada a quantidade a montar, confira como ficou o agendamento da montagem.
+                Exemplo:
+                    
+                        
+                        
+                    
+                
+                Alterar endereço da montagem
+                 Quando for necessário efetuar agendamento de montagens em datas diferentes,  inclua no agendamento um primeiro produto com todas as informações do cabeçalho e grave. 
+                Em seguida, acione o botão de Montagem  e utilize a opção Novo, dessa forma, será apresentado o restante dos itens não inseridos na primeira montagem e será possível informar uma nova data para montagem, novo endereço e outros.
+                Excluir item com montagem agendada  
+                Para excluir um item da montagem,  acione o botão Montagem , escolha a opção Alterar e desmarque o item na caixa de seleção. O sistema perguntará a quantidade de itens a serem removidos da montagem.
+                Informe a quantidade a remover, confirme em OK e utilize o botão Gravar, para salvar o agendamento.
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                Cancelar o agendamento da montagem           
+                
+                    Para efetuar o cancelamento da montagem pelo pedido, acione o botão Montagem, selecione o item agendado na grade "Detalhes da montagem" e utilize o botão Cancelar.
+                    Ainda por dentro do pedido é possível alterar ou incluir um novo agendamento de montagem, desde que o pedido não tenha sido atendido no PDV.
+                    Caso o pedido já tenha sido atendido no PDV, deve-se utilizar a tela Controles de montagem para efetuar o cancelamento, pois o pedido não poderá mais sofrer alterações.
+                
+                 
+                
+                    Nota: 
+                    
+                    
+                        Para  consultar e alterar a situação do controle agendado, acesse a tela Controles de montagem.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado 

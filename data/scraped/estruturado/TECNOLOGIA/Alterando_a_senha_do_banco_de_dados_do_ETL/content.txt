@@ -1,0 +1,174 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/bi/alterando-senha-banco-dados.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CPerformance%2520Corporativa%7CBI%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Performance Corporativa > BI > Alterando a senha do banco de dados do ETL
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Alterando a senha do banco de dados do ETL
+            Ao alterar a senha do banco de dados do ETL, é preciso atualizar as credenciais no MicroStrategy Developer, na Central de Configurações Senior e, caso utilize o Microsoft SQL Server, no ODBC. Se o usuário e/ou a senha estiverem incorretos, a extração de dados não será efetuada. Confira abaixo o procedimento para alterar as informações de acesso em todos os locais.
+            MicroStrategy Developer
+            
+                Importante
+                
+                Para qualquer alteração ou configuração no MicroStrategy Developer é necessário possuir a licença de architect. Caso não possua a licença com esta chave, entre em contato com o seu canal ou seu executivo de negócios para solicitar esta alteração/configuração necessária.
+            
+            
+                Abra o MicroStrategy Developer, e, na fonte de dados Senior, dê um clique com o botão direito sobre o projeto BI e escolha a opção Configurar Projeto...;
+                Na Instância do Banco de Dados, clique em Dados SQL do warehouse e selecione a instância marcada como padrão;ImportanteNão desmarque a caixa de seleção, apenas clique em cima do nome da instância.
+                Clique no botão Modificar;
+                A janela aberta exibirá os dados da instância. Clique no botão Modificar;
+                Na janela Conexões do banco de dados, clique novamente em Modificar;
+                Informe o novo usuário e/ou senha do banco de dados;
+                Clique em OK em todas as janelas que foram abertas. Para conferir se a operação foi realizada com sucesso, republique um cubo. Se houver algum erro, repita o processo certificando-se de ter informando as credenciais corretas no último passo.
+            
+            Central de Configurações Senior
+            
+            Na pasta da instalação, abra a Central de Configurações Senior e acesse Banco de dados > ETL. Atualize o usuário e a senha e clique em Testar Conexão. Se os testes não apontarem erro, clique em Aplicar e Sair. Além de permitir atualizar a senha, esta tela mostra o ODBC usado pelo ETL nos casos em que o banco de dados instalado for um Microsoft SQL Server.
+            ODBC (SQL Server)
+            Este procedimento é válido somente para bancos SQL Server, bancos Oracle não fazem uso do ODBC na conexão do ETL ao banco de dados.
+            Há duas versões do ODBC, 32 e 64 bits, localizadas em pastas diferentes. O que é cadastrado numa versão não é visto na outra, por isso, é necessário verificar em ambas onde está o ODBC cadastrado. O nome do ODBC pode ser obtido pelo SeniorConfigCenter, na mesma janela citada acima.
+            Supondo que a unidade de disco em que foi instalada o Windows é o C:, os caminhos são:
+            
+                ODBC 32 bits: C:\Windows\SysWOW64\odbcad32.exe
+                ODBC 64 bits: C:\Windows\System32\odbcad32.exe
+            
+            O prefixo numérico no nome das pastas é propositalmente invertido, o que está na System32 registra na versão 64bits, e a SysWOW64 registra na versão 32 bits.
+            Todos os ODBCs cadastrados ficam na guia Fontes de dados de usuário e Fontes de dados de sistema.
+            
+                Execute o ODBC que deseja editar. De acordo com a versão instalada do SQL Server, podem haver variações visuais na interface do usuário, contudo, os passos são os mesmos para as versões 2012 e 2014;
+                No primeiro passo, nada deve ser alterado, apenas clique em Avançar;
+                Atualize o usuário e/ou a senha;
+                 Clique em Avançar nas telas seguintes até chegar ao último passo. Clique no botão Concluir e, na tela a seguir, clique em Test Data Source...;
+                O ODBC vai verificar os dados informados. Ao encerrar os testes, a janela deve exibir a frase "TESTS COMPLETED SUCCESSFULLY!". Clique em OK nas janelas abertas para efetivar a alteração. Se os testes apresentarem algum erro, clique em Cancelar e repita o processo.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

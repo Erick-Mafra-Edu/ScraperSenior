@@ -1,0 +1,251 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#informacoes-tecnicas/outras-configuracoes/stsbanda.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7COutras%2520configura%25C3%25A7%25C3%25B5es%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Outras configurações > Consumo de recursos de ambiente
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Consumo de Recursos de Ambiente
+                
+                    
+                        Uso 
+		 de banda em rede pelo WindowsAccess
+                        
+                    
+                    
+                        Uso 
+		 de banda em rede pelo BrowserAccess
+                        
+                    
+                    
+                        Uso 
+		 de banda em rede pelo WTS
+                        
+                    
+                    
+                        
+                            Consumo de memória dos 
+		 sistemas no Ambiente Middleware Senior
+                            
+                        
+                    
+                
+                Uso de Banda Em Rede Pelo WindowsAccess 
+                Foram feitos testes com o Middleware Senior monitorando o fluxo de dados 
+ entre o cliente WindowsAccess e o servidor (Gerenciador do Middleware). Estes testes foram realizados da seguinte maneira:
+                
+                    Foi instalado um aplicativo para monitoramento de tráfego de dados 
+	 pela rede no cliente.
+                    Foi feita uma conexão em rede local de 100,0 Mbps com o servidor 
+	 Middleware Senior, monitorando os bytes de entrada e saída do cliente.
+                
+                O gráfico abaixo mostra o resultado dos testes assumindo KB (quilobytes) 
+ como unidade de medida. As linhas verdes representam os bytes recebidos 
+ pelo cliente do servidor, as linhas vermelhas representam os bytes enviados 
+ do cliente para o servidor e a linha azul representa a intersecção das 
+ duas linhas.
+                
+                    
+                    
+                
+                Para realizar os testes, o WindowsAccess conectou-se ao Gerenciador do Middleware repetidas vezes, 
+ realizando algumas operações, conforme análise dos resultados a seguir:Obs.: A medição foi feita contando-se os Bytes transferidos para a realização 
+ de cada uma das operações.
+                
+                    Acesso ao servidor (tela inicial): 
+	 Não houve tráfego de dados pela rede.
+                    Conexão com o servidor (tela de 
+	 seleção de sistemas): Transferência de 0,4 KB.
+                    Carga do sistema até a tela de 
+	 seleção do cfg: Transferidos em torno de 2,6 KB.
+                    Entrada do sistema (carga do menu 
+	 principal): Transferidos em torno de 10,8 KB.
+                    Abertura da ficha básica: Foram 
+	 os valores mais elevados dos testes, onde foram transferidos de até 
+	 13,3 KB para cada execução.
+                    Navegação na ficha básica: 
+	 Transferência máxima de 9,2 KB para carga de registros com foto, 0,8 
+	 KB para registros sem foto e 1,5 KB para carga de lookups e validação 
+	 de valores durante a navegação no registro.
+                    Execução de relatório - tela de 
+	 entrada: Manteve-se estável em 3,0 KB para cada execução.
+                    Execução de relatório: 
+	 Transferência de 10,2 KB.
+                    Saída do sistema: Transferência 
+	 máxima de 1,9 KB.
+                
+                Observação
+                     O modelo de relatório 
+ utilizado nos testes foi o "Cidades e Bairros". A transferência 
+ de dados pode variar de acordo com o tamanho do metafile do modelo, e 
+ tende a aumentar com o uso de imagens e gráficos.
+                
+                Consumo de Banda 
+ Em Rede Pelo BrowserAccess
+                    
+                    Foram feitos testes com o Middleware Senior monitorando o fluxo de dados 
+ entre o cliente BrowserAccess e o servidor (Gerenciador do Middleware). Estes testes foram 
+ realizados pela equipe da Senior Pesquisa e Tecnologia da seguinte maneira:
+                
+                    
+                        Foi instalado um aplicativo para monitoramento de tráfego de 
+	 dados pela rede no cliente.
+                    
+                    
+                        Foi feita uma conexão em rede local de 100,0 Mbps com o servidor 
+	 Middleware Senior, monitorando os bytes de entrada e saída do cliente.
+                    
+                
+                O gráfico abaixo mostra o resultado dos testes assumindo KB (quilobytes) 
+ como unidade de medida. As linhas verdes representam os bytes recebidos 
+ pelo cliente do servidor, as linhas vermelhas representam os bytes enviados 
+ do cliente para o servidor e a linha azul representa a intersecção das 
+ duas linhas.
+                
+                    
+                    
+                
+                Para realizar os testes, o BrowserAccess conectou-se ao Gerenciador do Middleware repetidas vezes, 
+ realizando algumas operações, conforme análise dos resultados a seguir:
+                Observação
+                     A medição foi feita contando-se os Bytes transferidos para a realização 
+ de cada uma das operações.
+                
+                
+                    Acesso ao servidor (página inicial): 
+	 Esta página foi removida no BrowserAccess.
+                    Conexão com o servidor (página 
+	 de seleção de sistemas): Transferência de 3,4 KB.
+                    Carga do sistema até a tela de 
+	 seleção do cfg: Transferidos em torno de 13,5 KB.
+                    Entrada do sistema (carga do menu 
+	 principal): Transferidos em torno de 7,9 KB.
+                    Abertura da ficha básica: 
+	 Transferência máxima de 26,0 KB.
+                    Navegação na ficha básica: 
+	 Transferidos 10,6 KB para carga de registros com foto, 1,6 KB para 
+	 registros sem foto e 3,2 KB para carga de lookups e validação de valores 
+	 durante a navegação no registro.
+                    Execução de relatório - tela de 
+	 entrada: Transferência de 9,8 KB.
+                    Execução de relatório: 
+	 Foram os valores mais elevados dos testes, onde foram transferidos 
+	 até 36,8 KB.
+                    
+                        Saída do sistema: Transferência 
+	 de 4,4 KB.
+                    
+                
+                Observação
+                     O modelo de relatório 
+ utilizado nos testes foi o "Cidades e Bairros". A transferência 
+ de dados pode variar de acordo com o tamanho do metafile do modelo, e 
+ tende a aumentar com o uso de imagens e gráficos.
+                
+                Consumo de Banda 
+ Em Rede Pelo WTS
+                    
+                    Foram feitos testes com o Administração de Pessoal do Gestão de Pessoas 
+ em ambiente Cliente/Servidor acessado via WTS, monitorando o fluxo de 
+ dados entre o cliente WTS e o servidor. Estes testes foram realizados 
+ pela equipe da Senior Pesquisa e Tecnologia da seguinte maneira:
+                
+                    
+                        Foi instalado um aplicativo para monitoramento de tráfego de 
+	 dados pela rede no cliente.
+                    
+                    
+                        Foi feita uma conexão remota via WTS em rede local de 100,0 
+	 Mbps com o servidor, onde foi executado o sistema Administração de 
+	 Pessoal (Cliente/Servidor), monitorando os bytes de entrada e saída 
+	 do cliente.
+                    
+                
+                O gráfico abaixo mostra o resultado dos testes assumindo KB (quilobytes) 
+ como unidade de medida. As linhas verdes representam os bytes recebidos 
+ pelo cliente do servidor, as linhas vermelhas representam os bytes enviados 
+ do cliente para o servidor e a linha azul representa a intersecção das 
+ duas linhas.
+                
+                    
+                    
+                
+                Para realizar os testes, o servidor foi acessado via WTS repetidas vezes, 
+ executando o Administração de Pessoal e realizando algumas operações, 
+ conforme análise dos resultados a seguir:
+                Observação
+                     A medição foi feita contando-se os Bytes transferidos para a realização 
+ de cada uma das operações.
+                
+                
+                    Informação do servidor (tela inicial): Não 
+	 há tráfego de dados pela rede.
+                    Conexão com o servidor (carga do desktop do servidor): 
+	 Foram os valores mais altos, onde foram transferidos até 41,3 KB.
+                    Carga do sistema até a tela de seleção do cfg: 
+	 Transferência em torno de 5,4 KB.
+                    Entrada do sistema (carga do menu principal): 
+	 Transferência em torno de 7,0 KB.
+                    Abertura da ficha básica: Esta operação variou 
+	 bastante, alcançando o valor máximo de 12,8 KB.
+                    Navegação na ficha básica: Transferidos 18,6 
+	 KB para carga de registros com foto, 16,9 KB para registros sem foto 
+	 e 1,2 KB para carga de lookups e validação de valores durante a navegação 
+	 no registro.
+                    Execução de relatório - tela de entrada: Transferência 
+	 de até 14,2 KB.
+                    Execução de relatório: Transferência máxima de 
+	 7,8 KB.
+         

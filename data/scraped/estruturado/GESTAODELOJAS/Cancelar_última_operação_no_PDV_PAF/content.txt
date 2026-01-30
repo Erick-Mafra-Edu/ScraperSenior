@@ -1,0 +1,201 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/cancelar-ultima-operacao-no-pdv-paf.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____35
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Cancelar última operação no PDV (PAF)
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Cancelar última operação no PDV (PAF)
+                Conceito 
+                Cancelar o cupom fiscal da última venda efetuada no PDV, desde que não tenha sido impresso nenhum outro comprovante fiscal ou não fiscal no ECF.
+                
+                    O ECF permite cancelar apenas:O	Cupom fiscal;O	Comprovante de recebimento não fiscal.
+                
+                Vide documentos impressos pelo ECF.
+                
+                    O ECF permite cancelar apenas o último documento impresso. A exceção é o comprovante não fiscal vinculado, onde o ECF cancela:O comprovante não fiscal vinculado;O comprovante original da operação no qual o vinculado se refere, podendo ser um cupom fiscal ou comprovante de recebimento não fiscal.
+                
+                Utilização 
+                É utilizado para efetuar o cancelamento da última operação realizada, exemplo:
+                
+                    Venda;
+                    Recebimento de título;
+                    Suprimento;
+                    Sangria.
+                
+                
+                    Atenção
+                    
+                        Quando a emissão dos comprovantes é realizada através do ECF (Emissor de cupom fiscal), como é o caso do PDV (PAF), os cancelamentos dependem da correta execução do equipamento. Dessa forma, ao realizar um cancelamento, o sistema primeiramente envia o comando ao ECF e, após receber o retorno, efetua o cancelamento no sistema. Caso o ECF não cancele o comprovante, o sistema não conclui a operação.
+                        O ECF não efetua cancelamento de relatórios gerenciais, portanto, se após a emissão de um cupom fiscal for impresso um relatório gerencial não será possível realizar o cancelamento da venda. A alternativa, nesse caso, é realizar uma devolução.
+                        O mesmo vale para recebimento, sangria e suprimento. Se após o comprovante de recebimento não fiscal for impresso um relatório gerencial, o cancelamento não será mais possível. As alternativas são:Estornar o recebimento, no caso de recebimento incorreto;Realizar operações de suprimento, para repor o saldo de uma sangria emitida incorretamente;Realizar operações de sangria, para repor o saldo de um suprimento emitido incorretamente;Realizar um estorno de correspondente bancário, para operações erradas de correspondente bancário.
+                        A emissão de relatórios gerenciais após a execução das operações de recarga de celular e correspondente bancário é obrigatória, portanto essas operações nunca poderão ser canceladas; Não existe alternativa para cancelamento ou estorno de recarga de celular.
+                        Caso tenha ocorrido pagamento com TEF na operação, o cancelamento da transação com a administradora de cartão deve ser feito manualmente.
+                    
+                
+                
+                    Exemplos
+                        
+                            
+                                Emissão de cupom fiscal seguida da emissão de uma leitura X Não é possível cancelar nenhuma das operações.
+                            
+                            
+                                Emissão de cupom fiscal seguido de outro cupom fiscalÉ possível cancelar apenas o último cupom fiscal.
+                            
+                            
+                                Emissão de cupom fiscal seguido de relatório gerencialNão é possível cancelar nenhuma das operações.
+                            
+                            
+                                Para vendas ou recebimento com TEF, mesmo que o ECF, e consequentemente o sistema, cancelem a operação, o TEF permanece realizado. Dessa forma o valor é estornado do caixa, o estoque é atualizado, mas a transação continua efetuada junto à administradora de cartão. O cancelamento da transação TEF junto à administradora e a emissão do comprovante de cancelamento da transação deve ser realizado manualmente conforme descrito no processo: Cancelar transação com a administradora de cartão.  
+                            
+                            
+                                A mesma atenção deve existir para recebimentos POS.
+                            
+                            
+                                TEF: Transação de cartão feita através do sistema.
+                            
+                            
+                                POS: transação de cartão feita por fora (máquinas de POS) onde os dados da transação são informados manualmente no sistema.
+                            
+                        
+                    
+                
+                Processo
+                Para cancelar o último cupom fiscal emitido, siga os seguintes passos:
+                
+                    Selecione a opção Outras;
+                    Selecione a opção ADM;
+                    Selecione a opção Consultar Operações;
+                    Selecione o último cupom fiscal;
+                    Clique no botão Cancelar Últ. Cupom;
+                    Confirme as informações de COO e o Valor do último comprovante impresso;
+                    Informe um Motivo para o cancelamento do cupom e confirme no botão Ok.
+                
+                Exemplo
+                    
+                        Cupom fiscal de venda em dinheiro:
+                        
+                            
+                        
+                        Cancelamento da operação seguindo os passos descritos no processo:
+                        
+                            
+                        
+                        Impressão do documento de cancelamento:
+                        
+                            
+                        
+                        
+                            Observação 
+                            Note que o comprovante de cancelamento já possui um novo número de CCO (Contador de Ordem de Operação). Toda impressão feita pelo ECF possui um número próprio de COO que obedece a uma sequência.
+                        
+                    
+                
+                 
+                
+                    Nota 
+                    Caso o usuário logado não tenha permissão para efetuar a operação, a senha de permissão de um supervisor será  solicitada. 
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

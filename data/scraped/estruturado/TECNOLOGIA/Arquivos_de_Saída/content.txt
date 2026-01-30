@@ -1,0 +1,183 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/executor/dgn_executor_arquivos_saida.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CExecutor%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Executor > Arquivos de Saída
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Arquivos de Saída
+            Verifique como utilizar as telas geradoras de resultado 
+ da guia Arquivo do Executor de Modelos para diagnóstico de ambiente. As 
+ demais opções desse menu podem ser encontradas em Manipulação 
+ de Arquivos.
+            Abrir arquivo de resultado
+            Permite buscar um arquivo de 
+ resultados binários, um resultado de uma execução de modelo já feita. 
+ É necessário apenas informar o diretório onde esse arquivo está localizado.
+            Gerar plano de ação
+            Após executar um modelo de diagnóstico, o aplicativo permite gerar um 
+ Plano de Ação contendo informações relacionadas às atividades a serem 
+ efetuadas sobre cada ação dos itens analisados. 
+            Ao selecionar a opção de menu Gerar 
+ plano de ação, é apresentada a tela para seleção do diretório 
+ onde o plano de ação será salvo, com a extensão configurada na tela de 
+ Opções. Em seguida, ao gerar o plano, é criada uma tabela no formato XLS.
+            Exemplo:
+                
+                    
+                        
+                    
+                
+            
+            A geração do plano de ação somente é possível ser feita se no Editor de modelos para diagnóstico de ambiente a opção Permite gerar plano de ação estiver selecionada.
+            Exportar resultado
+            Permite gerar um resultado em formato de arquivo binário. Por se tratar de um arquivo que apenas exibe resultados de um modelo 
+ já executado, não é possível 
+ alterar as variáveis de entrada (se existirem) e/ou executá-lo, mas permite 
+ que seja gerado um Plano de Ação.
+            Exportar para CSV
+            O aplicativo permite exportar o resultado de uma execução no formato 
+ CSV (separado por vírgula). Esse formato permite abrir o arquivo para 
+ edição e formatação dos dados.
+            O arquivo no formato .CSV é aberto em formato de tabela, 
+ apresentando o resultado da execução de diagnóstico em linhas e colunas. 
+ Cada registro é agrupado em uma coluna de acordo com seu tipo e suas informações 
+ apresentadas em um cabeçalho. A única forma de exportar o log (caso alguma 
+ ação gere erros) é neste formato de arquivo.
+            Exemplo:
+                
+                    
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

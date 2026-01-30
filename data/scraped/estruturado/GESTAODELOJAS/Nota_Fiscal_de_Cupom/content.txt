@@ -1,0 +1,171 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/nota-fiscal-de-cupom.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____24
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Notas Fiscais > Notas Fiscais de Saída > Nota Fiscal de Cupom
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Nota Fiscal de Cupom
+            Conceito
+            Lançamento efetuado em decorrência de emissão de documento fiscal relativo a operação registrada em equipamento Emissor de Cupom Fiscal – ECF. 
+            Utilização
+            Utiliza-se a emissão de nota fiscal de cupom, quando exigida por clientes (empresas) ou não que efetuaram a compra através do cupom fiscal e necessitam da nota para fins de contabilização ou de futuros reparos, sendo que  já houve a emissão de um cupom fiscal.
+            
+                Importante: 
+                Para notas fiscais eletrônicas emitidas para clientes estrangeiros que são consumidores finais, o CFOP do cabeçalho da nota e dos itens devem iniciar em "5 - Operações Internas". Para esses casos, o sistema permite informar CFOPs iniciados em "5 - Operações Internas" e "7- Operações Externas".
+            
+            Processo
+            Toda nota fiscal emitida originada de um cupom fiscal, deverá conter o CFOP 5929 - (Lançamento efetuado em decorrência de emissão de documento fiscal relativo a operação ou prestação, também registrada em equipamento Emissor de Cupom Fiscal- ECF).
+            Esta nota será emitida sem destaque do imposto, zerando os campos Base de Cálculo do ICMS, Valor do ICMS, Valor isentos,  Outras e Alíquota do ICMS.
+            Ao emitir um cupom fiscal, e o cliente solicitar a nota fiscal do cupom, utilize os seguintes passos:
+            
+                Na tela inicial do PDV, utilize o botão Outras;
+                 Utilize o botão Nota de cupom;
+                O sistema tratá sempre as informações de COO e valor do último cupom emitido, confirme em OK;
+                A nota fiscal de cupom solicitada no PDV será gerada no Retaguarda e enviada a Sefaz para autorização;
+                Acesse no Retaguarda o caminho Mercado > Gestão de faturamento > Notas fiscais de saída para verificar a situação da nota;
+            
+            Exemplo:
+                
+                    
+                    
+                
+            
+            
+                Acesse o SDE para impressão do Danfe.
+            
+            Exemplo:
+                
+                    
+                    
+                    
+                    
+                
+            
+            Botão Emitir Nota Fiscal de Cupom
+            Fica disponível em Mercado > Gestão de faturamento > Cupons fiscais. 
+            O comportamento deste botão varia de acordo com o valor informado para o parâmetro dinâmico VENDA.EMISSAONOTAFISCAL, do cadastro da filial no Gestão Empresarial | ERP:
+            
+                
+                
+                
+                    
+                        Opção
+                        Comportamento do botão Emitir nota fiscal de cupom
+                    
+                    
+                        1 - Permite a emissão automática de Nota Fiscal
+                        Permite emitir nota fiscal de acordo com as validações do cupom.
+                    
+                    
+                        2 - Permite a emissão manual com escolha do usuário
+                        Permite emitir nota fiscal de acordo com as validações do cupom, porém é questionado ao usuário: "A filial está configurada para não emitir nota fiscal, deseja prosseguir?". Caso escolhida a opção "Sim", gera a nota fiscal, caso escolhido "Não", a nota não é gerada.
+                    
+                    
+                        3 - Não permite emissão de Nota Fiscal
+                        Não permite emitir nota fiscal e apresenta a mensagem "A filial está configurada para não permitir emissão de nota fiscal."
+                    
+                
+            
+            Ao clicar no botão serão apresentadas as seguintes situações:
+            Finalizar a nota
+            
+            Permite que a nota seja finalizada. 
+            Deixar a nota em digitação
+            
+            É possível que a nota fiscal seja gerada e se mantenha em digitação. Ou seja, a nota será gerada com os itens e demais informações já preenchidas, bloqueando a alteração da maioria das informações, possibilitando incluir informações de Transporte e/ou Observações.
+            Cancelar a nota
+            
+            Permite que a operação seja cancelada. 
+            Caso haja a tentativa de emitir  uma Nota de um cupom cuja nota já foi iniciada, mas ainda está em digitação, a mensagem: "Nota fiscal já gerada para este cupom mas ainda está em digitação. Série: "xx", será exibida.
+            Informação da transportadora na nota fiscal 
+            Para que a informação da transportadora seja levada à nota fiscal de cupom/NFC-e, os seguintes dados serão buscados dos controles de frete vinculados ao pedido, caso informados:
+             
+            
+                Transportadora (serão buscados  nos controles de frete vinculados com o pedido a primeira transportadora que for encontrada.  Caso não seja encontrada nenhuma transportadora nos controles de frete, a transportadora não será informada).
+            
+            
+                Modalidade do Frete:"0 = Por conta do emitente" - esta opção será informada quando algum dos controles de fretes vinculados ao pedido estiver marcado como frete grátis;"1 = Por conta do destinatário/remetente" - esta opção será informada quando nenhum dos controles de fretes vinculados ao pedido estiver marcado como frete grátis;"9 = Sem frete" - esta opção será informada caso não haja nenhum controle de frete vinculado ao pedido.
+            
+            
+                Observação
+                
+                Não será possível realizar a geração da nota fiscal de remessa em vendas de entrega futura, caso o estado de operação do cliente tiver sido alterado em relação à nota fiscal de simples faturamento.
+            
+            
+                Notas
+                
+                Caso o cupom não tenha sido originado de um pedido, a transportadora e outras informações poderão ser informadas com a nota em digitação, conforme descrito acima. 
+                Ao gerar os títulos com base nas parcelas, o sistema de Retaguarda verificará se a data de emissão do cupom é posterior a data de vencimento do título. Caso seja, a data de vencimento do título será definida como a data de emissão do cupom.
+            
+             
+            Impressão de código de barras (código GTIN) em cupons fiscais
+            O código GTIN (Número Global de Item Comercial) identificará as mercadorias ou prestações registradas em ECF, através de um código de barras. Esta informação será impressa no cupom fiscal, caso no cadastro do produto haja a identificação de código de barras. Caso não, poderá ser utilizado o código do próprio estabelecimento.
+            Além disso, caso seja emitida uma nota de cupom, será apresentado  o código de barras também, assim como impresso no CF.
+             
+            
+                Nota
+                
+                Este código será exibido em cupom apenas para  PAF-ECF. Em casos de NFC-e, a informação constará no próprio arquivo xml. 
+            
+            
+                Observação
+                
+                A finalização de Cupom Fiscal serão respeitadas conforme as regras do PAF/ECF: 
+                
+                    Se o processo foi interrompido antes da totalização do cupom, o cupom deve ser recuperado para que o usuário informe novamente o plano de pagamento e o finalize, ou para que cancele o cupom se preferir.
+                     Se o processo foi interrompido depois dos totalizadores do cupom, este CF deve ser finalizado e replicado para o retaguarda como válido.
+                     Se o processo foi interrompido  depois do acionamento da guilhotina do cupom, este CF deve ser finalizado e replicado para o retaguarda como válido.
+                
+                 
+                Em casos que possuam comprovantes não fiscais posteriores a impressão do CF:
+                
+                    Se o cupom não fiscal interrompido tratava-se de intermediação, quando o processo for reaberto, deve ser cancelado e logo depois reimpresso como válido.
+                    Se o cupom  não fiscal interrompido refere-se a TEF, este deve ser reimpresso.
+                    Se o cupom não fiscal interrompido refere-se a crediário, relatório gerencial ou qualquer outro documento que não referencie diretamente a um produto ou serviço, o comprovante interrompido pode ser cancelado e não é exigido reimpressão, pois o documento pode ser reimpresso pelo retaguarda em: Cupom Fiscais >Selecionar o Cupom > Botão Reimpressão de Documentos Vinculados ou Botão Consultar Complementos ou Consultar Intermediações.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail pa

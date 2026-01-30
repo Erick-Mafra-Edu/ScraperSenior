@@ -1,0 +1,231 @@
+# 
+
+URL: https://documentacao.senior.com.br/portal/6.10.1/#configuracoes/publicador-de-conteudo-web.htm%3FTocPath%3DPortal%2520Corporativo%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CConfigura%25C3%25A7%25C3%25B5es%7C_____4
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOPortal Corporativo - versão 6.10.1
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Portal Corporativo - Manual do Usuário > Configurações > Publicador de conteúdo web
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Publicador de conteúdo web
+            Possibilita uma integração com as soluções Senior através da chamada de relatórios e telas existentes realizada com a criação de links de acesso.
+            Definições
+            GenericServlet
+            Define um tipo mais fácil para utilizações dos links 
+ dentro do Portal Corporativo, tornando mais simples chamar as telas do BrowserAccess, Web 5.0 e Java, pois o nome do servidor é obtido diretamente do arquivo portalsenior.properties 
+ não sendo necessário informar no link.
+            Parâmetros gerais
+            
+            
+                Caminho do Servlet: /SLoginPortlet/genericservlet?
+                Após "?": local de acesso (BrowserAccess, Web 5.0 ou Java). Exemplo: /SLoginPortlet/genericservlet?ba=showform&sistema=Rubi&tela=FrInfGer
+            
+            BrowserAccess
+                
+                    Parâmetros
+                    
+                    Gerais:
+                    
+                        ba=: sistema utilizado com o parâmetro de tipo do sistema.
+                        parametro=: showform ou report.
+                        sistema=: sistema/módulo que será utilizado.
+                        parametro=: nome do módulo do sistema.
+                    
+                    Para chamadas de tela:
+                    tela=: parâmetro com o nome da tela a ser acessada.
+                    Exemplo:
+                        
+                            /SLoginPortlet/genericservlet?ba=showform&sistema=Rubi&tela=FrInfGer
+                        
+                    
+                    Para chamadas de relatório:
+                    
+                        modelo=: define o modelo a ser executado.
+                        params=: encaminha os parâmetros para o relatório. Exemplo:  emp, tip, col = 1,1,127.
+                        pesquisar=true ou pesquisar=false: define se deve ou não parar na tela de entrada.
+                    
+                    Exemplo:
+                        
+                            /SLoginPortlet/genericservlet?ba=report&sistema=Rubi&modelo=COL,FE,3&pesquisar=true
+                        
+                    
+                
+            
+            Web 5.0
+                
+                    Parâmetros
+                    
+                    
+                        web=: ação utilizada para processamento. O parâmetro é a ação (URL) a ser aberta. Os sinais "=" e "&" devem ser codificados como %3D e %26, respectivamente.
+                        params=: parâmetros adicionais, além dos parâmetros normais da URL. Exemplo: BASE
+                    
+                    Exemplo:
+                        
+                            /SLoginPortlet/genericservlet?web=ACAO%3DENTRANCEREL%26SIS%3DFP%26NOME%3DFPRE001.COL&params=
+                            Os campos que serão passados como parâmetro já serão automaticamente ocultados no formulário Web 5.0. 
+                        
+                    
+                    No caso do link ser copiado de um formulário Web 5.0 a ser chamado, é necessária  conversão para que o link seja utilizado na chamada do formulário. Sendo a principal mudança, substituir os sinais de "=" e "&" para %3D e %26, respectivamente.
+                    Exemplo:
+                        
+                            Antes: http://servidor:8080/trweb/conector?ACAO=PORTAL&SIS=FP&HTML=fppafast.htm
+                            Depois: /SLoginPortlet/genericservlet?web=ACAO%3DPORTAL%26SIS%3DFP%26HTML%3Dfppafast.htm
+                        
+                    
+                
+            
+            Java
+                
+                    Parâmetros
+                    
+                    
+                        g6= sistema utilizado com o parâmetro do nome da tela. O parâmetro é nome do pacote mais a tela do sistema. Exemplo: com.senior.util.propriedadesusuario.forms.FrPropriedadesUsuario.
+                        sistema= indica qual deve ser o servidor Java. 
+                    
+                    Exemplo:
+                        
+                            /SLoginPortlet/genericservlet?g6=com.senior.util.propriedadesusuario.forms.FrPropriedadesUsuario
+                            /SLoginPortlet/genericservlet?g6=com.senior.util.propriedadesusuario.forms.FrPropriedadesUsuario&sistema=ronda
+                        
+                    
+                
+            
+            Chamada do Workflow
+            Para configurar a chamada do Workflow no Portal Corporativo é necessário configurar um link em um portlet de IFrame no seguinte formato: http://EndereçoServidorPortal/SLoginPortlet/wf?server=http://EnderecoServidorWorkflow.
+            Chamada do Gestão do Ponto
+            Para configurar a chamada do Gestão do Ponto no Portal Corporativo é necessário configurar um link em um portlet de IFrame em um dos seguintes formatos (com ou sem &g6path=):
+            
+                http://EndereçoServidorPortal/SLoginPortlet/g6generic?g6context=http://EndereçoServidorGestãodePonto/gestaoponto/&g6path=/?perspective=com.senior.apuracao.acerto.sintetico.acertoColaboradorSinteticoWF
+                http://EndereçoServidorPortal/SLoginPortlet/g6generic?g6context=http://EndereçoServidorGestãodePonto/gestaoponto/?perspective=com.senior.apuracao.acerto.sintetico.acertoColaboradorSinteticoWF
+            
+            
+                Nota
+                
+                Para utilização do Gestão do Ponto é utilizado um tema específico: Portal Base 6.1 (Gestão do Ponto).
+            
+            O que você precisa fazer:
+            Criar links de acesso
+                
+                    
+                        Em Publicador de conteúdo web, clique para adicionar um conteúdo web.
+                        Em Estrutura, selecione o ícone de alterar para modificar a estrutura padrão dos campos para Senior Link Structure.
+                        Após a definição da estrutura, preencha os campos Título (Obrigatório), que será o nome do portlet, e Texto, a descrição. 
+                        Em Link, pressione Selecionar para ser direcionado à Wizard. Lá defina o produto/módulo e o tipo de saída e qual tecnologia, por exemplo: disponibilizar um relatório via Web 5.0.
+                        Ainda na Wizard, insira o nome do relatório/tela ou formulário a ser utilizado. 
+                        Em seguida o link é disponibilizado para uso. Clique em Concluir e retorne para a página anterior.
+                        Selecione a caixa de seleção UsarImagem e selecione uma imagem para ser o ícone da funcionalidade.
+                        No menu à direita, clique em Categorização e defina um tipo para o conteúdo. Para finalizar, pressione Publicar.
+                    
+                
+            
+            Criar links de acesso - IFrame
+                
+                    
+                        Adicione um IFrame ao Portal Corporativo.
+                        Acesse as configurações deste portlet e informe o link da funcionalidade em URL da fonte. Clique em Salvar.
+                    
+                    Exemplo:
+                        
+                            
+                                
+                            
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDA

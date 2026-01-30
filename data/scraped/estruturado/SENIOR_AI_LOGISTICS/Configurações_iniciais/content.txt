@@ -1,0 +1,134 @@
+# 
+
+URL: https://documentacao.senior.com.br/senior-ai-logistics/1.0.0/#manual-do-usuario/configuracoes-iniciais.htm%3FTocPath%3DSenior%2520AI%2520Logistics%7CPrimeiros%2520acesso%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOSenior AI Logistics
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Senior AI Logistics > Primeiros acesso > Configurações iniciais
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Configurações iniciais
+            Esse módulo da documentação vai auxiliar a execução das configurações de acesso ao sistema e criação de usuário, necessárias para explorar todas as funcionalidades do AI Logistics, e a configurar perfis de acesso distintos e mais adequados para cada grupo de usuários. Também traz as instruções para a personalização de temas e aparência.
+            Acesso ao sistema
+                
+                    O acesso à ferramenta ocorrerá por meio do endereço web do AI Logistics.
+                    Para fazer o login, basta clicar no botão  Entrar, localizado no canto inferior esquerdo da página inicial. Na janela que abrirá em seguida, preencha os campos com e-mail ou username e senha de acesso ao sistema, e novamente clique em Entrar. Se as informações forem informadas corretamente, será feito o direcionamento automático para a Home da plataforma.
+                    Primeiro acesso
+                    O primeiro acesso será realizado a partir do recebimento de um e-mail do endereço eletrônico Sistemas Senior. Essa correspondência informará o username e e-mail para login (deve ser usado um ou outro) e uma senha provisória formada por letras e números, e que obrigatoriamente precisará ser trocada nesse primeiro acesso.
+                    O cadastro de um novo usuário, ação que irá gerar automaticamente o e-mail de primeiro acesso, só poderá ser feito por um usuário administrador com perfil habilitado para realizar essa ação.
+                    Um primeiro usuário administrador habilitado para cadastrar usuários e perfis de acesso será definido junto ao consultor no momento do projeto. É esse administrador quem dará início aos primeiros cadastros.  
+                    Recuperação de senha
+                    Para a recuperação de senha, siga os seguintes passos:
+                    
+                        Acesse a página inicial da ferramenta e clique no botão Entrar, como se fosse fazer login;
+                        Em seguida, na janela aberta sobre a página inicial, clique em Esqueceu a senha?;
+                        Digite seu e-mail de login e aguarde chegar em sua Caixa de Entrada uma mensagem com um link e instruções para cadastramento da nova senha;
+                        Após a recuperação da senha, volte à página inicial do AI Logistics e faça o login na ferramenta.
+                    
+                
+            
+            Configurações do sistema
+                
+                    Essa seção vai auxiliar a configurar o idioma padrão da ferramenta, dentre os cinco disponíveis, e também personalizar temas e aparência, aproximando a identidade visual da plataforma a da empresa ou das preferências e necessidades do usuário.
+                    Idiomas
+                    O AI Logistics é uma ferramenta multi-idiomas, desenvolvida em cinco línguas: 
+                    
+                         Português
+                        Espanhol
+                        Inglês
+                        Francês
+                        Alemão
+                    
+                    O idioma padrão da ferramenta será configurado pela Senior, no momento do projeto, de acordo com a nacionalidade da empresa, mas ele poderá ser alterado pelo usuário durante o uso.
+                    Como configurar
+                    
+                        Para alterar o idioma durante o acesso, segure o cursor sobre a bandeira de país localizada no canto superior direito do cabeçalho da ferramenta.
+                        Nesse momento, abrirá uma janela com todos os idiomas disponíveis e basta clicar sobre o que desejar. 
+                        A partir desse comando, todos os menus, campos e demais conteúdos das páginas do AI Logistics serão convertidos automaticamente para a língua selecionada.
+                    
+                    Temas e aparência
+                    O AI Logistics permite a configuração das cores da ferramenta de acordo com preferências ou necessidades pessoais (como vista cansada) ou alinhadas à identidade visual da empresa, inclusive com importação de logomarca. Essa última alternativa dá à organização a possibilidade de  aumentar junto aos clientes e parceiros a visão de unidade do negócio.  Dessa forma, esse recurso se torna estratégia relevante de mercado. 
+                    A ferramenta tem três opções de configuração de Temas e aparência. Duas delas são padrão: 
+                    
+                        Light: com fundos na cor branca e textos em azul 
+                        Dark: fundo preto e textos em amarelo (ideal para vista cansada)
+                    
+                    Há uma terceira opção, totalmente personalizável, na qual é possível escolher as cores do Header, Menu, Itens de menu, Fundo, Conteúdo, Texto, Botão, Tabela, Ativo e Footer. Além de importar logos em tamanho miniatura e expandido, para serem exibidos no canto superior esquerdo do cabeçalho da ferramenta, em substituição ao logo padrão, da Senior. 
+                    Como configurar
+                    
+                        No Menu lateral do AI Logistics clique no último botão da lista, o Configurações do sistema; 
+                        Em seguida, abrirá uma página de configuração com as três opções disponíveis, nesta ordem: Criar tema, Light (que já estará selecionada) e Dark;
+                        Se quiser manter o tema Light basta deixar essa opção selecionada;
+                        Se optar pelo tema Dark, posicione o cursor sobre essa opção e clique em Usar. Automaticamente o tema da ferramenta será alterado. Tanto o tema Light quanto o Dark também podem ser editados e personalizados.
+                        Se quiser retornar para a o tema da configuração inicial, Light, o procedimento é o mesmo: posicione o cursor sobre o botão referente a esse tema e clique em Usar;
+                        Se a escolha for Criar tema, a opção personalizável, clique em cima desse botão;
+                        Automaticamente o sistema passará para a página Personalização de tema, onde será possível configurar e personalizar as cores do sistema;
+                        Nessa página, há uma lista de campos a serem preenchidos;
+                        Comece dando um Nome a esse tema, e perceba que na caixa lateral aparecerá um Layout que funcionará como preview de todas as seleções realizadas, conforme a configuração for avançando;
+                        A partir do campo seguinte, Header, até o último, Footer, para selecionar uma cor é necessário clicar sobre o campo a ser preenchido e, com ajuda do cursor, escolher a cor e tonalidade desejadas.
+                        Ao final do preenchimento de todos os campos, será possível importar logos da empresa em dois tamanhos diferentes (Miniatura e Expandido) para personalizar a ferramenta. Basta clicar em Escolher arquivo;
+                        Somente após realização de todas essas configurações o sistema vai habilitar, no canto inferior direito da tela, o botão Salvar tema. É preciso clicar nele para guardar a personalização; 
+                        Se a ação tiver sido executada corretamente, o sistema mostrará, no canto superior direito da página, o aviso Tema salvo com sucesso!, e imediatamente a ferramenta voltará para a página Configurações do sistema, onde o tema criado aparecerá ao lado das outras opções já disponíveis (Criar Tema, Light e Dark);
+                        Para aplicar o tema recém criado basta posicionar o cursor sobre ele e clicar em Usar.
+                    
+                    Usabilidade
+                    Na mesma página de configuração de Temas e aparência é possível definir se o menu inicial da ferramenta ficará disposto no lado esquerdo ou direito da tela.
+                    O acesso a essa página é feito pelo Menu lateral do AI Logistics. Clique no último botão da lista, o Configurações do sistema.
+                    Para selecionar uma das opções, basta mover para direita ou esquerda o botão que encontra-se abaixo da função Usabilidade, localizada ao lado das opões de Temas e aparência. Após o comando, o menu se ajustará automaticamente.
+                
+            
+            Controle de acesso
+                
+                    Por meio do botão Controle de acesso, localizado no menu lateral da ferramenta, será possível cadastrar perfis e novos usuários, verificar a lista de pessoas habilitadas para usar o AI Logistics e acompanhar os registros de acesso  de cada uma delas.
+                    A plataforma permite uma gestão de acesso com conceito de perfil de permissionamento. Ou seja, é possível criar diferentes perfis de usuários, o que irá conferir a cada um deles diferentes possibilidades de uso e gestão da plataforma. Essa funcionalidade é importante porque a ferramenta pode ser utilizada como base para colaboração de informações com clientes de cliente

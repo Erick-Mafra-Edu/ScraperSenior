@@ -1,0 +1,177 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#processo/processos-correios.htm%3FTocPath%3D_____13
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Processos Correios
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Processo Correios
+            O processo de Webservices Correios faz o monitoramento de integração através do Gestão de Fretes para os Correios.
+            Segue abaixo o Fluxograma Operacional
+            
+                
+            
+            Quais serviços posso utilizar? 
+            Pré Lista de Postagem (PLP)
+                
+                    A PLP é um controle prévio em que é feito um cadastro da mercadoria a ser enviada e entregue pelos correios e que gera um código de rastreio do produto.
+                    Como ocorre o processo PLP?
+                        
+                            
+                                Quando o pedido é identificado como tipo “Postagem” oGestão de Fretes realiza uma solicitação da autorização de postagem.
+                                Os pedidos que forem autorizados tem a situação alterada para 509 – Aguardando Objeto de Postagem.
+                                 Através de integraçãoGestão de Fretes FIS e Correios é acompanhado o processo de postagem
+                                Quando efetuada a postagem,  é alterada situação do pedido para“510 – Documento Pesado”, iniciando o Fluxo normal da aplicação 
+                                O Leilão de Frete é realizado e caso exista tabela de frete para atendimento do pedido, a situação é alterada para “520 – Documento Frete Calculado”.
+                                Caso o prazo para postagem expire, o pedido é automaticamente cancelado, tendo sua situação alterada para “555 – Documento Frete Cancelado”.
+                            
+                        
+                    
+                    Como ativo o serviço PLP?
+                        
+                            Para ativar o serviço de PLP alguma configurações são necessárias:
+                            
+                                Acesse APPS > Logística > Gestão de Fretes> Cadastro > Transportadora > Cadastro Transportadora, use botão GeralMarque a flag de Objetos CorreiosPreencha o campo Quantidade Limite de Objetos
+                                Acesse APPS > Logística > Gestão de Fretes> Definições > Operação > Tipo Postagem, use botão CadastrarNeste caso, é necessário preencher o campo Serviço Correio, que é o número interno do Correios relacionado ao serviço, este número é obrigatório no envio da PLP. Ative a flag solicita PLP, que quando ativada é necessário preencher o campo Serviço Correio que é o número interno do correios relacionado ao Serviço, este número é obrigatório no envio do PLPUse botão, Salvar
+                            
+                        
+                    
+                    Aguardando retorno da PLP
+                        
+                            Este é o momento em que o WMS valida no Correios se os objetos estão corretos e gera o PLP ID.
+                            
+                                Acesse > Logística > Gestão de Fretes> Operação > Embarques > Romaneio
+                            
+                            No grid se rodar a barra de rolagem para a direita temos os campos que mostram o processo de validação de PLP, o WMS  busca todos os registros que estão com o “solicita PLP = S” e o “Retorno PLP = N”, se não houver problema na solicitação do PLP, assim que o PLP ID for preenchido o WMS fecha o romaneio, encerrando o processo.
+                            
+                                
+                                
+                            
+                        
+                    
+                    Erro na validação da PLP?
+                        
+                            Caso ocorra algum problema o log é gerado para Romaneio.
+                            E pode ser consultado em  APPS > Logística > Gestão de Fretes> Operação > Contratação Frete > Log Geral Documentos.
+                        
+                    
+                
+            
+            Autorização de Postagem
+                
+                    O código de autorização de postagem permite que os objetos sejam postados com a autorização do destinatário, que realiza o pagamento do serviço.
+                    Como ativo a autorização de postagem?
+                        
+                            Os pedidos que precisam de autorização de postagem devem estar vinculados a um tipo de postagem.
+                            
+                                Acesse: Logística > Gestão de Fretes> Definições > Operação > Tipo Postagem, use botão CadastrarAtive a flag Autorização Postagem que defini se o serviço parametrizado irá buscar uma autorização de postagem;Use botão, Salvar.
+                            
+                        
+                    
+                
+            
+            Objeto de postagem
+                
+                    Consiste em um código que é criado quando determinado produto é postado e registrado nos correios, com o objetivo de rastrear o produto e saber data e hora que a encomenda foi entregue ao destinatário final.
+                    Os pedidos que precisam de objeto de postagem devem estar vinculados a um tipo de postagem.
+                    Como ativo objeto de postagem?
+                        
+                            
+                                Acesse: Logística > Gestão de Fretes> Definições > Operação > Tipo Postagem, use botão CadastrarAtive a flag Objeto de postagem que defini se o Gestão de Fretes irá gerar o objeto de rastreioUse botão, Salvar
+                            
+                        
+                    
+                
+            
+            Sistema de Rastreamento de Objetos SRO
+                
+                    Possibilita o acompanhamento dos objetos postados sob registros, ou seja, com pacotes que recebem um código exclusivo, normalmente gerado de modo automático pelo sistema dos Correios quando o item é postado em serviços como Sedex ou PAC.
+                    
+                        Acesse: Logística > Gestão de Fretes> Definições > Ocorrências > Ocorrências CorreiosPreencha os campos Descrição Motivo de Retorno Correios e Motivo de Retorno, neste caso é necessário realizar exatamente a mesma definição para ambos os campos.
+                    
+                    
+                        Observação
+                        
+                        O processo é executado automaticamente de 10 em 10 minutos, buscando as ocorrências dos correios para todos os pedidos que estão em situação 530 - Documento Embarcado, que tenha número de objeto de postagem preenchido, e que ainda não tenha recebido a confirmação de entrega.
+                    
+                
+            
+            Como configuro os processos de Correios?
+            1. Inicialmente, escolha o tipo de serviço de entrega do pedido
+                
+                    Neste momento é realizado o cadastro do tipo do serviço de entrega do pedido ( por exemplo Sedex, PAC, Postagem) 
+                    Acesse APPS > Logística > Gestão de Fretes> Definições > Operação > Tipo de Postagem
+                    
+                        Use botão, Cadastrar
+                        Informe os campos conforme à necessidade
+                    
+                    Caso tenha alguma dúvida sobre o preenchimento dos campos, segue descrição abaixo
+                        
+                            
+                                
+                                
+                                
+                                    
+                                        Campo
+                                        
+                                        Descrição
+                                        
+                                    
+                                    
+                                        Código do Tipo Postagem
+                                        Informação do código do serviço, é um campo numérico, (por exemplo 1, 2, 3)
+                                    
+                                    
+                                        Descrição do Tipo Postagem
+                                        Descrição do tipo de postagem, exemplo Sedex, PAC, Postagem
+                                    
+                                    
+                                        Serviço
+                                        Sigla do serviço correios.Essa informação você pode obter com o Correios (por exemplo, SG, SX)
+                                    
+                                    
+                                        País
+                                        Sigla do País de origem, neste caso vamos usar BR
+                                    
+                                    
+                                        Chancela
+                                        Nome da empresa que irá fazer o transporte, neste contexto vamos usar Correios
+                                    
+                                    
+                                        Empresa Chancela
+                                        Nome da empresa que irá fazer o transporte, neste contexto vamos usar Correios
+                                    
+                                    
+                                        Cartão
+                                        Número do cartão informado pelo Correios
+                                    
+                                    
+                                        Contrato
+                                        Número do contrato com o Correios
+                                    
+                                    
+                   

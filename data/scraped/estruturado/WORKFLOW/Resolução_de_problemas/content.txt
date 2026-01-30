@@ -1,0 +1,160 @@
+# 
+
+URL: https://documentacao.senior.com.br/workflow/6.10.1/#resolucao-de-problemas.htm%3FTocPath%3DWorkflow%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____8
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOWorkflow - versão 6.10.1
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Workflow - Manual do Usuário > Resolução de problemas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Resolução de problemas
+            Segue abaixo os problemas conhecidos no Workflow junto a sua solução do Cockpit e Modelador:
+            Cockpit
+            A seguir são listados os problemas conhecidos referentes ao cockpit:
+            Falha de comunicação
+                
+                    Problema: Em alguns momentos pode ser apresentada uma mensagem de falha de comunicação. Essa mensagem é exibida pois alguma ação executada no Cockpit pode ter falhado na comunicação com a rede interna.
+                    
+                    
+                    Solução: Executar a ação novamente. Caso o erro persista, deve-se sair do sistema, acessar novamente, e então executar a ação.
+                
+            
+            Mensagem "Carregando..." deslocada
+                
+                    Problema: A mensagem "Carregando...", eventualmente pode aparecer deslocada de sua posição padrão (centralizada) e aparecer na parte superior esquerda da tela. Este comportamento pode ocorrer em todas as telas do Cockpit, porém é mais facilmente percebido na tela Pendência dos liderados, onde ocorre um maior carregamento de dados.
+                    
+                    
+                    Solução: Não há solução para este problema.
+                
+            
+            Separador na lista de instâncias canceladas não é exibido
+                
+                    Problema: Na tela de Feedback de cancelamento de instância (exibida após cancelar instâncias), o separador entre as instâncias (linha horizontal entre elas) pode não ser exibido. Isto ocorre por limitações da componente ExtJS utilizado para montagem da tela.
+                    
+                    
+                    Solução: Não há solução para este problema.
+                
+            
+            Tela cortada no Cockpit
+                
+                    Problema: Ao acessar qualquer página do Cockpit pode ocorrer que a mesma não seja exibida por completo, criando assim uma área de visualização reduzida. Conforme pode ser observado na imagem abaixo.
+                    
+                    
+                    Solução: clique na opção de Restaurar o tamanho do navegador e na sequência Maximize novamente. Isso fará com a página seja carregada da forma correta.
+                
+            
+            Problema de PermGen space
+                
+                    Problema: Ao executar alguma tarefa no cockpit ocorre algum problema de "PermGen space", que pode ser identificado pela mensagem: "Caused by: java.lang.OutOfMemoryError: PermGen space"no log do Glassfish.
+                    Solução: Será necessário aumentar a quantidade de memória alocada na propriedade -XX:MaxPermSize para o domínio do Workflow no GlassFish. Esta alteração é feita conforme documentação de instalação em Ferramentas Administrativas > Instalação > Passo a passo para a instalação do Servidor de Aplicativos > Pré-requisitos > Por produto > Performance Corporativa > Workflow > Configurar o Glassfish para o Workflow. 
+                    
+                        Importante
+                        
+                        
+                            Este valor não deve ser aumentado excessivamente, devendo ser aumentado em 50% ou 100%.
+                            Se o problema ocorrer muitas vezes é necessário entrar em contato com a Senior para que o problema seja averiguado.
+                        
+                    
+                
+            
+            Não cria barra de rolagem na tela de Novo Processo
+                
+                    Problema: Quando tem-se muitos processos na tela Novo Processo do Workflow, a ponto de encher a área com os ícones dos processos, não é apresentada a barra de rolagem vertical, não sendo possível visualizar os processos que ficam fora da área.
+                    Solução: Como contorno do problema pode-se usar o zoom do navegador para conseguir visualizar os processos que estão ocultos.
+                
+            
+            Exibição de novos processos de modo estranho no Browser com zoom
+                
+                    Problema: Quando tem-se mais de uma linha de processos disponíveis na tela Novo Processo e zoom nos browsers Chrome ou Firefox, caso o último processo da linha seja selecionado, ele é posicionado na segunda linha e toda a segunda linha passa para a terceira linha.
+                    
+                    
+                    Solução: Remover o zoom no browser.
+                
+            
+            Modelador
+            A seguir são listados os problemas conhecidos referentes ao modelador:
+            Copiar e colar (duplicar) um projeto de processo de Workflow 
+
+                
+                    Problema: Quando copiado e colado (duplicado) um projeto de processo de Workflow  no Senior Developer, tudo ocorre corretamente aparentemente, porém ao tentar atualizar ou publicar as customizações uma série de erro passa a ocorrer.
+                    Solução: A correção deste erro está sendo planejada para as próximas versões, até que esta correção seja liberada não deve-se duplicar projetos de processo de Workflow  no Senior Developer.
+                
+            
+            Exportação do processo como imagem
+                
+                    Problema: Ao exportar o processo como uma imagem no formato GIF, ocorre um problema, não permitindo exportar o processo como imagem.
+                    Solução: Utilizar outro formato para exportação.
+                
+            
+            Scroll vertical guias de propriedades
+                
+                    Problema: O Scroll vertical nas guias de propriedades de tarefas e de subprocesso não funciona em determinadas situações.
+                    Solução: Clicar sobre algum campo da guia que não seja um campo do tipo lista.
+                
+            
+            Clique longo no nome da Lane
+                
+                    Problema: O clique longo (manter o botão do mouse pressionado por um maior período de tempo) sobre a área do nome da Lane habilita a edição direta do nome. Após isso, caso seja informado um nome para a Lane, o nome da Lane ficará desatualizado. 
+                    
+                        Nota
+                        
+                        A habilitação da edição do nome ocorre sobre toda a área da Lane, porém, esse problema de nome desatualizado ocorre somente sobre a área do nome.
+                    
+                    Solução: Acesse a aba propriedades e altere o nome da Lane. 
+                
+            
+            Parâmetros para Web services 
+                
+                    Problema: Não é possível passar parâmetros de entrada que tenha lista dentro de outra lista para os executores Web service do Middleware, Web service genérico e Web service do SeniorTools. Caso utilizado, será retornado um erro de negócio. Caso seja necessário utilizar esse recurso acima, sugere-se a utilização dos tipos objeto e lista.
+                    Solução: Não há solução para este problema.
+                
+            
+            Diminuir tamanho do subprocesso
+                
+                    Problema: Ao redimensionar um subprocesso, de forma que este fique menor que o atual tamanho, alguns elementos podem sumir do diagrama. Isso ocorre pois não existe limite para o redimensionamento do subprocesso em relação aos seus elementos internos. Este problema não gera nenhum impacto na execução do processo, é apenas visual. 
+                    
+                    
+                    Solução: É possível desfazer o redimencionamento utilizando o recursos Desfazer (CTRL + Z) ou redimensionar o subprocesso ao ponto de que o elemento volte a ficar visível.
+                
+            
+            Mover elementos internos a subprocesso
+                
+                    Problema: Ao mover os elementos internos de um subprocesso em direção as bordas do subprocesso pode ocorrer que partes desses elementos sumam, dependendo da proximidade que estes são movidos da borda do subprocesso. Isso ocorre devido a não existir limite e movimentação de elementos à borda de subprocessos, com exceção da margem esquerda que restringe essa movimentação em 20 pixels. Este problema não gera nenhum impacto na execução do processo, é apenas visual. 
+                    
+                    
+                    Solução: É possível desfazer a movimentação utilizando o recursos Desfazer (CTRL + Z) ou mover o elemento para o centro do subprocesso.
+                
+            
+            Sobreposição de Fluxo de sequência aos demais elementos
+                
+                    Problema: Pode ocorrer que os fluxos de sequência fiquem representados sobre os demais elementos do processo, sendo necessário apenas reposiciona-lo. Esta situação se agrava quando o processo possue algum subprocesso e este é expandido. Quando existir algum subprocesso expandido Este problema não gera nenhum impacto na execução do processo, é apenas visual. 
+                    
+                    
+                    Solução: Não existe forma de evitar esse comportamento, o que se pode fazer é ameniza-lo, movendo o elemento sobreposto de uma forma que os fluxos sejam apresentados corretamente.
+                
+            
+            Inconsistência na publicação do processo
+                
+                    Problema: Utilizando o Senior Developer na versão 6.2.24 ou superior, ao publicar um processo que foi modelado na versão 6.2.23 ou inferior, o processo não é publicado, apresentando uma mensage

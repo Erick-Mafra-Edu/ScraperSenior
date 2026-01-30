@@ -1,0 +1,239 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#menu_controladoria/recursos-customizacao.htm%3FTocPath%3DSegmentos%7CControladoria%7C_____3
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Controladoria > Recursos de customização para a Gestão de Controladoria
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Recursos de customização para a Gestão de Controladoria
+            Esta página detalha a aplicação de recursos de customização que podem ser utilizados na Gestão de Controladoria:
+            
+                Regras vinculadas ao cadastro de declarações
+                Forma de busca de dados
+                Particularidades em leiautes de importação
+                Regras parciais nas formas de contabilização
+            
+            Cadastro de Declarações
+            O Cadastro de Declarações (F049DEC) permite alterar a forma de busca padrão dos registros de
+determinados arquivos fiscais e contábeis gerados pelo Gestão Empresarial | ERP. É possível montar
+ou modificar a busca de informações usando as tabelas de usuários e do sistema,
+além de aplicar alterações nos dados apresentados em cada linha dos arquivos
+eletrônicos.
+            Como faço o cadastro das declarações?
+            Na tela F049DEC há o botão Importar que pode ser usado para importar o arquivo de declarações "DACT002.XML" do diretório de instalação do Gestão Empresarial | ERP (...\Sapiens\Modelos\Xml).
+            Variáveis globais
+            
+                
+                
+                
+                    
+                        Nome
+                        Descrição
+                    
+                    
+                        <Módulo>NCodEmp
+                         Traz o código da empresa na
+geração do cadastro de declarações. Por exemplo: IMPNCodEmp. Não retorna valor
+                    
+                    
+                        <Módulo>NCodFil
+                        Traz o código da filial na geração do
+cadastro de declarações. Por exemplo: IMPNCodFil. Não retorna valor
+                    
+                    
+                        <Módulo>DDatIni
+                        Traz a data inicial para geração das
+informação do cadastro de declarações. Por exemplo: IMPDDatIni. Não retorna valor
+                    
+                    
+                        <Módulo>DDatFim
+                        Traz a data final para geração das
+informação do cadastro de declarações. Por exemplo: IMPDDatFim. Não retorna valor
+                    
+                    
+                        <Módulo>AEveReg
+                        Informa as constantes SQL (quando a
+regra for executada para alterar o comando SQL padrão da rotina) e REGISTRO
+(quando a regra for executada para alterar os conteúdos dos campos do registro). Por exemplo: IMPAEveReg. Não retorna valor
+                    
+                
+            
+            
+                 Importante
+                
+                O cadastro de declarações é executado sempre duas vezes para um mesmo
+registro. Na primeira execução é possível alterar o SQL padrão do registro. Assim, a
+variável IMPAEveReg vai retornar o conteúdo “SQL”.
+                Na segunda execução é possível
+fazer alterações nos campos e registros, isto depois que o SQL padrão ou
+customizado  foi executado. Com isso, a variável IMPAEveReg vai retornar
+o conteúdo “REGISTRO”.
+            
+            
+                
+                    
+                
+            
+            Para alterar o comando SQL padrão da rotina do registro usando uma regra associada a ele por meio do campo Regra da tela Cadastro de Registro (F049REG), há as seguintes variáveis para
+controle:
+            
+                
+                
+                
+                    
+                        Nome
+                        Descrição
+                    
+                    
+                        <Módulo>AREG
+                        Indica o código do registro
+executado pela regra no momento. Não retorna valor
+                    
+                    
+                        <Módulo>APRMSQL
+                        Parâmetro adicional do registro. Serve para identificar o processo em
+que o SQL será utilizado. Dentro de um mesmo registro pode haver mais de um comando
+SQL para sua montagem. Não retorna valor
+                    
+                    
+                        <Módulo>ACMDSQL
+                        Variável que recebe o texto com o comando SQL para ser interpretado
+e executado pelo registro correspondente. Não retorna vaor
+                    
+                
+            
+            
+                 
+            
+            Alteração de um registro que tem SQL padrão
+            É possível alterar um registro que tem SQL padrão definido pela Senior por meio do cadastro de declarações. Por exemplo: no SPED Fiscal, o registro H010 permite que a conta contábil seja gerada
+com base nas definições do cadastro do produto ou família.
+            
+                
+            
+            Como configurar para que a conta contábil seja gerada com base no campo Conta Contábil 2 do cadastro do depósito?
+            
+                Primeiro, pegue o SQL padrão do registro H010. Para isso, gere o arquivo do SPED Fiscal com a opção Gerar log dos
+SQL executados da tela de geração do arquivo (F669EFD) selecionada
+                Ao processar o
+arquivo, serão gerados os SQLs dos registros na pasta Logs, no diretório de instalação
+do Gestão Empresarial | ERP (...\Sapiens\Logs)
+                Depois, altere o comando padrão conforme necessário.Comando original:Comando alterado:
+            
+            
+                 Importante
+                
+                Ao alterar um comando padrão, é importante que a
+nomenclatura dos campos de retorno do SQL padrão seja mantida. Por exemplo: é
+utilizado o apelido no comando "(AS CTARED)" para que o campo E205DEP.CtaRcr retorne a
+nomenclatura do comando padrão.
+            
+            
+                Crie a regra que vai receber o novo comando SQL
+                Vincule a regra criada ao cadastro de declarações (F049DEC), selecionando o registro e preenchendo o campo Código de Regra
+                Na tela geração do arquivo (F669EFD), informe o Código da Declaração
+que tem a regra vinculada
+                Assim,  a conta contábil do registro H010 será gerada conforme a regra
+            
+            
+                 
+            
+            Alteração de um registro que não tem SQL padrão
+            Quando o registro não tem SQL padrão, não é possível pegar um comando pré-definido por meio da opção Gerar log dos SQL executados. Assim, é preciso
+criar um comando SQL customizado para buscar as informações, respeitando a
+nomenclatura dos campos de retorno e filtros, conforme o leiaute da declaração.
+            Por exemplo: no registro G126 é necessário retornar, por meio do select, os campos DATINI,
+DATFIM, NUMPAR, VLRPAR, VLRTRI, VLRTOT, PERSAI e VLRAPR. Para isso, utilize o
+conceito de apelidos nos campos a seguir: USU_T700ANT.DatBas AS DATINI).
+            Na cláusula “where” do comando, é obrigatório utilizar os filtros CODEMP, CODFIL,
+CODBEM e DATMOV.
+Na criação do comando é possível usar as tabelas padrões do Gestão Empresarial | ERP ou tabelas de
+usuário, caso não haja informações nas rotinas nativas.
+            Geração do registro G126 por meio de regras de declaração
+            
+                Crie o SQL que vai buscar as informações para geração do
+registro
+                Crie a regra que vai fazer a busca do registro
+                Vincule a regra criada ao cadastro de declarações (F049DEC), selecionando o registro e preenchendo o campo Código de Regra
+                Na tela de geração do arquivo (F669EFD), informe o Código da Declaração
+que tem a regra vinculada
+                Assim, o registro G126 será gerado conforme a regra
+            
+            
+                 
+            
+            Alteração do conteúdo de registros/campos via declaração
+            Por meio do cadastro de declarações também é possível fazer pequenas alterações em
+campos e registros selecionados por meio dos comandos SQL executados, sejam eles
+padrões ou customizados. Para isso, utilize a
+nomenclatura correta de cada campo dos registros, conforme a tela F049DEC.
+            
+            
+            Após identificar os campos, faça a declaração das variáveis seguindo a estrutura abaixo:
+            
+                As três primeiras letras indicam o módulo do sistema
+                A quarta letra indica o tipo do campo ("A - Alfa", "D - Data" e "N - Número")
+                A partir da quinta letra, indica o nome da variável aplicada na regra (nome do campo na
+tela F049DEC, guia Campos)
+            
+            Como fazer a declaração da variável correspondente ao campo?
+            Por exemplo: no registro 0150 do SPED Fiscal há o campo NOME do tipo Alfanumérico.Definir Alfa IMPANome
+            
+                IMP – Módulo de impostos

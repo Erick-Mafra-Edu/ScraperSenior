@@ -1,0 +1,203 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#bancos-de-dados/oracle/config_sistemas_senior_oracle.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CBancos%2520de%2520Dados%7COracle%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Bancos de Dados > Oracle > Configuração do Oracle para sistemas Senior
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Configuração do Oracle para os sistemas Senior
+            Considerando alguns parâmetros do banco de dados Oracle e dos Sistemas 
+ Senior formatou-se uma lista de configurações para apresentar o melhor 
+ resultado de performance. Todas essas configurações se fazem necessária, 
+ qualquer configuração diferente da indicada não vai garantir os resultados 
+ esperados, sendo necessário uma análise individual ao ambiente em uso 
+ em busca desse melhor resultado. As configurações indicadas são:
+            Modo de otimização
+                Essa configuração exige que o banco de dados esteja com as estatísticas 
+ sempre atualizadas. 
+ Com função de orientar o otimizador do Oracle a utilizar 
+ melhor os índices para os Aplicativos Senior, pode ser acrescentado na 
+ chave de banco de dados "Comandos SQL de inicialização", 
+ os seguintes comandos:
+            ALTER SESSION SET OPTIMIZER_INDEX_COST_ADJ 
+ = 30;
+            
+            ALTER SESSION SET OPTIMIZER_INDEX_CACHING = 70;
+            
+            Número de linhas trazidas por vez
+                Na Central de Configurações Senior, na chave de banco de dados indique a opção Avançado e informe o valor 20.
+            Configuração de performance de telas
+                
+                Na tela de Configuração de performance da Tela configure na 
+ guia Dicas para comandos Select:
+            
+                Selecione Nenhum (Conforme o banco de dados);
+                Marque a opção "Colocar dica para usar melhor índice".
+            
+            Na guia Buscar descrições de ligações, selecione Com vários select's (um para cada campo).
+            Configuração de performance em relatório
+                
+                Na tela Configuração de performance, em  Gerador de Relatórios, 
+ Diversos > Configuração de Performance, informar:
+            
+                RowSet Size = 200;
+                Em "Enviar dicas para os comandos selects", selecione Primeiro 
+ Registro(First Rows);
+                Marcar a opção Colocar dica para usar melhor índice.
+            
+            Recursos de banco de dados
+                
+                Ter exclusivo para a base Senior:
+            
+                tablespace de dados;
+                tablespace de índice;
+                tablespace de classificação(sort);
+            
+            
+                Nota
+                
+                Recomenda-se criar todos os tablespaces da base Senior para gerenciamento 
+ local com EXTENT MANAGEMENT LOCAL, ou seja, o gerenciamento 
+ e alocação de área dos segmentos passa a ser do Oracle aplicando regras 
+ próprias conforme universo de cada tabela. Esta configuração é mais eficiente, 
+ oferece maior performance do que o gerenciado por dicionário e reduz a 
+ necessidade de manutenção do DBA. 
+            
+            Tabelas em Cache
+                Tendo recursos disponíveis é recomendado a inclusão de algumas tabelas 
+ "chaves" dos sistemas em cache. A lista das tabelas recomendadas 
+ pelos sistemas podem ser conseguidas junto a seus manuais.
+            A definição de quais tabelas colocar em cache deve vir de uma análise da base do cliente, onde identificará as tabelas que são mais utilizadas e trarão um ganho de desempenho.
+            É fundamental definir um processo para manutenção das tabelas/índices 
+ da base de dados Senior com atenção especial para a fragmentação dos blocos 
+ e número de extends.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

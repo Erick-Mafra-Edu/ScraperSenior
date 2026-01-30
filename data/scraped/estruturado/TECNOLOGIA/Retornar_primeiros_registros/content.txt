@@ -1,0 +1,220 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/retornar-primeiros-registros.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > Retornar primeiros registros
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Retornar primeiros registros
+            Comandos para retornar os primeiros registros da execução do select, conforme a quantidade determinada na cláusula FETCH FIRST N ROWS (ONLY, WITH TIES), executados no CBDS, LSP ou no fonte:
+            
+                FETCH FIRST N ROWS ONLY: retorna somente os primeiras registros conforme a quantidade especificada no parâmetro N.
+                FETCH FIRST N ROWS WITH TIES: retorna os primeiras registros conforme a quantidade especificada no parâmetro N, e os registros idênticos ao do último registo encontrado, conforme coluna definida no ORDER BY. Para WITH TIES deve ser informado a cláusula GROUP BY.
+            
+            Sintaxe
+            Exemplos de sintaxe dos comandos para adicionar nos selects a cláusula FETCH FIRST N ROWS ONLY.
+            Selecionar registros
+                
+                    Selecionar apenas o primeiro registro
+                    Comando SQLSENIOR2
+                        
+                            
+                                SELECT A.NUMEMP, A.TIPCOL, A.NUMCAD FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 FETCH FIRST 1 ROWS ONLY
+                            
+                        
+                    
+                    Comando gerado SQLSERVER
+                        
+                            
+                                SELECT TOP 1 a.numemp 'NUMEMP', a.tipcol 'TIPCOL', a.numcad 'NUMCAD' FROM a010fun a WHERE a.numemp = 1 AND a.tipcol = 1
+                            
+                        
+                    
+                    Comando gerado ORACLE11
+                        
+                            
+                                SELECT T1.NUMEMP, T1.TIPCOL, T1.NUMCAD FROM (SELECT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD", ROW_NUMBER() OVER (ORDER BY NULL) rowlimit_$$rownumber FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1) T1 WHERE T1.rowlimit$$_rownumber <= 1
+                            
+                        
+                    
+                    Comando gerado ORACLE12
+                        
+                            
+                                SELECT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD" FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 FETCH FIRST 1 ROWS ONLY
+                            
+                        
+                    
+                    Selecionar os cinco primeiros registros
+                    Comando SQLSENIOR2
+                        
+                            
+                                SELECT A.NUMEMP, A.TIPCOL, A.NUMCAD FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 FETCH FIRST 5 ROWS ONLY
+                            
+                        
+                    
+                    Comando gerado SQLSERVER
+                        
+                            
+                                SELECT TOP 5 a.numemp 'NUMEMP', a.tipcol 'TIPCOL', a.numcad 'NUMCAD' FROM a010fun a WHERE a.numemp = 1 AND a.tipcol = 1
+                            
+                        
+                    
+                    Comando gerado ORACLE11
+                        
+                            
+                                SELECT T1.NUMEMP, T1.TIPCOL, T1.NUMCAD FROM (SELECT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD", ROW_NUMBER() OVER (ORDER BY NULL) rowlimit_$$rownumber FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1) T1 WHERE T1.rowlimit$$_rownumber <= 5
+                            
+                        
+                    
+                    Comando gerado ORACLE12
+                        
+                            
+                                SELECT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD" FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 FETCH FIRST 5 ROWS ONLY
+                            
+                        
+                    
+                    Selecionar os 1.000 primeiros registros
+                    Comando SQLSENIOR2
+                        
+                            
+                                SELECT A.NUMEMP, A.TIPCOL, A.NUMCAD FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 FETCH FIRST 1000 ROWS ONLY
+                            
+                        
+                    
+                    Comando gerado SQLSERVER
+                        
+                            
+                                SELECT TOP 1000 a.numemp 'NUMEMP', a.tipcol 'TIPCOL', a.numcad 'NUMCAD' FROM a010fun a WHERE a.numemp = 1 AND a.tipcol = 1
+                            
+                        
+                    
+                    Comando gerado ORACLE11
+                        
+                            
+                                SELECT T1.NUMEMP, T1.TIPCOL, T1.NUMCAD FROM (SELECT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD", ROW_NUMBER() OVER (ORDER BY NULL) rowlimit_$$rownumber FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1) T1 WHERE T1.rowlimit$$_rownumber <= 1000
+                            
+                        
+                    
+                    Comando gerado ORACLE12
+                        
+                            
+                                SELECT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD" FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 FETCH FIRST 1000 ROWS ONLY
+                            
+                        
+                    
+                
+            
+            Selecionar registros distintos
+                
+                    Selecionar apenas o primeiro registro distinto
+                    Comando SQLSENIOR2
+                        
+                            
+                                SELECT DISTINCT A.NUMEMP, A.TIPCOL, A.NUMCAD FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 ORDER BY 1 ASC, 2 ASC, 3 ASC FETCH FIRST 1 ROWS ONLY
+                            
+                        
+                    
+                    Comando gerado SQLSERVER
+                        
+                            
+                                SELECT DISTINCT TOP 1 a.numemp 'NUMEMP', a.tipcol 'TIPCOL', a.numcad 'NUMCAD' FROM a010fun a WHERE a.numemp = 1 AND a.tipcol = 1 ORDER BY 1 ASC,2 ASC,3 ASC
+                            
+                        
+                    
+                    Comando gerado ORACLE11
+                        
+                            
+                                SELECT T1.NUMEMP, T1.TIPCOL, T1.NUMCAD FROM (SELECT DISTINCT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD", ROW_NUMBER() OVER (ORDER BY 1 ASC,2 ASC,3 ASC) rowlimit_$$rownumber FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1) T1 WHERE T1.rowlimit$$_rownumber <= 1
+                            
+                        
+                    
+                    Comando gerado ORACLE12
+                        
+                            
+                                SELECT DISTINCT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD" FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 ORDER BY 1 ASC,2 ASC,3 ASC FETCH FIRST 1 ROWS ONLY
+                            
+                        
+                    
+                    Selecionar os cinco primeiros registros distintos
+                    Comando SQLSENIOR2
+                        
+                            
+                                SELECT DISTINCT A.NUMEMP, A.TIPCOL, A.NUMCAD FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 ORDER BY 1 ASC, 2 ASC, 3 ASC FETCH FIRST 5 ROWS ONLY
+                            
+                        
+                    
+                    Comando gerado SQLSERVER
+                        
+                            
+                                SELECT DISTINCT TOP 5 a.numemp 'NUMEMP', a.tipcol 'TIPCOL', a.numcad 'NUMCAD' FROM a010fun a WHERE a.numemp = 1 AND a.tipcol = 1 ORDER BY 1 ASC,2 ASC,3 ASC
+                            
+                        
+                    
+                    Comando gerado ORACLE11:
+                        
+                            
+                                SELECT T1.NUMEMP, T1.TIPCOL, T1.NUMCAD FROM (SELECT DISTINCT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD", ROW_NUMBER() OVER (ORDER BY 1 ASC,2 ASC,3 ASC) rowlimit_$$rownumber FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1) T1 WHERE T1.rowlimit$$_rownumber <= 5
+                            
+                        
+                    
+                    Comando gerado ORACLE12
+                        
+                            
+                                SELECT DISTINCT A.NUMEMP "NUMEMP", A.TIPCOL "TIPCOL", A.NUMCAD "NUMCAD" FROM A010FUN A WHERE A.NUMEMP = 1 AND A.TIPCOL = 1 ORDER BY 1 ASC,2 ASC,3 ASC FETCH FIRST 5 ROWS ONLY
+                            
+                        
+                    
+                    Selecionar os 1.000 primeiros registros distintos
+                    Comando SQLSENIOR2
+                  

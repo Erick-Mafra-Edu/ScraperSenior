@@ -1,0 +1,173 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/formas-de-pagamento/pix-pos.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CPix%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Pix > Pix POS
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Finalizando Venda com Pix no POS
+            O Pix é o pagamento instantâneo brasileiro, criado pelo Banco Central (BC) em que os recursos são transferidos entre contas em poucos segundos, a qualquer hora ou dia, ou seja, uma nova forma de pagar, receber e transferir valores instantaneamente. Além de transferir dinheiro para outras pessoas, será possível também fazer pagamentos a estabelecimentos usando o Pix. É pratico, rápido e seguro. 
+            O POS (Point of Sale) - Ponto de venda é um terminal eletrônico para efetuar uma transação de venda. Pode também indicar máquinas de cartões, débito ou crédito, transações eletrônicas e agora fornecer o novo meio de pagamento Pix. Sistemas de POS são tradicionalmente usados em restaurantes, hotéis, entregas de comida a domicilio, lojas de varejo e outros. Em suma, se algo pode ser vendido, pode existir um sistema POS para realizar a transação.
+            Contudo, este sistema ou máquina física não se integra diretamente com o sistema do Caixa PDV, como ocorre com o sistema do TEF (Transferência Eletrônica de Fundos). Então, são feitos procedimentos separados, em cada sistema, para concretizar a venda e o recebimento eletrônico.
+            Utilização
+            É utilizado em qualquer estabelecimento varejista e deve ter a obrigatoriedade da emissão da nota ou cupom fiscal após a transação.
+            Pré-requisitos
+            Cadastrar administradora POS
+                
+                    No cadastro da administradora de cartão, é possível cadastrar as instituições financeiras utilizados para realizar o Pix. A venda será realizada com sucesso, desde que, a bandeira Pix seja operado pela mesma administradora da forma de pagamento.
+                    Caso não tenha uma administradora cadastrada, utilize a tela Operadoras Financeiras (F066OPE) do Gestão Empresarial | ERP para fazer o cadastro.
+                
+            
+            Cadastrar forma de pagamento para Pix
+                
+                    Cadastre uma forma de pagamento do tipo Pix na tela Formas de Pagamento (F066FPG) do Gestão Empresarial | ERP, caso não possua a forma de pagamento para Pix já cadastrada. 
+                
+            
+            Processo
+            É necessário entrar em contato com a instituição financeira, fornecedor do sistema POS para entender e contratar o novo serviço, assim como é realizado para os cartões.
+            De posse do serviço, a cada venda deverá realizar a transação na máquina de POS. Após a autorização e impressão do comprovante, deve ser finalizada no Caixa PDV para emissão do cupom ou nota fiscal.
+            Existem algumas instituições financeiras, que são fornecedoras do Pix no POS, que podem ser contratadas para o serviço.
+            
+                Nota
+                
+                A informação de número de NSU/DOC/CV da operação, impressa no comprovante da transação Pix no POS, será solicitada para o lançamento da venda no Caixa PDV.
+                Exemplo:
+                    
+                        
+                            
+                                
+                            
+                        
+                    
+                
+            
+            Se a venda a ser lançada no PDV possuir um pedido ou uma pré-venda, basta utilizar a importação conforme processo de importar  pedido ou pré-venda.
+            Caso não possua um pedido ou uma pré-venda, o produto poderá ser vendido diretamente no PDV utilizando o processo de Venda direta de produtos e serviços.
+            Lançar e finalizar venda no sistema
+                
+                    Para registrar a venda e emitir o cupom fiscal:
+                    
+                        Acesse o PDV;
+                        Clique em Venda (F1);
+                        Insira o código do produto;
+                        Finalize utilizando o botão Finalizar Venda (F5);
+                        Clique no botão POS (F5);
+                        Selecione a opção PIX (2);
+                        Aperte a tecla Enter para confirmar o valor do recebimento;
+                        Selecione uma administradora de POS da lista apresentada pelo sistema;
+                        Informe o NSU/DOC/CV da operação coletada na máquina POS;
+                        Clique na tecla Enter para finalizar a operação.
+                    
+                
+            
+            Baixa dos títulos e conciliação
+                
+                    Após a finalização e o registro da venda no Caixa PDV, o próximo passo ocorre no sistema Gestão Empresarial | ERP, quando os títulos financeiros já estão lançados e baixados ou aguardando conciliação.
+                    
+                        Para realizar a conciliação, acesse a tela Conciliação Bancária (F600CON) no Gestão Empresarial | ERP. Nela, é possivel verificar o extrato bancário com os movimentos na conta interna do sistema.
+                    
+                    Os valores serão transferidos e apresentados no extrato bancário, assim como ocorre o processo físico da transferência de valores das instituições financeiras para a conta bancária do varejista.
+                    Consulte o nosso Fórum de produtos para sugestões e melhorias para mais informações.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

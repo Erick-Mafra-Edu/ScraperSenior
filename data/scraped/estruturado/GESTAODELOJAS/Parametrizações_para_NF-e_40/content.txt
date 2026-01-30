@@ -1,0 +1,130 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/notas-fiscais/nfe-4-0/parametrizacoes.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CNotas%2520Fiscais%7CNF-e%25204.0%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Notas Fiscais > NF-e 4.0 > Parametrizações para NF-e 4.0
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Parametrizações para NF-e 4.0
+            Para se adequar às alterações no leiaute da NF-e, é preciso realizar determinadas parametrizações.
+            O que você precisa fazer?
+            NTs 2018.004 e 2018.005:
+                
+                    As versões 1.00 e 1.10, das Notas Técnicas 2018.004 e 2018.005, trouxeram as mais recentes atualizações no leiaute da NF-e (modelo 55) e NCF-e (modelo 65).
+                    Os prazos de implantação das alterações dessas NTs são:
+                    
+                        Ambiente de homologação: 25/02/2019.
+                        Ambiente de produção: 29/04/2019.
+                    
+                    Configuração
+                    Para que o sistema Gestão de Lojas contemple as alterações das Notas Técnicas 2018.004 e 2018.005 e funcione corretamente, torna-se necessário ativar o parâmetro dinâmico NFE.HABILITAR.NT2018. Esse parâmetro é temporário, e ele tem como objetivo ativar as NTs 2018.004 e 2018.005 (valor default: 0 - Não).
+                    
+                        Atenção
+                        
+                        
+                            A solução eDocs precisa, obrigatoriamente, estar na versão 5.8.11.6 (liberada no dia 29/03/2019) ou superior;
+                            A solução Gestão Empresarial | ERP precisa, obrigatoriamente, estar na versão 5.8.10.112 (liberada no dia 29/03/2019) ou superior.
+                        
+                    
+                    Alterações no sistema
+                    Agora, há disponível na tabela notafiscal, o campo chavereferenciacancelamento. Esse campo será preenchido quando for solicitada a entrada em contingência no PDV NFC-e:
+                    
+                        A nota original é enviada para o Retaguarda normalmente (nota que será cancelada);
+                        Logo após, é enviada a NFC-e substituta;
+                        O sistema irá identificar:NFC-e anterior (nota original) que deve ser uma nota normal;NFC-e deve ser em contingência;O valor total das notas deve ser igual;O valor total do ICMS das duas NFs deve ser igual;O cliente das duas NFs deve ser igual.
+                    
+                    Quando essas condições forem atendidas, a chave da NFC-e substituta será armazenada no campo (chavereferenciacancelamento) da nota original. Essa funcionalidade está disponível apenas para NFC-e, obedecendo as regras acima citadas.
+                    No momento que o sistema for efetuar o cancelamento de uma NFC-e, ele irá verificar se o novo campo está preenchido. Caso esteja, será enviado o cancelamento por substituição.
+                    Parâmetros dinâmicos
+                    Há disponível os seguintes parâmetros dinâmicos:
+                    
+                        NFCE.PRAZO.CANCELAMENTO: este parâmetro tem como objetivo permitir o cancelamento (cujo prazo é em horas) de uma NFC-e, após ela ter sido autorizada pela SEFAZ (valor default: "0.5" (representando 30 minutos));
+                        NOTA.PRAZO.CANCELAMENTO.SUBSTITUICAO: este parâmetro tem como objetivo permitir o cancelamento (cujo prazo é em horas) de uma nota fiscal eletrônica por substituição. Permite efetuar o cancelamento de uma NFC-e enviada para a SEFAZ, cujo retorno não foi obtido, onde a próxima nota será uma nota idêntica à nota anterior enviada em contingência (valor default: "168" (7 dias)).
+                    
+                    Campos
+                    Há disponível os seguintes campos:
+                    
+                        Chave ref. cancelamento na tela Outras Informações. Essa tela é acessada através do menu NFC-e, botão Detalhes Nota (F7), opção Outros;
+                        Inscrição Estadual no cadastro de endereço do Retaguarda. O cadastro de endereço é acessado pelo menu Cadastros > Cliente > Endereços.
+                    
+                    Agora, ao preencher os campos Endereço retirada e Endereço entrega, presentes na tela de Nota fiscal de saída, serão enviadas novas tags no XML da nota fiscal, que são as seguintes:
+                    Para o campo Endereço retirada:
+                    
+                        xNome: razão ou nome do expedidor. Nesse campo, deve-se utilizar o nome da Filial de retirada do produto;
+                        CEP: código do CEP. Nesse campo, deve-se utilizar o CEP da Filial de retirada do produto;
+                        cPais: código do país. Nesse campo, deve-se utilizar o código do país da Filial de retirada do produto;
+                        vxPais: nome do país. Nesse campo, deve-se utilizar o nome do país da Filial de retirada do produto;
+                        fone: telefone. Nesse campo, deve-se utilizar o telefone da Filial de retirada do produto;
+                        email: endereço de e-mail do expedidor. Nesse campo, deve-se utilizar o e-mail da Filial de retirada do produto;
+                        IE: Inscrição Estadual do estabelecimento expedidor. Nesse campo, deve-se utilizar a IE da Filial de Retirada.
+                    
+                    Para o campo Endereço entrega:
+                    
+                        xNome: razão ou nome do recebedor. Nesse campo, deve-se utilizar o nome do local de entrega selecionado;
+                        CEP: código do CEP. Nesse campo, deve-se utilizar o CEP do local de entrega selecionado;
+                        cPais: código do país. Nesse campo, deve-se utilizar código do país do local de entrega selecionado;
+                        vxPais: nome do país. Nesse campo, deve-se utilizar o nome do país do local de entrega selecionado;
+                        fone: telefone. Nesse campo, deve-se utilizar o telefone do local de entrega selecionado;
+                        email: endereço de e-mail do recebedor. Nesse campo, deve-se utilizar o e-mail do local de entrega selecionado;
+                        IE: Inscrição Estadual do estabelecimento recebedor. Nesse campo, deve-se utilizar a IE do local de entrega selecionado.
+                    
+                    
+                        Observação
+                        
+                        Todas essas tags são de preenchimento opcional.
+                        O campo Endereço retirada é cadastrado através do menu Cadastro > Filiais > Locais de retirada. Já o campo Endereço entrega é cadastrado no menu Cadastros > Cliente > Endereços > Tipo de endereço: entrega. O endereço desses dois campos deve ser vinculado no momento de criação da nota fiscal.
+                    
+                
+            
+            Integração NF-e
+                
+                    Para atender à versão 4.0 de leiaute da NF-e,  é preciso definir o campo Integração NF-e, presente na guia Documentos Eletrônicos, da tela Parâmetros da Filial para Vendas (F070FVE), do Gestão Empresarial | ERP, com a opção 7 - 4a Geração - Retorno Automático ou 8 - 4a Geração - Retorno Manual. Essa informação é integrada ao sistema de Retaguarda e ele, por sua vez, já interpreta como versão NF-e 4.0.
+                    
+                        Observação
+                        
+                        Os valores 5 - 3a Geração - Retorno Automático e 6 - 3a Geração - Retorno Manual, por sua vez, continuam sendo suportados. Esses valores correspondem à NF-e 3.10 no Retaguarda. Os valores anteriores a esses (1a geração e 2a geração) não são mais suportados pelo sistema de Retaguarda.
+                    
+                
+            
+            Indicativo Presencial
+                
+                    Está disponível a opção 5 - Operação presencial, fora do estabelecimento nos campos de Indicativo presencial nas notas fiscais de saída.
+                    Ao realizar a finalização de uma nota fiscal, se o campo Tipo de Presença do Consumidor, na nota fiscal, for 5 - Operação presencial, fora do estabelecimento e não for informada nenhuma referência fiscal na nota, a mensagem Para operações presenciais fora do estabelecimento, é obrigatório informar referências fiscais para outra nota ou cupom fiscal será apresentada e a nota não será finalizada.
+                    A opção 5 - Operação presencial, fora do estabelecimento é para operações que ocorrem presencialmente entre vendedor e comprador, porém, fora da loja. O sistema, por sua vez, não utiliza essa opção em nenhuma nota fiscal gerada automaticamente, porém, foi disponibilizada essa opção para notas fiscais digitadas manualmente, caso ocorra esse tipo de operação.
+                
+            
+            Indicador de Escala Relevante e CNPJ do Fabricante
+                
+                    Esta informação deve ser parametrizada de maneira distinta, de acordo com o tipo de produto comercializado.
+                    
+                        Produtos ProduzidosNo Retaguarda, o campo Produzido em Escala Relevante está disponível no cadastro de produtos (guia Fiscal, tela Produto, caminho: Cadastro > Produtos e Serviços > Produtos). Esse campo pode conter os valores Sim, Não ou pode estar vazio, que é seu valor padrão. O campo Produzido em Escala Relevante recebe o valor que é cadastrado no campo Produção em Escala Relevante, da tela Cadastro de Produtos (F075PRO), do Gestão Empresarial | ERP. Essa informação indica ao governo se determinado produto é vendido com isenção de ICMS ST, benefício concedido para alguns contribuintes.
+                    
+                
+            
+            Benefício Fiscal
+                
+ 

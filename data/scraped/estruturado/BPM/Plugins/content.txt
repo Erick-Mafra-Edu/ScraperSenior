@@ -1,0 +1,188 @@
+# 
+
+URL: https://documentacao.senior.com.br/bpm/7.0.0/#conector.htm%3FTocPath%3DBPM%2520%7CPlugins%7C_____0
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOBPM
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                BPM  > Plugins
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Plugins
+            Sumário
+            
+            
+                
+                    Conceito
+                    
+                    Utilizando Plugins em Fonte de Dados
+                        2.1 Como realizar a Configuração
+                        2.2 Configuração no Formulário
+                        2.3 Testando Fonte de Dados
+                    
+                    Usando Plugins em Serviço de Integração
+                        3.1 Criação da Configuração
+                        3.2 Configuração no Fluxo
+                        3.3 Testando Serviço de Integração
+                    
+                    Objetos Raiz
+                    
+                    Filtros por Campo
+                    
+                    Visualizar Log e Payload
+                    
+                    Múltiplos Plugins por Tarefa
+                    
+                    Plugins Dinâmicos e Assíncronos
+                    
+                    Pontos Importantes em Plugins XT
+                        9.1 Configuração de Firewall
+                        9.2 Configuração do Parâmetro de Criptografia
+                    
+                    Criando seu Plugin
+                        
+                    
+                
+            
+             1. Conceito 
+            Plugins são uma solução NoCode para usuários de BPM, permitindo a integração dos fluxos na Senior Flowsem necessidade de desenvolvimento.
+             Com os Plugins, as integrações são simplificadas: basta informar os parâmetros de entrada e saída para que o plugin funcione. Além disso, é possível configurar novos Plugins e monitorar os existentes, verificando versões, logs de chamadas, tempos de resposta e usuários.
+            
+                Observação
+                
+                Todos os Plugins são desenvolvidos e disponibilizados para todos os clientes usuários da Senior Flow.
+            
+            2.	Utilizando Plugins em Fonte de Dados 
+            
+            Atualmente, existem várias opções de Plugins que podem ser utilizados como Fonte de Dados, o que proporciona uma integração fluida. Para visualizar os plugins recomendados para essa finalidade, acesse: Senior Flow> Plugins, nos filtros por categoria, selecione a opção BPM – FONTE DE DADOS, CRM – FONTE DE DADOS, GLOBALTEC – FONTE DE DADOS, HCM – FONTE DE DADOS, IBGE- FONTE DE DADOS, SENIORX – FONTE DE DADOS ou SOCIAL – FONTE DE DADOS.
+            
+                
+            
+            2.1 Como realizar a Configuração
+            
+            Para este exemplo, utilize o plugin Chamada de API HTTP. Por se tratar de um plugin dinâmico, é necessário criar uma configuração prévia antes de sua utilização. Neste caso, a configuração será baseada em uma requisição a uma API que retorna uma lista de colaboradores, contendo os campos: id, nomeColaborador e emailColaborador.
+            Para criar a configuração com os campos citados, será necessário localizar o plugin Chamada de API HTTP e acessar a aba de configurações, em seguida, clique em Adicionar.
+            
+                
+            
+            Insira um nome para essa configuração e ative a opção É uma fonte de dados, caso necessário, adicione os parâmetros de entrada, estes geralmente são utilizados como filtros na consulta. Por fim, na aba Campos de Saída, insira os campos retornados pela API: id, nomeColaborador e emailColaborador.
+            Salve a configuração e, caso necessário, utilize a aba Testar plugin para validar a chamada.
+            
+                
+            
+             
+            2.2 Configuração no Formulário
+            
+            Para utilizar um plugin como fonte de dados, é necessário configurá-lo na tela de configuração do processo, através do menu Senior Flow> BPM > Configurações > Fonte de dados. Escolha a aba Plugins e localize o plugin previamente configurado, selecione a configuração desejada e clique em Salvar para concluir.
+            
+                
+            
+            Após a criação da fonte de dados, retorne ao formulário e adicione os campos mencionados anteriormente: id, nomeColaborador e emailColaborador.
+            
+                
+            
+            É possível adicionar uma fonte de dados em um campo do formulário, seguindo os seguintes passos:
+            
+                Crie ou edite um campo no formulário,neste exemplo, o campo será chamado de Identificação e será referenciado ao campo id configurado no plugin;
+                Acesse aba Fonte de Dados/Plugins e defina o tipo da fonte como Consulta;
+                Em seguida, localize e selecione a configuração da fonte de dados previamente criada;
+                Configure o campo da fonte de dados como id;
+                Como estamos utilizando um plugin dinâmico, ou seja, um plugin que permite a definição personalizada de seus campos, é possível configurar valores de entrada específicos para cada campo. Ao selecionar a configuração, a aba Campos da Configuração será exibida para edição.
+                No caso do plugin Chamada de API HTTP, é necessário informar dois valores de entrada obrigatórios: a URL do serviço e o método HTTP que será utilizado na requisição.
+            
+            
+                
+            
+            
+                Após concluir os passos anteriores, clique em Salvar para registrar a configuração do campo.
+            
+            Em seguida, é necessário configurar os campos resultantes, para isso, abra novamente a tela de configuração do campo, desta vez, selecionando um dos campos resultantes e na configuração, defina o tipo de fonte como Resultante. 
+            No campo do formulário com a fonte de dados de consulta, selecione o campo previamente criado como origem da consulta. Neste exemplo, será o campo Identificação.
+            Por fim, no campo resultante do plugin, selecione o campo que fará referência ao campo do formulário.
+            
+                
+            
+            Após concluir, salve a configuração do campo e, em seguida, salve o formulário para aplicar as alterações.
+            2.3 Testando Fonte de Dados
+            Para realizar o teste da fonte de dados, basta iniciar a solicitação do processo previamente configurado. A consulta à fonte de dados pode ser feita a partir do campo Identificação, de duas maneiras:
+            
+                Inserindo manualmente o valor no campo. Se houver correspondência, o resultado será carregado automaticamente;
+                Clicando no ícone de lupa ao lado do campo. Isso abrirá uma janela modal que executa a consulta na fonte de dados. A modal exibirá todos os resultados retornados pela API, permitindo a seleção do item desejado.
+            
+            
+                
+            
+            Outro ponto importante desta modal é que é possível aplicar filtros com base nos campos da fonte de dados, conforme exemplo:
+            
+                
+            
+            3. Usando Plugins em Serviço de Integração
+            
+            O uso de Plugins como Serviço de Integração proporcionam a inserção de dados na integração com outras APIs de maneira NoCode diretamente no BPM. Para explicar como configurar os Plugins para esse cenário, vamos utilizar o mesmo contexto usado na criação da fonte de dados: anteriormente, realizamos uma consulta de colaboradores; agora, vamos usar um resultado dessa consulta para realizar a inserção de dados.
+            3.1 Criação da Configuração
+            
+            Para criar uma configuração que funcione como um serviço de integração, os mesmos passos usados na criação de uma configuração para fonte de dados podem ser seguidos — com a diferença de que a opção É uma fonte de dados não deve ser habilitada.
+            Para seguirmos com o exemplo, vamos criar uma configuração responsável por cadastrar um colaborador via BPM e, com o uso do plugin, persistir os dados em uma API externa.
+            
+                
+            
+            Nesse caso, foi configurado um parâmetro de saída, que seria o id gerado para o colaborador:
+            
+                
+            
+            3.2 Configuração no Fluxo
+            
+            Para configurar o fluxo com o serviço de integração usando o plugin, vamos criar um processo usando formulário ECM que possua os campos que configuramos no plugin:
+            
+                
+            
+            No fluxo do processo, configure o serviço de integração clicando em Adicionar Serviço e, em seguida, em Configurar.
+            
+                
+            
+            Selecione a opção Plugin e escolha o plugin utilizado na configuração criada.
+            
+                
+            
+            
+                
+            
+            Após selecionar o plugin, escolha a configuração correspondente e preencha os campos disponíveis. Veja o exemplo abaixo:
+            
+                
+            
+            Concluída a configuração, salve e publique o processo.
+            3.3 Testando Serviço de Integração
+            
+            Para realizar o teste com o Serviço de Integração criado, inicie uma solicitação com o processo configurado e preencha os campos:
+            
+                
+            
+            Em seguida, basta enviar a solicitação. O plugin irá enviar os dados para a API e o retorno da API estará disponível como resposta.
+            
+                
+            
+            4.Objetos Raiz
+            
+            O parâmetro Objeto Raiz refere-se ao objeto que contém os dados a serem retornados na resposta da requisição. Quando especificado, ele permite que 

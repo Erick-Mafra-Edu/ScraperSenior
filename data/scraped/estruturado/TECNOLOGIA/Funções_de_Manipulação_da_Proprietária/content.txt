@@ -1,0 +1,216 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/manipulacao-da-proprietaria.html%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7CFun%25C3%25A7%25C3%25B5es%2520de%2520Manipula%25C3%25A7%25C3%25A3o%2520da%2520Propriet%25C3%25A1ria%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Funções de Manipulação da Proprietária
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Funções de Manipulação da Proprietária
+            Funções que servem para consultar dados da proprietária, estas funções só estarão disponíveis para os sistemas que as habilitarem.
+            Os sistemas são identificados nestas funções através dos códigos:
+            >
+                CódigoSistema1Gestão de Pessoas | HCM2Gestão Empresarial | ERP3Ronda Senior5Regente6BI7Workflow8Mobilidade
+             
+            
+                
+                    
+                        Nome
+                        Descrição 
+                    
+                    
+                        Prop_ContemModulo
+                        
+                        Retorna se a proprietária ativa contém o código do módulo informado para um sistema específico.
+                    
+                    
+                        Prop_ContemSistema
+                        
+                        Retorna se a proprietária ativa contém o código de sistema informado.
+                    
+                    
+                        Prop_ModuloAtivo
+                        
+                        Retorna se um determinado módulo está ativo ou não pelo seu índice.
+                    
+                    
+                        Prop_ModuloWeb
+                        
+                        Verifica se é um módulo é WEB.
+                    
+                    
+                        Prop_ObterCodigoCliente
+                        
+                        Retorna o código do cliente da proprietária.
+                    
+                    
+                        Prop_ObterDataValidade
+                        
+                        Retorna se um determinado módulo está ativo ou não pelo seu índice
+                    
+                    
+                        Prop_ObterDataValidadeModulo
+                        
+                        Data de validade do módulo.
+                    
+                    
+                        Prop_ObterNomeCliente
+                        
+                        Retorna o nome do cliente da proprietária.
+                    
+                    
+                        Prop_ObterNomeModulo
+                        
+                        Retorna o nome de um módulo pelo seu índice.
+                    
+                    
+                        Prop_ObterQtdInstanciasModWeb
+                        
+                        Quantidade de instâncias WEB para um determinado módulo.
+                    
+                    
+                        Prop_ObterQtdLicencasModulo
+                        
+                        Quantidade de licenças de cada módulo (colaboradores para o Gestão de Pessoas, conexões para o Gestão Empresarial | ERP e controladores para o Acesso).
+                    
+                    
+                        Prop_ObterQtdModulos
+                        
+                        Retorna a quantidade de módulos adquiridos pelo cliente.
+                    
+                    
+                        Prop_ObterQtdUsuariosSistema
+                        
+                        Quantidade de usuários do sistema.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

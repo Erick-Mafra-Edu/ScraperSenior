@@ -1,0 +1,303 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#bancos-de-dados/oracle/permissoes-necessarias-para-sistemas-senior.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CBancos%2520de%2520Dados%7COracle%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Bancos de Dados > Oracle > Permissões do Oracle necessárias para os sistemas Senior
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Permissões do Oracle necessárias para os sistemas 
+		 Senior
+            Quando um usuário é criado no Oracle através da opção Criar 
+ Usuário do Banco do CBDS, são atribuídos para esse usuário os 
+ seguintes privilégios:
+            
+                GRANT UNLIMITED TABLESPACE
+                GRANT EXECUTE ANY PROCEDURE
+                GRANT SELECT ANY TABLE
+                GRANT ALTER SYSTEM
+                GRANT MANAGE TABLESPACE
+                GRANT SELECT ANY DICTIONARY
+                GRANT CREATE TABLE
+                GRANT CREATE VIEW
+            
+            Porém, não existe a necessidade de ter todos esses privilégios 
+ sendo que o administrador do banco de dados poderá alterar essa configuração.
+            Por motivos de segurança podem existir cenários em que é necessário criar 
+ dois usuários no banco de dados, um usuário 
+ proprietário da base que é utilizado para manutenção e personalização 
+ da base de dados (instalação, atualização, consistência, entre outros) e um usuário para operação do sistema 
+ que é utilizado apenas para operar o sistema. O usuário proprietário 
+ da base é o usuário criador dos objetos da base porém não pode ser o DBA do banco.
+            
+                
+                    Privilégios
+                    Usuário Proprietário
+                    Usuário Operacional
+                
+                
+                    CREATE TRIGGER
+                    Necessita
+                    Não necessita
+                
+                
+                    CREATE SEQUENCE
+                    Necessita
+                    Necessita
+                
+                
+                    CREATE PROCEDURE
+                    Necessita
+                    Não necessita
+                
+                
+                    CREATE TABLE
+                    Necessita
+                    Necessita**
+                
+                
+                    CREATE SESSION
+                    Necessita
+                    Necessita
+                
+                
+                    CREATE VIEW
+                    Necessita
+                    Necessita*
+                
+                
+                    UNLIMITED TABLESPACE
+                    Necessita
+                    Necessita
+                
+                
+                    EXECUTE ANY PROCEDURE
+                    Necessita
+                    Não necessita
+                
+                
+                    SELECT ANY TABLE
+                    Necessita
+                    Não necessita
+                
+                
+                    ALTER SYSTEM
+                    Necessita
+                    Não necessita
+                
+                
+                    MANAGE TABLESPACE
+                    Necessita
+                    Não necessita
+                
+                
+                    SELECT ANY DICTIONARY
+                    Necessita
+                    Não necessita
+                
+                
+                    SELECT, INSERT, UPDATE, DELETE para todas as 
+		 tabelas existentes no TBS
+                    Necessita
+                    Necessita
+                
+                
+                    REFERENCES,  ALTER, INDEX para todas 
+		 as tabelas existentes no TBS
+                    Necessita
+                    Não necessita
+                
+                
+                    EXECUTE, apenas para Stored as Procedures
+                    Necessita
+                    Necessita
+                
+            
+            Tabela de permissões
+            * CREATE VIEW é necessário em situações que se utiliza a função CriaView 
+ na LSP (Linguagem Senior de Programação). 
+            ** CREATE TABLE é necessário devido às rotinas dos sistemas que passaram a fazer uso de criação de tabelas temporárias.
+
+            
+                Importante
+                
+                Para que este cenário funcione é necessário que seja criado 
+ um SYNONYM PUBLIC para cada objeto existente no TBS. Os objetos 
+ são: 
+
+                
+                    Tabelas;
+                    Stored Procedures 
+	 (pplicar permissões de execute);
+                    Views;
+                
+            
+            
+É necessário que sejam mantidas as permissões de SELECT, para 
+ o usuário proprietário da base, 
+ para os objetos relacionados a seguir: 
+
+            Tabelas/views usadas em conversão, atualização, consistência, instalação.
+            
+                USER_OBJECTS
+                USER_SYS_PRIVS
+                USER_FREE_SPACE
+                DBA_DATA_FILES
+                DBA_TAB_PRIVS
+                sys.FILEXT$
+                sys.dba_data_files
+            
+            Tabelas/views usadas em Engenharia reversa.
+            
+                user_tables
+                user_indexes
+                user_tab_columns
+                user_constraints
+                user_cons_columns
+                user_ind_columns
+                user_ind_expressions
+                USER_OBJECTS
+                USER_TRIGGERS
+            
+            É necessário apenas permissão de SELECT de 
+ acesso para os objetos abaixo, tanto para usuário 
+ de operação de sistema quanto para usuário 
+ proprietário da base:
+            Padrão (são usadas para qualquer conexão)
+            
+                v$instance
+                v$nls_parameters
+                V$PARAMETER
+                v$version
+                product_component_version
+                USER_ARGUMENTS 
+            
+            Controle de Conexões
+            
+                V$SESSION
+                V$PROCESS 
+            
+            
+                Observação
+                
+                Para os sistemas Gestão Empresarial | ERP e Gestão de Pessoas | HCM, as variáveis de controle de conexões são:
+                
+                    V$SESSION;
+                    V$PROCESS;
+                    V_$SESSION;
+                    V_$PROCESS.
+                
+            
+            Stored procedures do Oracle usadas por algumas stored procedures da 
+ Senior.
+            Deve aplicar apenas permissões 
+ de EXECUTE, tanto para usuário 
+ de operação de sistema quanto para usuário 
+ proprietário da base:
+            
+                dbms_lock_request
+                dbms_lock_release
+            
+            
+                dbms_sql_open_cursor
+                dbms_sql_parse
+                dbms_sql_v7
+                dbms_sql_execute
+                dbms_sql_close_cursor
+                dbms_sql_define_column
+                dbms_sql_desc_tab
+                dbms_sql_native
+                dbms_sql_describe_column
+                dbms_sql_fetch_rows
+                dbms_sql_column_value
+                dbms_sql_execute_and_fetch
+                dbms_sql_dedine_column_rowid
+            
+            Além disso é necessário ter o privilégio "QUERY REWRITE" quando 
+ utilizar o recurso Linguagem 
+ para ordenação.
+            Controle de conexões
+            Para o correto funcionamento do sistema no que tange o controle de conexões, é obrigatório que a permissão GRANT SELECT ANY TABLE tenha sido dada para o usuário do banco de dados configurado na Central de Configuração Senior (SeniorConfigCenter).
+            Para conceder a permissão, deve-se executar o seguinte comando: 
+            GRANT SELECT ANY TABLE TO [usuario do banco]
+            
+            
+                Importante
+                
+                A configuração inadequada da permissão GRANT SELECT ANY TABLE poderá acarretar inconsistências nos registros das tabelas Controle de Conexões (R911SEC) e Controle de Usuário (R911MOD). Para maiores informações sobre essas inconsistências, acesse o artigo TECNOLOGIA - Controle de Sessões - Inconsistências no registro de dados nas tabelas R911SEC/R911MOD (Sem gravar dados, Update em sessão existente, Campo R911SEC.DatTim não é alimentado) da base de Conhecimento do Suporte.
+
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                 

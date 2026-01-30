@@ -1,0 +1,253 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#geral/gestao-processo-assincronos.htm%3FTocPath%3DParametriza%25C3%25A7%25C3%25B5es%7C_____2
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Parametrizações > Gestão de Processos Assíncronos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Gestão de Processos Assíncronos
+            As parametrizações descritas neste manual terão impacto nas operações mencionadas na documentação da tela Consulta de Requisições (F660REQ). Estas configurações permitem que o ERP gerencie a execução de processos assíncronos, controlando o número de requisições enviadas ao middleware.
+            
+                Seniorconfigcenter: em Middleware -> Web 5.0 -> Processos automáticos, habilite a opção "Habilitar agendador de processos automáticos".
+                F000PGS: através do parâmetro global QtdLimReq, defina o limite máximo de requisições em processamento no middleware.
+                F000AGE: cadastre um processo automático do tipo Rotina com o código "Rotina Sapiens" = 173 e, no botão Agendar, especifique a frequência de atualização da fila de execução.
+                Exemplo:Execução da integração contábil mensal (30 dias), com requisições diárias.
+Parâmetro QtdLimReg = 10
+Periodicidade do processo automático = Hora
+
+Neste cenário, serão criadas 30 requisições para serem enviadas ao middleware. Apenas serão executadas, no máximo, 10 requisições simultaneamente, conforme definido no parâmetro global. As demais permanecerão em fila de espera para execução.
+
+De acordo com a periodicidade do processo automático, a cada hora o ERP verificará quantos processos estão em execução no momento. Caso este número seja menor que a quantidade definida no parâmetro global, o sistema iniciará a execução de outros processos que estavam na fila de espera, até alcançar o limite estabelecido. Ou seja, se estiverem sendo executados apenas 8 processos, serão iniciados mais 2.
+
+Atualmente, a gestão da fila de execução não considera a quantidade de instâncias disponíveis, mas apenas o valor definido no parâmetro global.
+No log do processo agendado, serão exibidas as seguintes informações:Quantidade de instâncias configuradas no parâmetro global QtdLimReqQuantidade de requisições em processamentoQuantidade de requisições enviadasA gestão dessa fila de execução permanece ativa enquanto houver requisições pendentes.
+                 F660REQ: Esta tela permite consultar o plano de execução e o status de cada processo. Além disso, possibilita o cancelamento ou a priorização de requisições que estejam na fila para execução.
+            
+            Fluxograma do processo
+            
+                
+                    
+                
+            
+            Gerenciamento assíncrono de web services customizados
+            A fim de contemplar os novos recursos do gerenciador de requisições assíncronas, foram desenvolvidas funções para programadores, de modo a permitir a execução de web services customizados a partir dele
+            Funções
+            AgendarExecucaoWebservice 
+                Permitir que o usuário insira um novo web services na fila de gerenciamento de requisições
+            Sintaxe
+                AgendarExecucaoWebservice(Numero pCodEmp, Alfa pAbrFil, Alfa pWebService, Alfa pPorta, Alfa pJSON);
+            Parâmetros:
+                
+            
+            
+                
+                    
+                        Nome	
+                        Tipo	
+                        	Descrição
+                    
+                    
+                        
+                            pCodEmp
+                        
+                        
+                            Número
+                        
+                        
+                            Código da empresa que será gravado na E000PLE
+                        
+                    
+                    
+                        
+                            pAbrFil
+                        
+                        
+                            Alfa
+                        
+                        
+                            Abrangência de filiais que será gravado na E000PLE
+                        
+                    
+                    
+                        
+                            pWebService
+                        
+                        
+                            Alfa
+                        
+                        
+                            Caminho do webservice que será executado. Ex: com.senior.g5.co.mct.ctb.integracao
+                        
+                    
+                    
+                        
+                            pPorta
+                        
+                        
+                            Alfa
+                        
+                        
+                            Porta do webservice que será executado. Ex: Integrar_8
+                        
+                    
+                    
+                        
+                            pJson
+                        
+                        
+                            Alfa
+                        
+                        
+                            JSON contendo o nome dos parâmetros e seus respectivos valores
+                        
+                    
+                
+            
+            
+                Observação
+                    É de extrema importância que os parâmetros enviados no JSON representem uma requisição única. Caso seja enviada uma requisição com parâmetros e valores IGUAIS, e exista uma requisição com os mesmos parâmetros na fila para envio, o sistema cancelará a requisição anterior e executará apenas a última que foi enviada.
+            
+            AgendarExecucaoWebserviceEx
+            
+            Sintaxe:AgendarExecucaoWebserviceEx(Numero pCodEmp, Alfa pAbrFil, Alfa pWebService, Alfa pPorta, Alfa pJSON, Numero End pIdePle)
+            Parâmetros:
+            
+            
+                
+                    
+                        Nome
+                        Tipo
+                        Descrição
+                    
+                    
+                        pCodEmp
+                        Numero
+                        Código da empresa que será gravado na E000PLE
+                    
+                    
+                        pAbrFil
+                        Alfanumérico
+                        Abrangência de filiais que será gravado na E000PLE
+                    
+                    
+                        pWebService
+                        Alfanumérico
+                        Caminho do web services que será executado.Ex: com.senior.g5.co.mct.ctb.integracao
+                    
+                    
+                        pPorta
+                        Alfanumérico
+                        Porta do web services que será executado.Ex: Integrar_8
+                    
+                    
+                        pJson
+                        Alfanumérico
+                        JSON contendo o nome dos parâmetros e seus respectivos valores
+                    
+                    
+                        pIdePle
+                        Alfanumérico
+                        Código identificador da requisição gerada (E000PLE.IDEUNI)
+                    
+                
+            
+            
+                Observação
+                    É de extrema importância que os parâmetros enviados no JSON representem uma requisição única. Caso seja enviada uma requisição com parâmetros e valores IGUAIS, e exista uma requisição com os mesmos parâmetros na fila para envio, o sistema cancelará a requisição anterior e executará apenas a última que foi enviada.
+            
+            
+                AlterarStatusPlanoExecucao
+                
+                Sintaxe: alterarStatusPlanoExecucao(Numero pIdePle, Numero pStsReq);
+                Parâmetros:
+                
+                
+                    
+                        
+                            Nome
+                            Tipo
+                            Descrição
+                        
+                        
+                            
+                                pIdePle
+                            
+                            
+                                Numero
+                            
+                            
+                                Identificador do plano de execução.
+                            
+                        
+                        
+                            
+                                pStsReq
+                            
+                            
+                                Numero
+                            
+                            
+                                Status da requisição:
+                                
+                                    Aguardando
+                                    Em Andamento
+                                     Finalizado
+                                     Cancelado
+          

@@ -1,0 +1,217 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/tela-de-pesquisa/filtro-simples.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CTela%2520de%2520Pesquisa%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Tela de Pesquisa > Filtro Simples
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Filtro Simples
+            Nas telas de pesquisa de registro, existe uma guia chamada Filtro 
+ Simples, que possibilita aplicar filtros nos registros exibidos 
+ na tela de pesquisa, através das condições pré-definidas no sistema.
+            Campo para Filtro
+                Seleciona o campo em que será aplicada a condição do filtro.
+            
+                Importante
+                
+                Todas as telas de pesquisa têm uma tabela base. Sendo assim, ao adicionar à grade um campo/coluna através do botão Configurar, deve-se considerar que, em relação aos filtros (ex.: Filtro Simples), apenas os campos/colunas que efetivamente fazem parte da tabela base estarão disponíveis para seleção no Campo para Filtro.
+                Exemplo
+                    
+                        Considerando que a tela para cadastro de ficha básica, acessada através do menu Colaboradores > Ficha Cadastral > Empregados, tem como base a tabela R034FUN, caso o usuário adicione à grade o campo/coluna Título Reduzido (Cargo), através do botão Configurar, esse campo/coluna não estará disponível como opção no Campo para Filtro, pois esse campo pertence à tabela R024CAR (em Tabelas > Cargos > Cargos), e não à tabela R034FUN.
+                    
+                
+            
+            Condição
+                Seleciona a 
+	 forma em que o filtro será aplicado no campo. O grupo da condição 
+	 apresentada depende do tipo de dados do campo no TBS.
+            Valor
+                Contém o valor 
+	 que será aplicado no filtro.
+            Filtrar em
+                Essa opção 
+	 não é apresentada em todas as telas, o sistema define quais telas 
+	 terão essa opção. Ela permite que o usuário selecione se o filtro 
+	 será aplicado na Estação (todos os dados virão para a máquina 
+	 do usuário e depois serão filtrados) ou no Servidor (os dados 
+	 são filtrados no servidor e ao usuário só chegam os dados que passaram 
+	 pelo filtro), não importando a opção, o resultado sempre será o mesmo. 
+	 A diferença se encontra no tempo gasto para aplicar o filtro, pois 
+	 na maioria das vezes aplicar um filtro no servidor é bem mais rápido. 
+	 Por outro lado se muitos usuários realizarem essa operação, pode vir 
+	 a sobrecarregar o servidor.
+            Ignorar diferenças maiúsc./minúsc.
+                	 Apenas para campos alfanuméricos, ignora as diferenças entre caracteres 
+	 maiúsculos e minúsculos.
+            Adicionar
+                O filtro informado é aplicado. Caso já exista um, a nova condição informada será adicionada ao filtro já aplicado, que poderá ser visualizado em Filtro Corrente.
+            Limpar
+                Limpa totalmente o filtro informado.
+            
+                Nota
+                
+                Utilize Alt + I para que as condições do filtro sejam aplicadas. Assim, quando for adicionado, essa nova condição será relacionada com o filtro anterior. Visualize as condições em Filtro Corrente. Para que as condições dos filtros sejam removidas, utilize Alt + P.
+            
+            Condições
+            Grupo de Condições para campos Alfanuméricos ou Texto
+            A condição se 
+ aplica somente ao tipo de dado em relação ao que consta no TBS:
+            
+                Igual: O conteúdo do 
+	 campo valor tem que ser igual ao registro. Se for aplicado filtro 
+	 com o valor Teste, apenas serão exibidos os registros iguais a Teste, por exemplo, Teste;
+                Diferente: O conteúdo 
+	 do campo valor tem que ser diferente ao registro. Se for aplicado 
+	 filtro com o valor Teste, apenas serão exibidos os registros diferentes 
+	 de Teste, por exemplo João, Paulo, Maria;
+                Contendo: O conteúdo do campo valor deve existir 
+	 dentro do registro, sendo uma palavra inteira ou parte dela. Caso 
+	 o conteúdo seja duas ou mais palavras, elas deverão estar na mesma 
+	 ordem que foram informadas. 	Caso seja aplicado filtro com o valor Teste, apenas serão exibidos 
+	 os registros que contenhamTeste em qualquer lugar do texto. Por exemplo, Teste de pesquisa, Tela de Teste, Outro Teste de Pesquisa. 	Se for aplicado filtro com os valores João Silva, apenas serão exibidos 
+	 os registros que contenham as palavras João e Silva nessa mesma 
+	 ordem, por exemplo, João da Silva, João Silva, Paulo João Correa Silva. 
+	 Caso a ordem das palavras informadas seja diferente no registro a 
+	 busca não irá retornar corretamente, por exemplo, Silva João;
+                Iniciando: O conteúdo 
+	 do campo valor deve ser o início do registro. Se for aplicado filtro 
+	 com o valor Teste, apenas serão exibidos os registros que começam 
+	 com Teste, por exemplo, Teste do filtro, Teste;
+                Terminando: O conteúdo 
+	 do campo valor deve ser o final do registro. Se for aplicado o filtro 
+	 com o valor Teste, apenas serão exibidos os registros que terminam 
+	 com Teste, por exemplo, Teste, Outro Teste;
+                Não Contendo: Situação 
+	 contrária à condição Contendo, ou seja, o conteúdo do 
+	 campo valor não pode existir dentro do registro, seguindo as mesmas 
+	 regras descritas na condição Contendo.
+            
+            Grupo de Condições para campos Numéricos, Data ou Hora
+            
+                Igual: O conteúdo do campo valor deve ser igual 
+	 ao registro. Se for aplicado filtro com o valor 123, apenas serão 
+	 exibidos os registros iguais a 123, por exemplo, 123;
+                Diferente: O conteúdo 
+	 do campo valor deve ser diferente ao registro. Se for aplicado filtro 
+	 com o valor 123, apenas serão exibidos os registros diferentes de 
+	 123, por exemplo, 123456, 789, 444;
+                Maior: O conteúdo do campo valor deve ser maior 
+	 do que o registro. Se for aplicado filtro com o valor 123, apenas 
+	 serão exibidos os registros maiores que 123, por exemplo, 124, 123456, 444;
+                Menor: O conteúdo do campo valor deve ser menor 
+	 do que o registro. Se for aplicado filtro com o valor 123, apenas 
+	 serão exibidos os registros menores que 123, por exemplo, 122, 90, 49;
+                Maior ou igual: O conteúdo do campo valor deve 
+	 ser maior ou igual ao registro. Se for aplicado filtro com o valor 
+	 123, apenas serão exibidos os registros maiores ou iguais a 123, por exemplo, 123, 1234, 124, 444;
+                Menor ou igual: O conteúdo do campo valor deve 
+	 ser menor ou igual ao registro. Se for aplicado filtro com o valor 
+	 123, apenas serão exibidos os registro menores ou iguais a 123, 
+por exemplo, 123, 122, 55.
+            
+            Exemplo:
+                
+                    Para obter a lista de  colaboradores que foram admitidos depois de 
+ 01/01/2003, abra a tela de pesquisa da tela Cadastro de colaborares a partir do campo Colaborador.
+                    Nota
+                        Caso deseje-se apenas saber os registros que passaram pelo filtro para depois exportar, a tela de pesquisa pode ser aberta a partir de qualquer campo que possua ligação com a tabela de Colaboradores.
+                    
+                    Acesse a guia Filtro 
+ Simples, selecione o campo desejado, neste caso Data de Admissão, a 
+ condição Maior ou igual, para saber todos os colaboradores 
+ contratados depois de 01/01/2003 (com essa condição se o colaborador foi 
+ contratado dia 01/01/2003 também será exibido), informar no campo Valor 
+ a data 01/01/2003 e depois marcar a opção Aplicar Filtro. 
+ Assim, serão exibidos todos os colaboradores admitidos depois de 01/01/2003.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de S

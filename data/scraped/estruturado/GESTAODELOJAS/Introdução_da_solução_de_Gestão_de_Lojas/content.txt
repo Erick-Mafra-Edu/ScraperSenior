@@ -1,0 +1,176 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#introducao/introducao-da-solucao.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CIntrodu%25C3%25A7%25C3%25A3o%2520da%2520solu%25C3%25A7%25C3%25A3o%2520de%2520Gest%25C3%25A3o%2520de%2520Lojas%7C_____0
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Introdução e Gestões da solução Gestão de Lojas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Introdução e Gestões da solução Gestão de Lojas
+                A solução de varejo da Senior foi desenvolvida e  voltada inicialmente para o segmento de eletromóveis. Para atender a esse segmento, a solução  é composta pelas gestões de Frente de Caixa (PDV) e Retaguarda de Loja, que integram-se nativamente com os sistemas Documentos eletrônicos e Gestão empresarial | ERP da Senior.
+                O sistema de Gestão de Lojas da Senior é composto por duas estruturas distintas para atender as necessidades de redes de lojas cuja operação seja centralizada na matriz.
+                Estrutura Lojas
+                A estrutura da loja é focada para o atendimento ao cliente, permitindo a operacionalização das vendas, negociações, análise de crédito, recebimento e pagamento de títulos, além da gestão  das informações da loja, como estoque, financeiro, tesouraria, controles de acesso, permissões de acordo com o perfil dos usuários, controle de metas de vendas, entre outras funcionalidades.
+                Estrutura Matriz 
+                A estrutura da Matriz é focada em suportar as operações de todas as lojas da rede, fornecendo os dados cadastrais, recebendo as informações consolidadas das operações realizadas no sistema de gestão de loja e participando em alguns processos como: aprovação de crédito, conciliação de cartões, reposição de lojas, determinação de custos, determinação de metas de vendas, gestão de compras junto aos fornecedores, transacionando repasses de valores com operadoras de telefonia, operadoras de cartão, seguradoras, fornecedor de cursos online entre diversas outras funcionalidades.
+                Na matriz, a estrutura é composta pelo sistema de Gestão Empresarial ERP e também por um servidor de aplicações que expõe web services para realizar integrações com as filiais.
+                As integrações entre matriz e filiais são realizadas da seguinte maneira:
+                 
+                1 - A matriz expõe um conjunto de web services responsáveis por:
+                
+                    Disponibilizar informações a serem atualizadas nas lojas;
+                    Receber informações sobre as movimentações nas lojas;
+                    Receber solicitações de consultas a partir das lojas.
+                
+                 
+                Exemplo:
+                    
+                        
+                            Vendas efetuadas.
+                            Títulos gerados.
+                            Títulos baixados (recebimentos).
+                            Movimentação de estoque (entrada e saída).
+                            Movimentação de caixa (nos fechamentos).
+                            Informações sobre cobranças.
+                            Reservas de estoque.
+                            Serviços de correspondente bancário.
+                            Consultar informações de cliente, estoques, entre outros.
+                        
+                    
+                
+                 
+                2 - A loja faz chamadas de web services para as situações expostas no item 1.
+                Toda a comunicação entre filial e matriz é iniciada através de uma chamada de web services a partir da loja. Isso permite uma configuração de infraestrutura mais segura contra invasões.
+                 
+                Exemplo:
+                    
+                        Imagem ilustrativa da comunicação e integração via web services entre matriz e filial.
+                        
+                            
+                        
+                    
+                
+                Filiais - Gestão de loja 
+                A estrutura das filiais é composta pela gestão de loja, que compreende:
+                Servidor 
+                
+                    Banco de Dados
+                    Serviços de integração
+                
+                Retaguarda 
+                
+                    Estações para realização de pedidos, análise de crédito, cadastros, emissão de notas fiscais, consultas, entre outros.
+                
+                Frente de Caixa - PDV 
+                
+                    Estações para emissão de cupom fiscal, recebimento e pagamento de títulos e outras operações.
+                
+                Principais características da solução
+                Operação Off-line 
+                A loja tem independência da matriz. Mesmo sem comunicação, é possível efetuar pedidos e emissão de cupons, permitindo, dessa forma, que a loja continue operando.
+                Execução da solução loja em Linux
+                Tanto o PDV (exceto versão PAF) quanto a solução de Retaguarda da loja  são executados no sistema operacional Linux.
+                Agilidade no acesso das informações
+                A integração entre loja e matriz permite aos gestores o acesso a informações de venda de forma ágil, facilitando o acompanhamento dos resultados para a tomada rápida de decisão.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

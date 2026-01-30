@@ -1,0 +1,146 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/vendedor-no-pdv.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____6
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Vendedor no PDV
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Vendedor no PDV
+            Definindo atalho para identificação do vendedor
+            É possível definir um atalho numérico para a identificação do vendedor durante a venda. Como padrão, o configurado é o número "5", que representa o atalho F5. Esse atalho é disponibilizado após a entrada no botão F12 - Identifica, da venda.
+            Antes de configurá-lo, verifique a disponibilidade do atalho na tela, pois outras identificações podem estar utilizando-o.
+            A configuração do atalho para identificação do vendedor pode ser realizada no Gestão Empresarial | ERP, na tela Configuração de parâmetros (F000PPD): "Tecla.BotaoIdentificaVendedor" = "5".
+            Reconhecendo o vendedor da venda
+            Ao iniciar uma nova venda, é possível visualizar o vendedor atual ao lado direito, acima do Status do PDV. Como padrão, o vendedor inicial é o próprio operador de caixa.
+            
+            
+            Identificando o vendedor no início da venda
+            Quando estiver configurado, será aberta, automaticamente, no início de cada venda, uma tela para ser selecionado o vendedor. Essa tela não será aberta caso seja importado um pedido.
+            A configuração para identificar o vendedor no início da venda pode ser realizada no Gestão Empresarial | ERP, na tela Configuração de parâmetros (F000PPD): "Venda.IdentificaVendedorNoInicioVenda" = "1".
+            
+            
+            Alterando o vendedor
+            O vendedor pode ser alterado a qualquer momento durante a venda. A identificação do vendedor se dá pelo botão F12 - Identifica.
+            
+            
+            O sistema se comporta de duas formas diferentes, dependendo da configuração de múltiplos vendedores estar ativa ou não.
+            
+                Caso esteja configurado para múltiplos vendedores:após a alteração do vendedor, apenas os próximos itens adicionados estarão vinculados a ele. Essa opção permite que seja definido um vendedor diferente por item.
+                Caso não esteja configurado para múltiplos vendedores:após a alteração do vendedor, todos os itens estarão/serão vinculados a ele. Ou seja, se houver algum vendedor diferente no item anterior, este será substituído.
+            
+            A configuração para múltiplos vendedores pode ser realizada no Gestão Empresarial | ERP, na tela Configuração de parâmetros (F000PPD): "Venda.MultiplosVendedores" = "1".
+            Visualizando vendedores por item
+            Para visualizar qual vendedor está ligado a cada item, pode ser utilizado o atalho CTRL + F1. Só é possível utilizar essa função caso esteja configurado a venda para múltiplos vendedores.
+            A configuração para múltiplos vendedores pode ser realizada no Gestão Empresarial | ERP, na tela Configuração de parâmetros (F000PPD): "Venda.MultiplosVendedores" = "1".
+            
+            
+            Imprimindo o vendedor na venda
+            Caso esteja configurado, é possível realizar a impressão do vendedor no documento de venda.
+            
+                Para PDV PAF, apenas o último vendedor selecionado é impresso nas observações do cupom fiscal;
+                Para PDV NFC-e, todos os vendedores são impressos na observação do DANFE, separados por vírgula.
+            
+            A configuração para imprimir o vendedor no documento de venda pode ser realizada no Gestão Empresarial | ERP, na tela Configuração de parâmetros (F000PPD): "Venda.ImprimeVendedorCupom" = "1".
+            Vendas com Pedido
+            Não importando se a configuração de múltiplos vendedores estiver ativada ou não, o PDV respeita a quantidade de vendedores selecionados no Retaguarda durante a construção do pedido.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

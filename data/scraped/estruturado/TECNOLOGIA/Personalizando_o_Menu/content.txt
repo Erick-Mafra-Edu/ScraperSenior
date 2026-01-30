@@ -1,0 +1,215 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/personalizacao-de-menus/frtpersonmenu.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CPersonaliza%25C3%25A7%25C3%25A3o%2520de%2520Menus%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Personalização de Menus > Personalizando o Menu
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Personalizando os Menus
+                 A tela Personalização 
+ do menu respeita as permissões do usuário, é aconselhável que apenas 
+ os usuários que tenham abrangência maior que os demais tenham permissão 
+ de salvar para todos (ver Permissão 
+ Configuração de Telas), pois se um usuário com abrangência que não 
+ enxerga o menu Cálculos, por exemplo, alterar as configurações e salvar 
+ para todos, quando um usuário que enxerga esse menu entrar no sistema 
+ o menu pode estar em um local indesejado.
+                Como os menus do usuário seguem as abrangências dos menus do sistemas, se o usuário não possui permissão para acessar a tela de cadastramento 
+ de empresas,  e for criado um menu do usuário referenciando essa tela, 
+ao tentar acessar esta tela, será exibida uma mensagem indicando que o usuário não possui permissão para acesso.
+                Nota
+                    Não é possível colocar abrangências diretamente 
+ nos menus do usuário.
+                
+                A personalização 
+ de menus permite que sejam criados menus e submenus na estrutura 
+ de menus do sistema ou mesmo em outros menus já criados pelo usuário. 
+ Esses menus podem fazer referência à qualquer tela do sistema, no entanto 
+ não é permitido um menu do usuário referenciar outro menu do usuário. Embora não seja permitido excluir os menus do sistema, estes menus podem ser 
+ configurados para permanecer invisíveis, além de ser possível mudar sua posição e de seus respectivos submenus.
+                Nota
+                    Quando existir uma personalização de menus de SGI para alterar a descrição de algum menu, é necessário acessar a tela Personalização de menus. Caso a descrição seja alterada através do SGI ou pela tradução do menu da tela, ela não será gravada na personalização, ocasionando erros na visualização dos menus. Pois com a personalização de menu é mantida a descrição do menu configurada na personalização. 
+                
+                A personalização de menus do sistema é feita pelo software SGI incorporado nas aplicações Senior. Acesse os seguintes caminhos de acordo com a aplicação utilizada: 
+                Administração de Pessoal: Recursos > Implementações > Gerador de Telas > Editor de Formulários de Cadastro > Sistema > Configurar Menu x-Window ou Configurar Menu Web. 
+                Gestão Empresarial | ERP: Recursos > Implementações >Telas SGI > Editor de Formulários de Cadastro > Sistema > Configurar Menu x-Window ou Configurar Menu Web. 
+                Ações
+                Novo Menu
+                    Insere um menu direto no menu principal do sistema ou como um menu dentro 
+	 de outro menu (filho).
+                Novo Submenu
+                    Insere um submenu nos menus de usuário/sistema.
+                Excluir
+                    Exclui um menu/submenu 
+	 pertencente ao usuário. A Personalização de Menus não permite que 
+	 os menus do sistema sejam excluídos.
+                Visualizar Atual
+                    Exibe 
+	 os menus com as personalizações do usuário.
+                Visualizar Original
+                    Exibe 
+	 os menus sem personalizações.
+                Restaura Original
+                    Exclui as personalizações da opção selecionada no campo Salvar como. Se a opção Individual estiver marcada, mas existir uma configuração padrão, então o usuário atual passará a utilizar a configuração padrão. Se a opção Todos ou Padrão estiver selecionada, então as configurações de todos os usuários serão excluídas.
+                Menu personalizado
+                Neste painel é exibido o menu existente no sistema com todas as alterações 
+ do usuário. É possível selecionar menus e movê-los  para cima e para baixo usando os botões com setas. 
+ Também é permitido arrastar os menus (tanto do usuário quando do sistema) 
+ sobre outros menus, ao fazer isso é exibido um menu de contexto (popup), com as opções:
+                Mover como menu
+                    O menu arrastado 
+ será posicionado logo acima do menu escolhido.
+                Mover como submenu
+                    O menu arrastado 
+ será posicionado dentro do menu escolhido.
+                Propriedades
+                Título
+                    Título do menu 
+	 que aparecerá no menu dos sistemas. Caso o título informado seja - (hífen), será criado um separador de menus.
+                Tecla de Atalho
+                    Teclas que serão o atalho do menu.
+                
+                    Nota
+                    
+                    Não é possível utilizar F1 ou Ctrl + F1 como uma tecla de atalho, pois estas teclas são reservadas para abrir a Ajuda do sistema.
+                
+                Visível
+                    Permite que 
+	 os menus sejam configurados para permanecer ocultos ou não. O menu 
+	 que abre a tela de personalização não pode ficar invisível 
+	 para usuários administradores, caso esta opção seja desmarcada, ao 
+	 tentar confirmar a operação através do botão OK será exibida uma mensagem informando sobre a situação e o 
+	 menu irá aparecer na estrutura fora da ordem original.
+                Referência
+                    	 Este botão apresenta um menu com os tipos de referência disponíveis:Item de menu: Abre 
+		 a tela Escolha um item de menu para definir qual tela que o menu irá abrir;Arquivo: Abre a tela Referência a arquivo para associar 
+		 um arquivo ao menu, ao acessar o menu com referência externa, o arquivo escolhido previamente 
+		 será aberto;Aplicativo externo:
+		 Abre a tela Referência externa para associar 
+		 um programa (executável), sendo possível informar parâmetros para este programa. Ao acessar o menu com referência externa, o aplicativo escolhido previamente 
+		 será aberto;Modelo 
+		 relatório: Ao clicar neste item de menu, o modelo relacionado 
+		 é executado. Este recurso necessita de versão de rotinas 5.2.0.50 
+		 de TBS;Modelo Cubo: Ao 
+		 clicar neste item de menu, o modelo de cubo relacionado é executado. 
+		 Havendo categorias registradas (Veja 
+		 habilitar o menu para modelo cubo na personalização de menus), selecione uma categoria.
+                Excluir 
+	 Referência
+                    Retira a referência do menu, possibilitando adicionar 
+	 submenus.
+                Cancelar
+                    	 Cancela as alterações até a última vez que foram aplicadas.
+                Aplicar
+                    Aplica todas as alterações feitas em um menu.
+                Notas
+                    Se a tecla de atalho escolhida tiver outra função no sistema operacional, por exemplo ALT + F4 (fechar tela) ou CTRL + C (copiar), sempre será executada a ação da aplicação Senior.
+                    O menu que aberto no botão Referência pode ser customizado 
+		 pelos sistemas para incluir mais opções, porém os Item de menu, Aplicativo externo e Modelo de Relatório 		 sempre existirão.
+                
+                Salvar como
+                
+                    Individual: Salva a 
+	 configuração atual apenas para o usuário corrente;
+                    Todos: Salva a configuração 
+	 atual para todos os usuários (se o usuário já possuía alterações essas 
+	 serão apagadas e substituídas);
+                    Padrão: Salva a configuração 
+	 atual para todos os usuários (se o usuário já possuía alterações essas 
+	 serão apagadas e substituídas), os novos usuários já virão com essa 
+	 configuração.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+    

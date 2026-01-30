@@ -1,0 +1,184 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#ferramentas-de-customizacoes/integracao-entre-sistemas/servicos-de-informacoes-dinamicas/sapiens.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CFerramentas%2520de%2520Customiza%25C3%25A7%25C3%25B5es%7CIntegra%25C3%25A7%25C3%25A3o%2520entre%2520Sistemas%7CServi%25C3%25A7os%2520de%2520Informa%25C3%25A7%25C3%25B5es%2520Din%25C3%25A2micas%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Ferramentas de Customizações > Integração entre Sistemas > Serviços de Informações Dinâmicas > Sapiens - Serviços Informações Dinámicas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Integração Sapiens - Serviço de Informações Dinâmicas
+            Nesta parte é demonstrada como ocorre a interação com o Sapiens Server e também como são formatados os dados no protocolo. Antes de iniciar estes procedimentos, é necessário certificar-se que o ambiente Sapiens Server esteja totalmente operacional.
+            O Ronda Senior XT permite a utilização de uma função de programador para enviar ações para o Sapiens SID. O objetivo do Sapiens SID é permitir que sistemas externos possam interagir com o Sapiens. O Sapiens SID é basicamente um dispositivo de importação de dados onde a comunicação ocorre de forma síncrona. Os procedimentos para instalação e configuração do Sapiens Server estão contidos no Manual do Sapiens WEB (a instalação do Sapiens WEB é requerida).
+            A continuação se detalham os passos para estabelecer a integração entre o Gestão de - Módulo Veículos e o Sapiens Server:
+            Autenticação (Login)
+                
+                    O primeiro ato é enviar uma ação de "login" ao Sapiens Server para que o mesmo valide as permissões do usuário que irá interagir com a base Sapiens.
+                    Sintaxe: 
+                    
+                        http://<servidor>/<diretório_virtual>/conector.exe?SIS=CO&LOGIN=SID&ACAO=EXESENHA&NOMUSU=<usuário>&SENUSU=<senha>
+                    
+                    Onde: 
+                    
+                        <servidor> Nome ou IP do servidor web.
+                        <diretório_virtual> Nome do diretório virtual.
+                        SIS=CO Parâmetro interno: obrigatório em todas as ações
+                        LOGIN=SID Parâmetro interno: obrigatório em todas as ações
+                        <usuário> Nome do usuário do Sistema Sapiens.
+                        <senha> Senha do usuário do Sistema Sapiens.
+                    
+                    Se a validação do usuário for efetivada, o retorno da requisição acima deverá ser um "código de conexão", que será repassado posteriormente como parâmetro para validar e garantir a autenticidade das demais ações.
+                    Importante
+                         Deve-se utilizar uma conta de usuário Sapiens exclusivamente para este fim.
+                    
+                    Exemplo:
+                        
+                            
+                                http://servidor/sapiensweb/conector.exe?SIS=CO&LOGIN=SID&ACAO=EXESENHA&NOMUSU=USUARIO&SENUSU=SENHA
+                            
+                            Exemplo de retorno devolvido pelo Sapiens Server, caso login seja bem sucedido:
+                            
+                            38659379861527810
+                            Exemplo de retorno devolvido pelo Sapiens Server, caso erro:
+                            
+                            ERRO: Usuário ou senha inválido
+                            Ou
+                            
+                                <html>Timeout error...</html>
+                            
+                        
+                    
+                
+            
+            Auto-autenticação
+                
+                    A partir da versão Sapiens 5.3.1.7, é possível executar uma ação comum juntamente com a ação de autenticação EXESENHA. Este método facilita a implementação e melhora o desempenho. A forma de escrevê-la é semelhante à ação de login, acrescido do parâmetro "PROXACAO=<ação>" e mais os parâmetros da próxima ação.
+                     
+                    Recomenda-se utilizá-la apenas quando houver necessidade de executar ações isoladas.
+                    Formato: 
+                    
+                        http://<servidor>/<diretório_virtual>/conector.exe?SIS=CO&LOGIN=SID&ACAO=EXESENHA&NOMUSU=<usuário>&SENUSU=<senha>&PROXACAO=<ação_a_executar_após_login>&<parâmetro>=<valor>&...
+                    
+                    Exemplo:
+                        
+                            
+                                http://servidor/sapiensweb/conector.exe?SIS=CO&LOGIN=SID&ACAO=EXESENHA&NOMUSU=USUARIO&SENUSU=SENHA&PROXACAO=SID.TCP.GRAVAR&CODCLI=99
+                            
+                        
+                    
+                    Submeter Requisições
+                        
+                            Nesta etapa, são enviadas as ações que interagem diretamente com a base do Sapiens. Lembrando que o código de conexão, retorno da execução da URL de login, deverá ser acrescido em todas estas ações enviadas ao Sapiens Server.
+                            Formato genérico (para todas as demais ações): 
+                            
+                                http://<servidor>/<diretório_virtual>/conector.exe?SIS=CO&LOGIN=SID&USER=<usuário>&CONNECTION=<código_de_conexão>&ACAO=<ação>&<parâmetro>=<valor>&...
+                            
+                            Exemplo:
+                                
+                                    
+                                        http://servidor/sapiensweb/conector.exe?SIS=CO&LOGIN=SID&USER=USUARIO&CONNECTION=38659379861527810&ACAO=SID.TCP.GRAVAR&CODCLI=99
+                                    
+                                    Neste exemplo, envia-se uma requisição ao Sapiens Server para que seja gerado um título de contas a pagar na base Sapiens, cujo código de cliente seja “99”.
+                                
+                            
+                        
+                    
+                
+            
+            Notas Implementação
+                
+                    As notas abaixo enfatizam dicas e limitações importantes para a utilização do sistema:
+                    
+                        Toda ação enviada sempre retorna alguma informação, seja ela, uma simples literal "OK" ou várias linhas de dados.
+                        O código de conexão perde a validade após a execução da ação de LOGOFF ou quando o tempo de ociosidade expira. Quando isso ocorrer, é necessário um efetuar novo login.
+                        Os valores de cada parâmetro devem ser sempre atribuídos diretamente sem caracteres tipo aspas, independente do tipo de dado esperado pelo parâmetro (Exemplo: NOMCLI=SENIOR, CODCLI=33, DATATU=01/01/2003, VALDSC=199.50). Não deve ser utilizado espaços antes ou depois do caractere "=" (Exemplo incorreto: CODCLI = 123 Exemplo correto: CODCLI=123).
+                        Todas as operações serão realizadas sempre baseadas na empresa/filial ativa do usuário utilizado no login. Uma forma de modificar a empresa/filial é utilizando uma ação específica (ver documentação). A outra é entrar no Sapiens com este usuário e alterando manualmente sua empresa/filial de operação. Deve-se criar um usuário Sapiens exclusivo para utilização com o Sapiens SID.
+                        O separador decimal utilizado nos parâmetros numéricos deve ser o ponto ".".
+                        É recomendável consistir o retorno de cada ação para certificar-se que a mesma foi executada com sucesso. Na maioria delas, basta verificar se o retorno é igual ao literal "OK". Já em outras (exemplo SID.TCP.GRAVAR) é interessante verificar se o retorno é um número válido, ou seja, contendo apenas dígitos numéricos.
+                        Atualmente a maioria dos ambientes de programação, possui alguma forma de implementar a comunicação através de HTTP. É interessante verificar a documentação da linguagem em questão.
+                    
+                    Importante    
+                        O tempo máximo de processamento de uma ação é cinco minutos (limite do IIS).  Depois desse tempo, a comunicação é interrompida seguida de uma mensagem de timeout.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+        

@@ -1,0 +1,76 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/assistencia-tecnica/parametrizando.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7CAssist%25C3%25AAncia%2520T%25C3%25A9cnica%7C_____1
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Assistência Técnica > Parametrizando a Assistência Técnica
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Parametrizando a Assistência Técnica
+            Conceito
+            A assistência técnica de produtos vendidos é o processo onde houve uma venda de determinada mercadoria e o cliente retornou à loja alegando algum problema.
+            O processo inicia-se com o contato do cliente com a loja informando que possui um produto com defeito. O contato, por sua vez, pode ser feito presencialmente ou por telefone. Pode ser que o informante não seja o comprador do produto, portanto, é importante considerar que são informações distintas. O atendente, então, localiza o registro de venda da mercadoria e verifica a garantia.
+            Podem existir situações onde a venda foi realizada sem a emissão de uma nota fiscal e o cliente não possui o cupom fiscal. Por conta disso, após localizar o registro de venda, o atendente faz a emissão de uma nota fiscal referente ao cupom fiscal para acobertar a garantia do produto. A garantia do fabricante ou a garantia estendida podem estar vigentes. Estas datas são definidas a partir da data de entrega presente na nota de remessa, que irá constar, inclusive no Termo de Encaminhamento de Assistência Técnica.
+            Caso nenhuma esteja, o cliente terá que aguardar o conserto do produto, não tendo a possibilidade de receber o dinheiro de volta ou de receber um novo produto de imediato. Nesse momento, uma ordem de serviço é registrada informando o Produto, Cliente, Solicitante, Número do cupom fiscal ou Número da nota fiscal, Observações e defeitos informados pelo cliente, observações levantadas pelo atendente e observações de acessórios entregues pelo cliente. Deve ser gerada uma ocorrência de assistência técnica por produto para que o acompanhamento possa seguir individualmente.
+            No caso de produtos eletrônicos, o número de série é obtido do documento original da venda ou exigido durante o registro da ocorrência, caso não tenha sido informado na venda. Para celulares e tablets, também é possível informar o IMEI.
+            Os produtos recebidos para assistência técnica são segregados e agrupados para aguardar a próxima transferência ao centro de distribuição.
+            
+                Nota
+                
+                Para a realização da transferência, uma nota fiscal de saída de remessa de mercadoria para conserto é emitida com todos os produtos que serão transferidos.
+            
+            Quando todos os produtos chegam ao centro de distribuição, as mercadorias são conferidas e as ordens de serviço são definidas como Recebida, gerando uma nota fiscal de entrada para conserto no centro de distribuição. Em seguida, o processo de triagem é realizado pelo setor de assistência técnica, que fica localizado no centro de distribuição. Nesse momento, é definido se o produto precisará ser consertado externamente ou se é possível resolver o problema internamente.
+            No caso de conserto externo, o produto precisa ser enviado para a assistência técnica autorizada. Para isso, a assistência técnica precisa ser definida para cada uma das ordens de serviço. Para realizar a transferência para a assistência técnica, uma nota fiscal de saída de remessa para conserto é emitida a partir do centro de distribuição.
+            Quando o produto chega à assistência técnica autorizada, uma ordem de serviço é emitida e, no retorno ao centro de distribuição, é necessário informar o número da ordem de serviço da assistência externa para confirmar a entrega.
+            Assim que a assistência técnica conclui o serviço, é iniciado o processo de conclusão.
+            Independentemente de o produto ter sido consertado ou não, o processo deve retornar até sua origem de forma que todas as notas fiscais de entrada para conserto e remessa para conserto tenham seus respectivos retornos de conserto. Caso contrário, poderá haver tributação de ICMS para as notas fiscais que não possuírem tal retorno.
+            Depois disso, é realizado o registro na ordem de serviço. Isso vale tanto para consertos internos quanto externos. Também são informadas observações do processo de conserto. Em seguida, é realizada a transferência de retorno da mercadoria até as lojas onde foram coletadas as mercadorias com defeito no início do processo. Uma nota fiscal de retorno de conserto é emitida para acompanhar os produtos.
+            Assim que o produto chega à loja, ocorre também a conferência da mesma quando ocorre a transferência entre loja e centro de distribuição. Em seguida, a mercadoria é disponibilizada para entrega ao cliente, caso o mesmo já tenha sido ressarcido. Assim que a entrega é realizada, a ordem de serviço é encerrada.
+            Processo
+            Para habilitar a funcionalidade de assistência técnica, realize o seguinte processo:
+            
+                Observação
+                
+                Se utilizada a rotina de assistência técnica, será necessário realizar a parametrização de todas as formas de pagamento para todas as filiais no Gestão de Lojas através da tela F066VAR.  A gestão das situações em que as formas de pagamento devem ser inseridas nas filiais deve ser feita no Gestão Empresarial | ERP por meio desta tela.
+            
+            No Gestão Empresarial | ERP:
+            
+                Pré-requisitos:
+            
+            
+                estar com a integração com o Varejo Senior configurada;
+                possuir o módulo VAAT - Serviços - Gestão de Assistência Técnica - Assistência Técnica e Garantias disponível na proprietária;
+                caso já haja ocorrências de assistência técnica registradas na tela Cadastro de Ocorrências (F118OCR), será necessário inicializar a sequence assistencia_id_seq do banco de dados do Gestão de Lojas para que a numeração não conflite com as ocorrências já existentes. Não há, no sistema, uma forma de diferenciar as ocorrências geradas pelo Gestão de Lojas das ocorrências já existentes, portanto, durante o período de transição, é de responsabilidade dos usuários saber quais ocorrências darão prosseguimento pela nova rotina e quais seguirão o processo anterior. Não há garantias de que ocorrências já em andamento funcionem com a rotina integrada com o Gestão de Lojas.
+            
+             
+            
+                Acesse a tela Parâmetros para Assistência Técnica e Controle de Garantia (F070FAG):
+            
+            
+                preencha o campo Filial, presente no cabeçalho da tela, informando a Filial que será responsável por fazer a triagem das assistências técnicas. Essa Filial precisa ter acesso ao sistema Gestão Empresarial | ERP e ela será responsável por coletar e devolver os produtos com defeitos para as demais filiais, além de enviá-los para assistência externa, caso necessário. Geralmente, essa Filial é o centro de distribuição. Apesar do sistema permitir configurar mais de uma filial responsável pela triagem das assistências técnicas, cadastrando várias filiais nessa tela, esse recurso no momento é incompatível com o Gestão de Lojas. Portanto, quando o campo Assistência Técnica Varejo Senior estiver configurado como S – Sim, deve haver apenas uma Filial para triagem configurada;
+                preencha o campo Série NF, informando uma série de nota fiscal que será utilizada pela Filial responsável pela triagem para geração das notas fiscais de assistência técnica. Para facilitar a identificação das notas fiscais gerados por esse processo, é recomendado criar uma nova série, cuja aplicação deve ser S – Notas Fiscais de Entrada e Saída e o campo Exclusivo Varejo deve estar parametrizado como N – Não;
+                preencha o campo Depósito Assistência Técnica, informando um depósito cuja Filial de localização seja a Filial responsável pela triagem e não seja um depósito vendedor, pois o intuito é tornar indisponível para venda todos os produtos que estiverem armazenados nele. Para facilitar o controle do estoque de produtos com defeito, recomenda-se ter um depósito exclusivo para essa finalidade. Para criar um novo depósito, acesse a tela Depósitos (F205DEP) e crie um depósito respeitando os critérios definidos acima. após criar o novo depósito, é necessário criar uma ligação entre o depósito e a filial, através da tela Ligação Filial x Depósito (F205LFD).
+                preencha o campo Operação Entrada Conserto, informando uma operação de nota fiscal a ser utilizada para geração da nota fiscal de entrada para conserto na Filial responsável pela triagem. Essa nota fiscal é gerada automaticamente ao receber a integração da nota fiscal de saída de remessa para conserto do sistema de Gestão de Lojas, que caracteriza uma transferência entre filiais (da Filial loja para a Filial de triagem). Para gerar essa operação de nota fiscal, estando com a Filial responsável pela triagem ativa (tecle F6 para trocar de Filial), acesse a tela Operações de nota fiscal (F070ONF), defina a descrição desejada, defina a aplicação E – Entrada, finalidade 1 – Normal, e defina as seguintes transações obedecendo os seguintes critérios:Transações:Dados Gerais – Transação Nat. Ope. Estadual;Dados Gerais – Transação Nat. Ope. Interestadual;Itens – Produtos Estadual - Transação Normal;Itens – Produtos Estadual - Transação Substituição Tributária;Itens – Produtos Interestadual - Transação Normal;Itens – Produtos Interestadual - Transação Substituição Tributária.Critérios:devem possuir integração com estoque;não devem possuir 

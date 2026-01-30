@@ -1,0 +1,124 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/operando-modo-contingencia.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____17
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Operando em modo de contingência
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Operando em modo de Contingência
+            O sistema PDV disponibiliza uma opção visível na tela do PDV para que o usuário, a qualquer momento, ative ou desative o modo de contingência. 
+            Ao acionar o botão Entrar Contingência o sistema irá verificar a permissão para acionar ou sair de contingência no perfil do usuário. 
+            Detalhes Técnicos NFC-e Emitida em Contingência
+            Ao emitir uma NFC-e em contingência, a primeira decisão é sobre a forma de emissão em contingência dentre as disponíveis para NFC-e (de acordo as alternativas aceitas pela Unidade Federada).
+            No arquivo eletrônico XML da NFC-e deverá ser indicada a forma de emissão em contingência pelo preenchimento do campo tpEmis (B22) com um dos seguintes conteúdos:
+            
+                Emissão normal (não em contingência);
+                Contingência FS-IA, com impressão do DANFE em formulário de segurança;
+                Contingência FS-DA, com impressão do DANFE em formulário de segurança;
+                Contingência off-line da NFC-e (as demais opções de contingência são válidas também para a NFC-e).
+            
+            Nas situações Contingência FS-IA e  Contingência FS-DA acima o DANFE NFC-e deverá ser emitido em 2 vias, sendo que uma via deverá ser armazenada pelo prazo decadencial (5 anos) pelo emitente e a outra entregue ao consumidor. Após superado o problema técnico, ou em prazo máximo de 168 horas as NFC-e emitidas em contingência devem ser encaminhadas para autorização pela Secretaria da Fazenda da jurisdição do contribuinte.
+            Na escolha de contingência off-line da NFC-e (tpEmis = 9) não é necessária a adoção de série específica ou a utilização de papel especial, todavia deve ser observado o prazo de 24 horas da emissão da NFC-e para o envio para autorização da NFC-e.
+            Qualquer que seja a alternativa de contingência adotada, a informação de operação em contingência deve ser impressa no DANFE NFC-e.
+            Além disso, o QRCode impresso no DANFE NFC-e emitido em contingência conterá a informação da data e hora de emissão do documento fiscal eletrônico, possibilitando assim que na consulta via QR Code pelo consumidor, a SEFAZ retorne a informação de que se trata de emissão em contingência e o prazo máximo em que o documento fiscal eletrônico deverá constar da base de dados do Fisco (24hs para contingência off-line e 168 horas para DANFE em formulário de segurança).
+            Nos casos de contingência "Contingência FS-IA", "Contingência FS-DA" e "Contingência off-line" da NFC-e o contribuinte deverá preencher, obrigatoriamente, os campos de Data e Hora da entrada em contingência (dhCont B28) e de Justificativa da entrada em contingência (xJust B29) que, todavia, não serão impressos no DANFE NFC-e. Para mais informações sobre as Vendas emitidas em contingência consulte a FAQ do assunto. 
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

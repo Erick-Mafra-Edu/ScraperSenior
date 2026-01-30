@@ -1,0 +1,134 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#manuais_processos/mercado/analise-de-credito-de-clientes.htm%3FTocPath%3DSegmentos%7CMercado%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Mercado > Análise de crédito de clientes
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Análise crédito de clientes
+            A rotina de análise de crédito tem por objetivo, o processo de avaliação de clientes que desejam efetuar o pagamento a prazo, possibilitando a identificação dos que futuramente poderão não honrar com suas obrigações. Desta forma, torna-se uma garantia e mais precisão no cálculo de valores a serem recebidos pela empresa.
+            Parametrizações
+            Parametrizações que envolvem a rotina e que devem ser consideradas no processo de análise de crédito:
+            Configurar empresa
+                
+                    
+                        Acesse Cadastros > Empresa > Cadastro (F070EMP);
+                        Se houver indicação de análise por empresa, determinado a partir do campo Análise Crédito por Empresa, será considerada para todas as filiais na análise de crédito. A empresa que tiver desativado, considera filiais separadamente. Para que a parametrização seja efetivada após algum ajuste, é necessário reiniciar o sistema.Caso desejar que o sistema faça análise considerando todas as empresas e todas as filiais da base de dados, além de ativar esse parâmetro, deve-se ativar o identificador de regras VEN-120LIMCL01 para todas as empresas (Tabelas - Identificador de Ponto de Regras Personalizados (E098REG)) deverá conter o registro desse identificador para todas as empresas da base);
+                        Seguindo o mesmo conceito da parametrização de Análise Crédito por Empresa, a parametrização do campo Analisa Crédito Grupo de cliente por Empresa, considera os grupos de clientes, em vez de um cliente somente.O identificador de regras VEN-120LIMCL01 não tem efeito sobre esse parâmetro. Ou seja, para um grupo de empresas a análise nunca irá considerar o limite de todas as empresas/filiais da base. Apenas todas as filiais de uma mesma empresa. Desta forma, não existe identificador de regras equivalente ao VEN-120LIMCL01 para essa rotina.
+                    
+                
+            
+            Parametrizar filial para vendas
+                
+                    Na parametrização das operações de saída (F070FVE), é preciso se atentar para que as filiais tenham os parâmetros definidos de forma homogênea, caso o desejado seja ter um processo idêntico entre todas as filiais. Essas configurações afetam diretamente o processo de análise de crédito de cliente e o grupo de clientes/empresas:
+                    
+                        Acesse Cadastros > Filiais > Parâmetros por Gestão > Vendas, Faturamento e Transporte (F070FVE);
+                        Se preenchido o campo Limite crédito pedido igual a "N - Não",  os pedidos são bloqueado. Se estiver como "S - Sim", não executa o processo de análise de crédito no pedido;
+                        Para evitar inserção de pedido e alteração posterior com valor que supera o valor disponível de crédito, é necessário que o campo Verifica crédito ao Alterar Pedido/NF  esteja definido como "S - Sim". Caso esteja igual a "N - Não", o pedido pode ser fechado com um valor dentro do limite de crédito e posteriormente pode ser alterado para um valor superior, sem que a análise de crédito seja realizada;
+                        Caso o pedido já tenha sido bloqueado por conta da análise de crédito de cliente e seja alterado de forma que também passe a não estar aprovado na rotina de análise de crédito do grupo de empresa (F069GRE), não haverá alteração do motivo do bloqueio atual adicionando mais um motivo. O motivo duplo só ocorrerá no fechamento do pedido, e não na alteração do mesmo;
+                        Se o parâmetro Analisa crédito para o grupo de clientes constar igual a "N - Não", o sistema não faz a análise de crédito para grupo de clientes nos processos de vendas;
+                        Estando o campo Limite crédito grupo cliente pedido igual a "S - Sim", não ativará a análise de crédito por grupo de cliente no pedido;
+                        Os parâmetros Considera Ped. Abertos Análise Crédito Pedido e Considera Ped. Abertos Análise Crédito NF poderão influenciar se os pedidos em aberto irão ou não afetar o processo de análise de crédito. Pode-se considerar pedidos em aberto ou suspensos também. Além disso, esses mesmos parâmetros influenciam a atuação do identificador de regras VEN-120LIMCL01.
+                     
+            
+            Definir transações de vendas
+                
+                    Para as rotinas de notas fiscais de saída, deve-se levar em consideração a transação utilizada na tela F001TVE, em que o campo Soma para financeiro deve estar somando para financeiro.
+                
+            
+            Verificar tipo de título utilizado
+                
+                    Na tela F002TPT, há um parâmetro que deve ser avaliado, que, de acordo com o tipo de título definido na transação, o campo Análise Crédito Pedido/NF deve constar igual a “S - Sim”.
+                
+            
+            Definir histórico de cliente
+                
+                    Esta tela permite o cadastro das parametrizações por empresa e por filial de cada cliente e duas situações deverão ser avaliadas:
+                    
+                        Acesso em Cadastros > Clientes e Fornecedores > Clientes > Definições/Histórico (F085HCL)
+                        No campo Valor limite crédito está definido o valor de limite que o cliente possui na Empresa/Filial na qual tem definições e esse valor será considerado, conforme as parametrizações presentes no sistema (somente para Filial, para todas as filiais da empresa, ou multiempresa por conta do identificador VEN-120LIMCL01). Com relação ao grupo de empresas, o único automatismo existente é quando um cliente está ligado a um grupo de empresas e, caso seja alterado as definições do cliente, o sistema exibe a mensagem: "Deseja aplicar as alterações para todos os clientes do grupo de empresa?". Isso ocorre para haver a possibilidade de replicar as definições  para outros clientes do mesmo grupo de empresa, considerando apenas a empresa/filial cujas definições foram alteradas. Ou seja, se a alteração foi realizada nas definições da empresa 2, filial 1,  a replicação será realizada pra definições de clientes do mesmo grupo para empresa 2, filial 1.
+						Observação 
+							Para tratar automatismo de replicação de informações nas telas F095CAD/F085HCL/F069GRE, é possível fazer uso de: regras por evento, web services ou triggers customizadas.
+                        Da forma como a rotina está estruturada no código fonte hoje, o parâmetro Limite aprovado não afetará a liberação ou não do crédito pelas rotinas padrões.
+                    
+                
+            
+            Cadastrar clientes
+                
+                    No cadastro do cliente (F085CAD) há uma configuração que permite bloquear crédito do Cliente (para qualquer empresa/filial): o parâmetro Bloqueia Crédito. Esse parâmetro não tem efeito em grupo de empresa (rotina da tela F069GRE).
+                
+            
+            Configurar grupos de empresas (Clientes e Fornecedores)
+                
+                    A análise de crédito por grupo não é multiempresa. Ou seja, para este processo, não se aplica o IR VEN-120LIMCL01 e o campo abaixo  não influencia.
+                    
+                        Acesse Cadastros > Clientes e Fornecedores > Grupos de Empresas (F069GRE);
+                         Avalie o parâmetro Limite aprovado, pois da forma como a rotina está estruturada, não afetará a liberação ou não do crédito pelas rotinas padrões.
+                    
+                    Lógica utilizada para rotina de análise de crédito de clientes/grupos de empresas
+                        
+                            O sistema irá levar em consideração o Limite de Crédito do Cliente e, posteriormente, o Limite de Crédito do Grupo de Empresa, a fim de atingir o limite máximo estipulado pelo grupo. Dessa forma, o sistema atende mais de um cenário:
+                            1 - Tenho 3 clientes no meu Grupo, mas desejo que um deles tenha um limite diferenciado dentro do meu grupo:
+                            
+                                Cliente A
+                                Cliente B
+                                Cliente C
+                            
+                            O Limite de Crédito do Grupo de Empresa é de 150 mil, porém, para o cliente C, tenho um limite máximo individual de 30 mil. A parametrização neste caso seria:
+                            
+                                Grupo de Empresa - 150.000,00
+                                Cliente A - 9.

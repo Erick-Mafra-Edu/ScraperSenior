@@ -1,0 +1,116 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/sped/reinf/efd-reinf.htm%3FTocPath%3DSegmentos%7CCompliance%7CEFD-Reinf%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Ajuda por telas > Controladoria > Gestão de Tributos > Conceito
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+             EFD-Reinf - Escrituração Fiscal Digital de Retenções e Outras Informações Fiscais
+            
+                
+                
+            
+            A Escrituração Fiscal Digital de Retenções e Outras Informações Fiscais - EFD Reinf é um dos módulos do projeto SPED, utilizado por pessoas físicas e jurídicas. Em conjunto com o eSocial e a DCTFWeb, visam substituir a Guia de Recolhimento do FGTS e de Informações à Previdência Social – GFIP, bem como a Declaração do Imposto sobre a Renda Retido na Fonte - DIRF.
+            As informações   trabalhistas serão enviadas ao eSocial e as tributárias serão declaradas na EFD Reinf. Após o envio das duas obrigações para a DCTFWeb, o Documento de Arrecadação da Receita Federal - DARF será apurado e gerado para pagamento dos tributos.
+             Precisa de mais informações sobre obrigações, prazo e multa? Consulte nosso Portal de Exigências Legais.
+            
+            Leiaute
+            
+            Integração
+            
+            Exportação
+            
+            
+                 Quer saber mais sobre como o Reinf simplifica a entrega de informações fiscais e contribui para a transparência tributária? Então acesse a matéria EFD-Reinf 2.1.2 – Entenda as mudanças e veja se sua empresa está preparada e saiba como as empresas podem cumprir suas obrigações com facilidade.
+                 E tem mais! Promovemos também esta Talk de Produto onde dois de nossos especialistas demonstram todas as novidades que vão entrar em vigor na EFD-Reinf versão 2.1.2.
+            
+            
+                 
+            
+            Estrutura
+            No Gestão Empresarial | ERP, a estrutura de geração dos registros da EFD-Reinf está presente no módulo de Tributos. A integração das informações que compõe a EFD-Reinf são oriundas de notas fiscais de entrada e saída, que são os serviços prestados e tomados e também os títulos do Contas a Pagar e Receber.
+            As informações dos registros são enviadas à base do Fisco por meio da solução  eDocs.
+            
+                
+            
+            A EFD-Reinf é composta por registros enviados de forma mensal ou esporádicos, de acordo de tipo de registro, via arquivo .XML. Ou seja, cada registro equivale a um arquivo .XML. Os registros são divididos em três categorias: Cadastros,  Movimentações e Controles.
+            
+                 
+            
+            Parametrizações iniciais
+             
+            
+                Acesse a tela  Parâmetros da Filial para Tributos (F070FEF) (Cadastros > Filiais > Parâmetros por Gestão > Tributos), guia  Impostos 2 e informe o código da classificação tributária da filial para a EFD-Reinf no campo Classificação Tributária Reinf;
+                Apenas para os registros R-2010 e R-2020 Na tela Cadastro de Serviços (F080SER) (Cadastros > Produtos e Serviços > Serviços > Individual), informe se o serviço possui uma aposentadoria especial no campo Aposentadoria Especial e a classificação do serviço no campo Tipo Serviço para a EFD-Reinf;
+                Na tela Cadastro de Dispositivos Fiscais (F051DIS) (Cadastros > Controladoria > Tributos > Dispositivos fiscais), cadastre os dispositivos fiscais, que serão utilizados no cadastro dos processos, para então vinculá-los aos documentos. É importante que os processos judiciais e administrativos sejam classificados com a Aplicação "9 - Reinf". Somente esses tipos  serão considerados na entrega da declaração;Quando a aplicação "9 - Reinf" é informada, a guia Suspensão fica habilitada. Nela são informados os números dos processos judiciais e administrativos que serão usados para gerar o registro 1070 - Tabela de Processos Administrativos/Judiciais;Também fica habilitado o botão Detalhes, onde é possível cadastrar dados do processo e dos advogados para uso nos registros R-4010 e R-4020.
+                Na tela Cadastro de Competência (F690CPT) (Controladoria > Gestão de Tributos > EFD - Reinf > Cadastro de Competência), cadastre uma competência para controle da EFD-Reinf . Esse cadastro indica em que período a empresa/filial está apta a enviar a EFD-Reinf. Caso a empresa utilize a integração de registros via tela EFD-Reinf - Integração (F690ILA), a competência será criada automaticamente no momento da integração, não sendo necessário cadastrá-la antes;
+                Apenas para os registros R-2010 e R-2020 Na tela Cadastro de Cliente (F085CAD) (Cadastros > Clientes e Fornecedores > Clientes > Cadastro), preencha os seguintes campos:Entidade PAA: indica se a empresa está cadastrada no Programa de Aquisição de Alimentos;No botão Entrega, informe os campos Obra construção civil e Número inscrição CNO.
+                Apenas para o registro R-2020 Na tela Origens de Mercadorias do Fornecedor (F095ORM) (Cadastros > Clientes e Fornecedores > Fornecedores > Origens de mercadorias), preencha os campos Obra construção civil e Número inscrição C;
+                 Na tela Parâmetros de Integração (F191CPT) (Cadastros > Empresas > Parâmetros de Integração), parametrize a integração com o eDocs. Para isso, selecione o grupo eDocs, subgrupo Comunicação com eDocs e informe os seguintes campos: Usuário: usuário de conexão com eDocsSenha: senha de conexão com eDocsURL: URL de conexão com eDocsGerar log integração eDocs: parametrize com "S - Sim" para gerar log de integração do ERP com o eDocs. Ele é gerado na pasta principal de logs do sistema, conforme configurado na Central de Configurações Senior, no formato  "integracao_edocs_'data_hora'.xml". É gerado um log para todos os documentos transmitido ao eDocs (função ComunicarSoap())CNPJ Filial: esse parâmetro deve ser utilizado pela filial em caso de Procuração Eletrônica. Nele, informe o número do CNPJ da filial cadastrada no eDocs, nos casos em que há parametrização das filiais outorgadas na tela de Configuração de Filial, guia Filial > Empregados/Outorgados, isto no eDocs. Através da procuração eletrônica para a EFD-REINF é possível transmitir dados de terceiros outorgantes no ambiente da Receita FederalIntegração do Reinf em Lotes com o eDocs: a partir do leiaute 2.1.1 da Reinf, recomendamos configurar como "S - Sim" para otimizar os recursos da máquina durante a integração
+            
+            A integração do ERP para o eDocs é feita por meio do web service de integração, métodoIntegrarDocumentos. Quando o ERP não está integrado com o eDocs e tem outra solução de mensageria, se a opção Salvar arquivo em disco estiver selecionada na tela EFD-Reinf (F669ERE), será aberta uma tela para selecionar o diretório em que os arquivos .XMLs serão armazenados a fim de que, depois, o arquivo seja enviado ao sistema de mensageira.
+            
+                Parametrização para integração dos registros R-4010 e R-4020
+                
+            
+            
+                Importe a tabela da Natureza de rendimentos na tela F055NRE
+                Para utilizar a nova integração do Bloco 4 (Parâmetro Global  IniNovIre = "S - Sim"), realize nova importação das naturezas de rendimentos para atualizar os parâmetros Fato Gerador IR Pessoa Física, Fato Gerador IR Pessoa Jurídica, Retenção Contribuições Sociais e Agrupar Impostos no Valor Agregado com os valores padrão do sistema. Edite os parâmetros, se necessário.
+                Vincule a Natureza de rendimentos:Ao produto/serviço (F075PRO/F080SER) para os itens sujeitos à retenção de impostos; ouÀ transação de baixa do Contas a Pagar (F001TPA)
+                Configure os fornecedores a serem exportados (F095CAD):O campo Dados DIRF/Reinf deve ser igual a S - Sim; caso contrário, o fornecedor não será considerado na integração dos registrosPara fornecedor do exterior, preencha os seguintes campos:Núm. Identificação Fiscal (E095FOR.IndNif)Número Identificação Fiscal (E095FOR.NumIdf)Forma de Tributação Sobre os Rendimentos (E095FOR.IndTfi) e, quando for o caso, também o campo Informações sobre Isenção e Imunidade (E095FOR.IsiFor)Estado do Fornecedor (E095FOR.SIGUFS) igual a "EX - Exterior"
+                Caso a empresa reconheça as retenções de PIS/COFINS/CSLL/Outras Retenções no fechamento da nota fiscal, é necessário que o parâmetro global IniRegRet esteja igual a "S - Sim". Isto porque  os impostos serão apresentados somente por regime de caixa na integração de eventos do Bloco 4 da EFD-Reinf e este parâmetro global indica que os impostos retidos devem ser integrados proporcionalmente ao valor do pagamento
+                 A integração tem como base os movimentos dos módulos de Suprimentos e Finanças. Sendo assim, não é necessário que 

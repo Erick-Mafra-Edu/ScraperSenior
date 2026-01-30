@@ -1,0 +1,266 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#robo/editor/dgn_glossario.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CDiagn%25C3%25B3stico%2520de%2520Ambiente%2520(Rob%25C3%25B4)%7CEditor%7C_____18
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Diagnóstico de Ambiente (Robô) > Editor > Glossário do Diagnóstico de Ambiente
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Glossário do Diagnóstico de Ambiente
+            A
+            Abrangência:	permite informar intervalo de valores:
+            
+                	Ex1:1-100 (o intervalo corresponde entre 1 e 100 inclusive).
+                	Ex2:1,3,5 (o intervalo corresponde ao valor 1, 3 e 5).
+            
+             
+            Árvore:	estrutura para visualização de dados, onde geralmente o primeiro item 
+	 é o raiz e os demais são subitens desse. Cada novo item adicionado 
+	 pode conter subitens e assim sucessivamente:
+            
+                raizItem1SubItem1
+                Item2SubItem1
+            
+             
+            Arquivo binário: arquivos binários são normalmente considerado como sendo uma sequência 
+	 de bytes, ou seja uma sequência de oito dígitos (bits) agrupados.
+             
+            C
+            CFG: arquivo com extensão .cfg que contém as informações de configuração 
+	 sobre diretórios e conexão com o banco de dados que será utilizado 
+	 pela aplicação. Pode ser aberto e configurado através do aplicativo 
+	 EditCFG.exe.
+             
+            CSV: o comma-separated values (valores separados por vírgulas) é um formato 
+	 de arquivo que armazena dados tabelados. O CSV é um implementação 
+	 particular de arquivos de texto separados por um delimitador, que 
+	 usa a vírgula (ou ";") e a quebra de linha para separar 
+	 os valores. O formato também usa as aspas em campos no qual são usados 
+	 os caracteres reservados (caractere separador e quebra de linha).
+             
+            D
+            DML: Data Manipulation Language - Linguagem de Manipulação de Dados. 	A DML é um subconjunto da linguagem usada para inserir, atualizar e 
+	 apagar dados.
+            
+                INSERT é usada para inserir um registro (formalmente uma tupla) a uma 
+	 tabela existente.
+                UPDATE para mudar os valores de dados em uma ou mais linhas da tabela 
+	 existente.
+                DELETE permite remover linhas existentes de uma tabela.
+            
+             
+            DDL: Data Definition Language - Linguagem de Definição de Dados. 	Uma DDL permite ao utilizador definir tabelas novas e elementos associados. 
+	 A maioria dos bancos de dados de SQL comerciais tem extensões proprietárias 
+	 no DDL. 	Os comandos básicos da DDL são poucos:
+            
+                CREATE cria um objeto (uma Tabela, por exemplo) dentro da base de dados.
+                DROP apaga um objeto do banco de dados.
+            
+            	Alguns sistemas de banco de dados usam o comando ALTER, que permite 
+	 ao usuário alterar um objeto, por exemplo, adicionando uma coluna 
+	 a uma tabela existente.	outros comandos DDL:
+            
+                ALTER TABLE
+                CREATE INDEX
+                ALTER INDEX
+                DROP INDEX
+                CREATE VIEW
+                DROP VIEW
+            
+             
+            DBA: Data Base Administrator (Administrador de Banco de Dados) - Usuário 
+	 com acesso ilimitado nas operações relacionadas a um banco de dados.
+             
+            E
+            Exceção: execução de um comportamento não permitido ou inesperado pelo sistema. 
+	 Geralmente exibe uma mensagem de erro descrevendo o motivo que gerou 
+	 a exceção e a operação em que ela ocorreu é abortada.
+             
+            EditCFG: o Editor de Configuração tem por objetivo manter todas as configurações 
+	 necessárias para a execução dos produtos Senior.
+             
+            Editor de Diagnóstico de Ambiente: aplicativo da Tecnologia G5 utilizado para criar modelos de Diagnóstico 
+	 de Ambiente.
+             
+            Executor de Diagnóstico de Ambiente:	aplicativo da Tecnologia G5 utilizado para executar modelos de Diagnóstico 
+	 de Ambiente.
+             
+            F
+            Flag:	sinalizador, indicador. Geralmente pode ter apenas dois estados: um 
+	 que indica verdadeiro e outro 
+	 que indica falso. Serve para 
+	 determinar como será o comportamento de alguma ação.
+             
+            Foco:	controle que está ativo no momento.
+             
+            Função de programador:	termo utilizado para identificar uma função de regra LSP escrita por 
+	 um usuário ou disponibilizada pelo próprio sistema.
+             
+            G
+            Grid:	grade; Matriz de linhas e colunas dispostas em ângulos retos permitindo 
+	 que pontos sejam facilmente localizados.
+             
+            L
+            LSP:	Linguagem Senior de Programação.
+             
+            M
+            Modelo de Diagnóstico de Ambiente:
+                	Arquivo no formato binário contruído através do aplicativo Editor de 
+	 Diagnóstico que contém as configurações para realizar uma execução 
+	 de diagnóstico de ambiente através do aplicativo Robô.
+             
+            P
+            Plano de Ação de Diagnóstico de Ambiente:	o plano de ação possui informações das ações executadas no ambiente 
+	 do cliente. É o produto principal de uma execução de diagnóstico de 
+	 ambiente. Nele consta as ocorrências de cada ação, as atividades que 
+	 serão realizadas e o tempo de cada atividade, bem como seus totais.
+             
+            S
+            SQL: Structured Query Language, ou Linguagem de Consulta Estruturada, é 
+	 uma linguagem de pesquisa declarativa para banco de dados relacional. 
+	 Muitas das características originais do SQL foram inspiradas na álgebra 
+	 relacional. Além dos comandos de seleção de dados ela suporta também 
+	 os comandos DML e DDL.
+             
+            SQL Senior 2:	Linguagem SQL desenvolvida pela Senior onde os comandos são escritos 
+	 seguindo um padrão e traduzidos de acordo com o banco de dados utilizados 
+	 pelo sistema. A linguagem abstrai o usuário das particularidades do 
+	 SQL de cada banco de dados.
+            SGI:	Senior Gerenciador de Interfaces. Permite ao usuário criar telas tanto 
+	 padrão Windows como Web.
+             
+            SGU: Senior Gerenciador de Usuários. Aplicativo para gerenciamento de usuários e grupos dos aplicativos 
+	 da Senior.
+            
+                
+            
+            SVCL:	Senior Visual Component Library - Biblioteca de Componentes Visuais 
+	 da Senior.	Biblioteca de componentes e fontes utilizadas na ferramenta de desenvolvimento 
+	 de software Delphi, utilizada pela Tecnologia G5 e vários outros sistemas.
+             
+            W
+            Web service:	Tecnologia que permite a integração de diferentes aplicativos, independente 
+	 da localização geográfica, da plataforma de execução ou da linguagem 
+	 em que foram construídos. Chama-se "provedor de web services" o aplicativo que 
+	 disponibiliza suas funcionalidades para acesso externo, e "cliente 
+	 de web services" o aplicativo que utiliza as funcionalidades 
+	 de outro aplicativo.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direi

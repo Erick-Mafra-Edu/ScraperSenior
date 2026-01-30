@@ -1,0 +1,193 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/suprimentos/cadastro-reducao-iss.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7CImpostos%2520%7CRedu%25C3%25A7%25C3%25B5es%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Impostos  > Reduções > Redução da base de ISS - legislação municipal
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Redução do valor base do ISS
+            A legislação Lei Complementar n°116/2003) permite aplicar um percentual de redução da base de cálculo do impostos sobre serviço (ISS), essa redução é tratada por município e muda de acordo com o serviço. O Gestão Empresarial | ERP permite configurar o percentual de redução para as Notas fiscais de entrada, Contrato de Compra, Ordem de compra e Cotação de Compra. Para o cálculo de redução de ISS, é considerada a cidade da filial que está recebendo a prestação do serviço.
+            
+                Importante
+                
+                Além desta redução, pode ser aplicada primeiramente outra redução na base de ISS,  por conta do valor dos materiais utilizados na prestação do serviço. Veja detalhes aqui.
+            
+            Passo a passo
+            
+                O cadastro da redução busca a porcentagem seguindo a seguinte regra para aplicação: Considera a redução cadastrada na Ligação Tipo de Serviço X Município (F080TXM); senãoLigação Serviço X CEP (F080SXC).
+                Um serviço, dentro de um município, sempre terá o mesmo percentual de redução. Com o objetivo de equalizar todos os CEPs existentes, o sistema apresentará a mensagem "O Percentual de Redução do ISS para o município de NOME está divergente entre os CEPs desta RAIS (NÚMERO). É necessário aplicar o valor atual (X) para os demais CEPs". Ou ainda pode ser feito o filtro pelo serviço e o código da RAIS, marcando todos os itens da tela será aplicado o percentual para todas as faixas de CEP.
+                Também podem ser utilizados os botões Aplicar, Marcar e Desmarcar, localizados ao final da tela.
+            
+            
+                Importante
+                
+                É necessário que o código da RAIS esteja ligado a todas as faixas de CEPs dos municípios, na tela de Cidades (CEP) gerada (F008CEP). 
+                A ligação do CEP com o serviço é feita na tela de Ligação Serviço X CEP (F080SXC) e do CEP com a RAIS é feita na tela Cidades (CEP) gerada (F008CEP).
+            
+            Exemplo
+                
+                    Neste exemplo, o percentual de desconto será aplicado para todos os serviços do código COS003, ligados ao CEPs de Blumenau, que tem como RAIS o código 4202404. 
+                    
+                        
+                    
+                    Consulta do Serviço COS003 após responder Aplicar  (F080SXC):
+                    
+                        
+                    
+                
+            
+            
+                O percentual de redução é buscado de acordo com o CEP da cidade do documento gerado e aplicado sobre o valor de base de cálculo do percentual de ISS.
+            
+            Exemplo
+                
+                    
+                        Serviço: COS003
+                        Percentual de cobrança de ISS = 5,00%
+                    
+                    Cadastro de Serviço (F080SER):
+                    
+                        
+                    
+                    Percentual de redução do município (F080SXC)= 50,00%
+                    
+                        
+                    
+                    
+                        Valor do serviço da Ordem de Compra = R$ 100,00
+                        Base de cálculo do ISS sem redução = R$ 100,00
+                        Valor a reduzir da base de cálculo = R$ 1.000 * 50% = R$ 50,00
+                        Base de cálculo reduzida = R$ 100,00 - R$ 50,00 = R$ 50,00
+                        Valor do ISS = R$ 50,00 * 5% = R$ 2,50
+                    
+                    Consulta do item da Ordem de Compra (F422CIO):
+                    
+                        
+                    
+                
+            
+            Observação O percentual de ISS pode ser buscado das seguintes telas:Tela Ligação Tipo de Serviço X Município (F080TXM)Tela de Cidades (CEP) geradas (F008CEP), campo % ISSTela de Ligação Serviço X CEP (F080SXC), campo Perc. ISSTela de Cadastros de Serviços (F080SER), campo % ISSO valor de ISS  pode ser alterado se o usuário possuir permissão na tela de Parâmetros de Usuário para Compras e Recebimento (F099UCP), campo Alterar ISS OC/NF. 
+            Processos que atendem o cálculo da redução do imposto:
+            Notas Fiscais de Entrada
+                
+                    Para o cálculo de redução de ISS, será considerada a ligação Ligação Tipo de Serviço X Município (F080TXM). Caso não esteja preenchido, o sistema considera a regra descrita na documentação da tela F080TXM. 
+                    O valor de redução do ISS é mostrado na tela de Nota Fiscal de Entrada Agrupada (F440GNE), no campo % Redução ISS, guia Serviços.
+                    O tratamento para a redução do imposto de ISS ocorre para todas as notas fiscais de entrada, o cálculo é efetuado para todos os processo de geração de nota fiscal de entrada:
+                    Exemplo
+                        
+                            Ao gerar a nota fiscal 222, e preencher o campo Código da Cidade ISS com a RAIS 4202404, o sistema busca o percentual de redução cadastrado para o item de serviço, pertencente à faixa de CEP da RAIS.
+                            Através do botão Cálculo da guia Serviços, acessado na tela Nota Fiscal de Entrada Agrupada (F440GNE), é possível visualizar a base de cálculo do ISS e o seu valor:
+                            
+                                
+                            
+                        
+                    
+                
+            
+            Ordens de Compra
+                
+                    Para o cálculo de redução de ISS, será considerada a ligação Ligação Tipo de Serviço X Município (F080TXM). Caso não esteja preenchido, o sistema considera a regra descrita na documentação da tela F080TXM.O valor de redução do ISS é mostrado na tela de Ordem de Compra Agrupada (F420GOC), no campo % Redução ISS, guia Serviços, conforme realizado no cadastro.
+                    Após processar a Ordem de Compra, ela pode ser vinculada uma nota fiscal de entrada, se necessário. Caso este vínculo ocorra, o valor imposto é levado da OC para a nota fiscal (desde que esteja zerado na nota).
+                    Exemplo
+                        
+                            
+                                Serviço: COS003
+                                Percentual de cobrança de ISS = 5,00%
+                            
+                            Cadastro de Serviço (F080SER):
+                            
+                                
+                            
+                            Percentual de redução do município (F080SXC)= 50,00%
+                            
+                                
+                            
+                            
+                                Valor do serviço da Ordem de Compra = R$ 100,00
+                                Base de cálculo do ISS sem redução = R$ 100,00
+                                Valor a reduzir da base de cálculo = R$ 1.000 * 50% = R$ 50,00
+                                Base de cálculo reduzida = R$ 100,00 - R$ 50,00 = R$ 50,00
+                                Valor do ISS = R$ 50,00 * 5% = R$ 2,50
+                            
+                            Consulta do item da Ordem de Compra (F422CIO):
+                            
+                                
+                            
+                        
+                    
+                
+            
+            Contratos de Compra
+                
+                    Os contratos também processam o cálculo de redução do imposto ISS (exceto contratos do tipo 3 - Financeiro normal, 4 - Financeiro Adicional, 5 - Comercial Sócios e 7 - Com Participação de Fornecedores), através do campo % Redução ISS, da guia Serviços.
+                    As telas de Contrato que tratam a redução do imposto são as seguintes:
+                    
+                        Contrato de Compra (Comercial/Financeiro/Eventos) (F460CTR)
+                        Ordens de Compra via Contratos de Compra (F420OCC)
+                         Nota Fiscal de Entrada via Contratos de Compra Comerciais (F461GNC)
+                        Consulta de Contratos de Compra (F462CTR)
+                    
+                    Exemplo
+                        
+                            Neste exemplo, foi gerado um contrato na tela de Contrato de Compra (F460CTR). O percentual de redução do ISS é buscado conforme o cadastro realizado e pode ser alterado, se necessário.
+                            
+                                
+                            
+                

@@ -1,0 +1,182 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/configuracoes-regionais/fconfregionally.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CConfigura%25C3%25A7%25C3%25B5es%2520Regionais%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Configurações Regionais > Configurações regionais
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Configurações regionais
+                Recurso que possibilita configurar as máscaras e os separadores 
+ de decimal e de milhar aplicados a cada região. Poderá 
+ ser cadastrado qualquer tipo de máscara, desde que a máscara cadastrada 
+ no campo Original seja compatível com a do campo Novo.
+                Nome
+                    Nesse campo deve ser dado 
+ um nome para a configuração regional que está sendo criada;
+                Separador Milhar
+                    Define o caracter 
+ que separa a parte fracionária de valores numéricos;
+                Separador Decimal
+                    Define o 
+ caracter que agrupa os milhares em valores numéricos.
+                Se estiver selecionado 
+ alguma configuração regional diferente da padrão, será ignorado a configuração 
+ de separadores configurada na opções 
+ de idioma e será aplicada a configurada na configuração regional corrente.
+                Novo
+                    Limpa todos os campos 
+ para que possa ser configurado um novo registro.
+                Excluir
+                    Exclui o registro corrente.
+                Máscara
+                    Grade que apresenta 
+ as máscaras já cadastradas:OriginalNovo#Datetime N(14,6)# MM-DD-YYYY hh:mm:ss#Datetime#MM-DD-YYYY hh:mm:ssDD/MM/YYYYMM-DD-YYYYDD/MM/YYYY hh:mm:ss MM-DD-YYYY hh:mm:ssMM/YYYYMM-YYYYDD/MMMM-DDDD/MM/YYYY hh:mmMM-DD-YYYY hh:mm#b#DD/MM/YYYY#b#MM-DD-YYYY #b#DD/MM#b#MM-DD#b#MM/YYYY#b#MM-YYYY
+                Nova 
+ máscara
+                    Utilizado para criar uma nova máscara, ele abrirá a tela 
+ de edição de máscara.
+                Editar máscara
+                    Utilizado para 
+ editar uma máscara, ele abrirá a tela de edição 
+ de máscara. Para editar uma máscara, basta selecionar uma das já existente 
+ na grade e clicar no botão Editar máscara ou dar um duplo 
+ clique em cima da máscara que se deseja editar.
+                Excluir máscara
+                    Utilizado para 
+ excluir uma máscara. Para excluir uma máscara, basta selecionar uma das 
+ já existente na grade e clicar no botão Excluir máscara.
+                Cancelar
+                    Cancela a alteração 
+ feita no registro atual.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

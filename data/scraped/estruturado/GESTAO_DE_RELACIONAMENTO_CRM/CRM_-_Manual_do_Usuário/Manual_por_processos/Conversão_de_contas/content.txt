@@ -1,0 +1,46 @@
+# Conversão de contas
+
+URL: https://documentacao.senior.com.br/gestao-de-relacionamento-crm/6.2.4/manual-processos/conversao-de-contas/conceito/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM - versão 6.2.4                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     CRM - Manual do Usuário
+                 > Manual por processos
+                 > Conversão de contas                         Conversão de contas
+O conceito de oportunidades de negócio pode proporcionar uma linha de conversão de contas automática, apoiando para uma gestão mais aprimorada das carteiras de clientes. Entende-se no conceito de aquisição de uma conta, que, ao se criar uma oportunidade de negócios para esta conta, já passamos por um processo de entendimento de ambas as partes, cliente e fornecedor, das demandas que podem ser supridas com o mix de produtos ou serviços da empresa. Deste modo as contas do tipo lead estão mais aquecidas e tornam-se prospect, e ao concluir uma negociação com um prospect, em caso de oportunidade ganha, esta conta passa a se tornar um cliente. Deste momento em diante a conta será sempre cliente, não podendo voltar a ser prospect.
+Nesta fase, o que pode acontecer é esta conta se tornar inativa do ponto de vista comercial ou até mesmo ser bloqueada por conta de políticas financeiras da empresa ou baixada por encerramento de atividades. Estes status dos clientes, caso o projeto possua integração com o ERP, podem ser alimentados pela base cadastral do Gestão Empresarial | ERP. O processo de gestão de oportunidades conta com o apoio de algumas automatizações de processo como a geração automática, e pré estabelecida de um follow-up, ao se enviar uma proposta para que o representante possa lembrar de entrar em contato com a conta para verificar o status da proposta ou efetuar o fechamento. Ao enviar uma proposta, o Gestão de Relacionamento | CRM pode ser parametrizado para alterar automaticamente a etapa do funil de vendas. É possível parametrizar o Gestão de Relacionamento | CRM para notificar usuários específicos ao efetuar algumas atividades em uma oportunidade de negócios, o que é fundamental para o acompanhamento mais próximo em um fechamento. Esta parametrização é feita por tipo de oportunidade.
+Principais funcionalidades:
+
+Criar ou consultar oportunidades;
+Utilizar o Funil de Vendas - Pipeline;
+Fazer integração com o ERP;
+Cadastrar propostas com base nas demandas identificadas;
+Criar roteiros para as abordagens;
+Converter contas através do aplicativo.
+       
+Este artigo ajudou você?
+   Sim
+  Não
+    
+Gostaria de deixar uma sugestão para melhorar esta página?
+ 
+Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+ 
+Nome/E-mail (Opcional):   
+Deixe seu comentário:      Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+     Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.     SUPORTE SENIOR SUPORTE MEGA     
+Agradecemos pelo seu feedback!
+Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+  const o=document.getElementById("question"),n=document.getElementById("formcomentario"),i=document.getElementById("feedback-positivo");i?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Sim"}),o.remove(),n.style.display="block"});const r=document.getElementById("feedback-negativo");r?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Não"}),o.remove(),n.style.display="block"});const d=document.getElementById("comentario"),m=document.getElementById("charNum");d.addEventListener("keyup",e=>{let t=100-e.target.value.length;m.innerHTML=`Caracteres restantes: ${t}`});n.addEventListener("submit",e=>{e.preventDefault(),grecaptcha.ready(function(){grecaptcha.execute("6Lf3rgoaAAAAAAx7d9UyE9vFrMv5p1AZdXFyUMif",{action:"submit"}).then(function(a){var t=$("#email").val(),c=$("#comentario").val();gtag("event","feedback-descritivo",{contato:t,comentario:c,aceite:"Com aceite"}),$("#formcomentario").hide(),$("#thanks").show()})})});  var r=document.location.href,n=r.split("/")[3],e=document.getElementById("frame-mkt");e&&(e.innerHTML='<iframe frameborder="0" class="framebanner" scrolling="no" src="https://ads.senior.com.br/ads/#/view-banner/'+n+"?url="+encodeURIComponent(r)+'"></iframe>');    Base de Conhecimento   Portal de Exigências Legais  Documentação em outros idiomas:   English    Español     Senior Store   Universidade Corporativa   Fórum de Produtos   Trabalhe conosco   Blog              Todos os direitos de cópias reservadas para Senior Sistemas S.A. 
+A reprodução não autorizada desta publicação, no todo ou em parte,
+            constitui violação dos direitos autorais (Lei 9.610/98).
+         document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#main"),o=document.querySelector(".new-scroll-to-top"),t=200;e?.addEventListener("scroll",()=>{e.scrollTop>t?o?.classList.add("visible"):o?.classList.remove("visible")}),document.getElementById("newScrollTop")?.addEventListener("click",()=>{e?.scrollTo({top:0,behavior:"smooth"})})});  

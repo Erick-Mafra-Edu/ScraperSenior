@@ -1,0 +1,260 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#linguagem-sql-senior-2/funcoes.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLinguagem%2520SQL%2520Senior%25202%7C_____6
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Linguagem SQL Senior 2 > Funções
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Funções
+                Usadas em Grupos
+                    
+                        
+                            
+                            
+                            
+                            
+                                Nome
+                                Explicação breve
+                                Exemplo
+                            
+                            
+                                COUNT
+                                Retorna a contagem das ocorrências na qual a expressão informada é não-nula, ou retorna a contagem de registros.
+                                select count(cod_produto) from produto;
+                            
+                            
+                                MAX
+                                Retorna o maior valor encontrado com a expressão informada.
+                                select max(vlr_unit) from item_pedido;
+                            
+                            
+                                MIN
+                                Retorna o menor valor encontrado com a expressão informada.
+                                select min(vlr_unit) from item_pedido;
+                            
+                            
+                                SUM
+                                Retorna a soma dos valores obtidos com a expressão informada.
+                                select sum(vlr_unit) from item_pedido;
+                            
+                            
+                                AVG
+                                Retorna a média simples dos valores obtidos com a expressão informada.
+                                select avg(vlr_unit) from item_pedido;
+                            
+                        
+                         
+                    
+                
+                Escalares
+                    
+                        
+                            
+                            
+                            
+                            
+                                Nome
+                                Explicação breve
+                                Exemplo
+                            
+                            
+                                LENGTH
+                                Retorna o tamanho, em caracteres, do texto informado.
+                                select length('Informática') from R999VER;
+                            
+                            
+                                DATALENGTH
+                                Retorna o tamanho, em caracteres, do texto informado, considerando espaços à direita e à esquerda.
+                                 
+                            
+                            
+                                TRUNC
+                                Corta dígitos depois da vírgula (diminui a escala de um valor numérico, desprezando os dígitos que ficaram pra fora).
+                                select trunc(3.566233,2) from R999VER;
+                            
+                            
+                                SUBSTR
+                                Retorna uma substring do texto informado, usando a posição e o tamanho informados. A posição inicial do primeiro caractere inicia em 0 (zero).
+                                select substr('Oracle SQL',0,6) from R999VER;
+                            
+                            
+                                UPPER
+                                Converte todos os caracteres do texto informado para maiúsculo.
+                                Select Upper('blumenau') from R999VER;
+                            
+                            
+                                LOWER
+                                Converte todos os caracteres do texto informado para minúsculo.
+                                select Lower('BLUMENAU') from R999VER;
+                            
+                            
+                                IFNULL
+                                Retorna a expressão informada caso ela não seja NULL. Caso ela seja NULL, retorna uma outra expressão informada.
+                                 
+                            
+                            
+                                STRTONUMBER
+                                Converte texto para número.
+                                 
+                            
+                            
+                                NUMBERTOSTR
+                                Converte número para texto.
+                                 
+                            
+                            
+                                STRTODATE
+                                Converte texto para data.
+                                 
+                            
+                            
+                                DATETOSTR
+                                Converte data para texto.
+                                 
+                            
+                            
+                                FIRSTDAY
+                                Retorna uma data com o primeiro dia do mês da data informada.
+                                 
+                            
+                            
+                                LASTDAY
+                                Retorna uma data com o último dia do mês da data informada.
+                                 
+                            
+                            
+                                DAYOF
+                                Retorna o dia da data informada.
+                                 
+                            
+                            
+                                MONTHOF
+                                Retorna o mês da data informada.
+                                 
+                            
+                            
+                                YEAROF
+                                Retorna o ano da data informada.
+                                 
+                            
+                            
+                                TODAY
+                                Retorna a data de hoje.
+                                 
+                            
+                            
+                                ASCII
+                                Retorna o código ASCII do primeiro caracter da String informada.
+                                select ascii('F') from R999VER;
+                            
+                            
+                                CHR
+                                Retorna o caracter cujo código ASCII corresponde ao número informado.
+                                select chr(244) from R999VER;
+                            
+                            
+                                CASE
+                                Retorna uma expressão resultante.
+                                 
+                            
+                            
+                                DAYTOHOURS
+                                Converte dia para horas.
+                                 
+                            
+                            
+                                DAYTOMINUTES
+                                Converte dia para minutos.
+                                 
+                            
+                            
+                                DAYTOSECONDS
+                                Converte dia para segundos.
+                                 
+                            
+                            
+                                DAYTOMILLISECONDS
+                                Converte dia para milissegundos.
+                                 
+                            
+                            
+                                HOURTOMINUTES
+                                Converte horas para minutos.
+                                 
+                            
+                            
+                                HOURTOSECONDS
+                                Converte horas para segundos.
+                                 
+                            
+                            
+                                HOURTOMILLISECONDS
+                                Converte horas para milissegundos.
+                                 
+                            
+                            
+                                MINUTETOSECONDS
+                                Converte minutos para segundos.
+                                 
+                            
+                            
+                                MINUTETOMILLISECONDS
+                                Converte minutos para milissegundos.
+                                 
+                            
+                            
+                                MOD
+                                Retorna o resto da divisão de m por n.
+                                select mod(11,3) f

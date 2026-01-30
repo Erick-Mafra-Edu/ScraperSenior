@@ -1,0 +1,171 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#configuracoes-do-pdv/bloco-x.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CConfigura%25C3%25A7%25C3%25B5es%2520do%2520PDV%7CBloco%2520X%7C_____0
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Configurações do PDV >  Bloco X
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+             Bloco X
+            O Bloco X é o conjunto de requisitos do Programa Aplicativo Fiscal (PAF-ECF) para atender exigências pré-estabelecidas no ATO COTEPE DIAT Nº 15/2019. Estes requisitos exigem a transmissão de documentos fiscais para a SEFAZ - SC através da internet, sendo eles os arquivos com informações da Redução Z do PAF-ECF gerado pelo PDV diariamente e do estoque mensal do estabelecimento gerado junto com a primeira Redução Z de cada mês pelo PDV. Além disso, é obrigatória a transmissão do Bloco X para as lojas de Santa Catarina a partir do dia 01/04/2021.
+            O sistema de Gestão de Lojas transmite os arquivos para a SEFAZ-SC de forma automática, quando atendido todos os seus pré-requisitos. Para isso, é necessário que a loja possua conexão com o sistema eDocs (solução para gestão de documentos fiscais eletrônicos).
+            Caso haja algum problema na transmissão, ou o arquivo não seja aprovado pela SEFAZ-SC, ao iniciar o Senior PDV Caixa será exibida uma mensagem de alerta informando que existe pendência de transmissão. Importante lembrar que a legislação vigente permite que a loja acumule até 20 pendências de arquivos para redução Z e até 5 pendências para estoque, ultrapassando esse limite, o PDV deve bloquear, não sendo possível realizar vendas.
+            
+                Importante
+                
+                A configuração, habilitação do parâmetro dinâmico BLOCOXPAF.HABILITA.DESABILITA, deve ser ativada somente a partir do dia 01/04/2021. A Redução Z é enviada diariamente e se for enviada antes, a SEFAZ - SC vai rejeitar a mesma. Após a ativação do Bloco X (ativação deste parâmetro dinâmico) o IntegradorRetaguarda da filial deve ser reiniciado.
+            
+            Legislação
+            Para mais informações sobre a legislação que envolve o Bloco X, acesse:
+            
+                ATO DIAT Nº 017/2017
+                
+                ATO DIAT Nº 15/2019
+                
+                Correio Eletrônico Circular Nº 013/2020
+                
+                Ato DIAT Nº 010/2020
+                
+                Ato DIAT Nº 011/2020
+                
+            
+            Fluxo do Processo
+            
+            
+            Envio de arquivos e documentos
+            Os arquivos são enviados para o Retaguarda automaticamente através da tela Bloco X - Arquivos, que apresenta todos os arquivos do Bloco X, com as suas situações. Os documentos são enviados para a Receita de forma automática, quando atendido todos os seus pré-requisitos:
+            
+                Conexão com sistema eDocs;
+                Configuração dos parâmetros dinâmicos citados abaixo;
+                Conexão com a internet, em que o eDocs estiver instalado;
+                Versão 6.2.16.9 ou superior do PDV;
+                Versão 6.2.16.9 ou superior do Retaguarda;
+                Versão 5.8.12.27 ou superior do eDocs.
+            
+            Acesse a página Consulta de URLs, no Manual do Usuário do eDocs, para mais informações sobre os web services utilizados pela SEFAZ. É necessário informar o tipo de documento (Paf-ECF Bloco X) e o estado (Santa Catarina) e  imprescindível que o usuário tenha acesso à esses sites.
+            Credenciamento
+            Serviço cuja funcionalidade é disponibilizar aos clientes do Gestão de Lojas, o número de credenciamento necessário para o envio dos arquivos. Esse número  é gerado a cada nova versão que é credenciada na SEFAZ. Com isso, todos os arquivos gerados a partir do momento que for credenciada a nova versão deverão ser gerados utilizando o novo número de credenciamento gerado. Caso contrário, esses arquivos serão rejeitados.
+            Ao realizar a atualização do credenciamento de uma loja na SEFAZ, qualquer geração subsequente de arquivos do Bloco X deve utilizar esse novo credenciamento.
+            
+                Importante 
+                É recomendável que a versão seja atualizada o quanto antes, evitando assim, a rejeição dos arquivos do Bloco X. Sempre que houver 20 arquivos do Bloco X pendentes de transmissão, o PDV é bloqueado e volta a ser liberado depois que, pelo menos um arquivo tiver sido transmitido. Serão apresentadas mensagens no PDV indicando a quantidade de arquivos pendentes de transmissão, caso haja. Além disso, é obrigatório ter acesso liberado  à URL: http://licenciamento.senior.com.br:9797/credenciamento/inscricaoestadual?ie=
+            
+            Credenciamento on-line
+            No momento de gerar a versão do Gestão de Lojas é cadastrada uma nova versão no SAT (Sistema de Administração Tributária), que, por sua vez, gera um novo número de credenciamento. Este número de credenciamento é cadastrado no sistema Versa que será consultado pelo Retaguarda para atualizar o número de credenciamento.
+            O que você deve fazer:
+            Configurar parâmetros dinâmicos
+                
+                    Para o funcionamento do Bloco X é necessário configurar determinados parâmetros dinâmicos no Gestão Empresarial | ERP:
+                    
+                        
+                        
+                        
+                            
+                                Nome
+                                Descrição
+                            
+                            
+                                BLOCOXPAF.HABILITA.DESABILITA
+                                Responsável por habilitar/desabilitar a funcionalidade do Bloco X no Gestão de Lojas. Valor: "0 - Desabilitado", "1 - Habilitado". Este parâmetro deve estar habilitado apenas para as filiais que irão utilizar o Bloco X (apenas Santa Catarina). O valor do parâmetro deve ser 1 - Habilitado para essas filiais.Antes de bloquear o PDV, o sistema verifica se o parâmetro está habilitado. Caso sim, ele confere a quantidade de arquivos do Bloco X pendentes para envio e, se o limite foi atingido, bloqueia o PDV. Quando o valor for alterado, será necessário reiniciar o Integrador Retaguarda.
+                            
+                            
+                                CREDENCIAMENTOPAF.PORTA.CONSULTA
+                                Indica a porta do servidor no qual terá o número de credenciamento consultado no sistema. Valor: 9797 (padrão). Este valor deve ser alterado somente com orientação da Senior.
+                            
+                            
+                                CREDENCIAMENTOPAF.SERVER.CONSULTA
+                                Indica o nome do servidor no qual terá o número de credenciamento consultado no sistema. Valor: http://licenciamento.senior.com.br (padrão). É importante que o usuário tenha acesso à essa URL. Este valor deve ser alterado somente com orientação da Senior.
+                            
+                            
+                                PAFECF.NUMEROCREDENCIAMENTO
+                                Quando não houver uma forma de consultar o número de credenciamento nos web services da Senior, pode-se utilizar este parâmetro para definir o número de credenciamento para cada Filial (o sistema sempre tentará buscar o número de credenciamento no sistema Versa, e, caso não consiga, será considerado este parâmetro dinâmico). Para saber qual é o seu número de credenciamento, entre em contato com o Suporte da Senior.
+                            
+                        
+                    
+                
+            
+            Obtenha mais informações
+            Assista os vídeos orientativos para obter mais informações do Bloco X.
+            
+                 Atenção
+                
+                Os vídeos abaixo estão hospedados no YouTube - para visualizá-los, portanto, é necessário que o acesso ao site citado seja autorizado e liberado pela empresa. Em caso de dúvidas, entre em contato com a equipe responsável pela tecnologia dentro da sua organização.
+            
+            Bloco X e suas parametrizações
+                
+                    
+                    
+                
+            
+            Geração Bloco X e Redução Z
+                
+                    
+                    
+                
+            
+            Geração Bloco X Estoque
+                
+                    
+                    
+                
+            
+            Funcionalidades tela Bloco X - Arquivos
+                
+                    
+                    
+                
+            
+            Bloqueio de PDV pelo Bloco X
+                
+                    
+                    
+                
+            
+            
+                Observação
+                
+                Para saber com qual solução Senior atendemos a cada estado do país, acesse a documentação das Soluções Fiscais Credenciadas por Estado.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar

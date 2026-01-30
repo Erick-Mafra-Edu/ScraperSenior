@@ -1,0 +1,343 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#integracoes/status-eletronicos.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____14
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > Informações sobre status eletrônicos de documentos fiscais
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Informações sobre status eletrônicos de
+documentos fiscais
+            A planilha abaixo mostra todos os status de documentos eletrônicos presentes
+no ERP. Nela é possível identificar quais documentos
+eletrônicos utilizam o status, se ele é final  e quais status podem ou não receber  retorno.
+            Exemplo:
+                
+                    O status 3 - Autorizado é  utilizado por todos os documentos eletrônicos. Ele é um status final (em que o documento eletrônico não deve mais ser alterado) e que não aceita retorno (ou seja, documentos com esse status não podem mais receber retorno via SeniorSID ou web services).
+                
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    
+                        Cód. Status
+                        Descrição status
+                        Aceita retorno
+                        Status final
+                        Tipo de documento eletrônicos
+                    
+                    
+                        NF-e
+                        CC-e
+                        MF-e
+                        NFS-e
+                        CT-e
+                        MDF-e
+                    
+                    
+                        1
+                        Não enviada
+                        Não
+                        Não
+                        X
+                        X
+                        X
+                        X
+                        X
+                        X
+                    
+                    
+                        2
+                        Enviada
+                        3,4,5 ou 10
+                        Não
+                        X
+                        X
+                        X
+                        X
+                        X
+                        X
+                    
+                    
+                        3
+                        Autorizada
+                        Não
+                        Sim
+                        X
+                        X
+                        X
+                        X
+                        X
+                        X
+                    
+                    
+                        4
+                        Rejeitada
+                        3 (exceto MF-e)
+                        Não
+                        X
+                        X
+                        X
+                        X
+                        X
+                        X
+                    
+                    
+                        5
+                        Denegada
+                        Não
+                        Sim
+                        X
+                         
+                         
+                         
+                        X
+                         
+                    
+                    
+                        6
+                        Solicitado Inutilização
+                        8 ou 12
+                        Não
+                        X
+                         
+                         
+                         
+                        X
+                         
+                    
+                    
+                        7
+                        Solicitado Cancelamento
+                        9 ou 11 (3 ou 4, em caso de retorno como evento)
+                        Não
+                        X
+                         
+                         
+                        X
+                        X
+                        X
+                    
+                    
+                        8
+                        Inutilizada
+                        Não
+                        Sim
+                        X
+                         
+                         
+                         
+                        X
+                         
+                    
+                    
+                        9
+                        Cancelada
+                        Não
+                        Sim
+                        X
+                         
+                         
+                        X
+                        X
+                        X
+                    
+                    
+                        10
+                        Erro Geração
+                        Não
+                        Não
+                        X
+                        X
+                        X
+                        X
+                        X
+                        X
+                    
+                    
+                        11
+                        Erro Solicitação Cancelamento
+                        Não
+                        Não
+                        X
+                         
+                         
+                        X
+                        X
+                        X
+                    
+                    
+                        12
+                        Erro Solicitação Inutilização
+                        Não
+                        Não
+                        X
+                         
+                         
+                         
+                        X
+                         
+                    
+                    
+                        13
+                        Pendente de Cancelamento
+                        Situação interna - não é utilizada para ações que envolvem o usuário
+                    
+                    
+                        14
+                        Solicitação Encerramento (MDF-e)
+                        15
+                        Não
+                         
+                         
+                         
+                         
+                         
+                        X
+                    
+                    
+                        15
+                        Encerrado (MDF-e)
+                        Não
+                        Sim
+                         
+                         
+                         
+                         
+                         
+                        X
+                    
+                
+            
+            Caso seja necessária a alteração manual do status de um
+documento eletrônico no ERP, isso deve ser feito por meio de 
+AçõesSID (via SeniorSID – DepuraSID) ou  chamada de web service (via
+MCDebug). Alterações em status  de documentos eletrônicos
+diretamente na base de dados do ERP podem causar inconsistências e devem ser efetuadas somente com
+acompanhamento da Senior.
+            
+                Importante
+                
+                O que foi exposto acima não vale para NFC-e. Esse documento é administrado por outros sistemas de Varejo (Gestão de Lojas, Megasul etc.) e integrados ao ERP já com status finais (autorizado, cancelado ou inutilizado).
+            
+            Diferença entre status do documento e
+status do documento eletrônico no ERP
+            Status significa a situação na qual o documento se encontra no ERP, que indica dois status para um documento eletrônico: o do
+documento em si (que é um status interno do ERP) e o do documento
+eletrônico (que é o status do documento eletrônico emitido pelo ERP). O ERP  sempre controla os
+dois status, que podem variar de
+acordo com as operações realizadas no sistema.
+            Segue abaixo uma tabela indicando
+a relação entre os status do documento no ERP e os status do documento
+eletrônico.
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Cód. Status
+                        Descrição Status Eletrônico
+                        Status do documento no ERP
+                    
+                    
+                        1 - Digitada
+                        2 - Fechada 
+                        3 - Cancelada
+                    
+                    
+                        1
+                        Não enviada
+                        X
+                        X
+                         
+                    
+                    
+                        2
+                        Enviada
+                         
+                        X
+                         
+                    
+                    
+                        3
+                        Autorizada
+                         
+                        X
+                         
+                    
+                    
+                        4
+                        Rejeitada
+                         
+                        X
+                         
+                    
+          

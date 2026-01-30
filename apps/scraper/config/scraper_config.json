@@ -1,0 +1,155 @@
+{
+  "scraper": {
+    "base_url": "https://documentacao.senior.com.br",
+    "max_pages": 100,
+    "timeout_ms": 30000,
+    "headless": true,
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "extraction": {
+    "max_content_length": 100000,
+    "min_content_length": 100,
+    "max_title_length": 500,
+    "max_breadcrumb_depth": 8,
+    "extract_images": false,
+    "extract_links": true,
+    "extract_tables": true,
+    "extract_code_blocks": true
+  },
+  "cleanup": {
+    "remove_empty_lines": true,
+    "normalize_whitespace": true,
+    "remove_trailing_spaces": true,
+    "garbage_patterns": [
+      "\\s+",
+      "\\n{3,}",
+      "<!--.*?-->",
+      "<script.*?</script>",
+      "<style.*?</style>"
+    ],
+    "garbage_sequences": [
+      {"pattern": "^\\s*$", "action": "remove"},
+      {"pattern": "(javascript:void|#$)", "action": "skip_element"},
+      {"pattern": "\\x00|\\ufffd", "action": "remove"},
+      {"pattern": "(anúncio|advertisement|publicidade)", "action": "remove"},
+      {"pattern": "(cookie|rastreamento|analytics)", "action": "remove"}
+    ]
+  },
+  "javascript_handling": {
+    "enable_js_interaction": true,
+    "wait_for_selectors": [
+      ".content-loaded",
+      "[data-loaded='true']",
+      "#main-content"
+    ],
+    "click_and_wait": [
+      {
+        "selector": "a[href*='#']",
+        "wait_ms": 1000,
+        "detect_change": {
+          "monitor_selector": ".dynamic-content",
+          "check_attribute": "data-timestamp",
+          "max_retries": 3
+        }
+      },
+      {
+        "selector": "[data-expandable='true']",
+        "wait_ms": 500,
+        "detect_change": {
+          "monitor_selector": "[data-expanded='true']",
+          "check_visibility": true
+        }
+      },
+      {
+        "selector": ".toc-item",
+        "wait_ms": 800,
+        "detect_change": {
+          "monitor_selector": ".content-frame",
+          "check_content_change": true
+        }
+      }
+    ],
+    "execute_scripts": [
+      {
+        "name": "remove_modals",
+        "script": "document.querySelectorAll('.modal, [role=\"dialog\"]').forEach(el => el.remove())"
+      },
+      {
+        "name": "remove_ads",
+        "script": "document.querySelectorAll('[class*=\"ad\"], [class*=\"banner\"]').forEach(el => el.remove())"
+      },
+      {
+        "name": "expand_dynamic_content",
+        "script": "document.querySelectorAll('[data-expandable], .collapsed').forEach(el => el.click && el.click())"
+      }
+    ]
+  },
+  "selectors": {
+    "title": [
+      "h1",
+      "[data-role='title']",
+      ".page-title",
+      ".document-title"
+    ],
+    "content": [
+      "#main-content",
+      ".content",
+      "[data-role='content']",
+      "article",
+      "main"
+    ],
+    "breadcrumb": [
+      ".breadcrumb",
+      "[data-role='navigation']",
+      ".toc-path",
+      "[class*='breadcrumb']"
+    ],
+    "navigation": [
+      ".toc",
+      ".sidebar",
+      "[data-role='toc']",
+      ".navigation-menu"
+    ],
+    "skip": [
+      "script",
+      "style",
+      ".hidden",
+      "[aria-hidden='true']",
+      ".advertisement",
+      "[class*='cookie']",
+      "iframe[src*='ads']"
+    ]
+  },
+  "links": {
+    "follow_patterns": [
+      "documentacao.senior.com.br",
+      "help.senior.com.br"
+    ],
+    "ignore_patterns": [
+      "javascript:",
+      "#$",
+      "mailto:",
+      "tel:",
+      "data:",
+      "file://"
+    ],
+    "internal_only": true,
+    "max_depth": 5
+  },
+  "output": {
+    "format": "jsonl",
+    "save_directory": "docs_scraped",
+    "include_metadata": true,
+    "include_timestamp": true,
+    "include_scrape_duration": true,
+    "compression": null
+  },
+  "retry": {
+    "max_retries": 3,
+    "retry_delay_ms": 2000,
+    "timeout_on_retry_ms": 45000
+  }
+}

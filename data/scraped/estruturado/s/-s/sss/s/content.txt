@@ -1,0 +1,54 @@
+# Indicadores
+
+URL: https://documentacao.senior.com.br/gestao-de-relacionamento-crm/6.2.4/manual-processos/indicadores/conceito/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM - versão 6.2.4                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     CRM - Manual do Usuário
+                 > Manual por processos
+                 > Indicadores                         Indicadores
+O módulo de Indicadores é uma ferramenta do Gestão de Relacionamento | CRM que, traz um dashboard que permite agregar informações automaticamente em tempo real de todas as áreas de uso do sistema, mostrando análise de tendências, estatísticas, com total interatividade com os gráficos exibidos. É a parte do sistema que trata da exibição de forma gráfica, sobre todos os módulos do CRM. Nesta parte é possível fazer filtragens específicas de cada um dos módulos para extrair as informações da forma mais adequada. Ao visualizar o gráfico, é possível mergulhar no módulo específico para análise mais aprofundada.
+Com a ferramenta de Indicadores de performance, é possível controlar e acompanhar a produtividade de usuários ou grupos nas atividades gerenciadas pelo CRM. No acompanhamento de metas é pode ser acessado o andamento de metas sejam elas por usuário, grupo ou consolidada, para um total controle do desempenho da equipe comercial. As metas são vinculadas por tipo e sub-tipo de oportunidade e são parametrizadas individualmente por usuário.
+O Gerenciamento de atividades mostra as atividades realizadas em cada módulo do sistema, por cada usuário.
+Principais funcionalidades:
+
+Exibir dashboard;
+Analisar indicadores de performance;
+Gerenciar atividades;
+Acompanhamento de metas.
+
+Indicadores por processo
+Gestão de prospecção comercial
+Ao utilizar os indicadores e relatórios é possível ter uma gestão analítica a respeito das ações executadas pelo time comercial, entender as atividades executadas, verificar os compromissos atrasados e extrair gráficos entre compromissos executados e agendados. É possível ainda, buscar informações utilizando as filtragens disponíveis no sistema e deste modo gerir de forma alinhada, a estratégia da empresa às ações comerciais.
+Captação de contas
+Para o processo de captação de contas o CRM oferece uma grande quantidade de indicadores e relatórios que vão apoiar na gestão e entendimento de como estão ocorrendo as atividades relacionadas às contas. É possível também identificar os principais canais de captação de contas para focar os esforços nos canais mais assertivos.
+Gestão de ocorrências
+Através dos indicadores e relatórios do sistema voltados à área de controle de ocorrências, é possível extrair informações para análise e principalmente para identificar demandas semelhantes e propor melhorias de processos para solução da causa raiz dos problemas. Caso o cliente queira elaborar um relatório customizado integrando as informações a um BI, por exemplo, é possível através de um contato comercial, a liberação de acesso à leitura no banco de dados do Gestão de Relacionamento | CRM. Desta forma o cliente pode criar os cruzamentos de informações da maneira como melhor lhe atender.
+Gestão de oportunidades
+Dentro do contexto de oportunidades de negócios, é possível ter indicadores gerados a partir das informações imputadas nas oportunidades a fim de analisar mapas de calor de vendas, identificar vendas perdidas e seus motivos para que possam ser montadas estratégias de reversão e aumento de assertividade das vendas.       
+Este artigo ajudou você?
+   Sim
+  Não
+    
+Gostaria de deixar uma sugestão para melhorar esta página?
+ 
+Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+ 
+Nome/E-mail (Opcional):   
+Deixe seu comentário:      Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+     Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.     SUPORTE SENIOR SUPORTE MEGA     
+Agradecemos pelo seu feedback!
+Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+  const o=document.getElementById("question"),n=document.getElementById("formcomentario"),i=document.getElementById("feedback-positivo");i?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Sim"}),o.remove(),n.style.display="block"});const r=document.getElementById("feedback-negativo");r?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Não"}),o.remove(),n.style.display="block"});const d=document.getElementById("comentario"),m=document.getElementById("charNum");d.addEventListener("keyup",e=>{let t=100-e.target.value.length;m.innerHTML=`Caracteres restantes: ${t}`});n.addEventListener("submit",e=>{e.preventDefault(),grecaptcha.ready(function(){grecaptcha.execute("6Lf3rgoaAAAAAAx7d9UyE9vFrMv5p1AZdXFyUMif",{action:"submit"}).then(function(a){var t=$("#email").val(),c=$("#comentario").val();gtag("event","feedback-descritivo",{contato:t,comentario:c,aceite:"Com aceite"}),$("#formcomentario").hide(),$("#thanks").show()})})});  var r=document.location.href,n=r.split("/")[3],e=document.getElementById("frame-mkt");e&&(e.innerHTML='<iframe frameborder="0" class="framebanner" scrolling="no" src="https://ads.senior.com.br/ads/#/view-banner/'+n+"?url="+encodeURIComponent(r)+'"></iframe>');    Base de Conhecimento   Portal de Exigências Legais  Documentação em outros idiomas:   English    Español     Senior Store   Universidade Corporativa   Fórum de Produtos   Trabalhe conosco   Blog              Todos os direitos de cópias reservadas para Senior Sistemas S.A. 
+A reprodução não autorizada desta publicação, no todo ou em parte,
+            constitui violação dos direitos autorais (Lei 9.610/98).
+         document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#main"),o=document.querySelector(".new-scroll-to-top"),t=200;e?.addEventListener("scroll",()=>{e.scrollTop>t?o?.classList.add("visible"):o?.classList.remove("visible")}),document.getElementById("newScrollTop")?.addEventListener("click",()=>{e?.scrollTo({top:0,behavior:"smooth"})})});  

@@ -1,0 +1,531 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#view/tabelaascii.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CView%7C_____6
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > View > Tabela ASCII
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Tabela ASCII
+                O Código Padrão Americano para Intercâmbio de Informação (American Standard Code for Information Interchange), foi desenvolvido pelo ANSI (American National Standards Institute), e é o formato mais comum para arquivos texto em computadores. Em um arquivo de ASCII, cada caracter é representado pelos 8 bits (equivalente a um byte), sendo que o oitavo bit (da direita para a esquerda) serve como um bit de paridade, utilizado para detectar erros. São definidos 128 caracteres possíveis.
+                UNIX e sistemas operacionais baseados em DOS (com exceção de Windows NT) usam o ASCII para arquivos de texto. Windows NT usa um código mais novo chamado Unicode. O Sistema da IBM de 390 servidores usam um 8-bit código proprietário chamado EBCDIC. Programas de conversão permitem sistemas operacionais diferentes para mudar um arquivo de um código para outro.
+                
+                    
+                        asc
+                        
+                        ctrl
+                        
+                        asc
+                        
+                        sim
+                        
+                        asc
+                        
+                        sim
+                        
+                        asc
+                        
+                        sim
+                        
+                        asc
+                        
+                        sim
+                        
+                        asc
+                        
+                        sim
+                        
+                        asc
+                        
+                        sim
+                        
+                        asc
+                        
+                        sim
+                        
+                    
+                    
+                        00
+                        ^@
+                        32
+                        SP
+                        66
+                        B
+                        100
+                        d
+                        134
+                        å
+                        168
+                        ¿
+                        202
+                        -
+                        236
+                        ý
+                    
+                    
+                        01
+                        ^A
+                        33
+                        !
+                        67
+                        C
+                        101
+                        e
+                        135
+                        ç
+                        169
+                        ®
+                        203
+                        -
+                        237
+                        Ý
+                    
+                    
+                        02
+                        ^B
+                        34
+                        "
+                        68
+                        D
+                        102
+                        f
+                        136
+                        ê
+                        170
+                        ¬
+                        204
+                        ¦
+                        238
+                        ¯
+                    
+                    
+                        03
+                        ^C
+                        3
+                        #
+                        69
+                        E
+                        103
+                        g
+                        137
+                        ë
+                        171
+                        ½
+                        205
+                        -
+                        239
+                        ´
+                    
+                    
+                        04
+
+                        ^D
+
+                        36
+
+                        $
+
+                        70
+
+                        F
+
+                        104
+
+                        h
+
+                        138
+
+                        è
+
+                        172
+
+                        ¼
+
+                        206
+
+                        +
+
+                        240
+
+                        ­
+
+                    
+                    
+                        05
+
+                        ^E
+
+                        37
+
+                        %
+
+                        71
+
+                        G
+
+                        105
+
+                        i
+
+                        139
+
+                        ï
+
+                        173
+
+                        ¡
+
+                        207
+
+                        ¤
+
+                        241
+
+                        ±
+
+                    
+                    
+                        06
+
+                        ^F
+
+                        38
+
+                        &
+
+                        72
+
+                        H
+
+                        106
+
+                        j
+
+                        140
+
+                        î
+
+                        174
+
+                        «
+
+                        208
+
+                        ð
+
+                        242
+
+                        _
+
+                    
+                    
+                        07
+
+                        ^G
+
+                        39
+
+                        '
+
+                        73
+
+                        I
+
+                        107
+
+                        k
+
+                        141
+
+                        ì
+
+                        175
+
+                        »
+
+                        209
+
+                        Ð
+
+                        243
+
+                        ¾
+
+                    
+                    
+                        08
+
+                        ^H
+
+                        40
+
+                        (
+
+                        74
+
+                        J
+
+                        108
+
+                        l
+
+                        142
+
+                        Ä
+
+                        176
+
+                        _
+
+                        210
+
+                        Ê
+
+                        244
+
+                        ¶
+
+                    
+                    
+                        09
+
+                        ^I
+
+                        41
+
+                        )
+
+                        75
+
+                        K
+
+                        109
+
+                        m
+
+                        143
+
+                        Ã
+
+                        177
+
+                        _
+
+                        211
+
+                        Ë
+
+                        245
+
+                        §
+
+                    
+                    
+                        10
+
+                        ^J
+
+                        42
+
+                        *
+
+                        76
+
+                        L
+
+                        110
+
+                        n
+
+                        144
+
+                        É
+
+                        178
+
+                        _
+
+                        212
+
+                        È
+
+                        246
+
+                        ÷
+
+                    
+                    
+                        11
+
+                        ^K
+
+                        43
+
+                        +
+
+                        77
+
+                        M
+
+                        110
+
+                        o
+
+                        145
+
+                        æ
+
+                        179
+
+                        ¦
+
+                        213
+
+                        i
+
+                        247
+
+                        ¸
+
+                    
+                    
+                        12
+
+                        ^L
+
+                        44
+
+                        ,
+
+                        78
+
+                        N
+
+                        112
+
+                        p
+
+                        146
+
+                        Æ
+
+                        180
+
+                        ¦
+
+                        214
+
+                        Í
+
+                        248
+
+                        °
+
+                    
+                    
+                        13
+
+                        ^M
+
+                        45
+
+                        -
+
+                        79
+
+                        O
+
+                        113
+
+                        q
+
+                        147
+
+                        ô
+
+                        181
+
+                        Á
+
+                        215
+
+                        Î
+
+                        249
+
+                        ¨
+
+                    
+                    
+                        14
+
+                        ^N
+
+                        46
+
+                        .
+
+                        80
+
+                        P
+
+                        114
+
+                        r
+
+                        148
+
+                        ö
+
+ 

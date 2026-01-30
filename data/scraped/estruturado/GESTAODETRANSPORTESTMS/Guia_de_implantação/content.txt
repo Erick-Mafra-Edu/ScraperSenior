@@ -1,0 +1,228 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodetransportestms/7.0.0/#detalhamento-tecnico/guia-implantacao-tms.htm%3FTocPath%3D_____8
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão de Transportes | TMS - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Guia de implantação
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Guia de implantação
+            Confira aqui as informações técnicas para adequado funcionando do TMS para funcionamento com o RMS, FMS e TMS Senior X, com descrição da arquitetura, softwares homologados e parametrizações que devem ser executadas antes da sua implantação.
+             Integração de dados
+                
+                    A integração de dados ocorre através dos componentes Integrador instalados no on-premise e se comunicando com a nuvem ou em comunicação nuvem para nuvem de forma segura
+                
+            
+            Requisitos e Recursos
+            Modelo de ambiente:
+                
+                    
+                        
+                    
+                    Confia a lista de equipamentos homologados, clicando aqui.
+                
+            
+            Sistema Operacional para utilização:
+                
+                    
+                        Servidor com Sistema Operacional Linux Ubuntu Server, versão mais recente estável (LTS), com duas interfaces de rede instaladas, sendo que:
+                        1ª porta: Com disponibilidade de acesso através da Internet, e endereço IP Fixo;
+                        2ª porta: Para acesso à rede interna e ao Banco de Dados;
+                        As duas interfaces de rede, devem utilizar IPV4.
+                    
+                
+            
+            Configure o  Shovel para as integrações:
+                
+                    Clique aqui, e confira manual completo de configuração do Shovel.
+                
+            
+            Configurações do ambiente - LINUX
+                
+                    Qual a versão do LINUX?
+                        
+                            
+                                Máquina com sistema Linux Ubuntu Server, versão mais recente estável.
+                            
+                            Importante! O servidor deve ser instalado dentro da rede do cliente e com acesso à Internet
+                        
+                    
+                     Qual a Capacidade do servidor?
+                        
+                            Recomendamos:
+                            
+                                2Gb de RAM com dois núcleos de processamento 
+                                64Gb de armazenamento no diretório raiz ( / ), com possibilidade de expansão
+                            
+                        
+                    
+                    Quais as portas e IPs necessários a serem liberadas no firewall?
+                        
+                            Necessário IP fixo externo e liberação das portas 22, 9090, 4369, 5671, 5672, 15672, 1433 (Caso o banco de dados utilize MSSQL Server), 1521 (Caso o banco de dados utilize Oracle).
+                            
+                                Nota A plataforma está homologada em Ubuntu Server, não recomendamos outra distribuição.
+                            
+                        
+                    
+                    Comandos necessários para instalação dos serviços para Shovel:
+                    Comandos:
+                        
+                            
+                                
+                                    Docker:sudo apt-get update / sudo apt-get install docker.io
+                                    
+                                    Rede:sudo docker network create --driver bridge my_network
+                                    
+                                    RabbitMQ: sudo docker run --network=my_network  -d --name="rabbitmq" --hostname=rabbitmq -e RABBITMQ_COOKIE="cookie" -e RABBITMQ_USERNAME="admin" --expose=4369 -p 15672:15672 -p 5671:5671 -p 5672:5672 seniorsistemas/rabbitmq:3.6.5
+                                    Login da Senior (para que seja possível realizar o download da nova imagem): docker login --username senioronpremises --password 55926074-1151-45a1-8c03-505c8acb57dc
+                                
+                            
+                        
+                    
+                
+            
+            Validar se o gerenciador web do RabbitMQ está operacional
+                
+                    Pelo browser, acesse a URL do gerenciador web do RabbitMQ e efetue o login.
+                    Por exemplo, acesse https://servidor:15671.
+                    
+                        
+                    
+                    E veja a aba Overview no gerenciador.
+                    
+                        
+                    
+                    Confirme as portas onde o habbit foi instalado.
+                    
+                        
+                    
+                    Importante! Após validar o gerenciador web realize a Instalação do serviço de Integração desejado.
+                
+            
+            Configuração do Serviço Cliente com a Plataforma
+                
+                    A configuração do inquilino faz o apontamento do Serviço Cliente com a Plataforma.
+                    
+                        Acesse a Platalataforma Senior X em https://platform.senior.com.br e efetue o login com o usuário Admin do inquilino, por exemplo, admin@cliente.com.br;
+                    
+                    
+                        
+                    
+                    Acesse Tecnologia >  Configuração > Por Tenant e configure:
+                    
+                        URL HTTP do RabbitMQ on-premise IP externo (acessível pela internet) do Servidor Linux, com a porta 15672 Ex: http://10.0.11.10:15672
+                        Usuário do RabbitMQ on-premise
+                        Senha do usuário RabbitMQ on-premise
+                        URL AMQP do RabbitMQ on-premise IP externo (acessível pela internet) do Servidor Linux, com a porta 5672 Ex: http://10.0.11.10:5672
+                    
+                    Importante!Esse processo é extremamente sensível, caso seja feita configuração em outro usuário da Platform pode ocorrer erros, desta forma sugerimos para que o processo da configuração de Shovel seja realizado pela Senior TI ou Infra.
+                    Exemplo de um Shovel Configurado:
+                        
+                            Acesse Senior X Platform > Tecnologia > Configuração > Por Tenant e preencha os campos conforme abaixo:
+                            
+                                
+                            
+                            
+                                
+                            
+                            Clique em Salvar e acesse o menu Administração, em Tecnologia > Administração > Gestão dos Tenants > Serviços/Componentes e clique no botão Aplicar .
+                            Verifique se nas notificações aparecem algo referente a mudança de configuração do ambiente realizada com sucesso.
+                            
+                                
+                            
+                        
+                    
+                    Verificação da execução do serviço
+                        
+                            Em Tecnologia > Administração > Gestão dos Tenants > Serviços/Componentes
+                            
+                                
+                            
+                            Caso o serviço não estiver listado, no rodapé da página, clicar em “atualizar”, e assim que estiver listado, clicar em “Aplicar no Ambiente”
+                            
+                                
+                            
+                        
+                    
+                
+            
+            Integração com o Portal do Cliente
+                
+                    Caso sua empresa utilize o TMS integrado ao Portal de Cliente, confira no Instalação do serviço de Integração. mais informações sobre essa integração.
+                
+            
+            Integração com o RMS
+                
+                    Caso sua empresa utlize o TMS integrado ao RMS através da Senior X, execute os passos descritos no Instalação do serviço de Integração.
+                
+            
+            Integração com o FMS
+                
+                    Caso sua empresa utlize o TMS integrado ao FMS, confira no Instalação do serviço de Integração. mais informações sobre essa integração.
+                
+            
+            Informações sobre os acesso das aplicações 
+            O acesso as aplicação se dão por WTS no TMS e FMS e para o portal, RMS e Coletores são Web 5.0
+            As formas de Integração do Logística com outras soluções Externas são dadas via Webservice, JSON e FTP
+            Linkar Senior Xcom  URL de APIs disponíveis para a Logística:
+                
+                    Em Dev.senior.com.br acesse  as APIs do tms:
+                    
+                        https://dev.senior.com.br/api/tms/
+                        
+                        https://dev.senior.com.br/api/tmsentregas/
+                        
+                    
+ 

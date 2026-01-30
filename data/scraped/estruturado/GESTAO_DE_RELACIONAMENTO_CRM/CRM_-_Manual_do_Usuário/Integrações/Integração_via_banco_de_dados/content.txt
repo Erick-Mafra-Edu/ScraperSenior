@@ -1,0 +1,52 @@
+# Integração via banco de dados
+
+URL: https://documentacao.senior.com.br/gestao-de-relacionamento-crm/6.2.4/integracoes/via-banco-de-dados/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM - versão 6.2.4                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     CRM - Manual do Usuário
+                 > Integrações
+                 > Integração via banco de dados                         Integração via banco de dados
+A ferramenta de Gestão do Relacionamento | CRM possui diversas integrações com as mais variadas soluções de mercado, e, dependendo do módulo a ser integrado, o fluxo das informações determina a necessidade de liberações específicas do lado do cliente.
+De modo geral, as integrações podem ser classificadas de duas maneiras:
+Consumo de dados para consolidação dentro da solução
+Para situações onde o CRM consolida dados de outras soluções (como o sistema Gestão Empresarial | ERP), a solução necessita buscar periodicamente, de forma automatizada com a utilização de JOBs, ou de forma manual sob demanda, as informações das referidas fontes.
+Neste cenário, existem conectores nativos para acesso direto ao banco de dados da aplicação do cliente, seja através das tabelas nativas da aplicação ou views construídas pelo cliente.
+
+ Liberação de IPs de acesso A área de tecnologia da informação do cliente deverá providenciar a liberação em seu firewall para que as requisições provenientes do CRM visualizem o banco de dados da aplicação. Solicitar liberação para acesso aos IP: 18.228.227.211 e 189.16.40.2.   
+ Liberação de credenciais para acesso ao banco de dados A área de tecnologia da informação do cliente deverá providenciar a criação e disponibilização de credenciais para acesso ao banco de dados e posterior envio dos dados para a Senior Sistemas. Com esta informação (e dos requisitos da liberação de IPs de acesso), a equipe interna de ambientes irá efetuar os testes de conexão (pings e acesso inicial ao banco) própria ferramenta do CRM.Dados necessários a serem enviados, de acordo com os bancos de dados homologados: SQL Server   Dados de conexãoExemplos de informações  IP/Host do servidorsqlserver.crmsenior.com.br ou 191.6.194.95  Porta do serviço1433 (porta padrão do serviço, somente como referência)  Protocolobase_producao  Usuáriocrmsenior  SenhacrmseniorXXXX  Nome do bancocrmsenior      Oracle   Dados de conexãoExemplos de informações  IP/Host do servidororacle.crmsenior.com.br ou 191.6.194.95  Porta do serviço1521 (porta padrão do serviço, somente como referência)  ProtocoloTCP  Usuáriocrmsenior  SenhacrmseniorXXXX  Nome do bancocrmsenior      Firebird   Dados de conexãoExemplos de informações  IP/Host do servidorfirebird.crmsenior.com.br ou 191.6.194.95  Porta do serviço3050 (NAT) (porta padrão do serviço, somente como referência)  ProtocoloC:\banco_de_dados\nome_banco.fdb  Usuáriocrmsenior  SenhacrmseniorXXXX  Nome do bancocrmsenior      MySQL   Dados de conexãoExemplos de informações  IP/Host do servidormysql.crmsenior.com.br ou 191.6.194.95  Porta do serviço3306 (porta padrão do serviço, somente como referência)  Usuáriocrmsenior  SenhacrmseniorXXXX  Nome do bancocrmsenior      PostgreSQL   Dados de conexãoExemplos de informações  IP/Host do servidorpostgre.crmsenior.com.br ou 191.6.194.95  Porta do serviço5432 (Porta Padrão)  Usuáriocrmsenior  SenhacrmseniorXXXX  Nome do bancocrmsenior      Ibm DB2   Dados de conexãoExemplos de informações  IP/Host do servidordb2.crmsenior.com.br ou 191.6.194.95  Usuáriocrmsenior  SenhacrmseniorXXXX  Nome do bancocrmsenior       FairCom C-Tree   Dados de conexãoExemplos de informações  IP/Host do servidorctree.crmsenior.com.br ou 191.6.194.95  Usuáriocrmsenior  SenhacrmseniorXXXX  Nome do bancocrmsenior      Banco de dados caché   Dados de conexãoExemplos de informações  IP/Host do servidorcache.crm.senior ou 191.6.194.95  Porta do serviço1234  Usuáriocrmsenior  SenhacrmseniorXXXX  Nome do bancocrmsenior      NotaPara dúvidas sobre a conexão, consulte a documentação de cada banco de dados: SQL Server, Oracle, Firebird, MySQL, PostgreSQL, Ibm DB2 e FairCom C-Tree.     
+Envio de dados do CRM para outras aplicações
+Quando o CRM necessitar enviar informações para aplicação terceiras (como o ERP ao enviar um novo pedido), obrigatoriamente utilizamos web services disponibilizados pelo terceiro (fornecedor da solução), garantindo assim que eventuais regras de negócio estipuladas no cliente sejam respeitadas.
+
+O CRM permite integração de todas as suas rotinas e tabelas através da metodologia WSDL (Web Services Description Language), padrão homologado pelo W3C baseado em XML que visa padronizar as descrições das funcionalidades oferecidas por web services de forma independente de plataforma ou linguagem.
+ Integração utilizando os web services padrões Senior Para envio de dados para o sistema Gestão Empresarial | ERP utiliza-se o conjunto de web services disponibilizados pela Senior.Para tanto, a área de tecnologia do cliente deve disponibilizar o caminho (para acesso externo) e credenciais ao servidor GlassFish, que provê:Web services utilizados nas integrações com o CRM:
+g5-senior-services/sapiens_Synccom_senior_g5_co_mcm_ven_pedidos
+g5-senior-services/sapiens_Synccom_senior_g5_co_ger_cad_clientes
+Dados de acesso aos web services para serem disponibilizados:  Dados de acesso aos web services  IP/Host do Glassfish191.6.194.95  Porta8080  Usuáriocrmsenior  SenhacrmseniorXXXX     
+Para utilização de web services para soluções de terceiros, as necessidades de acesso e dicionários dos dados de integração devem ser avaliadas previamente junto a equipe de serviços do CRM, que tratará cada caso isoladamente.       
+Este artigo ajudou você?
+   Sim
+  Não
+    
+Gostaria de deixar uma sugestão para melhorar esta página?
+ 
+Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+ 
+Nome/E-mail (Opcional):   
+Deixe seu comentário:      Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+     Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.     SUPORTE SENIOR SUPORTE MEGA     
+Agradecemos pelo seu feedback!
+Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+  const o=document.getElementById("question"),n=document.getElementById("formcomentario"),i=document.getElementById("feedback-positivo");i?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Sim"}),o.remove(),n.style.display="block"});const r=document.getElementById("feedback-negativo");r?.addEventListener("click",()=>{gtag("event","feedback",{resposta:"Não"}),o.remove(),n.style.display="block"});const d=document.getElementById("comentario"),m=document.getElementById("charNum");d.addEventListener("keyup",e=>{let t=100-e.target.value.length;m.innerHTML=`Caracteres restantes: ${t}`});n.addEventListener("submit",e=>{e.preventDefault(),grecaptcha.ready(function(){grecaptcha.execute("6Lf3rgoaAAAAAAx7d9UyE9vFrMv5p1AZdXFyUMif",{action:"submit"}).then(function(a){var t=$("#email").val(),c=$("#comentario").val();gtag("event","feedback-descritivo",{contato:t,comentario:c,aceite:"Com aceite"}),$("#formcomentario").hide(),$("#thanks").show()})})});  var r=document.location.href,n=r.split("/")[3],e=document.getElementById("frame-mkt");e&&(e.innerHTML='<iframe frameborder="0" class="framebanner" scrolling="no" src="https://ads.senior.com.br/ads/#/view-banner/'+n+"?url="+encodeURIComponent(r)+'"></iframe>');    Base de Conhecimento   Portal de Exigências Legais  Documentação em outros idiomas:   English    Español     Senior Store   Universidade Corporativa   Fórum de Produtos   Trabalhe conosco   Blog              Todos os direitos de cópias reservadas para Senior Sistemas S.A. 
+A reprodução não autorizada desta publicação, no todo ou em parte,
+            constitui violação dos direitos autorais (Lei 9.610/98).
+         document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#main"),o=document.querySelector(".new-scroll-to-top"),t=200;e?.addEventListener("scroll",()=>{e.scrollTop>t?o?.classList.add("visible"):o?.classList.remove("visible")}),document.getElementById("newScrollTop")?.addEventListener("click",()=>{e?.scrollTo({top:0,behavior:"smooth"})})});  

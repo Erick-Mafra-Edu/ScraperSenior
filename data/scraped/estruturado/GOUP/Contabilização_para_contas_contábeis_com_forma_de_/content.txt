@@ -1,0 +1,183 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_controladoria/contabilidade/conta-contabil.htm%3FTocPath%3DSegmentos%7CControladoria%7CGest%25C3%25A3o%2520de%2520Contabilidade%7C_____4
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Controladoria > Gestão de Contabilidade > Contabilização para contas contábeis com forma de rateio diferente de zero
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Contabilização para contas contábeis com forma de rateio diferente de zero
+            A rotina de integração contábil verifica em 
+		qual conta deve contabilizar. Após isso, verifica o campo Forma Rateio na tela 
+		F045PLA.
+            
+                Se o campo 
+		Forma Rateio estiver preenchido com "3" (rateio manual), 
+		é verificado na tela 
+		F070ECT, o campo Origem do 
+		rateio contábil:Se o campo Origem do rateio contábil estiver 
+		preenchido com "1", será verificado se existe rateio na origem 
+		(Movimento de Finanças, Gestão de Recebimento, 
+		Gestão de Mercado etc). 
+		Se houver, irá buscar o rateio da origem; se não houver, abre a tela 
+		para fazer o rateio manualSe o campo Origem de rateio contábil estiver preenchido 
+com "2", será aberta a tela para fazer o rateio manual, porque nesta modalidade é 
+buscado primeiro o rateio da conta
+            
+            
+                 Se o campo 
+		Forma Rateio, estiver preenchido com "1" (pré-definido com 
+		confirmação), o rateio é definido na tela F045RAT. Na tela 
+		F070ECT, o campo Origem do 
+		rateio contábil é verificado:Se o campo Origem do rateio contábil estiver 
+		preenchido com "1", será verificado se existe rateio na origem 
+		(Movimento de Finanças, Gestão de Recebimento, 
+		Gestão de Mercado etc). 
+		Se houver, irá buscar o rateio da origem; se não houver, abre a tela 
+		trazendo o rateio da tela F045RAT, apenas para o usuário confirmarSe o campo Origem de rateio contábil estiver preenchido 
+com "2", será verificado se na tela F045RAT há rateioSe houver, o rateio é buscado e a tela é aberta apenas para confirmação 
+do usuário
+            
+            
+                 Se o campo Forma Rateio, estiver 
+preenchido com "2" (pré-definido sem confirmação), o rateio é definido na tela F045RAT. Na tela F070ECT, o campo Origem do rateio 
+contábil é verificado:Se o campo Origem do rateio contábil estiver preenchido 
+com "1", será verificado se existe rateio na origem (Movimento de 
+Finanças, 
+Gestão de Recebimento, Gestão de Mercado, etc). Se houver, irá buscar o rateio da 
+origem; se não houver, busca o rateio da tela F045RAT, não abrindo a tela para 
+confirmaçãoSe o campo Origem de rateio contábil estiver preenchido 
+com "2", será verificado se na tela F045RAT há rateio. Se houver, o rateio é buscado e a tela
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

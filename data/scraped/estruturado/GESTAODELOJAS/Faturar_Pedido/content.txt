@@ -1,0 +1,225 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/rotinas-de-caixa/faturar-pedido.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____20
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Faturar Pedido
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Faturar Pedido
+            Conceito        
+            Faturar no PDV um pedido de venda criado e finalizado no Retaguarda.
+            Utilização
+            É utilizado para atender, faturar e registrar o recebimento de um pedido.
+            Processo
+            Para atender um pedido no PDV, o usuário  possui duas opções: poderá digitar na tela o atalho para abrir o pedido ou  se preferir, poderá importá-lo através do botão Importa na tela de caixa.
+            
+                Nota
+                
+                Somente no PDV NFCe, caso o parâmetro dinâmico NFCE.PERMITEGERARNFE do cadastro de filial do Gestão Empresarial | ERP esteja definido como 1,  ao iniciar uma nova venda, seja de pedido ou não, é solicitado ao usuário que informe qual documento deseja gerar: NFCe ou NF-e. Dessa forma, após a venda pelo PDV, uma operação do tipo "Venda NF-e" é integrada com o Retaguarda que, por sua vez, processa essa operação e emite a nota fiscal.
+
+            
+            Atalho para atender Pedido
+            O atalho para abrir o pedido para atendimento pode ser utilizado através da seguinte combinação: PED+Nº do pedido.
+            Exemplo
+                
+                    
+                    
+                
+            
+             Ao digitar o atalho PED+Nº do pedido e teclar Enter, o sistema exibirá os itens e serviços adquiridos no pedido emitido pelo Retaguarda.
+            Importar Pedido
+            Para importação do pedido, o usuário deverá utilizar o botão Importa. Na tela "Importação" serão apresentadas as opções:
+            
+                Pré-Venda Ao escolher essa opção, o usuário poderá digitar apenas o número da pré-venda e teclar Enter.
+            
+            
+                
+            
+            
+                Pedido Ao escolher essa opção, o usuário poderá digitar apenas o número do pedido e teclar Enter.
+            
+            
+                
+            
+            
+                Consulta Para utilizar a consulta, o usuário precisa primeiramente escolher se deseja consultar uma pré-venda ou um pedido, dessa forma, o sistema exibirá na tela do caixa apenas as pré-vendas ou os pedidos pendentes para faturamento no PDV.
+            
+             
+            Exemplo:
+                
+                    Ao utilizar o botão Pedido e, em seguida o botão Consulta, o sistema exibirá todos os pedidos pendentes de atendimento:
+                    
+                    
+                
+            
+            O usuário poderá visualizar o número do pedido que deseja atender. Poderá anotar o número em um papel de seu controle ou, se possuir acesso a um mouse, basta dar um duplo clique na linha correspondente.
+            A tela possui ainda os botões para visualizar detalhes do pedido e detalhes do cliente.
+            Detalhes do Pedido
+                
+                    Exibe os detalhes do pedido selecionado.
+                    
+                    
+                
+            
+            Detalhes do Cliente
+                
+                    Exibe informações do cadastro do cliente, caso ele tenha sido identificado na inclusão do pedido no Retaguarda.
+                    
+                    
+                
+            
+            Vender garantia estendida
+            Caso no pedido a ser faturado no PDV haja um produto com garantia estendida que não tenha sido adquirida no pedido, é possível vendê-la no caixa, tanto para pedidos com entrega imediata como futura, através do botão Garantia estendida. Além disso, se  o parâmetro dinâmico VENDA.PERMITECREDIARIOPARAGARANTIAESTENDIDA estiver habilitado no cadastro da filial do Gestão Empresarial | ERP, é possivel diluir o valor da garantia estendida nas parcelas do crediário.
+            Faturar Pedido 
+            Após a importação do pedido, utilize o botão Subtotal para informar as formas e condições de pagamentos disponíveis.
+            
+                Nota
+                
+                Algumas formas ou condições de pagamento não podem ser usadas quando o produto for vendido com desconto ou em promoção. Se forem selecionadas, o sistema solicita a liberação de um usuário autorizado (a permissão do usuário é definida pelo parâmetro dinâmico PERFIL.LIBERARFORMAPAGTOCOMDESCONTO no cadastro do perfil de usuário do ERP preenchido como Sim).
+            
+            Caso o recebimento tenha sido cadastrado no pedido durante sua inclusão e negociação com o cliente, ao atender o pedido no PDV o sistema indicará ao operador de caixa, através dos botões em destaque, a condição incluída no pedido, podendo ser alterada no próprio PDV, caso o cliente deseje.
+            Exemplo:
+                
+                    Na inclusão do pedido no Retaguarda foram cadastradas as formas e condições de recebimento do pedido com entrada em dinheiro e o restante no cartão. Ao utilizar o botão Subtotal, os finalizadores indicados no pedido estarão sinalizados na cor azul.
+                    
+                        
+                    
+                
+            
+            Caso o pedido não possua nenhuma forma de recebimento cadastrado, o operador de caixa deverá seguir com a finalização do atendimento escolhendo as formas e condições de pagamento preferidas pelo cliente.
+            
+                Nota
+                
+                Algumas formas de pagamento podem estar configuradas para exigir condição de pagamento (parâmetro dinâmico FORMAPAGAMENTO.EXIGECONDICAOPAGAMENTO do Gestão Empresarial | ERP definido como S - "Sim"). Nesse caso, a tela de pesquisa de condições de pagamento é aberta e os juros da condição, caso haja,  são calculados e somados no subtotal.
+            
+            Para cada finalizador, existe um processo diferente. Acesse os links abaixo para conhecer o processo de cada um deles.
+            Finalizar venda com Dinheiro
+            
+            Finalizar venda com Cheque
+            
+            Finalizar venda com Crediário
+            
+            Finalizar venda com Cartão (TEF)
+            
+            Finalizar venda com cartão presente
+            
+            Finalizar Venda com Cartão (POS)
+            
+            Aproveitamento de Crédito
+            
+            Acréscimo
+            
+            Desconto
+            
+            Identificar Cliente
+            
+             
+            Veja também:
+                
+                    Faturar Pré-Venda
+                    
+                    Recebimento de Pedido com Entrega Futura
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

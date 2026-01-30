@@ -1,0 +1,324 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#web%205.0/permissoestelasweb50.htm%3FTocPath%3DParametriza%25C3%25A7%25C3%25B5es%7CWeb%25205.0%7C_____3
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Parametrizações > Web 5.0 > Permissões de telas da Web 5.0
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Permissões de telas para a Web 5.0
+            Conceito
+        
+            Para exibir ou omitir itens de menu no Web 5.0 deve-se configurar a tela correspondente no ERP 
+ Senior, já que para cada tela no WEB 5.0, existe uma tela equivalente no ERP. É importante salientar que o  WEB 
+ 5.0 ignora as permissões atribuídas ao item de grupo do menu ERP (tipo “Mercado ou Gestão de Vendas 
+ etc...). A tabela de equivalência de telas pode ser encontrada abaixo:
+            
+                
+                    Menu na Web 5.0.
+                    Equivalência de permissões no Menu ERP Senior
+                
+                
+                    
+                        Vendas                   
+                    
+                
+                
+                    
+                        Entrada de Pedidos
+                    
+                    
+                        Por padrão o sistema utiliza como equivalência a tela Mercado > Gestão de Vendas > Pedidos > Agrupado (F120GPD), mas se o identificador de regra VEN-120PEDVE01; estiver ativo, será utilizada a tela Mercado > Gestão de Vendas > Pedidos > Individual (F120PED)
+                    
+                
+                
+                    
+                        Pedidos via Grade*
+                    
+                    
+                        Mercado > Gestão de Vendas > Pedidos > Grade de Produto (F120GRA)
+                    
+                
+                
+                    
+                        Catálogo Produto
+                    
+                    
+                        Cadastros > Produtos e Serviços > Fotos > Consulta por Produto (F075CPF)
+                    
+                
+                
+                    
+                        Relacionamento                    
+                    
+                
+                
+                    
+                        Informações Cliente
+                    
+                    
+                        Mercado > Gestão de Relacionamento (CRM) > Controle de Atendimento > Consultas > Informações de Clientes (F085INC)
+                    
+                
+                
+                    
+                        Inf. Cliente Marca
+                    
+                    
+                        Mercado > Gestão de Relacionamento (CRM) > Controle de Atendimento > Consultas > Informações de Clientes por Marca (F085SIT)
+                    
+                
+                
+                    
+                        Inf. Grupo Cliente
+                    
+                    
+                        Mercado > Gestão de Relacionamento (CRM) > Controle de Atendimento > Consultas > Informações de Grupos de Empresas (Clientes) (F069ING)
+                    
+                
+                
+                    
+                        Compras                    
+                    
+                
+                
+                    
+                        Cotações
+                    
+                    
+                        Suprimentos > Gestão de Compras > Cotação de Preço > Produtos (F410CEA)
+                    
+                
+                
+                    
+                        Processo Cotações
+                    
+                    
+                        Suprimentos > Gestão de Compras > Cotação de Preço > Processo de Cotação > Informação de preços (F410IPR)
+                    
+                
+                
+                    
+                        Aprov. Ordens Compra
+                    
+                    
+                        Suprimentos > Gestão de Compras > Ordens de Compra > Aprovações multinível (F420APR)
+                    
+                
+                
+                    
+                        Solic. Compras
+                    
+                    
+                        Suprimentos > Gestão de Compras > Solicitação de Compra > Produtos > Manuais (F405SOL)
+                    
+                
+                
+                    
+                        Estoques                    
+                    
+                
+                
+                    
+                        Req. Materiais
+                    
+                    
+                        Suprimentos > Gestão de Estoques > Requisição Eletrônica > Produtos > Individuais (F207EME)
+                    
+                
+                
+                    
+                        Posição Estoques
+                    
+                    
+                        Suprimentos > Gestão de Estoques > Controle de Estoque > Consultas > Posição dos Estoques > Produtos (F211CPR)
+                    
+                
+                
+                    
+                        Análise Reposição
+                    
+                    
+                        Suprimentos > Gestão de Estoques > Análise de Reposição > Agrupada (F211ARA)
+                    
+                
+                
+                    
+                        Contas a Pagar                    
+                    
+                
+                
+                    
+                        Aprov. Pagtos.
+                    
+                    
+                        Finanças > Gestão de Contas a Pagar > Contas a Pagar > Entrada e Manutenção > Aprovação de Pagamentos (F501APG)
+                    
+                
+                
+                    
+                        Tesouraria                    
+                    
+                
+                
+                    
+                        Movimentos
+                    
+                    
+                        Finanças > Gestão de Tesouraria > Caixa e Bancos > Movimento > Movimentos (F600MCC)
+                    
+                
+                
+                    
+                        Cadastros                    
+                    
+                
+                
+                    
+                        Clientes
+                    
+                    
+                        Cadastros > Clientes e Fornecedores > Clientes > Cadastro (F085CAD)
+                    
+                
+                
+                    
+                        Contatos (Clientes)
+                    
+                    
+                        Cadastros > Clientes e Fornecedores > Clientes > Contatos (F085CTO)
+                    
+                
+                
+                    
+                        Fornecedores
+                    
+                    
+                        Cadastros > Clientes e Fornecedores > Fornecedores > Cadastro (F095CAD)
+                    
+                
+                
+                    
+                        Contabilidade                    
+                    
+                
+                
+                    
+                        Lçto NF Entrada
+                    
+                    
+                        Controladoria > Gestão de Tributos > Escrituração > Lançamentos > Nota Fiscal de Entrada (F660NFC)
+                    
+                
+                
+                    
+                        Lçto NF Saída
+                    
+                    
+                        Controladoria > Gestão de Tributos > Escrituração > Lançamentos > Nota Fiscal de Saída (F660NFV)
+                    
+                
+                
+                    
+                        Lçto Contábil
+                    
+                    
+                        Controladoria > Gestão de Contabilidade > Contabilidade > Lançamentos Manuais > Lançamentos (F640LCT)
+                    
+                
+                
+                    
+                        Personalizadas                    
+                    
+                
+                
+                    
+                        Regras
+                    
+                    
+                        Recursos > Implementações > Regras > Editar
+                    
+                
+                
+                    
+                        Telas SGI WEB
+                    
+                    
+                        Permissões individuais por tela SGI WEB
+                    
+                
+                
+                    
+                        Def. Pelo usuário
+                    
+                    
+                        Avaliar a documentação do identificador 
+					GER-000WEBMN01;
+                    
+                
+                
+                    
+                        Diversos                    
+                    
+                
+                
+                    
+                        Alt. Empresa/Filial
+                    
+                   

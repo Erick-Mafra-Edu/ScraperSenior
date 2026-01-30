@@ -1,0 +1,218 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/formas-de-pagamento/boleto.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CFormas%2520de%2520Pagamento%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Formas de Pagamento > Boleto
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Finalizando Venda com Boleto Bancário 
+                Conceito     
+                Finaliza o recebimento com a forma de pagamento Boleto Bancário. 
+                Utilização
+                É utilizado para formas de pagamento que geram títulos recebíveis a prazo, como por exemplo crediário.
+                Pré-requisitos 
+                Para que a forma de pagamento Boleto Bancário seja utilizada, é necessário que os seguintes parâmetros sejam configurados no Gestão Empresarial | ERP:
+                
+                     Na tela F600CCO deve-se cadastrar uma conta interna, que contenha banco, agência, e a conta que fará a emissão dos boletos. 
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Na tela F039POR deve-se cadastrar um portador para o banco emissor do boleto. Este portador deve estar associado à conta interna cadastrada acima. No campo Modelo Bloqueto, deve-se escolher o modelo FRCR023.BLO.
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                        Este modelo é compatível com os seguintes bancos:
+                        
+                            
+                        
+                    
+                
+                
+                    Na tela F033CRT deve-se cadastrar a carteira para o portador.
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Na tela F066FPG deve-se verificar o cadastro de uma ou mais formas de pagamento que serão utilizadas para geração de boleto bancário. As formas de pagamento que possibilitam a geração de boleto bancário devem ser do tipo "03 - Duplicata", "10 - A Prazo" ou "15 - Financiamento Próprio", que são consideradas formas de pagamento do tipo "Crediário". É necessário ainda, a definição da informações obrigatórias como por exemplo, o tipo de título para vendas, conforme o conceito padrão do sistema já existente.
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Na tela F030COB deve-se ligar o tipo de título de vendas especificado na forma de pagamento boleto, com o banco associado ao portador, que irá emitir boletos (configurado nos passos 1 e 2).
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                Também é necessário associar a carteira (cadastrada no passo 3)
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Na tela F066VAR deve-se configurar a forma de pagamento para Varejo, informando os seguintes parâmetros:
+                
+                
+                    Imprimir Boleto = Sim;
+                    Portador = Informar o portador cadastrado no passo 2;
+                    Carteira = Informar a carteira cadastrada no passo 3. 
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                É necessário também ligar a forma de pagamento com as condições de pagamento que o usuário poderá escolher para emissão de boletos.
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                Processo
+                O processo inicia quando uma venda é realizada no PDV, e posteriormente é recebida pelo sistema de Retaguarda. Se neste momento for identificada a informação de Portador na forma de pagamento (quando a informação de portador não for encontrada pela forma de pagamento, será buscado o portador do Filial), os títulos (boletos) serão gerados. 
+                Se a forma de pagamento selecionada gera boleto, ao gerar os títulos da venda, o portador será buscado da forma de pagamento (quando a informação de portador não forma encontrada pela forma de pagamento, será buscado o portador do Filial). A venda e os títulos serão enviadas para o Gestão Empresarial | ERP.
+                Através da integração,  estes boletos serão importados e utilizarão as informações de Portadores já existentes do  Gestão Empresarial | ERP. Ao retornar para o sistema de Gestão de Lojas, as informações dos boletos serão gravadas, emitidas e enviadas para o cliente por e-mail, se assim estiver configurado. 
+                
+                    Importante:
+                    
+                    A geração dos boletos no ERP será efetuada apenas para as notas fiscais geradas por CUPOM ou NFC-e. Para as notas manuais, não serão gerados os boletos. Embora o sistema Retaguarda esteja preparado para receber boletos no caso de emissão de notas manuais, o ERP não possui essa chamada para a rotina de geração de boletos para notas manuais.
+                    A tela de parcelas da nota fiscal de saída manual, embora não gere boletos, apresenta a forma de pagamento Boleto. Não há uma forma de distinguir se a forma de pagamento imprime ou não boletos, pois esta é uma característica herdada do ERP.
+                
+                Fluxo - processo macro
+                    
+                        
+                            
+                        
+                    
+                
+                Para vendas diretas no PDV, utilize uma das formas de pagamento parametrizadas anteriormente, selecionando via botão F3 - Crediário e realize o processo padrão.
+                Exemplo - Vendas Diretas no PDV
+                    
+                        
+                            
+                        
+                        
+                            
+                        
+                    
+                
+                Vendas no Retaguarda 
+                Além disso, a forma de pagamento boleto também pode ser utilizada para pedidos de venda, no sistema de Retaguarda. Observe abaixo este processo:
+                
+                     Incluir um pedido
+                    Incluir os itens no pedido
+                    Selecionar o botão "Recebimento"
+                
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Digitar o código da forma de pagamento parametrizada anteriormente
+                
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Selecionar a condição de pagamento
+                
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Observações
+                        
+                    
+                    Será gerado um boleto para cada parcela da condição de pagamento;
+                    As telas do Retaguarda demonstradas acima para seleção de forma de pagamento/condições de pagamento podem sofrer alterações de acordo com a parametrização do campo Forma de recebimento no pedido da tela F070VAR do ERP Senior.
+                
+                 
+                
+                    Finalizar o recebimento
+                    Finalizar o pedido
+                    Faturar o pedido no PDV
+                     Após a venda ser integrada para o ERP e a confirmação da integração retornar para o sistema gestão de lojas, será realizada a impressão dos boletos automaticamente na impressora padrão da loja.
+                
+                Ao finalizar a venda, os boletos serão enviados automaticamente para a impressora, conforme a definido no campo Impressora Padrão, da tela F070VAR do Gestão Empresarial | ERP.
+                Exemplo
+                    
+                        
+                            
+                        
+                    
+                
+                Emissão de segunda via de boleto 
+                Para emissão de segunda via dos boletos no sistema Retaguarda, pode-se acessar a tela  do documento de venda emitido, que poderá ser:
+                
+                    Mercado > Gestão de faturamento > Cupons Fiscais;
+                    Mercado > Gestão de faturamento > Notas fiscais de consumidor eletrônica (NFC-e);
+                    Mercado > Gestão de faturamento > Notas fiscais de saída.
+                
+                Deve-se selecionar o documento desejado e então acionar a botão Reimprimir documentos vinculados. 
+                Envio por e-mail
+                Após a disponibilização do boleto bancário no Retaguarda (que só estará disponível após ter havido retorno [feedback] da integração da venda ao ERP), se no cadastro do cliente para o qual a venda foi efetuada existir endereço

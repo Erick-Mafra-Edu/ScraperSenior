@@ -1,0 +1,225 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodetransportestms/7.0.0/#croqui/vistoria.htm%3FTocPath%3D_____7
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão de Transportes | TMS - senior X
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Vistoria
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Vistoria
+            Para utilizar a rotina de Checklist Croqui, tenha atualizado o app em Senior X e os módulos GFV, CFG e UTL em versão 3.18.00 ou superior e o CAS a partir da data 29/01/2018.
+            Configurações
+            CFG:
+                
+                    Em CFG > Utilitários > Configurações > Frota > TRA – Tráfego, na guia Geral e informar os campos Motivo Padrão Saída Agrupada e Motivo Padrão Entrada Veículo. Esses campos serão utilizados no motivo da movimentação de entrada e saída dos veículos.
+                    
+                        
+                    
+                
+            
+            GFV:
+                
+                    No Plano de Serviços da oficina em GFV > Cadastros > Manutenção > Plano de Serviços da Oficina, cadastre os serviços que serão utilizados para a geração das pendências.
+                    
+                        
+                    
+                    Importante! Somente os serviços que estiverem selecionados como Utilizado para Verificação de Pendencias, serão listados para vinculado no item do Checklist.
+                
+            
+            Após as configurações realize os seguistes cadastros:
+            No módulo GFV:
+                
+                    No Cadastro de Check-list no módulo GFV em Cadastros > Tráfego > Check-list. Cadastre os check-lists para serem vinculados aos veículos e utilizados no aplicativo vistoria: 
+                    
+                        Guia Dados: Informe o campo Descrição
+                    
+                    
+                        Guia Itens do Check-listNo grid Grupo de itens: O grupo será vinculado vinculado a uma localização na imagem exibida pelo aplicativo.No grid Itens: o item tem como função definir as peças do veículo. Para gerar uma pendência, é necessário informar a coluna Serviço Verificação.
+                    
+                    
+                        Guia Mapeamento Croqui: Para realizar o cadastro de uma perspectiva, clicar no botão novo, informe a descrição da Perspectiva e carrege a imagem do veículo. Após a imagem ser carrega, crie os pontos que serão relacionados com os grupos. Para isso, clique na imagem no local que deseja vincular um grupo, arraste e solte o mouse até criar uma área na cor amarela. Com a área criada, selecione o grupo que será vinculado a esta área e clique em confirmar.
+                    
+                    No Cadastro de Veículos em, GFV > Cadastros > Veículos > Veículos > Veículos da Frota. Cadastre o veículo da frota e informar na guia Check-List, no campo Check-List Vistoria qual será o Check-List que será apresentado no aplicativo.
+                    
+                    
+                
+            
+            No módulo UTL:
+                
+                    Na Carga inicial de Dados Croqui, acesse o módulo UTL em Utilitários > Carga de Dados Inicial Croqui, e realize o envio dos dados, clique no botão Gerar Dados.
+                    
+                    
+                    Em Cadastros: 
+                    
+                        Empresa
+                        Funcionário
+                        Veículo
+                        Motorista vinculado com o veículo
+                        Checklist
+                    
+                    Em Movimentações:
+                    
+                        Entrada e saída de veículos
+                    
+                
+            
+            Aplicativo: 
+            No Aplicativo Checklist Croqui
+                
+                     Login : Ao entrar no aplicativo é necessário realizar o login inserindo o Usuário e a Senha da Senior X.
+                    
+                        
+                    
+                    Iniciar vistoria: Informar os dados correspondentes a movimentação que será realizada do veículo e clicar em Iniciar Conferência.
+                    
+                        
+                    
+                    Vistoria: Caso seja detectado um defeito, clicar no local que se encontra o defeito na imagem e seleciona o defeito no canto direito. Após informar todos os problemas, clicar em Finalizar para gravar as informações.
+                    
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

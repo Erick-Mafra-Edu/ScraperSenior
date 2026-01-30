@@ -1,0 +1,159 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#bridge.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Bridge
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Bridge
+            Baseando-se na arquitetura da Plataforma Senior X, permite centralizar em um único componente as chamadas dos web services criados nas aplicações Senior.
+            A Bridge possui uma arquitetura na qual os serviços serão atendidos sob demanda de acordo com a solicitação das aplicações Senior e de terceiros. Os modelos de definição dos serviços serão armazenados em memória durante o uso da aplicação reduzindo a quantidade de informações que são gerenciadas pelo servidor JavaEE e otimizando o uso de memória do mesmo.
+            
+            
+            Características
+            Redução no tempo gasto na janela de atualização dos produtos Senior com web services
+            Em virtude da unificação dos serviços de web service numa única aplicação, a quantidade de aplicações que são deployadas para atenderem as requisições de serviço, se limitam a uma única aplicação no servidor JavaEE: bridge-g5-senior.
+            Autonomia no deploy de serviços customizados
+            A Bridge proporciona maior autonomia no processo de deploy de web services. Para publicar customizações feitas em web services nas aplicações Senior, é necessário acessar a tela de Editor de Web Services e através da opção Publicar é possível disponibilizar as alterações feitas nos serviços sem a necessidade do re-deploy.Dessa forma, a opção na Ferramenta de deploy utilizada para realizar deploy de web services não é mais necessária para a estrutura de serviços disponibilizados com a Bridge;
+            Redução de armazenamento em disco
+            Visto que com a Bridge  o processamento de requisições de web services é centralizado numa única aplicação, não é mais necessária a criação de uma aplicação de web service por módulo de produto Senior no servidor JavaEE. Dessa forma, é possível reduzir o tamanho o armazenamento em disco das aplicações que são mantidas no servidor JavaEE;
+            Suporte a protocolo SOAP 1.2
+            O serviços disponibilizados através da Bridge atendem ao protocolo SOAP 1.1 e 1.2. Visto que apenas um modelo pode ser utilizado durante a execução do serviço, é necessário escolher na Central de configurações qual protocolo será atendido nas requisições. 
+            
+                Importante
+                
+                
+                    Conforme normas do protocolo SOAP, os valores decimais obrigatoriamente deverão utilizar o caractere ponto (.) como separador decimal.
+                    Em novas instalações das versões 6.10.4/5.10.4, a Bridge estará ativada por padrão e não será possível desativar.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

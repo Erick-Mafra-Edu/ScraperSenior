@@ -1,0 +1,246 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/execucao-de-stored-procedures-nas-regras.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7CExecu%25C3%25A7%25C3%25A3o%2520de%2520Stored%2520Procedures%2520nas%2520Regras%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Funções para Execução de Stored Procedures nas Regras
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+            Funções para Execução de Stored Procedures nas Regras
+            
+                
+                    
+                        Nome
+                        Descrição
+                    
+                    
+                        ExecSP
+                        
+                        A função ExecSP é utilizada para executar uma Stored Procedure contida no banco de dados definida no TBS.
+                    
+                    
+                        ObtemValorParam
+                        
+                        Esta função deve ser usada para obter os valores individuais de retorno da Stored Procedure.
+                    
+                
+            
+            Este recurso permite ao usuário uma maior interação com o banco de dados, facilitando a execução de processos necessários à execução das regras.
+            O funcionamento consiste em chamar uma função de programador que será responsável pela execução da Stored  Procedure, informar os parâmetros de entrada, obter os parâmetros de saída e obter os valores individuais de cada parâmetro de retorno da Stored Procedure (se necessário).
+            Passagem de parâmetros
+            Os parâmetros devem ser passados para a Stored Procedure na função de programador que chama a mesma.
+            Sintaxe:
+            
+            
+                <parâmetros> ::= <nome do parâmetro> '=' <valor> [ ';' <parâmetros> ]
+                <valor> ::= [ ' ] <qualquer caractere menos aspas> [ ' ]
+            
+            Esta sintaxe mostra que os parâmetros devem passados usando-se o nome do parâmetro, o sinal de igual e o valor do mesmo. Vários parâmetros devem ser separados por ; (ponto-e-vírgula). 
+            Importante
+                Os parâmetros de retorno da Stored Procedure são retornados no terceiro parâmetro da função ExecSP. A sintaxe dos parâmetros é a mesma usada nos parâmetros de entrada. A diferença é que todos os parâmetros da Stored Procedure são retornadas, mesmo  que não possuam valores.
+            
+            Exemplo
+                
+                    
+                        P_NUMEMP=1;P_TIPCOL=1;P_NUMCAD=1021;P_DATADM=20/10/2001;P_NOMFUN='Funcionário legal'
+                    
+                    Recomenda-se o uso das aspas em valores alfanuméricos. Eles não são obrigatórios. Mas se o valor possuir o ; (ponto-e-vírgula), as aspas devem ser utilizadas.
+                    Nota
+                        As datas são passadas no formato padrão do sistema.
+                    
+                
+            
+            Exemplos de Stored Procedures (Controle de Ponto e Refeitório)
+            Stored Procedure  RH_RETESC
+                
+                    Execução d a RH_RETESC e mostra a passagem de parâmetros do tipo número e data. O retorno é colocado na variável vRetorno e disponível para a função ObtemValorParam que disponibiliza os valores para o usuário.
+                    
+                        definir alfa vRetorno;
+                        definir alfa vCodErr;
+                        definir alfa vCodEsc;
+                        definir alfa vTurEsc;
+                        definir alfa vMsg;
+                         
+                        /* Executa a stored procedure RH_RETESC. */
+                        
+                        ExecSP( "RH_RETESC", "P_NUMEMP=1;P_TIPCOL=1;P_NUMCAD=1;P_DATESC=10/08/2001", vRetorno );
+                         
+                        /* Obtém os valores dos parâmetros de saída necessários ao processamento. */
+                        
+                        ObtemValorParam( vRetorno, "P_CODERR", vCodErr );
+                        ObtemValorParam( vRetorno, "P_CODESC", vCodEsc );
+                        ObtemValorParam( vRetorno, "P_TURESC", vTurEsc );
+                         
+                        /* O parâmetro P_CODERR (definido pela própria stored procedure) retorna um código de erro. 
+                        
+                           Este código sendo zero (0) indica que a SP foi executada com sucesso. */
+                        
+                        se (vCodErr <> "0") {
+                        Mensagem( Retorna, "Stored Procedure executada com problemas" );
+                        Cancel( 1 );
+                        }
+                         
+                        /* Mostra o valor do parâmetro de retorno P_CODESC. */
+                        
+                        vMsg = "O valor do parâmetro P_CODESC é " + vCodEsc + "[&OK]";
+                        Mensagem( Retorna, vMsg );
+                         
+                        /* Mostra o valor do parâmetro de retorno P_TURESC. */
+                        
+                        vMsg = "O valor do parâmetro P_TURESC é " + vTurEsc + "[&OK]";
+                        Mensagem( Retorna, vMsg );
+                    
+                
+            
+            Stored Procedure  RH_INTSTR
+                
+                    Execução da  RH_INTSTR com uso diretamente do valor de retorno da Stored Procedure. Este procedimento não deve ser executado caso os valores dos parâmetros sejam necessários. Neste caso é preciso chamar a função ObtemValorParam para ter acesso aos valores da variáveis.
+                    
+                        definir alfa vRetorno;
+                         
+                        ExecSP( "RH_INTSTR", "P_NUMBER=123;P_MASC=000", vRetorno );
+                        ObtemValorParam( vRetorno, "P_RET", vRetorno );
+                         
+                        vRetorno = "O valor convertido é " + vRetorno + "[&OK]";
+                        Mensagem( Retorna, vRetorno );
+                    
+                
+            
+            Stored Procedure  RH_SEMLAN
+                
+                    Execução da  RH_SEMLAN que deverá retornar dois parâmetros do tipo data. Para usar os valores de retorno como data é necessário passá-los para funções de conversão de valores.
+                    
+                        definir alfa vRetorno;
+                        definir alfa vDatIni;
+                        definir alfa vDatFim;
+                         
+                        ExecSP( "HR_SEMLAN", "P_DATVER=01/01/2001;P_FECSEM=12", vRetorno );
+                         
+                        ObtemValorParam( vRetorno, "P_DATINI", vDatIni );
+                        ObtemValorParam( vRetorno, "P_DATFIM", vDatFim );
+                         
+                        vMsg = "Data retornada é de " + vDatIni + " até " + vDatFim + ". [OK]";
+                        Mensagem( Retorna, vMsg );
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direito

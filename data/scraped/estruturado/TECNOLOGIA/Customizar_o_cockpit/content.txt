@@ -1,0 +1,222 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#sistemas/workflow/wfe_customizarcockpit.htm%3FTocPath%3DTecnologia%7CManual%2520de%2520Instala%25C3%25A7%25C3%25A3o%7CInforma%25C3%25A7%25C3%25B5es%2520T%25C3%25A9cnicas%7CPor%2520Produto%7CPerformance%2520Corporativa%7CWorkflow%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Manual de Instalação > Informações Técnicas > Por Produto > Performance Corporativa > Workflow > Customizar o cockpit
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Customizar o cockpit
+                Apenas o           Administrador / Customizador terá a opção de personalizar as telas do Cockpit, adequando este à identidade visual da empresa através de temas. 
+                O tema é um arquivo .css disponibilizado no servidor dentro do arquivo .EAR do Workflow. O arquivo pode ser encontrado no seguinte caminho:
+                
+                    <caminho de intalação do GlassFish>\<domínio do Workflow>\applications\j2ee-apps\Workflow\g6-wf-cockpit-theme_war\css\xtheme-senior-default.css
+                
+                
+                    Exemplo:
+                        
+                            
+                                c:\GlassFish\domains\domain1\applications\j2ee-apps\Workflow\g6-wf-cockpit-theme_war\css\xtheme-senior-default.css
+                            
+                        
+                    
+                
+                Para a customização o conteúdo desta pasta deverá ser copiado para outra pasta e então editado, não é recomendado editar diretamente o tema padrão.
+                A customização é opcional. Caso a opção seja não realizar a customização, será utilizado o tema padrão da Senior.
+                Segue algumas alterações permitidas:
+                
+                    Tela de login
+                    
+                    Outras telas
+                    
+                    Editar tema
+                    
+                
+                Tela de login
+                
+                Na tela de login poderão ser alterados:
+                
+                    Cor de fundo;
+                    Logo da empresa:Tamanho da imagem;Alinhamento da imagem;URL da imagem.
+                    Estilos dos componentes:Botões;Imagens;
+                
+                
+                    Nota 
+                    Todas as imagens configuradas no tema devem estar disponíveis dentro do .WAR do tema.
+                
+                Outras telas
+                
+                Nas outras telas do cockpit poderão ser alteradas:
+                
+                    Cor de fundo;
+                    Estilos dos componentes:Botões;Imagens;Tabelas;Listas;Painéis.
+                    Ícone padrão dos processos:
+                        
+                            É exibido quando  o modelo do processo não possui nenhum ícone configurado. Localiza-se  dentro do tema, no caminho: /images/process, seu nome é fech_bd e sua extensão .png.
+                        
+                    
+                
+                
+                    
+                
+                
+                    Nota 
+                    Todas as imagens configuradas no tema devem estar disponíveis dentro do WAR do tema.
+                
+                Editar tema
+                
+                Para personalizar o tema:
+                
+                    Crie um novo projeto web no eclipse;
+                    Copie o conteúdo da pasta <caminho de intalação do GlassFish>\<domínio do Workflow>\applications\j2ee-apps\Workflow\g6-wf-cockpit-theme_war\css;  e colar em outra pasta;
+                    Realize as customizações no arquivo .css;Editar cor de fundo;Editar componentes (botões, tabelas, etc);Editar ícone padrão dos processos.
+                    Exporte o projeto Web com um nome diferente do tema padrão;
+                    Faça o deploy no servidor Java EE;
+                    Aponte este na configuração do cockpit .
+                
+                
+                    
+                        
+                    
+                
+                
+                    Nota 
+                    Para realizar a customização do tema, o servidor Java EE (GlassFish) não pode estar em execução.
+                
+                
+                    Importante 
+                    O projeto web criado para customização não poderá sobrescrever o tema default do Cockpit.
+                
+                Para aplicar as customizações no Cockpit não é necessário refazer o deploy do Workflow. Mas caso seja necessário refazer o deploy por algum outro motivo ou ainda atualizar a versão do Workflow, as customizações serão mantidas no Cockpit.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

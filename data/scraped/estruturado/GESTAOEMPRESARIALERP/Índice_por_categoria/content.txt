@@ -1,0 +1,275 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#regra_variaveis/indice_variaveis2.htm%3FTocPath%3DFerramentas%7CFun%25C3%25A7%25C3%25B5es%2520para%2520regras%2520e%2520gerador%2520de%2520relat%25C3%25B3rios%7CVari%25C3%25A1veis%7C_____2
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ferramentas > Funções para regras e gerador de relatórios > Variáveis > Índice por categoria
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Índice das variáveis
+                Variáveis são palavras especiais que fornecem dados específicos para serem utilizados na elaboração das regras.
+                As variáveis disponíveis 
+ para o Gestão Empresarial | ERP são as seguintes:
+                Bloquetos
+                Variáveis disponíveis:
+                    
+                        
+                            
+                            
+                            
+                                
+                                    Nome
+                                    Descrição
+                                
+                                
+                                    BloCodIn1
+                                    
+                                    Código Instrução 01 do Bloqueto
+                                
+                                
+                                    BloCodIn2
+                                    
+                                    Código Instrução 02 do Bloqueto
+                                
+                                
+                                    BloDesMe1
+                                    
+                                    Mensagem 01 do Bloqueto
+                                
+                                
+                                    BloDesMe2
+                                    
+                                    Mensagem 02 do Bloqueto
+                                
+                                
+                                    BloDesMe3
+                                    
+                                    Mensagem 03 do Bloqueto
+                                
+                                
+                                    BloDesMe4
+                                    
+                                    Mensagem 04 do Bloqueto
+                                
+                                
+                                    FinRecUnn
+                                    
+                                    Último nosso número
+                                
+                                
+                                    FinTitBan
+                                    
+                                    Número do Título no Banco
+                                
+                            
+                        
+                    
+                
+                Cheques
+                Variáveis disponíveis:
+                    
+                        
+                            
+                            
+                            
+                                
+                                    Nome
+                                    Descrição
+                                
+                                
+                                    ChqAno1Po
+                                    
+                                    Ano da Emissão Cheque com 1 Posição
+                                
+                                
+                                    ChqAno2Po
+                                    
+                                    Ano da Emissão Cheque com 2 Posições
+                                
+                                
+                                    ChqDiaDtP
+                                    
+                                    Dia Emissão Cheque
+                                
+                                
+                                    ChqExtLn1
+                                    
+                                    Linha 01 Descrição do valor por extenso para Cheque
+                                
+                                
+                                    ChqExtLn2
+                                    
+                                    Linha 02 Descrição do valor por extenso para Cheque
+                                
+                                
+                                    ChqExtMes 
+                                    
+                                    Mes da Emissão Cheque por extenso
+                                
+                            
+                        
+                    
+                
+                Cobrança Escritural - Remessa
+                Variáveis disponíveis:
+                    
+                        
+                            
+                            
+                            
+                                
+                                    Nome
+                                    Descrição
+                                
+                                
+                                    FinApeCli
+                                    
+                                    
+                                        Apelido do Cliente
+                                    
+                                
+                                
+                                    FinBaiCli
+                                    
+                                    Bairro do cliente
+                                
+                                
+                                    FinCepCli
+                                    
+                                    CEP do cliente
+                                
+                                
+                                    FinCheAge
+                                    
+                                    Agência do cheque cadastrado no título para CE
+                                
+                                
+                                    FinCheBan
+                                    
+                                    Banco do cheque cadastrado no título para CE
+                                
+                                
+                                    FinCheCta
+                                    
+                                     Conta do cheque cadastrado no título para CE
+                                
+                                
+                                    FinCheNum
+                                    
+                                     Número do cheque cadastrado no título para CE
+                                
+                                
+                                    FinCidCli
+                                    
+                                    Cidade do cliente
+                                
+                                
+                                    FinCodCli 
+                                    
+                                    Código do cliente
+                                
+                                
+                                    FinCodCrt
+                                    
+                                    Código da carteira
+                                
+                                
+                                    FinCodFil
+                                    
+                                    Código da filial
+                                
+                                
+                                    FinCodFpg
+                                    
+                                    Campo Forma de Pagamento da grade
+                                
+                                
+                                    FinCodIb1
+                                    
+                                    Código da Primeira Instrução para o Banco
+                                
+                                
+                                    FinCodIb2
+                                    
+                                      Código da Segunda Instrução para o Banco
+                                
+                                
+                                    FinCodIn1
+                                    
+                                    Código da Primeira Inscrição do Título
+                                
+                                
+                                    FinCodIn2
+                                    
+                                     Código da Segunda Inscrição do Título
+                                
+                                
+                                    FinCodMoe
+                                    
+                                    Código da Moeda do Título
+                                
+                                
+                                    FinCodNtg
+                                    
+                                    Código da natureza do gasto
+                                
+                                
+                                    FinCodOcr
+                                  

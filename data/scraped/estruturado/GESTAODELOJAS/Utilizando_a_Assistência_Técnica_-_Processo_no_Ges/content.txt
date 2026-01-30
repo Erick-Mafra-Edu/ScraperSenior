@@ -1,0 +1,67 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/assistencia-tecnica/utilizando-lojas.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7CAssist%25C3%25AAncia%2520T%25C3%25A9cnica%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Assistência Técnica > Utilizando a Assistência Técnica - Processo no Gestão de Lojas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Utilizando a Assistência Técnica - Processo no Gestão de Lojas
+            Neste processo é possível receber um produto com defeito de um cliente e encaminhá-lo à Filial centralizadora de assistência técnica, responsável por fazer a triagem dos produtos com defeito e enviá-los às assistências externas, quando necessário.
+            Isso facilita o gerenciamento e acompanhamento dos produtos em assistência técnica, pois além de acompanhar o andamento da ocorrência, é possível controlar o estoque dos produtos com defeito na loja.
+            
+                Importante
+                
+                Para toda nota fiscal de remessa de conserto emitida, é preciso ter uma nota fiscal de retorno de conserto. Isso é obrigatório para evitar que seja pago ICMS da nota fiscal de remessa para conserto. Por essa razão, não é permitido cancelar a assistência técnica após ter sido efetuada a coleta do produto com defeito na loja.
+            
+            Para utilizar esta rotina, é necessário realizar as parametrizações necessárias no Gestão Empresarial | ERP, conforme o processo descrito na Parametrizando a Assistência Técnica.
+            
+                Observação
+                
+                Se utilizada a rotina de assistência técnica, será necessário realizar a parametrização de todas as formas de pagamento para todas as filiais no Gestão de Lojas através da tela F066VAR.  A gestão das situações em que as formas de pagamento devem ser inseridas nas filiais deve ser feita no Gestão Empresarial | ERP por meio desta tela.
+            
+            O que você pode fazer?
+            Cadastrar uma assistência de origem cliente
+                
+                    
+                        Acesse a tela Assistência Técnica através do caminho Serviços > Assistência técnica, do Retaguarda;
+                        Clique no botão Incluir (F2)  para iniciar uma nova ocorrência de assistência técnica;
+                        Informe o Solicitante (pessoa que veio até a loja trazendo o produto com defeito) e um Telefone para contatá-lo quando o produto retornar do conserto. Descreva, no campo Defeito Cliente, o problema relatado por ele, insira os acessórios recebidos que acompanham o produto no campo Itens Recebidos e, por fim, algum parecer no campo Defeito atendente, caso seja percebido algo não relatado pelo cliente (como, por exemplo, quando o produto estiver com marcas, riscos etc.). Para telefones celulares, é possível informar o IMEI. Como o sistema não consegue distinguir esses aparelhos dos demais produtos, essa informação não é obrigatória. É possível, ainda, inserir uma observação, descrevendo-a no campo Observação e clicando em Adicionar, caso julgue-se necessário.Neste momento, já é possível gravar a ocorrência através do botão Gravar (F12)  para que seja acessada posteriormente. Isso pode ser útil no caso de o cliente passar as informações por telefone, avisando que trará o produto em outro momento;
+                        
+                            O cliente, estando na loja com o produto com defeito em mãos, clique em Buscar produto. O sistema abrirá a tela de busca. Escolha a opção Cliente em Origem, preencha os campos para filtrar as informações e clique em Pesquisar (F5). O sistema retornará as informações, selecione o produto e clique em Selecionar (F4). O documento do produto pode ser de qualquer Filial, no entanto, somente estarão acessíveis os documentos de outras filiais, caso a conexão da loja esteja funcionando. Caso contrário, apenas será permitido dar entrada de assistência técnica de vendas da própria loja;
+                            
+                                não é possível dar prosseguimento em uma ocorrência de assistência técnica sem vincular um documento de venda (nota fiscal, cupom fiscal, NFC-e). É desta forma que a loja consegue garantir que o produto foi realmente comprado em alguma loja da rede;
+                                caso perceba-se que foi selecionado um documento incorreto, é possível clicar novamente no botão Buscar Produto e selecionar outro documento;
+                                no caso de o cliente não ter sido identificado no documento selecionado, o sistema irá exigir que seja informado um cliente. Caso o cliente não possua cadastro, será preciso cadastrá-lo neste momento.
+                            
+                            
+                                Observação 
+                                Ao pesquisar por um cupom fiscal que já contenha uma nota fiscal vinculada, serão apresentados no resultado da busca apenas os itens da nota fiscal vinculada para que a tela não apresente itens repetidos sem necessidade.
+                            
+                        
+                        Selecione, então, o tipo de ocorrência a ser aberta, dentre as seguintes opções:Botão Devolver Item (F2): deve ser utilizada quando o cliente trouxe à loja um produto com defeito e quer receber o seu dinheiro de volta. Geralmente, é utilizada somente quando faz pouco tempo que o cliente adquiriu o produto. O sistema irá gerar uma nota fiscal de entrada por devolução, dando entrada do produto com defeito no depósito de assistência técnica, o qual não fica disponível em novas vendas. Esta nota fiscal utilizará as configurações de CFOPs de devolução e série configuradas nas definições da filial. Estas configurações são cadastradas na tela F070VAR - Parâmetros da Filial para Integrações do Gestão Empresarial | ERP. O documento original de venda é marcado como Devolvido e é gerado um título de crédito para o cliente e compensado com a dívida atual. Caso já tenha sido pago alguma parcela ou a venda tenha sido à vista, será necessário efetuar um pagamento no PDV para devolução do dinheiro. Esta opção é semelhante com a devolução do menu Suprimentos > Gestão de recebimento > Devolução ou Troca, com a diferença de que, ao final da devolução, é possível dar continuidade no processo de assistência técnica do produto para que a loja não fique com um produto com defeito parado em estoque;Botão Trocar Item (F3): deve ser utilizada quando o cliente trouxe à loja um produto com defeito e ele deseja trocá-lo por um novo. Geralmente, é utilizada somente quando faz pouco tempo que o cliente adquiriu o produto. O sistema irá solicitar que seja escolhido o produto que substituirá o produto com defeito, pois é possível que não tenha mais disponível em estoque o produto original. Em seguida, será gerada uma nota fiscal de entrada por devolução, dando entrada do produto com defeito no depósito de assistência técnica, o qual não fica disponível em novas vendas, e uma nota fiscal de saída para entrega do novo produto ao cliente. Essas notas fiscais serão geradas com as séries e as naturezas de operações configuradas nas operações de nota fiscal Operação Entrada Por Troca e Operação Saída Por Troca, disponível na guia Filiais Atendidas da tela Parâmetros para Assistência Técnica e Controle de Garantia (F070FAG), do Gestão Empresarial | ERP. O documento original de venda é marcado como devolvido e nenhuma movimentação financeira é efetuada, mantendo a dívida atual do cliente intacta, caso exista (isso evita a necessidade de impressão de carnê). Posteriormente, é possível dar continuidade no processo de assistência técnica do produto para que a loja não fique com um produto com defeito parado em estoque;Botão Assist. Produto/Montagem (F4): deve ser utilizada quando o cliente trouxe à loja um produto com defeito e a loja vai apenas fazer a intermediação com a assistência externa. Geralmente, é utilizada quando já faz algum tempo que o cliente adquiriu o produto, mas ele ainda está em garantia. É possível utilizar este processo mesmo que o produto não esteja mais em garantia, no entanto, atualmente não existe uma forma automática para cobrança de valores do cliente, portanto, para isso seria necessário gerar títulos manualmente. Quando selecionada esta opção, o sistema irá gerar uma nota fiscal de entrada para conserto com a série e as naturezas de operações configuradas na operação de nota fiscal Operação Entrada Conserto, disponível na guia Filiais Atendidas, da tela Parâmetros para Assistência Técnica e Controle de Garantia (F070FAG), do Gestão Empresarial | ERP.Após aberto a Assist. Produto/Montagem (F4) > Assistência produto, será possível ressarcir o cliente através dos itens Devolver Item (F2) e Trocar Item (F3) . Ao final do processo  será gerado uma nota fiscal do tipo "Retorno do Conserto", necessário para fechar o ciclo do sistema, no caso de devolução, ou com o cliente, no caso de troca, e ajuste do estoque da loja.
+                        Independentemente do tipo de ocorrência de assistência técnica selecionado, ela ficará na situação 2 – Pendente de coleta na filial e irá integrar com o Gestão Empresarial | ERP, gerando uma pendência para que a filial centralizadora das assistências técnicas venha à loja coletar os produtos com defeito. Após esse processo, é gerada uma pendência de carga no ERP, para atender essa pendência, verifique mais detalhes na documentação Utilizando a Assistência Técnica - Processo no ERP.
+                        Quando alguém chegar à loja para coletar esses produtos, é necessário selecionar os produtos que serão entregues e clicar no botão Coletar. Neste momento, o sistema irá gerar uma nota fiscal de saída de remessa para conserto com a sé

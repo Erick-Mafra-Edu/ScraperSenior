@@ -1,0 +1,208 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#geral/processo_contabilidade_multimoeda.htm%3FTocPath%3DSegmentos%7CCompliance%7C_____9
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Manufatura > Contabilidade multimoeda
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Contabilidade multimoeda
+            Parametrizações a serem feitas para utilizar a Contabilidade Internacional:
+            
+                Cadastro de Modelos de Plano (F043MPC) em Cadastros > Modelos de plano > Cadastro: Na guia "Plano Contas" o campo Método de Conversão com as opções "1 - Monetário" e "2 - Não Monetário" que permite informar se a conta reduzida será ou não monetária. Esse campo ficará habilitado apenas as contas dos modelos de planos contábeis do tipo "1 - Contábil".No "Cadastro Hierárquico do Plano de Contas", acessado pelo botão Hierárquico,  o campo Método de Conversão permite informar se a conta contábil tem o método de conversão "Monetário" ou "Não monetário", quando é plano de contas contábil.
+                Cadastro de Formas de Contabilização (F048FCT) em Cadastros > Controladoria > Contabilidade > Formas de Contabilização > Cadastro:Na guia "Itens" o campo Código Moeda ficará habilitado para as sequências cujo o campo Analítica/Sintética seja "C - Conversão". Para as sequências do tipo "C - Conversão" deverá ser informado o campo Sequência Relacionada e o campo Código Moeda.
+                Manutenção de Contas Contábeis (F045PLA) em Cadastros > Controladoria > Contabilidade > Plano Contábil > Plano de Contas:O campo Método de Conversão com as opções "1 - Monetário" e "2 - Não Monetário" permite informar se a conta reduzida será ou não monetária.
+                 Lançamentos Multimoeda (F648LCC) em Controladoria > Gestão de Contabilidade > Contabilidade Multi-moeda > Lançamentos:Esta tela tem como objetivo inclusão, manutenção e exclusão de lançamentos individuais contábeis com conversão de moeda.No lançamento contábil é possível informar no campo Moeda a moeda que se deseja realizar o lançamento.O campo valor cotação buscará o valor de cotação mais próximo da data de lançamento.O valor da cotação é buscado da tela "Moedas - Cadastro (F031AIM).
+            
+            Exemplo:
+                
+                    Data do lançamento: 19/11/2007
+                    Data de cotação mais próxima do lançamento: 15/10/2007
+                    Valor de cotação: US$1,96
+                    Valor base de lançamento: R$100,00
+                    Moeda: US$
+                    Então: valor lançamento convertido: US$51,02
+                
+            
+            Importante
+                O processo de conversão para multi-moeda não contempla lançamento de composição e rateios, pois na contabilidade internacional a intenção é ver a conversão da moeda no balancete contábil."
+            
+            
+                Integração Contábil (F645CTB) em Controladoria > Gestão de Contabilidade > Contabilidade > Integrações ContábeisA possibilidade de realizar integrações contábeis para contabilizar as sequências de conversão das formas de contabilização.Integrações contábeis para contabilizar as sequências de conversão das formas de contabilização. Quando houver nas formas de contabilizações seqüências do tipo "C" (Conversão), ao realizar a integração contábil de algum módulo, a contabilização será convertida para a moeda informada no campo Código Moeda da tela "Cadastro - Forma de Contabilização - Itens".
+            
+            Importante
+                
+                    A sequência de conversão gerará um registro na tabela "E648LCT" onde o tipo de lançamento será igual a "4" (Conversão).
+                    A número do lançamento origem da tabela "E648LCT" será igual ao número do lançamento relacionado "E640LCT" conforme definido na forma de contabilização.
+                    O valor do lançamento será convertido com a última cotação válida da moeda cadastrada na sequência da forma de contabilização e o valor base será o valor do lançamento origem. Última cotação válida é a cotação cuja a data seja menor ou igual a data do lançamento e o valor da cotação seja maior que zero.
+                
+                A cotação usada para conversão dos valores são buscados da tela "Tabelas - Cadastro/Atualização" (F031AIM).
+                Na tabela E648LCT também será gravada a data de cotação e valor da cotação utilizada para realizar a conversão.
+            
+            Exemplo:
+                
+                    Na forma de contabilização têm se uma sequência "C" (Conversão) e no campo Código Moeda está informada a moeda "US$" (dólar).
+                    A última cotação que há em "Tabelas - Cadastro/Atualização" (F031AIM) é de 01/11/2007 no valor de US$1,90.
+                    Realizou-se o lançamento de um título no contas a pagar, cujo valor é de R$1.000,00.
+                    Ao integrar o módulo de "Contas a pagar", gerará um lançamento no valor de US$526,31 do tipo "4" (Conversão), (o valor base de lançamento é divido pelo valor da cotação).
+                    Na tela de "Liberação/Exclusão de Lotes", é possível ver apenas o lançamento origem, ou seja, no valor de R$1.000,00.
+                    Para verificar o valor de US$526,31 (valor convertido) está sendo desenvolvida uma tela de consulta. Maiores detalhes, ver "Ajuda" da tela.
+                
+            
+            
+                Modelo de relatório "CTCT071.GER - Balancete Mensal - Contabilidade Internacional" em Contábil > Contabilidade > Relatórios > Contábeis:Este relatório tem como objetivo listar o balancete mensal com os saldos das contas contábeis com base nos lançamentos da contabilidade internacional. Estes lançamentos são gerados a partir das formas de contabilização (sequências de conversão), da tela de lançamentos multi-moeda e dos ajustes contábeis.
+            
+            
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        
+        
+        
+        
+        Ver site completo
+        
+    
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+

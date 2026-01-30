@@ -1,0 +1,254 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/multilingua/flanguages.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CMultil%25C3%25ADngua%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Multilíngua > Multilíngua
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Multilíngua 
+                O 
+ recurso multilíngua permite ao usuário traduzir as telas e o dicionário 
+ de dados dos sistemas Senior.
+                
+                    Observação
+                    
+                    Este recurso não está disponível no Gestão de Pessoas | HCM GO UP. Saiba mais.
+                
+                Cadastro 
+ de idiomas
+                É a tela onde são cadastrados os idiomas 
+ para os quais o sistema pode ser traduzido. Para traduzir o sistema é 
+ necessário cadastrar o idioma nesta tela primeiro.
+                Cód. do idioma
+                    Este código 
+ é utilizado para identificar o idioma de arquivos e outros recursos do 
+ sistema.
+                Nome idioma
+                    É o nome do idioma.
+                Opções
+                    Abre a tela de opções 
+ do idioma selecionado (ver Opções 
+ de idioma).
+                Salvar
+                    Salva as alterações 
+ nos idiomas.
+                Cancelar
+                    Cancela alterações 
+ feitas que ainda não foram salvas.
+                Fechar
+                    Fecha a tela de cadastro 
+ de idiomas. Se houverem alterações irá aparecer uma mensagem para o usuário 
+ confirmar o salvamento ou cancelamento das alterações.
+                Ajuda
+                    Mostra a ajuda para o 
+ recurso.
+                Opções 
+ de idioma
+                É a tela onde são configuradas as opções 
+ para o idioma selecionado.
+                Regra para formatação de moeda por 
+ extenso
+                    Define o idioma que será utilizado para a escrita de números 
+ por extenso (ver Regras para formatação de 
+ moeda por extenso);
+                Nome da moeda
+                    Define o nome 
+ que deve ser utilizado para a moeda na escrita de números por extenso.
+                Nome da moeda no plural
+                    Define 
+ o nome que deve ser utilizado para a moeda na escrita de números por extenso 
+ no plural.
+                Nome da fração de moeda
+                    Define 
+ o nome que deve ser utilizado para frações de moeda na escrita de números 
+ por extenso.
+                Nome da fração de moeda no plural
+                    Define 
+ o nome que deve ser utilizado para frações de moeda na escrita de números 
+ por extenso no plural.
+                Separador de milhares
+                    Define 
+ o caractere que agrupa os milhares em valores numéricos.
+                Separador de decimais
+                    Define 
+ o caractere que separa a parte fracionária de valores numéricos.
+                Ok
+                    Confirma as alterações das 
+ opções.
+                Cancelar
+                    Cancela alterações 
+ das opções.
+                Ajuda
+                    Mostra a ajuda para o 
+ recurso.
+                Seleção 
+ de idioma
+                É a tela com uma lista para que o usuário 
+ escolha um dos idiomas cadastrados no sistema. O idioma escolhido nesta 
+ tela será aplicado no sistema após o logon do usuário. Para traduzir o 
+ sistema é necessário que o usuário selecione um idioma que não seja 
+ o nativo ("Português do Brasil (Nativo)") através desta tela.
+                Idioma
+                    Lista de idiomas disponíveis 
+ no sistema;
+                Ok
+                    Confirma a seleção do idioma;
+                Cancelar
+                    Cancela a seleção 
+ do idioma;
+                Ajuda
+                    Mostra a ajuda para o 
+ recurso.
+                Tela 
+ de status do processo
+                Tela que exibe os status do processo. 
+                
+                    
+                
+                Botão Cancelar
+                    Ao clicar nesse 
+ botão ele irá parar a execução do processo.
+                Esse botão só aparecerá quando for carreado as visualizações (Tabela/Views, 
+ campos e enumerações), quando 
+ for importado de um arquivo de texto e quando exportado para um arquivo 
+ de texto. Ao "Importar de arquivo texto" e "Exportar para 
+ arquivo texto" o botão Cancelar apenas irá parar o processo mas os 
+ registros importados/exportados até ali, não serão cancelados. 
+                Aplicar idioma nos sistemas
+                A definição do idioma utilizado no sistema é realizada durante a inicialização, logo após a conexão com a base de dados. Existem duas formas de configurar o idioma:
+                
+                    Seleção do idioma pelo usuário: o usuário pode selecionar o idioma desejado, que será gravado na base de dados. O local onde essa seleção é realizada pode variar de acordo com o produto utilizado. Para mais informações, consulte a documentação do respectivo produto.Gestão de Pessoas | HCMRonda Senior XTGestão Empresarial | ERP
+                    Parâmetro via linha de comando: nessa opção, o usuário deve passar o parâmetro -lang:<código_do_idioma> após o caminho do executável. Nesse cenário, o sistema utilizará o idioma informado no parâmetro e ignorará o idioma selecionado pelo usuário no sistema. Caso o código de idioma informado seja inválido, o sistema utilizará o idioma selecionado previamente pelo usuário no sistema. Por exemplo, c:\<instalacao>\sapiens\sapiens.exe -lang:ESP.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

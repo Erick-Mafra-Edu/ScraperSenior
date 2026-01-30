@@ -1,0 +1,297 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/funcoes/web-50.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7CFun%25C3%25A7%25C3%25B5es%7CFun%25C3%25A7%25C3%25B5es%2520para%2520WEB%25205.0%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Funções > Funções para WEB 5.0
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Funções para WEB 5.0
+            
+                
+                
+                
+                    
+                        Nome
+                        Descrição 
+                    
+                    
+                        WAdicionaListaErros
+                        
+                        
+                            Adiciona um erro na Lista de Erros.
+                        
+                    
+                    
+                        WAdicionanoHTML
+                        
+                        
+                            Adiciona uma string no HTML através de um identificador.
+                        
+                    
+                    
+                        WAlteraValorCampo
+                        
+                        Altera um valor na lista de campos que foram enviados (get ou post) através de uma página Web.
+                    
+                    
+                        WCheckValCheckBox
+                        
+                        Retorna um campo do tipo CheckBox passado pelo HTML. Se o campo não for válido, retorna 0 (zero) e adiciona o erro na lista de erros.
+                    
+                    
+                        WCheckValData
+                        
+                        
+                            Retorna um campo Data passado pelo HTML.
+                        
+                    
+                    
+                        WCheckValDouble
+                        
+                        
+                            Retorna um campo ponto flutuante passado pelo HTML.
+                        
+                    
+                    
+                        WCheckValHora 
+                        
+                        Retorna um campo Hora passado pelo HTML.
+                    
+                    
+                        WCheckValInteger
+                        
+                        
+                            Retorna um campo inteiro passado pelo HTML.
+                        
+                    
+                    
+                        WCheckValString 
+                        
+                        Retorna um campo caracter passado pelo HTML.
+                    
+                    
+                        WConsistePISCPF
+                        
+                        
+                            Consiste o PIS ou o CPF.
+                        
+                    
+                    
+                        WCountFields
+                        
+                        Retorna a quantidade de campos passados pela ação do HTML.
+                    
+                    
+                        WebCodificaHtml
+                        
+                        Esta função faz a codificação dos caracteres de controle HTML para suas respectivas entidades HTML.
+                    
+                    
+                        WebCodificaJavaScript
+                        
+                        Esta função faz a codificação dos caracteres não alfanuméricos para a forma hexadecimal, de forma a concatenar em scripts JavaScript de forma 
+ segura.
+                    
+                    
+                        WebCodificaUrl
+                        
+                        Esta função faz a codificação dos caracteres de forma a concatenar em URLs de forma segura.
+                    
+                    
+                        WebValidaArquivo
+                        
+                        Esta função permite validar a extensão e o tamanho máximo de um arquivo enviado ao 
+ servidor.
+                    
+                    
+                        WebValidaTodosArquivos
+                        
+                        Esta função tem a mesma funcionalidade da função WebValidaArquivo, porém ela valida todos os campos (<input>) do formulário cujo nome inicia com o prefixo FileName_.
+                    
+                    
+                        WebValorContexto
+                        
+                        Esta função retorna o valor de um parâmetro da URL, de um cookie ou 
+ de um campo do formulário que invocou a ação.
+                    
+                    
+                        WErrodaListaErros
+                        
+                        
+                            Retorna um erro da Lista de Erros.
+                        
+                    
+                    
+                        WInsSelecaodaLista
+                        
+                        Insere em um HTML a seleção dos dados de uma Lista do Sistema.
+                    
+                    
+                        WInsSelecaodoBanco
+                        
+                        Insere em um HTML uma seleção de registros do Banco de dados, que será inserido 
+ junto a um marcador. 
+                    
+                    
+                        WLerHTML
+                        
+                        
+                            Retorna o arquivo HMTL especificado do diretório dos HTMLs para a variável.
+                        
+                    
+                    
+                        WLimpaListaErros
+                        
+                        
+                            Limpa a lista de validação de telas/campos WEB.
+                        
+                    
+                    
+                        WQtdnaListaErros
+                        
+                        
+                            Retorna a quantidade de erros existentes na Lista de Erros.
+                        
+                    
+                    
+                        WRemoteAddr
+                        
+                        Retorna o endereço IP da estação que está acessando o sistema. Utilizada apenas nos sistemas Web.
+                    
+                    
+                        WReturnFieldsName
+                        
+                        
+                            Retorna os nomes dos campos passados pela ação do HMTL.
+                        
+                    
+                    
+                        WSQLSenior2paraSQLNativo
+                        
+                        Retorna a Sintaxe de um comando SQL Senior2 para o SQL Nativo, correspondente ao banco que estiver sendo utilizado.
+                    
+                    
+                        WSQLSeniorparaSQLNativo
+                        
+                        Retorna a Sintaxe de um comando SQL Senior para o SQL Nativo, correspondente ao banco que estiver sendo utilizado.
+                    
+                    
+                        WStrtoJavaScript
+                        
+                        Formata uma String para o padrão JavaScript.
+                    
+                    
+                        WTextoParaFormatoHTML 
+                        
+                        
+                            Retorna a expressão alfanumérica passada como parâmetro convertida para HTML.
+                        
+                    
+                    
+                        WUltimoErrodaLista
+                        
+                        Retorna o último erro incluído na Lista 
+ de Erros.
+                    
+                    
+                        WWriteCookie
+                        
+                        Grava um campo no Cookie ativo.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+         

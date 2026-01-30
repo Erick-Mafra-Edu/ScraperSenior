@@ -1,0 +1,159 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#recursos-de-interface/leitura-de-imagens/freadimg.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CRecursos%2520da%2520Interface%2520do%2520Sistema%7CTela%2520de%2520Leitura%2520de%2520Imagens%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Recursos da Interface do Sistema > Tela de Leitura de Imagens > Tela de Leitura de Imagens
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Tela Leitura de Imagens
+                A tela Leitura de Imagens é um diálogo que permite selecionar imagens de arquivos ou de um dispositivo conectado ao computador, como uma câmera ou um scanner, por exemplo.
+                Menus
+                Arquivo
+                Opções e configurações de imagem e da tela de leitura de imagens:
+                Salvar como
+                    Salva a imagem, esta opção abre um diálogo para escolha da localização e o nome do arquivo.
+                Limpar imagem
+                    Limpa a imagem que está sendo visualizada na tela.
+                Configurações
+                    Altera padrões da tela de leitura de imagens:
+                
+                    Formato de imagem: Configura o formato de imagem que será gravada no banco de dados. Pode-se escolher entre BMP e JPEG. Quando o formato escolhido for JPEG é possível configurar a qualidade da imagem através do botão Configurações;
+                    Salvar configurações de leitura de imagens: As configurações atuais da tela de leitura de imagens (como: dispositivo selecionado, tamanho do recorte, formato de arquivo e configurações do formato de arquivo) serão gravadas como padrão e passarão a ser usadas sempre que a tela de leitura de imagens for executada;
+                    Para todas as telas: Esta opção pode estar habilitada em determinadas situações, esta opção indica se as configurações serão salvas como padrão para todas as telas do sistema ou se serão salvas como padrão somente para a tela que está ativa no sistema.
+                
+                Sair
+                    Fecha a tela de leitura de imagens e cancela a leitura.
+                Dispositivo
+                Esta opção é habilitada somente quando é selecionado um dispositivo para a captura de imagens e apresenta as opções:
+                Configurações
+                    Configurações de dispositivos. Estas opções estarão habilitadas somente quando o dispositivo selecionado suportar estas configurações:
+                
+                    Tamanho: Abre a tela para configuração do tamanho da imagem que será capturada pelo dispositivo;
+                    Fonte: Abre a tela para configuração da fonte da imagem que será capturada pelo dispositivo;
+                    Video: Abre a tela para configuração de vídeo do dispositivo.
+                
+                Nota
+                    As telas que são abertas por estes menus são do aplicativo instalado para o dispositivo. Para tirar dúvidas sobre seu funcionamento, consulte o manual do dispositivo.
+                
+                Para ser possível salvar as configurações, o usuário do sistema operacional deverá possuir permissões de leitura e escrita na chave: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft" do Windows.
+                
+                    Importante
+                    
+                    A utilização de webcams dentro de ambientes Citrix pode causar instabilidades. Para isso, verifique todas as configurações de ambiente e dispositivo conforme documentação da empresa Citrix.
+                
+                Selecionando uma imagem a partir de um arquivo
+                Para escolher uma imagem a partir de um arquivo, utilize os recursos do painel superior esquerdo: 
+                Examinar
+                    Permite localizar arquivos de imagens. Para localizar o arquivo, escolha o disco na caixa de seleção, em seguida selecione um caminho no painel com os respectivos diretórios do disco selecionado, a lista de imagens do disco/caminho será exibida ao lado.
+                Nome do arquivo
+                    Exibe o nome do arquivo selecionado, também é possível informar o caminho ou o nome de um arquivo.
+                Arquivos do tipo
+                    Esta caixa de seleção permite filtrar os tipos de arquivo que serão exibidos na lista:
+				
+                
+                    Todas as imagens: Esta opção mostra os arquivos de imagem do tipo BMP, JPEG, JPG, ICO, GIF e PNG;
+                    Ícone: Exibe apenas arquivos do tipo ICO;
+                    Imagem BMP: Exibe apenas arquivos do tipo BMP;
+                    Imagem GIF: Exibe apenas arquivos do tipo GIF;
+                    Imagem JPG: Exibe apenas arquivos do tipo JPEG;
+                    Imagem PNG: Exibe apenas arquivos do tipo PNG;
+                    Todos os arquivos: Esta opção mostra todos os arquivos (inclusive arquivos que não são imagens).
+                
+                Capturando uma imagem de um dispositivo
+                Esta tela permite capturar imagens de dispositivos conectados ao computador como uma câmera ou um scanner, por exemplo, que implementam os padrões VFW, TWAIN, WIA, DirectX ou DxImages.
+                Para escolher o dispositivo para captura, selecione-o na caixa de seleção Dispositivo. Alguns dispositivos (como alguns modelos de câmera e placas de captura) permitem visualizar o vídeo após serem selecionados. Para capturar uma imagem do dispositivo utilize o botão Capturar.
+                Notas
+                    Ao clicar no botão Capturar, para alguns dispositivos, pode ser mostrada outra tela que pode ser do Windows ou do aplicativo instalado para o dispositivo. Neste caso deve-se proceder a captura através desta tela para que a imagem seja lida.
+                    Não há uma lista de dispositivos homologados pela Senior para utilização com este recurso. Verifique se o seu dispositivo é compatível e, em caso de dúvidas, entre em contato com o fabricante do dispositivo.
+                
+                No sistema Ronda Senior XT, caso a flag Utilizar novo método de captura de imagem esteja selecionada na Central de Configurações Senior, para selecionar/adicionar uma webcam deve-se clicar com o botão direito do mouse no painel de exibição e selecionar a webcam que se deseja adicionar, é possível adicionar mais de uma webcam por vez.
+                Visualização de imagens
+                No painel central é exibida a imagem selecionada, é possível selecionar uma área da imagem com a opção Recorte que está abaixo da visualização da imagem. Com esta opção ativa, informe a largura e altura respectivamente. É possível escolher a unidade de medida para a seleção (pixels, milímetros, centímetros ou polegadas), definidas as proporções, mova a seleção do recorte para a área que deve ser capturada.
+                Através do menu de contexto (popup), é possível utilizar as opções:
+                Selecionar
+                    Permite selecionar uma área da imagem. Esta opção mostra uma moldura que pode ser posicionada e redimensionada para delimitar a área da imagem que será utilizada.
+                Mostrar imagem
+                    Mostra uma tela com a imagem, nesta tela há opções para alterar o tamanho da imagem:
+                
+                    Zoom: Altera o tamanho da imagem a partir de uma proporção do tamanho original;
+                    Dimensões: Altera a imagem para um tamanho específico. Informe a largura e a altura respectivamente. Também é possível escolher a unidade de medida para a seleção (pixels, milímetros, centímetros ou polegadas);
+                    Manter relação de aspecto: Mantém a proporção entre a largura e a altura da imagem quando qualquer valor de dimensão da for alterado.
+                
+                Aumentar zoom
+                    Aumenta o tamanho da visualização da imagem. Esta opção não altera o tamanho da imagem que será utilizada.
+                Diminuir zoom
+                    Diminui o tamanho da visualização da imagem. Esta opção não altera o tamanho da imagem que será utilizada.
+                Seleção de várias imagens
+                Em determinadas situações pode aparecer no lado direito da tela alguns botões e caixas de visualização.
+                Isto indica que para esta situação existe mais de uma imagem para ser cadastrada e este recurso permite selecionar todas as imagens sem que seja necessário abrir e fechar a tela Leitura de Imagens várias vezes.
+                Cada conjunto de botão e caixa de visualização pode comportar uma imagem a ser capturada, para capturar as imagens, selecione a imagem de um arquivo ou utilize a captura de um dispositivo. Em seguida utilize o botão correspondente ao nome da imagem que está sendo capturada.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão

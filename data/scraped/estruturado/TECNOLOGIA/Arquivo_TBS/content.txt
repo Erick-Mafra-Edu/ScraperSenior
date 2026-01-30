@@ -1,0 +1,173 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#bancos-de-dados/tbs/arquivo-de-definicao-de-base.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CBancos%2520de%2520Dados%7CArquivo%2520TBS%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Bancos de Dados > Arquivo de definições da base - TBS
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Arquivo de definição de base - TBS
+            TBS é o arquivo binário que armazena uma série de definições, entre elas as definições de base. Tanto o TBS como a base de dados física, possuem duas entidades importantes:
+            Módulos
+                Um módulo é um conjunto de definições da base de dados, sendo que todas 
+ estas definições pertencem a um módulo-do-sistema 
+            Exemplo: 
+                
+                    Administração de Pessoal - Gestão de Pessoas | HCM
+                    Comercial - Gestão Empresarial | ERP. 
+                
+            
+            Cada definição 
+ pode pertencer a mais de um módulo.
+            Quando o TBS é recém-gerado, ele possui todos os módulos do 
+ sistema. Quando uma base de dados física é criada, são especificados os 
+ módulos que existirão dentro dela. A operação de criação de módulos cria 
+ uma base possuindo apenas os módulos especificados, e depois escreve um 
+ novo TBS, que também possui apenas os módulos especificados.
+            Customizações
+                Uma customização é uma implementação na base de dados feita pelo cliente. 
+ São customizações: campos do cliente, tabelas do cliente, views 
+ do cliente e outras.
+            Quando o cliente faz uma customização, o TBS e a base física precisam 
+ ser alterados ao mesmo tempo, para que o sistema e as rotinas consigam 
+ "enxergar" as customizações feitas pelo cliente. Rotinas que 
+ manipulam a base de dados física, como conversores e rotinas de backup, 
+ consideram as customizações e lidam com elas de maneira transparente. 
+ 
+            Exemplo:
+                
+                    Se o cliente criar um campo na base e, depois disso, fizer 
+ um backup da base, o campo criado pelo cliente será incluso no backup.
+                
+            
+            Quando um TBS é recém-gerado, ele não possui qualquer customização. 
+ Ele só poderá possuir customizações depois que a base física foi criada.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

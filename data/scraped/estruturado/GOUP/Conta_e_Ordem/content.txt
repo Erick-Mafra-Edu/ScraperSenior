@@ -1,0 +1,167 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#menu_suprimentos/processo-conta-ordem.htm%3FTocPath%3DSegmentos%7CSuprimentos%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Suprimentos > Conta e Ordem
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Processo de conta e ordem
+            No processo de conta e ordem, a empresa que está adquirindo as matérias primas solicita ao vendedor para realizar a entrega dos itens diretamente ao industrializador. Este, por sua vez, faz a remessa do produto industrializado para o comprador da matéria prima. Trata-se de um acordo pré-estabelecido entre as partes envolvidas.
+            Abaixo, demonstramos como ocorrem as emissões de documentos fiscais entre as partes:
+            
+            Nesse caso, o comprador não emite nenhum documento fiscal, nem mesmo  a remessa simbólica para o industrializador.
+            Art. 27 do RICMS/SC
+            Art. 27. Fica suspensa a exigibilidade do imposto nas seguintes operações internas e interestaduais:I - a saída de qualquer mercadoria, para conserto, reparo ou industrialização, desde que retorne ao estabelecimento de origem, no prazo de 180 (cento e oitenta) dias contados da data da saída.
+            Ou seja, quando ocorre a remessa para industrialização em terceiros (via nota fiscal de remessa ou  nota fiscal de compra pelo processo de conta e ordem), essa remessa é isenta de ICMS, desde que o retorno dos insumos (simbólico quando utilizado no produto final ou retorno físico por não utilização) aconteça em até 180 dias. Em relação aos insumos não retornados no prazo, é de responsabilidade do solicitante recolher o ICMS sobre as quantidades que ainda permanecem em poder do terceiro.
+            Vendedor
+            No ERP utilizado pelo vendedor deve-se emitir 2 notas fiscais de saída, cada uma com as suas  transações. Na nota fiscal de remessa, deve-se utilizar o recurso de NF referenciada para indicar as informações da NF de venda que está lançada contra o comprador.
+            Todas as telas de geração de notas de saída permitem a emissão da nota após o fechamento. Caso a nota ainda não tenha sido emitida, é possível fazê-lo na tela Emissão ou Cancelamento de Notas Fiscais de Saída (F140CAN), utilizando a opção de emissão.
+            
+                
+            
+            Comprador
+            Pode-se resumir o papel do comprador no processo de conta e ordem em:
+            
+                Entrada de nota fiscal de compra (tipo 1) de fornecedor (vendedor);
+                Entrada de nota fiscal de retorno por industrialização (tipo 4) sem emissão de nota fiscal simbólica de remessa para o industrializador;
+                Cancelamento/Reabilitação/Devolução de nota fiscal de compra;
+                Cancelamento/Reabilitação/Devolução de nota fiscal de retorno por industrialização.
+            
+            1. Entrada de nota fiscal de compra (tipo 1) de fornecedor (vendedor)
+            Na geração de um movimento de estoque a partir de uma nota fiscal de compra que gera um movimento de estoque normal que, por sua vez, gera um movimento de estoque de saída consignada a cliente, o cliente recebedor da nota fiscal de compra que iniciou o processo é considerado como sendo o cliente do movimento consignado.
+            O sistema busca o cliente recebedor (E440NFC.CLIRCB) na nota fiscal de compra e define o cliente do movimento consignado (E210MVP.CODCLI). Se a nota fiscal de compra não possuir cliente recebedor, o código do fornecedor como cliente (E095FOR.CODCLI) é definido como o cliente do movimento consignado.
+            Exemplo
+                
+                    
+                        transação de entrada de estoques NO (normal), que possui como transação de transferência a transação de saída de estoque consignado a cliente (CC). Exemplo: tela F001TES, Transação = 90219 (Entrada, Normal (NO)) e Transação Transferência = 90295 (Saída, Consignado a cliente (CC));para configurar a transação de consignação em uma transação NO, ative o identificador de regras EST-001MDTRF01.
+                        transação de compra (produto) configurada para integrar com transação de movimentação de estoques. Exemplo: 90219 (F001TCP > Integrações);
+                        através de uma regra ligada ao identificador de regra EST-210DEENT01, defina o depósito que receberá o movimento de saída consignada a cliente.
+                    
+                    No fechamento da nota fiscal de compra para industrialização serão gerados 2 movimentos de estoque:
+                    
+                        uma entrada de estoque NO no depósito definido pela nota fiscal de compra;
+                        uma saída consignada a cliente para o cliente recebedor.
+                    
+                
+            
+            1.1. Requisitos (válidos para ambas as telas de geração de nota de compra)
+            
+                a transação de compra do produto (F001TCP) deve integrar com uma transação de estoques que movimente uma saída de estoque consignado ao cliente (saída CC);
+                o industrializador deve estar cadastrado como cliente (F085CAD);
+                a nota fiscal de entrada (tipo 1 – Compra) deve ter as seguintes informações no campo observação da nota fiscal: nome, endereço e CNPJ do industrializador.
+            
+            1.2. Geração de nota fiscal de entrada por meio da tela Nota Fiscal de Entrada Agrupada (F440GNE)
+            
+                 o Cliente Recebedor (código do industrializador) deve ser informado na nota fiscal de compra (dados gerais). Esse campo  estará disponível apenas para notas fiscais do tipo 1.
+            
+            1.3. Geração de nota fiscal de compra por meio da tela Via Recebimento de Documento Eletrônico (F000INE)
+            
+                a transação de compra do produto deve integrar com uma transação de estoque que movimente uma saída para estoque consignado ao cliente (saída CC). Ela será sugerida com base nas parametrizações do sistema e poderá ser editada;
+                o industrializador (Cliente Recebedor na E440NFC) deverá constar na grade Notas Fiscais de Entrada. Esse código será obtido por meio da observação da nota fiscal. Para isso, utilize o identificador de regras CPR-000INECM30. Recebendo os dados gerais da NF-e, ele puxará o CPF/CNPJ do industrializador via regra;
+            
+            Exemplo de regra
+                Definir Alfa CPRAXML;
+Definir Alfa CPRAChvNel;
+Definir Alfa xCursor;
+Definir Alfa xInformacaoComplementar;
+Definir Alfa xCGCCPFIndustrializador;
+Definir Numero xCodigoIndustrializador;
+Definir Numero xPosIniCgcRcb;
+Definir Numero xPosIniInfCpl;
+Definir Numero xPosFimInfCpl;
+Definir Alfa xCNPJValido;
+Definir Alfa xTextoProcurar;
+Definir Numero xTamanhoTextoProcurar;
+Inicio
+  xTextoProcurar = "INDUSTRIALIZADOR="; @Deve ser preenchido como a informação do industrializador virá no xml@
+  TamanhoStr(xTextoProcurar, xTamanhoTextoProcurar);
+ 
+  PosicaoStr("<infCpl>",CPRAXML,xPosIniInfCpl); @Encontrar a posição de inicio da Tag InfCpl@
+  PosicaoStr("</infCpl>",CPRAXML,xPosFimInfCpl); @Encontrar a posição de fim da Tag InfCpl@
+ 
+  xInformacaoComplementar = CPRAXML;
+  CopiarStr(xInformacaoComplementar, (xPosIniInfCpl + 8), (xPosFimInfCpl - (xPosIniInfCpl + 8))); @Copiar para a variável xInfCpl somente a informação da Tag InfCpl@
+  SubstAlfa(" ", "", xInformacaoComplementar);  @Limpar os espaços em branco@
+ 
+  ConverteParaMaiusculo(xTextoProcurar);
+  ConverteParaMaiusculo(xInformacaoComplementar);
+  PosicaoStr(xTextoProcurar,xInformacaoComplementar,xPosIniCgcRcb); @Encontrar a posição de inicio da informação do industrializador@
+ 
+  xCGCCPFIndustrializador = xInformacaoComplementar;
+  CopiarStr(xCGCCPFIndustrializador, (xPosIniCgcRcb + xTamanhoTextoProcurar),18);  @Copiar para a variável xCGCCPFIndustrializador somente a informação do CNPJ@
+  DeixaNumeros(xCGCCPFIndustrializador); @Remove caracteres especiais e letras@
+ 
+  CNPJValido(xCGCCPFIndustrializador, xCNPJValido);
+  Se (xCNPJValido = "N")
+  Inicio
+    xCGCCPFIndustrializador = xInformacaoComplementar;
+    CopiarStr(xCGCCPFIndustrializador, (xPosIniCgcRcb + xTamanhoTextoProcurar),14);  @Copiar para a variável xCGCCPFIndustrializador somente a informação do CPF@
+    DeixaNumeros(xCGCCPFIndustrializador); @Remove caracteres especiais e letras@
+  Fim;
+ 
+  SQL_Criar(xCursor);
+  SQL_DefinirComando(xCursor, "SELECT CODCLI FROM E085CLI\
+                               WHERE CGCCPF = :CGCCPF");
+                              
+  SQL_DefinirAlfa(xCursor,"CGCCPF",xCGCCPFIndustrializador);
+  SQL_AbrirCursor(xCursor); @Busca o código do industrializador com base no CGCCPF@
+  SQL_RetornarInteiro(xCursor,"CODCLI",xCodigoIndustrializador);
+  SQL_FecharCursor(xCursor);
+ 
+  Se (xCodigoIndustrializador > 0)
+  Inicio
+    SQL_DefinirComando(xCursor, "UPDATE E000NFC SET CLIRCB =

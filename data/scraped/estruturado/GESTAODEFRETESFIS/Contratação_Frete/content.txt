@@ -1,0 +1,174 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#processo/contratacao-frete2.htm%3FTocPath%3D_____7
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Contratação Frete
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Contratação Frete
+            O Cálculo do Frete
+            Essa solução permite que o cálculo seja feito entre diversas transportadoras, possibilitando que a melhor opção seja contratada, por meio de tabelas de frete.
+            Configuração Tabela Frete
+            A configuração da tabela de frete ocorre em dois passos:
+            1. Definir as faixas de valores que irão compor o valor do frete, para cada tabela de frete cadastrada
+                
+                    Acesse:XPlatform> Gestão Logística > Gestão de Fretes> Cadastro > Transportadora > Cadastro de faixa por tipo tabelaClique no botão Cadastrar.Preencha os campos necessários e insira os valores a serem calculados para atender as rotas cadastradas para as transportadorasOs dados da planilha de faixa por tipo tabela podem ser importados ou digitados manualmente. Para a importação:É necessário criar uma planilha no Excel conforme modelo e salva-lá no formato convertido de .XLS para o formato de arquivo .TXT ou .CSV (separado por vírgulas) Selecione a transportadora desejada e use o botão, Selecione um Arquivo, após a importação do arquivo,  aparece a seguinte mensagem: "importação realizada com sucesso"Opcionalmente, use o botão Geração Automática, para gerar as faixas de valores que serão calculadas para atender as rotas da transportadoraApós a criação da planilha, use o botão Importar Arquivo.
+                
+            
+            2. Gerar a tabela de frete inicial
+                
+                    Nesta opção é possivel configurar o layout da tabela de frete, ou seja, são informações específicas que formarão a tabela de preço. 
+                    Para gerar a tabela de frete inicial é necessário que todos esses cadastros tenham sido realizados.
+                    
+                        
+                            Cadastro de faixa por tipo tabela
+                            Meio de transporte
+                            
+                            Transportadora
+                            
+                            Região
+                            
+                            Rota
+                            
+                            Roteirização
+                            
+                            Tipo tabela
+                            
+                            Tipo entrega
+                            
+                        
+                    
+                    Acesse: XPlatform> Gestão Logística > Gestão de Fretes> Cadastro > Transportadoras > Gerar Tabela Frete InicialAs transportadoras informam as contribuições e impostos , com  estas informações já definidas e os cadastros acima realizados, basta preencher cada um dos campos na tela, use o botão Parâmetros de Geração de Tabela Inicial.Para conferir se a tabela de frete foi gerada com sucesso vá em Cadastro e Manutenção de Tabela de Frete.
+                
+            
+            O que posso fazer em relação a Tabela de Frete?
+            Antes da contratação do frete existe a flexibilidade de fazer algumas alterações.
+            Você pode:
+            Alterar os valores da tabela de frete em lote
+                
+                    Esta tela permite ajustar o valor de várias tabelas no mesmo momento, por valor ou percentual.
+                    Acesse: XPlatform> Gestão Logística > Gestão de Fretes > Cadastro Transportadoras > Alteração Valores Tabelas Frete em Lote
+                    
+                        Faça uma pesquisa para as tabelas que deseja ajustar o valor em lote. 
+                        Após a pesquisa use o botão, Ajustar Preço.
+                        Preencha os campos conforme necessidade.
+                        Clique em Salvar.
+                        Opcionalmente,  é possível verificar as informações adicionais da tabela de frete no botão, Detalhes.
+                    
+                    
+                        Nota
+                        
+                        O ajuste de valor será aplicado em todas as tabelas que a pesquisa retornar.
+                    
+                
+            
+            Ativar e excluir tabela de frete
+                
+                    Ao criar uma tabela de frete, você tem a opção de ativar ou desativar a tabela cadastrada.
+                    Acesse: XPlatform> Gestão Logística > Gestão de Fretes > Cadastro Transportadoras > Ativar/Excluir Tabela de Frete
+                    
+                        Em Filtros de Ativação escolha entre as "tabelas ativadas", "desativadas";
+                        E escolha a opção que deseja aplicar: "ativar", "desativar", "ativar todos" ou "desativar todos"
+                    
+                
+            
+            Conferência Tabela de Frete
+                
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes > Cadastro >Transportadoras > Cadastro e Manutenção Tabela de Frete
+                    Nesta tela é possivel 
+                    
+                        Visualizar / Conferir todas as tabelas de frete cadastradas;
+                        Alterar as generalidades cadastradas pelo botão, Editar;
+                        Inserir uma nova tabela de frete através do botão, Cadastrar;
+                        Escolher quais tabelas serão usadas para o cálculo do frete através do botão, Faixas.
+                        Na tela que abre, use a opção Ativar Todos ou Desativar Todos
+                    
+                
+            
+            Consulta vigência tabela frete
+                
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes> Cadastro > Transportadora > Consulta Vigência Tabela de Frete.
+                    O que à consulta permite?
+                    
+                        Verificar a situação do pedido em, Filtro de Situação. Para isso, basta selecionar uma das opções disponíveis na lista;No prazo Vencidos
+                        Pesquisar os dados de um determinado  período, através do botão, Filtro por Período
+                    
+                
+            
+            Criar data limite de entrega
+                
+                    Essa é a data de entrega para o cliente. 
+                    
+                        Primeiramente, acesse XPlatform > Gestão Logística > Gestão de Fretes> Definições > Gerais > Parâmetros Gerais em seguida selecione a empresa e clique em Editar
+                        Habilite o parâmetro Ativar Data Limite de Entrega e clique em Salvar
+                        Em seguida, acesse XPlatform > Gestão Logística > Gestão de Fretes> Cadastro > Transportadora > Tabela Média de Preço e realize o cadastro
+                        Preencha os campos conforme necessidade e obrigatoriedade,
+                        Use botão, Salvar
+                    
+                    É bom saber
+                        
+                        O Gestão de Fretes utiliza a Data de Integração do pedido + o Prazo de Entrega cadastrado, considerando apenas os dias úteis.
+                
+            
+            Como altero a transportadora?
+            Caso necessário, localize a transportadora desejada
+                
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes> Operação > Contratação de Frete > Troca Transportadora / Tabela
+                    
+                        Ao carregar a tela selecione um pedido e use o botão Ranking
+                        Em seguida, selecione a transportadora desejada e clique em Trocar Transportadora
+                        Se deseja visualizar qual transportadora realizou a melhor contratação de frete para realizar a troca, use o botão Rancking
+                        Selecione a transportadora desejada.
+                        Use o botão, Trocar Transportadora.
+                        Informe os campos.
+                        Clique em Salvar.
+                    
+                    Para cadastrar informações que justifique a troca da transportadora em um pedido ou romaneio
+                        
+                            Acesse: XPlatform > Gestão Logística > Gestão de Fretes> Definições > Operação > Motivo Troca Transportadora.
+                            
+                                Use o botão, Cadastrar.
+                                Preencha os campos Descrição Motivo Troca e Código Motivo Troca.
+                                Clique em Salvar.
+                            
+                        
+                    
+                
+            
+            Quais consultas posso realizar na Contratação do Frete?
+            Documento Frete
+                
+                    Acesse: XPlatform > Gestão Logística > Gestão de Fretes > Operação > Contratação de Frete > Documento de Frete.
+                    O que à consulta permite?
+                    
+                        Exibe o histórico de ocorrências importadas por Ocorren ou inseridas manualmente, através do filtro Histórico de Ocorrência
+                        Corrigir os dados do documento, pelo filtro Alteração
+                        Visualizar os dados de faturamento quando houver integração, pelo filtro Faturamento
+                        Visualizar os dados de redespacho, caso tenha sido informado em integração do arquivo Conemb, através do filtro Redespacho
+                        Exibe as generalidades que foram aplicadas ao frete conforme a tabela selecionada, pelo filtro Generalidade
+                        Mostra os dados do CTe informado na implantação do arquivo Conemb, pelo filtro CTE
+                        Apresenta os dados dos pedidos e as transportadoras que f

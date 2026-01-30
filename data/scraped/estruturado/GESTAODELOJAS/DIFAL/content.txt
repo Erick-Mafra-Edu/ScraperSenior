@@ -1,0 +1,176 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/difal.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7C_____9
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > DIFAL
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                DIFAL - Diferencial de alíquota | Operações interestaduais com consumidor final
+                Conceito
+                A Emenda Constitucional (EC) 87/2015, publicada no DOU 1 de 17/04/2015, apresentou uma significativa alteração no conceito e no cálculo do ICMS nas operações interestaduais realizadas com consumidor final não contribuinte do imposto. Por se tratar de uma alteração na Constituição Federal, as novas regras passam a valer apenas no ano seguinte, ou seja, a partir de 01º/01/2016.
+
+
+                Com as novas regras, as operações com consumidor final contribuinte ou não do imposto, passam a ter as mesmas alíquotas de ICMS aplicáveis, ou seja, não serão mais utilizadas as alíquotas internas da UF origem nas operações com consumidor final não contribuinte, e sim as alíquotas interestaduais como em qualquer outra operação.
+ Sendo assim, a partir de 01º/01/2016 é observada a alíquota interestadual:
+                
+                    Operações com estados do Sul e Sudeste (exceto ES): 12%;
+                    Operações com estado do Centro-Oeste, Norte, Nordeste e ES: 7%;
+                    Operações com produtos importados ou com conteúdo de importação superior a 40% (Resolução 12/2012): 4%.
+                
+                
+                    
+                
+                 
+                Para tanto, haverá o recolhimento do diferencial de alíquota (DIFAL) nestas operações. 
+                Entende-se como diferencial de alíquota, a diferença entre a alíquota interestadual e a alíquota interna na UF de destino. Conforme determinado pela EC 87/2015 o recolhimento deste valor será de obrigação do estabelecimento remetente, quando o destinatário não for contribuinte do ICMS.
+                De acordo com o Convênio ICMS 93/2015, deverá ser recolhida a UF de destino a diferença entre o ICMS devido no destino e o ICMS devido na origem, inclusive com a definição de que a base de cálculo do ICMS da operação (UF Origem) e base do ICMS DIFAL (UF Destino) são diferentes.
+                Também foi definida uma regra transitória para adequação dos caixas dos estados, sendo então o diferencial de alíquota partilhado entre os estados de origem e destino durante alguns anos, veja a tabela abaixo:
+                 
+                
+                    
+                        
+                            Ano
+                            UF Origem
+                            UF Destino
+                        
+                        
+                            2016
+                            60%
+                            40%
+                        
+                        
+                            2017
+                            40%
+                            60%
+                        
+                        
+                            2018
+                            20%
+                            80%
+                        
+                        
+                            A partir de 2019
+                             
+                            100%
+                        
+                    
+                
+                Exemplo: 
+                    
+                        Operação de SC com MG.
+                        Alíquota interestadual: 12%;
+                        Alíquota interna em MG: 18%;
+                        Diferencial de alíquota: 6%.
+                    
+                
+                Segue uma simulação da mesma operação nos dois cenários. Operação interestadual (SC > MG) com consumidor final não contribuinte no valor de R$ 2.000,00:
+                
+                    
+                    
+                    
+                    
+                        
+                            2015
+                            2016 (Base Simples)
+                            
+                            
+                        
+                        
+                            
+                                
+                                    Base de cálculo do ICMS: R$ 2.000,00;
+
+                                    Alíquota do ICMS: 17% (Alíquota interna de SC);
+
+                                    Valor do ICMS: R$ 340,00 (A recolher integralmente para SC).
+
+                                
+                            
+                            
+                                
+                                    Base de cálculo do ICMS OP : R$ 2.000,00;
+
+                                    Alíquota do ICMS: 12%;
+                                    Valor do ICMS: R$ 240,00;
+
+                                    Diferencial de alíquota: 6% (Alíquota interna em MG 18% - Alíquota interestadual 12%) - R$ 120,00;
+
+                                    Valor do Diferencial (SC): R$ 72,00 (60%);
+
+                                    Valor do Diferencial (MG): R$ 48,00 (40%);
+
+                                    Total do ICMS a recolher para SC: R$ 312,00 (R$ 240,00 + R$ 72,00).
+
+                                
+                            
+                            
+                            
+                        
+                    
+                
+                 
+                Parametrizações  para utilização no sistema de Retaguarda 
+                 Todos os cadastros utilizados para a aplicação do cálculo do Diferencial de Alíquota são realizados no Gestão Empresarial | ERP e importados para o sistema de Retaguarda. 
+                Verifique no manual por processo do Gestão Empresarial | ERP e entenda mais.
+                
+                    Importante
+                    
+                    
+                        as rotinas do DIFAL que são atendidas pelo sistema Gestão Empresarial | ERP via regra não são atendidas pelo sistema Gestão de Lojas. 
+                    
+                    Exemplo 
+                        
+                            Caso o produto tenha alíquota especial no estado de destino, no sistema Gestão Empresarial | ERP deverá ser utilizado o identificador de regras para alterar a alíquota. No caso do sistema Gestão de Lojas este cenário não é atendido.
+                        
+                    
+                    
+                        
+                            Após realizar todas as parametrizações, é necessário que uma nova carga de produtos seja realizada, para que as informações e parâmetros tributários dos produtos estejam sempre atualizadas.
+                        
+                    
+                
+                Procedimentos para verificação do Loja em relação ao DIFAL
+                As informações indicadas abaixo têm como objetivo a verificação se as parametrizações efetuadas no sistema Gestão Empresarial | ERP foram integradas corretamente no sistema Gestão de Lojas e, caso não tenha havido sucesso no processo, são indicados procedimentos para verificação da situação.
+                Para que o Sistema de Loja passe a realizar o Cálculo do DIFAL deve ser verificado os seguintes item:
+                 
+                Item 1:
+                
+                Acesse o Gestão do Loja, no menu Cadastro > Mercado e Suprimentos > Parâmetros Fiscais > Partilha de ICMS, e verifique se constam os Percentuais e as Datas de Vigências, para que o Sistema calcule o DIFAL. Caso não possua, realize o seguinte procedimento:
+                
+                    Acesse o Gestão Empresarial | ERP, na tela Configuração de Tipos de Informação (F000SXT), verifique se o campo ICMS Partilha está com a situação de "A - Ativo". Caso não esteja, altere para "A - Ativo", para que ocorra a integração do Cadastro da Partilha do ICMS;
+                    Acesse a tela Alíquota de Partilha de ICMS (F019ALE), no Gestão Empresarial | ERP e efetue pelo menos uma alteração em todas as alíquotas que vêm programadas com a atualização do sistema. Isso porque é necessário gerar uma pendência de exportação de cada registro da tela, pois o sistema Gestão de Lojas utilizará os mesmos registros para cálculo do DIFAL. Indica-se alterar o campo Situação Partilha para “I-Inativo” e em seguida alterar o campo Situação Partilhpara “A-Ativo”. Isso fará com que as pendências de exportação sejam geradas;
+                    Verifique no Integrador se a informação aparece, a mesma deve aparecer com o Status "1", que significa que foi integrado com sucesso;
+                    Acesse o Gestão de Lojas, no menu Cadastro > Mercado e Suprimentos > Parâmetros Fiscais > Partilha de ICMS e verifique se a informação já é exibida. Se tudo ocorreu sem nenhum problema ou erro de integração, as informações são exibidas.
+                
+                 
+                Item 2:
+                
+                Acesse o Gestão de Loja, no menu Cadastro > Filiais > guia Definições > opção PDV e verifique se há o parâmetro nfe.schema.versao com o valor "8G". Essa parametrização neste momento é necessária, pois o sistema é atualizado, e não deve passar a utilizar esse parâmetro com o valor de "8H1", que se refere as novas funcionalidades do DIFAL. Caso não tenha esse parâmetro definido, as notas fiscais serão rejeitadas. Essa parametrização deve ser feita em 2015 e  removida no dia 01º/01/2016. Caso não esteja parametrizada, realize o seguinte procedimento: 
+                
+                    Acesse o Gestão Empresarial | ERP, na tela Configuração de Parâmetros do PDV (F000PPD) e insira de forma manual o parâmetro nfe.schema.versao com o valor "8G";
+                    Verifique no Integrador se a informação aparece, el

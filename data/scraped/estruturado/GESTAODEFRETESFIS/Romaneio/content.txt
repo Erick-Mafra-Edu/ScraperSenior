@@ -1,0 +1,339 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/romaneio.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____22
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Romaneio
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Romaneio 
+            
+                
+                
+                
+                    
+                        Descrição
+                        
+                         
+                    
+                    
+                        Url do Serviço
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/romaneio
+
+                    
+                    
+                        Tipo de Envio
+                        POST				
+                    
+                    
+                        Momento
+                        Dados do romaneio				
+                    
+                    
+                        Tabela
+                        TI_WS_E_CAB_FRETE_ROMANEIO , TI_WS_E_DET_FRETE_ROMANEIO				
+                    
+                    
+                        Array
+                        Sim - Recebe um array de objetos que possui um array de objetos				
+                    
+                
+            
+            Detalhamento dos atributos de JSON entrada
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Nome do Atributo
+                        
+                        Tipo de Dado
+                        
+                        Default
+                        
+                        Obrigatório
+                        
+                        Descrição
+                        
+                    
+                    
+                        romaneios
+                        Array
+                         
+                        S
+                        Recebe um array de objetos
+                    
+                    
+                        cnpj_empresa
+                        String
+                         
+                        S
+                        CNPJ da empresa
+
+                    
+                    
+                        nu_romaneio
+                        Integer
+                         
+                        S
+                        Número do Romaneio
+
+                    
+                    
+                        cnpj_transportadora
+                        String
+                         
+                        N
+                        CNPJ da transportadora
+
+                    
+                    
+                        cd_placa_carro
+                        String
+                         
+                        S
+                        Código da placa do carro
+
+                    
+                    
+                        qt_total_pedido
+                        Integer
+                         
+                        S
+                        Quantidade total de pedidos
+
+                    
+                    
+                        dt_expedicao
+                        String
+                        DD/MM/YYYY /HH (24:MI:SS)
+
+                        N
+                        Data Expedição
+
+                    
+                    
+                        id_troca
+                        String
+                        S ou N
+
+                        N
+                        Identificação de troca
+
+                    
+                    
+                        ds_motivo_troca
+                        String
+                         
+                        S
+                        Motivo troca
+
+                    
+                    
+                        detalhe
+                        Array
+                        Array vazio
+                        S
+                        Recebe um array de detalhes
+                    
+                    
+                        cd_cliente
+                        Integer
+                         
+                        S
+                        CNPJ da empresa
+                    
+                    
+                        nu_pedido_origem
+                        String
+                         
+                        S
+                        Número do romaneio
+                    
+                    
+                        nu_nota_fiscal
+                        Integer
+                         
+                        S
+                        CNPJ da transportadora
+                    
+                    
+                        nu_serie_nf
+                        String
+                         
+                        N
+                        Código da placa do carro
+                    
+                    
+                        vlr_nota_fiscal
+                        String
+                        DD/MM/YYYY /HH (24:MI:SS)
+                        S
+                        Quantidade total de pedidos
+                    
+                    
+                        dt_emissao_nf
+                        String
+                         
+                        S
+                        Data Expedição
+                    
+                    
+                        chave-acesso
+                        String
+                         
+                        N
+                        Identificação de troca
+                    
+                    
+                        nu_objeto_postagem
+                        String
+                         
+                        N
+                        Motivo troca
+                    
+                
+            
+            
+                
+                
+                    
+                        Exemplo do layout de entrada em JSON
+                        
+                    
+                    
+                        
+                            {
+                            "romaneios": [
+                            {
+                            "cnpj_empresa": "20121850000155",
+                            "nu_romaneio": "300",
+                            "cnpj_transportadora": "23065131000152",
+                            "cd_placa_carro": null,
+                            "qt_total_pedido": "3",
+                            "dt_expedicao": "20/03/2019",
+                            "id_troca": "N",
+                            "ds_motivo_troca": null,
+                            "detalhe": [
+                            {
+                            "cd_cliente": "831107",
+                            "nu_pedido_origem": "J1",
+                            "nu_nota_fiscal": "1",
+                            "nu_serie_nf": "1",
+                            "vlr_nota_fiscal": "35",
+                            "dt_emissao_nf": "19/02/2019",
+                            "chave_acesso_nfe": "35171144463156002390550550001438451204207011",
+                            "nu_objeto_postagem": null
+                            }
+                            ]
+                            }
+                            ]
+                            }
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}
+		/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,171 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/telas/mascara.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Telas%2520-%2520SGI%7CInforma%25C3%25A7%25C3%25B5es%2520Complementares%7C_____9
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Telas - SGI > Informações Complementares > Máscaras
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Máscaras
+            As máscaras de campos das telas do SGI não tem o mesmo comportamento que as máscaras de campos das outras telas do sistema. Nas telas do SGI é permitido que o usuário digite o valor livremente e este valor só será formatado com a máscara ao sair do campo. Se o texto digitado estiver no formato da máscara ele não será alterado, mas se o texto digitado não estiver no formato da máscara, então o valor poderá sofrer alterações para que possa ser formatado com a máscara. Nessas situações é possível que o valor final do campo não coincida com o valor que o usuário pretendia informar.
+            Em campos do tipo texto estático (label) não é possível configurar uma máscara, pois o componente não tem essa propriedade pelo SGI.
+            Máscaras tipo hora
+            As máscaras de hora esperam que o texto informado contenha a hora e os minutos. Para este tipo de máscara podem surgir as seguintes situações (para os exemplos será utilizada a máscara hh:mm):
+            
+                Se for informado um texto com dígitos para a hora e para os minutos separados por dois pontos, os dígitos que estão depois dos dois pontos são considerados como minutos e os dígitos que estão antes dos dois pontos são considerados como hora. ExemploOs textos "08:05", "8:05" e "8:5" equivalem a oito horas e cinco minutos.
+                Se for informado um texto com outro separador, os dígitos que estão depois do separador são considerados como minutos e os dígitos que estão antes do separador são considerados como hora. ExemploOs textos "08-05", "08,05", "08 05", "8.5" e "8,5" equivalem a oito horas e cinco minutos.
+                Se for informado um texto sem separador e com uma quantidade de dígitos maior que a quantidade de dígitos reservados para a hora, os dois últimos dígitos são considerados como minutos e os dígitos restantes são considerados como hora. ExemploOs textos "0805" e "805" equivalem a oito horas e cinco minutos e o texto "0005" e "005" equivalem a zero horas e cinco minutos.
+                Se for informado um texto sem separador e com uma quantidade de dígitos menor ou igual a quantidade de dígitos reservados para a hora, os dígitos são considerados como hora. ExemploOs textos "08" e "8" equivalem a oito horas e zero minutos.
+            
+            
+                Importante
+                
+                Para todos os casos acima, se o valor equivalente aos minutos for maior que 59, então será subtraído 60 minutos deste valor e será somado uma hora no valor equivalente a hora. Por exemplo: os textos "07:65", "0765" e "765" equivalem a oito horas e cinco minutos.
+            
+            Máscaras tipo data
+            As máscaras de data esperam que o texto informado contenha o dia, o mês e o ano. Para este tipo de máscara podem surgir as seguintes situações (para os exemplos será utilizada a máscara DD/MM/YYYY):
+            
+                Se for informado um texto com dígitos para o dia, para o mês e para o ano separados por barras, os dígitos que estão depois da segunda barra são considerados como ano, os dígitos que estão entre a primeira e a segunda barra são considerados como mês e os dígitos que estão antes da primeira barra são considerados como dia. ExemploOs textos "01/02/1995" e "1/2/1995" equivalem a primeiro de fevereiro de 1995.
+                Se for informado um texto com outro separador, os dígitos que estão depois do segundo separador são considerados como ano, os dígitos que estão entre o primeiro e o segundo separador são considerados como mês e os dígitos que estão antes do primeiro separador são considerados como dia. ExemploOs textos "01-02-1995", "01,02,1995", "01 02 1995", "1.2,1995" e "1,2.1995" equivalem a primeiro de fevereiro de 1995.
+                Se for informado um texto sem separador e com cinco ou mais dígitos, os dois primeiros dígitos são considerados como dia, os dois dígitos que estão em seguida são considerados como mês e os dígitos restantes são considerados como ano. ExemploOs textos "01021995", "0102995" e "010295" equivalem a primeiro de fevereiro de 1995 e o texto "01025" equivale a primeiro de fevereiro de 1905.
+                Se for informado um texto sem separador com cinco dígitos e que o terceiro e quarto dígitos não sejam um mês válido, o primeiro dígito é considerado como dia, os dois dígitos que estão em seguida são considerados como mês e os dígitos restantes são considerados como ano. ExemploO texto "10205" equivale a primeiro de fevereiro de 1905 e o texto "10295" equivale a primeiro de fevereiro de 1995.
+                Se for informado um texto sem separador e com três ou mais dígitos, os dois primeiros dígitos são considerados como dia, os dígitos restantes são considerados como mês e o ano é considerado como 1900. ExemploOs textos "0102" e "012" equivalem a primeiro de fevereiro de 1900, que é uma data inválida para o sistema e o texto "3112" equivale a 31 de dezembro de 1900, que será transformado para 00/00/0000.
+                Se for informado um texto sem separador com quatro dígitos e que o terceiro e quarto dígitos não sejam um mês válido, o primeiro dígito é considerado como dia, o segundo dígito é considerado como mês e os dígitos restantes são considerados como ano. ExemploO texto "1295" equivale a primeiro de fevereiro de 1995.
+                Textos com menos que três dígitos são considerados valores inválidos para esta máscara.
+            
+            
+                Importante
+                
+                Para todos os casos acima, se a data informada for menor que 31/12/1900 será considerara inválida, pois os sistemas da Senior só consideram os dias posteriores a esta data. Se for informada a data "31/12/1900" o campo assumirá o valor 00/00/0000.
+                As máscaras de campos do tipo data e hora, por exemplo #N(14,6)#DD/MM/YYYY hh:mm:ss, não são suportados pelo SGI (Senior Gerenciador de Interfaces).
+                Caso for criada uma determinada máscara, diferente das citadas acima, e o campo, com esta máscara, for utilizada em alguma ferramentas de customização, por exemplo um campo com a máscara DD/MM/YYYY hh:mm:ss no Gerador de Relatórios, uma mensagem de inconsistência pode ser gerada. Por isso, para evitar esta situação, indicamos a utilização das máscaras citadas acima.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

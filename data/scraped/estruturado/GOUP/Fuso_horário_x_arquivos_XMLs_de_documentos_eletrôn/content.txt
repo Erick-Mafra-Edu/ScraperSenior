@@ -1,0 +1,144 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#integracoes/fuso-horario-arquivos-xmls.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____13
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > Fuso horário x arquivos .XMLs de documentos eletrônicos
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Fuso horário x Arquivos XMLs de Documentos Eletrônicos
+             Os arquivos XMLs de documentos eletrônicos gerados pelo Gestão Empresarial | ERP possuem tags que indicam data e hora. Estas tags estão presentes nos arquivos de emissão e nos arquivos de eventos (cancelamento, cartas de correção, manifestações de destinatário, etc). 
+            
+                Importante
+                
+                As informações presentes nesta documentação visam explicar como são geradas as informações nos XMLs pelo ERP. No entanto, algumas informações de data/hora são sugeridas pelo ERP no momento da geração dos registros. 
+                No caso da sugestão da hora de emissão das NF-e e CT-e, o ERP sempre busca do computador onde o sistema está sendo executado a hora atual para sugestão das telas que gravam a informação da hora de emissão (informação armazenada no banco de dados do ERP no campo E140NFV.HorEmi).
+                Caso o ERP seja executado via BrowserAccess ou WindowsAccess, o horário que é considerado é o horário do servidor que atendeu a requisição de execução do sistema ERP por estes métodos de acesso.
+                A informação da hora de emissão também pode ser manipulada por identificadores de regras. Exemplo: VEN-140ALDIV01. Caso haja alguma regra manipulando esta informação, o sistema utilizará a informação definida na regra.
+                As configurações de Fuso Horário e Horário de Verão definidas na Central de Configurações e SGU impactam diretamente na geração dos XMLs dos documentos. Desta forma, orienta-se a leitura da documentação deste processo também.
+            
+            Exemplo de tags de data/hora
+                
+                    
+                        <dhEmi>;
+                        <dhSaiEnt>;
+                        <dhEvento>;
+                        <dhIniViagem>;
+                        <DataEmissao>.
+                    
+                
+            
+            Essas tags devem ser preenchidas com a data/hora/fuso horário de acordo com a SEFAZ / Prefeitura para onde o documento será enviado. Isso porque cada SEFAZ / Prefeitura utilizará data/hora/fuso horário do seu respectivo sistema para validar a data/hora/fuso horário definido em cada arquivo XML enviado. Caso a data/hora/fuso horário gerado no arquivo XML não estiverem de acordo com a data/hora/fuso horário definido no sistema da SEFAZ / Prefeitura, a requisição será rejeitada.
+            A geração das tags dos arquivos XMLs é controlada de acordo com o usuário  que solicitou a geração do arquivo. Desta forma, serão levadas em consideração as parametrizações de horário e fuso horário definidas na Central de Configurações e SGU.
+            
+                Observação
+                
+                
+                    Para informações de como efetuar a parametrização no Central de Configurações, consulte o tópico Central de Configuração > Banco de dados > Banco de dados por sistema do arquivo Ferramentas Administrativas;
+                    Para informações de como efetuar a parametrização do SGU, consulte o tópico Propriedades de Usuário, do arquivo Ferramentas de Apoio.
+                
+            
+            Conceito da geração da data/hora/fuso horário no XML
+            O Gestão Empresarial | ERP gerará a tag de data/hora/fuso horário no arquivo XML seguindo a lógica descrita abaixo, quando a parametrização de fuso horário estiver habilitada no sistema:
+            
+                Será buscado o horário do servidor do banco de dados;
+                Será buscado junto à Central de Configurações o GMT parametrizado para a base de dados do sistema;
+                	Será buscado junto ao SGU o GMT parametrizado para o usuário que solicitou a geração do arquivo XML;
+                Com base no horário do servidor do banco de dados e no GMT definido na Central de Configurações, o Gestão Empresarial | ERP irá efetuar a conversão deste horário do servidor do banco de dados para o GMT definido no SGU, gerando então o arquivo XML com o horário calculado, aplicando o GMT definido no SGU ao final da tag (se a mesma exigir a geração do fuso horário).
+                Para a geração de XML de CC-e (Carta de Correção Eletrônica), será utilizada a data e hora definidos nos campos Data/Hora do evento da tela F140CCE, independente da parametrização do Central de Configurações/SGU. Só será utilizado o fuso horário definido no SGU para gerar o fuso horário no arquivo XML. Isso porque, para CC-e, o usuário poderá definir manualmente a data e hora para geração do evento.
+            
+            
+                Importante
+                
+                Caso não esteja habilitada a opção de Fuso Horário na Central de Configurações (e consequentemente não habilitada a parametrização de fuso horário no SGU), será levado em consideração o horário e fuso horário definidos na estação de trabalho onde o Gestão Empresarial | ERP está sendo executado.
+                Caso a execução seja via Windows Access (WA) ou Browser Access (BA), será levado em consideração o horário e fuso horário do servidor onde o WA e o BA estão sendo executados.
+            
+            Cenários para exemplificar a parametrização
+            Cenário 1
+            
+                São gerados documentos eletrônicos para a SEFAZ de Santa Catarina e para a SEFAZ de Mato Grosso.
+                O Brasil não está no período do horário de verão.
+                A SEFAZ de Santa Catarina utiliza fuso horário -03:00.
+                A SEFAZ de Mato Grosso utiliza fuso horário de -04:00.
+                O servidor do banco de dados do Gestão Empresarial | ERP utiliza fuso horário -02:00.
+            
+            Parametrização a ser efetuada:
+            
+                Na Central de Configurações, para a base de dados do Gestão Empresarial | ERP, deverá ser definido o fuso horário -02:00.
+                No SGU, para os usuários que emitem documentos eletrônicos para a SEFAZ de Santa Catarina, deverá ser parametrizado o fuso horário como -03:00, sem necessidade de ativar o parâmetro “Este usuário utiliza horário de verão”.
+                No SGU, para os usuários que emitem documentos eletrônicos para a SEFAZ de Mato Grosso, deverá ser parametrizado o fuso horário como -04:00, sem necessidade de ativar o parâmetro “Este usuário utiliza horário de verão”.
+            
+            Cenário 2
+            
+                São gerados documentos eletrônicos para a SEFAZ do Acre, para a SEFAZ do Paraná, para a SEFAZ do Mato Grosso do Sul e para a SEFAZ da Bahia.
+                O Brasil está no período do horário de verão.
+                A SEFAZ do Acre utiliza fuso horário -05:00 o ano todo.
+                A SEFAZ do Paraná utiliza fuso horário -03:00 no horário de inverno e -02:00 no horário de verão.
+                A SEFAZ do Mato Grosso do Sul utiliza fuso horário -04:00 no horário de inverno e -03:00 no horário de verão.
+                A SEFAZ da Bahia utiliza fuso horário de -03:00 o ano todo.
+                O servidor de banco de dados do cliente fica no Exterior. Este servidor está parametrizado para utilizar fuso horário -09:00 (Alasca).
+            
+            Parametrização a ser efetuada:
+            
+                Na Central de Configurações, para a base de dados do Gestão Empresarial | ERP, deverá ser definido o fuso horário -09:00.
+                No SGU, para os usuários que emitem documentos eletrônicos para a SEFAZ do Acre, deverá ser parametrizado o fuso horário como -05:00, sem necessidade de ativar o parâmetro “Este usuário utiliza horário de verão”.
+                No SGU, para os usuários que emitem documentos eletrônicos para a SEFAZ do Paraná, deverá ser parametrizado o fuso horário como -03:00, ativando o parâmetro “Este usuário utiliza horário de verão”.
+                No SGU, para os usuários que emitem documentos eletrônicos para a SEFAZ do Mato Grosso do Sul, deverá ser parametrizado o fuso horário como -04:00, ativando o parâmetro “Este usuário utiliza horário de verão”.
+                No SGU, para os usuários que emitem documentos eletrônicos para a SEFAZ da Bahia, deverá ser parametrizado o fuso horário como -03:00, sem necessidade de ativar o parâmetro “Este usuário utiliza horário de verão”.
+            
+            
+                Observação 
+                No caso da necessidade de utilização do horário de verão, não há necessidade de alterar o fuso horário de cada usuário, basta habilitar o parâmetro “Este usuário utiliza horário de verão” para cada usuári

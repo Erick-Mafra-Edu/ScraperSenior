@@ -1,0 +1,155 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#instalacao/instalacao.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CInstala%25C3%25A7%25C3%25A3o%7C_____0
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Instalação Gestão de Lojas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Instalação
+            Consulte o processo de instalação e configuração do:
+            
+                Integrador Filial
+                
+                Integrador Matriz
+                
+                PDV
+                
+                Retaguarda
+                
+            
+            Download manual da mídia
+            O download manual das mídias do Integrador, PDV e Retaguarda pode ser feito no FTP da Senior.
+            Entretanto, em decorrência da atualização dos navegadores Google Chrome e MicroSoft Edge para a versão 88 ou superior, este acesso ao FTP somente será possível após habilitar manualmente seu suporte. Para habilitar, insira chrome://flags em seu navegador e em Enable support for FTP URLs selecione a opção Enable.
+            
+                Importante
+                
+                Verifique os requisitos de ambiente para PDV para realizar a instalação e configuração do sistema.
+            
+            Instalação do banco de dados PostgreSQL
+            O banco de dados PostgreSQL é um dos requisitos para a instalação do Gestão de Lojas. Para realizar a instalação do banco de dados, acesse o site oficial do PostgreSQL, verifique os pré-requisitos para o funcionamento e baixe o instalador compatível com seu sistema operacional.
+            Recomenda-se a instalação da versão mais recente para obter o suporte de erros e melhorias oferecidas pelo fornecedor do banco de dados. Verifique as versões mais recentes do PostgreSQL e seu suporte através de https://www.postgresql.org/support/versioning/. 
+            
+                Observação
+                
+                A versão mínima do PostgreSQL suportada pela solução Gestão de Lojas é a versão 10 ou superior. A versão 14 é a máxima compatível com o sistema. Para utilizar versões diferentes, solicite a análise por parte da Senior para verificação da compatibilidade.
+            
+            Após realizar a instalação, certifique-se que o recurso dblink está disponível para o banco de dados, em especial quando utilizado o sistema operacional Ubuntu Desktop 22.04 LTS (dblink.control).
+            
+                Importante
+                
+                Realize a geração de backup da base de dados utilizado pelo sistema e armazene em equipamento apropriado. A geração é de responsabilidade do cliente. Recomenda-se que o processo seja feito, configurado e administrado por um especialista técnico.
+            
+            Instalação em Linux
+            Caso utilize o sistema operacional Ubuntu Desktop 22.04 LTS, ao utilizar o Filezilla Client (Client de FTP) para efetuar o download das versões, o aplicativo vem configurado, por padrão, para baixar os arquivos no formato automático. Esse formato automático, por sua vez, não interpreta corretamente o arquivo de instalação, que é exclusivamente binário. E o arquivo baixado, entretanto, acaba ficando corrompido, resultando em erros na sua utilização. Por isso, ao baixar os arquivos utilizando o Filezilla, é de extrema importância alterar a forma de transferência para Binário. Ou, se preferir, realizar o download dos arquivos manualmente através do navegador Google Chrome.
+            
+                Importante
+                
+                Caso o volume de dados trafegados seja elevado, é recomendável a execução de processos agendados de vacumm full, além dos automáticos executados pelo PostgreSQL. A indicação é um agendamento no mínimo semanal para esta ação.
+                Exemplo:
+                    
+                        Comando utilizado num agendamento: vacuumdb -d <NOME_DATABASE> -v -z -h <SERVER> -p 5432 -U <OWNER>
+                    
+                
+                A validação requer análise de um DBA ou responsável com conhecimento em infraestrutura do banco de dados e o agendamento semanal deve ser feito por um Cron ou gerenciador de tarefas do sistema operacional utilizado. Se por acaso no comando precisar informar um usuário/senha, configure o arquivo pgpass.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

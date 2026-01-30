@@ -1,0 +1,316 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#menu_controladoria/patrimonio/calculo-valor-frete-f670ebn.htm%3FTocPath%3DSegmentos%7CControladoria%7CGest%25C3%25A3o%2520de%2520Patrim%25C3%25B4nio%7C_____5
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Controladoria > Gestão de Patrimônio > Cálculo de Frete - F670EBN
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Cálculo de Frete
+            Para realizar o cálculo do frete serão consideradas algumas situações. São elas:
+            
+                O valor base é o valor líquido da nota tipo 8.
+                Parametrização dos impostos
+            
+            Com base na própria nota fiscal do tipo 8 
+                
+                    Condicionais:
+                    
+                        Caso a nota fiscal origem da nota tipo 8  NÃO tenha gerado nenhum bem principal 
+OU
+                        Caso a nota fiscal origem da nota tipo 8  já tenha gerado nenhum bem principal 
+e a parametrização da Filial (F070FCP) estiver indicando para 
+NÃO considerar a nota fiscal de origem
+                    
+                    Resultado:
+                    
+                        O sistema buscará a parametrização dos impostos com base na transação da própria nota fiscal do tipo 8.
+                    
+                
+            
+            Com base na nota fiscal de origem
+                
+                    Condicionais
+                    
+                        Caso a nota fiscal origem da nota tipo 8 já tenha gerado bem principal 
+e a parametrização da Filial (F070FCP) estiver indicando para 
+Sempre herdar informações da nota fiscal de origem
+                    
+                    Resultado:
+                    
+                        O sistema busca a parametrização dos impostos com base na transação da nota fiscal origem.
+                    
+                
+            
+            Acréscimos e Deduções do Valor Base
+            Com base na parametrização acima ocorrerá o seguinte: 
+                
+                    Acréscimos ao valor base
+                    INSS/Funrural NFE
+                    Condicionais:
+                    
+                        Se a transação da nota fiscal indicar INSS/Funrural (CPRIFU) igual a 
+"-" (Subtrair)
+                    
+                    Resultado:
+                    
+                        O valor do INSS/Funrural (VLRFUN)  da nota fiscal é somado ao valor base;
+                    
+                     
+                    ISS
+                    Condicionais:
+                    
+                        Se a  transação da nota fiscal indicar ISS (CPRISS) igual a  "-" (Subtrair)
+                    
+                    Resultado:
+                    
+                        O valor do ISS (VLRISS) da nota fiscal tipo 8 é somado ao valor base;
+                    
+                     
+                    PIS
+                    Condicionais:
+                    
+                        Se a transação da nota fiscal indicar PIS
+(CPRPIS) igual a 
+"-" (Subtrair) E
+                        O valor do PIS (VLRPIT) for maior que "0"(zero)
+                    
+                    Resultado:
+                    
+                        O valor do PIS (VLRPIT) da nota fiscal é somado ao valor base;
+                    
+                     
+                    COFINS
+                    Condicionais:
+                    
+                        Se a transação da nota fiscal indicar COFINS (CPRCOF) igual a 
+"-" (Subtrair) E
+                        O valor do COFINS (VLRCRT) for maior que "0"(zero)
+                    
+                    Resultado:
+                    
+                        O valor do COFINS (VLRCRT) da nota fiscal é somado ao valor base;
+                    
+                     
+                    CSLL
+                    Condicionais:
+                    
+                        Se a transação da nota fiscal indicar CSLL  (CPRCSL) igual a 
+"-" (Subtrair) E
+                        O valor do CSLL (VLRCSL) for maior que "0"(zero)
+                    
+                    Resultado:
+                    
+                        O valor do COFINS (VLRCSL) da nota fiscal é somado ao valor base;
+                    
+                
+            
+            Diferencial de Alíquota
+                
+                
+                    Condicionais:
+                    
+                        Se existir valor referente ao diferencial de alíquota 
+(VLRDFA) destacado 
+E
+                        Pelo menos uma das duas condições a seguir sejam verdadeiras
+                    
+                    2.1. Caso o sistema esteja buscando as parametrizações do impostos com base na transação da nota fiscal origem  E  NÃO exista solicitação de produto/serviço na 
+nota fiscal de origem OU
+                    2.2. Se a transação estiver indicando que NÃO recupera ICMS (CPRRIC)
+                    Resultado:
+                    
+                        O valor destacado de diferencial de alíquota 
+(VLRDFA) que será somado ao valor base.
+                    
+                
+            
+            Deduções do valor base
+                
+                
+                    ICMS
+                    Condicionais:
+                    
+                        Se houver valor de ICMS efetivamente creditado  (VECICM>0)
+                    
+                    Resultado:
+                    
+                        O valor do ICMS Efetivamente creditado (VECICM) e o valor do 
+ICMS Substituído destacado (VLRISD) serão deduzidos do valor Base.
+                    
+                     
+                    IPI
+                    Condicionais:
+                    
+                        Se houver valor de IPI efetivamente creditado  (VECIPI > 0)
+                    
+                    Resultado:
+                    
+                        O valor do IPI efetivamente creditado (VECIPI) será deduzido do valor base.
+                    
+                     
+                    PIS
+                    Condicionais:
+                    
+                        Se houver valor de PIS a recuperar (VLRPIS> 0)
+                    
+                    Resultado:
+                    
+                        O valor do PIS a recuperar (VLRPIS)  será deduzido do valor base.
+                    
+                     
+                    COFINS
+                    Condicionais:
+                    
+                        Se houver valor de COFINS a recuperar (VLRCOR> 0)
+                    
+                    Resultado:
+                    
+                        O valor do COFINS a recuperar (VLRCOR) será deduzido do valor base.
+                    
+                
+            
+            Itens não imobilizados das Notas Fiscais
+                
+                    Condicionais:
+                    
+                        Se houver itens que não são de imobilizado  (PERDCT> 0)
+                    
+                    Resultado:
+                    
+                        Será deduzido do valor base o  valor correspondente ao percentual
+que representam os itens que não são imobilizados.
+                    
+                
+            
+            Campos do Sistema
+            
+                
+                    Campos 
+                
+                    Campo 
+								Descrição
+                
+                    Tabelas
+                
+                
+                
+                    CPRIFU 
+                
+                    
+										INDICATIVO DE COMO A TRANSAÇÃO CONSIDERA 
+										O VALOR DO INSS/FUNRURAL DO TOTAL DA 
+										NOTA FISCAL DE ENTRADA
+                    
+										E001TNS  
+                
+                
+                    VLRFUN 
+                
+                    
+										VALOR DO FUNRURAL
+                    
+										E440IPC 
+                
+                
+                    CPRISS 
+                
+                    
+										INDICATIVO DE COMO A TRANSAÇÃO CONSIDERA 
+										O VALOR DO ISS DO TOTAL NOTA FISCAL DE 
+										ENTRADA
+                    
+										E001TNS 
+                
+                
+                    VLRISS 
+                
+                    
+										VALOR DO ISS SOBRE O SERVIÇO DA NOTA 
+										FISCAL DE ENTRADA
+                    
+										E440ISC 
+                
+                
+                    CPRPIS 
+                
+                    
+										INDICATIVO DE COMO A TRANSAÇÃO CONSIDERA 
+										O VALOR DO PIS DO TOTAL NOTA FISCAL DE 
+										ENTRADA 
+                    
+										E001TCP 
+                
+                
+                    VLRPIT 
+                
+                    
+										VALOR DO PIS A RECUPERAR DO ITEM DA NOTA 
+										FISCAL DE ENTRADA
+                    
+										E440IPC 
+                
+                
+                    CPRCOF 
+                
+                    
+										INDICATIVO DE COMO A TRANSAÇÃO CONSIDERA 
+										O VALOR DO COFINS DO TOTAL NOTA FISCAL 
+										DE ENTRADA
+          

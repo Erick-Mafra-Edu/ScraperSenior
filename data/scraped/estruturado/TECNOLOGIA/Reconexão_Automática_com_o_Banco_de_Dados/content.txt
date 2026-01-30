@@ -1,0 +1,206 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#bancos-de-dados/reconexao-banco-dados.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CBancos%2520de%2520Dados%7C_____7
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Bancos de Dados > Reconexão Automática com o Banco de Dados
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Reconexão Automática com o Banco de Dados
+            A funcionalidade de reconexão automática foi implementada para aumentar a resiliência e estabilidade do sistema em casos de queda de conexão com o banco de dados. Quando uma desconexão é detectada, o sistema tentará restabelecer a conexão automaticamente, sem necessidade de intervenção manual.
+            Comportamento Padrão
+            
+                O sistema realiza 6 tentativas de reconexão.
+                O intervalo entre as tentativas é de 10 segundos.
+                O tempo total de tentativas é de 60 segundos.
+            
+            Parametrização
+            É possível configurar o comportamento da reconexão para cada produto individualmente, utilizando chaves através do menu SeniorConfigCenter > Chaves.
+            Chaves de Configuração
+            
+                
+                    
+                        Chave
+                        Descrição
+                        Tipo Valor
+                        Padrão
+                    
+                
+                
+                    
+                        com.senior.database.<produto>.reconnection.time
+                        Tempo total para tentativas de reconexão (em segundos)
+                        Inteiro
+                        60
+                    
+                    
+                        com.senior.database.<produto>.reconnection.interval
+                        Intervalo entre tentativas de reconexão (em segundos)
+                        Inteiro
+                        10
+                    
+                
+            
+            Exemplo: Para realizar tentativas por até 120 segundos com intervalo de 15 segundos:
+            
+                com.senior.database.<produto>.reconnection.time = 120
+                com.senior.database.<produto>.reconnection.interval = 15
+            
+             
+            
+                Observação
+                
+                Substitua <produto> pelo nome do produto que deseja parametrizar (Exemplo: sapiens, vetorh).
+            
+            Interface do Usuário
+            Durante uma queda de conexão, o sistema exibirá uma tela informativa com o status das tentativas de reconexão, incluindo:
+            
+                Número atual e total de tentativas.
+                Mensagens de status.
+            
+            Logs e Monitoramento
+            
+                Todas as quedas e tentativas de reconexão são registradas em log.
+                O sistema também envia notificações para o Analytics, permitindo o monitoramento centralizado de falhas de conexão.
+            
+            Tratamento de Exceções
+            Se a queda ocorrer durante uma transação de banco de dados, o sistema lançará uma nova exceção específica:
+            ERtDBNotConnectedTransaction
+            
+            Essa exceção permite que os produtos identifiquem e tratem adequadamente os processos que foram interrompidos por falha de conexão durante uma transação.
+            Benefícios da Reconexão Automática
+            
+                Redução de falhas manuais por perda de conexão;
+                Maior estabilidade e confiabilidade do sistema;
+                Facilidade de monitoramento e diagnóstico.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

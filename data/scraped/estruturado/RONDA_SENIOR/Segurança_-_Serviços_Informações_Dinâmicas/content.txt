@@ -1,0 +1,230 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#ferramentas-de-customizacoes/integracao-entre-sistemas/servicos-de-informacoes-dinamicas/seguranca.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CFerramentas%2520de%2520Customiza%25C3%25A7%25C3%25B5es%7CIntegra%25C3%25A7%25C3%25A3o%2520entre%2520Sistemas%7CServi%25C3%25A7os%2520de%2520Informa%25C3%25A7%25C3%25B5es%2520Din%25C3%25A2micas%7CSeguran%25C3%25A7a%2520-%2520Servi%25C3%25A7os%2520Informa%25C3%25A7%25C3%25B5es%2520Din%25C3%25A2micas%7C_____0
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Ferramentas de Customizações > Integração entre Sistemas > Serviços de Informações Dinâmicas > Seguraça - Serviço de Informações Dinámicas
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Segurança - Serviço de Informações Dinâmicas
+            O Segurança SID consiste de um sistema de integração pelo envio de requisições http. O sistema que necessita integrar com o Ronda Senior, precisa ter conhecimento do endereço url do conector.exe que atenderá às requisições solicitadas.
+            O conector recebe os parâmetros e repassa ao middleware, que identifica a aplicação Sserver e repassa a requisição para o mesmo. A requisição necessita conter qual a ação desejada pelo sistema integrador. O Serviço de informações dinâmicas reconhece a ação e trata da maneira que lhe cabe.
+            Regras de Negócio
+                
+                    É necessário enviar inicialmente uma requisição de login para o Segurança SID. Essa requisição retornará um código de conexão. Com esse código de conexão pode-se iniciar a troca de mensagens.
+                
+            
+            Respostas das Requisições pelo Segurança SID
+                
+                    O Segurança SID responde todas suas requisições no formato XML. As exceções ficam por conta das ações que não chegam ao Segurança SID (SServer), como por exemplo, mensagens de que não há instâncias ativas do SServer para tratar a requisição. O XML de retorno segue um padrão, onde há uma tag que identifica o valor do resultado e outra tag que identifica a mensagem retornada. O padrão de codificação utilizado no xml é o ISSO-8859-1 e o DTD (Document Type Definition) do xml segue abaixo:
+                    
+                        <!DOCTYPE SID [<!ELEMENT SID (RESULT,MENSAGEM)><!ELEMENT RESULT (EMPTY)><!ATTLIST RESULT VALUE CDATA #REQUIRED><!ELEMENT MENSAGEM (#PCDATA)>]>
+                    
+                    Um exemplo de resposta de uma requisição qualquer pode ser analisado a seguir:
+                    
+                        <?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE SID [<!ELEMENT SID (RESULT,MENSAGEM)><!ELEMENT RESULT (EMPTY)><!ATTLIST RESULT VALUE CDATA #REQUIRED><!ELEMENT MENSAGEM (#PCDATA)>]><SID><RESULT VALUE="#VALOR#" /><MENSAGEM>#MENSAGEM#</MENSAGEM></SID>
+                    
+                    Onde:
+                    
+                        #VALOR# : caractere alfa-numérico que representa o resultado da função requisitada. Para maiores detalhes consulte a documentação da função requisitada.
+                        #MENSAGEM# : mensagem gerada pela função requisitada com tamanho indefinido. Para maiores detalhes consulte a documentação da função.
+                    
+                
+            
+            Ações de Conexão com o Segurança SID
+                
+                    Conforme regra de negócio, é necessário obter um identificador de conexão para executar qualquer ação no Segurança SID. A forma como se deve obter esse identificador é tratada abaixo.
+                    Url 
+                    
+                        
+http://<servidor>/<diretóriocgi>/conector.exe?SIS=SP&ACAO=EXESENHA&NOMUSU=<usuario>&SENUSU=<senha>&LOGIN=SID
+
+                    
+                    Onde 
+                    
+                        
+<servidor> : nome ou IP da máquina servidora de páginas.<diretóriocgi> : nome do diretório virtual onde está o cgi da senior “conector.exe”
+
+                    
+                    Parâmetros: 
+                    
+                        
+                        
+                        
+                            
+                                Nome
+                                Descrição
+                            
+                            
+                                SIS=SP
+                                quer dizer que o sistema que trata as ações é o Ronda Senior (Parâmetro Obrigatório)
+                            
+                            
+                                ACAO=EXESENHA
+                                 identifica qual a ação a ser executada, neste caso login com senha no sistema.
+                            
+                            
+                                NOMUSU=<usuario>
+                                parâmetro necessário na ação EXESENHA que indica um usuário do sistema Gestão de Riscos e Segurança.
+                            
+                            
+                                SENUSU=<senha>
+                                 parâmetro da ação EXESENHA que indica a senha do usuário do sistema.
+                            
+                            
+                                LOGIN=SID
+                                 Informa ao Segurança Server (SServer) que a execução de senha é para utilização do Segurança SID e não do sistema Segurança Web.
+
+                            
+                        
+                    
+                    RetornoEm caso de sucesso:
+                    
+                        99999,99999999 (Código que identifica a conexão)Em caso de problema:
+                        Mensagem do problema acontecido
+
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        Sim
+					
+                    
+                        Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Este é um espaço para sugerir melhorias no Portal de Documentação da Senior.
+                Nome/E-mail (Opcional): 
+                Deixe seu comentário:
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                    
+                    
+                
+                
+                    Se você estiver buscando um atendimento, entre em contato com o seu canal de suporte.
+                    
+                        
+                        
+                        
+                            SUPORTE SENIOR
+                            
+                            SUPORTE MEGA
+                            
+                        
+                    
+                
+            
+            Agradecemos pelo seu feedback!Vamos avaliar o comentário e alterar o conteúdo relacionado, caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,125 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#manual-do-administrador.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7C_____2
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Manual do Administrador
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Manual do Administrador
+            Este manual visa elencar as atividades que um administrador de sistema ou usuário chave devem realizar para manter o bom funcionamento da aplicação Ronda Senior, garantindo a estabilidade da aplicação e assegurando sua performance.
+            Para administrar o sistema, é necessário compreender a arquitetura de comunicação com os dispositivos. Essa arquitetura pode ser consultada na página de arquitetura de comunicação do manual do Ronda senior X. 
+            Tipos de Dispositivo
+            A Senior disponibiliza ao cliente uma ampla quantidade de fabricantes homologados, que se comunicam de forma on-line com o sistema. Dadas as particularidades de cada fabricante, algumas integrações foram feitas de forma individualizada resultando em três tipos de integrações diferentes com o sistema:
+            Integração SDK
+            A integração SDK possui a maior quantidade de fabricantes homologados. A partir de um protocolo proprietário a Senior disponibiliza aos fabricantes de hardware a possibilidade de integração com o sistema. Os integradores devem implementar e disponibilizar um driver de comunicação entre a Concentradora e seus equipamentos. Para efetivar a comunicação, todo fabricante passa por um processo de homologação em conjunto com a Senior, para garantir a estabilidade e o atendimento dos requisitos mínimos de integração.
+            Integração direta via Concentradora
+            Os fabricantes Digicon (acesso) e Apollo realizam a integração direta entre seus equipamentos e a concentradora através de um componente embutido no serviço Senior Concentradora. A integração é similar a com SDK, distinguindo-se apenas por não utilizar um driver desenvolvido pelo fabricante, mas sim uma integração direta com a Concentradora.
+            Integração direta via banco
+            O fabricante Telemática exclusivamente utiliza uma integração direta via tabelas no banco de dados, esta integração utiliza um driver próprio da Telemática (Conex) para realizar a comunicação entre as tabelas do banco de dados Telemática e os equipamentos. A integração com a Senior é realizada atualizando tabelas específicas entre as duas bases, Senior e Telemática, e trafegando arquivos de lista para atualização de pessoas nos equipamentos REP.
+            Ações inerentes ao Administrador
+            Monitorar dispositivos
+            O sistema Gestão de Riscos e Segurança foi elaborado para comunicar-se de forma on-line com os dispositivos integrados e possui um modo off-line para contingência. O modo de validação off-line possui um nível menor de segurança se comparado ao modo on-line. Por este motivo, um administrador deve verificar qual o status dos dispositivos em seu ambiente.
+            
+                
+            
+            Os dispositivos em vermelho, estão operando off-line.
+            Para equipamentos Telemática, este monitoramento é possível pelo sinalizador em seu cadastro, exemplo abaixo, ou através do sinal de Conexão. Mais informações sobre a configuração necessária pode ser consultada na FAQ da Telemática.
+            
+                
+            
+            Monitorar eventos de acesso
+            Os eventos de acesso no sistema são úteis tanto em ambientes com controle de acesso, quanto em ambientes que utilizam exclusivamente o módulo de controle de ponto. As marcações de acesso são o registro de passagem de pessoas nos equipamentos. Para gerenciar a segurança do ambiente é crucial verificar se existem tentativas de acesso em áreas não autorizadas, e se estas tentativas estão sendo enviadas corretamente ao sistema. Em ambientes com controle de ponto, estes registros são imprescindíveis para o cálculo de folha dos colaboradores.
+            Para verificar as marcações de acesso, o sistema disponibiliza:
+            
+                Tela de consulta de marcações: “Acesso>Consultas>Acessos”;
+                Relatório de acessos: “Acesso>Listar”.
+            
+            Nestas telas, é importante verificar se a quantidade de marcações coletadas é compatível com a média de marcações diárias, se há tentativa de acessos em locais não permitidos e se há tentativa de burla da catraca. Recomendamos uma validação diária da quantidade de marcações para assegurar que todo o sistema está operando normalmente.
+            Marcações rejeitadas
+            No sistema, existem ainda duas telas que tratam marcações enviadas com algum problema pela integração. É importante visitar estas telas diariamente para identificar se existem marcações não coletadas, que podem interferir na apuração de ponto ou no controle de acesso:
+            Tela de marcações desconsideradas
+            “Supervisão>On-line>Marcações desconsideradas” 
+            Nesta tela são exibidas marcações de dispositivos de ponto (REP ou CEP) enviadas para o sistema com um PIS que não consta na base de dados Senior ou para PIS que estejam cadastrados para duas pessoas distintas, ativas no sistema. É possível tratar e recoletar as marcações pela tela.
+            Tela de marcações Rejeitadas:
+            “Diversos>Log>Coletor” 
+            Nesta tela são exibidas marcações inválidas que possuam caracteres inválidos, que venham de coletores não cadastrados no sistema, que estejam com data inválida de acordo com a configuração do sistema. Por esta tela é possível recoletar as marcações após correção do cadastro no sistema.
+            Coletores de informações
+            Para que as marcações e alarmes cheguem ao sistema e os colaboradores sejam enviados aos dispositivos, a CSM Center precisa estar em execução, assim como seus timers de coleta e envio de comandos. O administrador pode verificar o estado dos timers acessando a CSM Center Console, no item “Consulta Processos”.
+            
+                
+            
+            Nesta tela, o administrador deve fazer as seguintes avaliações:
+            Coletor de Marcações
+            Está no ar? (status verde)
+            A quantidade de marcações Pendentes é muito alta? (a CSM Center coleta 1000 marcações a cada ciclo de coleta, o intervalo do ciclo de coleta pode ser observado na segunda coluna) Se a quantidade for muito superior ao observado normalmente, pode ser necessário avaliar lock ou lentidão no banco de dados.
+            A quantidade de Rejeitados é muito superior à última verificação? Quando existe uma coleta de backup é normal o sistema rejeitar uma grande quantidade de marcações, em operações normais, algumas marcações podem ser rejeitadas por duplicidade, dependendo do dispositivo utilizado no ambiente. Para verificar o motivo de rejeição das marcações, consulte a tela de marcações rejeitadas no sistema.
+            Coletor de Alarmes
+            A verificação deste item é recomendada para clientes que utilizam o módulo de controle de alarmes.
+            Está no ar? (status verde)
+            A quantidade de alarmes Pendentes é muito alta? (a CSM Center coleta 1000 alarmes a cada ciclo de coleta, o intervalo do ciclo de coleta pode ser observado na segunda coluna) Se a quantidade for muito superior ao observado normalmente, pode ser necessário avaliar lock ou lentidão no banco de dados.
+            A quantidade de Rejeitados é muito superior à última verificação? Quando o cliente não possui o módulo de alarmes, é normal o sistema rejeitar uma grande quantidade de alarmes.
+            Gerenciador de comandos
+            Está no ar? (status verde)
+            A quantidade de pendências é inferior a 1000 e está diminuindo? Assim como o coletor de marcações e alarmes, a CSM Center processa até 1000 comandos por ciclo. Estes comandos abrangem envio de atualizações para as concentradoras, pessoas para os dispositivos REP e comandos de atualização e configuração para os dispositivos. Se a quantidade for superior a 1000 ou se o processamento destes estiver muito lento pode ser necessário verificar a rede e o cadastro dos dispositivos. Dispositivos cadastrados com status “on-line” mas fisicamente desligados podem gerar uma fila de comandos, gerando lentidão nas portarias e aumentando o tempo necessário para que um crachá novo (incluindo provisório ou visitante) possa passar no disposto.
+            Monitorar atualizações de crachás
+            A tela de monitoramento de atualizações de crachá “Supervisão>On-Line>Comandos>Consulta de pendências de Atualização” dá uma visão do status atual do envio do crachá para os dispositivos ou para a Concentradora. Esta tela pode ser consultada em caso de demora no envio de crachás aos dispositivos. Nela é possível identificar se há algum erro no envio das informações para os equipamentos.
+            
+                Nota
+                
+                Esta tela não traz as informações dos dispositivos Telemática.
+            
+            As pendências estão como “Pendência Carregada”?
+            É c

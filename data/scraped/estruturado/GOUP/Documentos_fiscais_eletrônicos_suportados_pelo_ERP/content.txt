@@ -1,0 +1,239 @@
+# 
+
+URL: https://documentacao.senior.com.br/goup/5.10.4/#integracoes/documentos-fiscais-suportados-pelo-erp.htm%3FTocPath%3DSegmentos%7CCompliance%7CDocumentos%2520Eletr%25C3%25B4nicos%7C_____1
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial PME | GO UP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        No conteúdo deste manual são citados Identificadores de Regras, porém, no GO UP não é possível incluir, excluir ou alterar identificadores e suas regras associadas, pois o sistema possui funções nativas devido aos processos de negócio pré-definidos.
+        
+            
+                Segmentos > Compliance > Documentos Eletrônicos > Documentos fiscais eletrônicos suportados pelo ERP
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Lista de documentos fiscais eletrônicos suportados pelo ERP
+            Esta documentação tem como objetivo informar sobre os documentos atualmente emitidos e recebidos pelo ERP.
+            
+                
+                
+                
+                
+                
+                    
+                        Documento
+                        Modelo
+                        Emissão
+                        
+                            Recebimento
+                            Na importação do XML da NFSe, os valores de CBS e IBS ainda não são herdados automaticamente do XML para o ERP XT. Desta forma, mesmo com a importação realizada com sucesso, esses valores não são carregados para o documento fiscal e devem ser tratados conforme as regras vigentes no ERP.
+                        
+                    
+                
+                
+                    
+                        Nota Fiscal de Serviço Eletrônica
+                        
+                        
+                        Sim
+                        Sim
+                    
+                    
+                        Nota Fiscal Eletrônica - Finalidades 1, 2, 3 e 4
+                        55
+                        Sim
+                        Sim
+                    
+                    
+                        Nota Fiscal Eletrônica - Finalidade 6 (Nota de débito)
+                        55
+                        Sim (Veja os tipos suportados na Documentação das Rotinas Impactadas pela Reforma Tributária)
+                        Não
+                    
+                    
+                        Nota Fiscal Eletrônica - Finalidade 5 (Nota de Crédito)
+                        55
+                        Sim (Veja os tipos suportados na Documentação das Rotinas Impactadas pela Reforma Tributária)
+                        Não
+                    
+                    
+                        Conhecimento de Transporte Eletrônico Simplificado
+                        57
+                        Sim
+                        Sim
+                    
+                    
+                        Conhecimento de Transporte Eletrônico
+                        57
+                        Sim
+                        Sim
+                    
+                    
+                        Manifesto de Documentos Fiscais Eletrônico
+                        58
+                        Sim
+                        Não
+                    
+                    
+                        Cupom Fiscal Eletrônico
+                        59
+                        Não
+                        Não
+                    
+                    
+                        Nota Fiscal Fatura de Serviço de Comunicação Eletrônica
+                        62
+                        Sim
+                        Não
+                    
+                    
+                        Bilhete de Passagem Eletrônico
+                        63
+                        Não
+                        Não
+                    
+                    
+                        Nota Fiscal de Consumidor Eletrônica
+                        65
+                        Não
+                        Não
+                    
+                    
+                        Nota Fiscal de Energia Elétrica Eletrônica
+                        66
+                        Não
+                        Sim
+                    
+                    
+                        Conhecimento de Transporte Eletrônico para Outros Serviços
+                        67
+                        Sim
+                        Sim
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                Deixe seu comentário:
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

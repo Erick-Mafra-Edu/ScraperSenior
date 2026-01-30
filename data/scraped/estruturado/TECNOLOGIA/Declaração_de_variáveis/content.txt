@@ -1,0 +1,164 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/declaracao-de-variaveis.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7C_____5
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Declaração de variáveis
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Declaração de variáveis
+            Posições
+            As variáveis de regras suportam números de até 15 posições.
+            Variáveis com nomes iguais aos parâmetros de funções
+            
+        Ao se definir uma função dentro das regras com passagem de parâmetros, deve-se cuidar
+        para que os nomes destes parâmetros não sejam iguais ao nome de nenhuma variável
+        que possa estar empregada em qualquer outra regra, pois ao se fazer isso, quando
+        esta variável for usada, irá corromper algum conteúdo em memória.
+            Quando a variável         é utilizada em funções, seu endereço não fica mais disponível ao sair da função,
+        como a variável global de mesmo nome possui o mesmo endereço (que não é mais
+        válido), algum lugar poderá ficar corrompido.
+            Variáveis com nomes iguais aos campos de listas
+            
+        Ao definir uma variável, não é recomendado declarar variáveis que possuem o mesmo
+        nome que um campo de lista, para não ocorrer a perda de alguma informação. Ao fazer
+        a definição com o mesmo nome que um campo de uma lista, o campo da lista será sobrescrito        ou poderá ter o seu tipo alterado.
+            Ao acessar o valor deste campo, ele poderá estar
+        indisponível ou incorreto, pois ele não possui um endereço de memória
+        ou tipo válido. 
+            Exemplo:
+                
+                    Mensagem de erro que pode ocorrer: "Falha ao limpar a variável XXXX do tipo XXXX na regra XXXX. Verifique se há uma outra variável, parâmetro de função ou campo de uma lista com este mesmo nome em outro local nas regras LSP. Causa: Access violation at address 42003B64 in module RtBase02.bpl. Read of address 0000FFF8".
+                
+            
+            Boas práticas
+            Na inicialização de variáveis, atribua o valor no evento Inicialização, que é o primeiro a ser chamado.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

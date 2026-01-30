@@ -1,0 +1,161 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#lsp/limite-das-regras.html%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CLSP%2520-%2520Linguagem%2520Senior%2520de%2520Programa%25C3%25A7%25C3%25A3o%7C_____3
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > LSP - Linguagem Senior de Programação > Limite das Regras
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Limites das Regras
+                Código executável
+                O código executável gerado pela compilação das regras, não possui limite, o compilador aloca dinamicamente o espaço necessário para as regras durante o processo de compilação. Na execução, todo o espaço é alocado na carga do binário. Os limites existentes são aqueles impostos pelo conjunto de hardware e software. 
+                Dados
+                
+                    Constantes: 25% do espaço disponível (atualmente, 8.192 constantes diferentes);
+                    Pilha de execução: 20% do espaço disponível (atualmente, 6.553 entradas);
+                    Variáveis: 50% do espaço disponível (atualmente, 16.384 variáveis diferentes);
+                    Registradores intermediários: 5% do espaço disponível (atualmente, 1.638 entradas).
+                
+                
+As constantes são os valores fixos escritos dentro do código. Na expressão x = 23;, o valor 23 é considerado uma constante numérica. E em s = "ConstanteAlfanumerica";, o valor "ConstanteAlfanumerica" é uma constante alfanumérica. Somente as constantes numéricas são armazenados no espaço mencionado acima. As alfanuméricas são armazenados em outro espaço do código binário.
+                As variáveis são aquelas definidas como número, alfa, data, lista e cursor. Nas expressões anteriores,  "x" e "s" são variáveis e utilizam o mesmo espaço mencionado anteriormente.
+                A pilha de execução é usada para a chamada de funções escritas inteiramente na Regra. O seu uso é controlado pelo compilador e pelo executor. Da mesma forma são os registradores intermediários, que auxiliam nas operações aritméticas, na concatenação de cadeias alfanuméricas, etc.
+                Indicação dos limites
+                A tela de indicação de compilação está relacionando agora a quantidade de variáveis (e o seu percentual de uso) e de código executável. Como não existe mais limite de código, está indicando apenas a quantidade de memória utilizada pela compilação das regras.
+                Na tela de progresso de compilação, o item Tamanho é a quantidade de memória alocada para o código executável. O item Variáveis é a quantidade de memória usada pelas variáveis das regras e o item Usado é percentual em relação ao total disponível. Os demais itens estão inalterados.
+
+                Limitação das regras quanto à chamada de funções de forma recursiva
+                As regras possuem uma limitação quanto à chamada de funções de forma recursiva (quando dentro de uma função é chamada outra função).
+                Por exemplo, ao imprimir uma seção adicional com o comando LSP ListaSecao e nessa seção adicional  existir uma regra associada que chama outra função (podendo ser outra chamada para a ListaSecao).
+                 Nesta situação o interpretador das regras não consegue voltar até a primeira função que chamou e continuar sua execução. Devido a esta limitação, não devem ser chamadas funções de forma recursiva, onde uma acaba chamando a outra.
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

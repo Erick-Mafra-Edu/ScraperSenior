@@ -1,0 +1,210 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/gestao-de-vendas/venda-com-aprovacao.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7CGest%25C3%25A3o%2520de%2520Vendas%7C_____5
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Gestão de Vendas > Venda com Aprovação
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                  Aprovação de Venda - Pedidos bloqueados
+                Conceito
+                Efetua a aprovação/liberação   de pedidos bloqueados através de senha. 
+                 
+                Utilização                
+                Processo utilizado para aprovar  pedidos bloqueados para que estes possam ser finalizados e faturados no PDV da filial.
+                 Necessitam de aprovação/liberação pedidos que estejam nas seguintes situações:
+                
+                    Pedido sem itens obrigatórios (frete, montagem);
+                    Vendedor abaixo da meta de venda de serviços;
+                    Margem de contribuição abaixo do limite de negociação;
+                    Taxa de juros inferior ao permitido para o perfil do usuário;
+                    Valor do desconto ultrapassa o valor ou percentual permitido do usuário para o pedido ou item;
+                
+                A aprovação/liberação do pedido bloqueado pode ser feita de três formas:
+                
+                    Pode ser aprovada na loja por um usuário que possua permissão;
+                    Pode ser aprovada pela matriz através do sistema Gestão Empresarial | ERP;
+                    E pode ser autorizada por senha gerada pela matriz e repassada para a loja. É recomendável que essa  situação seja utilizada, caso a filial não possua comunicação com a matriz por problemas técnicos.
+                
+                
+                     Notas 
+                    
+                        O pedido ficará bloqueado até que seja aprovado;
+                        As permissões de usuário são definidas no menu Cadastros > Representantes > Perfis de Usuários (F090PFU) no Gestão Empresarial | ERP.
+                    
+                
+                Processo
+                Filtrar pedidos bloqueados 
+                O primeiro passo é identificar os pedidos com a situação "Bloqueado". Para isso acesse o menu Mercado > Gestão de vendas > Pedidos e aplique os filtros de pesquisa para pedidos com esta situação. 
+                Exemplo:
+                    
+                        
+                        
+                    
+                
+                Aprovar pedido pela loja 
+                O pedido bloqueado é liberado na própria loja por um usuário  que possua essa permissão.
+                Exemplo:
+                    
+                        Motivo de Bloqueio por desconto:
+                        O usuário vendedor  possui permissão para conceder desconto na venda de até  R$ 150,00 (Cento e cinquenta reais) conforme informado no seu perfil (Cadastro de Perfis). Caso seja informado no pedido um  valor no campo Desconto que ultrapasse  o limite permitido, o sistema apresentará mensagem com as informações de bloqueio.
+                        
+                        
+                        O usuário que possuir permissão (gerente/supervisor) na filial, poderá então informar seu usuário e senha para desbloquear e liberar o pedido.
+                        Caso o responsável por liberar o bloqueio não se encontre no local no momento da venda, o usuário poderá utilizar o botão Cancelar da tela de bloqueio do pedido ou teclar Esc para ignorar a mensagem apresentada, porém o pedido continuará com situação "1 - Bloqueado" até sua liberação.
+                        
+                        
+                        Para efetuar a liberação posteriormente ainda na própria loja, basta abrir o pedido e utilizar o botão Finalizar. Na tela de bloqueio apresentada, selecione a caixa de seleção Permitir, informe usuário e senha  e em seguida utilize o botão Liberar.
+                        
+                        
+                    
+                
+                
+                    Observação 
+                    Na tela de Bloqueio, é apresentado a descrição do motivo do bloqueio do pedido.
+                
+                Solicitar aprovação   da matriz 
+                Essa opção está disponível através de um botão na tela de Bloqueios do pedido. É utilizada nos casos em que o responsável pela liberação do bloqueio não se encontra na filial ou quando não existir nenhum usuário com permissão para liberação de pedidos. Quando essa situação ocorrer, o pedido poderá ser enviado para liberação pela matriz.
+                Para solicitar aprovação da matriz utilize o botão correspondente na tela de desbloqueio do pedido.
+                Exemplo:
+                    
+                        
+                        
+                        O sistema Gestão Empresarial | ERP da matriz receberá o pedido, fará a liberação e  enviará o pedido novamente para a filial através de web services. Caso o pedido se encontre aberto na tela, o Retaguarda receberá a confirmação de desbloqueio através da mensagem apresentada: 
+                        
+                            
+                        
+                         
+                        
+                            
+                        
+                        A situação do pedido no Retaguarda retornará com a situação  "Finalizado" podendo ser atendido e faturado no PDV. 
+                    
+                
+                 
+                Liberação com senha (Solicitar senha de liberação na matriz)
+                Solicitar senha na matriz para desbloqueio/liberação de pedidos na filial.
+                Essa situação  ocorre quando não houver um  usuário com permissão para aprovar/liberar pedidos bloqueados na filial e quando a opção de "Solicitar aprovação da matriz" não pode ser utilizada por falta de comunicação  com a matriz.
+                Na situação citada a cima, a matriz deve gerar um código de aprovação no sistema Gestão Empresarial | ERP e repassar    para a filial. A filial deverá inserir o código gerado pela Matriz no campo Senha da tela de liberação.
+                Exemplo:
+                    
+                        Para solicitar senha de liberação para a Matriz, na tela de Bloqueios do pedido, utilize o botão Liberação com senha. 
+                        
+                            
+                            
+                            
+                            
+                        
+                        Informe para a matriz via telefone, todos os dados do pedido a liberar conforme apresentado na tela e na mesma ordem:
+                        
+                            
+                        
+                        Através desses dados, a matriz fará a geração da senha no sistema Gestão Empresarial | ERP e repassará à filial. Insira no campo Senha o código informado pela Matriz  e utilize o botão Liberar.
+                        
+                            
+                        
+                        Em seguida, utilize o botão Finalizar.
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

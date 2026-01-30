@@ -1,0 +1,239 @@
+# 
+
+URL: https://documentacao.senior.com.br/ronda-senior/6.10.4/#faq/digicon.htm%3FTocPath%3DRonda%2520Senior%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CPerguntas%2520Frequentes%7C_____10
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃORonda Senior - versão 6.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Ronda Senior - Manual do Usuário > Perguntas Frequentes > Integração Digicon
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            FAQ - Digicon
+            A quem é solicitado o firmware?
+                
+                    Qualquer versão de firmware anterior à 6.1.14, necessária para restabelecer em caso de perda de informações (backup), deve ser solicitada à Senior.
+                    Qualquer versão de sistema Senior a partir da versão 6.1.14 (5.8.2.X), deve utilizar o firmware distribuído pela Digicon.
+                
+            
+            O que é MCA Painel?
+                
+                    A MCA Painel é um modelo de dispositivo exclusivo para controle de alarmes, permitindo que sejam cadastrados abaixo dele apenas interfaces de entrada e saída. Caso a MCA Painel adquirida permita a utilização de leitoras, essa deve ser cadastrada no sistema como uma MCA Acesso.
+                
+            
+            O que acontece se substituir o servidor da 
+ Concentradora?
+                
+                    Se na troca de servidor o endereço IP da Concentradora for alterado, 
+ os dispositivos não conseguirão mais conectar-se, impedindo-os de receber 
+ comandos. Ou seja, não será possível alterar o endereço do servidor na 
+ configuração do dispositivo via comando.
+                    Neste caso, se for possível, aconselha-se a manter o mesmo endereço 
+ IP na substituição do servidor da concentradora. Se não for possível manter 
+ o mesmo endereço IP, será necessário alterar o endereço do servidor em cada dispositivo.
+                    Caso esta alteração seja programada, pode-se fazer o procedimento indicado na observação da pergunta "O que ocorre se alterar o endereço IP do 
+ servidor da concentradora? abaixo.
+                
+            
+            O que ocorre ao alterar um dispositivo de 
+ uma Concentradora para outra?
+                
+                    Quando for alterada a informação da central de gerenciamento no cadastro 
+ de um dispositivo, a aplicação enviará um comando para o dispositivo atualizando 
+ o endereço do servidor da Concentradora.
+                
+            
+            O que ocorre se alterar o endereço IP do 
+ servidor da Concentradora?
+                
+                    Aconselha-se que antes de alterar o endereço IP do servidor, a alteração 
+ seja feita no Segurança. Assim, ao informar o novo endereço IP a aplicação 
+ Segurança enviará a atualização de IP do servidor da Concentradora para 
+ todos os dispositivos Digicon cadastrados na central de gerenciamento.
+                    
+                        Observação 
+                        Depois de alterado o IP da central de gerenciamento no Segurança, deve-se 
+ efetuar a alteração do IP no servidor da Concentradora. Ao iniciá-la com novo endereço IP, os dispositivos já estarão preparados 
+ para se conectarem no novo endereço.
+                    
+                
+            
+            Os logs da Concentradora são gravados 
+ de que forma?
+                
+                    São arquivos de texto gravados em disco na pasta logs, que se encontra dentro da 
+ pasta onde está instalada a Concentradora. 
+                
+            
+            O que pode fazer os arquivos do firmware 
+ ficarem corrompidos?
+                
+                    Esta é uma situação bem rara, porém há alguns fatos que podem fazer 
+ com que isso ocorra:
+                    
+                        Enviar firmware de versão mais antigo que o da versão que está 
+	 no dispositivo;
+                        Deixar dois firmwares executando ao mesmo tempo no dispositivo;
+                        Arquivo do firmware corrompido - Pode ocorrer ao baixar do FTP. 
+	 É bastante raro, mas um arquivo ZIP pode ser corrompido ao copiar.
+                    
+                
+            
+            Se o arquivo de eventos não enviados do firmware 
+ ficar lotado, o dispositivo será bloqueado?
+                
+                    Sim, o dispositivo bloqueia e apresenta a mensagem "Bloqueado" 
+ no display. 
+                
+            
+            É possível configurar o tempo para o giro 
+ da catraca?
+                
+                    Sim, é possível cadastrar em Projeto Físico > Dispositivos > Cadastro. 
+ Deve-se ir à leitora, guia Acionamentos Acesso e incluir a Saída Digital 
+ Acionada na grade. Após incluir a saída digital é possível informar o tempo 
+ de acionamento nesta mesma grade. 
+                    Observação
+                         Deve-se incluir a saída digital no cadastro do dispositivo 
+ para poder utilizar. 
+                    
+                
+            
+            Quais as principais ações para ativação de 
+ dispositivos em um cliente já instalado?
+                
+                    As verificações e ações que podem ser feitas são:
+                    
+                        Identificar a versão da Concentradora e do firmware do equipamento. 
+	 Essa verificação serve para identificar quais atualizações são necessárias 
+	 no dispositivo;
+                        Cadastrar o dispositivo na aplicação;
+                        Configurar a conexão do dispositivo, informando o IP, máscara de 
+	 rede, gateway e porta do servidor. Esta configuração é necessária 
+	 para o firmware conectar na Concentradora e receber as atualizações;
+                        Enviar as atualizações de firmwares necessárias, conforme identificado 
+	 no início;
+                        Envio do comando de carga de aplicativo.
+                    
+                
+            
+            Onde deve ficar o arquivo do firmware?
+                
+                    No diretório padrão das listas (DirListas), na Central de Configurações Senior (SeniorConfigCenter).
+                
+            
+            Como faço para enviar o comando de atualização 
+ do firmware?
+                
+                    O envio do comando é feito pelo Ronda Senior no menu Supervisão > On-line 
+  > Comandos > Acesso. Selecionar o dispositivo e ir para a 
+ guia Aplicativos, Opção 3 - Atualização Firmware. É sugerido o nome do 
+ firmware cadastrado no dispositivo, mas é possível selecionar outro firmware 
+ para envio.
+                
+            
+            Como fazer para configurar um dispositivo 
+ off-line?
+                
+                    Acessar o cadastro do dispositivo, na guia Comunicação e mudar o parâmetro Comunicação para off-line. As opções possíveis são: 1 - Off-line; 2 - 
+ On-line; 3 - Desativado.
+                
+            
+            O que são os dois pontos (:) ou um ponto 
+ (.) que aparecem no canto inferior direito do display dos dispositivos? 
+ 
+                
+                    A partir da versão 6.1.3.2, quando aparece um ponto (.) significa que 
+ tem comunicação com a Concentradora, mas não tem comunicação com o Segurança. Quando aparecem dois pontos (:) o dispositivo não 
+ tem comunicação com a Concentradora. Se estiver sem nenhum ponto no canto 
+ inferior direito do display, significa que está on-line.
+                
+            
+            Por que não pode ser utilizado o IP 127.0.0.1 
+ como IP da central de gerenciamento?
+                
+                    Porque este IP é enviado para o firmware da MCA / MCAnet e com isso 
+ ele não pode mais se conectar com a Concentradora, pois o 127.0.0.1 é 
+ o IP de localhost.
+                
+            
+            Como configurar para aparecer a seta verde 
+ "->" no sentido da pessoa passar e o "X" no sentido 
+ inverso?
+                
+                    No dispositivo deve-se configurar na guia Configurações os dois pictogramas 
+ como ligado (seta verde "->"). Depois disso, na Configuração 
+ da Leitora, na guia Acionamentos Acesso deve-se configurar os seguintes 
+ valores:
+                    
+                        Aciona pictograma: 0 - Não aciona;
+                        Tempo Acionamento Pictograma: Ficará desabilitado;
+                        Pictograma lateral 1: "Sim" se quiser que apareça o X no momento 
+	 da validação e "Não" se quiser que apareça a seta verde "->";
+                        Pictograma lateral 2: "Sim" se quiser que apareça o X no momento 
+	 da validação e "Não" se quiser que apareça a seta verde "->".
+                    
+                    Na grade Saída dos acionamentos de acesso deve-se informar o acionamento 
+ de catraca. 
+                    Observação
+                         Não deve ser configurado acionamento de solenóide, pois neste 
+ caso entende-se que é uma porta e com isso o pictograma lateral não será acionado.
+                    
+                
+            
+            Como são os registros de logs do DigiREP 
+ até chegar à Ronda Senior?
+                
+                    Entre o driver DigiREP e a Concentradora existe o log do DigiREP. Na 
+ Concentradora a comunicação é registrada no driver Senior (ou driver Digicon 
+ quando é acesso). Depois é registrado no log da Concentradora e por fim 
+ no log do Adapter quando a informação é 

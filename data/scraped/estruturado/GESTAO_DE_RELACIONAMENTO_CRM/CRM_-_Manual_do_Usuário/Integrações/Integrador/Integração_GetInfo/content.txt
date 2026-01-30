@@ -1,0 +1,58 @@
+# Integração GET e INFO
+
+URL: https://documentacao.senior.com.br/seniorxplatform/manual-do-usuario/crmx/integracoes/senior-x/integrador/integracao-get-e-info/
+
+---
+
+     SOLICITE UMA PROPOSTA     PORTUGUÊS     English
+   Español
+             
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "20786608",
+            formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1",
+        });
+            const o=document.getElementById("botao-propostas");o?.addEventListener("click",()=>{MicroModal.show("comp-modal-propostas")});const d=document.getElementById("dropdown-idiomas-botao");document.getElementById("dropdown-idiomas-topo");d?.addEventListener("click",()=>{$("#dropdown-idiomas-topo").toggle(function(){$("#dropdown-idiomas-topo").addClass("show")},function(){$("#dropdown-idiomas-topo").removeClass("show")})});   PORTAL DE DOCUMENTAÇÃO Gestão de Relacionamento | CRM X                    function m(o){gtag("event","pesquisa",{termo_pesquisado:o,origem_pesquisa:window.location.href})}const s=document.getElementById("search-form");s?.addEventListener("submit",o=>{o.preventDefault();const e=s.querySelector(".search-input"),t=e?.value;if(!t||t.trim()==="")return;const u=encodeURI(t),i=encodeURI(e.attributes.tipo.value),l=encodeURI(e.attributes.produto.value),r=encodeURI(e.attributes.versao.value),d="https://documentacao.senior.com.br/searchresults.htm";let a=`#stp=1&stq=${u}&tipo=${i}&produto=${l}`;r&&(a+=`&versao=${r}`);const n=d+a,c=document.getElementById("iframe-modal");c?(c.src=n,MicroModal.show("comp-modal-searchbox-modal"),s.querySelector("#search-submit-home-portal")!==null&&gtag("event","click",{assunto:"Home do Portal de Documentação - Botão Pesquisar no site"}),m(t)):window.open(n,"_blank")});  
+     Manual do Usuário
+                 > Integrações
+                 > Integrador
+                 > Execução GET e INFO                         Integração GET e INFO
+A integração de GET e INFO são apresentadas ao mesmo tempo, pois são semelhantes uma a outra na configuração da integração. Somente em processos internos, execução de algumas regras e no retorno das informações é que existem algumas diferenças:
+GET
+Retorna para o usuário somente uma mensagem de sucesso ou erro e a natureza do erro ocorrido, especificando com mais detalhes nos logs, e um retorno quantitativo de quantos registros foram inseridos e atualizados na execução. Durante a execução as informações são transformadas em query, conforme parametrização, para execução no banco de dados do CRM, inserindo e/ou atualizando os dados.
+
+INFO
+Retorna para o usuário todos os dados processados durante a execução da integração em formato JSON, além da mensagem de sucesso ou erro, e nesse caso, a natureza do erro, apresentando mais detalhes nos logs.
+
+Dicas de usabilidade
+Ordenação para a criação da integração
+Sugestão de ordenação para a criação da integração, cadastrando informações entre as tabelas conforme necessidade, para facilitar a compreensão e organização dos dados. Dessa forma há um loop entre as tabelas CAMPOS_INTEGRACAO, DEPENDENCIAS e REGRAS, para que a cada informação registrada em CAMPOS_INTEGRACAO seja verificado se há a necessidade de criar registros nas demais tabelas.
+Valores das variáveis
+Todos os valores variáveis são escritos na linguagem do Integrador, utilizando do símbolo #, no início e final do nome da variável. E, ao configurar os SQLs de consulta, inserção e atualização, o Integrador compila o texto exatamente como se fosse código. Desta forma, o valor pode estar dentro do texto contendo ou não aspas duplas ou simples. Por exemplo, SELECT * FROM contas WHERE id = ‘#id#’.
+Ordem das integrações
+Ordem que são dispostas as integrações na tabela INTEGRACOES faz diferença, então devem ser colocadas em uma ordem lógica, conforme estrutura do CRM.
+Ordem dos índices
+Ordem dos índices da string JSON no campo CAMPO_CRM da tabela CAMPOS_INTEGRACAO não faz diferença, porém deve-se manter a estrutura lógica.
+Cadastro de integrações
+Nível de customização no cadastro das integrações é grande, os SQLs presentes na tabela INTEGRACOES colunas CONSULTA, SQL_CONSULTA, SQL_INSERT e SQL_UPDATE podem ser complexos e mais de um, se necessário.
+ NotaÉ possível executar integrações de diferentes tipos em dependência (GET + SET), porém é recomendado executar em dependência apenas integrações do mesmo tipo. Primeiramente é preciso configurar a conexão com o sistema a ser integrado, e em seguida configurar os módulos e os campos.  
+Tabelas
+O Integrador possui uma estrutura de tabelas em banco de dados onde será possível cadastrar e configuraras integrações.
+ CONEXAO_INTEGRACAO   CampoDescriçãoValores possíveis  TIPO_CONEXAOClassifica a forma de conexão da integração.
+Conexão via web service;
+Conexão via banco de dados;
+Conexão via API.
+  NOME_CONEXAOInforma o nome da conexão salva no arquivo de conexões do cliente dentro dos arquivos do Integrador. Cada tipo de conexão tem um layout específico para configurar a conexão no arquivo.     
+ INTEGRACAO   CampoDescriçãoValores possíveis  NOMEDescrição da integração. Informação importante no caso da integração INFO, pois é o índice de retorno para se chegar nas informações integradas.
+GET: Consulta dos valores
+INFO: Retorno dos valores
+  TIPO_SERVICOString que representa o tipo da integração a ser executada.  EMPRESA_ID/ EMPRESA_FILIAL_IDEmpresa a qual a integração está disponível.  LINKString que informa endereço para conexão da integração, o complemento para se chegar a um determinado serviço, e pode ser NULO em alguns casos.
+NULL: somente em casos em que a integração é via banco de dados;
+LINK WEB: complemento do endereço da conexão para um determinado serviço;
+SQL: consulta de determinados valores através de uma string SQL;
+PALAVRA CHAVE: sendo atualmente ‘:componente’ a palavra chave disponível, e ela informa que a integração é um componente ou um campo de uma outra integração.
+  TABELATabela onde será executada a integração.  CONSULTATexto JSON que representa a consulta dos dados feita no sistema terceiro, o texto precisa conter uma chave ‘consulta’ para que o Integrador encontre a busca e o valor pode ser NULO em alguns casos.
+NULL: somente em casos em que a integração é de um componente ou via API quando não há valores a serem enviados no header da requisição;
+JSON-COMPOSTO: quando for necessário dentro da chave “consulta” pode ser configurado outro JSON como se fosse um array, que conterá todos os parâmetros de busca;
+JSON-SQL: dentro da chave “consulta” pode ser escrito um texto sql completo que será executado para busca.
+  CONEXAO_INTEGRACAO_IDIdentificador que referencia a informação da tabela CONEXAO_INTEGRACAO.  PORTA_WSRefere-se à porta para execução de um determinado serviço. Utilizado somente em integrações via web service. Essa informação pode ser encontrada na documentação do WSDL do sistema a ser integrado.  INDICE_ARRAY_RETORNORepresenta a chave do array de retorno onde estão os dados da pesquisa de valores a serem integrados. No caso da integração via web service esse valor consta na documentação, já via banco de dados, o valor informado será adicionado como primeiro índice do array retornado da consulta. Caso a requisição seja via Web Service ou API e não tenha um índice padrão para o retorno de valores, pode-se usar a palavra reservada ‘parameters’ como indice_array_retorno.   INDICE_VALOR_RETORNOÍndice que será pesquisado no array de retorno do envio de valor para o sistema terceiro (integração SET), para realizar ações após sucesso na integração. Valor não utilizado na integração GET ou INFO, seu valor deve ser NULL.  INDICE_ERRO_RETORNOSão os índices que serão buscados os erros no array de retorno das buscas executadas pelo Integrador, ou seja, se esses índices forem encontrados com valor, o Integrador interpretará a busca como ‘com erro’. O campo pode conter vários índices separados por virgula (não pode haver espaçamento entre os índices e a vírgula). Somente o primeiro índice da lista será utilizado como validador geral, ou seja, se o primeiro índice não apresentar erros, os demais não serão contabilizados.  SQL_CONSULTASQL que será responsável por buscar o registro no CRM, no caso da integração INFO, ou validar se o mesmo existe, para o Integrador saber qual será o próximo passo, inserir ou atualizar o registro, no caso da integração GET. Para esse campo lembre-se da dica 2. Há duas variáveis que podem ser utilizadas #empresa_id# ou #empresa_filial_id#, quando o CRM do cliente é para múltiplas empresas, além das variáveis do Integrador, que contém todos os campos mapeados no DE-PARA dos campos do CRM e sistema terceiro, e está disposto da seguinte forma: #nome#  SQL_INSERTSQL que será responsável por inserir um novo registro no CRM caso a busca feita pela coluna SQL_CONSULTA retorne false. Não esqueça da dica 2. Para montar a query de inserção, é habilitado a injeção de valores, então há duas variáveis que podem ser utilizadas #empresa_id# ou #empresa_filial_id#, quando o CRM do cliente é para múltiplas empresas, além das variáveis do Integrador, que contém todos os campos mapeados no DE-PARA dos campos do CRM e sistema terceiro, desde que estejam com o valor true (1) na coluna VALOR_GLOBAL da tabela CAMPOS_INTEGRACAO, além dos valores mapeados no DE-PARA formatados para o INSERT, sendo:#indices#: representa as colunas;#valores#: são os valores a serem inseridos;Ex.: (#indices#) VALUES (#valores#)  SQL_UPDATESQL que será responsável por atualizar um registro no CRM caso a busca feita pela coluna SQL_CONSULTA retorne true. Não esqueça da dica 2. Para montar a query de atualização, é habilitado a injeção de valores, então há duas variáveis que podem ser utilizadas #empresa_id# ou #empresa_filial_id#, quando o CRM do cliente é para múltiplas empresas, além das variáveis do Integrador, que contém todos os campos mapeados no DE-PARA dos campos do CRM e sistema terceiro, desde que estejam com o valor true (1) na coluna VALOR_GLOBAL da tabela CAMPOS_NTEGRACAO, além dos valores mapeados no DE-PARA formatados para o UPDATE, sendo:#valores#: representa as colunas igualada aos valores;#id#: retorna o valor consultado na coluna SQL_CONSULTA;

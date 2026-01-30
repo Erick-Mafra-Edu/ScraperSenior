@@ -1,0 +1,178 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/servicos/frete-inclusao-agendamento.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CServi%25C3%25A7os%7C_____2
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Serviços > Inclusão e Agendamento de Frete
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                 Frete - Inclusão e Agendamento
+                Conceito   
+                O frete é ofertado no momento da venda e pode ser vendido como um serviço (é possível selecionar também serviços de outras lojas), ou até mesmo incluído como acréscimo, ou seja, ter seu valor entre os itens do pedido. 
+                Utilização
+                É utilizado quando o produto adquirido na loja necessita de entrega em domicílio.
+                Cada filial possui uma tabela de preços de fretes disponível, compartilhada com toda a rede de lojas. No momento da venda, será exigida a informação do código da filial que atenda a localização para recebimento dos controles de fretes, e posteriormente, as informações das tabelas de preço recebidas via integração serão gravadas. Caso já exista, será atualizado. É possível  filtrar estas informações de acordo com a filial de localização, tendo por padrão a que está logada.
+                Processo
+                Ao utilizar o botão Frete no pedido de venda,  a tabela de frete com valores cadastrados oriundos do Gestão Empresarial | ERP é apresentada.
+                
+                    Importante: 
+                    
+                        Para incluir/agendar um frete, é obrigatório que o cliente esteja cadastrado e identificado no pedido de venda, pois esse serviço exige  um endereço cadastrado.
+                    
+                    
+                        
+                    
+                    
+                        Os produtos que possuem serviço de frete são informados no cadastro de produto e configurados para que, ao vender determinados itens, seja identificado  se o produto possui ou não serviço de frete.
+                    
+                
+                Incluir frete no pedido 
+                
+                    Identifique o cliente no pedido;
+                    Informe o produto ou os produtos que necessitam de frete;
+                    Utilize o botão Frete. Ao ser acionado no pedido de venda, a lista de fretes disponíveis será exibida;
+                    Escolha a filial que irá realizar o frete;
+                    Escolha o serviço de frete da filial selecionada;Exemplo:Ou utilize o botão Frete Grátis (F6) para não cobrar pelo serviço de frete.NotaCaso o parâmetro dinâmico PEDIDO.HABILITARFRETEGRATIS do Gestão Empresarial | ERP esteja definido como "Não", o botão de frete grátis fica desabilitado. Para inserir um frete, mesmo que grátis, é necessário ter configurado as tabelas de preço de frete, pois irá gerar o controle de frete, com o valor a ser pago pelo freteiro. A opção de frete grátis apenas isenta o cliente/comprador de pagar pelo frete, que neste caso, o custo é assumido pela loja.
+                
+                
+                    Após a escolha na lista de fretes disponíveis, insira informações para a entrega, preenchendo os campos:
+                
+                Controle de frete
+                
+                É gerado automaticamente pelo sistema o número do controle de frete.
+                Data da entrega
+                
+                Informar a data do agendamento para entrega.
+                Não é possível inserir uma data de entrega de frete que seja anterior à data prevista do pedido. 
+                Período
+                
+                Escolher o período do dia em que o produto será entregue:
+                
+                    Não informado
+                    Matutino
+                    Vespertino
+                    Noturno
+                
+                Placa do veículo
+                
+                Informar a placa do veículo, caso seja necessário para controle.
+                O preenchimento do campo é opcional.
+                Localização
+                
+                Informe a loja que será responsável pelo frete.
+                O preenchimento do campo é obrigatório.
+                
+                    Notas: 
+                    
+                        Ao agendar o frete, poderá ser informada na localização  uma outra filial, desde que esteja cadastrada e disponível. Essa informação significa que a filial informada fará a entrega;
+                    
+                    
+                        
+                    
+                    
+                        O agendamento do frete irá constar no controle de frete da filial informada, para que ela se responsabilize pela entrega. A filial que faturou o pedido deverá  manter contato com a filial que fará a entrega para especificar, caso haja dúvidas. 
+                    
+                
+                
+                    Importante: 
+                    Quando esse procedimento for utilizado, a filial que fará a entrega deverá emitir uma nota fiscal de transferência para a filial que efetuou a venda e emitiu a nota fiscal de saída. Dessa forma, a filial que efetuou a entrega, baixa o produto no estoque da sua loja e realiza a entrada no estoque da filial que vendeu. Porém, o produto não saiu fisicamente dela, então, através da nota de transferência é feito esse acerto.
+                    Exemplo:
+                        
+                            
+                                
+                            
+                        
+                    
+                
+                Transportador
+                
+                Informar a transportadora que irá executar o serviço conforme cadastros disponíveis da loja.
+                O preenchimento do campo é opcional.
+                Endereço
+                
+                Informe o endereço para entrega. Pode ser digitado o número "0" (zero) para que o sistema considere o endereço principal registrado no cadastro de cliente. 
+                Caso o cliente opte para que a entrega seja realizada em outro endereço, basta utilizar o botão de pesquisa. O sistema apresentará uma tela onde poderá ser acionado o botão Cadastrar endereço para inserir outros endereços no cadastro do cliente. 
+                Exemplo:
+                    
+                        
+                            
+                        
+                        Posteriormente, será apresentada a tela para efetuar o cadastro do endereço de entrega.
+                        
+                            
+                        
+                        Para reaproveitar o endereço principal do cliente (aquele cadastrado na guia Geral do cadastro do cliente), utilize o botão Copiar endereço principal.
+                    
+                
+                
+                    Observação:
+                    Caso o cliente já possua mais de um endereço em seu cadastro (entrega, cobrança), ao acionar o botão de pesquisa serão apresentados todos os endereços cadastrados para que seja informado o endereço da entrega.
+                    Exemplo:
+                        
+                            
+                                
+                            
+                        
+                    
+                
+                Informações adicionais
+                
+                Campo disponível para anotação de observações  caso seja necessário. 
+                 Selecionar os produtos para entrega
+                
+                    Após adicionar as informações do cabeçalho do frete, selecione na "lista de produtos disponíveis" a caixa de seleção dos produtos que necessitam de entrega;  
+                    Caso sejam duas unidades do mesmo do item, o sistema perguntará a quantidade de itens a serem fretados;
+                
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                
+                    Informe a quantidade, confirme em OK e acione o botão Gravar.
+                
+                Excluir item com frete agendado 
+                Para excluir um item do frete,  acione o botão Frete, escolha a opção Alterar e desmarque o item na caixa de seleção. O sistema perguntará a quantidade de itens a serem removidos do frete.
+                Informe a quantidade a remover e confirme em OK.
+                Exemplo:
+                    
+                        
+                            
+                        
+                    
+                
+                Alterar endereço da entrega 
+                Para alterar endereço de entrega, data para entrega e outros, utilize também o botão Alterar acessado através do botão Frete.
+                Quando for necessário efetuar agendamento de entrega em datas ou endereços diferentes,   inclua o agendamento de frete para um primeiro produto  e grave. Em seguida, acione o botão Frete  e utilize a opção Novo. Dessa forma, será apresentado o restante dos itens não inseridos no primeiro frete  e será possível informar uma nova data e as demais informações para a entrega do segundo item.
+                Cancelar o agendamento de frete
+                
+                    Para efetuar o cancelamento do frete pelo pedido, acione o botão Frete , selecione o item na grade "Detalhes do frete" e utilize o botão Cancelar.
+                    Ainda por dentro do pedido é possível alterar ou incluir um novo agendamento de frete, desde que o pedido não tenha sido atendido no PDV.
+                    Caso o pedido já tenha sido atendido no PDV, deve-se utilizar a tela Controles de frete para efetuar o cancelamento, pois o pedido não poderá mais sofrer alterações.
+  

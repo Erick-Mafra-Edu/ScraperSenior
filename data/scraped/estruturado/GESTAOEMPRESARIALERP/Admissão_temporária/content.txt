@@ -1,0 +1,228 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/suprimentos/admissao-temporaria/processo-admissao-temporaria.htm%3FTocPath%3DSegmentos%7CCompliance%7CConfigura%25C3%25A7%25C3%25B5es%2520para%2520c%25C3%25A1lculos%2520fiscais%2520%7C_____3
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Compliance > Configurações para cálculos fiscais  > Admissão temporária
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Admissão temporária
+            A admissão temporária prevista na IN 1600/2015 afirma que na importação de produtos, os valores dos tributos federais podem ser calculados proporcionais ao tempo de permanência do produto no território aduaneiro ou podem ter a suspensão total dos impostos.
+            Os impostos federais que esta legislação trata são:
+            
+                Imposto de Importação (II)
+                IPI
+                PIS importação
+                Cofins importação
+                CIDE combustíveis
+                AFRMM
+            
+            O Gestão Empresarial | ERP permite configurar o cálculo do valor da base destes impostos, com base do tempo de permanência do produto na aduaneira. Esta configuração é realizada por produto e por imposto, para notas fiscais do tipo 7 (Geração Manual).
+            
+                Importante
+                
+                A base de cálculo do ICMS não é influenciada diretamente pelo parâmetro da admissão temporária, o imposto é calculado normalmente com base nos cálculos dos impostos federais, estes podem ser reduzidos através deste processo.
+            
+            Parametrizações
+            Para que o processo de admissão temporária de cobrança de impostos funcione, é necessário realizar as seguintes parametrizações:
+            
+                No Cadastro de Produtos, em Cadastros > Produtos e Serviços > Produtos > Individual (F075PRO), preencha o campo Possui Admissão temporária de tributos com Suspensão Parcial ou Suspensão Total:Caso o produto tenha suspensão total, os impostos IPI, PIS, COFINS, Importação e CIDE não são calculados na nota fiscal, mesmo se todos os demais parâmetros do ERP estiverem parametrizados para calcular.Caso o produto possua suspensão parcial, defina os percentuais e o tempo de permanência, conforme descrito nos seguintes passos.
+                Defina o percentual diário que será utilizado do valor da base original para formar a base de cálculo do imposto, nos seguintes campos (de acordo com o imposto) da tela de Transações de compras, em Cadastros > Transações > Parâmetros por Gestão > Compras > Ordem Compra / NF Entrada / Fatura (F001TCP):
+                
+                    Guia Dados Gerais - % Diário da Adm. Temp. do ARFMM
+                    Guia IPI - % Diário da Adm. Temp. do IPI de Importação
+                    Guia PIS - % Diário da Adm. Temp. do PIS de Importação
+                    Guia COFINS - % Diário da Adm. Temp. do Cofins Importação
+                    Guia Importação  - % Diário da Adm. Temp. do Imposto de Importação
+                    Guia CIDE - % Diário da Adm. Temp. do CIDE Combustíveis
+                
+                Caso o produto esteja parametrizado com Suspensão Parcial, ao gerar a nota fiscal defina até que data o produto permaneceu na aduaneira, no campo Data permanência, da tela de Nota Fiscal de Entrada Agrupada, em Suprimentos > Gestão de Recebimento > Notas Fiscais de Entrada > Agrupada (F440GNE).
+                Caso a nota fiscal gerada atenda às parametrizações descritas e o fornecedor da nota fiscal seja estrangeiro, os impostos configurados na transação serão calculados de forma diferente, aplicando o percentual de redução à base de cálculo do imposto.A Nota fiscal de entrada do tipo 7, gerada na tela Nota Fiscal de Entrada Agrupada (F440GNE) apresentará a base de cálculo do imposto reduzida. A consulta pode ser feita através do botão Cálculo (F440CNE).
+            
+            O cálculo do imposto é feito da seguinte forma:
+            
+                Data de entrada da nota fiscal - Data de Permanência = Tempo de permanência (dias)
+                Tempo de permanência * Percentual diário = Percentual de admissão
+                Valor da base sem admissão temporária * Percentual de admissão = Base de Cálculo dos impostos
+            
+            Exemplo
+                
+                    Veja um exemplo de cálculo dos impostos, com uma nota fiscal de entrada
+                    Dados da situação
+                    Produto: Maquinário, com suspensão parcial
+                    
+                        
+                        
+                        
+                            
+                                Data Entrada
+                                18/10/2016
+                            
+                            
+                                Data permanência
+                                
+                                15/03/2017
+                            
+                            
+                                Tempo de permanência
+                                148 dias
+                            
+                            
+                                % Diário da Adm. Temp.
+                                
+                                4,93%
+                            
+                            
+                                Valor aduaneiro (Valor da base sem admissão temporária)
+                                R$ 10.000,00
+                            
+                            
+                                Siscomex
+                                R$ 122,00
+                            
+                            
+                                AFRMM
+                                R$ 200,00
+                            
+                            
+                                Nota fiscal AFRMM (200 * 4,93%)
+                                R$ 9,86
+                            
+                        
+                    
+                    Cálculo dos impostos:
+                    
+                        
+                        
+                        
+                            
+                                Imposto
+                                Percentual
+                            
+                            
+                                Impostos de Importação (II)
+                                35%
+                            
+                            
+                                IPI
+                                10%
+                            
+                            
+                                PIS
+                                1,65%
+                            
+                            
+                                COFINS
+                                8,60%
+                            
+                            
+                                ICMS
+                                18%
+                            
+                        
+                    
+                    Os valores das bases dos impostos são calculados da seguinte forma:
+                    
+                        
+                        
+                        
+                        
+                            
+                                Imposto
+                                Valor da base sem admissão temporária
+                                Valor do impostos sem admissão temporária
+                            
+                            
+                                II
+                                R$ 10.000,00
+                                R$ 3.500,00 (10.000,00 * 35%)
+                            
+                            
+                                IPI
+                                R$ 13.500,00 (base original * Imposto II)
+                                R$ 1.350,00 [(10.000,00 + 3.500,00) * 10%]
+                            
+                            
+                                PIS
+                                R$ 10.000,00
+                                R$ 165,00 (10.000,00 * 1,65%)
+                            
+                            
+                                COFINS
+                                R$ 10.000,00
+                                R$ 860,00 (10.000,00 * 8,60%)
+                            
+                            
+                                ICMS
+                                R$ 19.752,44 [(base original + todos os impostos) / 0,82]
+                                R$ 3.555,44 (R$ 19.752,44  * 18%)
+                            
+                        
+                    
+                    Ao gerar a nota fiscal, é aplicado  % Diário da Admissão Temporária no cálculo da base de imposto, utilizando a seguinte fórmula:
+                    Valor da base sem admissão temporária * % Diário da Admissão Temporária = Base de Cálculo dos impostos
+                    
+                        
+                        
+                        
+                        
+                            
+                                Imposto
+                                Valor da base
+   

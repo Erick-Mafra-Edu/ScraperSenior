@@ -1,0 +1,147 @@
+# 
+
+URL: https://documentacao.senior.com.br/tecnologia/5.10.4/#geradores/telas/tamanho-campos-numericos.htm%3FTocPath%3DTecnologia%7CFerramentas%2520de%2520Apoio%7CGeradores%2520de%2520Informa%25C3%25A7%25C3%25A3o%7CGerador%2520de%2520Telas%2520-%2520SGI%7CInforma%25C3%25A7%25C3%25B5es%2520Complementares%7C_____12
+
+---
+
+
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOTecnologia - versão 6.10.4 / 5.10.4
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            Tecnologia > Ferramentas de Apoio > Geradores de Informação > Gerador de Telas - SGI > Informações Complementares > Tamanho de campos numéricos
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Tamanho de campos numéricos
+            O tamanho máximo permitido em um campo, de uma tela SGI, são 15 posições antes ou depois da vírgula, este comportamento já é aplicado pelo CBDS ao criar os campos de usuário. Porém, quando há alguma intervenção manual na base de dados para criar um campo com tamanho superior, ao alterar ou excluir esse registro será apresentada a mensagem "Floating point overflow".
+            Para resolver a situação basta ajustar o tamanho do campo no CBDS e consistir a base. A alteração do tamanho do campo no banco de dados SQL Server, pode gerar uma operação de base e em consequência uma operação de quatro passos, que irá realizar um “Full Scan” na tabela que teve alteração, e isso pode deixar a base indisponível por algum tempo. No banco de dados Oracle, sempre será gerada a operação de quatro passos.
+            Nos casos em que são geradas operações de quatro passos:
+            
+                Adicione um novo campo com o tamanho desejado;
+                Utilize o comando "insert into select" do campo antigo no novo.
+            
+            Desta forma, a base ficará indisponível apenas durante o processo de consistência e, após a consistência, a execução do comando indisponibiliza apenas a tabela que sofreu alterações, com isto, outros processos que utiliza a mesma base podem ser executados com o menor tempo de interrupção possível.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Contrato de Licenciamento de Software e Prestação de Serviços
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    Senior Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

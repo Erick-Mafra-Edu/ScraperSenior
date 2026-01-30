@@ -1,0 +1,129 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/pdv/entenda-nfc-e/solicitar-autorizacao-nfce.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CFrente%2520de%2520Caixa-PDV%7CRotinas%2520de%2520Caixa%7C_____15
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Frente de Caixa-PDV > Rotinas de Caixa > Solicitar Autorização NFC-e Emitida em Contingência
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Solicitar Autorização NFC-e Emitida em Contingência 
+            Processo de autorização de documentos que o Retaguarda realiza ao receber do PDV uma venda na seguinte situação:
+            Quando a situação da venda recebida do PDV for: "5 - Emitida em contingência" e a Situação da NFC-e como: "1 - Não enviada":
+            O sistema retaguarda verifica se há conexão disponível e se ela está funcionando para autorização de documentos (keep alive). Para isso, o sistema irá conectar-se ao integrador loja e solicitar o status da conexão. O Integrador loja por sua vez, irá conectar-se ao sistema Documentos Eletrônicos e solicitar o status da conexão.
+            Status da Conexão
+            Disponível
+                Se estiver com conexão disponível, o sistema irá solicitar autorização da NFC-e que foi emitida em contingência (solicitar de forma síncrona). Para isto irá comunicar-se com o sistema integrador loja, enviando como parâmetro o arquivo XML recebido do sistema PDV. O sistema Integrador loja irá integrar-se com o serviço do sistema DE.
+             
+            Autorizada 
+                Caso o retorno seja de que a nota foi autorizada, a situação da venda irá ser alterada para "1 - Finalizada" e a Situação da NFC-e for: "3 - Autorizada", e então o sistema irá executar o mesmo procedimento quando esta situação é enviada pelo PDV. Gerar o arquivo DANFE A4 e persistir junto com os demais arquivos vinculados à nota fiscal.
+             
+            Rejeitada Caso o retorno seja de que a nota foi rejeitada, a situação da venda irá ser alterada para "0 - Em digitação" e a situação da NFC-e para "4 - Rejeitada". Nesta situação o sistema não deve mais tentar processar esta nota fiscal. O usuário terá que fazer algumas correções na nota e reenvia-la à SEFAZ para conseguir mudar o status de rejeitada. 
+             
+            Denegada
+                Caso seja Denegada, o sistema deve alterar a situação da venda para "2 - Cancelada" e a situação da NFC-e para "5 - Denegada", o sistema irá gravar também a data e hora em que a venda foi denegada, o protocolo de denegação e o motivo pelo qual a venda foi denegada. A venda irá ser importada como uma nota fiscal cancelada.
+             
+            Falha
+                Caso ocorra alguma falha, como um erro ou queda de conexão ou ainda atingir o timeout do serviço, o sistema irá manter a venda com a mesma situação "5 - Emitida em contingência", a situação da NFC-e "1 - Não enviada". 
+             
+            Indisponível
+                O sistema irá manter a venda com a mesma situação "5 - Emitida em contingência" e a situação da NFC-e "1 - Não enviada" e tentar novamente quando a conexão estiver disponível.
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documentação em outros idiomas:
+                     English
+                    
+                     Español
+                    
+                
+                
+                    seniorX Store
+                    
+                    Universidade Corporativa
+                    
+                    Fórum de Produtos
+                    
+                    Trabalhe conosco
+                    
+                    Blog
+                    
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+                
+                
+                Todos os direitos de cópias reservadas para Senior Sistemas S.A.
+                A reprodução não autorizada desta publicação, no todo ou em parte, constitui violação dos direitos autorais (Lei 9.610/98).
+            
+        
+        
+        
+        
+        
+        /* <![CDATA[ */try{Typekit.load({ async: true });}catch(e){}/* ]]> */
+        Ver site completo
+        
+    

@@ -1,0 +1,399 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodefretesfis/7.0.0/#integracoes/tabelas-integracao/historico-ocorrencia.htm%3FTocPath%3DIntegra%25C3%25A7%25C3%25B5es%2520FIS%2520%257C%2520ERP%7CTabelas-integracao%7C_____13
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Fretes | FIS
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Integrações FIS | ERP > Tabelas-integracao > Histórico Ocorrência
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Histórico Ocorrência
+            
+                
+                
+                
+                    
+                        Descrição
+                        
+                         
+                    
+                    
+                        Url do Serviço
+                        https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/fis/integracao/actions/saidaHistoricoOcorrencia				
+
+                    
+                    
+                        Tipo de Envio
+                        POST				
+
+                    
+                    
+                        Momento
+                         
+                    
+                    
+                        Tabela
+                         
+                    
+                    
+                        Array
+                        Sim - Retorna um array de objetos				
+
+                    
+                
+            
+             
+            
+                
+                
+                
+                    
+                        Header
+                        
+                    
+                    
+                        Chave
+                        
+                        Valor
+                        
+                    
+                    
+                        Content-Type
+                        Application/json
+                    
+                    
+                        Authorization
+                        Bearer inserir_token_aqui
+                    
+                
+            
+            Detalhamento dos atributos em JSON entrada
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Nome do Atributo
+                        Tipo de Dado
+                        Default
+                        Obrigatório
+                        Descrição
+                    
+                    
+                        histOcorren
+
+                        Objeto
+
+                         
+                        S
+                        Recebe um objeto
+
+                    
+                    
+                        ped_cd_empresa
+
+                        Integer
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_nu_pedido_origem
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_cd_transportadora
+
+                        Integer
+
+                         
+                        S
+                         
+                    
+                
+            
+            
+                
+                
+                    
+                        Exemplo do layout de entrada em JSON
+                        
+                    
+                    
+                        
+                            {
+                            "histOcorren": {
+                            "ped_cd_empresa": 0,
+                            "ped_nu_pedido_origem": "",
+                            "ped_cd_transportadora": 0
+                            }
+                            }
+                        
+                    
+                
+            
+            Detalhamento dos atributos em JSON saída
+            
+                
+                
+                
+                
+                
+                
+                    
+                        Nome do Atributo
+                        Tipo de Dado
+                        Default
+                        Obrigatório
+                        Descrição
+                    
+                    
+                        ocorren
+
+                        Array
+
+                         
+                        S
+                        Recebe um array de objetos
+
+                    
+                    
+                        ped_cd_empresa
+
+                        
+Integer
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_cd_cliente
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_nu_pedido_origem
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_cd_transportadora
+
+                        Integer
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_nu_nota_fiscal
+
+                        Integer
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_nu_serie_nf
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        oco_cd_motivo_retorno
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        oco_ds_motivo_retorno
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        oco_dt_atualizacao
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        oco_id_finaliza_servico
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_dt_prevista_entrega
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        entrega_tracking_number
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        ped_observacao
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        cd_ocorr_cliente
+
+                        String
+
+                         
+                        S
+                         
+                    
+                    
+                        ds_ocorr_cliente
+
+                        String
+
+                         
+                        S
+                         
+                    
+                
+            
+            
+                
+                
+                    
+                        Exemplo do layout de saída em JSON
+                    
+                    
+                        
+                            {
+                            "ocorren": [
+                            {
+                            "ped_cd_empresa": 0,
+                            "ped_cd_cliente": "",
+                            "ped_nu_pedido_origem": "",
+                            "ped_cd_transportadora": 0,
+                            "ped_nu_nota_fiscal": 0,
+                            "ped_nu_serie_nf": "",
+                            "oco_cd_motivo_retorno": "",
+                            "oco_ds_motivo_retorno": "",
+                            "oco_dt_atualizacao": "",
+                            "oco_id_finaliza_servico": "",
+                            "ped_dt_prevista_entrega": "",
+                            "entrega_tracking_number": "",
+                            "ped_observacao": "",
+                            "cd_ocorr_cliente": "" ,
+                            "ds_ocorr_cliente": ""
+                            }
+                            ]
+                            }
+                        
+                    
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    Portal de Exigências Legais
+                    
+                    Documenta

@@ -1,0 +1,180 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaodelojas/6.2.20/#ajuda-por-processos/retaguarda/mercado/lista-de-alteracao-de-precos.htm%3FTocPath%3DGest%25C3%25A3o%2520de%2520Lojas%2520-%2520Manual%2520do%2520Usu%25C3%25A1rio%7CAjuda%2520por%2520Processos%7CRetaguarda%2520de%2520Loja%7CMercado%7C_____9
+
+---
+
+
+        PORTAL DE DOCUMENTAÇÃOGestão de Lojas - versão 6.2.20
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Gestão de Lojas - Manual do Usuário > Ajuda por Processos > Retaguarda de Loja > Mercado > Lista de alteração de preços
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Lista de alteração de preços
+            Conceito
+            Esta tela apresenta informações de produtos e serviços que tiveram seu preço alterado de um dia para o outro.
+            Como parametrizo esta funcionalidade?
+            No Gestão Empresarial | ERP:
+                
+                    Não se faz necessário realizar nenhuma parametrização.
+                
+            
+            No Gestão de Lojas:
+                
+                    Não se faz necessário realizar nenhuma parametrização.
+                
+            
+            Como utilizo esta funcionalidade?
+            Como faço uma consulta de alteração de preço?
+                
+                    
+                        Acesse a tela Lista de alteração de preços através do caminho Mercado > Gestão de vendas > Lista de alteração de preços, no Retaguarda;
+                    
+                    
+                        Clique no ícone da vassoura, presente no cabeçalho da tela, para limpar os filtros padrão do sistema;
+                    
+                    
+                        Observação
+                        
+                        O sistema traz como padrão, os filtros (colunas) Situação de etiqueta como 0 - Troca pendente e Estoque como 1 - Com estoque.
+                    
+                    
+                        Selecione, através das opções do filtro Pesquisar, os critérios para que os produtos sejam apresentados na tela;
+                        Assim que você for selecionando os filtros desejados, as informações já serão apresentadas, simultaneamente, na tela. E os preços por sua vez, você pode conferir nas colunas Preço antigo e Preço novo, bem como as demais informações disponibilizadas na tela.
+                    
+                    Caso você deseje imprimir o relatório com as informações de alteração de preço e de etiqueta, basta clicar no botão Imprimir, presente no rodapé da tela. Ao clicar nesse botão Imprimir, será apresentada a janela Impressão da Consulta com a mensagem Escolha o formato desejado para impressão: e as seguintes opções:
+                    
+                        PDF;
+                        HTML; e
+                        Cancelar.
+                    
+                    Quando clicado no botão PDF ou HTML, será gerado um relatório nesse formato. Quando clicado no botão Cancelar, a ação de impressão do relatório será cancelada.
+                    
+                        Observação
+                        
+                        A tela Lista de alteração de preços apresenta, no máximo, um registro por produto, onde é exibida sempre a última alteração de preço. Essa tela, por sua vez, não exibe históricos.
+                    
+                    A tela Lista de alteração de preços dispõe das seguintes colunas:
+                    
+                        Código do produto;
+                        Produto;
+                        Tabela de preço antiga;
+                        Preço antigo;
+                        Preço novo;
+                        Tabela de preço nova;
+                        Data da alteração do preço;
+                        Situação da etiqueta;
+                        Usuário troca etiqueta;
+                        Estoque.
+                    
+                    Todas essas colunas, por sua vez, são exibidas na primeira opção do filtro Pesquisar. Ao selecionar uma opção da primeira caixa de seleção do filtro, é habilitada a segunda caixa de seleção e, então, quando selecionada um segundo refinamento para o filtro, é habilitada a terceira caixa de seleção.
+                    Exemplo:
+                        
+                            Ao selecionar, no filtro Pesquisar, a caixa de seleção Estoque, é habilitada a segunda caixa de seleção. Nessa segunda caixa, ao selecionar a opção Que contenha, a terceira caixa de seleção com as opções 0 - Sem estoque e 1 - Com estoque são exibidas.
+                            Lembrando que: essas caixas de seleção não são iguais para todos os filtros. Elas variam de acordo com a opção selecionada na primeira caixa de seleção do filtro Pesquisar.
+                        
+                    
+                
+            
+            Como altero a situação de uma (ou mais) etiqueta(s)?
+                
+                    
+                        Acesse a tela Lista de alteração de preços através do caminho Mercado > Gestão de vendas > Lista de alteração de preços, no Retaguarda;
+                    
+                    
+                        Clique no ícone da vassoura, presente no cabeçalho da tela, para limpar os filtros padrão do sistema;
+                    
+                    
+                        Selecione, através das opções do filtro Pesquisar, os critérios para que os produtos sejam apresentados na tela. Caso você queira utilizar as informações que já são padrão do sistema (Situação de etiqueta como 0 - Troca pendente e Estoque como 1 - Com estoque) e não queria criar outros filtros para listar as informações na tela, basta seguir para o passo de número "4";
+                    
+                    
+                        Marque, na caixa de seleção Sel., o(s) produto(s) desejado(s);
+                    
+                    
+                        Dica
+                        
+                        Você pode marcar a caixa Selecionar Todos para que todos os produtos sejam selecionados de uma só vez. Não havendo, nesse caso, a necessidade de marcar um a um.
+                    
+                    
+                        Clique no botão Alterar situação da etiqueta para que a situação seja alterada. A tela irá salvar, automaticamente, a situação.
+                    
+                    Quando clicado no botão Alterar situação da etiqueta, ele sempre irá alterar entre duas opções, que são:
+                    
+                        0 - Troca pendente;
+                        1 - Trocada.
+                    
+                
+            
+            Geração dos registros:
+                
+                    Para que os registros da tela Lista de alteração de preços sejam gerados, o sistema executa, diariamente, um processo que busca os preços atuais dos produtos e compara com os últimos preços registrados para os produtos, de forma que: caso haja alguma alteração em preço, o sistema registra essa mudança como uma alteração de preço e passará a exibir na tela. Ou seja, o sistema apenas irá registrar alteração de preço, caso o preço esteja diferente. Não será levado em consideração tabela de preço e data de alteração.
+                    Esse processo, por padrão, roda diariamente às 00h00, porém, é possível definir esse horário através do parâmetro dinâmico da filial HORARIO.EXECUCAO.PROCESSO.ALTERACAO.PRECOS, no Gestão Empresarial | ERP. O valor desse parâmetro deve ser um horário no formato HH:mm, ou seja, horário com hora e minuto, onde a hora tem o formato de 24 horas.
+                    
+                        Atenção
+                        
+                        Caso o parâmetro HORARIO.EXECUCAO.PROCESSO.ALTERACAO.PRECOS seja utilizado com um horário definido, e não pelo padrão (que é 00:00), após o parâmetro ser integrado do Gestão Empresarial | ERP para o Retaguarda, torna-se necessário reiniciar o serviço do IntegradorRetaguarda, pois é o mesmo que possui a Thread que executa o processo na loja.
+                    
+                    Exemplo:
+                        
+                            Para o processo rodar às 13h00, o valor registrado no parâmetro deve ser 13:00. Os registros de alteração de preço com mais de 30 dias são apagados automaticamente pelo sistema.
+                        
+                    
+                    O processo agendado faz um novo agendamento no momento em que está sendo executado o agendamento atual. Desta forma, caso o processo tenha sido executado hoje às 00h00, esse processo terá realizado o novo agendamento para às 00h00 do dia seguinte.
+                    Caso, nesse intervalo de tempo, seja feita uma alteração no horário do parâmetro dinâmico, essa alteração apenas irá refletir no próximo agendamento, que ocorrerá na execução às 00h00 do dia seguinte.
+                
+            
+        
+        
+            
+                Este artigo ajudou você?
+                
+                    
+                        						Sim
+					
+                    
+                        						Não
+					
+                
+            
+            
+                Gostaria de deixar uma sugestão para melhorar esta página?
+                Lembrando que, para receber um atendimento, entre em contato com o seu canal de Suporte.
+                Todos os comentários serão feitos de forma anônima.
+                Nome/E-mail: 
+                
+                     Li e concordo com a Política de Privacidade da Senior, que pode usar as informações aqui fornecidas por mim para entrar em contato comigo via e-mail para ações de natureza informativa. Posso revogar meu consentimento a qualquer momento enviando um e-mail para encarregado@senior.com.br.
+                
+                
+                
+                    
+                    
+                
+            
+            Agradecemos seu feedback!Vamos avaliar sua sugestão e alterar o conteúdo relacionado caso seja necessário.
+        
+        
+        
+            
+                
+                    Base de Conhecimento
+                    
+                    P

@@ -1,0 +1,209 @@
+# 
+
+URL: https://documentacao.senior.com.br/documentoseletronicos/5.8.16/#html_ajuda/duvidasfrequentes.htm%3FTocPath%3DManual%2520do%2520usu%25C3%25A1rio%2520-%2520eDocs%7C_____8
+
+---
+
+
+        
+        
+            
+                
+                SOLICITE UMA PROPOSTA
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOeDocs - versão 5.8.16
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Manual do usuário - eDocs > Dúvidas frequentes
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            
+                Dúvidas Frequentes
+                Não usar série de Nota Fiscal com zeros 
+ a esquerda
+                    
+                        A regra da SEFAZ segundo manual do contribuinte segundo nossa interpretação 
+ diz, que a série deve ser 0 (ZERO) quando não existe série para nota, 
+ ou começar com qualquer número de 1 a 9, não iniciando com ZERO ( range 
+ de 1 a 899), séries de 900 a 999 são para contingência SCAN.
+                        No validador disponível no site da SEFAZ do RS.  "http://www.sefaz.rs.gov.br/NFE/NFE-VAL.aspx"
+                        Abrir o XML no bloco de notas por exemplo (para não corromper o formato), 
+ copiar todo conteúdo e jogar na caixa “Cole aqui o conteúdo da mensagem” 
+  do validador on line, depois clicar no botão VALIDAR.
+                        Vejam o resultado obtido.
+                        SCHEMA: - The 'http://www.portalfiscal.inf.br/nfe:serie' element is 
+ invalid - The value '002' is invalid according to its datatype 'http://www.portalfiscal.inf.br/nfe:TSerie' 
+ - The Pattern constraint failed.
+                             TAG: NFe[1]/infNFe/ide/serierum.
+                    
+                
+                Falha na autorização de NF-e no Mato 
+ Grosso do Sul
+                    
+                        O problema de autorização de notas fiscais eletrônicas no estado do 
+ Mato Grosso do Sul é corrigido mediante informação correta de qual emissor 
+ será utilizado para emissão de Notas Fiscais Eletrônicas durante o processo 
+ de credenciamento onde deve ser informado se o contribuinte irá utilizar 
+ Emissor Gratuito ou Emissor Particular para geração das NF-es.
+                    
+                
+                Problema no envio do e-mail
+                    
+                        Houve um problema em cliente onde os serviços do eDocs executando em dois servidores com a mesma base, enviava para 
+ a SEFAZ o arquivo xml da NF-e e o outro servidor consumia e gerava o arquivo 
+ nfe.xml.
+                        Portanto em um servidor armazenava o procNFe.xml e no outro o nfe.xml, 
+ gerando problemas de envio de e-mail pois não encontrava os arquivos.
+                    
+                
+                Certificado digital A1
+                    
+                        Certificado Digital que a solução eDocs faz uso é: A1
+                        É um arquivo de computador que contém um conjunto de informações referentes 
+ a entidade para o qual o certificado (modelo A1 – padrão e-CNPJ ou e-PJ, 
+ fornecido por ICP-Brasil) foi emitido (seja uma empresa, uma pessoa física 
+ ou um computador).
+                        Utilizado no processo NF-e para assinar digitalmente o arquivo XML da 
+ nota, atribuindo ao arquivo a mesma validade jurídica de um documento 
+ assinado a mão.
+                        A1 – Vantagens:
+                        
+                            Software instalado no servidor da empresa, utilizado diretamente 
+ pelo sistema emissor da NF-e, sem a intervenção dos usuários.
+                            Usuários não conhecem a senha do certificado (evita esquecimento 
+ ou divulgação).
+                            Pode-se emitir NF-e de qualquer computador com acesso ao sistema, 
+ inclusive simultaneamente.
+                            O certificado não pode ser levado para fora da empresa (a remoção 
+ feita somente com senha).
+                        
+                        A1 – desvantagens:
+                        
+                            O certificado deve possuir cópia de segurança, em caso de problemas 
+ poderá ser perdido.
+                            O certificado tem validade de um ano.
+                        
+                        A3 - vantagens:
+                        
+                            O certificado é gerado em um hardware (cartão ou token), pode 
+ ser levado e instalado em qualquer computador.
+                            O certificado tem validade de até três anos.
+                        
+                        A3 – desvantagens:
+                        
+                            O certificado só pode ser utilizado em um computador de cada 
+ vez.
+                            A senha do certificado deve ser revelada aos usuários do sistema.
+                            O certificado exige a digitação da senha a cada utilização.
+                            O certificado pode ter o hardware roubado ou danificado.
+                            O certificado pode ser levado e utilizado fora da empresa.
+                        
+                    
+                
+                Serviços com usuário Administrador
+                    
+                        Foi observado que em alguns casos de acordo com as regras de permissões 
+ das empresas pode ser necessário após concluir a instalação dos programas 
+ ser revisada a configuração do usuário que roda os serviços no Windows.
+                        Para aplicar esta condição a equipe de TI da empresa deve ter esgotado 
+ as demais possibilidades de liberação de permissões de acesso a rede.
+                        A situação pode ser identificada por meio de verificação do Log do eDocs, 
+ onde será apresentado o log "Falha na solicitação com status HTTP 
+ 403: Forbidden."
+                        Nestas condições sugere-se que o login nos serviços do Windows do sistema 
+ seja com usuário Administrador com permissões de acesso a rede.
+                    
+                
+                Ao clicar no botão DANFE, ocorre a mensagem "O objeto não dá suporte para a propriedade ou método"
+                    
+                        Caso a mensagem "O objeto não dá suporte para a propriedade ou método" surgir ao clicar no botão DANFE no Monitor, é necessário:
+                        
+                            Clicar em Ctrl+F5 para limpar o cache do navegador.
+                            Limpar os arquivos temporários do navegador.
+                            Adicionar o URL do Monitor na lista de sites confiáveis das estações.
+                            Verificar o antivírus.
+                            Verificar as configurações de proxy nas estações.
+                            Verificar se as estações estão ficando com cache de proxy salvo
+                        
+                    
+                
+                Ao clicar no botão DANFE ocorre a mensagem de exportação do DANFE e não abre o PDF
+                    
+                        O sistema utiliza o aplicativo ReportViewer para fazer a geração do 
+		DANFE. É necessário instalar esse aplicativo que fica dentro de <pasta de instalação>\Comum\bin\Microsoft.
+                    
+                
+                Informação VER INF. COMP é mostrada nos campos Espécie, Marca e Número da DANFE
+                    
+                        Quando a NF-e possui mais de cinco volumes, os campos Quantidade, Peso Bruto e Peso Líquido do quadro Transportador/Volume exibem a soma de todos os volumes. Nos campos Espécie, Marca e Número é exibido o texto Ver inf. Comp.
+                        
+                            
+                        
+                         Os dados detalhados dos registros serão exibidos no campo Informações Complementares do quadro Dados Adicionais.
+                        
+                            
+                        
+                    
+                
+                CSC Código de Segurança do Contribuinte (CSC)
+                    
+                        
+                            O que ocorre se eu não configurar o código token no emissor de NFC-e?
+                        
+                        A não configuração do código token no emissor impedirá a emissão da NFC-e quando houver obrigatoriedade de ser utilizado o qrCode, seja na geração do DANFE da NFC-e ou na geração da tag <qrCode> no XML.
+                        
+                            Posso solicitar quantos códigos CSC/tokens?
+                        
+                         Não há um limite máximo de solicitações, porém uma mesma empresa somente poderá utilizar dois tokens ativos simultaneamente.
+                        
+                             Tenho que solicitar um código CSC/token para cada estabelecimento?
+                        
+                         Os tokens solicitados serão válidos para todos estabelecimentos do contribuinte dentro do mesmo estado (lembrando que são considerados estabelecimentos do contribuinte filiais que compartilham o mesmo CNPJ base).
+                        
+                             Posso alterar meu token?
+                        
+                         Sim. A qualquer momento a empresa poderá revogar um ativo e solicitar um novo código CSC/token. As solicitações de alteração são atendidas por cada SEFAZ.
+                        
+                             Como fazer no caso de solicitação de CSC/Token para ambiente de homologação?
+                 

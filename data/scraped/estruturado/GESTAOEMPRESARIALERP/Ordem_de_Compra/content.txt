@@ -1,0 +1,138 @@
+# 
+
+URL: https://documentacao.senior.com.br/gestaoempresarialerp/5.10.4/#manuais_processos/suprimentos/ordem-compra.htm%3FTocPath%3DSegmentos%7CSuprimentos%7C_____1
+
+---
+
+
+        
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFDF76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+        
+        
+            
+                
+                COMECE A USAR SENIOR
+                
+                
+                    
+                         PORTUGUÊS 
+                     English Español
+                    
+                
+            
+        
+        
+        
+        
+            X
+                
+                
+                /* <![CDATA[ */
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20786608",
+                        formId: "bea53a5f-6a7c-4c2b-9cab-1832bfdb85e1"
+                    });
+                /* ]]> */
+            
+        
+        PORTAL DE DOCUMENTAÇÃOGestão Empresarial | ERP - versão 5.10.4 (XTended)
+            
+                
+                
+                
+            
+            x
+            
+        
+        
+            
+                Segmentos > Suprimentos > Ordem de Compra
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            Ordem de Compra
+            1. Processos de negócio
+            1.1. Objetivos do processo
+            1.2 Fluxo do Processo
+            1.2.1. Processo Gerar Ordem de Compra
+            1.2.1.1. Pré-requisitos para a geração de ordens de compra
+            1.2.1.2. Geração de ordem de compra manual
+            1.2.1.3. Status da ordem de compra
+            1.2.1.4. Geração de ordem de compra via cotação
+            1.2.1.5. Geração de ordem de compra via solicitação
+            1.2.2. Processo Gerar Controle de Aprovação
+            1.2.3. Processo Enviar E-mail
+            1.2.4. Processo Emitir Relatório
+            1.2.5. Processo Liberar para nota fiscal
+            E você já conhece o App Gestor Senior, que traz mobilidade para o gestor? O objetivo é servir como uma ferramenta de apoio em sua jornada diária.
+            
+            
+            1. Processos de negócio
+            1.1. Objetivos do processo
+            O processo de pedido de compra, que no Gestão Empresarial | ERP da Senior está nomeada como Ordem de Compra (OC), será responsável por efetivar a necessidade de compra com o fornecedor.
+            Uma ordem de compra poderá ser proveniente de uma solicitação de compra, cotação de preço, necessidade de produção, reposição de estoque, pedido de venda, contrato de abastecimento, processo de coleta de produtos a ser retirado pela transportadora, uma outra ordem de compra como referência, entre empresas do mesmo grupo e manualmente sem vínculo com nenhum outro processo.
+            A OC poderá ser de produto, serviço ou ambos. Também poderá ser enviada ao fornecedor de forma automática no término da sua elaboração ou após aprovação.
+            Podemos utilizar a ordem de compra com a finalidade de antecipar o recebimento da nota fiscal, refletindo diretamente no fluxo de caixa.
+            Será possível gerenciar quantidades, valores e aprovações de uma ordem de compra.
+            1.2. Fluxo do Processo
+            
+                
+                
+            
+            1.2.1. Processo Gerar Ordem de Compra
+            O processo da geração de ordem de compra, que poderá ser de produto, serviço ou ambos, tem seu início nos seguintes processos:
+            
+                Solicitação de Compra – A necessidade de compra, que é tratado no ERP como Solicitação de compra, pode ser base para a geração de uma ordem de compra quando não há necessidade de se fazer cotação de preços com fornecedores, muito comum quando se tem um fornecedor único para determinado produto/serviço. Para ser base, a solicitação de compra precisa estar aprovada.
+                Cotação de Preço – Após a aprovação de uma cotação de preço, com base na solicitação de compra, será possível a geração da OC.
+                Necessidade de produção - O MRP (Material Requirement Planning), que em português significa: planejamento das necessidades de materiais, é um sistema lógico de cálculo que converte a previsão de demanda em programação da necessidade de seus componentes. A partir do conhecimento de todos os componentes de um determinado produto e os tempos de obtenção de cada um deles, podemos, com base na visão de futuro das necessidades, calcular o quanto e quando se deve obter de cada item, de forma que não haja falta e nem sobra no suprimento das necessidades da produção, gerando a OC.
+                Reposição de estoque – após análise de estoque, caso o estoque não possua quantidade suficiente para atender as necessidades internas da empresa, pode-se gerar OCs.
+                Pedido de venda – a partir dos pedidos de vendas, será possível gerar a compra dos produtos e serviços a serem entregues para o cliente, eliminando o retrabalho de digitação e amarrando a compra com a venda. A OC poderá ser gerada de forma manual ou automaticamente após o fechamento do pedido de venda.
+                Contrato de abastecimento – para contratos de abastecimento, como o de gás por exemplo, podem gerar ordens de compra contra o fornecedor, abatendo do contrato a quantidade consumida pela OC.
+                Processo de coleta de produtos a ser retirado pela transportadora – o processo de coleta irá separar e designar para qual transportadora será efetuada a retirada da mercadoria vendida. Desta forma, a transportadora será cadastrada também como um fornecedor de serviços e será acionada via ordem de compra para efetuar o processo da coleta.
+                Ordem de compra como referência – pode ser utilizado o conceito de ordem de compra Pai e ordens de compras Filhas. Desta forma uma ordem de compra pode ser base para a geração de outras ordens de compras, cuja sua quantidade será abatida a cada OC gerara a partir dela.
+                Entre empresas do mesmo grupo – ordens de compra podem ser geradas entre empresas do mesmo grupo quando uma destas empresas distribui os produtos para as demais empresas do grupo, tornando-se fornecedora destas empresas.
+            
+            Uma OC também poderá ser gerada manualmente, ou seja, sem vínculos com outros processos.
+            Caso possua controle de aprovação, poderá disparar e-mail aos aprovadores informando a existências de OCs para serem aprovadas.
+            Ao concluir a entrada de uma ordem de compra, será possível gerar um documento auxiliar e também o envio de e-mail ao fornecedor.
+            A ordem de compra poderá fazer parte do controle de estoque, compondo quantidade a ser recebida, ficando a critério do cliente considerá-la ou não no processo.
+            Para geração de uma ordem de compra, será necessário:
+            
+                Definições na empresa e filial onde será utilizada ordem de compra;
+                Definição das operações que em nosso documento chamaremos de Transação;
+                Definição de permissões de usuários no processo da ordem de compra;
+                Produtos e Serviços a serem utilizados;
+                Fornecedores e Transportadoras;
+                Como antecede o recebimento de uma nota fiscal, necessitaremos também de:Definições comerciais, tais como: condições de pagamentos, formas de pagamentos, etc.Definições fiscais, como: tributos federais, estaduais e municipais incidentes na ordem de compra.
+            
+            1.2.1.1. Pré-requisitos para a geração de ordens de compra
+            Antes de gerar uma ordem de compra será necessário verificar as parametrizações que seguem:
+            
+                Empresas e filiais que farão uso das Ordens de Compras (F070EMP - Cadastros / Empresas / Cadastro e F070FCP - Cadastros / Filiais / Parâmetros por Gestão / Compras e Recebimento);
+                Permissões de usuários no processo de Ordem de Compra (F099UCP - Cadastros / Usuários / Parâmetros por Gestão / Compras e Recebimento);
+                Transações de produto e serviço que serão utilizadas principalmente, para o cálculo dos impostos (F001TDC - Cadastros / Transações / Parâmetros por Gestão / Compras / Ordem Compra / NF Entrada / Fatura).
+                Produtos e Serviços que serão utilizados para fazer Ordem de Compra (F075PRO - Cadastros / Produtos e Serviços / Produtos / Individual e F080SER - Cadastros / Produtos e Serviços / Serviços / Individual);
+                Os locais para armazenamento dos produtos (F210LPD - Cadastros / Produtos e Serviços / Ligações / Produto X Depósito / Agrupado);
+                Fornecedores devidamente cadastrados (F095CAD - Cadastros / Clientes e Fornecedores / Fornecedores / Cadastro);
+                Definições Comerciais cadastradas, tais como: condição de pagamento, formas de pagamento, tabelas de preço, etc. (telas acessíveis pelo menu Cadastros / Mercado e Suprimentos);
+                Definições Fiscais cadastradas, tais como: cadastro de impostos, tabela de tributação, etc (telas acessíveis pelo menu Cadastros / Controladoria / Tributos).
+            
+            1.2.1.2. Geração de ordem de compra manual
+            A geração manual da ordem de compra é feita a partir da tela F420GOC - Suprimentos / Gestão de Compras / Ordens de Compra / Agrupada. Para a geração da OC, algumas informações são obrigatórias: fornecedor, condição de pagamento, moeda, transação e produto/serviço com suas respectivas quantidades e valores.
+            Alguns detalhes importantes na geração de ordem de compra:
+            
+                A condições de pagamento é sugerida para a ordem de compra a partir das definições do fornecedor para a filial em uso (F095HFO);
+                A transação é sugerida automaticamente para a OC desde que informada nas definições da filial para compras (F070FCP);
+                A moeda também é sugerida pelo sistema e é trazida do cadastro da empr
