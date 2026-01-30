@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-01-30T11:29:59.856785",
+  "tests": [
+    {
+      "name": "Docker build",
+      "passed": false,
+      "timestamp": "2026-01-30T11:33:02.479547",
+      "details": {
+        "error": "Timeout"
+      }
+    },
+    {
+      "name": "Docker up",
+      "passed": true,
+      "timestamp": "2026-01-30T11:33:27.380012",
+      "details": {
+        "message": "Containers started"
+      }
+    },
+    {
+      "name": "Meilisearch health",
+      "passed": true,
+      "timestamp": "2026-01-30T11:33:32.446599",
+      "details": {
+        "status": "available"
+      }
+    },
+    {
+      "name": "List indexes",
+      "passed": true,
+      "timestamp": "2026-01-30T11:33:32.496340",
+      "details": {
+        "count": 0,
+        "indexes": []
+      }
+    },
+    {
+      "name": "Documentation index",
+      "passed": false,
+      "timestamp": "2026-01-30T11:33:32.509156",
+      "details": {
+        "status": 404
+      }
+    },
+    {
+      "name": "Search query",
+      "passed": false,
+      "timestamp": "2026-01-30T11:33:32.516418",
+      "details": {
+        "status": 404
+      }
+    },
+    {
+      "name": "Containers running",
+      "passed": true,
+      "timestamp": "2026-01-30T11:33:32.707761",
+      "details": {
+        "running": 3,
+        "output": "NAME                      IMAGE                          COMMAND                  SERVICE       CREATED          STATUS                    PORTS\nsenior-docs-mcp-server    senior-docs-mcp:latest         \"python -u src/mcp_sâ€¦\"   mcp-server    12 seconds ago   Up 5 seconds (healthy)    0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp\nsenior-docs-meilisearch   getmeili/meilisearch:v1.11.0   \"tini -- /bin/sh -c â€¦\"   meilisearch   13 seconds ago   Up 11 seconds (healthy)   0.0.0.0:7700->7700/tcp, [::]:"
+      }
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "passed": 4,
+    "failed": 3,
+    "status": "completed"
+  }
+}

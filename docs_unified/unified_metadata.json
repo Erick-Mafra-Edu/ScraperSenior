@@ -4,7 +4,7 @@
     "website": 933,
     "zendesk": 10000
   },
-  "timestamp": "2026-01-26T18:35:06.215732",
+  "timestamp": "2026-01-30T14:49:17.694245",
   "documents": [
     {
       "id": "website_0",
@@ -5605,6 +5605,114 @@
       "module": "Documentation"
     },
     {
+      "id": "zendesk_zendesk_45816292321300",
+      "title": "TMS - Aplicativo de Entrada - O usuário informado não está cadastrado",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45797804694420",
+      "title": "WMS SILT – Fastvision – Como visualizar o fastvision em modo painel",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45779771760276",
+      "title": "ERP MEGA - NF-e - Rejeição NF-e - Percentual de redução de alíquota da UF não é válido para este cClassTrib",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45778555916180",
+      "title": "ERP UAU – Controle de Medições - Como excluir um adiantamento vinculado em uma medição",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45759500544020",
+      "title": "ERP MEGA - NFS-e - Reforma Tributária - Não foram geradas as tags do IBS e CBS",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45758216487700",
+      "title": "ERP UAU – Simulação de Compra – Como reativar uma simulação",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45752172040980",
+      "title": "TMS - Emissão de Conhecimentos - Não foi possível selecionar Itinerário",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45751462002964",
+      "title": "TMS - Cadastro de Motivos de Acréscimos e Descontos na Ficha de Viagem - Remover permissões de usuários",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45725709723028",
+      "title": "WMS SILT –  Movimentação – Erro ao formar onda: a Classificação Tipo de Pedido Ordem de Produção: Interna exige um packing do tipo Industrialização",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45722897538196",
+      "title": "TMS - Cadastro de Layouts EDI - Configurar máscara Decimal sem separador",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45722883966356",
+      "title": "TMS - Cadastro de Layouts EDI - Configurar máscara Decimal sem separador",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45714815875732",
+      "title": "TMS – MDFe (Manifesto Eletrônico) – Data de vencimento da parcela menor que a data de emissão",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45707005448212",
+      "title": "HCM – Imposto – Como realizar a emissão dos relatórios de conferência de IRRF",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45706180299284",
+      "title": "WMS SILT- Nota Fiscal - Tag rastro não é apresentada em nota de retorno",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45704876632596",
+      "title": "WMS SILT – Configuração – Não é permitido ativar a Impressão de Identificação de Separação sem definir o Modelo de Etiqueta de Identificação de Separação",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45704017040532",
+      "title": "ERP – Exclusão de item – Ao excluir item do pedido, retorna para 1 linha do pedido",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45686301648404",
+      "title": "WMS SILT – Nota Fiscal – Nota fiscal de retorno não é gerada automaticamente.",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45682210928788",
+      "title": "eDocs - Emissão NFS-e - O elemento cIntContrib é inválido - o valor xx.xx é inválido dependendo o tipo de dados - Falha na restrição Pattern",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
       "id": "zendesk_zendesk_45679097468052",
       "title": "TMS – Monitor de Integrações – Integrar abastecimentos com status Não Integrado",
       "source": "zendesk_api",
@@ -5695,8 +5803,32 @@
       "module": "Help Center"
     },
     {
+      "id": "zendesk_zendesk_45526907077268",
+      "title": "ERP UAU – Contratos de Materiais e Serviços – Como alterar o status do contrato para não aprovado quando possui medições",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
       "id": "zendesk_zendesk_45526690712084",
       "title": "TMS - Vinculação de RPS com NFSe - Como realizar uma vinculação de RPS com NFS-e",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45525939356820",
+      "title": "ERP UAU – Devolução de Compra – Existem itens de compra com mesmo código e preços diferentes na nota fiscal",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45512237179412",
+      "title": "ERP UAU - Devolução de Compra - Não é possível vincular o produto pois essa nota está vinculada a um relatório de administração da obra",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_45512185254932",
+      "title": "ERP UAU – Administração de Obra – Como desaprovar o  relatório de administração de obra",
       "source": "zendesk_api",
       "module": "Help Center"
     },
@@ -6927,12 +7059,6 @@
     {
       "id": "zendesk_zendesk_44200765648916",
       "title": "HCM - Férias - Como realizar a exclusão de Programação férias individualmente",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_44180923660820",
-      "title": "Plataforma de Atendimento - Como funciona a nova tela de Minhas Solicitações",
       "source": "zendesk_api",
       "module": "Help Center"
     },
@@ -33037,6 +33163,12 @@
       "module": "Help Center"
     },
     {
+      "id": "zendesk_zendesk_35894578476564",
+      "title": "ERP MEGA - Relatório Comercial Mega ERP - Relação Ocorrências (R_COM_Relacao_Ocorrencias.rpt) - Introdução",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
       "id": "zendesk_zendesk_35894533925012",
       "title": "ERP MEGA - Relatório Comercial Vimob - Proposta de Compra e Venda e Recibo de Sinal (PRC_COM_WProposta_Venda_sql) - Parâmetros",
       "source": "zendesk_api",
@@ -33099,6 +33231,12 @@
     {
       "id": "zendesk_zendesk_35894419805204",
       "title": "ERP MEGA - Como criar o tenant e ativar a Plataforma X pelo MEGA ERP",
+      "source": "zendesk_api",
+      "module": "Help Center"
+    },
+    {
+      "id": "zendesk_zendesk_35894307243412",
+      "title": "ERP MEGA - Parcelas de repasse associativo serão apresentadas no Portal de Clientes?",
       "source": "zendesk_api",
       "module": "Help Center"
     },
@@ -40940,7 +41078,7 @@
     },
     {
       "id": "zendesk_zendesk_35891948293524",
-      "title": "ERP MEGA - Portal de Clientes - Como configurar o envio automático de boletos por e-mail (administrador)",
+      "title": "ERP MEGA - Portal de Clientes - Como parametrizar a conta SMTP para o envio automático de boletos por e-mail (administrador)",
       "source": "zendesk_api",
       "module": "Help Center"
     },
@@ -65463,144 +65601,6 @@
     {
       "id": "zendesk_zendesk_35890147323028",
       "title": "ERP MEGA - Lançamentos - Como parametrizar o sistema para apresentar no lançamento contábil o histórico padrão do Movimento Financeiro",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890154634772",
-      "title": "ERP MEGA - Integração Contábil - Conceito do botão Parar Agora",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890170371732",
-      "title": "ERP MEGA - Contabilidade - Diferença de saldo inicial após rotina de Abertura",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890158270100",
-      "title": "ERP MEGA - Contabilidade - Restrição de integridade MGFIN.PLA_IDENTIFICA_CLA violada - registro filho localizado",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890170062740",
-      "title": "ERP MEGA - Razão Plano XI (Razao_Plano_XI.rpt) - Relatório não encontrado",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890158138004",
-      "title": "ERP MEGA - Razão Plano XI (Razao_Plano_XI.rpt) com valores divergentes em emissão por Agente",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890146337812",
-      "title": "ERP MEGA - Qual relatório apresenta as despesas por projetos",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890146226708",
-      "title": "ERP MEGA - Balancete Mensal (R_CON_BALANCETE_MENSAL_DBM.rpt)- Relatório não encontrado: \\XXX\\MEGA$\\FORMATOS\\TEMP\\CONTAB\\TempUSUÁRIO\\R_CON_BALANCETE_MENSAL_DBM.rpt",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890153713940",
-      "title": "ERP MEGA - Balancete anual - Contas de apropriação fiscal não batem os saldos",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890146156564",
-      "title": "ERP MEGA - Lançamento Contábil - Restrição de integridade MGGLO.GLO_DEF_IDENT_GLO_DEFA violada - chave mãe não localizada",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890169481876",
-      "title": "ERP MEGA - Relatório Diário Analítico XI (Diario_Analitico_XI.rpt) - Existem configurações diferentes de versão do Crystal para este relatório",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890169460884",
-      "title": "ERP MEGA - Contabilidade: Conta XX do Grupo XX, não está indo para a Conta destino definida",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890157750804",
-      "title": "ERP MEGA - Contabilidade - Contabilização realizada em conta contábil incorreta",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890157490836",
-      "title": "ERP MEGA - Plano Gerencial - Como criar um Plano Gerencial no módulo Contabilidade",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890182381972",
-      "title": "ERP MEGA - Balancete Mensal: Saldo da Conta não zera",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890182301716",
-      "title": "ERP MEGA - Abertura de Exercício - Um registro com valor XX não existe na tabela Históricos Padrões",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890153220500",
-      "title": "ERP MEGA - É necessário realizar a rotina de encerramento de exercício para filiais sem movimentação",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890145542036",
-      "title": "ERP MEGA - Abertura de Exercício - Um registro com valor XX não existe na tabela Plano de Contas",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890145493652",
-      "title": "ERP MEGA - Relatório Balancete Mensal (Balancete_Mensal_XI.rpt) não apresenta saldos por agente",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890138352020",
-      "title": "ERP MEGA - Redistribuição - Registro da Tabela CON_PERIODOSRED não pode ser removido enquanto existirem registros na tabela CON_LANCAMENTO Constraint CON_LAN_PART_CON_PRD",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890138315796",
-      "title": "ERP MEGA - Plano de Contas - Identificador XX não definido para o padrão de plano de contas!!!",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890152938132",
-      "title": "ERP MEGA - Apropriação Societária - Grupo de Contas de Custo não zera",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890168619540",
-      "title": "ERP MEGA - Relatório Balancete Anual Sintético (Balancete_TodosMeses_Sintetico.rpt) apresenta o mesmo saldo para todos os meses",
-      "source": "zendesk_api",
-      "module": "Help Center"
-    },
-    {
-      "id": "zendesk_zendesk_35890156855828",
-      "title": "ERP MEGA - Integração Contábil - Movimentos do tipo CARTR não são integrados",
       "source": "zendesk_api",
       "module": "Help Center"
     }

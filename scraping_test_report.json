@@ -1,0 +1,208 @@
+{
+  "timestamp": "2026-01-30T11:22:30.571299",
+  "summary": {
+    "total_tests": 15,
+    "successful": 13,
+    "errors": 2,
+    "success_rate": 86.66666666666667
+  },
+  "test_suites": [
+    {
+      "timestamp": "2026-01-30T11:22:30.562256",
+      "tests": [
+        {
+          "name": "Resolve URL relativa",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.562371",
+          "details": {
+            "result": "https://documentacao.senior.com.br/gestao/6.10.3/index.html",
+            "expected": "https://documentacao.senior.com.br/gestao/6.10.3/index.html",
+            "passed": true
+          }
+        },
+        {
+          "name": "Resolve URL absoluta",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.562378",
+          "details": {
+            "result": "https://example.com/other",
+            "expected": "https://example.com/other",
+            "passed": true
+          }
+        },
+        {
+          "name": "Mesmo dominio",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.562401",
+          "details": {
+            "result": true,
+            "passed": true
+          }
+        }
+      ],
+      "summary": {
+        "total_urls_tested": 0,
+        "total_docs_scraped": 0,
+        "total_errors": 0,
+        "success_rate": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-01-30T11:22:30.562410",
+      "tests": [
+        {
+          "name": "Salvar documentos",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.568764",
+          "details": {
+            "docs_saved": 3
+          }
+        },
+        {
+          "name": "Contar documentos",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.569723",
+          "details": {
+            "count": 3,
+            "expected": 3,
+            "passed": true
+          }
+        },
+        {
+          "name": "Listar por modulo",
+          "status": "error",
+          "timestamp": "2026-01-30T11:22:30.569736",
+          "details": {
+            "error": "'FileSystemRepository' object has no attribute 'list_by_module'"
+          }
+        },
+        {
+          "name": "Carregar documento",
+          "status": "error",
+          "timestamp": "2026-01-30T11:22:30.569741",
+          "details": {
+            "error": "'FileSystemRepository' object has no attribute 'load'"
+          }
+        }
+      ],
+      "summary": {
+        "total_urls_tested": 3,
+        "total_docs_scraped": 3,
+        "total_errors": 0,
+        "success_rate": 100.0
+      }
+    },
+    {
+      "timestamp": "2026-01-30T11:22:30.571102",
+      "tests": [
+        {
+          "name": "Serializar para dict",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.571131",
+          "details": {
+            "keys": [
+              "id",
+              "url",
+              "title",
+              "content",
+              "module",
+              "doc_type",
+              "source",
+              "breadcrumb",
+              "parent_id",
+              "section",
+              "headers",
+              "keywords",
+              "scraped_at",
+              "updated_at",
+              "published_at",
+              "metadata"
+            ],
+            "title": "Documento de Teste",
+            "module": "gestao-pessoal"
+          }
+        },
+        {
+          "name": "Desserializar de dict",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.571165",
+          "details": {
+            "id_match": true,
+            "title_match": true,
+            "module_match": true,
+            "content_match": true,
+            "type_match": true,
+            "source_match": true
+          }
+        },
+        {
+          "name": "Metricas do documento",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.571227",
+          "details": {
+            "word_count": 600,
+            "char_count": 3000,
+            "content_length": 3000
+          }
+        }
+      ],
+      "summary": {
+        "total_urls_tested": 0,
+        "total_docs_scraped": 0,
+        "total_errors": 0,
+        "success_rate": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-01-30T11:22:30.571235",
+      "tests": [
+        {
+          "name": "PlaywrightExtractor interface",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.571252",
+          "details": {
+            "methods_found": 3
+          }
+        },
+        {
+          "name": "UrlResolver interface",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.571261",
+          "details": {
+            "methods_found": 3
+          }
+        },
+        {
+          "name": "FileSystemRepository interface",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.571265",
+          "details": {
+            "methods_found": 4
+          }
+        },
+        {
+          "name": "SeniorDocAdapter interface",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.571268",
+          "details": {
+            "methods_found": 3
+          }
+        },
+        {
+          "name": "ZendeskAdapter interface",
+          "status": "success",
+          "timestamp": "2026-01-30T11:22:30.571272",
+          "details": {
+            "methods_found": 3
+          }
+        }
+      ],
+      "summary": {
+        "total_urls_tested": 0,
+        "total_docs_scraped": 0,
+        "total_errors": 0,
+        "success_rate": 0.0
+      }
+    }
+  ]
+}
