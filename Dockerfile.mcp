@@ -28,7 +28,9 @@ RUN pip install --upgrade pip setuptools wheel && \
 # Copy application code (minimal and efficient)
 COPY --chown=1000:1000 src/ ./src/
 COPY --chown=1000:1000 mcp_config.json .
+COPY --chown=1000:1000 mcp_entrypoint.py .
 COPY --chown=1000:1000 docs_indexacao_detailed.jsonl .
+COPY --chown=1000:1000 docs_indexacao.jsonl .
 COPY --chown=1000:1000 .env.example .env
 
 # Create a non-root user for security (UID 1000 is standard across systems)
@@ -39,11 +41,11 @@ RUN useradd -m -u 1000 -g 0 appuser && \
 USER appuser:root
 
 # Health check (compatible with both Docker and Podman)
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
 # Expose port
 EXPOSE 8000
 
-# Default command - run MCP Server
-CMD ["python", "-u", "src/mcp_server_docker.py"]
+# Entrypoint with auto-indexing
+CMD ["python", "-u", "mcp_entrypoint.py"]
