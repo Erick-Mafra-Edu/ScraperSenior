@@ -105,7 +105,7 @@ def load_documents():
 
 
 def index_documents(documents):
-    """Indexa documentos no Meilisearch"""
+    """Indexa documentos no Meilisearch com batching"""
     
     meilisearch_url = "http://meilisearch:7700"
     meilisearch_key = "meilisearch_master_key_change_me"
@@ -115,7 +115,21 @@ def index_documents(documents):
     print("INDEXACAO DE DOCUMENTOS - MEILISEARCH")
     print(f"{'='*70}")
     
-    # Criar índice
+    # Remover índice antigo
+    print(f"\n[0] Removendo índice antigo (se existir)...")
+    try:
+        response = requests.delete(
+            f"{meilisearch_url}/indexes/documentation",
+            headers=headers,
+            timeout=10
+        )
+        if response.status_code in [200, 202, 404]:
+            print(f"    [OK] Índice antigo removido ou não existia")
+            time.sleep(1)
+    except:
+        pass
+    
+    # Criar novo índice
     print(f"\n[1] Criando indice 'documentation'...")
     
     index_data = {
@@ -131,72 +145,80 @@ def index_documents(documents):
             timeout=10
         )
         
-        if response.status_code in [200, 201]:
-            print(f"    [OK] Indice criado ou já existe")
-        elif response.status_code == 409:
-            print(f"    [OK] Indice já existe")
+        if response.status_code in [200, 201, 202]:
+            print(f"    [OK] Indice criado")
         else:
             print(f"    [WARNING] Status: {response.status_code}")
+        
+        time.sleep(1)
     
     except Exception as e:
         print(f"    [ERROR] Erro ao criar indice: {e}")
         return False
     
-    # Adicionar documentos
-    print(f"\n[2] Adicionando {len(documents)} documentos...")
+    # Adicionar documentos em batches
+    print(f"\n[2] Adicionando {len(documents)} documentos em lotes...")
+    
+    batch_size = 100
+    total_sent = 0
     
     try:
-        response = requests.post(
-            f"{meilisearch_url}/indexes/documentation/documents",
-            json=documents,
-            headers=headers,
-            timeout=30
-        )
+        for i in range(0, len(documents), batch_size):
+            batch = documents[i:i+batch_size]
+            
+            response = requests.post(
+                f"{meilisearch_url}/indexes/documentation/documents",
+                json=batch,
+                headers=headers,
+                timeout=30
+            )
+            
+            if response.status_code in [200, 202]:
+                total_sent += len(batch)
+                batch_num = (i // batch_size) + 1
+                print(f"    Lote {batch_num}: {len(batch)} docs -> OK")
+            else:
+                print(f"    [ERROR] Lote {i//batch_size + 1}: Status {response.status_code}")
+                return False
         
-        if response.status_code in [200, 202]:
-            data = response.json()
-            print(f"    [OK] Documentos enfileirados para indexacao")
-            print(f"    Task ID: {data.get('taskId', 'N/A')}")
-            print(f"    Status: {data.get('status', 'pending')}")
-        else:
-            print(f"    [ERROR] Status: {response.status_code}")
-            print(f"    Response: {response.text[:200]}")
-            return False
+        print(f"    [OK] Total enviado: {total_sent} documentos")
     
     except Exception as e:
         print(f"    [ERROR] Erro ao adicionar documentos: {e}")
         return False
     
-    # Aguardar indexação
+    # Aguardar indexação com busca para validar
     print(f"\n[3] Aguardando conclusao da indexacao...")
     
-    max_attempts = 30
+    max_attempts = 60
     for attempt in range(max_attempts):
         try:
-            response = requests.get(
-                f"{meilisearch_url}/indexes/documentation",
+            # Tentar busca vazia para ver se há documentos
+            response = requests.post(
+                f"{meilisearch_url}/indexes/documentation/search",
+                json={"q": "", "limit": 1},
                 headers=headers,
                 timeout=10
             )
             
             if response.status_code == 200:
                 data = response.json()
-                doc_count = data.get("numberOfDocuments", 0)
+                doc_count = len(data.get("hits", []))
                 
                 if doc_count > 0:
-                    print(f"    [OK] {doc_count} documentos indexados!")
+                    print(f"    [OK] Documentos indexados com sucesso!")
                     return True
                 
-                if attempt % 5 == 0:
-                    print(f"    Aguardando indexacao... (tentativa {attempt+1}/{max_attempts})")
+                if attempt % 10 == 0:
+                    print(f"    Tentativa {attempt+1}/{max_attempts}...")
         
         except:
             pass
         
         time.sleep(1)
     
-    print(f"    [WARNING] Timeout na indexacao")
-    return True  # Continua mesmo se demorar
+    print(f"    [WARNING] Timeout na indexacao (mas continuando...)")
+    return True
 
 
 def verify_index():
