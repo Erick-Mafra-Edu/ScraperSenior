@@ -26,8 +26,8 @@ RUN pip install --upgrade pip && \
 # Copy application code
 COPY src/ /app/src/
 COPY scraper_config.json /app/
-COPY docs_indexacao.jsonl /app/
-COPY docs_metadata.json /app/
+# Dados são carregados em runtime via volumes no docker-compose
+# Não é necessário copiar docs_indexacao.jsonl ou docs_metadata.json
 
 # Create non-root user
 RUN useradd -m -u 1000 appuser && \
