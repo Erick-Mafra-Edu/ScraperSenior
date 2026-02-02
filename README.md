@@ -1,6 +1,6 @@
 # Senior Documentation Scraper
 
-> **v2.0** - Monorepo Architecture | Scraper automatizado de documentação técnica Senior Sistemas
+> **v2.1** - Multi-Worker Support | Monorepo Architecture | Scraper automatizado de documentação técnica Senior Sistemas
 
 ## 🚀 Quick Start
 

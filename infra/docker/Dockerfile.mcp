@@ -28,7 +28,6 @@ RUN pip install --upgrade pip setuptools wheel && \
 # Copy application code (minimal and efficient)
 COPY --chown=1000:1000 apps/ ./apps/
 COPY --chown=1000:1000 libs/ ./libs/
-COPY --chown=1000:1000 .env.example .env
 
 # Create a non-root user for security (UID 1000 is standard across systems)
 RUN useradd -m -u 1000 -g 0 appuser && \

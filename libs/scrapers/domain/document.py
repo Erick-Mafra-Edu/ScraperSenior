@@ -69,6 +69,10 @@ class Document:
     # Dados adicionais (extensível)
     metadata: Dict[str, Any] = field(default_factory=dict)
     
+    # Metadados de scraping (worker pool)
+    processed_by_worker: int = -1  # ID do worker que processou este doc (-1 = não usado worker)
+    scraping_duration_seconds: float = 0.0  # Tempo total de scraping deste doc
+    
     def __post_init__(self):
         """Validações após inicialização"""
         if not self.id:
@@ -97,6 +101,8 @@ class Document:
             "updated_at": self.updated_at.isoformat() if self.updated_at else None,
             "published_at": self.published_at.isoformat() if self.published_at else None,
             "metadata": self.metadata,
+            "processed_by_worker": self.processed_by_worker,
+            "scraping_duration_seconds": self.scraping_duration_seconds,
         }
     
     @classmethod
@@ -119,6 +125,8 @@ class Document:
             updated_at=datetime.fromisoformat(data["updated_at"]) if data.get("updated_at") else None,
             published_at=datetime.fromisoformat(data["published_at"]) if data.get("published_at") else None,
             metadata=data.get("metadata", {}),
+            processed_by_worker=data.get("processed_by_worker", -1),
+            scraping_duration_seconds=data.get("scraping_duration_seconds", 0.0),
         )
     
     def get_breadcrumb_path(self) -> str:

@@ -17,6 +17,8 @@ from libs.scrapers.adapters.url_resolver import UrlResolver
 from libs.scrapers.adapters.filesystem_repository import FileSystemRepository
 from libs.scrapers.adapters.senior_doc_adapter import SeniorDocAdapter
 from libs.scrapers.adapters.zendesk_adapter import ZendeskAdapter
+from libs.scrapers.adapters.playwright_worker_pool import PlaywrightWorkerPool
+from libs.scrapers.adapters.docker_worker_orchestrator import DockerWorkerOrchestrator
 
 __all__ = [
     "PlaywrightExtractor",
@@ -24,4 +26,6 @@ __all__ = [
     "FileSystemRepository",
     "SeniorDocAdapter",
     "ZendeskAdapter",
+    "PlaywrightWorkerPool",
+    "DockerWorkerOrchestrator",
 ]

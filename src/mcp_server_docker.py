@@ -28,7 +28,10 @@ if sys.platform == 'win32':
 
 # Importar o MCP Server
 sys.path.insert(0, str(Path(__file__).parent))
-from mcp_server import SeniorDocumentationMCP, MCPServer
+try:
+    from mcp_server_improved import SeniorDocumentationMCP, get_mcp_server
+except ImportError:
+    from mcp_server import SeniorDocumentationMCP
 
 class MCPHTTPHandler(BaseHTTPRequestHandler):
     """Handler HTTP para o protocolo MCP JSON-RPC"""

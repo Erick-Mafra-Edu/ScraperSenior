@@ -151,5 +151,12 @@
     "max_retries": 3,
     "retry_delay_ms": 2000,
     "timeout_on_retry_ms": 45000
+  },
+  "concurrency": {
+    "num_workers": 3,
+    "enable_worker_pool": true,
+    "max_urls_per_worker": 50,
+    "worker_timeout_ms": 30000,
+    "fallback_to_sequential": true
   }
 }

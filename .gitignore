@@ -36,7 +36,7 @@ env/
 *.swo
 *~
 .DS_Store
-
+*.jsonl
 # Environment
 .env
 .env.local

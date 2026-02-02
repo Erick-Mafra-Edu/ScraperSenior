@@ -31,8 +31,8 @@ services:
 
   mcp-server:
     build:
-      context: .
-      dockerfile: Dockerfile.mcp
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.mcp
     image: senior-docs-mcp:latest
     container_name: senior-docs-mcp-server
     environment:
@@ -62,8 +62,8 @@ services:
 
   scraper:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../..
+      dockerfile: infra/docker/Dockerfile
     image: senior-docs-scraper:latest
     container_name: senior-docs-scraper
     environment:

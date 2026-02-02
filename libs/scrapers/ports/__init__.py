@@ -14,10 +14,13 @@ from libs.scrapers.ports.document_scraper import IDocumentScraper
 from libs.scrapers.ports.document_repository import IDocumentRepository
 from libs.scrapers.ports.content_extractor import IContentExtractor
 from libs.scrapers.ports.url_resolver import IUrlResolver
+from libs.scrapers.ports.browser_worker_pool import IBrowserWorkerPool, WorkerResult
 
 __all__ = [
     "IDocumentScraper",
     "IDocumentRepository",
     "IContentExtractor",
     "IUrlResolver",
+    "IBrowserWorkerPool",
+    "WorkerResult",
 ]

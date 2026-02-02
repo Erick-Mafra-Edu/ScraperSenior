@@ -1,0 +1,153 @@
+# Docker Compose - Multi-Worker Scraper Configuration
+# Suporta múltiplos workers paralelos para scraping rápido
+#
+# Uso:
+#   # Com 3 workers (padrão)
+#   docker-compose -f docker-compose.workers.yml up -d
+#
+#   # Com 5 workers (via arquivo .env)
+#   NUM_WORKERS=5 docker-compose -f docker-compose.workers.yml up -d
+#
+#   # Escalar workers dinamicamente
+#   docker-compose -f docker-compose.workers.yml up -d --scale scraper-worker=5
+
+version: '3.9'
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.11.0
+    container_name: senior-docs-meilisearch
+    environment:
+      MEILI_ENV: production
+      MEILI_MASTER_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+      MEILI_LOG_LEVEL: ${MEILI_LOG_LEVEL:-info}
+    ports:
+      - "7700:7700"
+    volumes:
+      - meilisearch_data:/meili_data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - senior-docs
+    restart: unless-stopped
+
+  # Orchestrator para coordenar múltiplos workers
+  scraper-orchestrator:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile
+    image: senior-docs-scraper:latest
+    container_name: senior-docs-scraper-orchestrator
+    environment:
+      PYTHONUNBUFFERED: 1
+      MEILISEARCH_URL: http://meilisearch:7700
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+      SCRAPER_MODE: orchestrator
+      NUM_WORKERS: ${NUM_WORKERS:-3}
+      WORKER_NETWORK: senior-docs
+      WORKER_IMAGE: senior-docs-scraper:latest
+      WORKER_DOCKER_SOCKET: /var/run/docker.sock
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    depends_on:
+      meilisearch:
+        condition: service_healthy
+    networks:
+      - senior-docs
+    restart: on-failure
+    volumes:
+      # Montar docker socket para orchestrar workers
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Dados compartilhados
+      - ../../data/scraped/estruturado:/app/data/scraped/estruturado:ro
+      - ../../data/scraped/unified:/app/data/scraped/unified
+      - ../../data/indexes:/app/data/indexes
+    ports:
+      - "8001:8001"  # API orchestrator
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Worker individual (escalável via --scale)
+  scraper-worker:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile
+    image: senior-docs-scraper:latest
+    environment:
+      PYTHONUNBUFFERED: 1
+      MEILISEARCH_URL: http://meilisearch:7700
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+      SCRAPER_MODE: worker
+      WORKER_ID: ${WORKER_ID:-0}
+      WORKER_QUEUE_HOST: scraper-orchestrator
+      WORKER_QUEUE_PORT: 8001
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    depends_on:
+      scraper-orchestrator:
+        condition: service_healthy
+      meilisearch:
+        condition: service_healthy
+    networks:
+      - senior-docs
+    restart: on-failure
+    volumes:
+      - ../../data/scraped/estruturado:/app/data/scraped/estruturado:ro
+      - ../../data/scraped/unified:/app/data/scraped/unified
+      - ../../data/indexes:/app/data/indexes
+    deploy:
+      replicas: ${NUM_WORKERS:-3}
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+  # MCP Server (busca em documentação)
+  mcp-server:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.mcp
+    image: senior-docs-mcp:latest
+    container_name: senior-docs-mcp-server
+    environment:
+      MEILISEARCH_URL: http://meilisearch:7700
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+      PYTHONUNBUFFERED: 1
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    ports:
+      - "8000:8000"
+    depends_on:
+      meilisearch:
+        condition: service_healthy
+    networks:
+      - senior-docs
+    restart: unless-stopped
+    volumes:
+      - ../../data/scraped/unified:/app/data/scraped/unified:ro
+      - ../../data/indexes/docs_indexacao_detailed.jsonl:/app/data/indexes/docs_indexacao_detailed.jsonl:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+networks:
+  senior-docs:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.9.0/24
+
+volumes:
+  meilisearch_data:
+    driver: local

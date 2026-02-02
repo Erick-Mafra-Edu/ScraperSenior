@@ -1,4 +1,4 @@
-FROM python:3.14-slim
+FROM mcr.microsoft.com/playwright:v1.57.0-jammy
 
 # Set working directory
 WORKDIR /app
@@ -6,13 +6,13 @@ WORKDIR /app
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1
+    PIP_NO_CACHE_DIR=1 \
+    SCRAPER_MODE=legacy
 
-# Install system dependencies (minimal)
+# Install pip (already has Python, Playwright, and all dependencies)
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-pip \
     curl \
-    gcc \
-    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements
@@ -20,14 +20,27 @@ COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt && \
-    python -m playwright install chromium
+    pip install -r requirements.txt
 
 # Copy application code
 COPY apps/ /app/apps/
 COPY libs/ /app/libs/
 COPY scripts/ /app/scripts/
-COPY infra/docker/docker_entrypoint.py /app/
+COPY infra/docker/docker_entrypoint_workers.py /app/docker_entrypoint.py
 
-# Entrypoint: Orquestra tudo
-CMD ["python", "docker_entrypoint.py"]
+# Copy configuration
+COPY apps/scraper/config/ /app/apps/scraper/config/
+
+# Copy other necessary files
+COPY *.py /app/ 2>/dev/null || true
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 --start-period=10s \
+    CMD curl -f http://localhost:8001/health || exit 1
+
+# Entrypoint with multi-worker support
+ENTRYPOINT ["python3", "docker_entrypoint.py"]
+
+# Default command (can be overridden via docker-compose)
+CMD [""]
+
