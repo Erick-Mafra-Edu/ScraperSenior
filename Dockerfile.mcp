@@ -1,8 +1,8 @@
 FROM python:3.11-slim
 
 LABEL maintainer="Senior Systems"
-LABEL description="MCP Server for Senior Documentation Search - Compatible with Docker and Podman"
-LABEL version="1.0.0"
+LABEL description="MCP Server for Senior Documentation Search - Dual-mode (MCP + OpenAPI)"
+LABEL version="2.0.0"
 
 # Set working directory
 WORKDIR /app
@@ -10,7 +10,8 @@ WORKDIR /app
 # Set environment variables for better compatibility
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1
+    PIP_NO_CACHE_DIR=1 \
+    MCP_MODE=openapi
 
 # Install system dependencies (compatible with both Docker and Podman)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -22,16 +23,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 
 # Install Python dependencies with upgrade for security
+# Adiciona FastAPI e Uvicorn para modo OpenAPI
 RUN pip install --upgrade pip setuptools wheel && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir fastapi uvicorn[standard]
 
 # Copy application code (minimal and efficient)
-COPY --chown=1000:1000 src/ ./src/
+# Estrutura monorepo com apps/ e libs/
+COPY --chown=1000:1000 apps/mcp-server/ ./apps/mcp-server/
+COPY --chown=1000:1000 libs/ ./libs/
 COPY --chown=1000:1000 mcp_config.json .
-COPY --chown=1000:1000 mcp_entrypoint.py .
-COPY --chown=1000:1000 docs_indexacao_detailed.jsonl .
-COPY --chown=1000:1000 docs_indexacao.jsonl .
-COPY --chown=1000:1000 .env.example .env
+COPY --chown=1000:1000 docs_indexacao_detailed.jsonl . || true
+COPY --chown=1000:1000 docs_indexacao.jsonl . || true
+COPY --chown=1000:1000 .env.example .env || true
 
 # Create a non-root user for security (UID 1000 is standard across systems)
 RUN useradd -m -u 1000 -g 0 appuser && \
@@ -41,11 +45,16 @@ RUN useradd -m -u 1000 -g 0 appuser && \
 USER appuser:root
 
 # Health check (compatible with both Docker and Podman)
+# Verifica OpenAPI por padrão, mas adapta se MCP
 HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
-# Expose port
+# Expose ports
+# 8000: OpenAPI (HTTP)
+# stdio: MCP (padrão para IDE)
 EXPOSE 8000
 
-# Entrypoint with auto-indexing
+# Entrypoint com suporte a dual-mode
+# Usa mcp_entrypoint_dual.py para flexibilidade
+CMD ["python", "-u", "apps/mcp-server/mcp_entrypoint_dual.py", "--mode", "openapi"]
 CMD ["python", "-u", "mcp_entrypoint.py"]

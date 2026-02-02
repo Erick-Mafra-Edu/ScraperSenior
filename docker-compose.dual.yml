@@ -1,0 +1,111 @@
+# Docker Compose - Modo DUAL (MCP + OpenAPI simultaneamente)
+# 
+# Use este arquivo quando quiser ambos os modos funcionando juntos:
+# - MCP via stdio para IDE
+# - OpenAPI via HTTP para REST API
+#
+# Uso:
+#   docker-compose -f docker-compose.dual.yml up -d
+#   docker-compose -f docker-compose.dual.yml down
+#
+# Nota: Requer mais recursos (2 threads de servidor no container)
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.11.0
+    container_name: senior-docs-meilisearch-dual
+    environment:
+      MEILI_ENV: production
+      MEILI_MASTER_KEY: ${MEILISEARCH_KEY:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
+      MEILI_LOG_LEVEL: ${MEILI_LOG_LEVEL:-info}
+    ports:
+      - "7700:7700"
+    volumes:
+      - meilisearch_data_dual:/meili_data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - senior-docs-dual
+    restart: unless-stopped
+
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp
+    image: senior-docs-mcp:latest
+    container_name: senior-docs-mcp-server-dual
+    
+    environment:
+      # DUAL MODE - Ambos MCP + OpenAPI
+      MCP_MODE: both
+      
+      # OpenAPI Configuration
+      OPENAPI_HOST: 0.0.0.0
+      OPENAPI_PORT: 8000
+      
+      # Meilisearch
+      MEILISEARCH_URL: http://meilisearch:7700
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-2cdc242bdaba66aede1da77794106635cfd7d57524dbc61b4bd6a7c2af39097f}
+      
+      # Python
+      PYTHONUNBUFFERED: 1
+      LOG_LEVEL: info
+    
+    ports:
+      - "8000:8000"  # OpenAPI HTTP
+      # stdin/stdout não usa porta (MCP)
+    
+    depends_on:
+      meilisearch:
+        condition: service_healthy
+    
+    networks:
+      - senior-docs-dual
+    
+    restart: on-failure
+    
+    volumes:
+      - ./docs_indexacao_detailed.jsonl:/app/docs_indexacao_detailed.jsonl:ro
+      - ./docs_indexacao.jsonl:/app/docs_indexacao.jsonl:ro
+      - ./docs_unified:/app/docs_unified:ro
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: senior-docs-scraper:latest
+    container_name: senior-docs-scraper-dual
+    environment:
+      PYTHONUNBUFFERED: 1
+      MEILISEARCH_URL: http://meilisearch:7700
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
+    depends_on:
+      meilisearch:
+        condition: service_healthy
+    networks:
+      - senior-docs-dual
+    restart: on-failure
+    volumes:
+      - ./docs_estruturado:/app/docs_estruturado
+      - ./docs_unified:/app/docs_unified
+
+networks:
+  senior-docs-dual:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.10.0/24
+
+volumes:
+  meilisearch_data_dual:
+    driver: local

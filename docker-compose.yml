@@ -1,9 +1,37 @@
 # Docker Compose file compatible with both docker-compose and podman-compose
-# Works with Docker Compose v2+ and Podman Compose
+# Works with Docker Compose v2+ and Podman Compose v1.0+
 #
-# Usage:
+# Services:
+#   - meilisearch: Search engine (port 7700)
+#   - mcp-server: MCP/OpenAPI Server (port 8000)
+#   - scraper: Python scraper/indexer for Meilisearch
+#
+# Modos de Operação:
+#   MCP Mode (stdio):     Para integração com Claude Desktop/Cursor IDE
+#   OpenAPI Mode (HTTP):  Para uso como API REST com documentação Swagger
+#   Dual Mode:           Ambos os modos funcionando simultaneamente
+#
+# Configuração (variáveis de environment):
+#   MCP_MODE: openapi|mcp|both (padrão: openapi em Docker)
+#   OPENAPI_HOST: 0.0.0.0 (padrão)
+#   OPENAPI_PORT: 8000 (padrão)
+#
+# Uso:
+#   # Iniciar todos os serviços (OpenAPI mode)
 #   docker-compose up -d
-#   podman-compose up -d
+#
+#   # Modo MCP para integração com IDE
+#   docker-compose up -d && docker logs -f senior-docs-mcp-server
+#
+#   # Modo Dual (MCP + OpenAPI)
+#   docker-compose -f docker-compose.yml up -d -e MCP_MODE=both
+#
+# Acesso:
+#   - Meilisearch: http://localhost:7700
+#   - OpenAPI (HTTP): http://localhost:8000
+#   - Swagger UI: http://localhost:8000/docs
+#   - ReDoc: http://localhost:8000/redoc
+#   - OpenAPI Schema: http://localhost:8000/openapi.json
 
 services:
   meilisearch:
@@ -11,8 +39,9 @@ services:
     container_name: senior-docs-meilisearch
     environment:
       MEILI_ENV: production
-      MEILI_MASTER_KEY: meilisearch_master_key_change_me
+      MEILI_MASTER_KEY: ${MEILISEARCH_KEY:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
       MEILI_LOG_LEVEL: ${MEILI_LOG_LEVEL:-info}
+      SHARED_PASSWORD_HASH: ${SHARED_PASSWORD_HASH:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
     ports:
       - "7700:7700"
     volumes:
@@ -29,19 +58,109 @@ services:
     # Comentado para compatibilidade com Windows/Docker Desktop
     # user: "${CONTAINER_USER:-1000:1000}"
 
+  # =========================================================================
+  # MCP/OpenAPI Server - Dual Mode
+  # =========================================================================
+  # Este serviço pode operar em dois modos conforme variável MCP_MODE:
+  #
+  # 1. OPENAPI MODE (padrão - porta 8000)
+  #    - REST API com documentação Swagger/ReDoc
+  #    - Endpoints: GET/POST /search, /modules, /stats, /health
+  #    - Ideal para: Aplicações web, integração com ferramentas
+  #    - URL: http://localhost:8000
+  #
+  # 2. MCP MODE (stdio)
+  #    - Protocol MCP via stdio
+  #    - Integração nativa com Claude Desktop/Cursor
+  #    - Ideal para: Desenvolvimento em IDE
+  #    - Configuração: ~/.config/claude_desktop_config.json
+  #
+  # 3. DUAL MODE (ambos)
+  #    - Ambos os modos funcionando simultaneamente
+  #    - Requer processamento adicional
+  #
+  # Configuração:
+  #   MCP_MODE=openapi   (padrão em Docker)
+  #   MCP_MODE=mcp       (para IDE)
+  #   MCP_MODE=both      (ambos)
+  # =========================================================================
+
   mcp-server:
     build:
       context: .
-      dockerfile: infra/docker/Dockerfile.mcp
+      dockerfile: Dockerfile.mcp
     image: senior-docs-mcp:latest
     container_name: senior-docs-mcp-server
+    
+    # Variáveis de ambiente para configuração
     environment:
+      # Modo de operação (openapi|mcp|both)
+      MCP_MODE: ${MCP_MODE:-openapi}
+      
+      # OpenAPI Configuration
+      OPENAPI_HOST: ${OPENAPI_HOST:-0.0.0.0}
+      OPENAPI_PORT: ${OPENAPI_PORT:-8000}
+      
+      # Meilisearch Configuration
       MEILISEARCH_URL: http://meilisearch:7700
-      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-2cdc242bdaba66aede1da77794106635cfd7d57524dbc61b4bd6a7c2af39097f}
+      
+      # Python Configuration
       PYTHONUNBUFFERED: 1
+      PYTHONDONTWRITEBYTECODE: 1
       LOG_LEVEL: ${LOG_LEVEL:-info}
+    
+    # Portas expostas
     ports:
-      - "8000:8000"
+      - "8000:8000"  # OpenAPI HTTP
+      # stdio para MCP não usa porta (comunicação via stdin/stdout)
+    
+    # Dependências
+    depends_on:
+      meilisearch:
+        condition: service_healthy
+    
+    # Rede Docker
+    networks:
+      - senior-docs
+    
+    # Política de restart
+    restart: on-failure
+    
+    # Volumes
+    volumes:
+      # Índices JSONL (read-only)
+      - ./docs_indexacao_detailed.jsonl:/app/docs_indexacao_detailed.jsonl:ro
+      - ./docs_indexacao.jsonl:/app/docs_indexacao.jsonl:ro
+      
+      # Diretório de documentação estruturada (read-only)
+      - ./docs_unified:/app/docs_unified:ro
+    
+    # Health check para OpenAPI
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+    
+    # Comentado para compatibilidade com Windows/Docker Desktop
+    # user: "${CONTAINER_USER:-1000:1000}"
+
+  # =========================================================================
+  # Scraper/Indexer Service
+  # =========================================================================
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: senior-docs-scraper:latest
+    container_name: senior-docs-scraper
+    environment:
+      PYTHONUNBUFFERED: 1
+      MEILISEARCH_URL: http://meilisearch:7700
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
+      SHARED_PASSWORD_HASH: ${SHARED_PASSWORD_HASH:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
     depends_on:
       meilisearch:
         condition: service_healthy
@@ -49,28 +168,27 @@ services:
       - senior-docs
     restart: on-failure
     volumes:
-      - ./docs_unified:/app/docs_unified:ro
-      - ./docs_indexacao_detailed.jsonl:/app/docs_indexacao_detailed.jsonl:ro
-      - ./docs_indexacao.jsonl:/app/docs_indexacao.jsonl:ro
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
+      - ./docs_estruturado:/app/docs_estruturado
+      - ./docs_unified:/app/docs_unified
     # Comentado para compatibilidade com Windows/Docker Desktop
     # user: "${CONTAINER_USER:-1000:1000}"
 
-  scraper:
-    build:
-      context: .
-      dockerfile: infra/docker/Dockerfile
-    image: senior-docs-scraper:latest
-    container_name: senior-docs-scraper
+networks:
+  senior-docs:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.9.0/24
+
+volumes:
+  meilisearch_data:
+    driver: local
+
     environment:
       PYTHONUNBUFFERED: 1
       MEILISEARCH_URL: http://meilisearch:7700
-      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-meilisearch_master_key_change_me}
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
+      SHARED_PASSWORD_HASH: ${SHARED_PASSWORD_HASH:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
     depends_on:
       meilisearch:
         condition: service_healthy
