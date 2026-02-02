@@ -260,8 +260,12 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
                 "description": "Servidor local"
             },
             {
+                "url": "http://people-fy.com:8000",
+                "description": "Servidor externo (people-fy.com)"
+            },
+            {
                 "url": "http://senior-docs-mcp-server:8000",
-                "description": "Servidor Docker"
+                "description": "Servidor Docker interno"
             }
         ]
     )
@@ -602,6 +606,21 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
                 "stats": "GET /stats"
             }
         }
+    
+    # ====================================================================
+    # Schema OpenAPI Explícito
+    # ====================================================================
+    
+    @app.get(
+        "/api/openapi.json",
+        tags=["OpenAPI"],
+        summary="Schema OpenAPI",
+        description="Retorna o schema OpenAPI em formato JSON (alternativo)",
+        include_in_schema=False  # Não incluir no schema para evitar loop
+    )
+    async def get_openapi_schema():
+        """Retorna o schema OpenAPI (rota alternativa)"""
+        return app.openapi()
     
     return app
 
