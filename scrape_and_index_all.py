@@ -20,18 +20,18 @@ import time
 import os
 from datetime import datetime
 
-# Tenta importar meilisearch
+# Importar requests para cliente HTTP direto
 try:
-    import meilisearch
+    import requests
 except ImportError:
-    print("[!] meilisearch nao instalado. Instalando...")
+    print("[!] requests nao instalado. Instalando...")
     import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "meilisearch"])
-    import meilisearch
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "requests"])
+    import requests
 
-from src.scraper_modular import ModularScraper
-from src.api_zendesk import ZendeskScraper
-from src.zendesk_modular_adapter import ZendeskToModularAdapter
+from apps.scraper.scraper_modular import ModularScraper
+from apps.zendesk.api_zendesk import ZendeskScraper
+from apps.zendesk.zendesk_modular_adapter import ZendeskToModularAdapter
 
 
 class UnifiedIndexer:
@@ -44,9 +44,13 @@ class UnifiedIndexer:
         
         # Lê variáveis de ambiente, com fallback para valores padrão
         self.meilisearch_url = meilisearch_url or os.getenv('MEILISEARCH_URL', 'http://meilisearch:7700')
-        self.meilisearch_key = meilisearch_key or os.getenv('MEILISEARCH_KEY', 'meilisearch_master_key_change_me')
+        self.meilisearch_key = meilisearch_key or os.getenv('MEILISEARCH_KEY', '5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa')
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(exist_ok=True)
+        
+        print(f"\n[INIT DEBUG] Chave recebida: {meilisearch_key}")
+        print(f"[INIT DEBUG] Env MEILISEARCH_KEY: {os.getenv('MEILISEARCH_KEY')}")
+        print(f"[INIT DEBUG] Final key: {self.meilisearch_key[:30]}...")
         
         # Tenta conectar
         self.client = None
@@ -63,59 +67,68 @@ class UnifiedIndexer:
         }
     
     def connect_meilisearch(self) -> bool:
-        """Conecta ao Meilisearch com retry e inicialização robusta"""
+        """Conecta ao Meilisearch via HTTP direto com retry"""
         import time
-        max_retries = 10  # Aumentado para 10 tentativas
+        max_retries = 10
         retry_delay = 2
         
         print(f"\n📡 Conectando ao Meilisearch ({self.meilisearch_url})...")
+        print(f"   [DEBUG] Chave: {self.meilisearch_key[:20]}..." if len(self.meilisearch_key) > 20 else f"   [DEBUG] Chave: {self.meilisearch_key}")
+        
+        # Headers para todas as requisições
+        self.headers = {
+            'Authorization': f'Bearer {self.meilisearch_key}',
+            'Content-Type': 'application/json'
+        }
         
         for attempt in range(max_retries):
             try:
-                # Cria cliente
-                self.client = meilisearch.Client(self.meilisearch_url, self.meilisearch_key)
-                print(f"   ✅ Cliente Meilisearch criado (tentativa {attempt + 1})")
+                # Testa health
+                health_url = f"{self.meilisearch_url}/health"
+                response = requests.get(health_url, timeout=5)
                 
-                # Testa saúde - isso é crítico
-                health = self.client.health()
+                if response.status_code != 200:
+                    raise Exception(f"Meilisearch health check failed: {response.status_code}")
+                
+                print(f"   ✅ Cliente HTTP criado (tentativa {attempt + 1})")
                 print(f"   ✅ Meilisearch saudável")
                 
-                # Aguarda para garantir que Meilisearch está pronto
                 time.sleep(2)
                 
                 # Tenta obter índice existente
-                try:
-                    self.index = self.client.get_index("documentation")
+                index_url = f"{self.meilisearch_url}/indexes/documentation"
+                response = requests.get(index_url, headers=self.headers, timeout=5)
+                
+                if response.status_code == 200:
                     print(f"   📑 Índice 'documentation' encontrado (existente)")
-                    
-                    # Verifica se está pronto
-                    stats = self.index.get_stats()
-                    print(f"   ✅ Índice pronto: {stats.number_of_documents} documentos")
                     return True
-                    
-                except Exception as get_error:
+                elif response.status_code == 404:
                     # Índice não existe, cria novo
                     print(f"   ℹ️  Índice não existe, criando novo...")
-                    try:
-                        # Cria índice
-                        task = self.client.create_index(
-                            "documentation",
-                            {"primaryKey": "id"}
-                        )
-                        print(f"   ✅ Índice criado (Task: {task.task_uid if hasattr(task, 'task_uid') else 'pending'})")
-                        
-                        # Aguarda criação completa
+                    
+                    # Cria índice via API HTTP
+                    create_url = f"{self.meilisearch_url}/indexes"
+                    payload = {
+                        "uid": "documentation",
+                        "primaryKey": "id"
+                    }
+                    response = requests.post(
+                        create_url,
+                        headers=self.headers,
+                        json=payload,
+                        timeout=10
+                    )
+                    
+                    if response.status_code in [200, 201, 202]:
+                        print(f"   ✅ Índice criado com sucesso")
                         time.sleep(4)
-                        
-                        # Obtém referência ao índice
-                        self.index = self.client.get_index("documentation")
-                        print(f"   ✅ Índice 'documentation' pronto para indexação")
-                        
                         return True
-                        
-                    except Exception as create_error:
-                        print(f"   ❌ Erro ao criar índice: {create_error}")
-                        raise
+                    else:
+                        print(f"   ❌ Erro ao criar índice: {response.status_code} - {response.text}")
+                        raise Exception(f"Create index failed: {response.text}")
+                else:
+                    print(f"   ❌ Erro ao verificar índice: {response.status_code} - {response.text}")
+                    raise Exception(f"Check index failed: {response.text}")
                         
             except Exception as e:
                 print(f"   ⚠️  Tentativa {attempt + 1}/{max_retries} falhou: {type(e).__name__}")
@@ -300,12 +313,12 @@ class UnifiedIndexer:
             return None
     
     def index_documents(self, documents: List[Dict]) -> bool:
-        """Indexa documentos no Meilisearch com retry e tratamento de erro robusto"""
-        if self.index is None:
-            print(f"\n❌ ERRO CRÍTICO: Índice não inicializado")
+        """Indexa documentos no Meilisearch via HTTP direto"""
+        if not hasattr(self, 'headers') or not self.headers:
+            print(f"\n❌ ERRO CRÍTICO: Cliente HTTP não inicializado")
             print(f"   Meilisearch não foi conectado com sucesso")
             print(f"   Documentos foram salvos em JSONL mas NÃO indexados!")
-            self.stats['errors'].append("Index not initialized - documents saved but not indexed")
+            self.stats['errors'].append("HTTP client not initialized - documents saved but not indexed")
             return False
         
         if not documents:
@@ -339,19 +352,29 @@ class UnifiedIndexer:
                         }
                         batch_data.append(clean_doc)
                     
-                    # Envia o lote
-                    task = self.index.add_documents(batch_data)
-                    total_indexed += len(batch_data)
+                    # Envia o lote via HTTP
+                    documents_url = f"{self.meilisearch_url}/indexes/documentation/documents"
+                    response = requests.post(
+                        documents_url,
+                        headers=self.headers,
+                        json=batch_data,
+                        timeout=30
+                    )
                     
-                    if (total_indexed % 500 == 0) or (total_indexed >= len(documents)):
-                        task_uid = task.task_uid if hasattr(task, 'task_uid') else str(task)
-                        print(f"   📤 {total_indexed}/{len(documents)} documentos enviados (Task: {task_uid})")
+                    if response.status_code in [200, 201, 202]:
+                        total_indexed += len(batch_data)
+                        
+                        if (total_indexed % 500 == 0) or (total_indexed >= len(documents)):
+                            print(f"   📤 {total_indexed}/{len(documents)} documentos enviados")
+                    else:
+                        print(f"   ⚠️  Erro ao indexar lote {i//batch_size + 1}: {response.status_code} - {response.text}")
+                        failed_batches += 1
+                        self.stats['errors'].append(f"Batch {i//batch_size + 1} error: {response.status_code}")
                 
                 except Exception as batch_error:
                     failed_batches += 1
                     print(f"   ⚠️  Erro ao indexar lote {i//batch_size + 1}: {batch_error}")
                     self.stats['errors'].append(f"Batch {i//batch_size + 1} error: {batch_error}")
-                    # Continua com o próximo lote
             
             if total_indexed > 0:
                 print(f"   ✅ {total_indexed} documentos foram enviados para indexação")
@@ -435,9 +458,9 @@ class UnifiedIndexer:
 
 async def main():
     """Função principal"""
-    # Parse argumentos
-    meilisearch_url = "http://localhost:7700"
-    meilisearch_key = "meilisearch_master_key"
+    # Parse argumentos - usa variáveis de ambiente com fallback
+    meilisearch_url = os.getenv('MEILISEARCH_URL', 'http://meilisearch:7700')
+    meilisearch_key = os.getenv('MEILISEARCH_KEY', '5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa')
     
     for i, arg in enumerate(sys.argv[1:]):
         if arg == "--url" and i+1 < len(sys.argv)-1:

@@ -103,7 +103,8 @@ services:
       
       # Meilisearch Configuration
       MEILISEARCH_URL: http://meilisearch:7700
-      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-2cdc242bdaba66aede1da77794106635cfd7d57524dbc61b4bd6a7c2af39097f}
+      # ⚠️ IMPORTANTE: Usar a MESMA chave que o Meilisearch e scraper
+      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
       
       # Python Configuration
       PYTHONUNBUFFERED: 1
@@ -159,8 +160,9 @@ services:
     environment:
       PYTHONUNBUFFERED: 1
       MEILISEARCH_URL: http://meilisearch:7700
+      # Usar a MESMA chave que Meilisearch (crucial!)
       MEILISEARCH_KEY: ${MEILISEARCH_KEY:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
-      SHARED_PASSWORD_HASH: ${SHARED_PASSWORD_HASH:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
     depends_on:
       meilisearch:
         condition: service_healthy
@@ -170,36 +172,8 @@ services:
     volumes:
       - ./docs_estruturado:/app/docs_estruturado
       - ./docs_unified:/app/docs_unified
-    # Comentado para compatibilidade com Windows/Docker Desktop
-    # user: "${CONTAINER_USER:-1000:1000}"
-
-networks:
-  senior-docs:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.0.9.0/24
-
-volumes:
-  meilisearch_data:
-    driver: local
-
-    environment:
-      PYTHONUNBUFFERED: 1
-      MEILISEARCH_URL: http://meilisearch:7700
-      MEILISEARCH_KEY: ${MEILISEARCH_KEY:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
-      SHARED_PASSWORD_HASH: ${SHARED_PASSWORD_HASH:-5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa}
-    depends_on:
-      meilisearch:
-        condition: service_healthy
-    networks:
-      - senior-docs
-    restart: on-failure
-    volumes:
-      - ./docs_estruturado:/app/docs_estruturado
-      - ./docs_unified:/app/docs_unified
-    # Comentado para compatibilidade com Windows/Docker Desktop
-    # user: "${CONTAINER_USER:-1000:1000}"
+    # Usuário não-root para segurança
+    user: "1000:0"
 
 networks:
   senior-docs:

@@ -1,0 +1,192 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║           ✅ ATUALIZAÇÃO COMPLETA: DOCKER + MCP OPENAPI SERVER               ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+## 🎯 RESUMO DO QUE FOI FEITO
+
+### 1. ✅ Removido arquivo desnecessário
+   - Deletado: /apps/mcp-server/server_dual.py
+   - Motivo: Usar ferramenta pronta ao invés de código custom
+
+### 2. ✅ Atualizado Dockerfile
+   Arquivo: infra/docker/Dockerfile
+   
+   Adições:
+   ├─ Node.js 20 LTS
+   ├─ NPM package manager
+   ├─ @ivotoby/openapi-mcp-server (global install)
+   ├─ Variáveis de ambiente para Node
+   └─ Mantidas todas as dependências Python
+
+### 3. ✅ Atualizado docker-compose.yml
+   Arquivo: docker-compose.yml
+   
+   Novo serviço adicionado:
+   ├─ mcp-openapi-server
+   ├─ Porta: 3000 (HTTP REST)
+   ├─ Imagem: node:20-alpine (leve e rápida)
+   ├─ Autenticação: Bearer token automática
+   ├─ Health check: Configurado
+   ├─ Dependência: meilisearch (service_healthy)
+   └─ Restart: unless-stopped
+
+### 4. ✅ Criada documentação completa
+   Arquivos:
+   ├─ docs/guides/DUAL_MCP_OPENAPI_GUIDE.md (guia completo)
+   ├─ scripts/setup_mcp_openapi.sh (setup Linux/macOS)
+   ├─ scripts/setup_mcp_openapi.ps1 (setup Windows)
+   └─ MCP_OPENAPI_DOCKER_UPDATE.md (este sumário)
+
+### 5. ✅ Atualizado requirements.txt
+   Removidas dependências desnecessárias:
+   ├─ fastapi (não precisa)
+   ├─ uvicorn (não precisa)
+   ├─ pydantic (não precisa)
+   └─ python-multipart (não precisa)
+
+═════════════════════════════════════════════════════════════════════════════════
+
+## 🚀 COMO USAR AGORA
+
+### Opção 1: Docker Compose (Recomendado)
+
+```bash
+# Iniciar serviços
+docker-compose up -d meilisearch mcp-openapi-server
+
+# Verificar saúde
+curl http://localhost:3000/health
+
+# Ver logs
+docker-compose logs -f mcp-openapi-server
+```
+
+Acesso:
+- 🌐 HTTP API: http://localhost:3000
+- 📚 Swagger UI: http://localhost:3000/swagger
+- 📖 ReDoc: http://localhost:3000/redoc
+- 💚 Health: http://localhost:3000/health
+
+### Opção 2: Local com NPX (Desenvolvimento)
+
+```bash
+# Instalar ferramenta
+npm install -g @ivotoby/openapi-mcp-server
+
+# Rodar
+npx @ivotoby/openapi-mcp-server \
+  --api-base-url http://localhost:7700 \
+  --openapi-spec http://localhost:7700/openapi.json \
+  --headers "Authorization:Bearer 5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa" \
+  --transport http \
+  --port 3000
+```
+
+### Opção 3: Claude Desktop (MCP Protocol)
+
+1. Arquivo de config:
+   - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+2. Adicionar:
+```json
+{
+  "mcpServers": {
+    "meilisearch-openapi": {
+      "command": "npx",
+      "args": ["-y", "@ivotoby/openapi-mcp-server"],
+      "env": {
+        "API_BASE_URL": "http://localhost:7700",
+        "OPENAPI_SPEC_PATH": "http://localhost:7700/openapi.json",
+        "API_HEADERS": "Authorization:Bearer 5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa"
+      }
+    }
+  }
+}
+```
+
+3. Restart Claude Desktop
+4. Ferramenta disponível automaticamente!
+
+═════════════════════════════════════════════════════════════════════════════════
+
+## 📋 PRÓXIMOS PASSOS
+
+### Imediatos:
+1. [ ] Build da imagem Docker:
+   ```bash
+   docker-compose build --no-cache mcp-openapi-server
+   ```
+
+2. [ ] Testar:
+   ```bash
+   docker-compose up -d meilisearch mcp-openapi-server
+   sleep 3
+   curl http://localhost:3000/health
+   ```
+
+3. [ ] Verificar logs:
+   ```bash
+   docker-compose logs mcp-openapi-server
+   ```
+
+### Opcionais:
+4. [ ] Integrar com Claude Desktop (veja opção 3 acima)
+5. [ ] Integrar com Open WebUI (usar endpoint HTTP)
+6. [ ] Deploy em produção (veja DUAL_MCP_OPENAPI_GUIDE.md)
+
+═════════════════════════════════════════════════════════════════════════════════
+
+## 📚 DOCUMENTAÇÃO
+
+Guia completo com:
+├─ Quick start (30 segundos)
+├─ Todos os modos de funcionamento
+├─ Configuração de variáveis
+├─ Docker & Produção
+├─ Troubleshooting
+├─ Segurança
+└─ Exemplos de uso
+
+Arquivo: docs/guides/DUAL_MCP_OPENAPI_GUIDE.md
+
+═════════════════════════════════════════════════════════════════════════════════
+
+## ✨ ARQUITETURA FINAL
+
+                          ┌─────────────────┐
+                          │ Claude Desktop  │
+                          │  (MCP Mode)     │
+                          └────────┬────────┘
+                                   │
+                                   │ stdio
+                                   ↓
+    ┌────────────────────────────────────────────────┐
+    │  mcp-openapi-server (Node.js)                  │
+    │  Port 3000 (HTTP) + Stdio (MCP)                │
+    └────────────────┬─────────────────┬─────────────┘
+                     │                 │
+        HTTP REST    │                 │  MCP Protocol
+                     │                 │
+         ┌──────────┴─┐    ┌──────────┴─────────┐
+         ↓            ↓    ↓                     ↓
+    ┌────────────┐ ┌─────────────┐  ┌────────────────┐
+    │ Open WebUI │ │ HTTP Client │  │ Claude Desktop │
+    └────────────┘ └─────────────┘  │ Cursor IDE     │
+                                     └────────────────┘
+                            │
+                            ↓
+                    ┌───────────────┐
+                    │ Meilisearch   │
+                    │ (Search)      │
+                    └───────────────┘
+
+═════════════════════════════════════════════════════════════════════════════════
+
+## 🎉 TUDO PRONTO!
+
+A infraestrutura Docker foi atualizada com suporte completo a MCP OpenAPI Server.
+
+Próximo passo: Execute docker-compose up -d e comece a usar!
+
+═════════════════════════════════════════════════════════════════════════════════

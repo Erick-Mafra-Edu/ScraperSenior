@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
     SCRAPER_MODE=legacy
 
-# Install pip (already has Python, Playwright, and all dependencies)
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     curl \
@@ -31,8 +31,12 @@ COPY infra/docker/docker_entrypoint_workers.py /app/docker_entrypoint.py
 # Copy configuration
 COPY apps/scraper/config/ /app/apps/scraper/config/
 
+WORKDIR /app
 # Copy other necessary files
-COPY *.py /app/ 2>/dev/null || true
+COPY *.py /app/
+
+# Set PYTHONPATH para incluir /app
+ENV PYTHONPATH=/app
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --retries=3 --start-period=10s \
@@ -43,4 +47,3 @@ ENTRYPOINT ["python3", "docker_entrypoint.py"]
 
 # Default command (can be overridden via docker-compose)
 CMD [""]
-
