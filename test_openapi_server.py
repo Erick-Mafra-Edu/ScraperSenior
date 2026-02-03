@@ -4,6 +4,7 @@ Script para testar se o OpenAPI Server está funcionando corretamente
 """
 
 import sys
+import importlib.util
 from pathlib import Path
 
 # Adicionar ao path
@@ -16,18 +17,33 @@ print("=" * 70)
 
 # Test 1: Verificar imports
 print("\n1️⃣  Testando imports...")
+
+# Carregar openapi_adapter.py diretamente (pasta com hyphen)
 try:
-    from apps.mcp_server.openapi_adapter import create_app
+    spec = importlib.util.spec_from_file_location("openapi_adapter", 
+                                                   project_root / "apps" / "mcp-server" / "openapi_adapter.py")
+    openapi_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(openapi_module)
+    create_app = openapi_module.create_app
     print("✅ openapi_adapter importado com sucesso")
 except Exception as e:
     print(f"❌ Erro ao importar openapi_adapter: {e}")
+    import traceback
+    traceback.print_exc()
     sys.exit(1)
 
+# Carregar mcp_server.py
 try:
-    from apps.mcp_server.mcp_server import SeniorDocumentationMCP
+    spec = importlib.util.spec_from_file_location("mcp_server",
+                                                   project_root / "apps" / "mcp-server" / "mcp_server.py")
+    mcp_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mcp_module)
+    SeniorDocumentationMCP = mcp_module.SeniorDocumentationMCP
     print("✅ SeniorDocumentationMCP importado com sucesso")
 except Exception as e:
     print(f"❌ Erro ao importar SeniorDocumentationMCP: {e}")
+    import traceback
+    traceback.print_exc()
     sys.exit(1)
 
 # Test 2: Criar app FastAPI

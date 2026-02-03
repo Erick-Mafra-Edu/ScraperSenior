@@ -32,10 +32,8 @@ RUN pip install --upgrade pip setuptools wheel && \
 # Estrutura monorepo com apps/ e libs/
 COPY --chown=1000:1000 apps/mcp-server/ ./apps/mcp-server/
 COPY --chown=1000:1000 libs/ ./libs/
-COPY --chown=1000:1000 mcp_config.json .
-COPY --chown=1000:1000 docs_indexacao_detailed.jsonl . || true
-COPY --chown=1000:1000 docs_indexacao.jsonl . || true
-COPY --chown=1000:1000 .env.example .env || true
+COPY --chown=1000:1000 mcp_config.json ./
+COPY --chown=1000:1000 openapi.json ./
 
 # Create a non-root user for security (UID 1000 is standard across systems)
 RUN useradd -m -u 1000 -g 0 appuser && \
@@ -55,6 +53,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
 EXPOSE 8000
 
 # Entrypoint com suporte a dual-mode
-# Usa mcp_entrypoint_dual.py para flexibilidade
-CMD ["python", "-u", "apps/mcp-server/mcp_entrypoint_dual.py", "--mode", "openapi"]
-CMD ["python", "-u", "mcp_entrypoint.py"]
+# Usa mcp_server_docker.py que implementa FastAPI OpenAPI adapter
+CMD ["python", "-u", "apps/mcp-server/mcp_server_docker.py"]

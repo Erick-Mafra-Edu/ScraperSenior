@@ -337,11 +337,19 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
                     detail="MCP Server não foi inicializado"
                 )
             
-            # Tentar conectar ao Meilisearch
-            meilisearch_status = await mcp_server.health_check()
+            # Verificar se cliente Meilisearch está disponível
+            meilisearch_status = mcp_server.client is not None
+            
+            # Se não estamos usando local, tentar pingar o Meilisearch
+            if not mcp_server.use_local and mcp_server.client:
+                try:
+                    mcp_server.client.health()
+                    meilisearch_status = True
+                except:
+                    meilisearch_status = False
             
             return HealthResponse(
-                status="healthy" if meilisearch_status else "unhealthy",
+                status="healthy" if meilisearch_status or mcp_server.use_local else "unhealthy",
                 timestamp=datetime.now().isoformat(),
                 version="1.0.0",
                 meilisearch={
@@ -398,18 +406,19 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
             start_time = time.time()
             
             # Chamar MCP Server para busca
-            results = await mcp_server.search(
+            # Nota: offset não é suportado pelo search(), usamos limit apenas
+            results = mcp_server.search(
                 query=request.query,
                 module=request.module,
-                limit=request.limit,
-                offset=request.offset
+                limit=request.limit
             )
             
             execution_time = (time.time() - start_time) * 1000  # ms
             
             # Converter resultados para modelo Pydantic
             documents = []
-            for result in results.get("documents", []):
+            # results é uma lista direta de documentos
+            for result in results:
                 documents.append(DocumentResponse(
                     id=result.get("id", ""),
                     title=result.get("title", ""),
@@ -426,7 +435,7 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
             return SearchResponse(
                 success=True,
                 query=request.query,
-                total=results.get("total", len(documents)),
+                total=len(documents),
                 limit=request.limit,
                 offset=request.offset,
                 results=documents,
@@ -458,15 +467,16 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
                     detail="MCP Server não foi inicializado"
                 )
             
-            modules_data = await mcp_server.get_modules()
+            # get_modules() retorna lista de nomes de módulos
+            module_names = mcp_server.get_modules()
             
             modules = [
                 ModuleInfo(
                     name=name,
-                    doc_count=count,
+                    doc_count=0,  # Não temos contagem individual por módulo no momento
                     description=None
                 )
-                for name, count in modules_data.get("modules", {}).items()
+                for name in module_names
             ]
             
             return ModulesResponse(
@@ -508,7 +518,7 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
                     detail="MCP Server não foi inicializado"
                 )
             
-            docs = await mcp_server.get_module_docs(module_name)
+            docs = mcp_server.get_by_module(module_name)
             
             documents = [
                 DocumentResponse(
@@ -558,16 +568,30 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
                     detail="MCP Server não foi inicializado"
                 )
             
-            stats = await mcp_server.get_stats()
+            # Tentar obter stats do Meilisearch se disponível
+            total_documents = 0
+            total_modules = 0
+            
+            if mcp_server.client and not mcp_server.use_local:
+                try:
+                    index = mcp_server.client.index(mcp_server.index_name)
+                    stats_obj = index.get_stats()
+                    total_documents = stats_obj.number_of_documents
+                except:
+                    pass
+            
+            # Contar módulos (funciona tanto para Meilisearch quanto local)
+            modules_list = mcp_server.get_modules()
+            total_modules = len(modules_list)
             
             return StatsResponse(
                 success=True,
-                total_documents=stats.get("total_documents", 0),
-                total_modules=stats.get("total_modules", 0),
-                modules=stats.get("modules", {}),
-                index_name=stats.get("index_name", "senior_docs"),
-                meilisearch_version=stats.get("meilisearch_version"),
-                last_indexed=stats.get("last_indexed")
+                total_documents=total_documents,
+                total_modules=total_modules,
+                modules={},
+                index_name=mcp_server.index_name,
+                meilisearch_version=None,
+                last_indexed=None
             )
         
         except Exception as e:
