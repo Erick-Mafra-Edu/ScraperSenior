@@ -1,0 +1,589 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Senior Documentation API",
+    "description": "API OpenAPI para busca em documentação Senior com integração Meilisearch. Permite buscar, indexar e recuperar documentação técnica da plataforma Senior Sistemas.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Digisys",
+      "url": "https://www.digisys.com.br"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000",
+      "description": "Servidor de desenvolvimento local"
+    },
+    {
+      "url": "http://people-fy.com:8000",
+      "description": "Servidor externo (people-fy.com)"
+    },
+    {
+      "url": "http://senior-docs-mcp-server:8000",
+      "description": "Servidor Docker interno"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Sistema",
+      "description": "Endpoints de sistema e saúde"
+    },
+    {
+      "name": "Busca",
+      "description": "Endpoints de busca em documentação"
+    },
+    {
+      "name": "Módulos",
+      "description": "Endpoints para gerenciar e consultar módulos"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "Sistema"
+        ],
+        "summary": "Health Check",
+        "description": "Verifica a saúde do serviço e conectividade com Meilisearch. Retorna status detalhado do servidor e dependências.",
+        "operationId": "health_check",
+        "responses": {
+          "200": {
+            "description": "Serviço saudável",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Serviço indisponível",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search": {
+      "post": {
+        "tags": [
+          "Busca"
+        ],
+        "summary": "Buscar Documentos",
+        "description": "Busca documentação com múltiplos critérios de filtro. Suporta busca por palavras-chave, filtro por módulo e paginação.",
+        "operationId": "search_documents",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Busca realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Parâmetros inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Meilisearch indisponível",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/modules": {
+      "get": {
+        "tags": [
+          "Módulos"
+        ],
+        "summary": "Listar Módulos",
+        "description": "Retorna lista de todos os módulos disponíveis com contagem de documentos em cada módulo.",
+        "operationId": "list_modules",
+        "responses": {
+          "200": {
+            "description": "Lista de módulos obtida com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModulesResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Serviço indisponível",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/modules/{module_name}": {
+      "get": {
+        "tags": [
+          "Módulos"
+        ],
+        "summary": "Obter Documentação do Módulo",
+        "description": "Retorna toda a documentação de um módulo específico.",
+        "operationId": "get_module_docs",
+        "parameters": [
+          {
+            "name": "module_name",
+            "in": "path",
+            "required": true,
+            "description": "Nome do módulo (ex: 'RH', 'Fiscal', 'Financeiro')",
+            "schema": {
+              "type": "string"
+            },
+            "example": "RH"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Documentação do módulo obtida com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuleDocsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Módulo não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Serviço indisponível",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stats": {
+      "get": {
+        "tags": [
+          "Sistema"
+        ],
+        "summary": "Estatísticas da Documentação",
+        "description": "Retorna estatísticas sobre a documentação indexada, incluindo total de documentos e módulos.",
+        "operationId": "get_stats",
+        "responses": {
+          "200": {
+            "description": "Estatísticas obtidas com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatsResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Serviço indisponível",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SearchRequest": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Texto ou palavras-chave para buscar na documentação",
+            "minLength": 1,
+            "maxLength": 500,
+            "example": "como configurar banco de dados"
+          },
+          "module": {
+            "type": "string",
+            "nullable": true,
+            "description": "Filtrar resultados por módulo específico (opcional)",
+            "example": "RH"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Número máximo de resultados",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 10
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset para paginação",
+            "minimum": 0,
+            "default": 0
+          }
+        }
+      },
+      "DocumentResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "module",
+          "content_preview",
+          "metadata"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID único do documento"
+          },
+          "title": {
+            "type": "string",
+            "description": "Título do documento"
+          },
+          "module": {
+            "type": "string",
+            "description": "Módulo ao qual pertence"
+          },
+          "breadcrumb": {
+            "type": "string",
+            "nullable": true,
+            "description": "Caminho hierárquico do documento"
+          },
+          "content_preview": {
+            "type": "string",
+            "description": "Preview do conteúdo (primeiras 200 caracteres)"
+          },
+          "content": {
+            "type": "string",
+            "nullable": true,
+            "description": "Conteúdo completo do documento (opcional)"
+          },
+          "html": {
+            "type": "string",
+            "nullable": true,
+            "description": "HTML original do documento (opcional)"
+          },
+          "url": {
+            "type": "string",
+            "nullable": true,
+            "description": "URL original do documento"
+          },
+          "score": {
+            "type": "number",
+            "format": "float",
+            "nullable": true,
+            "description": "Score de relevância da busca (0-100)"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadados adicionais",
+            "additionalProperties": true
+          }
+        }
+      },
+      "SearchResponse": {
+        "type": "object",
+        "required": [
+          "success",
+          "query",
+          "total",
+          "limit",
+          "offset",
+          "results",
+          "execution_time_ms"
+        ],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Se a busca foi bem-sucedida"
+          },
+          "query": {
+            "type": "string",
+            "description": "Query executada"
+          },
+          "total": {
+            "type": "integer",
+            "description": "Total de resultados encontrados"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limite de resultados"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset usado"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentResponse"
+            },
+            "description": "Lista de documentos encontrados"
+          },
+          "execution_time_ms": {
+            "type": "number",
+            "format": "float",
+            "description": "Tempo de execução da busca em milissegundos"
+          }
+        }
+      },
+      "ModuleInfo": {
+        "type": "object",
+        "required": [
+          "name",
+          "doc_count"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nome do módulo"
+          },
+          "doc_count": {
+            "type": "integer",
+            "description": "Número de documentos do módulo"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true,
+            "description": "Descrição do módulo"
+          }
+        }
+      },
+      "ModulesResponse": {
+        "type": "object",
+        "required": [
+          "success",
+          "total_modules",
+          "modules"
+        ],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Se a operação foi bem-sucedida"
+          },
+          "total_modules": {
+            "type": "integer",
+            "description": "Total de módulos"
+          },
+          "modules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModuleInfo"
+            },
+            "description": "Lista de módulos"
+          }
+        }
+      },
+      "ModuleDocsResponse": {
+        "type": "object",
+        "required": [
+          "success",
+          "module",
+          "total_docs",
+          "documents"
+        ],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Se a operação foi bem-sucedida"
+          },
+          "module": {
+            "type": "string",
+            "description": "Nome do módulo"
+          },
+          "total_docs": {
+            "type": "integer",
+            "description": "Total de documentos no módulo"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentResponse"
+            },
+            "description": "Lista de documentos do módulo"
+          }
+        }
+      },
+      "StatsResponse": {
+        "type": "object",
+        "required": [
+          "success",
+          "total_documents",
+          "total_modules",
+          "modules",
+          "index_name"
+        ],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Se a operação foi bem-sucedida"
+          },
+          "total_documents": {
+            "type": "integer",
+            "description": "Total de documentos indexados"
+          },
+          "total_modules": {
+            "type": "integer",
+            "description": "Total de módulos"
+          },
+          "modules": {
+            "type": "object",
+            "description": "Contagem de documentos por módulo",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          },
+          "index_name": {
+            "type": "string",
+            "description": "Nome do índice"
+          },
+          "meilisearch_version": {
+            "type": "string",
+            "nullable": true,
+            "description": "Versão do Meilisearch"
+          },
+          "last_indexed": {
+            "type": "string",
+            "nullable": true,
+            "description": "Última data de indexação"
+          }
+        }
+      },
+      "HealthResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "timestamp",
+          "version",
+          "meilisearch"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "healthy",
+              "unhealthy"
+            ],
+            "description": "Status do serviço (healthy/unhealthy)"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp do check"
+          },
+          "version": {
+            "type": "string",
+            "description": "Versão do MCP Server"
+          },
+          "meilisearch": {
+            "type": "object",
+            "description": "Status do Meilisearch",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL do Meilisearch"
+              },
+              "healthy": {
+                "type": "boolean",
+                "description": "Se o Meilisearch está saudável"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

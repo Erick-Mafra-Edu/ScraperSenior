@@ -58,7 +58,7 @@ if str(project_root) not in sys.path:
 # FastAPI e dependências
 from fastapi import FastAPI, Query, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 import uvicorn
@@ -608,19 +608,52 @@ def create_app(meilisearch_url: Optional[str] = None, api_key: Optional[str] = N
         }
     
     # ====================================================================
-    # Schema OpenAPI Explícito
+    # Schema OpenAPI - Serve openapi.json from disk
     # ====================================================================
     
     @app.get(
         "/api/openapi.json",
         tags=["OpenAPI"],
         summary="Schema OpenAPI",
-        description="Retorna o schema OpenAPI em formato JSON (alternativo)",
-        include_in_schema=False  # Não incluir no schema para evitar loop
+        description="Retorna o schema OpenAPI em formato JSON (arquivo disco)",
+        include_in_schema=False
     )
-    async def get_openapi_schema():
-        """Retorna o schema OpenAPI (rota alternativa)"""
-        return app.openapi()
+    async def get_openapi_schema_from_file():
+        """
+        Retorna o schema OpenAPI carregado do arquivo openapi.json na raiz do projeto.
+        Este endpoint serve a especificação OpenAPI completa como arquivo estático.
+        """
+        try:
+            # Procurar openapi.json na raiz do projeto
+            openapi_paths = [
+                Path(__file__).parent.parent.parent / "openapi.json",  # raiz/openapi.json
+                Path(__file__).parent / "openapi.json",  # apps/mcp-server/openapi.json
+                Path.cwd() / "openapi.json"  # current working directory
+            ]
+            
+            openapi_file = None
+            for path in openapi_paths:
+                if path.exists():
+                    openapi_file = path
+                    logger.info(f"✓ Arquivo OpenAPI encontrado: {openapi_file}")
+                    break
+            
+            if not openapi_file:
+                logger.warning(f"Arquivo openapi.json não encontrado. Procurou em: {openapi_paths}")
+                # Fallback: retornar schema gerado pelo FastAPI
+                return app.openapi()
+            
+            # Servir arquivo como resposta JSON
+            return FileResponse(
+                path=openapi_file,
+                media_type="application/json",
+                filename="openapi.json"
+            )
+        
+        except Exception as e:
+            logger.error(f"Erro ao servir openapi.json: {e}")
+            # Fallback: retornar schema gerado pelo FastAPI
+            return app.openapi()
     
     return app
 
