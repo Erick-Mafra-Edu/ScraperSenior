@@ -4,6 +4,7 @@ Manual Indexing Script
 Indexes already-scraped documents into Meilisearch
 """
 
+import os
 import json
 import meilisearch
 from pathlib import Path

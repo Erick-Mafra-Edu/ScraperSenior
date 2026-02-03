@@ -5,6 +5,7 @@ Verifica se documentos estao sendo indexados, especialmente da API Zendesk
 """
 
 import sys
+import os
 import json
 from datetime import datetime
 
