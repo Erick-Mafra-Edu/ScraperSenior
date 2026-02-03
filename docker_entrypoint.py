@@ -49,7 +49,7 @@ async def run_scraper_and_indexer():
     
     indexer = UnifiedIndexer(
         meilisearch_url="http://meilisearch:7700",
-        meilisearch_key="meilisearch_master_key"
+        meilisearch_key=os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa")
     )
     
     success = await indexer.run()

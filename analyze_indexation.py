@@ -19,9 +19,9 @@ except ImportError:
 class MeilisearchAnalyzer:
     """Analisa status de indexacao"""
     
-    def __init__(self, url="http://localhost:7700", api_key="meilisearch_master_key"):
+    def __init__(self, url="http://localhost:7700", api_key=None):
         self.url = url
-        self.api_key = api_key
+        self.api_key = api_key or os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa")
         self.client = None
         self.index = None
         

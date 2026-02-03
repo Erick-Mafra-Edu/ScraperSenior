@@ -66,7 +66,7 @@ async def main():
     port = int(os.getenv("PORT", 8000))
     log_level = os.getenv("LOG_LEVEL", "info").lower()
     meilisearch_url = os.getenv("MEILISEARCH_URL", "http://localhost:7700")
-    meilisearch_key = os.getenv("MEILISEARCH_KEY", "meilisearch_master_key")
+    meilisearch_key = os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa")
     
     logger.info(f"Host: {host}")
     logger.info(f"Port: {port}")

@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Senior Documentation API",
-    "description": "API OpenAPI para busca em documentação Senior com integração Meilisearch. Permite buscar, indexar e recuperar documentação técnica da plataforma Senior Sistemas.",
+    "description": "API OpenAPI para busca em documentação Senior com integração Meilisearch. ⭐ FERRAMENTA PRINCIPAL: Use /search para encontrar documentos. Use /modules para listar módulos. Use /stats para informações da base. Esta ferramenta contém 855+ documentos técnicos sobre sistemas Senior.",
     "version": "1.0.0",
     "contact": {
       "name": "Digisys",
@@ -26,6 +26,10 @@
       "description": "Servidor Docker interno"
     }
   ],
+  "externalDocs": {
+    "description": "📖 Complete documentation and troubleshooting guide",
+    "url": "file://./OPENWEBUI_COMPATIBILITY.md"
+  },
   "tags": [
     {
       "name": "Sistema",
@@ -83,9 +87,10 @@
         "tags": [
           "Busca"
         ],
-        "summary": "Buscar Documentos",
-        "description": "Busca documentação com múltiplos critérios de filtro. Suporta busca por palavras-chave, filtro por módulo e paginação.",
-        "operationId": "search_documents",
+        "summary": "🔍 Buscar Documentação - USE ISTO PARA RESPONDER PERGUNTAS",
+        "description": "⭐ FERRAMENTA PRINCIPAL: Busca documentação técnica Senior para responder perguntas do usuário. SEMPRE USE quando o usuário perguntar sobre: como fazer algo, procedimentos, configuração, guias, tutoriais, ou qualquer informação sobre sistemas Senior. Retorna documentos com título, módulo, conteúdo e score de relevância. Combine com /modules para especificar módulo se necessário.",
+        "operationId": "search_documentation",
+        "x-openai-isConsequential": true,
         "requestBody": {
           "content": {
             "application/json": {
@@ -145,9 +150,9 @@
         "tags": [
           "Módulos"
         ],
-        "summary": "Listar Módulos",
-        "description": "Retorna lista de todos os módulos disponíveis com contagem de documentos em cada módulo.",
-        "operationId": "list_modules",
+        "summary": "📚 Listar Todos os Módulos Disponíveis",
+        "description": "Retorna lista completa de módulos disponíveis (RH, FINANCEIRO, TECNOLOGIA, BPM, etc) com contagem de documentos em cada um. Use para listar módulos quando usuário pergunta 'quais módulos existem' ou 'qual é a documentação disponível'.",
+        "operationId": "list_available_modules",
         "responses": {
           "200": {
             "description": "Lista de módulos obtida com sucesso",
@@ -246,9 +251,9 @@
         "tags": [
           "Sistema"
         ],
-        "summary": "Estatísticas da Documentação",
-        "description": "Retorna estatísticas sobre a documentação indexada, incluindo total de documentos e módulos.",
-        "operationId": "get_stats",
+        "summary": "📊 Obter Estatísticas da Base de Dados",
+        "description": "Retorna estatísticas completas: total de documentos indexados (855+), número de módulos, contagem por módulo, e status do índice. Use para responder perguntas como 'quantos documentos temos' ou 'qual é o tamanho da base'.",
+        "operationId": "get_documentation_stats",
         "responses": {
           "200": {
             "description": "Estatísticas obtidas com sucesso",
@@ -289,20 +294,20 @@
         "properties": {
           "query": {
             "type": "string",
-            "description": "Texto ou palavras-chave para buscar na documentação",
+            "description": "OBRIGATÓRIO: Palavras-chave ou pergunta do usuário (ex: 'configurar NTLM', 'como fazer backup', 'guia de implantação', 'erro 500'). Este é o termo de busca mais importante - sempre preencher com as palavras-chave da pergunta.",
             "minLength": 1,
             "maxLength": 500,
-            "example": "como configurar banco de dados"
+            "example": "configurar autenticação NTLM"
           },
           "module": {
             "type": "string",
             "nullable": true,
-            "description": "Filtrar resultados por módulo específico (opcional)",
-            "example": "RH"
+            "description": "[OPCIONAL] Filtrar por módulo específico (RH, FINANCEIRO, TECNOLOGIA, BPM, etc). Deixar vazio para buscar em todos os módulos.",
+            "example": null
           },
           "limit": {
             "type": "integer",
-            "description": "Número máximo de resultados",
+            "description": "Número de resultados desejados (padrão: 10). Use 5-10 para perguntas simples, até 20 para buscas complexas.",
             "minimum": 1,
             "maximum": 100,
             "default": 10
@@ -411,7 +416,7 @@
             "items": {
               "$ref": "#/components/schemas/DocumentResponse"
             },
-            "description": "Lista de documentos encontrados"
+            "description": "Lista de documentos encontrados ordenados por relevância. Cada documento tem: id, title (título), module (módulo), content_preview (resumo do conteúdo até 200 caracteres), url (link original), score (0-100 onde 100=mais relevante). Use esses dados para responder à pergunta do usuário de forma clara e completa."
           },
           "execution_time_ms": {
             "type": "number",

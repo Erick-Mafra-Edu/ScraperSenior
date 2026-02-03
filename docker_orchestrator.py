@@ -26,7 +26,7 @@ class DockerOrchestrator:
     def __init__(self):
         self.docker_compose_file = Path("docker-compose.yml")
         self.meilisearch_url = "http://localhost:7700"
-        self.api_key = "meilisearch_master_key"
+        self.api_key = os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa")
         self.max_retries = 10
     
     def run_command(self, command: str, shell: bool = True) -> bool:
