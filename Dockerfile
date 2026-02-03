@@ -6,7 +6,8 @@ WORKDIR /app
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1
+    PIP_NO_CACHE_DIR=1 \
+    PYTHONPATH=/app:$PYTHONPATH
 
 # Install system dependencies (minimal)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -23,11 +24,13 @@ RUN pip install --upgrade pip && \
     pip install -r requirements.txt && \
     python -m playwright install chromium
 
-# Copy application code
-COPY src/ /app/src/
+# Copy application code (monorepo structure)
+COPY apps/ /app/apps/
+COPY libs/ /app/libs/
 COPY scraper_config.json /app/
-# Dados são carregados em runtime via volumes no docker-compose
-# Não é necessário copiar docs_indexacao.jsonl ou docs_metadata.json
+COPY scrape_and_index_all.py /app/
+COPY docker_entrypoint.py /app/
+COPY post_scraping_indexation.py /app/
 
 # Create non-root user
 RUN useradd -m -u 1000 appuser && \
@@ -35,17 +38,12 @@ RUN useradd -m -u 1000 appuser && \
 
 USER appuser
 
-# Expose port (opcional para API futura)
+# Expose port
 EXPOSE 5000
 
 # Healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
     CMD curl -f http://meilisearch:7700/health || exit 1
-
-# Copy scraper scripts
-COPY scrape_and_index_all.py /app/
-COPY docker_entrypoint.py /app/
-COPY post_scraping_indexation.py /app/
 
 # Entrypoint: Orquestra tudo
 CMD ["python", "docker_entrypoint.py"]
