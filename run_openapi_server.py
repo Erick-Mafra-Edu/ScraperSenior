@@ -133,7 +133,7 @@ def main():
     parser.add_argument(
         "--meilisearch-key",
         type=str,
-        default=os.getenv("MEILISEARCH_KEY", "meilisearch_master_key"),
+        default=os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa"),
         help="API Key do Meilisearch"
     )
     

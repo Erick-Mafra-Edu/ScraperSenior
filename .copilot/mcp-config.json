@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "senior-docs-api": {
+      "type": "http",
+      "url": "http://localhost:8000",
+      "apiKey": "optional"
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  }
+}

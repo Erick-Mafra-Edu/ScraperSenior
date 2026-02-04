@@ -16,7 +16,7 @@ async def index_documents():
     """Indexa documentos no Meilisearch"""
     
     meilisearch_url = "http://localhost:7700"
-    meilisearch_key = "meilisearch_master_key_change_me"
+    meilisearch_key = "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa"
     headers = {"Authorization": f"Bearer {meilisearch_key}"}
     
     print("\n" + "="*70)

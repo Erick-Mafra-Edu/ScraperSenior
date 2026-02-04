@@ -33,7 +33,7 @@ class DockerDeploymentTest:
             }
         }
         self.meilisearch_url = "http://localhost:7700"
-        self.meilisearch_key = "meilisearch_master_key_change_me"
+        self.meilisearch_key = "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa"
     
     def run_command(self, command: str) -> Dict[str, Any]:
         """Run command and return result"""

@@ -1,5 +1,6 @@
 {
   "openapi": "3.1.0",
+  "x-api-id": "senior_documentation_api",
   "info": {
     "title": "Senior Documentation API",
     "description": "API OpenAPI para busca em documentação Senior com integração Meilisearch. ⭐ FERRAMENTA PRINCIPAL: Use /search para encontrar documentos. Use /modules para listar módulos. Use /stats para informações da base. Esta ferramenta contém 855+ documentos técnicos sobre sistemas Senior.",
@@ -90,7 +91,6 @@
         "summary": "🔍 Buscar Documentação - USE ISTO PARA RESPONDER PERGUNTAS",
         "description": "⭐ FERRAMENTA PRINCIPAL: Busca documentação técnica Senior para responder perguntas do usuário. SEMPRE USE quando o usuário perguntar sobre: como fazer algo, procedimentos, configuração, guias, tutoriais, ou qualquer informação sobre sistemas Senior. Retorna documentos com título, módulo, conteúdo e score de relevância. Combine com /modules para especificar módulo se necessário.",
         "operationId": "search_documentation",
-        "x-openai-isConsequential": true,
         "requestBody": {
           "content": {
             "application/json": {

@@ -52,6 +52,6 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
 # stdio: MCP (padrão para IDE)
 EXPOSE 8000
 
-# Entrypoint com suporte a dual-mode
-# Usa mcp_server_docker.py que implementa FastAPI OpenAPI adapter
-CMD ["python", "-u", "apps/mcp-server/mcp_server_docker.py"]
+# Entrypoint com suporte a HTTP MCP
+# Usa mcp_server_http.py que implementa MCP Streamable HTTP Transport
+CMD ["python", "-u", "apps/mcp-server/mcp_server_http.py"]

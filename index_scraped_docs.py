@@ -12,7 +12,7 @@ import time
 
 def main():
     MEILISEARCH_URL = "http://localhost:7700"
-    MEILISEARCH_KEY = "meilisearch_master_key_change_me"
+    MEILISEARCH_KEY = "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa"
     SCRAPED_DIR = Path("./docs_estruturado")
     
     print("=" * 80)

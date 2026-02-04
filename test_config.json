@@ -1,0 +1,52 @@
+{
+  "api": {
+    "url": "http://localhost:8000",
+    "timeout": 10,
+    "retries": 3
+  },
+  "openapi": {
+    "path": "./openapi.json",
+    "validate_schema": true,
+    "validate_responses": true
+  },
+  "tests": {
+    "schema_validation": true,
+    "endpoint_health": true,
+    "endpoint_stats": true,
+    "endpoint_modules": true,
+    "endpoint_search": true,
+    "pagination": true,
+    "module_filtering": true
+  },
+  "test_queries": [
+    "configurar",
+    "como fazer",
+    "backup",
+    "ntlm",
+    "implantação",
+    "guia",
+    "procedimento",
+    "erro",
+    "solução"
+  ],
+  "expected_modules": [
+    "RH",
+    "FINANCEIRO",
+    "TECNOLOGIA",
+    "BPM",
+    "FISCAL",
+    "GESTAO"
+  ],
+  "performance": {
+    "health_max_time_ms": 500,
+    "stats_max_time_ms": 1000,
+    "search_max_time_ms": 5000,
+    "modules_max_time_ms": 1000
+  },
+  "assertions": {
+    "min_documents": 100,
+    "min_modules": 1,
+    "min_results_per_query": 1,
+    "max_results_per_page": 100
+  }
+}
