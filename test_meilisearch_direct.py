@@ -3,7 +3,8 @@ import requests
 import time
 import json
 
-headers = {'Authorization': 'Bearer meilisearch_master_key_change_me'}
+import os
+headers = {'Authorization': f'Bearer {os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa")}'}
 url = 'http://localhost:7700'
 
 print("[1] Testing document indexing...")

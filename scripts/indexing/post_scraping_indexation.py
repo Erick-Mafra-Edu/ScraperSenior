@@ -9,10 +9,11 @@ import meilisearch
 from pathlib import Path
 import time
 import sys
+import os
 
 def main():
-    MEILISEARCH_URL = "http://meilisearch:7700"
-    MEILISEARCH_KEY = "meilisearch_master_key_change_me"
+    MEILISEARCH_URL = os.getenv("MEILISEARCH_URL", "http://meilisearch:7700")
+    MEILISEARCH_KEY = os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa")
     JSONL_FILE = Path("/app/docs_unified/unified_documentation.jsonl")
     
     print("=" * 80)

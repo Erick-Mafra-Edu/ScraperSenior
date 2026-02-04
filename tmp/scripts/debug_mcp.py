@@ -13,7 +13,11 @@ print("="*80)
 # Test Meilisearch connection
 print("\n1. Testando conexão com Meilisearch...")
 try:
-    client = meilisearch.Client("http://localhost:7700", "meilisearch_master_key_change_me")
+    import os
+    client = meilisearch.Client(
+        os.getenv("MEILISEARCH_URL", "http://localhost:7700"),
+        os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa")
+    )
     health = client.health()
     print(f"   ✅ Meilisearch conectado: {health}")
     

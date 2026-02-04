@@ -4,12 +4,13 @@ Setup Meilisearch Index
 Configura o índice 'documentation' com atributos filtráveis e outras configurações
 """
 
+import os
 import meilisearch
 import time
 import sys
 
-MEILISEARCH_URL = "http://localhost:7700"
-MEILISEARCH_KEY = "meilisearch_master_key_change_me"
+MEILISEARCH_URL = os.getenv("MEILISEARCH_URL", "http://localhost:7700")
+MEILISEARCH_KEY = os.getenv("MEILISEARCH_KEY", "5b1af87b20feb96b826836db017363c4bc08c1e143c449cd148f52da72cf09fa")
 
 def setup_index():
     """Configura o índice com atributos filtráveis"""
