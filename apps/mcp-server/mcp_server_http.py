@@ -99,12 +99,82 @@ class MCPHttpServer:
             return False
         return session_id in self.sessions
     
+    def parse_query(self, query: str, strategy: str = "auto") -> str:
+        """
+        Parse query com 3 estratégias diferentes para melhorar resultados de busca.
+        
+        Estratégias:
+        1. "quoted": Envolve query em aspas para busca de frase exata
+           "funções lsp" -> "\"funções lsp\"" (procura frase exata)
+        
+        2. "and": Usa AND implícito entre termos
+           "funções lsp" -> "funções AND lsp" (procura ambos os termos)
+        
+        3. "auto": Inteligente - tenta ambas estratégias
+           - Se query tem espaço: tenta primeiro "quoted", depois "and"
+           - Se sem espaço: mantém como está
+        
+        Args:
+            query: String de busca original
+            strategy: "quoted", "and", "auto" ou número (1-3)
+        
+        Returns:
+            Query processada conforme estratégia
+        """
+        query = query.strip() if query else ""
+        
+        if not query:
+            return query
+        
+        # Mapear números para estratégias (para compatibilidade com integers)
+        if isinstance(strategy, int):
+            strategy = ["quoted", "and", "auto"][min(strategy - 1, 2)]
+        
+        has_spaces = " " in query
+        
+        logger.debug(f"Query parsing: '{query}' | has_spaces={has_spaces} | strategy={strategy}")
+        
+        if strategy == "quoted" or (strategy == "auto" and has_spaces):
+            # Estratégia 1: Envolver em aspas para busca de frase exata
+            # Se já tem aspas, não duplicar
+            if not (query.startswith('"') and query.endswith('"')):
+                parsed = f'"{query}"'
+            else:
+                parsed = query
+            logger.info(f"Query parsing (quoted): '{query}' -> '{parsed}'")
+            return parsed
+        
+        elif strategy == "and":
+            # Estratégia 2: Usar AND entre termos
+            if has_spaces and " AND " not in query.upper():
+                terms = query.split()
+                parsed = " AND ".join(terms)
+                logger.info(f"Query parsing (and): '{query}' -> '{parsed}'")
+                return parsed
+            return query
+        
+        elif strategy == "auto":
+            # Estratégia 3: Inteligente
+            # Se não tem espaço, retorna como está
+            # Se tem espaço, tenta estratégia "quoted" primeiro
+            if not has_spaces:
+                return query
+            # Fallback para quoted quando auto não tem espaço
+            if not (query.startswith('"') and query.endswith('"')):
+                parsed = f'"{query}"'
+            else:
+                parsed = query
+            logger.info(f"Query parsing (auto/fallback): '{query}' -> '{parsed}'")
+            return parsed
+        
+        return query
+    
     def get_tools(self) -> List[Dict[str, Any]]:
         """Retorna lista de ferramentas MCP"""
         return [
             {
                 "name": "search_docs",
-                "description": "Busca documentos por palavras-chave",
+                "description": "Busca documentos por palavras-chave com parsing inteligente",
                 "inputSchema": {
                     "type": "object",
                     "properties": {
@@ -119,6 +189,12 @@ class MCPHttpServer:
                         "limit": {
                             "type": "integer",
                             "description": "Máximo de resultados (padrão: 5)"
+                        },
+                        "query_strategy": {
+                            "type": "string",
+                            "enum": ["quoted", "and", "auto"],
+                            "description": "Estratégia de parsing: 'quoted' (frase exata), 'and' (AND entre termos), 'auto' (inteligente)",
+                            "default": "auto"
                         }
                     },
                     "required": ["query"]
@@ -169,17 +245,28 @@ class MCPHttpServer:
                 query = arguments.get("query", "")
                 module = arguments.get("module")
                 limit = int(arguments.get("limit", 5))
+                query_strategy = arguments.get("query_strategy", "auto")
                 
                 if not query:
                     return json.dumps({"error": "query é obrigatório"})
                 
-                results = self.mcp.search(query, module, limit)
+                # Aplicar estratégia de parsing
+                parsed_query = self.parse_query(query, query_strategy)
+                
+                # Log da transformação
+                if parsed_query != query:
+                    logger.info(f"Query transformada: '{query}' -> '{parsed_query}' (estratégia: {query_strategy})")
+                
+                # Buscar com query transformada
+                results = self.mcp.search(parsed_query, module, limit)
                 # Ensure results is always a list
                 if not isinstance(results, list):
                     results = list(results) if hasattr(results, '__iter__') else []
                 
                 return json.dumps({
                     "query": query,
+                    "parsed_query": parsed_query,
+                    "query_strategy": query_strategy,
                     "module_filter": module,
                     "count": len(results),
                     "results": results
