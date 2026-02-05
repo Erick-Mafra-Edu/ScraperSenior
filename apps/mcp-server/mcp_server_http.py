@@ -323,13 +323,14 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS para segurança (permitir apenas localhost)
+# CORS para segurança (permitir qualquer origem - é interno)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost", "http://127.0.0.1", "http://localhost:*"],
+    allow_origins=["*"],  # Permitir qualquer origem (é servidor interno)
     allow_credentials=True,
     allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    max_age=3600,  # Cache preflight por 1 hora
 )
 
 # Instância global do servidor
@@ -543,6 +544,70 @@ async def health() -> Dict[str, Any]:
         "service": "Senior Documentation MCP HTTP",
         "version": "1.0.0",
         "timestamp": datetime.now().isoformat()
+    }
+
+
+@app.get("/openapi.json", include_in_schema=False)
+async def openapi_schema() -> Dict[str, Any]:
+    """Retorna OpenAPI schema (para compatibilidade com ferramentas)"""
+    return {
+        "openapi": "3.0.0",
+        "info": {
+            "title": "Senior Documentation MCP HTTP Server",
+            "description": "MCP Server usando Streamable HTTP Transport",
+            "version": "1.0.0"
+        },
+        "paths": {
+            "/mcp": {
+                "post": {
+                    "operationId": "mcp_post",
+                    "summary": "MCP JSON-RPC endpoint",
+                    "description": "POST with JSON-RPC 2.0 payload",
+                    "requestBody": {
+                        "required": True,
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "jsonrpc": {"type": "string"},
+                                        "method": {"type": "string"},
+                                        "params": {"type": "object"},
+                                        "id": {"type": "string"}
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {"description": "Success"}
+                    }
+                },
+                "get": {
+                    "operationId": "mcp_get",
+                    "summary": "Get SSE stream",
+                    "responses": {
+                        "405": {"description": "Not supported"}
+                    }
+                },
+                "delete": {
+                    "operationId": "mcp_delete",
+                    "summary": "End session",
+                    "responses": {
+                        "200": {"description": "Session ended"}
+                    }
+                }
+            },
+            "/health": {
+                "get": {
+                    "operationId": "health_get",
+                    "summary": "Health check",
+                    "responses": {
+                        "200": {"description": "Healthy"}
+                    }
+                }
+            }
+        }
     }
 
 
