@@ -270,7 +270,7 @@ class MCPHttpServer:
                     "module_filter": module,
                     "count": len(results),
                     "results": results
-                }, ensure_ascii=False, indent=2)
+                }, ensure_ascii=False)
             
             elif tool_name == "list_modules":
                 modules = self.mcp.get_modules()
@@ -299,11 +299,11 @@ class MCPHttpServer:
                     "module": module,
                     "count": len(docs),
                     "docs": docs
-                }, ensure_ascii=False, indent=2)
+                }, ensure_ascii=False)
             
             elif tool_name == "get_stats":
                 stats = self.mcp.get_stats()
-                return json.dumps(stats, ensure_ascii=False, indent=2)
+                return json.dumps(stats, ensure_ascii=False)
             
             else:
                 return json.dumps({"error": f"Ferramenta desconhecida: {tool_name}"})
@@ -384,9 +384,14 @@ async def mcp_post(request: Request) -> Response:
             
             if want_stream:
                 # SSE format para VS Code HTTP client
-                # Usar Response regular com conteúdo SSE, não StreamingResponse
-                json_str = json.dumps(data, ensure_ascii=False)
+                # IMPORTANTE: JSON deve estar em UMA ÚNICA LINHA para SSE válido
+                # SSE exige formato: "data: <conteúdo JSON em uma linha>\n\n"
+                json_str = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
+                # Garantir que não tem quebras de linha no JSON
+                json_str = json_str.replace('\n', '').replace('\r', '')
                 sse_content = f"data: {json_str}\n\n"
+                
+                logger.debug(f"SSE Response: {sse_content[:100]}...")
                 
                 return Response(
                     content=sse_content.encode('utf-8'),
@@ -395,7 +400,7 @@ async def mcp_post(request: Request) -> Response:
                     headers=headers
                 )
             else:
-                # JSON direto
+                # JSON direto (pode ter múltiplas linhas)
                 return Response(
                     content=json.dumps(data, ensure_ascii=False),
                     status_code=200,
