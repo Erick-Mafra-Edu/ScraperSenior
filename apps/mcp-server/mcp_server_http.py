@@ -610,6 +610,135 @@ async def openapi_options() -> Response:
     return Response(status_code=200)
 
 
+# ============================================================================
+# REST API Endpoints (Facilita uso no Open WebUI)
+# ============================================================================
+
+@app.get("/api/search")
+async def rest_search(
+    query: str,
+    limit: int = 5,
+    module: Optional[str] = None,
+    strategy: str = "auto"
+) -> Dict[str, Any]:
+    """
+    Pesquisar documentação via REST.
+    
+    Exemplo: GET /api/search?query=configurar+LSP&limit=5
+    """
+    if not query:
+        raise HTTPException(status_code=400, detail="query parameter is required")
+    
+    try:
+        parsed_query = mcp_server.parse_query(query, strategy)
+        results = mcp_server.mcp.search(parsed_query, module, limit)
+        if not isinstance(results, list):
+            results = list(results) if hasattr(results, '__iter__') else []
+        
+        return {
+            "status": "success",
+            "query": query,
+            "parsed_query": parsed_query,
+            "strategy": strategy,
+            "module_filter": module,
+            "count": len(results),
+            "results": results
+        }
+    except Exception as e:
+        logger.error(f"Erro em /api/search: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/modules")
+async def rest_list_modules() -> Dict[str, Any]:
+    """
+    Listar todos os módulos/categorias disponíveis.
+    
+    Exemplo: GET /api/modules
+    """
+    try:
+        modules = mcp_server.mcp.get_modules()
+        if not isinstance(modules, list):
+            modules = list(modules) if hasattr(modules, '__iter__') else []
+        
+        return {
+            "status": "success",
+            "total_modules": len(modules),
+            "modules": modules
+        }
+    except Exception as e:
+        logger.error(f"Erro em /api/modules: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/modules/{module_name}")
+async def rest_get_module_docs(module_name: str, limit: int = 20) -> Dict[str, Any]:
+    """
+    Obter documentos de um módulo específico via REST.
+    
+    Exemplo: GET /api/modules/Help%20Center?limit=10
+    """
+    if not module_name:
+        raise HTTPException(status_code=400, detail="module_name is required")
+    
+    try:
+        docs = mcp_server.mcp.get_by_module(module_name, limit)
+        if not isinstance(docs, list):
+            docs = list(docs) if hasattr(docs, '__iter__') else []
+        
+        return {
+            "status": "success",
+            "module": module_name,
+            "count": len(docs),
+            "docs": docs
+        }
+    except Exception as e:
+        logger.error(f"Erro em /api/modules/{module_name}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/stats")
+async def rest_get_stats() -> Dict[str, Any]:
+    """
+    Obter estatísticas da base de documentação via REST.
+    
+    Exemplo: GET /api/stats
+    """
+    try:
+        stats = mcp_server.mcp.get_stats()
+        return {
+            "status": "success",
+            "data": stats
+        }
+    except Exception as e:
+        logger.error(f"Erro em /api/stats: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.options("/api/search")
+async def rest_search_options() -> Response:
+    """Handle CORS preflight for /api/search"""
+    return Response(status_code=200)
+
+
+@app.options("/api/modules")
+async def rest_modules_options() -> Response:
+    """Handle CORS preflight for /api/modules"""
+    return Response(status_code=200)
+
+
+@app.options("/api/modules/{module_name}")
+async def rest_module_docs_options(module_name: str) -> Response:
+    """Handle CORS preflight for /api/modules/{module_name}"""
+    return Response(status_code=200)
+
+
+@app.options("/api/stats")
+async def rest_stats_options() -> Response:
+    """Handle CORS preflight for /api/stats"""
+    return Response(status_code=200)
+
+
 @app.get("/docs", include_in_schema=False)
 async def docs():
     """Swagger UI"""
