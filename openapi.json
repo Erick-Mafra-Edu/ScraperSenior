@@ -602,6 +602,300 @@
           }
         }
       }
+    },
+    "/model/validate-response": {
+      "post": {
+        "tags": ["Model Validation"],
+        "summary": "Validar Resposta do Modelo",
+        "description": "Verifica se a resposta do modelo está fundamentada nas passagens/documentos recuperados. Útil para prevenir hallucinations e garantir que respostas sejam baseadas em evidências concretas.",
+        "operationId": "validate_response_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidateResponseRequest"
+              },
+              "examples": {
+                "basic_validation": {
+                  "summary": "Validação básica",
+                  "value": {
+                    "response": "O CRM Senior permite configurar notificações por email e definir regras automáticas.",
+                    "retrieved_passages": [
+                      {
+                        "id": "doc_123",
+                        "text": "O módulo CRM da Senior oferece configuração de notificações por email. Acesse Configurações > Notificações para ativar."
+                      },
+                      {
+                        "id": "doc_124",
+                        "text": "Regras automáticas podem ser definidas no CRM para automatizar processos de vendas e atendimento."
+                      }
+                    ],
+                    "threshold": 0.75
+                  }
+                },
+                "no_evidence": {
+                  "summary": "Sem evidência",
+                  "value": {
+                    "response": "O CRM integra diretamente com o Salesforce.",
+                    "retrieved_passages": [
+                      {
+                        "id": "doc_123",
+                        "text": "O módulo CRM da Senior oferece configuração de notificações por email."
+                      }
+                    ],
+                    "threshold": 0.75
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateResponseResult"
+                },
+                "examples": {
+                  "verified": {
+                    "summary": "Resposta verificada",
+                    "value": {
+                      "verified": true,
+                      "evidence": [
+                        {
+                          "sentence": "O CRM Senior permite configurar notificações por email.",
+                          "doc_id": "doc_123",
+                          "passage_text": "O módulo CRM da Senior oferece configuração de notificações por email.",
+                          "score": 0.92
+                        }
+                      ],
+                      "issues": [],
+                      "overall_confidence": 0.95
+                    }
+                  },
+                  "not_verified": {
+                    "summary": "Resposta não verificada",
+                    "value": {
+                      "verified": false,
+                      "evidence": [],
+                      "issues": [
+                        {
+                          "sentence": "O CRM integra diretamente com o Salesforce.",
+                          "type": "no_evidence",
+                          "details": "Nenhuma passagem similar encontrada"
+                        }
+                      ],
+                      "overall_confidence": 0.0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição inválida - faltam parâmetros obrigatórios"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS Preflight",
+        "operationId": "validate_response_options",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/model/generate-and-validate": {
+      "post": {
+        "tags": ["Model Validation"],
+        "summary": "Gerar e Validar Resposta",
+        "description": "Endpoint completo que realiza: 1) Busca de documentos relevantes, 2) Geração de resposta usando modelo com system prompt rígido, 3) Validação automática da resposta. Retorna resposta com citações se verificada, ou mensagem padrão caso contrário.",
+        "operationId": "generate_and_validate_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateAndValidateRequest"
+              },
+              "examples": {
+                "basic_query": {
+                  "summary": "Consulta básica",
+                  "value": {
+                    "query": "Como configurar notificações no CRM?",
+                    "limit": 5,
+                    "module_filter": null,
+                    "generation_config": {
+                      "temperature": 0.1,
+                      "top_p": 0.8,
+                      "max_tokens": 1000
+                    },
+                    "validation_threshold": 0.75
+                  }
+                },
+                "with_module_filter": {
+                  "summary": "Com filtro de módulo",
+                  "value": {
+                    "query": "Como gerar relatórios?",
+                    "limit": 10,
+                    "module_filter": "Help Center",
+                    "generation_config": {
+                      "temperature": 0.1,
+                      "max_tokens": 800
+                    },
+                    "validation_threshold": 0.8
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resposta gerada e validada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateAndValidateResult"
+                },
+                "examples": {
+                  "success_verified": {
+                    "summary": "Resposta verificada",
+                    "value": {
+                      "success": true,
+                      "response": "Para configurar notificações no CRM, acesse Configurações > Notificações [doc_123]. Você pode ativar alertas por email [doc_123].\n\n**Fontes:**\n- [doc_123]: Configuração de Notificações CRM",
+                      "verification": {
+                        "verified": true,
+                        "evidence": [
+                          {
+                            "sentence": "Para configurar notificações no CRM, acesse Configurações > Notificações.",
+                            "doc_id": "doc_123",
+                            "score": 0.95
+                          }
+                        ],
+                        "issues": [],
+                        "overall_confidence": 0.95
+                      },
+                      "retrieved_docs": [
+                        {
+                          "id": "doc_123",
+                          "title": "Configuração de Notificações CRM",
+                          "url": "https://docs.senior.com/crm/notificacoes"
+                        }
+                      ],
+                      "metadata": {
+                        "stage": "complete",
+                        "verified": true
+                      }
+                    }
+                  },
+                  "no_evidence": {
+                    "summary": "Sem evidência",
+                    "value": {
+                      "success": false,
+                      "response": "Não encontrei evidência nos documentos fornecidos.",
+                      "verification": {
+                        "verified": false,
+                        "evidence": [],
+                        "issues": [],
+                        "overall_confidence": 0.0
+                      },
+                      "retrieved_docs": [],
+                      "metadata": {
+                        "stage": "retrieval",
+                        "reason": "no_documents_found"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição inválida"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS Preflight",
+        "operationId": "generate_and_validate_options",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/mcp/validate-response": {
+      "post": {
+        "tags": ["MCP - Model Validation"],
+        "summary": "Validar Resposta (MCP)",
+        "description": "Endpoint MCP para validação de respostas. Idêntico a /model/validate-response mas seguindo convenções do namespace MCP para consistência com o protocolo.",
+        "operationId": "mcp_validate_response_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidateResponseRequest"
+              },
+              "examples": {
+                "mcp_validation": {
+                  "summary": "Validação via MCP",
+                  "value": {
+                    "response": "O sistema permite exportar relatórios em PDF e Excel.",
+                    "retrieved_passages": [
+                      {
+                        "id": "doc_456",
+                        "text": "Relatórios podem ser exportados nos formatos PDF, Excel e CSV através do menu Exportar."
+                      }
+                    ],
+                    "threshold": 0.75
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateResponseResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição inválida"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS Preflight",
+        "operationId": "mcp_validate_response_options",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1003,6 +1297,253 @@
           }
         }
       },
+      "ValidateResponseRequest": {
+        "type": "object",
+        "title": "Validate Response Request",
+        "description": "Requisição para validar uma resposta contra passagens recuperadas",
+        "required": ["response", "retrieved_passages"],
+        "properties": {
+          "response": {
+            "type": "string",
+            "description": "Resposta gerada pelo modelo a ser validada",
+            "example": "O CRM Senior permite configurar notificações automáticas por email."
+          },
+          "retrieved_passages": {
+            "type": "array",
+            "description": "Lista de passagens/documentos recuperados que devem fundamentar a resposta",
+            "items": {
+              "type": "object",
+              "required": ["id", "text"],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "ID único da passagem/documento",
+                  "example": "doc_12345"
+                },
+                "text": {
+                  "type": "string",
+                  "description": "Conteúdo textual da passagem",
+                  "example": "O módulo CRM oferece configuração de notificações automáticas..."
+                }
+              }
+            },
+            "minItems": 1
+          },
+          "threshold": {
+            "type": "number",
+            "description": "Limiar de similaridade para considerar uma sentença verificada (0.0 a 1.0)",
+            "default": 0.75,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "example": 0.75
+          }
+        }
+      },
+      "ValidateResponseResult": {
+        "type": "object",
+        "title": "Validate Response Result",
+        "description": "Resultado da validação de uma resposta",
+        "required": ["verified", "evidence", "issues", "overall_confidence"],
+        "properties": {
+          "verified": {
+            "type": "boolean",
+            "description": "Se a resposta foi verificada (80%+ das sentenças com evidência)",
+            "example": true
+          },
+          "evidence": {
+            "type": "array",
+            "description": "Lista de evidências encontradas para sentenças verificadas",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sentence": {
+                  "type": "string",
+                  "description": "Sentença verificada"
+                },
+                "doc_id": {
+                  "type": "string",
+                  "description": "ID do documento que suporta a sentença"
+                },
+                "passage_text": {
+                  "type": "string",
+                  "description": "Trecho da passagem que fundamenta a sentença (limitado a 200 chars)"
+                },
+                "score": {
+                  "type": "number",
+                  "description": "Score de similaridade (0.0 a 1.0)",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            }
+          },
+          "issues": {
+            "type": "array",
+            "description": "Lista de problemas encontrados (sentenças não verificadas)",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sentence": {
+                  "type": "string",
+                  "description": "Sentença com problema"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["no_evidence", "low_confidence", "contradictory", "empty_response", "no_passages"],
+                  "description": "Tipo do problema"
+                },
+                "details": {
+                  "type": "string",
+                  "description": "Detalhes sobre o problema"
+                }
+              }
+            }
+          },
+          "overall_confidence": {
+            "type": "number",
+            "description": "Confiança geral da verificação (0.0 a 1.0). Proporção de sentenças verificadas.",
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "example": 0.95
+          }
+        }
+      },
+      "GenerateAndValidateRequest": {
+        "type": "object",
+        "title": "Generate and Validate Request",
+        "description": "Requisição para gerar e validar uma resposta completa",
+        "required": ["query"],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Pergunta/consulta do usuário",
+            "example": "Como configurar notificações no CRM?",
+            "minLength": 3
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Número máximo de documentos a recuperar",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 20,
+            "example": 5
+          },
+          "module_filter": {
+            "type": ["string", "null"],
+            "description": "Filtro opcional por módulo específico",
+            "example": "Help Center"
+          },
+          "generation_config": {
+            "type": "object",
+            "description": "Configuração para geração da resposta",
+            "properties": {
+              "temperature": {
+                "type": "number",
+                "description": "Temperatura do modelo (0.0 = determinístico, 1.0 = criativo)",
+                "default": 0.1,
+                "minimum": 0.0,
+                "maximum": 2.0,
+                "example": 0.1
+              },
+              "top_p": {
+                "type": "number",
+                "description": "Nucleus sampling (top_p)",
+                "default": 0.8,
+                "minimum": 0.0,
+                "maximum": 1.0,
+                "example": 0.8
+              },
+              "max_tokens": {
+                "type": "integer",
+                "description": "Número máximo de tokens na resposta",
+                "default": 1000,
+                "minimum": 50,
+                "maximum": 4000,
+                "example": 1000
+              }
+            }
+          },
+          "validation_threshold": {
+            "type": "number",
+            "description": "Limiar para validação de sentenças",
+            "default": 0.75,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "example": 0.75
+          }
+        }
+      },
+      "GenerateAndValidateResult": {
+        "type": "object",
+        "title": "Generate and Validate Result",
+        "description": "Resultado completo da geração e validação",
+        "required": ["success", "response"],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Se o processo foi bem-sucedido e a resposta foi verificada",
+            "example": true
+          },
+          "response": {
+            "type": "string",
+            "description": "Resposta gerada (com citações se verificada, ou mensagem padrão se não)",
+            "example": "Para configurar notificações no CRM, acesse Configurações > Notificações [doc_123]..."
+          },
+          "verification": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ValidateResponseResult"
+              }
+            ],
+            "description": "Detalhes da verificação da resposta"
+          },
+          "retrieved_docs": {
+            "type": "array",
+            "description": "Documentos recuperados que foram usados",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "ID do documento"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "Título do documento"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "URL do documento"
+                }
+              }
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadados sobre o processamento",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "description": "Estágio do pipeline (retrieval, generation, validation, complete, error)",
+                "example": "complete"
+              },
+              "verified": {
+                "type": "boolean",
+                "description": "Se a resposta foi verificada"
+              },
+              "reason": {
+                "type": "string",
+                "description": "Razão de falha (se success=false)"
+              },
+              "confidence": {
+                "type": "number",
+                "description": "Confiança da verificação"
+              }
+            }
+          }
+        }
+      },
       "DocumentationStats": {
         "type": "object",
         "title": "Documentation Statistics",
@@ -1085,6 +1626,14 @@
     {
       "name": "REST API - Documents",
       "description": "Endpoints REST para recuperar documentos individuais"
+    },
+    {
+      "name": "Model Validation",
+      "description": "Endpoints para validação de respostas e prevenção de hallucinations"
+    },
+    {
+      "name": "MCP - Model Validation",
+      "description": "Endpoints MCP para validação de respostas seguindo protocolo MCP"
     }
   ]
 }
