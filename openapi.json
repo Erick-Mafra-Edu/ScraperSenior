@@ -179,6 +179,348 @@
           }
         }
       }
+    },
+    "/api/search": {
+      "get": {
+        "tags": ["REST API - Search"],
+        "summary": "Pesquisar Documentação (REST)",
+        "description": "Endpoint REST simples para buscar documentação. Alternativa mais fácil ao JSON-RPC para integrações com Open WebUI e ferramentas web.",
+        "operationId": "api_search_get",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "description": "Termo(s) de busca",
+            "schema": {
+              "type": "string",
+              "example": "configurar LSP"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Máximo de resultados (padrão: 5, máximo: 100)",
+            "schema": {
+              "type": "integer",
+              "default": 5,
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "module",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por módulo específico (ex: 'Help Center')",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "strategy",
+            "in": "query",
+            "required": false,
+            "description": "Estratégia de parsing: 'auto' (recomendado), 'quoted', 'and'",
+            "schema": {
+              "type": "string",
+              "enum": ["auto", "quoted", "and"],
+              "default": "auto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Busca realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["success"],
+                      "description": "Status da requisição"
+                    },
+                    "query": {
+                      "type": "string",
+                      "description": "Query original"
+                    },
+                    "parsed_query": {
+                      "type": "string",
+                      "description": "Query após transformação"
+                    },
+                    "strategy": {
+                      "type": "string",
+                      "description": "Estratégia usada"
+                    },
+                    "module_filter": {
+                      "type": ["string", "null"],
+                      "description": "Filtro de módulo aplicado"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "description": "Número de resultados"
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/DocumentResult"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "success",
+                  "query": "configurar LSP",
+                  "parsed_query": "\"configurar LSP\"",
+                  "strategy": "auto",
+                  "module_filter": null,
+                  "count": 3,
+                  "results": [
+                    {
+                      "title": "Configurar LSP",
+                      "url": "https://...",
+                      "module": "Help Center",
+                      "content": "Instruções para configurar..."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Parâmetro 'query' obrigatório"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS Preflight",
+        "operationId": "api_search_options",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/modules": {
+      "get": {
+        "tags": ["REST API - Modules"],
+        "summary": "Listar Módulos (REST)",
+        "description": "Retorna lista de todos os módulos/categorias de documentação disponíveis.",
+        "operationId": "api_modules_get",
+        "responses": {
+          "200": {
+            "description": "Lista de módulos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["success"]
+                    },
+                    "total_modules": {
+                      "type": "integer",
+                      "description": "Total de módulos"
+                    },
+                    "modules": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Lista de nomes de módulos"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "success",
+                  "total_modules": 12,
+                  "modules": [
+                    "Help Center",
+                    "Release Notes",
+                    "API Documentation"
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS Preflight",
+        "operationId": "api_modules_options",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/modules/{module_name}": {
+      "get": {
+        "tags": ["REST API - Modules"],
+        "summary": "Obter Documentos de Módulo (REST)",
+        "description": "Retorna todos os documentos de um módulo específico.",
+        "operationId": "api_module_docs_get",
+        "parameters": [
+          {
+            "name": "module_name",
+            "in": "path",
+            "required": true,
+            "description": "Nome do módulo",
+            "schema": {
+              "type": "string",
+              "example": "Help Center"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Máximo de documentos (padrão: 20, máximo: 100)",
+            "schema": {
+              "type": "integer",
+              "default": 20,
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Documentos do módulo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["success"]
+                    },
+                    "module": {
+                      "type": "string",
+                      "description": "Nome do módulo"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "description": "Número de documentos"
+                    },
+                    "docs": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/DocumentResult"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Nome do módulo inválido"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS Preflight",
+        "operationId": "api_module_docs_options",
+        "parameters": [
+          {
+            "name": "module_name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/stats": {
+      "get": {
+        "tags": ["REST API - Statistics"],
+        "summary": "Estatísticas da Base (REST)",
+        "description": "Retorna estatísticas sobre a base de documentação indexada.",
+        "operationId": "api_stats_get",
+        "responses": {
+          "200": {
+            "description": "Estatísticas da documentação",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["success"]
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "Dados estatísticos",
+                      "properties": {
+                        "total_documents": {
+                          "type": "integer"
+                        },
+                        "total_modules": {
+                          "type": "integer"
+                        },
+                        "indexed_date": {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        "index_size": {
+                          "type": "string",
+                          "description": "Tamanho do índice em MB"
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "total_documents": 10456,
+                    "total_modules": 12,
+                    "indexed_date": "2026-02-05",
+                    "index_size": "45.3 MB"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS Preflight",
+        "operationId": "api_stats_options",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -375,6 +717,34 @@
             "description": "Schema JSON dos parâmetros de entrada"
           }
         }
+      },
+      "DocumentResult": {
+        "type": "object",
+        "title": "Document Result",
+        "description": "Resultado de um documento da busca",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Título do documento"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL do documento"
+          },
+          "module": {
+            "type": "string",
+            "description": "Módulo/categoria do documento"
+          },
+          "content": {
+            "type": "string",
+            "description": "Conteúdo resumido do documento"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Resumo do documento"
+          }
+        }
       }
     },
     "headers": {
@@ -406,6 +776,18 @@
     {
       "name": "Health & Status",
       "description": "Health checks e status do servidor"
+    },
+    {
+      "name": "REST API - Search",
+      "description": "Endpoints REST simples para busca de documentação"
+    },
+    {
+      "name": "REST API - Modules",
+      "description": "Endpoints REST para gerenciar módulos de documentação"
+    },
+    {
+      "name": "REST API - Statistics",
+      "description": "Endpoints REST para estatísticas da base de documentação"
     }
   ]
 }
