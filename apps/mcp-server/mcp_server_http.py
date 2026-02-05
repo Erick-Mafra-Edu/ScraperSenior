@@ -549,89 +549,47 @@ async def health() -> Dict[str, Any]:
 
 @app.get("/openapi.json", include_in_schema=False)
 async def openapi_schema() -> Dict[str, Any]:
-    """Retorna OpenAPI 3.1.0 schema completo"""
-    return {
-        "openapi": "3.1.0",
-        "info": {
-            "title": "Senior Documentation MCP HTTP Server",
-            "description": "Servidor MCP (Model Context Protocol) via HTTP para busca de documentação Senior. Implementa protocolo MCP 2025-06-18 com suporte a JSON-RPC 2.0 e Server-Sent Events (SSE).\n\nFERRAMENTAS DISPONÍVEIS:\n- search_docs: Busca documentos com parsing inteligente de query\n- list_modules: Lista módulos de documentação\n- get_module_docs: Retorna docs de um módulo\n- get_stats: Estatísticas da base",
-            "version": "1.0.0",
-            "contact": {"name": "Senior Documentation"},
-            "license": {"name": "MIT"}
-        },
-        "servers": [
-            {"url": "http://localhost:8000", "description": "Local"},
-            {"url": "http://people-fy.com:8000", "description": "Production"}
-        ],
-        "paths": {
-            "/mcp": {
-                "post": {
-                    "summary": "MCP JSON-RPC 2.0 Endpoint",
-                    "description": "Endpoint principal. Métodos: 'initialize', 'tools/list', 'tools/call'",
-                    "operationId": "mcp_post",
-                    "requestBody": {
-                        "required": True,
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "jsonrpc": {"type": "string", "enum": ["2.0"]},
-                                        "method": {"type": "string", "enum": ["initialize", "tools/list", "tools/call"]},
-                                        "params": {"type": "object"},
-                                        "id": {"type": ["string", "number"]}
-                                    },
-                                    "required": ["jsonrpc", "method", "id"]
-                                }
-                            }
-                        }
-                    },
-                    "responses": {
-                        "200": {"description": "Sucesso - JSON-RPC Response"},
-                        "400": {"description": "Erro - JSON-RPC Error"}
-                    }
+    """Retorna OpenAPI 3.1.0 schema do arquivo openapi.json"""
+    try:
+        # Procurar arquivo openapi.json em múltiplos locais
+        possible_paths = [
+            Path(__file__).parent.parent.parent / "openapi.json",  # Raiz do projeto
+            Path("/app/openapi.json"),  # Docker/container
+            Path("./openapi.json"),  # Diretório atual
+        ]
+        
+        openapi_file = None
+        for path in possible_paths:
+            if path.exists():
+                openapi_file = path
+                logger.info(f"✓ Carregando OpenAPI schema de: {openapi_file}")
+                break
+        
+        if not openapi_file:
+            logger.warning("OpenAPI file not found, retornando schema simplificado")
+            return {
+                "openapi": "3.1.0",
+                "info": {
+                    "title": "Senior Documentation MCP HTTP Server",
+                    "version": "1.0.0"
                 },
-                "delete": {
-                    "summary": "Encerrar Sessão",
-                    "parameters": [
-                        {
-                            "name": "Mcp-Session-Id",
-                            "in": "header",
-                            "required": True,
-                            "schema": {"type": "string"}
-                        }
-                    ],
-                    "responses": {
-                        "200": {"description": "Sessão encerrada"},
-                        "404": {"description": "Sessão não encontrada"}
-                    }
-                }
-            },
-            "/health": {
-                "get": {
-                    "summary": "Health Check",
-                    "responses": {
-                        "200": {
-                            "description": "Servidor saudável",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "status": {"type": "string"},
-                                            "service": {"type": "string"},
-                                            "version": {"type": "string"},
-                                            "timestamp": {"type": "string"}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                "paths": {}
             }
+        
+        # Ler e retornar o arquivo
+        with open(openapi_file, 'r', encoding='utf-8') as f:
+            return json.load(f)
+            
+    except Exception as e:
+        logger.error(f"Erro ao carregar OpenAPI schema: {e}")
+        return {
+            "openapi": "3.1.0",
+            "info": {
+                "title": "Senior Documentation MCP HTTP Server",
+                "version": "1.0.0"
+            },
+            "paths": {}
         }
-    }
 
 
 @app.get("/docs", include_in_schema=False)
