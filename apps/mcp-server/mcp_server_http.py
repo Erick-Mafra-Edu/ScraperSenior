@@ -549,20 +549,26 @@ async def health() -> Dict[str, Any]:
 
 @app.get("/openapi.json", include_in_schema=False)
 async def openapi_schema() -> Dict[str, Any]:
-    """Retorna OpenAPI schema (para compatibilidade com ferramentas)"""
+    """Retorna OpenAPI 3.1.0 schema completo"""
     return {
-        "openapi": "3.0.0",
+        "openapi": "3.1.0",
         "info": {
             "title": "Senior Documentation MCP HTTP Server",
-            "description": "MCP Server usando Streamable HTTP Transport",
-            "version": "1.0.0"
+            "description": "Servidor MCP (Model Context Protocol) via HTTP para busca de documentação Senior. Implementa protocolo MCP 2025-06-18 com suporte a JSON-RPC 2.0 e Server-Sent Events (SSE).\n\nFERRAMENTAS DISPONÍVEIS:\n- search_docs: Busca documentos com parsing inteligente de query\n- list_modules: Lista módulos de documentação\n- get_module_docs: Retorna docs de um módulo\n- get_stats: Estatísticas da base",
+            "version": "1.0.0",
+            "contact": {"name": "Senior Documentation"},
+            "license": {"name": "MIT"}
         },
+        "servers": [
+            {"url": "http://localhost:8000", "description": "Local"},
+            {"url": "http://people-fy.com:8000", "description": "Production"}
+        ],
         "paths": {
             "/mcp": {
                 "post": {
+                    "summary": "MCP JSON-RPC 2.0 Endpoint",
+                    "description": "Endpoint principal. Métodos: 'initialize', 'tools/list', 'tools/call'",
                     "operationId": "mcp_post",
-                    "summary": "MCP JSON-RPC endpoint",
-                    "description": "POST with JSON-RPC 2.0 payload",
                     "requestBody": {
                         "required": True,
                         "content": {
@@ -570,40 +576,57 @@ async def openapi_schema() -> Dict[str, Any]:
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "jsonrpc": {"type": "string"},
-                                        "method": {"type": "string"},
+                                        "jsonrpc": {"type": "string", "enum": ["2.0"]},
+                                        "method": {"type": "string", "enum": ["initialize", "tools/list", "tools/call"]},
                                         "params": {"type": "object"},
-                                        "id": {"type": "string"}
-                                    }
+                                        "id": {"type": ["string", "number"]}
+                                    },
+                                    "required": ["jsonrpc", "method", "id"]
                                 }
                             }
                         }
                     },
                     "responses": {
-                        "200": {"description": "Success"}
-                    }
-                },
-                "get": {
-                    "operationId": "mcp_get",
-                    "summary": "Get SSE stream",
-                    "responses": {
-                        "405": {"description": "Not supported"}
+                        "200": {"description": "Sucesso - JSON-RPC Response"},
+                        "400": {"description": "Erro - JSON-RPC Error"}
                     }
                 },
                 "delete": {
-                    "operationId": "mcp_delete",
-                    "summary": "End session",
+                    "summary": "Encerrar Sessão",
+                    "parameters": [
+                        {
+                            "name": "Mcp-Session-Id",
+                            "in": "header",
+                            "required": True,
+                            "schema": {"type": "string"}
+                        }
+                    ],
                     "responses": {
-                        "200": {"description": "Session ended"}
+                        "200": {"description": "Sessão encerrada"},
+                        "404": {"description": "Sessão não encontrada"}
                     }
                 }
             },
             "/health": {
                 "get": {
-                    "operationId": "health_get",
-                    "summary": "Health check",
+                    "summary": "Health Check",
                     "responses": {
-                        "200": {"description": "Healthy"}
+                        "200": {
+                            "description": "Servidor saudável",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {"type": "string"},
+                                            "service": {"type": "string"},
+                                            "version": {"type": "string"},
+                                            "timestamp": {"type": "string"}
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
