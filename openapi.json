@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Senior Documentation MCP HTTP Server",
-    "description": "Servidor MCP (Model Context Protocol) via HTTP para busca de documentação Senior. Implementa protocolo MCP 2025-06-18 com suporte a JSON-RPC 2.0 e Server-Sent Events (SSE).\n\n## Como Usar\n\n1. **Inicializar**: Envie POST /mcp com method='initialize' para criar sessão\n2. **Listar Ferramentas**: Envie POST /mcp com method='tools/list' para ver operações disponíveis\n3. **Buscar Documentos**: Envie POST /mcp com method='tools/call' para executar 'search_docs'\n\n## Ferramentas Disponíveis\n\n- **search_docs**: Busca documentos por palavras-chave com parsing inteligente\n- **list_modules**: Lista todos os módulos/categorias de documentação\n- **get_module_docs**: Retorna documentos de um módulo específico\n- **get_stats**: Estatísticas da base de documentação\n\n## Exemplo de Uso\n\n```bash\n# Buscar documentos sobre \"funções lsp\"\ncurl -X POST http://localhost:8000/mcp \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"tools/call\",\n    \"params\": {\n      \"name\": \"search_docs\",\n      \"arguments\": {\n        \"query\": \"funções lsp\",\n        \"limit\": 5,\n        \"query_strategy\": \"auto\"\n      }\n    }\n  }'\n```",
+    "description": "Servidor MCP (Model Context Protocol) via HTTP para busca de documentação Senior. Implementa protocolo MCP 2025-06-18 com suporte a JSON-RPC 2.0 e Server-Sent Events (SSE).\n\n## Compatibilidade com LLM/Open WebUI\n\nEste servidor foi otimizado para integração com agentes de IA (LLMs) no Open WebUI:\n- **REST API Endpoints** (/api/*): Interface simples via GET HTTP para LLMs consumirem\n- **Query Parsing Inteligente**: Estratégias auto/quoted/and para refinar buscas\n- **Schemas Detalhados**: Respostas estruturadas com DocumentSummary, SearchResult, etc.\n- **CORS Habilitado**: Permite chamadas diretas do navegador e Open WebUI\n\n## Como Usar\n\n### Via JSON-RPC (Full MCP Protocol)\n1. **Inicializar**: Envie POST /mcp com method='initialize' para criar sessão\n2. **Listar Ferramentas**: Envie POST /mcp com method='tools/list' para ver operações disponíveis\n3. **Buscar Documentos**: Envie POST /mcp com method='tools/call' para executar 'search_docs'\n\n### Via REST API (Recomendado para LLMs)\n1. **Buscar**: GET /api/search?query=...&strategy=auto\n2. **Explorar Módulos**: GET /api/modules\n3. **Listar Docs do Módulo**: GET /api/modules/{nome}?limit=20\n4. **Obter Documento Completo**: GET /api/document/{doc_id}\n\n## Ferramentas Disponíveis\n\n- **search_docs**: Busca documentos por palavras-chave com parsing inteligente\n- **list_modules**: Lista todos os módulos/categorias de documentação\n- **get_module_docs**: Retorna documentos de um módulo específico\n- **get_stats**: Estatísticas da base de documentação\n\n## Exemplo de Uso (REST - Recomendado para LLMs)\n\n```bash\n# Buscar documentos sobre \"funções lsp\" com estratégia automática\ncurl \"http://localhost:8000/api/search?query=funções+lsp&strategy=auto&limit=5\"\n\n# Resposta estruturada com DocumentSummary de cada resultado\n# Use /api/document/{id} para obter o conteúdo completo se necessário\n```",
     "version": "1.0.0",
     "contact": {
       "name": "Senior Documentation"
@@ -521,6 +521,87 @@
           }
         }
       }
+    },
+    "/api/document/{document_id}": {
+      "get": {
+        "tags": ["REST API - Documents"],
+        "summary": "Obter Documento Completo (REST)",
+        "description": "Retorna o conteúdo completo de um documento específico. Use este endpoint após uma busca inicial quando o LLM precisar de mais contexto.",
+        "operationId": "api_document_get",
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "description": "ID único do documento (obtido de /api/search ou /api/modules)",
+            "schema": {
+              "type": "string",
+              "example": "doc_12345"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Documento encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["success"]
+                    },
+                    "document": {
+                      "$ref": "#/components/schemas/Document"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "success",
+                  "document": {
+                    "id": "doc_12345",
+                    "title": "Como Configurar LSP",
+                    "url": "https://docs.senior.com/...",
+                    "module": "Help Center",
+                    "content": "Conteúdo completo do documento...",
+                    "metadata": {
+                      "last_updated": "2026-02-05",
+                      "word_count": 1500,
+                      "author": "Senior Docs"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Documento não encontrado"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS Preflight",
+        "operationId": "api_document_options",
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -745,6 +826,218 @@
             "description": "Resumo do documento"
           }
         }
+      },
+      "DocumentSummary": {
+        "type": "object",
+        "title": "Document Summary",
+        "description": "Resumo de um documento retornado em resultados de busca. Otimizado para consumo por LLMs.",
+        "required": ["id", "title", "url", "module"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID único do documento"
+          },
+          "title": {
+            "type": "string",
+            "description": "Título do documento"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL para acessar o documento completo"
+          },
+          "module": {
+            "type": "string",
+            "description": "Módulo/categoria (ex: Help Center, Release Notes)"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Resumo conciso do conteúdo (primeiros 200-500 caracteres)"
+          },
+          "relevance_score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Score de relevância da busca (0-1, onde 1 é mais relevante)"
+          }
+        }
+      },
+      "Document": {
+        "type": "object",
+        "title": "Complete Document",
+        "description": "Documento completo com todo o conteúdo",
+        "required": ["id", "title", "url", "module", "content"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID único do documento"
+          },
+          "title": {
+            "type": "string",
+            "description": "Título do documento"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL do documento original"
+          },
+          "module": {
+            "type": "string",
+            "description": "Módulo/categoria do documento"
+          },
+          "content": {
+            "type": "string",
+            "description": "Conteúdo completo do documento (em HTML ou texto plano)"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadados do documento",
+            "properties": {
+              "last_updated": {
+                "type": "string",
+                "format": "date",
+                "description": "Data da última atualização"
+              },
+              "word_count": {
+                "type": "integer",
+                "description": "Número de palavras no documento"
+              },
+              "author": {
+                "type": "string",
+                "description": "Autor ou fonte do documento"
+              }
+            }
+          }
+        }
+      },
+      "SearchResult": {
+        "type": "object",
+        "title": "Search Result",
+        "description": "Resultado estruturado de uma busca (para /api/search)",
+        "required": ["status", "query", "count", "results"],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["success"],
+            "description": "Status da operação"
+          },
+          "query": {
+            "type": "string",
+            "description": "Query original do usuário"
+          },
+          "parsed_query": {
+            "type": "string",
+            "description": "Query após aplicação da estratégia de parsing"
+          },
+          "strategy": {
+            "type": "string",
+            "enum": ["auto", "quoted", "and"],
+            "description": "Estratégia de parsing utilizada"
+          },
+          "module_filter": {
+            "type": ["string", "null"],
+            "description": "Filtro de módulo aplicado (se houver)"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Número de resultados encontrados"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentSummary"
+            },
+            "description": "Array de resumos de documentos encontrados"
+          }
+        }
+      },
+      "ModuleInfo": {
+        "type": "object",
+        "title": "Module Information",
+        "description": "Informações sobre um módulo de documentação",
+        "required": ["name", "doc_count"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nome do módulo"
+          },
+          "doc_count": {
+            "type": "integer",
+            "description": "Número de documentos neste módulo"
+          },
+          "description": {
+            "type": "string",
+            "description": "Descrição do conteúdo do módulo (opcional)"
+          }
+        }
+      },
+      "ModuleList": {
+        "type": "object",
+        "title": "Module List",
+        "description": "Lista de módulos disponíveis (para /api/modules)",
+        "required": ["status", "total_modules", "modules"],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["success"],
+            "description": "Status da operação"
+          },
+          "total_modules": {
+            "type": "integer",
+            "description": "Número total de módulos"
+          },
+          "modules": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "description": "Nome do módulo"
+                },
+                {
+                  "$ref": "#/components/schemas/ModuleInfo"
+                }
+              ]
+            },
+            "description": "Array de nomes de módulos ou objetos ModuleInfo"
+          }
+        }
+      },
+      "DocumentationStats": {
+        "type": "object",
+        "title": "Documentation Statistics",
+        "description": "Estatísticas sobre a base de documentação",
+        "properties": {
+          "total_documents": {
+            "type": "integer",
+            "description": "Número total de documentos indexados"
+          },
+          "total_modules": {
+            "type": "integer",
+            "description": "Número total de módulos/categorias"
+          },
+          "indexed_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Data da última indexação"
+          },
+          "index_size": {
+            "type": "string",
+            "description": "Tamanho do índice (em MB ou GB)"
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Idiomas disponíveis (ex: pt-BR, en)"
+          },
+          "last_update": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp da última atualização"
+          }
+        }
       }
     },
     "headers": {
@@ -788,6 +1081,10 @@
     {
       "name": "REST API - Statistics",
       "description": "Endpoints REST para estatísticas da base de documentação"
+    },
+    {
+      "name": "REST API - Documents",
+      "description": "Endpoints REST para recuperar documentos individuais"
     }
   ]
 }
