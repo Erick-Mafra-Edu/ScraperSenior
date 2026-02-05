@@ -510,6 +510,55 @@ class ModularScraper:
         parts = [p for p in path.split('/') if p]
         return parts[0] if parts else "Documentação"
     
+    def _path_to_full_url(self, breadcrumb: List[str], url_hint: str = None) -> str:
+        """
+        Converte caminho de breadcrumb para URL completo.
+        
+        Suporta dois domínios:
+        - documentacao.senior.com.br (padrão para documentação técnica)
+        - suporte.senior.com.br (para suporte/Zendesk)
+        
+        Exemplos:
+        ["BI", "Apresentação"] → "https://documentacao.senior.com.br/bi/apresentacao/"
+        ["Help Center", "LSP"] → "https://suporte.senior.com.br/help-center/lsp/"
+        """
+        if not breadcrumb:
+            return "https://documentacao.senior.com.br/"
+        
+        # Detectar domínio baseado no breadcrumb ou hint
+        domain = "documentacao.senior.com.br"  # Padrão
+        
+        # Palavras-chave que indicam domínio suporte.senior.com.br
+        suporte_keywords = ['help center', 'suporte', 'zendesk', 'faq', 'ticket', 'support']
+        first_part_lower = breadcrumb[0].lower() if breadcrumb else ""
+        
+        if any(kw in first_part_lower for kw in suporte_keywords):
+            domain = "suporte.senior.com.br"
+        
+        # Também verificar no hint se fornecido
+        if url_hint:
+            if 'suporte' in url_hint.lower():
+                domain = "suporte.senior.com.br"
+            elif 'documentacao' in url_hint.lower():
+                domain = "documentacao.senior.com.br"
+        
+        # Converter para lowercase e substituir espaços/underscores por hífens
+        path_parts = []
+        for part in breadcrumb:
+            # Remove caracteres especiais e normaliza
+            normalized = part.lower()
+            normalized = normalized.replace("_", "-")
+            normalized = normalized.replace(" ", "-")
+            # Remove múltiplos hífens
+            normalized = re.sub(r'-+', '-', normalized)
+            # Remove caracteres não alfanuméricos (exceto hífens)
+            normalized = re.sub(r'[^a-z0-9-]', '', normalized)
+            if normalized:
+                path_parts.append(normalized)
+        
+        path = "/".join(path_parts)
+        return f"https://{domain}/{path}/"
+    
     def _save_documents(self):
         """Salva documentos em arquivo"""
         output_format = self.config.get("output.format", "jsonl")
@@ -522,10 +571,21 @@ class ModularScraper:
             filepath = output_dir / f"scraped_{timestamp}.jsonl"
             with open(filepath, 'w', encoding='utf-8') as f:
                 for doc in self.documents:
+                    # Garantir URL completo
+                    if isinstance(doc, dict):
+                        if 'url' in doc and not doc['url'].startswith('http'):
+                            breadcrumb = doc.get('breadcrumb', [])
+                            doc['url'] = self._path_to_full_url(breadcrumb)
                     f.write(json.dumps(doc, ensure_ascii=False) + '\n')
         
         elif output_format == "json":
             filepath = output_dir / f"scraped_{timestamp}.json"
+            # Garantir URLs completos antes de salvar
+            for doc in self.documents:
+                if isinstance(doc, dict):
+                    if 'url' in doc and not doc['url'].startswith('http'):
+                        breadcrumb = doc.get('breadcrumb', [])
+                        doc['url'] = self._path_to_full_url(breadcrumb)
             with open(filepath, 'w', encoding='utf-8') as f:
                 json.dump(self.documents, f, ensure_ascii=False, indent=2)
         

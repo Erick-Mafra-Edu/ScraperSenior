@@ -769,17 +769,73 @@ class SeniorDocScraper:
             print(f"    [AVISO] Erro ao salvar {doc['title']}: {e}")
             return None
     
+    def path_to_full_url(self, breadcrumb: List[str], url_hint: str = None) -> str:
+        """
+        Converte caminho de breadcrumb para URL completo.
+        
+        Suporta dois domínios:
+        - documentacao.senior.com.br (padrão para documentação técnica)
+        - suporte.senior.com.br (para suporte/Zendesk)
+        
+        Exemplos:
+        ["BI", "Apresentação"] → "https://documentacao.senior.com.br/bi/apresentacao/"
+        ["Help Center", "LSP"] → "https://suporte.senior.com.br/help-center/lsp/"
+        """
+        if not breadcrumb:
+            return "https://documentacao.senior.com.br/"
+        
+        # Detectar domínio baseado no breadcrumb ou hint
+        domain = "documentacao.senior.com.br"  # Padrão
+        
+        # Palavras-chave que indicam domínio suporte.senior.com.br
+        suporte_keywords = ['help center', 'suporte', 'zendesk', 'faq', 'ticket', 'support']
+        first_part_lower = breadcrumb[0].lower() if breadcrumb else ""
+        
+        if any(kw in first_part_lower for kw in suporte_keywords):
+            domain = "suporte.senior.com.br"
+        
+        # Também verificar no hint se fornecido
+        if url_hint:
+            if 'suporte' in url_hint.lower():
+                domain = "suporte.senior.com.br"
+            elif 'documentacao' in url_hint.lower():
+                domain = "documentacao.senior.com.br"
+        
+        # Converter para lowercase e substituir espaços/underscores por hífens
+        path_parts = []
+        for part in breadcrumb:
+            # Remove caracteres especiais e normaliza
+            normalized = part.lower()
+            normalized = normalized.replace("_", "-")
+            normalized = normalized.replace(" ", "-")
+            # Remove múltiplos hífens
+            normalized = re.sub(r'-+', '-', normalized)
+            # Remove caracteres não alfanuméricos (exceto hífens)
+            normalized = re.sub(r'[^a-z0-9-]', '', normalized)
+            if normalized:
+                path_parts.append(normalized)
+        
+        path = "/".join(path_parts)
+        return f"https://{domain}/{path}/"
+    
     def generate_jsonl(self):
-        """Gera arquivo JSONL para indexação"""
+        """Gera arquivo JSONL para indexação com URLs completos"""
         jsonl_file = Path("docs_indexacao.jsonl")
         
         with open(jsonl_file, 'w', encoding='utf-8') as f:
             for doc in self.documents:
+                # Gerar URL completo a partir do breadcrumb
+                # Se doc['url'] já é completo (começa com http), usar como está
+                # Senão, construir a partir do breadcrumb
+                url = doc['url']
+                if not url.startswith('http'):
+                    url = self.path_to_full_url(doc['breadcrumb'])
+                
                 # Documento para Meilisearch
                 index_doc = {
-                    'id': doc['url'],  # URL como ID único
+                    'id': url,  # URL completa como ID único
                     'title': doc['title'],
-                    'url': doc['url'],
+                    'url': url,  # URL completo para o cliente acessar
                     'module': doc['breadcrumb'][0] if doc['breadcrumb'] else 'unknown',
                     'category': doc['breadcrumb'][1] if len(doc['breadcrumb']) > 1 else '',
                     'subcategory': doc['breadcrumb'][2] if len(doc['breadcrumb']) > 2 else '',
