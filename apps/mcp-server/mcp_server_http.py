@@ -536,6 +536,18 @@ async def mcp_delete(request: Request) -> Response:
     )
 
 
+@app.options("/mcp", include_in_schema=False)
+async def mcp_options() -> Response:
+    """Handle CORS preflight for /mcp"""
+    return Response(status_code=200)
+
+
+@app.options("/health", include_in_schema=False)
+async def health_options() -> Response:
+    """Handle CORS preflight for /health"""
+    return Response(status_code=200)
+
+
 @app.get("/health")
 async def health() -> Dict[str, Any]:
     """Health check endpoint"""
@@ -590,6 +602,12 @@ async def openapi_schema() -> Dict[str, Any]:
             },
             "paths": {}
         }
+
+
+@app.options("/openapi.json", include_in_schema=False)
+async def openapi_options() -> Response:
+    """Handle CORS preflight for /openapi.json"""
+    return Response(status_code=200)
 
 
 @app.get("/docs", include_in_schema=False)
